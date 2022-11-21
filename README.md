@@ -1,5 +1,8 @@
 # ADV360-PRO-ZMK
 
+#### Symbols Layer
+![image](https://user-images.githubusercontent.com/7014149/203162287-2dc99532-7c15-4738-9a24-e5ffe449c2fc.png)
+
 ## To build Firmware in GitHub Actions
 
 ### Setup
