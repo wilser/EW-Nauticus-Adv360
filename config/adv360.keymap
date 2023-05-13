@@ -12,7 +12,7 @@
  * edit it directly.
  */
 
-#include <behaviors.dtsi>
+// #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
@@ -85,33 +85,31 @@
     // Home row mods
     #define _T_SFT &hm_l LSHFT T  // Shift on index fingers
     #define _N_SFT &hm_r RSHFT N
-    #define _S_CMD &hm_l LGUI S   // Command on middle fingers
+    #define _S_CMD &hm_l LGUI S   // GUId on middle fingers
     #define _E_CMD &hm_r RGUI E
     #define _D_CTL &hm_l LCTRL D  // Control on index down
     #define _H_CTL &hm_r RCTRL H
     #define _R_OPT &hm_l LALT R   // Option on ring finger
     #define _I_OPT &hm_r RALT I
 
-    // MacOS shortcuts
-    #define _1PASS &kp LG(BSLH)      // 1Password
-    #define _APEX  &kp LC(UP)        // App exposé
-    #define _FQUIT &kp LA(LG(ESC))   // Force quit
-    #define _MCTL  &kp LC(DOWN)      // Mission control
-    #define _SCRNS &kp LG(LS(N4))    // Screenshot
-    #define _EMOJI &kp LC(LG(SPACE)) // Emoji picker
-    #define _NEXTS &kp LC(RIGHT)     // Next screen
-    #define _PREVS &kp LC(LEFT)      // Previous screen
-
     keymap {
         compatible = "zmk,keymap";
 
-        dvorak_layer { bindings = <
-            &kp EQUAL    &kp N1       &kp N2       &kp N3       &kp N4      &kp N5      &tog 1                                                                                      &mo 3       &kp N6      &kp N7     &kp N8      &kp N9      &kp N0      &kp BSLH
+        default_layer { bindings = <
+            &kp EQUAL    &kp N1       &kp N2       &kp N3       &kp N4      &kp N5      &tog 1                                                                                      &mo 3       &kp N6      &kp N7     &kp N8      &kp N9      &kp N0      &kp BSLH 
             &kp ESC      &kp SQT      &kp COMMA    &kp PERIOD   &kp P       &kp Y       &none                                                                                       &none       &kp F       &kp G      &kp C       &kp R       &kp L       &kp SLASH
             &kp TAB      &kp A        &kp O        &kp E        &kp I       &kp U       &mo 3               &kp LCTRL   &kp LALT                 &kp LGUI    &kp RCTRL              &none       &kp D       &kp H      &kp T       &kp N       &kp S       &kp MINUS
             &kp LSHFT    &kp SEMI     &kp Q        &kp J        &kp K       &kp X               &none       &none       &kp HOME   &none &none   &kp PG_UP   &none       &none                  &kp B       &kp M      &kp W       &kp V       &kp Z       &kp RSHFT
             &mo 2        &kp GRAVE    &kp CAPS     &kp LEFT     &kp RIGHT                       &kp BSPC    &kp DEL     &kp END                  &kp PG_DN   &kp ENTER   &kp SPACE                          &kp UP     &kp DOWN    &kp LBKT    &kp RBKT    &mo 2
         >; };
+        /*      Left LT <gap> RT Right
+                    7 - - - 7
+                    7 - - - 7
+                    7 2 - 2 7
+                    6 3 2 3 6
+                    5 3 - 3 5
+        */
+
 
         // only partly done; edge-rows & tap-mods missing
         colemak_layer { bindings = <
@@ -141,17 +139,6 @@
   &none         &none         &none    &bl BL_INC    &bl BL_DEC  &rgb_ug RGB_TOG                        &bl BL_TOG        &none         &none    &bl BL_TOG  &rgb_ug RGB_TOG    &bl BL_INC    &bl BL_DEC                   &none   &none   &none
             >;
         };
-
-        layer_nav {
-            bindings = <
- &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans    &trans     &trans  &trans  &trans  &trans
- &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &kp HOME  &kp PG_UP  &trans  &trans  &trans
- &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans                       &trans  &trans  &trans  &kp LEFT_ARROW  &kp UP_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &trans
- &trans  &trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans    &trans     &trans  &trans  &trans  &trans          &trans       &kp END       &kp PG_DN           &trans  &trans  &trans
- &trans  &trans  &trans  &trans  &trans  &trans             &to 0  &trans  &trans    &trans     &trans  &trans  &trans  &trans          &trans        &trans
-            >;
-        };
-
 
 
 
