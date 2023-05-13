@@ -102,15 +102,15 @@
     };
   };
 
-    // Home row mods
-    #define _T_SFT &hm_l LSHFT T  // Shift on index fingers
-    #define _N_SFT &hm_r RSHFT N
-    #define _S_CMD &hm_l LGUI S   // GUId on middle fingers
-    #define _E_CMD &hm_r RGUI E
-    #define _D_CTL &hm_l LCTRL D  // Control on index down
-    #define _H_CTL &hm_r RCTRL H
-    #define _R_OPT &hm_l LALT R   // Option on ring finger
-    #define _I_OPT &hm_r RALT I
+    // Home row mods -- ??EW: how deze work?
+    // #define _T_SFT &hm_l LSHFT T  // Shift on index fingers
+    // #define _N_SFT &hm_r RSHFT N
+    // #define _S_CMD &hm_l LGUI S   // GUId on middle fingers
+    // #define _E_CMD &hm_r RGUI E
+    // #define _D_CTL &hm_l LCTRL D  // Control on index down
+    // #define _H_CTL &hm_r RCTRL H
+    // #define _R_OPT &hm_l LALT R   // Option on ring finger
+    // #define _I_OPT &hm_r RALT I
 
 
 
@@ -127,12 +127,24 @@
                           68  69
                     70 71 72  73 74 75
         */
-        default_layer { bindings = <
-            &kp EQUAL    &kp N1       &kp N2       &kp N3       &kp N4      &kp N5      &tog 1                                 &mo 3       &kp N6      &kp N7     &kp N8      &kp N9      &kp N0      &kp BSLH 
-            &kp ESC      &kp SQT      &kp COMMA    &kp PERIOD   &kp P       &kp Y       &tog 2                                 _x_         &kp F       &kp G      &kp C       &kp R       &kp L       &kp SLASH
-            &kp TAB      &kp A        &kp O        &kp E        &kp I       &kp U       &mo 3                                  _x_         &kp D       &kp H      &kp T       &kp N       &kp S       &kp MINUS
-            &kp LSHFT    &kp SEMI     &kp Q        &kp J        &kp K       &kp X                                                          &kp B       &kp M      &kp W       &kp V       &kp Z       &kp RSHFT
-            &mo 2        &kp GRAVE    &kp CAPS     &kp LEFT     &kp RIGHT                                                                              &kp UP     &kp DOWN    &kp LBKT    &kp RBKT    &mo 2
+
+        /***** DVORAK / default layer 0 *****/
+        #define _P_CTL   &hm_l LCTRL P  // Control on index
+        #define _G_CTL   &hm_r RCTRL G
+        #define _DOT_OPT &hm_l LALT DOT   // Alt on ring finger
+        #define _C_OPT   &hm_r RALT C
+        #define _CMA_SFT &hm_l LSHFT COMMA  // Shift on ring fingers
+        #define _R_SFT   &hm_r RSHFT R
+        #define _SQT_CMD &hm_l LGUI SQT   // GUI/Win on pinkie fingers
+        #define _L_CMD   &hm_r RGUI L
+        // TOPROW BEFORE MODS:    &kp ESC      &kp SQT      &kp COMMA    &kp PERIOD   &kp P       &kp Y       &tog 2                                 _x_         &kp F       &kp G      &kp C       &kp R       &kp L       &kp SLASH
+        
+        dvorak_layer { bindings = <
+            &kp EQUAL    &kp N1       &kp N2       &kp N3      &kp N4      &kp N5      &tog 1                                 &mo 3       &kp N6      &kp N7     &kp N8      &kp N9      &kp N0      &kp BSLH 
+            &kp ESC      _SQT_CMD     _CMA_SFT     _DOT_OPT    &kp _P_CTL  &kp Y       &tog 2                                 _x_         &kp F       &kp G      &kp C       &kp R       &kp L       &kp SLASH
+            &kp TAB      &kp A        &kp O        &kp E       &kp I       &kp U       &mo 3                                  _x_         &kp D       &kp H      &kp T       &kp N       &kp S       &kp MINUS
+            &kp LSHFT    &kp SEMI     &kp Q        &kp J       &kp K       &kp X                                                          &kp B       &kp M      &kp W       &kp V       &kp Z       &kp RSHFT
+            &mo 2        &kp GRAVE    &kp CAPS     &kp LEFT    &kp RIGHT                                                                              &kp UP     &kp DOWN    &kp LBKT    &kp RBKT    &mo 2
                                                                                         &kp LCTRL   &kp LALT      &kp LGUI    &kp RCTRL
                                                                                                    &kp HOME        &kp PG_UP   
                                                                             &kp BSPC  &kp DEL     &kp END           &kp PG_DN   &kp ENTER   &kp SPACE
