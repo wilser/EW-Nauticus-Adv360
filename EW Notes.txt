@@ -2,3 +2,5 @@ EW Notes
 
     - adv360.keymap seems the only file need to edit / unless split out some *.dtsi to include and if edit those sections
     - keymap.json = seems only needed to drive the online GUI
+
+    [ ] How to make row-mods / holds work?
