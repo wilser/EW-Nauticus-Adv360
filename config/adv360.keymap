@@ -136,8 +136,7 @@
         
         dvorak_layer { bindings = <
             &kp EQUAL    &kp N1       &kp N2       &kp N3      &kp N4      &kp N5      &to 1                                 &mo 3       &kp N6      &kp N7     &kp N8      &kp N9      &kp N0      &kp BSLH 
-          /*&kp ESC      _SQT_CMD     _CMA_SFT     _DOT_OPT    &kp _P_CTL  &kp Y       &to 2                                 _x_         &kp F       &kp G      &kp C       &kp R       &kp L       &kp SLASH*/
-            &kp ESC      _SQT_CMD     _CMA_SFT     _DOT_OPT    _P_CTL      &kp Y       &to 2                                 _x_         &kp F       &kp G      &kp C       &kp R       &kp L       &kp SLASH
+            &kp ESC      _SQT_CMD     _CMA_SFT     _DOT_OPT    _P_CTL      &kp Y       &to 2                                 _x_         &kp F       _G_CTL     _C_OPT      _R_SFT      _L_CMD      &kp SLASH
             /* ↑ trying row-mod keys | ↓ plain version */
           /*&kp ESC      &kp SQT      &kp COMMA    &kp PERIOD  &kp P       &kp Y       &to 2                                 _x_         &kp F       &kp G      &kp C       &kp R       &kp L       &kp SLASH*/
             &kp TAB      &kp A        &kp O        &kp E       &kp I       &kp U       &mo 3                                 _x_         &kp D       &kp H      &kp T       &kp N       &kp S       &kp MINUS
