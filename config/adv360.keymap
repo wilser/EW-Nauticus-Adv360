@@ -155,20 +155,20 @@
         layer_fn {
             bindings = <
  &kp F1  &kp F2  &kp F3                &kp F4                 &kp F5  &kp F6            &tog 1   &mo 3  &kp F7     &kp F8     &kp F9        &kp F10  &kp F11  &kp F12
- &trans  &trans  &trans        &kp LEFT_BRACE        &kp RIGHT_BRACE  &trans             &none   &none  &trans  &kp GRAVE  &kp SLASH  &kp BACKSLASH   &trans   &trans
- &trans  &kp LT  &kp GT  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &trans             &none  &trans  &trans                               &trans   &trans    &none  &kp HASH  &kp COLON        &kp SEMI   &kp EQUAL  &trans  &trans
- &trans  &trans  &trans      &kp LEFT_BRACKET      &kp RIGHT_BRACKET  &trans             &none   &none  &trans      &none      &none         &trans    &none    &none    &trans  &kp MINUS  &kp UNDERSCORE  &kp DOLLAR  &trans  &trans
- &trans  &trans  &trans                &trans                 &trans  &trans            &trans  &trans  &trans     &trans     &trans         &trans   &trans   &trans    &trans     &trans
+ ___  ___  ___        &kp LEFT_BRACE        &kp RIGHT_BRACE  ___             _x_   _x_  ___  &kp GRAVE  &kp SLASH  &kp BACKSLASH   ___   ___
+ ___  &kp LT  &kp GT  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  ___             _x_  ___  ___                               ___   ___    _x_  &kp HASH  &kp COLON        &kp SEMI   &kp EQUAL  ___  ___
+ ___  ___  ___      &kp LEFT_BRACKET      &kp RIGHT_BRACKET  ___             _x_   _x_  ___      _x_      _x_         ___    _x_    _x_    ___  &kp MINUS  &kp UNDERSCORE  &kp DOLLAR  ___  ___
+ ___  ___  ___                ___                 ___  ___            ___  ___  ___     ___     ___         ___   ___   ___    ___     ___
             >;
         };
 
         layer_mod {
             bindings = <
-  &none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3     &bt BT_SEL 4                             &none       &trans  &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                   &none
-  &none         &none         &none         &none         &none            &none                       &bootloader  &bootloader         &none         &none            &none         &none         &none                   &none
-  &none         &none         &none         &none         &none            &none            &rgb_ug RGB_MEFS_CMD 5   &bt BT_CLR         &none                                   &bt BT_CLR    &bt BT_CLR  &rgb_ug RGB_MEFS_CMD 5   &none   &none   &none   &none   &none   &none
-  &none         &none         &none         &none         &none            &none                             &none        &none         &none         &none            &none         &none         &none                   &none   &none   &none   &none   &none   &none   &none
-  &none         &none         &none    &bl BL_INC    &bl BL_DEC  &rgb_ug RGB_TOG                        &bl BL_TOG        &none         &none    &bl BL_TOG  &rgb_ug RGB_TOG    &bl BL_INC    &bl BL_DEC                   &none   &none   &none
+  _x_  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3     &bt BT_SEL 4                             _x_       ___  &bt BT_SEL 0  &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                   _x_
+  _x_         _x_         _x_         _x_         _x_            _x_                       &bootloader  &bootloader         _x_         _x_            _x_         _x_         _x_                   _x_
+  _x_         _x_         _x_         _x_         _x_            _x_            &rgb_ug RGB_MEFS_CMD 5   &bt BT_CLR         _x_                                   &bt BT_CLR    &bt BT_CLR  &rgb_ug RGB_MEFS_CMD 5   _x_   _x_   _x_   _x_   _x_   _x_
+  _x_         _x_         _x_         _x_         _x_            _x_                             _x_        _x_         _x_         _x_            _x_         _x_         _x_                   _x_   _x_   _x_   _x_   _x_   _x_   _x_
+  _x_         _x_         _x_    &bl BL_INC    &bl BL_DEC  &rgb_ug RGB_TOG                        &bl BL_TOG        _x_         _x_    &bl BL_TOG  &rgb_ug RGB_TOG    &bl BL_INC    &bl BL_DEC                   _x_   _x_   _x_
             >;
         };
 
