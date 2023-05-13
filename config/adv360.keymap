@@ -137,11 +137,12 @@
         #define _R_SFT   &hm_r RSHFT R
         #define _SQT_CMD &hm_l LGUI SQT   // GUI/Win on pinkie fingers
         #define _L_CMD   &hm_r RGUI L
-        // TOPROW BEFORE MODS:    &kp ESC      &kp SQT      &kp COMMA    &kp PERIOD   &kp P       &kp Y       &tog 2                                 _x_         &kp F       &kp G      &kp C       &kp R       &kp L       &kp SLASH
         
         dvorak_layer { bindings = <
             &kp EQUAL    &kp N1       &kp N2       &kp N3      &kp N4      &kp N5      &tog 1                                 &mo 3       &kp N6      &kp N7     &kp N8      &kp N9      &kp N0      &kp BSLH 
-            &kp ESC      _SQT_CMD     _CMA_SFT     _DOT_OPT    &kp _P_CTL  &kp Y       &tog 2                                 _x_         &kp F       &kp G      &kp C       &kp R       &kp L       &kp SLASH
+            /*&kp ESC      _SQT_CMD     _CMA_SFT     _DOT_OPT    &kp _P_CTL  &kp Y       &tog 2                                 _x_         &kp F       &kp G      &kp C       &kp R       &kp L       &kp SLASH*/
+            /* ↑ trying row-mod keys | ↓ plain version */
+            &kp ESC      &kp SQT      &kp COMMA    &kp PERIOD  &kp P       &kp Y       &tog 2                                 _x_         &kp F       &kp G      &kp C       &kp R       &kp L       &kp SLASH
             &kp TAB      &kp A        &kp O        &kp E       &kp I       &kp U       &mo 3                                  _x_         &kp D       &kp H      &kp T       &kp N       &kp S       &kp MINUS
             &kp LSHFT    &kp SEMI     &kp Q        &kp J       &kp K       &kp X                                                          &kp B       &kp M      &kp W       &kp V       &kp Z       &kp RSHFT
             &mo 2        &kp GRAVE    &kp CAPS     &kp LEFT    &kp RIGHT                                                                              &kp UP     &kp DOWN    &kp LBKT    &kp RBKT    &mo 2
