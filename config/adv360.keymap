@@ -187,8 +187,8 @@
             ___    ___       ___    ___    ___    ___                                                  &kp SPACE    &kp N1      &kp N2     &kp N3       &kp KP_PLUS      ___
             ___    ___       ___    ___    ___                                                                      ___         ___        &kp KP_DOT   &kp KP_ENTER     &to L_DVK 
                                                                 ___    ___        ___    ___
-                                                                    ___          ___
-                                                        ___    ___    ___            ___    ___    &kp N0
+                                                                    ___            ___
+                                                    ___    ___    ___               ___    ___    &kp N0
 
         /* [ ] TODO
                 [ ] EU symbol
@@ -204,8 +204,8 @@
             ___    ___    ___    ___    ___    ___                                                  ___    ___    ___    ___    ___    ___
             ___    ___    ___    ___    ___                                                                ___    ___    ___    ___    ___
                                                             ___    ___        ___    ___
-                                                                ___          ___
-                                                    ___    ___    ___            ___    ___    ___
+                                                                  ___          ___
+                                                   ___    ___    ___            ___    ___    ___
         >; };
 
         /** L4: Nav & Edit **/
@@ -216,11 +216,16 @@
             ___    ___    ___    ___    ___    ___                                                  ___    ___    ___    ___    ___    ___
             ___    ___    ___    ___    ___                                                                ___    ___    ___    ___    ___
                                                             ___    ___        ___    ___
-                                                                ___          ___
-                                                    ___    ___    ___            ___    ___    ___
+                                                                  ___          ___
+                                                   ___    ___    ___            ___    ___    ___
         >; };
 
         /** L5: Utils & Specials **/
+        /* The BT/Bklt have some issue
+              BL_TOG √
+              RgbMem []
+        
+        */
         #define _BTLD &bootloader
         #define _RgbMem &rgb_ug RGB_MEFS_CMD
         #define _RgbTog &rgb_ug RGB_TOG
@@ -232,14 +237,15 @@
             ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
             ___    ___    ___    ___    ___    ___                                                  ___    ___    ___    ___    ___    ___
             _BTLD  ___    ___    ___    ___                                                                ___    ___    ___    ___    _BTLD
-                                                      _RgbMem    _RgbTog      _RgbTog    _RgbMem
+                                                          ___    ___          ___    _RgbMem
                                                                 ___            _BkltTog
-
-/*
-                                                            ___    ___        ___    ___
-                                                                _BkltTog       _BkltTog
-*/
                                                  ___    ___    ___              ___    ___    ___
+
+/* wanted:
+                                                     _RgbMem    _RgbTog      _RgbTog    _RgbMem
+                                                               _BkltTog       _BkltTog
+                                                 ___    ___    ___              ___    ___    ___
+*/
         >; };
         #undef _BTLD
         #undef _RgbMem
