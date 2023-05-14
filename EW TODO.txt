@@ -1,0 +1,6 @@
+EW TODO
+    [ ] figure how other layer-holds work
+    [ ] figure how to make Hyper & Meh
+    [ ] figure plain key-hold for other function
+    [ ] revisit the various conditional holds (diff. options, diff. timings) / & see new-ish blog entries on other options recently added
+    [ ] seems "sticky layers" are like the One-Shot-KEY from Moonlander

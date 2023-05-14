@@ -37,21 +37,24 @@
                   28 29 30 31 32 33 34 \
                   42 43 44 45 46 47 \
                   54 55 56 57 58  
-
 #define KEYS_RIGHT 7  8  9  10 11 12 13 \
                   21 22 23 24 25 26 27 \
                   35 36 37 38 39 40 41 \
                      48 49 50 51 52 53 \
                         59 60 61 62 63
-
 #define THUMBS_LEFT 64 65 68 70 71 72
-
 #define THUMBS_RIGHT 66 67 69 73 74 75
-
 #define THUMBS THUMBS_LEFT THUMBS_RIGHT
 
 #define ___ &trans
 #define _x_ &none
+#define _BL_ &bootloader
+#define L_DVK 0
+#define L_CMK 1
+#define L_NUM 2
+#define L_FNC 3
+#define L_NVE 4
+#define L_UTL 5
 
 &lt {
     quick-tap-ms = <300>;
@@ -124,7 +127,8 @@
                     70 71 72  73 74 75
         */
 
-        /***** DVORAK / default layer 0 *****/
+        /** L0: DVORAK (default) **/
+        // top-row mods:
         #define _P_CTL   &hm_l LCTRL P  // Control on index
         #define _G_CTL   &hm_r RCTRL G
         #define _DOT_OPT &hm_l LALT DOT   // Alt on ring finger
@@ -135,23 +139,35 @@
         #define _L_CMD   &hm_r RGUI L
         
         dvorak_layer { bindings = <
-            &kp EQUAL    &kp N1       &kp N2       &kp N3      &kp N4      &kp N5      &to 1                                 &mo 3       &kp N6      &kp N7     &kp N8      &kp N9      &kp N0      &kp BSLH 
-            &kp ESC      _SQT_CMD     _CMA_SFT     _DOT_OPT    _P_CTL      &kp Y       &to 2                                 _x_         &kp F       _G_CTL     _C_OPT      _R_SFT      _L_CMD      &kp SLASH
-            /* ↑ trying row-mod keys | ↓ plain version */
-          /*&kp ESC      &kp SQT      &kp COMMA    &kp PERIOD  &kp P       &kp Y       &to 2                                 _x_         &kp F       &kp G      &kp C       &kp R       &kp L       &kp SLASH*/
-            &kp TAB      &kp A        &kp O        &kp E       &kp I       &kp U       &mo 3                                 _x_         &kp D       &kp H      &kp T       &kp N       &kp S       &kp MINUS
-            &kp LSHFT    &kp SEMI     &kp Q        &kp J       &kp K       &kp X                                                         &kp B       &kp M      &kp W       &kp V       &kp Z       &kp RSHFT
-            &mo 2        &kp GRAVE    &kp CAPS     &kp LEFT    &kp RIGHT                                                                             &kp UP     &kp DOWN    &kp LBKT    &kp RBKT    &mo 2
-                                                                                        &kp LCTRL   &kp LALT      &kp LGUI    &kp RCTRL
-                                                                                                   &kp HOME        &kp PG_UP   
-                                                                            &kp BSPC  &kp DEL     &kp END           &kp PG_DN   &kp ENTER   &kp SPACE
+            &kp EQUAL    &kp N1       &kp N2       &kp N3      &kp N4        &kp N5        &to L_CMK                                 &mo L_UTL   &kp N6      &kp N7     &kp N8      &kp N9      &kp N0      &kp BSLH 
+            &kp ESC      _SQT_CMD     _CMA_SFT     _DOT_OPT    _P_CTL        &kp Y         &to L_NUM                                 _x_         &kp F       _G_CTL     _C_OPT      _R_SFT      _L_CMD      &kp SLASH
+            &kp TAB      &kp A        &kp O        &kp E       &kp I         &kp U         &mo L_UTL                                 &mo L_UTL   &kp D       &kp H      &kp T       &kp N       &kp S       &kp MINUS
+            &kp LSHFT    &kp SEMI     &kp Q        &kp J       &lt L_NUM K   &lt L_UTL X                                                             &kp B       &kp M      &kp W       &kp V       &kp Z       &kp COLON
+            &mo 2        &kp GRAVE    &kp CAPS     &kp LEFT    &kp RIGHT                                                                                 &kp UP     &kp DOWN    &kp LBKT    &kp RBKT    &to L_NUM
+                                                                                             &kp LCTRL   &kp LALT      &kp LGUI    &kp RCTRL
+                                                                                                        &kp HOME        &kp PG_UP   
+                                                                                 &kp BSPC  &kp DEL     &kp END           &kp PG_DN   &kp ENTER   &kp SPACE
+            /* backup of ROW-2 version without mods
+            &kp ESC      &kp SQT      &kp COMMA    &kp PERIOD  &kp P       &kp Y       &to 2                                 _x_         &kp F       &kp G      &kp C       &kp R       &kp L       &kp SLASH
+            */
         >; };
+
+        /** L1: COLEMAK **/
+        // top-row mods:
+        #define _Q_CMD   &hm_l LGUI Q   // GUI/Win on pinkie fingers
+        #define _F_OPT   &hm_l LALT F   // Alt on ring finger
+        #define _W_SFT   &hm_l LSHFT W  // Shift on ring fingers
+        #define _P_CTL   &hm_l LCTRL P  // Ctrl on index
+        #define _L_CTL   &hm_r RCTRL L  // Ctrl
+        #define _U_OPT   &hm_r RALT U   // Shift
+        #define _Y_SFT   &hm_r RSHFT Y  // Alt
+        #define _SQT_CMD &hm_r RGUI SQT // GUI/Win
 
         // only partly done; edge-rows & tap-mods missing
         colemak_layer { bindings = <
-            &kp EQUAL    &kp N1       &kp N2       &kp N3       &kp N4      &kp N5      &to 0                                  &mo 3       &kp N6      &kp N7     &kp N8      &kp N9      &kp N0      &kp BSLH
-            &kp ESC      &kp Q        &kp W        &kp F        &kp P       &kp B       _x_                                    _x_         &kp J       &kp L      &kp U       &kp Y       &kp SQT     &kp F24
-            &kp TAB      &kp A        &kp R        &kp S        &kp T       &kp G       &mo 3                                  _x_         &kp M       &kp N      &kp E       &kp I       &kp O       &kp MINUS
+            &kp EQUAL    &kp N1       &kp N2       &kp N3       &kp N4      &kp N5      &to L_DVK                              &mo L_UTL   &kp N6      &kp N7     &kp N8      &kp N9      &kp N0      &kp BSLH
+            &kp ESC      _Q_CMD       _F_OPT       _W_SFT       _P_CTL      &kp B       _x_                                    _x_         &kp J       _L_CTL     _U_OPT      _Y_SFT      _SQT_CMD    &kp F24
+            &kp TAB      &kp A        &kp R        &kp S        &kp T       &kp G       &mo L_UTL                              &mo L_UTL   &kp M       &kp N      &kp E       &kp I       &kp O       &kp MINUS
             &kp LSHFT    &kp Z        &kp X        &kp C        &kp D       &kp V                                                          &kp K       &kp H      &kp COMMA   &kp DOT     &kp SLASH   &kp F23
             &mo 2        &kp GRAVE    &kp CAPS     &kp LEFT     &kp RIGHT                                                                              &kp UP     &kp DOWN    &kp LBKT    &kp RBKT    &mo 2
                                                                                         &kp LCTRL   &kp LALT      &kp LGUI    &kp RCTRL
@@ -159,10 +175,57 @@
                                                                             &kp BSPC  &kp DEL     &kp END           &kp PG_DN   &kp ENTER   &kp SPACE
         >; };
 
+        /** L2: Numbers etc **/
+        numpad_layer { bindings = <
+            ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
+            ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
+            ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
+            ___    ___    ___    ___    ___    ___                                                  ___    ___    ___    ___    ___    ___
+            ___    ___    ___    ___    ___                                                                ___    ___    ___    ___    ___
+                                                            ___    ___        ___    ___
+                                                                ___          ___
+                                                    ___    ___    ___            ___    ___    ___
+        >; };
+
+        /** L3: Function Keys **/
+        fnkeys_layer { bindings = <
+            ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
+            ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
+            ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
+            ___    ___    ___    ___    ___    ___                                                  ___    ___    ___    ___    ___    ___
+            ___    ___    ___    ___    ___                                                                ___    ___    ___    ___    ___
+                                                            ___    ___        ___    ___
+                                                                ___          ___
+                                                    ___    ___    ___            ___    ___    ___
+        >; };
+
+        /** L4: Nav & Edit **/
+        navnedit_layer { bindings = <
+            ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
+            ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
+            ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
+            ___    ___    ___    ___    ___    ___                                                  ___    ___    ___    ___    ___    ___
+            ___    ___    ___    ___    ___                                                                ___    ___    ___    ___    ___
+                                                            ___    ___        ___    ___
+                                                                ___          ___
+                                                    ___    ___    ___            ___    ___    ___
+        >; };
+
+        /** L5: Utils & Specials **/
+        util_layer { bindings = <
+            ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
+            ___    ___    ___    ___    ___    ___    _BL_                                   _BL_   ___    ___    ___    ___    ___    ___
+            ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
+            ___    ___    ___    ___    ___    ___                                                  ___    ___    ___    ___    ___    ___
+            _BL_   ___    ___    ___    ___                                                                ___    ___    ___    ___    _BL_
+                                                            ___    ___        ___    ___
+                                                                ___          ___
+                                                    ___    ___    ___            ___    ___    ___
+        >; };
 
 
-// TO HERE
 
+/*
         layer_fn {
             bindings = <
  &kp F1  &kp F2  &kp F3                &kp F4                 &kp F5  &kp F6            &tog 1   &mo 3  &kp F7     &kp F8     &kp F9        &kp F10  &kp F11  &kp F12
@@ -182,7 +245,7 @@
   _x_         _x_         _x_    &bl BL_INC    &bl BL_DEC  &rgb_ug RGB_TOG                        &bl BL_TOG        _x_         _x_    &bl BL_TOG  &rgb_ug RGB_TOG    &bl BL_INC    &bl BL_DEC                   _x_   _x_   _x_
             >;
         };
-
+*/
 
 
 
@@ -213,7 +276,28 @@
         42 43 44 45 46 47        -  - 68  -  -  69  -  -      48 49 50 51 52 53
         54 55 56 57 58          70 71 72        73 74 75         59 60 61 62 63
 
+    --------------------------------------------------
+    STARTER - all Nones
+        _x_    _x_    _x_    _x_    _x_    _x_    _x_                                    _x_    _x_    _x_    _x_    _x_    _x_    _x_
+        _x_    _x_    _x_    _x_    _x_    _x_    _x_                                    _x_    _x_    _x_    _x_    _x_    _x_    _x_
+        _x_    _x_    _x_    _x_    _x_    _x_    _x_                                    _x_    _x_    _x_    _x_    _x_    _x_    _x_
+        _x_    _x_    _x_    _x_    _x_    _x_                                                  _x_    _x_    _x_    _x_    _x_    _x_
+        _x_    _x_    _x_    _x_    _x_                                                                _x_    _x_    _x_    _x_    _x_
+                                                        _x_    _x_        _x_    _x_
+                                                            _x_          _x_
+                                                _x_    _x_    _x_            _x_    _x_    _x_
 
+    STARTER - all Trans
+        ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
+        ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
+        ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
+        ___    ___    ___    ___    ___    ___                                                  ___    ___    ___    ___    ___    ___
+        ___    ___    ___    ___    ___                                                                ___    ___    ___    ___    ___
+                                                        ___    ___        ___    ___
+                                                            ___          ___
+                                                ___    ___    ___            ___    ___    ___
+
+    --------------------------------------------------
     REF Qwerty from default file:
         layer_keypad {
             bindings = <
@@ -224,8 +308,6 @@
                 &mo 2  &kp GRAVE  &kp CAPS  &kp LEFT  &kp RIGHT  &kp BSPC            &kp DEL    &kp END  &kp PG_DN   &kp ENTER     &kp KP_N0         &kp UP         &kp DOWN  &kp KP_DOT  &kp RBKT      &mo 2
             >;
         };
-
-
 
         Dvorak - think follows normal layout:
         default_layer { bindings = <
