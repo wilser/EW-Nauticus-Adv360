@@ -182,11 +182,11 @@
 
         /** L2: Numbers etc **/
         numpad_layer { bindings = <
-            ___    ___       ___    ___    ___    ___    &to L_DVK                              ___    ___         &kp DOLLAR  &kp HASH   &kp PERCENT  &kp EQUAL        _x_
-            ___    ___       ___    ___    ___    ___    ___                                    ___    &kp BSPC    &kp N7      &kp N8     &kp N9       &kp KP_ASTERISK  &kp KP_DIVIDE
-            ___    &kp BSPC  ___    ___    ___    ___    ___                                    ___    &kp LPAR    &kp N4      &kp N5     &kp N6       &kp RPAR         &kp KP_MINUS
-            ___    ___       ___    ___    ___    ___                                                  &kp SPACE   &kp N1      &kp N2     &kp N3       &kp KP_PLUS      ___
-            ___    ___       ___    ___    ___                                                                     ___         ___        &kp KP_DOT   &kp KP_ENTER     &to L_DVK 
+            ___    ___       ___    ___    ___    ___    &to L_DVK                              ___    &m_ASCII_EU  &kp DOLLAR  &kp HASH   &kp PERCENT  &kp EQUAL        _x_
+            ___    ___       ___    ___    ___    ___    ___                                    ___    &kp BSPC     &kp N7      &kp N8     &kp N9       &kp KP_ASTERISK  &kp KP_DIVIDE
+            ___    &kp BSPC  ___    ___    ___    ___    ___                                    ___    &kp LPAR     &kp N4      &kp N5     &kp N6       &kp RPAR         &kp KP_MINUS
+            ___    ___       ___    ___    ___    ___                                                  &kp SPACE    &kp N1      &kp N2     &kp N3       &kp KP_PLUS      ___
+            ___    ___       ___    ___    ___                                                                      ___         ___        &kp KP_DOT   &kp KP_ENTER     &to L_DVK 
                                                                 ___    ___        ___    ___
                                                                     ___          ___
                                                         ___    ___    ___            ___    ___    &kp N0

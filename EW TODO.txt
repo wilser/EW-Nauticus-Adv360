@@ -1,13 +1,17 @@
 EW TODO
-    [ ] figure how other layer-holds work
+    [ ] !! Toprow Mods not being combined...?? 
+    [V] figure how other layer-holds work
     [ ] figure how to make Hyper & Meh
     [ ] figure plain key-hold for other function
+    [ ] figure tap-tap & tap-hold ways
+    [ ] figure basic ASCII code macro
     [ ] revisit the various conditional holds (diff. options, diff. timings) / & see new-ish blog entries on other options recently added
     [ ] seems "sticky layers" are like the One-Shot-KEY from Moonlander
     [ ] how to 'hold to shift' like the punctuation
+
 
 Maybe
     [ ] whole "activate layer, but it's a stack" concept? (seems different than the standard "transparent" setting)
 
 
-    [ ] Win+; for Emoji
+   
