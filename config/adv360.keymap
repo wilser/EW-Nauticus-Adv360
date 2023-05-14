@@ -131,16 +131,16 @@
         // top-row mods:
         #define _P_CTL   &hm_l LCTRL P  // Control on index
         #define _G_CTL   &hm_r RCTRL G
-        #define _DOT_OPT &hm_l LALT DOT   // Alt on ring finger
-        #define _C_OPT   &hm_r RALT C
+        #define _DOT_ALT &hm_l LALT DOT   // Alt on ring finger
+        #define _C_ALT   &hm_r RALT C
         #define _CMA_SFT &hm_l LSHFT COMMA  // Shift on ring fingers
         #define _R_SFT   &hm_r RSHFT R
-        #define _SQT_CMD &hm_l LGUI SQT   // GUI/Win on pinkie fingers
-        #define _L_CMD   &hm_r RGUI L
+        #define _SQT_GUI &hm_l LGUI SQT   // GUI/Win on pinkie fingers
+        #define _L_GUI   &hm_r RGUI L
         
         dvorak_layer { bindings = <
             &kp EQUAL    &kp N1       &kp N2       &kp N3      &kp N4        &kp N5        &to L_CMK                                 &mo L_UTL   &kp N6      &kp N7     &kp N8      &kp N9      &kp N0      &kp BSLH 
-            &kp ESC      _SQT_CMD     _CMA_SFT     _DOT_OPT    _P_CTL        &kp Y         &to L_NUM                                 _x_         &kp F       _G_CTL     _C_OPT      _R_SFT      _L_CMD      &kp SLASH
+            &kp ESC      _SQT_GUI     _CMA_SFT     _DOT_ALT    _P_CTL        &kp Y         &to L_NUM                                 _x_         &kp F       _G_CTL     _C_ALT      _R_SFT      _L_GUI      &kp SLASH
             &kp TAB      &kp A        &kp O        &kp E       &kp I         &kp U         &mo L_UTL                                 &mo L_UTL   &kp D       &kp H      &kp T       &kp N       &kp S       &kp MINUS
             &kp LSHFT    &kp SEMI     &kp Q        &kp J       &lt L_NUM K   &lt L_UTL X                                                             &kp B       &kp M      &kp W       &kp V       &kp Z       &kp COLON
             &mo 2        &kp GRAVE    &kp CAPS     &kp LEFT    &kp RIGHT                                                                                 &kp UP     &kp DOWN    &kp LBKT    &kp RBKT    &to L_NUM
@@ -154,19 +154,19 @@
 
         /** L1: COLEMAK **/
         // top-row mods:
-        #define _Q_CMD   &hm_l LGUI Q   // GUI/Win on pinkie fingers
-        #define _F_OPT   &hm_l LALT F   // Alt on ring finger
+        #define _Q_GUI   &hm_l LGUI Q   // GUI/Win on pinkie fingers
         #define _W_SFT   &hm_l LSHFT W  // Shift on ring fingers
+        #define _F_ALT   &hm_l LALT F   // Alt on middle finger
         #define _P_CTL   &hm_l LCTRL P  // Ctrl on index
         #define _L_CTL   &hm_r RCTRL L  // Ctrl
-        #define _U_OPT   &hm_r RALT U   // Shift
         #define _Y_SFT   &hm_r RSHFT Y  // Alt
-        #define _SQT_CMD &hm_r RGUI SQT // GUI/Win
+        #define _U_ALT   &hm_r RALT U   // Shift
+        #define _SQT_GUI &hm_r RGUI SQT // GUI/Win
 
         // only partly done; edge-rows & tap-mods missing
         colemak_layer { bindings = <
             &kp EQUAL    &kp N1       &kp N2       &kp N3       &kp N4      &kp N5      &to L_DVK                              &mo L_UTL   &kp N6      &kp N7     &kp N8      &kp N9      &kp N0      &kp BSLH
-            &kp ESC      _Q_CMD       _F_OPT       _W_SFT       _P_CTL      &kp B       _x_                                    _x_         &kp J       _L_CTL     _U_OPT      _Y_SFT      _SQT_CMD    &kp F24
+            &kp ESC      _Q_GUI       _W_SFT       _F_ALT       _P_CTL      &kp B       _x_                                    _x_         &kp J       _L_CTL     _U_ALT      _Y_SFT      _SQT_GUI    &kp F24
             &kp TAB      &kp A        &kp R        &kp S        &kp T       &kp G       &mo L_UTL                              &mo L_UTL   &kp M       &kp N      &kp E       &kp I       &kp O       &kp MINUS
             &kp LSHFT    &kp Z        &kp X        &kp C        &kp D       &kp V                                                          &kp K       &kp H      &kp COMMA   &kp DOT     &kp SLASH   &kp F23
             &mo 2        &kp GRAVE    &kp CAPS     &kp LEFT     &kp RIGHT                                                                              &kp UP     &kp DOWN    &kp LBKT    &kp RBKT    &mo 2
