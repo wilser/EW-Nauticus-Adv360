@@ -233,7 +233,7 @@
             ___    ___    ___    ___    ___    ___                                                  ___    ___    ___    ___    ___    ___
             _BTLD  ___    ___    ___    ___                                                                ___    ___    ___    ___    _BTLD
                                                             ___    ___        ___    ___
-                                                                ___          &bl BL_TOG
+                                                                ___            _BkltTog
 
 /*
                                                       _RgbMem    _RgbTog      _RgbTog    _RgbMem
@@ -241,7 +241,10 @@
 */
                                                  ___    ___    ___              ___    ___    ___
         >; };
-
+        #undef _BTLD
+        #undef _RgbMem
+        #undef _RgbTog
+        #undef _BkltTog
 
 
 /*
