@@ -222,15 +222,19 @@
 
         /** L5: Utils & Specials **/
         #define _BTLD &bootloader
+        #define _RgbMem &rgb_ug RGB_MEFS_CMD
+        #define _RgbTog &rgb_ug RGB_TOG
+        #define _BkltTog &bl BL_TOG
+
         util_layer { bindings = <
             ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
             ___    ___    ___    ___    ___    ___    _BTLD                                  _BTLD  ___    ___    ___    ___    ___    ___
             ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
             ___    ___    ___    ___    ___    ___                                                  ___    ___    ___    ___    ___    ___
             _BTLD  ___    ___    ___    ___                                                                ___    ___    ___    ___    _BTLD
-                                                            ___    ___        ___    ___
-                                                                ___          ___
-                                                    ___    ___    ___            ___    ___    ___
+                                                      _RgbMem    _RgbTog      _RgbTog    _RgbMem
+                                                                _BkltTog       _BkltTog
+                                                 ___    ___    ___              ___    ___    ___
         >; };
 
 
