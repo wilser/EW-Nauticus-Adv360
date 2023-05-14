@@ -152,6 +152,8 @@
             &kp ESC      &kp SQT      &kp COMMA    &kp PERIOD  &kp P       &kp Y       &to 2                                 _x_         &kp F       &kp G      &kp C       &kp R       &kp L       &kp SLASH
             */
         >; };
+        #define _SQT_GUI // undef because duplicates
+
 
         /** L1: COLEMAK **/
         // top-row mods:
@@ -178,10 +180,13 @@
             ; → (     ` → )     F23 → :     F24 → "     // And many of the Shift+___ cases.
         */
         >; };
+        #define _SQT_GUI // undef because duplicates
+
 
         /** L2: Numbers etc **/
         numpad_layer { bindings = <
-            ___    ___       ___    ___    ___    ___    &to L_DVK                              ___    &m_CHR_EU    &kp DOLLAR  &kp HASH   &kp PERCENT  &kp EQUAL        _x_
+        /*                                                                                           ↓ &m_CHR_EU once get working? */
+            ___    ___       ___    ___    ___    ___    &to L_DVK                              ___    _x_          &kp DOLLAR  &kp HASH   &kp PERCENT  &kp EQUAL        _x_
             ___    ___       ___    ___    ___    ___    ___                                    ___    &kp BSPC     &kp N7      &kp N8     &kp N9       &kp KP_ASTERISK  &kp KP_DIVIDE
             ___    &kp BSPC  ___    ___    ___    ___    ___                                    ___    &kp LPAR     &kp N4      &kp N5     &kp N6       &kp RPAR         &kp KP_MINUS
             ___    ___       ___    ___    ___    ___                                                  &kp SPACE    &kp N1      &kp N2     &kp N3       &kp KP_PLUS      ___

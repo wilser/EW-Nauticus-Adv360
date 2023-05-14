@@ -9,6 +9,7 @@ EW TODO
     [ ] seems "sticky layers" are like the One-Shot-KEY from Moonlander
     [ ] how to 'hold to shift' like the punctuation
     [ ] tinker w/ caps_word settings & char-list
+    [ ] combo helper #define: https://joshinator.de/posts/zmk-combo-helper/ **seems really useful
 
 
 Maybe
