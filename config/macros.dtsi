@@ -11,6 +11,18 @@ m_CHR_EU: m_CHR_EU{
         ;
 };
 
+/* try ZMK macro helper shortcut */
+ZMK_MACRO(m_SEL_WRD
+    wait-ms = <40>;
+    tap-ms = <40>;
+    bindings = <&kp LC(LEFT) &kp LC(LS(RIGHT)) >;
+    /* Ctrl+Arrow left, CTL+SFT+Arrow right */
+);
+
+
+
+
+
 /* examples below ↓ */
 
 macro_quotes: macro_quotes{
