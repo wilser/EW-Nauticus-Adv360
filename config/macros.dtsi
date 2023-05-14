@@ -17,6 +17,9 @@ m_CHR_EU: m_CHR_EU{
 
     WIP...
         [x] using functions inside one string &macro_tap NOT working; e.g. using LC(LEFT)
+                <&macro_tap &kp LC(LEFT) &kp LC(LS(RIGHT))>
+        [x] more simple didn't work - is it the FUNC uses?
+                <&kp L C(LEFT)>, <&kp LC(LS(RIGHT))>
 
 */
 
@@ -26,8 +29,7 @@ m_SEL_WRD: m_SEL_WRD{
     wait-ms = <40>;
     tap-ms = <40>;
     #binding-cells = <0>;
-    bindings = <&kp L C(LEFT)>, <&kp LC(LS(RIGHT))>;
-        /*= <&macro_tap &kp LC(LEFT) &kp LC(LS(RIGHT))> ;*/
+    bindings = <&kp A>, <&kp B>, <&kp C>;
 };
 
 /* try ZMK macro helper shortcut -- NOT WORKING
