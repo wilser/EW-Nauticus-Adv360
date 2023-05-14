@@ -8,6 +8,7 @@ EW TODO
     [ ] revisit the various conditional holds (diff. options, diff. timings) / & see new-ish blog entries on other options recently added
     [ ] seems "sticky layers" are like the One-Shot-KEY from Moonlander
     [ ] how to 'hold to shift' like the punctuation
+    [ ] tinker with capsWORD settings - like Char-list
 
 
 Maybe
