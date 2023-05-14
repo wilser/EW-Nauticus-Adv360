@@ -3,5 +3,5 @@ EW Notes
     - adv360.keymap seems the only file need to edit / unless split out some *.dtsi to include and if edit those sections
     - keymap.json = seems only needed to drive the online GUI
     - send Mod+CHAR like functions: <L|R><S|C|A|G> Left or Right | Shift, Ctrl, Alt, Win(GUI) - https://zmk.dev/docs/codes/modifiers 
-        E.g.: RC(LA(B)) sends Ctrl+Alt+B (using r-ctrl, and l-alt)
+        E.g.: &kp RC(LA(B)) sends Ctrl+Alt+B (using r-ctrl, and l-alt)
     &lt <#> <char> = Hold layer # unless quick then output <char>
