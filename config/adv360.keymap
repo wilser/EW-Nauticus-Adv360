@@ -100,18 +100,6 @@
     };
   };
 
-    // Home row mods -- ??EW: how deze work?
-    // #define _T_SFT &hm_l LSHFT T  // Shift on index fingers
-    // #define _N_SFT &hm_r RSHFT N
-    // #define _S_CMD &hm_l LGUI S   // GUId on middle fingers
-    // #define _E_CMD &hm_r RGUI E
-    // #define _D_CTL &hm_l LCTRL D  // Control on index down
-    // #define _H_CTL &hm_r RCTRL H
-    // #define _R_OPT &hm_l LALT R   // Option on ring finger
-    // #define _I_OPT &hm_r RALT I
-
-
-
     keymap {
         compatible = "zmk,keymap";
         /*
@@ -152,7 +140,7 @@
             &kp ESC      &kp SQT      &kp COMMA    &kp PERIOD  &kp P       &kp Y       &to 2                                 _x_         &kp F       &kp G      &kp C       &kp R       &kp L       &kp SLASH
             */
         >; };
-        #define _SQT_GUI // undef because duplicates
+        #undef _SQT_GUI // undef because duplicates
 
 
         /** L1: COLEMAK **/
@@ -180,7 +168,7 @@
             ; → (     ` → )     F23 → :     F24 → "     // And many of the Shift+___ cases.
         */
         >; };
-        #define _SQT_GUI // undef because duplicates
+        #undef _SQT_GUI // undef because duplicates
 
 
         /** L2: Numbers etc **/

@@ -5,3 +5,26 @@ EW Notes
     - send Mod+CHAR like functions: <L|R><S|C|A|G> Left or Right | Shift, Ctrl, Alt, Win(GUI) - https://zmk.dev/docs/codes/modifiers 
         E.g.: RC(LA(B)) sends Ctrl+Alt+B (using r-ctrl, and l-alt)
     &lt <#> <char> = Hold layer # unless quick then output <char>
+
+
+
+Macros to put back maybe?
+
+/*
+m_CHR_EU: m_CHR_EU{
+    compatible = "zmk,behavior-macro";
+    label = "m_CHR_EU";
+    wait-ms = <40>;
+    tap-ms = <40>;
+    #binding-cells = <0>;
+    bindings
+        = <&macro_press   &kp LALT>
+        , <&macro_tap     &kp KP_N0 &kp KP_N1 &kp KP_N2 &kp KP_N8>
+        , <&macro_release &kp LALT>
+        ;
+};
+*/
+
+/* examples below ↓ */
+
+
