@@ -191,21 +191,21 @@
                                                     ___    ___    ___               ___    ___    &kp N0
 
         /* [ ] TODO
-                [ ] EU symbol
+                [v-I think] EU symbol
                 [ ] holds on ( ) + .
         */
         >; };
 
         /** L3: Function Keys **/
         fnkeys_layer { bindings = <
-            ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
-            ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
-            ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
-            ___    ___    ___    ___    ___    ___                                                  ___    ___    ___    ___    ___    ___
-            ___    ___    ___    ___    ___                                                                ___    ___    ___    ___    ___
-                                                            ___    ___        ___    ___
-                                                                  ___          ___
-                                                   ___    ___    ___            ___    ___    ___
+            _x_    _x_        _x_         _x_        _x_        _x_    &to L_DVK                              _x_    _x_    &kp F10  &kp F11  &kp F12  _x_    _x_
+            _x_    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    _x_                                    _x_    _x_    &kp F7   &kp F8   &kp F9   _x_    _x_
+            _x_    _x_        _x_         _x_        _x_        _x_    _x_                                    _x_    _x_    &kp F4   &kp F5   &kp F6   _x_    _x_
+            _x_    _x_        _x_         _x_        _x_        _x_                                                  _x_    &kp F1   &kp F2   &kp F3   _x_    _x_
+            _x_    _x_        _x_         _x_        _x_                                                                    _x_      _x_      _x_      _x_    _x_
+                                                                            _x_    _x_        _x_    _x_
+                                                                                  _x_          _x_
+                                                                   _x_    _x_    _x_            _x_    _x_    _x_
         >; };
 
         /** L4: Nav & Edit **/
@@ -223,13 +223,14 @@
         /** L5: Utils & Specials **/
         /* The BT/Bklt have some issue
               BkltTog √
-              RgbMem √ seems ok - maybe not ??
+              RgbMem √ compiled with also... Hrm...
               RgbTog √ 
         
         */
         #define _BTLD &bootloader
-        #define _RgbMem &rgb_ug RGB_MEFS_CMD
         #define _RgbTog &rgb_ug RGB_TOG
+
+        #define _RgbMem &rgb_ug RGB_MEFS_CMD
         #define _BkltTog &bl BL_TOG
 
         util_layer { bindings = <
@@ -238,11 +239,11 @@
             ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
             ___    ___    ___    ___    ___    ___                                                  ___    ___    ___    ___    ___    ___
             _BTLD  ___    ___    ___    ___                                                                ___    ___    ___    ___    _BTLD
-                                                          ___    ___          _RgbTog    _RgbMem
-                                                                ___            _BkltTog
+                                                          ___    ___          _RgbTog    ___
+                                                                ___            ___
                                                  ___    ___    ___              ___    ___    ___
 
-/* wanted:
+/* wanted - some controls on BT, RGB, Backlight. 2023-05-14 ran into weird can't sort through build errors if use these in combo. (Got RGB_TOG fine or BK_LT by itself, but not combined.)
                                                      _RgbMem    _RgbTog      _RgbTog    _RgbMem
                                                                _BkltTog       _BkltTog
                                                  ___    ___    ___              ___    ___    ___
