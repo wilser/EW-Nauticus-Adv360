@@ -223,8 +223,8 @@
         /** L5: Utils & Specials **/
         /* The BT/Bklt have some issue
               BkltTog √
-              RgbMem √ seems ok
-              RgbTog
+              RgbMem √ seems ok - maybe not ??
+              RgbTog √ 
         
         */
         #define _BTLD &bootloader
@@ -238,7 +238,7 @@
             ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
             ___    ___    ___    ___    ___    ___                                                  ___    ___    ___    ___    ___    ___
             _BTLD  ___    ___    ___    ___                                                                ___    ___    ___    ___    _BTLD
-                                                          ___    ___          _RgbTog    ___
+                                                          ___    ___          _RgbTog    _RgbMem
                                                                 ___            _BkltTog
                                                  ___    ___    ___              ___    ___    ___
 
