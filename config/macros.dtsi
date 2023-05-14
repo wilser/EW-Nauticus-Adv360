@@ -18,7 +18,7 @@ m_SEL_WRD: m_SEL_WRD{
     tap-ms = <40>;
     #binding-cells = <0>;
     bindings
-        = <&kp LC(LEFT) &kp LC(LS(RIGHT)) > ;
+        = <&macro_tap &kp LC(LEFT) &kp LC(LS(RIGHT))> ;
 };
 
 /* try ZMK macro helper shortcut -- NOT WORKING

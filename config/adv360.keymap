@@ -152,6 +152,7 @@
             &kp ESC      &kp SQT      &kp COMMA    &kp PERIOD  &kp P       &kp Y       &to 2                                 _x_         &kp F       &kp G      &kp C       &kp R       &kp L       &kp SLASH
             */
         >; };
+        #undef _SQT_GUI // reused below
 
         /** L1: COLEMAK **/
         // top-row mods:
