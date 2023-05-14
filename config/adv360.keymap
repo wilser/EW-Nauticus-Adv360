@@ -221,10 +221,10 @@
         >; };
 
         /** L5: Utils & Specials **/
-        #define _BTL &bootloader
-        #define _RgbMem &rgb_ug RGB_MEFS_CMD
-        #define _RgbTog &rgb_ug RGB_TOG
-        #define _BkltTog &bl BL_TOG
+        #define _BTL &bootloader                // invoke Bootloader
+        #define _RgbMem &rgb_ug RGB_MEFS_CMD    // Show Battery Level on RGB lights (≥80 Green; 51-79 Yellow; 21-50 Orange; <20 Red). RGB must be enabled.
+        #define _RgbTog &rgb_ug RGB_TOG         // Toggle RGB enablement
+        #define _BkltTog &bl BL_TOG             // Toggle backlight enablement
 
         util_layer { bindings = <
             ___    ___    ___    ___    ___    ___    ___                                      ___    ___    ___    ___    ___    ___    ___

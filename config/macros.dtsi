@@ -1,3 +1,4 @@
+/*
 m_CHR_EU: m_CHR_EU{
     compatible = "zmk,behavior-macro";
     label = "m_CHR_EU";
@@ -10,6 +11,7 @@ m_CHR_EU: m_CHR_EU{
         , <&macro_release &kp LALT>
         ;
 };
+*/
 
 /* examples below ↓ */
 
