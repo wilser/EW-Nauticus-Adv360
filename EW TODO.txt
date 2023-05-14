@@ -10,4 +10,4 @@ Maybe
     [ ] whole "activate layer, but it's a stack" concept? (seems different than the standard "transparent" setting)
 
 
-    
+    [ ] Win+; for Emoji
