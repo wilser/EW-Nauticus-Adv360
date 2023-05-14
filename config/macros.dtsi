@@ -11,14 +11,24 @@ m_CHR_EU: m_CHR_EU{
         ;
 };
 
-/* try ZMK macro helper shortcut */
+m_SEL_WRD: m_SEL_WRD{
+    compatible = "zmk,behavior-macro";
+    label = "m_SEL_WRD";
+    wait-ms = <40>;
+    tap-ms = <40>;
+    #binding-cells = <0>;
+    bindings
+        = <&kp LC(LEFT) &kp LC(LS(RIGHT)) > ;
+};
+
+/* try ZMK macro helper shortcut -- NOT WORKING
 ZMK_MACRO(m_SEL_WRD
     wait-ms = <40>;
     tap-ms = <40>;
     bindings = <&kp LC(LEFT) &kp LC(LS(RIGHT)) >;
     /* Ctrl+Arrow left, CTL+SFT+Arrow right */
 );
-
+/*
 
 
 

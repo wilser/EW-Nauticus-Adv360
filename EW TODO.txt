@@ -14,6 +14,7 @@ EW TODO
 
 Maybe
     [ ] whole "activate layer, but it's a stack" concept? (seems different than the standard "transparent" setting)
+    [ ] some "convenience C macro" for making Macros - 20230514 first try didn't work; didn't play with it to see why
 
 
    
