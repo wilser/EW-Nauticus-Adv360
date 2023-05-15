@@ -83,7 +83,8 @@ m_CUST_RFP: m_CUST_RFP {
              ;
 };
 
-/* simple F11 send works fine... Is it the ≥F12 cases that's the issue? */
+/* simple F11 send works fine... A simple send F16 seems to do nothing... Is it the ≥F12 cases that's the issue? */
+/* related to this option? https://github.com/zmkfirmware/zmk/issues/1460 ... ?  commented out this in 2 files (left, right): CONFIG_ZMK_HID_REPORT_TYPE_NKRO=y */
 m_TestF11: m_TestF11 {
     wait-ms = <100>;
     tap-ms = <100>;
