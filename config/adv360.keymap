@@ -46,11 +46,14 @@
 #define THUMBS_RIGHT 66 67 69 73 74 75
 #define THUMBS THUMBS_LEFT THUMBS_RIGHT
 /*wonder: if add the same-side mods to ones allowed to hold? ... */
+/* NO - seems not to affect - seems related to the 175 or 200ms timing things or the mode overall maybe */
+
 #define MODS_LEFT 29 30 31 32
 #define MODS_RIGHT 37 38 39 40
 
 #define ___ &trans
 #define _x_ &none
+#define L_0 0
 #define L_DVK 0
 #define L_CMK 1
 #define L_NUM 2
@@ -182,7 +185,7 @@
 
         /** L2: Numbers etc **/
         numpad_layer { bindings = <
-            ___    ___       ___    ___    ___    ___    &to L_DVK                              ___    &m_CHR_EU    &kp DOLLAR  &kp HASH   &kp PERCENT  &kp EQUAL        _x_
+            ___    ___       ___    ___    ___    ___    &to L_0                                ___    &m_CHR_EU    &kp DOLLAR  &kp HASH   &kp PERCENT  &kp EQUAL        _x_
             ___    ___       ___    ___    ___    ___    ___                                    ___    &kp BSPC     &kp N7      &kp N8     &kp N9       &kp KP_ASTERISK  &kp KP_DIVIDE
             ___    &kp BSPC  ___    ___    ___    ___    ___                                    ___    &kp LPAR     &kp N4      &kp N5     &kp N6       &kp RPAR         &kp KP_MINUS
             ___    ___       ___    ___    ___    ___                                                  &kp SPACE    &kp N1      &kp N2     &kp N3       &kp KP_PLUS      ___
@@ -199,7 +202,7 @@
 
         /** L3: Function Keys **/
         fnkeys_layer { bindings = <
-            _x_    _x_        _x_         _x_        _x_        _x_    &to L_DVK                              _x_    _x_    &kp F10  &kp F11  &kp F12  _x_    _x_
+            _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                _x_    _x_    &kp F10  &kp F11  &kp F12  _x_    _x_
             _x_    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    _x_                                    _x_    _x_    &kp F7   &kp F8   &kp F9   _x_    _x_
             _x_    _x_        _x_         _x_        _x_        _x_    _x_                                    _x_    _x_    &kp F4   &kp F5   &kp F6   _x_    _x_
             _x_    _x_        _x_         _x_        _x_        _x_                                                  _x_    &kp F1   &kp F2   &kp F3   _x_    _x_
@@ -215,7 +218,7 @@
         
         */
         navnedit_layer { bindings = <
-            _x_    _x_        _x_           _x_            _x_            _x_        &to L_DVK                                      _x_        _x_         _x_        _x_        _x_        _x_          _x_
+            _x_    _x_        _x_           _x_            _x_            _x_        &to L_0                                        _x_        _x_         _x_        _x_        _x_        _x_          _x_
             ___    &kp LWIN   &kp LSHFT     &kp LALT       &kp LCTRL      &kp LC(U)  _x_                                            _x_        &m_SEL_WRD  &kp PG_UP  &kp UP     &kp PG_DN  &m_SEL_LINE  _x_
             ___    _x_        &kp LC(X)     &kp LC(C)      &kp LC(V)      &kp LC(I)  _x_                                            _x_        _x_         &kp LEFT   &kp DOWN   &kp RIGHT  _x_          _x_
             ___    _x_        &kp LG(V)     &kp LC(LG(C))  &kp LC(LG(V))  &kp LC(B)                                                            _x_         _x_        _x_        _x_        _x_          _x_
@@ -226,32 +229,30 @@
         >; };
 
         /** L5: Utils & Specials **/
-        /* The BT/Bklt have some issue
-              BkltTog √
-              RgbMem √ compiled with also... Hrm...
-              RgbTog √ 
-        
-        */
+        /* The BT/Bklt have some issue - maybe revisit later...*/
         #define _BTLD &bootloader
         #define _RgbTog &rgb_ug RGB_TOG
 
         #define _RgbMem &rgb_ug RGB_MEFS_CMD
         #define _BkltTog &bl BL_TOG
+        #define _MonOff &kp RC(RG(L)) /* Win+Ctrl+L invokes my AHK lock+monoff macro */
+        #define _Sleep &kp C_SLEEP    /* (C)onsumer Sleep; also a (K)eyboard sleep K_SLEEP ?? */
 
+        /* # keys send to that layer # */
         util_layer { bindings = <
-            ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
-            ___    ___    ___    ___    ___    ___    _BTLD                                  _BTLD  ___    ___    ___    ___    ___    ___
-            ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
-            ___    ___    ___    ___    ___    ___                                                  ___    ___    ___    ___    ___    ___
-            _BTLD  ___    ___    ___    ___                                                                ___    ___    ___    ___    _BTLD
-                                                          ___    ___          _RgbTog    ___
-                                                                ___            ___
-                                                 ___    ___    ___              ___    ___    ___
+            _x_    &to 1  &to 2  &to 3  &to 4  &to 5  &to L_0                                _x_      &to 6  &to 7  &to 8  &to 9  &to 0  _x_
+            _x_    _x_    _x_    _x_    _x_    _x_    _x_                                    _Sleep   _x_    _x_    _x_    _x_    _x_    _x_
+            _x_    _x_    _x_    _x_    _x_    _x_    _x_                                    _MonOff  _x_    _x_    _x_    _x_    _x_    _x_
+            _x_    _x_    _x_    _x_    _x_    _x_                                                    _x_    _x_    _x_    _x_    _x_    _x_
+            _BTLD  _x_    _x_    _x_    _x_                                                                  _x_    _x_    _x_    _x_    _BTLD
+                                                          _x_    _x_          _RgbTog    _x_
+                                                                _x_            _x_
+                                                 _x_    _x_    _x_              _x_    _x_    _x_
 
 /* wanted - some controls on BT, RGB, Backlight. 2023-05-14 ran into weird can't sort through build errors if use these in combo. (Got RGB_TOG fine or BK_LT by itself, but not combined.)
                                                      _RgbMem    _RgbTog      _RgbTog    _RgbMem
                                                                _BkltTog       _BkltTog
-                                                 ___    ___    ___              ___    ___    ___
+                                                 _x_    _x_    _x_              _x_    _x_    _x_
 */
         >; };
         #undef _BTLD
