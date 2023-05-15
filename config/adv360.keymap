@@ -45,6 +45,9 @@
 #define THUMBS_LEFT 64 65 68 70 71 72
 #define THUMBS_RIGHT 66 67 69 73 74 75
 #define THUMBS THUMBS_LEFT THUMBS_RIGHT
+/*wonder: if add the same-side mods to ones allowed to hold? ... */
+#define MODS_LEFT 29 30 31 32
+#define MODS_RIGHT 37 38 39 40
 
 #define ___ &trans
 #define _x_ &none
@@ -85,7 +88,7 @@
         quick_tap_ms = <175>;
         flavor = "balanced";
         bindings = <&kp>, <&kp>;
-        hold-trigger-key-positions = <KEYS_RIGHT THUMBS>;
+        hold-trigger-key-positions = <KEYS_RIGHT THUMBS MODS_LEFT>; /* TEMP: adding MODS_LEFT to see if can n-hold mods */
     };
 
     hm_r: homerow_mods_right {
@@ -96,7 +99,7 @@
         quick_tap_ms = <175>;
         flavor = "balanced";
         bindings = <&kp>, <&kp>;
-        hold-trigger-key-positions = <KEYS_LEFT THUMBS>;
+        hold-trigger-key-positions = <KEYS_LEFT THUMBS MODS_RIGHT>; /* TEMP: adding MODS_RIGHT to see if can n-hold better */
     };
   };
 
