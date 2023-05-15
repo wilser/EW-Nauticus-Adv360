@@ -83,6 +83,7 @@ m_CUST_RFP: m_CUST_RFP {
              ;
 };
 
+/* simple F11 send works fine... Is it the ≥F12 cases that's the issue? */
 m_TestF11: m_TestF11 {
     wait-ms = <100>;
     tap-ms = <100>;
@@ -93,11 +94,64 @@ m_TestF11: m_TestF11 {
 };
 
 
+/* ************************************************** */
+/* TEST macros to futz with settings in batches */
+m_TESTM1: m_TESTM1 {
+    wait-ms = <100>;
+    tap-ms = <100>;
+    compatible = "zmk,behavior-macro";
+    label = "m_TESTM1";
+    #binding-cells = <0>;
+    bindings = <&kp F16>;
+};
+
+m_TESTM2: m_TESTM2 {
+    wait-ms = <100>;
+    tap-ms = <100>;
+    compatible = "zmk,behavior-macro";
+    label = "m_TESTM2";
+    #binding-cells = <0>;
+    bindings = <&macro_press &kp LSHFT>
+             , <&macro_tap &kp F16>
+             , <&macro_release &kp LSHFT>
+             ;
+};
+
+m_TESTM3: m_TESTM3 {
+    wait-ms = <100>;
+    tap-ms = <100>;
+    compatible = "zmk,behavior-macro";
+    label = "m_TESTM3";
+    #binding-cells = <0>;
+    bindings = <&kp LS(F16)>;
+};
+
+m_TESTM4: m_TESTM4 {
+    wait-ms = <100>;
+    tap-ms = <100>;
+    compatible = "zmk,behavior-macro";
+    label = "m_TESTM4";
+    #binding-cells = <0>;
+    bindings = <&kp F16>;
+};
+
+m_TESTM5: m_TESTM5 {
+    wait-ms = <100>;
+    tap-ms = <100>;
+    compatible = "zmk,behavior-macro";
+    label = "m_TESTM5";
+    #binding-cells = <0>;
+    bindings = <&kp F16>;
+};
 
 
 
+
+
+/* ************************************************** */
 /* see also EW Notes file */
 
+/* ************************************************** */
 /* try ZMK macro helper shortcut -- NOT WORKING with nested FN() calls -- come back to later? */
 /*
 ZMK_MACRO(m_TEST2
@@ -109,7 +163,7 @@ ZMK_MACRO(m_TEST2
 
 
 
-
+/* ************************************************** */
 /* examples below ↓ */
 
 macro_quotes: macro_quotes{
