@@ -159,6 +159,7 @@
         #define _C_ALT   &hm_r RALT C       // Alt
         #define _R_SFT   &hm_r RSHFT R      // Shift 
         #define _L_GUI   &hm_r RGUI L       // GUI/Win
+        #define _Y_RALT  &hm_r RALT Y       // *Special extra Right-Alt when don't want l-alt because of AltSnap utility use
         
         // Mod-tap names / tap-holds:
         #define MT_SFT_DEL &hm_l LSHFT DEL
@@ -166,7 +167,7 @@
         
         dvorak_layer { bindings = <
             &kp EQUAL    &kp N1          &kp N2       &kp N3      &kp N4        &kp N5        &to L_CMK                                 &sl L_UTL   &kp N6       &kp N7     &kp N8      &kp N9      &kp N0      &kp BSLH 
-            &kp ESC      _SQT_GUI        _CMA_SFT     _DOT_ALT    _P_CTL        &kp Y         &kp LC(LA(LS(LGUI)))                      _x_         &kp F        _G_CTL     _C_ALT      _R_SFT      _L_GUI      &kp SLASH
+            &kp ESC      _SQT_GUI        _CMA_SFT     _DOT_ALT    _P_CTL        _Y_RALT       &kp LC(LA(LS(LGUI)))                      _x_         &kp F        _G_CTL     _C_ALT      _R_SFT      _L_GUI      &kp SLASH
             MT_TB_SHFTB  &kp A           &kp O        &kp E       &kp I         &kp U         &kp LC(LA(LSHFT))                         _x_         &kp D        &kp H      &kp T       &kp N       &kp S       &kp MINUS
             &caps_word   &lt L_NVE SEMI  &kp Q        &kp J       &lt L_NUM K   &lt L_UTL X                                                         &lt L_UTL B  &kp M      &kp W       &kp V       &kp Z       &kp COLON
             &kp RG(SEMI) &kp GRAVE       &kp LC(Q)    &kp LEFT    &kp RIGHT                                                                                      &kp UP     &kp DOWN    &kp LBKT    &kp RBKT    &to L_NUM
@@ -178,19 +179,20 @@
 
         /** L1: COLEMAK **/
         // top-row mods:
-        #define _Q_GUI   &hm_l LGUI Q     // GUI/Win on pinkie fingers
-        #define _W_SFT   &hm_l LSHFT W    // Shift on ring fingers
-        #define _F_ALT   &hm_l LALT F     // Alt on middle fingers
-        #define _P_CTL   &hm_l LCTRL P    // Ctrl on index fingers
-        #define _L_CTL   &hm_r RCTRL L    // Ctrl
-        #define _Y_SFT   &hm_r RSHFT Y    // Alt
-        #define _U_ALT   &hm_r RALT U     // Shift
-        #define _SQT_GUI &hm_r RGUI SQT   // GUI/Win
+        #define _Q_GUI   &hm_l LGUI Q       // GUI/Win on pinkie fingers
+        #define _W_SFT   &hm_l LSHFT W      // Shift on ring fingers
+        #define _F_ALT   &hm_l LALT F       // Alt on middle fingers
+        #define _P_CTL   &hm_l LCTRL P      // Ctrl on index fingers
+        #define _L_CTL   &hm_r RCTRL L      // Ctrl
+        #define _Y_SFT   &hm_r RSHFT Y      // Alt
+        #define _U_ALT   &hm_r RALT U       // Shift
+        #define _SQT_GUI &hm_r RGUI SQT     // GUI/Win
+        #define _B_RALT  &hm_r RALT B       // *Special extra Right-Alt when don't want l-alt because of AltSnap utility use
 
         // only partly done; edge-rows & tap-mods missing
         colemak_layer { bindings = <
             ___      ___          ___          ___          ___           ___         &to L_DVK                              ___         ___          ___        ___         ___         ___         ___
-            ___      _Q_GUI       _W_SFT       _F_ALT       _P_CTL        &kp B       ___                                    ___         &kp J        _L_CTL     _U_ALT      _Y_SFT      _SQT_GUI    &kp F24
+            ___      _Q_GUI       _W_SFT       _F_ALT       _P_CTL        _B_RALT     ___                                    ___         &kp J        _L_CTL     _U_ALT      _Y_SFT      _SQT_GUI    &kp F24
             ___      &kp A        &kp R        &kp S        &kp T         &kp G       ___                                    ___         &kp M        &kp N      &kp E       &kp I       &kp O       ___
             ___      &lt L_NVE Z  &kp X        &kp C        &lt L_NUM D   &lt L_UTL V                                                    &lt L_UTL K  &kp H      &kp COMMA   &kp DOT     &kp SLASH   &kp F23
             ___      &kp GRAVE    &kp CAPS     ___          ___                                                                                       ___        ___         ___         ___         ___
@@ -259,11 +261,11 @@
 
         /* # keys send to that layer # */
         util_layer { bindings = <
-            _x_    &to 1  &to 2  &to 3  &to 4  &to 5  &to L_0                                _x_       &to 6  &to 7  &to 8  &to 9  &to 0  _x_
-            _x_    _x_    _x_    _x_    _x_    _x_    _x_                                    &m_SLEEP  _x_    _x_    _x_    _x_    _x_    _x_
-            _x_    _x_    _x_    _x_    _x_    _x_    _x_                                    _MonOff   _x_    _x_    _x_    _x_    _x_    _x_
-            _x_    _x_    _x_    _x_    _x_    _x_                                                     _x_    _x_    _x_    _x_    _x_    _x_
-            _BTLD  _x_    _x_    _x_    _x_                                                                   _x_    _x_    _x_    _x_    _BTLD
+            _x_    &to 1  &to 2  &to 3  &to 4  &to 5  &to L_0                                _x_       &to 6  &to 7  &to 8        &to 9        &to 0  _x_
+            _x_    _x_    _x_    _x_    _x_    _x_    _x_                                    &m_SLEEP  _x_    _x_    _x_          _x_          _x_    _x_
+            _x_    _x_    _x_    _x_    _x_    _x_    _x_                                    _MonOff   _x_    _x_    &m_CUST_RFP  &m_CUST_TFP  _x_    _x_
+            _x_    _x_    _x_    _x_    _x_    _x_                                                     _x_    _x_    _x_          _x_          _x_    _x_
+            _BTLD  _x_    _x_    _x_    _x_                                                                   _x_    _x_          _x_          _x_    _BTLD
                                                           _x_    _x_          _RgbTog    _x_
                                                                 _x_            _x_
                                                  _x_    _x_    _x_              _x_    _x_    _x_
