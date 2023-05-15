@@ -207,12 +207,16 @@
         >; };
 
         /** L4: Nav & Edit **/
+        /* TODO - only about 2/3 done 
+                [ ] change Win+V to C+A+S+V ...?        
+        
+        */
         navnedit_layer { bindings = <
-            _x_    _x_        _x_           _x_            _x_            _x_        &to L_DVK                                      _x_        _x_         _x_        _x_        _x_        _x_        _x_
-            ___    &kp LWIN   &kp LSHFT     &kp LALT       &kp LCTRL      &kp LC(U)  _x_                                            _x_        &m_SEL_WRD  _x_        _x_        _x_        _x_        _x_
-            ___    _x_        &kp LC(X)     &kp LC(C)      &kp LC(V)      &kp LC(I)  _x_                                            _x_        _x_         _x_        _x_        _x_        _x_        _x_
-            ___    _x_        &kp LG(V)     &kp LC(LG(C))  &kp LC(LG(V))  &kp LC(I)                                                            _x_         _x_        _x_        _x_        _x_        _x_
-            ___    _x_        _x_           _x_            _x_                                                                                             ___        ___        _x_        _x_        _x_
+            _x_    _x_        _x_           _x_            _x_            _x_        &to L_DVK                                      _x_        _x_         _x_        _x_        _x_        _x_          _x_
+            ___    &kp LWIN   &kp LSHFT     &kp LALT       &kp LCTRL      &kp LC(U)  _x_                                            _x_        &m_SEL_WRD  &kp PG_UP  &kp UP     &kp PG_DN  &m_SEL_LINE  _x_
+            ___    _x_        &kp LC(X)     &kp LC(C)      &kp LC(V)      &kp LC(I)  _x_                                            _x_        _x_         &kp LEFT   &kp DOWN   &kp RIGHT  _x_          _x_
+            ___    _x_        &kp LG(V)     &kp LC(LG(C))  &kp LC(LG(V))  &kp LC(B)                                                            _x_         _x_        _x_        _x_        _x_          _x_
+            ___    _x_        _x_           &kp PG_UP      &kp PG_DN                                                                                       ___        ___        _x_        _x_          _x_
                                                                                           _x_        _x_            _x_        _x_
                                                                                                     _x_              _x_
                                                                              _x_        _x_        _x_                _x_        _x_        _x_

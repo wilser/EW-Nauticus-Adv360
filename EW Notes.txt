@@ -5,3 +5,20 @@ EW Notes
     - send Mod+CHAR like functions: <L|R><S|C|A|G> Left or Right | Shift, Ctrl, Alt, Win(GUI) - https://zmk.dev/docs/codes/modifiers 
         E.g.: &kp RC(LA(B)) sends Ctrl+Alt+B (using r-ctrl, and l-alt)
     &lt <#> <char> = Hold layer # unless quick then output <char>
+
+
+    MACRO fun...
+        [x] using functions inside one string &macro_tap NOT working; e.g. using LC(LEFT)
+                <&macro_tap &kp LC(LEFT) &kp LC(LS(RIGHT))>
+        [x] more simple didn't work - is it the FUNC uses?
+                <&kp LC(LEFT)>, <&kp LC(LS(RIGHT))>
+        [v] basic a, then b, then c as separate an no mods WORKED fine
+
+        TIMINGS...
+            wait = bef. start
+            tap  = between keystrokes (I think)
+            default = 100
+            20-30 seems much tidier; caution if too close on the tap-ms can cause issues
+            Seems need 40 for some cases of reliability with modifiers
+
+*/

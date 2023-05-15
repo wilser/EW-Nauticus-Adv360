@@ -11,32 +11,13 @@ m_CHR_EU: m_CHR_EU{
         ;
 };
 
-
-/*  MACRO: select word
-    :: Ctrl+LEFT, Ctrl+Shift+RIGHT
-
-    WIP...
-        [x] using functions inside one string &macro_tap NOT working; e.g. using LC(LEFT)
-                <&macro_tap &kp LC(LEFT) &kp LC(LS(RIGHT))>
-        [x] more simple didn't work - is it the FUNC uses?
-                <&kp LC(LEFT)>, <&kp LC(LS(RIGHT))>
-        [v] basic a, then b, then c as separate an no mods WORKED fine
-
-    TIMINGS...
-        wait = bef. start
-        tap  = between keystrokes (I think)
-        default = 100
-        20-30 seems much tidier; caution if too close on the tap-ms can cause issues
-
-*/
-
+/* SELECT WORD: Ctrl+LEFT, Ctrl+Shift+RIGHT */
 m_SEL_WRD: m_SEL_WRD{
     compatible = "zmk,behavior-macro";
     label = "m_SEL_WRD";
-    wait-ms = <40>;  /* try 40,40 (prior was 30,20) */
+    wait-ms = <40>;  /* 40,40 seems more reliable than 30,20 or faster */
     tap-ms = <40>;
     #binding-cells = <0>;
-    /* bindings = <&macro_press &kp LCTRL>, <&kp LEFT>, <&macro_press &kp LSHFT>, <&kp RIGHT>, <&macro_release &kp LSHFT>, <&macro_release &kp LCTRL>;    / NOT reliable... Not sure why */
     bindings
         = <&macro_press &kp LCTRL>
         , <&macro_tap &kp LEFT>
@@ -47,7 +28,26 @@ m_SEL_WRD: m_SEL_WRD{
         ;
 };
 
-/* try ZMK macro helper shortcut -- NOT WORKING with nested FN() calls */
+/* SELECT LINE: Home, Shift+End */
+m_SEL_LINE: m_SEL_LINE{
+    compatible = "zmk,behavior-macro";
+    label = "m_SEL_LINE";
+    wait-ms = <40>;
+    tap-ms = <40>;
+    #binding-cells = <0>;
+    bindings
+        = <&macro_tap &kp HOME>
+        , <&macro_press &kp LSHFT>
+        , <&macro_tap &kp END>
+        , <&macro_release &kp LSHFT>
+        ;
+};
+
+
+
+/* see also EW Notes file */
+
+/* try ZMK macro helper shortcut -- NOT WORKING with nested FN() calls -- come back to later? */
 /*
 ZMK_MACRO(m_TEST2
     wait-ms = <30>;
