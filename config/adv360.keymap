@@ -149,8 +149,8 @@
             &caps_word   &lt L_NVE SEMI  &kp Q        &kp J       &lt L_NUM K   &lt L_UTL X                                                         &lt L_UTL B  &kp M      &kp W       &kp V       &kp Z       &kp COLON
             &kp RG(SEMI) &kp GRAVE       &kp LC(Q)    &kp LEFT    &kp RIGHT                                                                                      &kp UP     &kp DOWN    &kp LBKT    &kp RBKT    &to L_NUM
                                                                                                 &kp LCTRL   &kp LALT      &kp LGUI    &kp RCTRL
-                                                                                                           &kp HOME        &kp PG_UP   
-                                                                                    &kp BSPC  _DEL_SFT    &kp END           &kp PG_DN   &kp ENTER   &kp SPACE
+                                                                                                           &kp PG_UP       &kp PG_DN   
+                                                                                    &kp BSPC  _DEL_SFT    &kp HOME          &kp END    &kp ENTER   &kp SPACE
         >; };
         #undef _SQT_GUI // reused below
 
