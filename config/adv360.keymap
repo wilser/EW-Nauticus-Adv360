@@ -80,7 +80,7 @@
 // Mod-tap defaults?
 &mt {
     tapping-term-ms = <300>;
-}
+};
 
 / {
 
