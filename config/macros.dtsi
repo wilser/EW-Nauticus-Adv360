@@ -33,8 +33,8 @@ m_CHR_EU: m_CHR_EU{
 m_SEL_WRD: m_SEL_WRD{
     compatible = "zmk,behavior-macro";
     label = "m_SEL_WRD";
-    wait-ms = <20>;
-    tap-ms = <10>;
+    wait-ms = <30>;
+    tap-ms = <20>;
     #binding-cells = <0>;
     bindings = <&macro_press &kp LCTRL>, <&kp LEFT>, <&macro_press &kp LSHFT>, <&kp RIGHT>, <&macro_release &kp LSHFT>, <&macro_release &kp LCTRL>;
 };

@@ -144,13 +144,10 @@
             &kp ESC      _SQT_GUI        _CMA_SFT     _DOT_ALT    _P_CTL        &kp Y         &to L_NUM                                 _x_         &kp F        _G_CTL     _C_ALT      _R_SFT      _L_GUI      &kp SLASH
             &kp TAB      &kp A           &kp O        &kp E       &kp I         &kp U         &mo L_UTL                                 &mo L_UTL   &kp D        &kp H      &kp T       &kp N       &kp S       &kp MINUS
             &caps_word   &lt L_NVE SEMI  &kp Q        &kp J       &lt L_NUM K   &lt L_UTL X                                                         &lt L_UTL B  &kp M      &kp W       &kp V       &kp Z       &kp COLON
-            &kp RG(SEMI) &kp GRAVE       &kp CAPS     &kp LEFT    &kp RIGHT                                                                                      &kp UP     &kp DOWN    &kp LBKT    &kp RBKT    &to L_NUM
+            &kp RG(SEMI) &kp GRAVE       &kp LC(Q)    &kp LEFT    &kp RIGHT                                                                                      &kp UP     &kp DOWN    &kp LBKT    &kp RBKT    &to L_NUM
                                                                                                 &kp LCTRL   &kp LALT      &kp LGUI    &kp RCTRL
                                                                                                            &kp HOME        &kp PG_UP   
                                                                                     &kp BSPC  _DEL_SFT    &kp END           &kp PG_DN   &kp ENTER   &kp SPACE
-            /* backup of ROW-2 version without mods
-            &kp ESC      &kp SQT      &kp COMMA    &kp PERIOD  &kp P       &kp Y       &to 2                                 _x_         &kp F       &kp G      &kp C       &kp R       &kp L       &kp SLASH
-            */
         >; };
         #undef _SQT_GUI // reused below
 
