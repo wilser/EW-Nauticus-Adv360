@@ -64,12 +64,14 @@
 /* TAPPING timeouts, flavors, etc.
     try disable global-quick-tap, & set quick-tap-ms faster like 125
     also starter example had typo, so seems quick-tap wasn't being set
+    one suggested like 75 for the "global-quick-tap-ms" [which seems maybe new/ish]
+    try remove 'hold trigger' positions to see
 
 
 */
 
 &lt {
-    quick-tap-ms = <150>;  /* was 300 */
+    quick-tap-ms = <125>;  /* was 300 */
     global-quick-tap;
 };
 
@@ -84,7 +86,7 @@
         label = "HOMEROW_MODS";
         #binding-cells = <2>;
         tapping-term-ms = <200>;
-        quick-tap-ms = <150>;  /* was typo, and 175 */
+        quick-tap-ms = <125>;  /* was typo, and 175 */
         flavor = "balanced";
         bindings = <&kp>, <&kp>;
     };
@@ -94,10 +96,11 @@
         label = "HOMEROW_MODS_LEFT";
         #binding-cells = <2>;
         tapping-term-ms = <200>;
-        quick-tap-ms = <150>; /* was typo, and 175 */
+        quick-tap-ms = <125>; /* was typo, and 175 */
         flavor = "balanced";
         bindings = <&kp>, <&kp>;
-        hold-trigger-key-positions = <KEYS_RIGHT THUMBS MODS_LEFT>; /* TEMP: adding MODS_LEFT to see if can n-hold mods */
+        /* hold-trigger-key-positions = <KEYS_RIGHT THUMBS MODS_LEFT>; */
+        /* TEMP: ↑ adding MODS_LEFT to see if can n-hold mods */
     };
 
     hm_r: homerow_mods_right {
@@ -105,10 +108,11 @@
         label = "HOMEROW_MODS_RIGHT";
         #binding-cells = <2>;
         tapping-term-ms = <200>;
-        quick-tap-ms = <150>;  /* was typo, and 175 */
+        quick-tap-ms = <125>;  /* was typo, and 175 */
         flavor = "balanced";
         bindings = <&kp>, <&kp>;
-        hold-trigger-key-positions = <KEYS_LEFT THUMBS MODS_RIGHT>; /* TEMP: adding MODS_RIGHT to see if can n-hold better */
+        /* hold-trigger-key-positions = <KEYS_LEFT THUMBS MODS_RIGHT>; */
+        /* TEMP: ↑ adding MODS_RIGHT to see if can n-hold better */
     };
   };
 
