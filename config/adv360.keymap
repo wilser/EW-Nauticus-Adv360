@@ -140,9 +140,9 @@
         #define _DEL_SFT &hm_l LSHFT DEL
         
         dvorak_layer { bindings = <
-            &kp EQUAL    &kp N1          &kp N2       &kp N3      &kp N4        &kp N5        &to L_CMK                                 &mo L_UTL   &kp N6       &kp N7     &kp N8      &kp N9      &kp N0      &kp BSLH 
-            &kp ESC      _SQT_GUI        _CMA_SFT     _DOT_ALT    _P_CTL        &kp Y         &to L_NUM                                 _x_         &kp F        _G_CTL     _C_ALT      _R_SFT      _L_GUI      &kp SLASH
-            &kp TAB      &kp A           &kp O        &kp E       &kp I         &kp U         &mo L_UTL                                 &mo L_UTL   &kp D        &kp H      &kp T       &kp N       &kp S       &kp MINUS
+            &kp EQUAL    &kp N1          &kp N2       &kp N3      &kp N4        &kp N5        &to L_CMK                                 &sl L_UTL   &kp N6       &kp N7     &kp N8      &kp N9      &kp N0      &kp BSLH 
+            &kp ESC      _SQT_GUI        _CMA_SFT     _DOT_ALT    _P_CTL        &kp Y         &kp LC(LA(LS(LGUI)))                      _x_         &kp F        _G_CTL     _C_ALT      _R_SFT      _L_GUI      &kp SLASH
+            &kp TAB      &kp A           &kp O        &kp E       &kp I         &kp U         &kp LC(LA(LSHFT))                         _x_         &kp D        &kp H      &kp T       &kp N       &kp S       &kp MINUS
             &caps_word   &lt L_NVE SEMI  &kp Q        &kp J       &lt L_NUM K   &lt L_UTL X                                                         &lt L_UTL B  &kp M      &kp W       &kp V       &kp Z       &kp COLON
             &kp RG(SEMI) &kp GRAVE       &kp LC(Q)    &kp LEFT    &kp RIGHT                                                                                      &kp UP     &kp DOWN    &kp LBKT    &kp RBKT    &to L_NUM
                                                                                                 &kp LCTRL   &kp LALT      &kp LGUI    &kp RCTRL

@@ -6,6 +6,7 @@ EW Notes
         E.g.: &kp RC(LA(B)) sends Ctrl+Alt+B (using r-ctrl, and l-alt)
     &lt <#> <char> = Hold layer # unless quick then output <char>
 
+    "sticky layer" &sl # - is same as "one shot layer" toggle in QMK
 
     MACRO fun...
         [x] using functions inside one string &macro_tap NOT working; e.g. using LC(LEFT)

@@ -2,7 +2,8 @@ EW TODO
     [ ] !! Toprow Mods not being combined...?? 
             At least if done quickly... If r e a l l y   s l o w, then seems to work
     [V] figure how other layer-holds work
-    [ ] figure how to make Hyper & Meh
+    [ ] figure how to make HYPER & Meh - 
+            Maybe use Sticky-key notion too?
     [ ] figure plain key-hold for other function
     [ ] figure tap-tap & tap-hold ways
     [ ] figure basic ASCII code macro
