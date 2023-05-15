@@ -8,6 +8,9 @@ EW Notes
 
     "sticky layer" &sl # - is same as "one shot layer" toggle in QMK
 
+    Inside the JSON parts, comments aren't allowed; but people do like _comment: "some comment here"
+
+
     MACRO fun...
         [x] using functions inside one string &macro_tap NOT working; e.g. using LC(LEFT)
                 <&macro_tap &kp LC(LEFT) &kp LC(LS(RIGHT))>
