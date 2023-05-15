@@ -1,5 +1,6 @@
 EW TODO
     [ ] !! Toprow Mods not being combined...?? 
+            At least if done quickly... If r e a l l y   s l o w, then seems to work
     [V] figure how other layer-holds work
     [ ] figure how to make Hyper & Meh
     [ ] figure plain key-hold for other function
@@ -9,7 +10,8 @@ EW TODO
     [ ] seems "sticky layers" are like the One-Shot-KEY from Moonlander
     [ ] how to 'hold to shift' like the punctuation
     [ ] tinker with capsWORD settings - like Char-list
-
+    [ ] macros:
+        [] seems maybe change "behaviors queue" size (to larger?)
 
 
 Maybe

@@ -1,8 +1,8 @@
 m_CHR_EU: m_CHR_EU{
     compatible = "zmk,behavior-macro";
     label = "m_CHR_EU";
-    wait-ms = <40>;
-    tap-ms = <40>;
+    wait-ms = <20>;
+    tap-ms = <30>;
     #binding-cells = <0>;
     bindings
         = <&macro_press   &kp LALT>
@@ -20,16 +20,19 @@ m_CHR_EU: m_CHR_EU{
                 <&macro_tap &kp LC(LEFT) &kp LC(LS(RIGHT))>
         [x] more simple didn't work - is it the FUNC uses?
                 <&kp L C(LEFT)>, <&kp LC(LS(RIGHT))>
+    TIMINGS...
+        wait = bef. start
+        tap  = between keystrokes (I think)
 
 */
 
 m_SEL_WRD: m_SEL_WRD{
     compatible = "zmk,behavior-macro";
     label = "m_SEL_WRD";
-    wait-ms = <40>;
-    tap-ms = <40>;
+    wait-ms = <20>;
+    tap-ms = <10>;
     #binding-cells = <0>;
-    bindings = <&kp A>, <&kp B>, <&kp C>;
+    bindings = <&kp A>, <&kp B>, <&kp C>, <&kp LEFT>;
 };
 
 /* try ZMK macro helper shortcut -- NOT WORKING
