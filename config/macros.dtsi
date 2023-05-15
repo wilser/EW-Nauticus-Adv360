@@ -43,6 +43,16 @@ m_SEL_LINE: m_SEL_LINE{
         ;
 };
 
+/* WINDOWS SLEEP: Win+X, U, S    (because the k-sleep and c-sleep don't seem to work / see https://github.com/zmkfirmware/zmk/issues/1077)
+// Windows sleep key
+        m_SLEEP: m_SLEEP {
+            wait-ms = <60>;
+            tap-ms = <30>;
+            compatible = "zmk,behavior-macro";
+            label = "m_SLEEP";
+            #binding-cells = <0>;
+            bindings = <&kp LG(X) &kp U &kp S>;
+        };
 
 
 /* see also EW Notes file */

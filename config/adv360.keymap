@@ -176,8 +176,8 @@
             ___      &lt L_NVE Z  &kp X        &kp C        &lt L_NUM D   &lt L_UTL V                                                    &lt L_UTL K  &kp H      &kp COMMA   &kp DOT     &kp SLASH   &kp F23
             ___      &kp GRAVE    &kp CAPS     ___          ___                                                                                       ___        ___         ___         ___         ___
                                                                                                  ___    ___        ___    ___
-                                                                                                     ___          ___
-                                                                                         ___    ___    ___            ___    ___    ___
+                                                                                                       ___          ___
+                                                                                        ___    ___    ___            ___    ___    ___
         /* Specials re-mapped via Windows Keyboard layout driver file: 
             ; → (     ` → )     F23 → :     F24 → "     // And many of the Shift+___ cases.
         */
@@ -189,7 +189,7 @@
             ___    ___       ___    ___    ___    ___    ___                                    ___    &kp BSPC     &kp N7      &kp N8     &kp N9       &kp KP_ASTERISK  &kp KP_DIVIDE
             ___    &kp BSPC  ___    ___    ___    ___    ___                                    ___    &kp LPAR     &kp N4      &kp N5     &kp N6       &kp RPAR         &kp KP_MINUS
             ___    ___       ___    ___    ___    ___                                                  &kp SPACE    &kp N1      &kp N2     &kp N3       &kp KP_PLUS      ___
-            ___    ___       ___    ___    ___                                                                      ___         ___        &kp KP_DOT   &kp KP_ENTER     &to L_DVK 
+            ___    ___       ___    ___    ___                                                                      ___         ___        &kp DOT      &kp KP_ENTER     &to L_DVK 
                                                                 ___    ___        ___    ___
                                                                     ___            ___
                                                     ___    ___    ___               ___    ___    &kp N0
@@ -236,15 +236,15 @@
         #define _RgbMem &rgb_ug RGB_MEFS_CMD
         #define _BkltTog &bl BL_TOG
         #define _MonOff &kp RC(RG(L)) /* Win+Ctrl+L invokes my AHK lock+monoff macro */
-        #define _Sleep &kp C_SLEEP    /* (C)onsumer Sleep; also a (K)eyboard sleep K_SLEEP ?? */
+        #define _Sleep &kp C_SLEEP    /* (C)onsumer Sleep; also a (K)eyboard sleep K_SLEEP ?? */  /***** [ ] TODO - seems not working; see Macro instead *****/
 
         /* # keys send to that layer # */
         util_layer { bindings = <
-            _x_    &to 1  &to 2  &to 3  &to 4  &to 5  &to L_0                                _x_      &to 6  &to 7  &to 8  &to 9  &to 0  _x_
-            _x_    _x_    _x_    _x_    _x_    _x_    _x_                                    _Sleep   _x_    _x_    _x_    _x_    _x_    _x_
-            _x_    _x_    _x_    _x_    _x_    _x_    _x_                                    _MonOff  _x_    _x_    _x_    _x_    _x_    _x_
-            _x_    _x_    _x_    _x_    _x_    _x_                                                    _x_    _x_    _x_    _x_    _x_    _x_
-            _BTLD  _x_    _x_    _x_    _x_                                                                  _x_    _x_    _x_    _x_    _BTLD
+            _x_    &to 1  &to 2  &to 3  &to 4  &to 5  &to L_0                                _x_       &to 6  &to 7  &to 8  &to 9  &to 0  _x_
+            _x_    _x_    _x_    _x_    _x_    _x_    _x_                                    &m_SLEEP  _x_    _x_    _x_    _x_    _x_    _x_
+            _x_    _x_    _x_    _x_    _x_    _x_    _x_                                    _MonOff   _x_    _x_    _x_    _x_    _x_    _x_
+            _x_    _x_    _x_    _x_    _x_    _x_                                                     _x_    _x_    _x_    _x_    _x_    _x_
+            _BTLD  _x_    _x_    _x_    _x_                                                                   _x_    _x_    _x_    _x_    _BTLD
                                                           _x_    _x_          _RgbTog    _x_
                                                                 _x_            _x_
                                                  _x_    _x_    _x_              _x_    _x_    _x_
