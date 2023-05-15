@@ -66,14 +66,21 @@
     also starter example had typo, so seems quick-tap wasn't being set
     one suggested like 75 for the "global-quick-tap-ms" [which seems maybe new/ish]
     try remove 'hold trigger' positions to see
+        so far seems better; maybe the #-key array is off? - [] how to test?
 
 
 */
 
+// Layer tap defaults?
 &lt {
     quick-tap-ms = <125>;  /* was 300 */
     global-quick-tap;
 };
+
+// Mod-tap defaults?
+&mt {
+    tapping-term-ms = <300>;
+}
 
 / {
 
@@ -152,18 +159,20 @@
         #define _C_ALT   &hm_r RALT C       // Alt
         #define _R_SFT   &hm_r RSHFT R      // Shift 
         #define _L_GUI   &hm_r RGUI L       // GUI/Win
-        // Other hold-mods:
-        #define _DEL_SFT &hm_l LSHFT DEL
+        
+        // Mod-tap names / tap-holds:
+        #define MT_SFT_DEL &hm_l LSHFT DEL
+        #define MT_TB_SHFTB &mt TAB LS(TAB)
         
         dvorak_layer { bindings = <
             &kp EQUAL    &kp N1          &kp N2       &kp N3      &kp N4        &kp N5        &to L_CMK                                 &sl L_UTL   &kp N6       &kp N7     &kp N8      &kp N9      &kp N0      &kp BSLH 
             &kp ESC      _SQT_GUI        _CMA_SFT     _DOT_ALT    _P_CTL        &kp Y         &kp LC(LA(LS(LGUI)))                      _x_         &kp F        _G_CTL     _C_ALT      _R_SFT      _L_GUI      &kp SLASH
-            &kp TAB      &kp A           &kp O        &kp E       &kp I         &kp U         &kp LC(LA(LSHFT))                         _x_         &kp D        &kp H      &kp T       &kp N       &kp S       &kp MINUS
+            MT_TB_SHFTB  &kp A           &kp O        &kp E       &kp I         &kp U         &kp LC(LA(LSHFT))                         _x_         &kp D        &kp H      &kp T       &kp N       &kp S       &kp MINUS
             &caps_word   &lt L_NVE SEMI  &kp Q        &kp J       &lt L_NUM K   &lt L_UTL X                                                         &lt L_UTL B  &kp M      &kp W       &kp V       &kp Z       &kp COLON
             &kp RG(SEMI) &kp GRAVE       &kp LC(Q)    &kp LEFT    &kp RIGHT                                                                                      &kp UP     &kp DOWN    &kp LBKT    &kp RBKT    &to L_NUM
                                                                                                 &kp LCTRL   &kp LALT      &kp LGUI    &kp RCTRL
                                                                                                            &kp PG_UP       &kp PG_DN   
-                                                                                    &kp BSPC  _DEL_SFT    &kp HOME          &kp END    &lt L_FNC ENTER   &kp SPACE
+                                                                                    &kp BSPC  MT_SFT_DEL  &kp HOME          &kp END    &lt L_FNC ENTER   &kp SPACE
         >; };
         #undef _SQT_GUI // reused below
 
@@ -324,6 +333,13 @@
         14 15 16 17 18 19 20                               21 22 23 24 25 26 27
         28 29 30 31 32 33 34       64 65        66 67      35 36 37 38 39 40 41
         42 43 44 45 46 47        -  - 68  -  -  69  -  -      48 49 50 51 52 53
+        54 55 56 57 58          70 71 72        73 74 75         59 60 61 62 63
+
+    MAYBE -- how default layout is, but numbered sequentially...??
+         0  1  2  3  4  5  6                                7  8  9 10 11 12 13
+        14 15 16 17 18 19 20                               21 22 23 24 25 26 27
+        28 29 30 31 32 33 34       35 36        37 38      39 40 41 42 43 44 45
+        46 47 48 49 50 51   **to here     -  - 68  -  -  69  -  -      48 49 50 51 52 53
         54 55 56 57 58          70 71 72        73 74 75         59 60 61 62 63
 
     --------------------------------------------------

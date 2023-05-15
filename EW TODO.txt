@@ -1,7 +1,8 @@
 EW TODO
-    [ ] !! Toprow Mods not being combined...?? 
+    [∙] !! Toprow Mods not being combined...?? 
             At least if done quickly... If r e a l l y   s l o w, then seems to work
             maybe see: https://www.reddit.com/r/ErgoMechKeyboards/comments/rxxc8s/new_zmk_features_better_homerow_mods/ 
+            Removing the cross-hold limit seems to mostly fix it; but not optimal yet. See OneNote notes & links.
     [ ] figure plain key-hold for other function
     [ ] figure tap-tap & tap-hold ways
     [ ] figure basic ASCII code macro
