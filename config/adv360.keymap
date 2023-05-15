@@ -153,7 +153,7 @@
             &kp RG(SEMI) &kp GRAVE       &kp LC(Q)    &kp LEFT    &kp RIGHT                                                                                      &kp UP     &kp DOWN    &kp LBKT    &kp RBKT    &to L_NUM
                                                                                                 &kp LCTRL   &kp LALT      &kp LGUI    &kp RCTRL
                                                                                                            &kp PG_UP       &kp PG_DN   
-                                                                                    &kp BSPC  _DEL_SFT    &kp HOME          &kp END    &kp ENTER   &kp SPACE
+                                                                                    &kp BSPC  _DEL_SFT    &kp HOME          &kp END    &lt L_FNC ENTER   &kp SPACE
         >; };
         #undef _SQT_GUI // reused below
 

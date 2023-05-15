@@ -44,6 +44,7 @@ m_SEL_LINE: m_SEL_LINE{
 };
 
 /* WINDOWS SLEEP: Win+X, U, S    (because the k-sleep and c-sleep don't seem to work / see https://github.com/zmkfirmware/zmk/issues/1077) */
+/* NOT working yet; maybe need more pausing or split the sends?? */
 m_SLEEP: m_SLEEP {
     wait-ms = <60>;
     tap-ms = <30>;
