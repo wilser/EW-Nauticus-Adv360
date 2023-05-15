@@ -47,22 +47,22 @@ m_SEL_LINE: m_SEL_LINE{
 /* WINDOWS SLEEP: Win+X, U, S    (because the k-sleep and c-sleep don't seem to work / see https://github.com/zmkfirmware/zmk/issues/1077) */
 /* NOT working yet; maybe need more pausing or split the sends?? */
 m_SLEEP: m_SLEEP {
-    wait-ms = <60>;
-    tap-ms = <30>;
+    wait-ms = <200>;
+    tap-ms = <200>;  /* trying longer */
     compatible = "zmk,behavior-macro";
     label = "m_SLEEP";
     #binding-cells = <0>;
-    bindings = <&kp LG(X) &kp U &kp S>;
+    bindings = <&kp LG(X)>, <&kp U>, <&kp S>; /* try separated? */
 };
 
 /* CUST_TFP - certain keystrokes to automate that one app hard function */
 m_CUST_TFP: m_CUST_TFP {
-    wait-ms = <60>;
-    tap-ms = <30>;
+    wait-ms = <100>;
+    tap-ms = <50>;
     compatible = "zmk,behavior-macro";
     label = "m_CUST_TFP";
     #binding-cells = <0>;
-    bindings = <&kp F16 &kp 1 &kp 2 &kp SPACE &kp LS(F16)>;
+    bindings = <&kp F16>, <&kp N1>, <&kp N2>, <&kp SPACE>, <&kp LS(F16)>;
 };
 
 /* CUST_RFP - similar as above ... */
@@ -72,7 +72,7 @@ m_CUST_RFP: m_CUST_RFP {
     compatible = "zmk,behavior-macro";
     label = "m_CUST_RFP";
     #binding-cells = <0>;
-    bindings = <&kp F17 &kp 8 &kp LC(F17) &kp LS(F17)>;
+    bindings = <&kp F17 &kp N8 &kp LC(F17) &kp LS(F17)>;
 };
 
 
