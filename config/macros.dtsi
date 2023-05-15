@@ -83,6 +83,15 @@ m_CUST_RFP: m_CUST_RFP {
              ;
 };
 
+m_TestF11: m_TestF11 {
+    wait-ms = <100>;
+    tap-ms = <100>;
+    compatible = "zmk,behavior-macro";
+    label = "m_TestF11";
+    #binding-cells = <0>;
+    bindings = <&kp F11>;
+};
+
 
 
 

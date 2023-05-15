@@ -262,10 +262,10 @@
         /* # keys send to that layer # */
         util_layer { bindings = <
             _x_    &to 1  &to 2  &to 3  &to 4  &to 5  &to L_0                                _x_       &to 6  &to 7  &to 8        &to 9        &to 0  _x_
-            _x_    _x_    _x_    _x_    _x_    _x_    _x_                                    &m_SLEEP  _x_    _x_    _x_          _x_          _x_    _x_
-            _x_    _x_    _x_    _x_    _x_    _x_    _x_                                    _MonOff   _x_    _x_    &m_CUST_RFP  &m_CUST_TFP  _x_    _x_
-            _x_    _x_    _x_    _x_    _x_    _x_                                                     _x_    _x_    _x_          _x_          _x_    _x_
-            _BTLD  _x_    _x_    _x_    _x_                                                                   _x_    _x_          _x_          _x_    _BTLD
+            _x_    _x_    _x_    _x_    _x_    _x_    _x_                                    &m_SLEEP  _x_    _x_          _x_          _x_          _x_    _x_
+            _x_    _x_    _x_    _x_    _x_    _x_    _x_                                    _MonOff   _x_    &m_TestF11   &m_CUST_RFP  &m_CUST_TFP  _x_    _x_
+            _x_    _x_    _x_    _x_    _x_    _x_                                                     _x_    _x_          _x_          _x_          _x_    _x_
+            _BTLD  _x_    _x_    _x_    _x_                                                                   _x_          _x_          _x_          _x_    _BTLD
                                                           _x_    _x_          _RgbTog    _x_
                                                                 _x_            _x_
                                                  _x_    _x_    _x_              _x_    _x_    _x_
