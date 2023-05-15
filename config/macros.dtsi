@@ -67,24 +67,21 @@ m_CUST_TFP: m_CUST_TFP {
 
 /* CUST_RFP - similar as above ... */
 m_CUST_RFP: m_CUST_RFP {
-    wait-ms = <200>;
+    wait-ms = <100>;
     tap-ms = <100>;
     compatible = "zmk,behavior-macro";
     label = "m_CUST_RFP";
     #binding-cells = <0>;
-    bindings = <&kp F17 &kp N8 &kp LC(F17) &kp LS(F17)>;
-};
-
-/* alt for above ↑ ??
+    /*bindings = <&kp F17 &kp N8 &kp LC(F17) &kp LS(F17)>;   || only getting the numbers...*/
     bindings = <&macro_tap &kp F17 &kp N8>
-             , <&macro_press LCTRL>
-             , <&macro_tap F17>
-             , <&macro_release LCTRL>
-             , <&macro_press LSHFT>
-             , <&macro_tap F17>
-             , <&macro_release LSHFT>
+             , <&macro_press &kp LCTRL>
+             , <&macro_tap &kp F17>
+             , <&macro_release &kp LCTRL>
+             , <&macro_press &kp LSHFT>
+             , <&macro_tap &kp F17>
+             , <&macro_release &kp LSHFT>
              ;
-*/
+};
 
 
 
