@@ -19,10 +19,14 @@ m_CHR_EU: m_CHR_EU{
         [x] using functions inside one string &macro_tap NOT working; e.g. using LC(LEFT)
                 <&macro_tap &kp LC(LEFT) &kp LC(LS(RIGHT))>
         [x] more simple didn't work - is it the FUNC uses?
-                <&kp L C(LEFT)>, <&kp LC(LS(RIGHT))>
+                <&kp LC(LEFT)>, <&kp LC(LS(RIGHT))>
+        [v] basic a, then b, then c as separate an no mods WORKED fine
+
     TIMINGS...
         wait = bef. start
         tap  = between keystrokes (I think)
+        default = 100
+        20-30 seems much tidier; caution if too close on the tap-ms can cause issues
 
 */
 
@@ -32,16 +36,16 @@ m_SEL_WRD: m_SEL_WRD{
     wait-ms = <20>;
     tap-ms = <10>;
     #binding-cells = <0>;
-    bindings = <&kp A>, <&kp B>, <&kp C>, <&kp LEFT>;
+    bindings = <&macro_press &kp LCTRL>, <&kp LEFT>, <&macro_press &kp LSHFT>, <&kp RIGHT>, <&macro_release &kp LSHFT>, <&macro_release &kp LCTRL>;
 };
 
-/* try ZMK macro helper shortcut -- NOT WORKING
-ZMK_MACRO(m_SEL_WRD
-    wait-ms = <40>;
-    tap-ms = <40>;
-    bindings = <&kp LC(LEFT) &kp LC(LS(RIGHT)) >;
+/* try ZMK macro helper shortcut -- NOT WORKING with nested FN() calls */
+ZMK_MACRO(m_TEST2
+    wait-ms = <30>;
+    tap-ms = <20>;
+    bindings = <&kp A>, <&kp B>;
 );
-*/
+
 
 
 
