@@ -163,7 +163,7 @@
         
         // Mod-tap names / tap-holds:
         #define MT_SFT_DEL &hm_l LSHFT DEL
-        #define MT_TB_SHFTB &mt TAB LS(TAB)
+        #define MT_TB_SHFTB &mt LS(TAB) TAB
         
         dvorak_layer { bindings = <
             &kp EQUAL    &kp N1          &kp N2       &kp N3      &kp N4        &kp N5        &to L_CMK                                 &sl L_UTL   &kp N6       &kp N7     &kp N8      &kp N9      &kp N0      &kp BSLH 
