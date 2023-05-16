@@ -149,7 +149,11 @@
                     70 71 72  73 74 75
         */
 
-        /** L0: DVORAK (default) **/
+
+        /*****************************************************************************************************
+         * L0: DVORAK (default)
+         */
+
         // top-row mods:
         #define _SQT_GUI &hm_l LGUI SQT     // GUI/Win on pinkie fingers
         #define _CMA_SFT &hm_l LSHFT COMMA  // Shift on ring fingers
@@ -181,7 +185,14 @@
         >; };
         #undef _SQT_GUI // reused below
 
-        /** L1: COLEMAK **/
+
+        /*****************************************************************************************************
+         * L1: COLEMAK 
+         * Specials and some punctuation re-mapped via Windows Keyboard layout driver file: 
+         *   ; → (     ` → )     F23 → :     F24 → " 
+         *   And many of the Shift+___ cases.
+         */
+        
         // top-row mods:
         #define _Q_GUI   &hm_l LGUI Q       // GUI/Win on pinkie fingers
         #define _W_SFT   &hm_l LSHFT W      // Shift on ring fingers
@@ -193,39 +204,39 @@
         #define _SQT_GUI &hm_r RGUI SQT     // GUI/Win
         #define _B_RALT  &hm_r RALT B       // *Special extra Right-Alt when don't want l-alt because of AltSnap utility use
 
-        // only partly done; edge-rows & tap-mods missing
         colemak_layer { bindings = <
-            ___      ___          ___          ___          ___           ___         &to L_DVK                              ___         ___          ___        ___                  ___              ___                  ___
-            ___      _Q_GUI       _W_SFT       _F_ALT       _P_CTL        _B_RALT     ___                                    ___         &kp J        _L_CTL     _U_ALT               _Y_SFT           _SQT_GUI             &as LS(F24) F24
-            ___      &kp A        &kp R        &kp S        &kp T         &kp G       ___                                    ___         &kp M        &kp N      &kp E                &kp I            &kp O                ___
-            ___      &lt L_NVE Z  &kp X        &kp C        &lt L_NUM D   &lt L_UTL V                                                    &lt L_UTL K  &kp H      &as LS(COMMA) COMMA  &as LS(DOT) DOT  &as LS(SLASH) SLASH  &as LS(F23) F23
-            ___      &kp GRAVE    &kp CAPS     ___          ___                                                                                       ___        ___                  ___              ___                  ___
-                                                                                                 ___    ___        ___    ___
-                                                                                                       ___          ___
-                                                                                        ___    ___    ___            ___    ___    ___
-        /* Specials re-mapped via Windows Keyboard layout driver file: 
-            ; → (     ` → )     F23 → :     F24 → "     // And many of the Shift+___ cases.
-        */
+            ___      ___                ___                ___          ___           ___         &to L_DVK                              ___         ___          ___        ___                  ___              ___                  ___
+            ___      _Q_GUI             _W_SFT             _F_ALT       _P_CTL        _B_RALT     ___                                    ___         &kp J        _L_CTL     _U_ALT               _Y_SFT           _SQT_GUI             &as LS(F24) F24
+            ___      &kp A              &kp R              &kp S        &kp T         &kp G       ___                                    ___         &kp M        &kp N      &kp E                &kp I            &kp O                ___
+            ___      &lt L_NVE Z        &kp X              &kp C        &lt L_NUM D   &lt L_UTL V                                                    &lt L_UTL K  &kp H      &as LS(COMMA) COMMA  &as LS(DOT) DOT  &as LS(SLASH) SLASH  &as LS(F23) F23
+            ___      &as LS(LBKT) LBKT  &as LS(RBKT) RBKT  ___          ___                                                                                       ___        ___                  ___              ___                  ___
+                                                                                                     ___    ___        ___    ___
+                                                                                                           ___          ___
+                                                                                            ___    ___    ___            ___    ___    ___
         >; };
 
-        /** L2: Numbers etc **/
+
+        /*****************************************************************************************************
+         * L2: Standard numpad layer
+         *      Uses non-keypad number variants since plan to use as "main" numbers method eventually as practice more.
+         * [ ] TODO: € seems wonky / seems better Alt-Code methods?
+         */ 
         numpad_layer { bindings = <
-            ___    ___       ___    ___    ___    ___    &to L_0                                ___    &m_CHR_EU    &kp DOLLAR  &kp HASH   &kp PERCENT  &kp EQUAL        _x_
-            ___    ___       ___    ___    ___    ___    ___                                    ___    &kp BSPC     &kp N7      &kp N8     &kp N9       &kp KP_ASTERISK  &kp KP_DIVIDE
-            ___    &kp BSPC  ___    ___    ___    ___    ___                                    ___    &kp LPAR     &kp N4      &kp N5     &kp N6       &kp RPAR         &kp KP_MINUS
-            ___    ___       ___    ___    ___    ___                                                  &kp SPACE    &kp N1      &kp N2     &kp N3       &kp KP_PLUS      ___
-            ___    ___       ___    ___    ___                                                                      ___         ___        &kp DOT      &kp KP_ENTER     &to L_DVK 
+            ___    ___       ___    ___    ___    ___    &to L_0                                ___    &m_CHR_EU      &kp DOLLAR  &kp HASH   &kp PERCENT    &kp EQUAL         _x_
+            ___    ___       ___    ___    ___    ___    ___                                    ___    &kp BSPC       &kp N7      &kp N8     &kp N9         &kp KP_ASTERISK   &kp KP_DIVIDE
+            ___    &kp BSPC  ___    ___    ___    ___    ___                                    ___    &as LBKT LPAR  &kp N4      &kp N5     &kp N6         &as RBKT RPAR     &as LS(MINUS) KP_MINUS
+            ___    ___       ___    ___    ___    ___                                                  &kp SPACE      &kp N1      &kp N2     &kp N3         &as SEMI KP_PLUS  ___
+            ___    ___       ___    ___    ___                                                                        ___         ___        &as COMMA DOT  &kp KP_ENTER      &to L_0 
                                                                 ___    ___        ___    ___
                                                                     ___            ___
                                                     ___    ___    ___               ___    ___    &kp N0
-
-        /* [ ] TODO
-                [v-I think] EU symbol
-                [ ] holds on ( ) + .
-        */
         >; };
 
-        /** L3: Function Keys **/
+
+        /*****************************************************************************************************
+         * L3: Function Keys
+         *
+         */
         fnkeys_layer { bindings = <
             _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                _x_    _x_    &kp F10  &kp F11  &kp F12  _x_    _x_
             _x_    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    _x_                                    _x_    _x_    &kp F7   &kp F8   &kp F9   _x_    _x_
@@ -237,9 +248,11 @@
                                                                    _x_    _x_    _x_            _x_    _x_    _x_
         >; };
 
-        /** L4: Nav & Edit **/
-        /* [ ] TODO - r.h. side not complete to match Moonlander 
-        */
+
+        /*****************************************************************************************************
+         * L4: Nav & Edit
+         * [ ] TODO - r.h. side not complete to match Moonlander 
+         */
         navnedit_layer { bindings = <
             _x_    _x_        _x_           _x_            _x_            _x_        &to L_0                                        _x_        _x_         _x_        _x_        _x_        _x_          _x_
             ___    &kp LWIN   &kp LSHFT     &kp LALT       &kp LCTRL      &kp LC(U)  _x_                                            _x_        &m_SEL_WRD  &kp PG_UP  &kp UP     &kp PG_DN  &m_SEL_LINE  _x_
@@ -251,16 +264,21 @@
                                                                              _x_        _x_        _x_                _x_        _x_        _x_
         >; };
 
-        /** L5: Utils & Specials **/
-        /* The BT/Bklt have some issue - maybe revisit later...*/
-        /* # keys send to that layer # */
+
+        /*****************************************************************************************************
+         * L5: Utils & Specials
+         * 
+         * # keys send to that layer #
+         * &m_SLEEP does Win-compat key shortcuts to invoke Sleep from menu
+         *
+         * [ ] TODO:
+         *      The BT/Bklt have some issue - maybe revisit later...
+         */
         #define _BTLD &bootloader
         #define _RgbTog &rgb_ug RGB_TOG
         #define _RgbMem &rgb_ug RGB_MEFS_CMD
         #define _BkltTog &bl BL_TOG
         #define _MonOff &kp RC(RG(L)) // Win+Ctrl+L invokes my AHK lock+monoff macro
-        // &m_SLEEP does Win-compat key shortcuts to invoke Sleep from menu
-        // [ ] TODO: some of the TH keys for Bklt, Rgb, etc. seemed to have issues when combined in same layout. NMI.
 
         util_layer { bindings = <
             _x_    &to 1  &to 2  &to 3  &to 4  &to 5  &to L_0                                _x_       &to 6      &to 7        &to 8        &to 9        &to 0        _x_
@@ -271,10 +289,10 @@
                                                           _x_    _x_          _RgbTog    _x_
                                                                 _x_            _x_
                                                  _x_    _x_    _x_              _x_    _x_    _x_
-/* wanted - some controls on BT, RGB, Backlight. 2023-05-14 ran into weird can't sort through build errors if use these in combo. (Got RGB_TOG fine or BK_LT by itself, but not combined.)
+            /* wanted - some controls on BT, RGB, Backlight. 2023-05-14 ran into weird can't sort through build errors if use these in combo. (Got RGB_TOG fine or BK_LT by itself, but not combined.)
                                                      _RgbMem    _RgbTog      _RgbTog    _RgbMem
                                                                _BkltTog       _BkltTog
-*/
+            */
         >; };
         #undef _BTLD
         #undef _RgbMem
@@ -282,7 +300,9 @@
         #undef _BkltTog
 
 
-        /** L6: Alt Numpad - using actual KP versions of numbers; in case need like Alt+<code> testing. **/
+        /*****************************************************************************************************
+         * L6: Alt Numpad - using actual KP versions of numbers; in case need like Alt+<code> testing.
+         */
         kp_layer { bindings = <
             _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                _x_    _x_    _x_         _x_         _x_         _x_    _x_
             _x_    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    _x_                                    _x_    _x_    &kp KP_N7   &kp KP_N8   &kp KP_N9   _x_    _x_
@@ -294,7 +314,10 @@
                                                                    _x_    _x_    _x_            _x_    &kp ENTER  &kp KP_N0
         >; };
 
-        /** L7: higher F## keys 13-24; in case need for testing **/
+
+        /*****************************************************************************************************
+         * L7: higher F## keys 13-24; in case need for testing
+         */
         fnkeys_layer { bindings = <
             _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                _x_    _x_    &kp F22   &kp F23   &kp F24   _x_    _x_
             _x_    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    _x_                                    _x_    _x_    &kp F19   &kp F20   &kp F21   _x_    _x_
@@ -305,6 +328,9 @@
                                                                                   _x_          _x_
                                                                    _x_    _x_    _x_            _x_    _x_    _x_
         >; };
+        
+    };
+};
 
 
 
@@ -339,12 +365,6 @@
             >;
         };
 */
-
-
-
-
-    };
-};
 
 
 /* REF
