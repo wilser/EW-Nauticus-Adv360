@@ -17,7 +17,7 @@ m_SEL_WRD: m_SEL_WRD{
     compatible = "zmk,behavior-macro";
     label = "m_SEL_WRD";
     wait-ms = <40>;  /* 40,40 seems more reliable than 30,20 or faster */
-    tap-ms = <40>;
+    tap-ms = <20>;
     #binding-cells = <0>;
     bindings
         = <&macro_press &kp LCTRL>
@@ -34,7 +34,7 @@ m_SEL_LINE: m_SEL_LINE{
     compatible = "zmk,behavior-macro";
     label = "m_SEL_LINE";
     wait-ms = <40>;
-    tap-ms = <40>;
+    tap-ms = <20>;
     #binding-cells = <0>;
     bindings
         = <&macro_tap &kp HOME>
@@ -58,7 +58,7 @@ m_SLEEP: m_SLEEP {
 /* CUST_TFP - certain keystrokes to automate that one app hard function */
 m_CUST_TFP: m_CUST_TFP {
     wait-ms = <40>;
-    tap-ms = <40>;
+    tap-ms = <20>;
     compatible = "zmk,behavior-macro";
     label = "m_CUST_TFP";
     #binding-cells = <0>;
@@ -68,7 +68,7 @@ m_CUST_TFP: m_CUST_TFP {
 /* CUST_RFP - similar as above ... */
 m_CUST_RFP: m_CUST_RFP {
     wait-ms = <40>;
-    tap-ms = <40>;
+    tap-ms = <20>;
     compatible = "zmk,behavior-macro";
     label = "m_CUST_RFP";
     #binding-cells = <0>;
@@ -163,38 +163,3 @@ ZMK_MACRO(m_TEST2
 )
 */
 
-
-
-/* ************************************************** */
-/* examples below ↓ */
-
-macro_quotes: macro_quotes{
-    compatible = "zmk,behavior-macro";
-    label = "macro_quotes";
-    #binding-cells = <0>;
-    bindings = <&kp SQT>, <&kp SQT>, <&kp LEFT>;
-};
-macro_dquotes: macro_dquotes{
-    compatible = "zmk,behavior-macro";
-    label = "macro_dquotes";
-    #binding-cells = <0>;
-    bindings = <&kp DQT>, <&kp DQT>, <&kp LEFT>;
-};
-macro_braces: macro_braces{
-    compatible = "zmk,behavior-macro";
-    label = "macro_braces";
-    #binding-cells = <0>;
-    bindings = <&kp LBRC>, <&kp RBRC>, <&kp LEFT>;
-};
-macro_parens: macro_parens{
-    compatible = "zmk,behavior-macro";
-    label = "macro_parens";
-    #binding-cells = <0>;
-    bindings = <&kp LPAR>, <&kp RPAR>, <&kp LEFT>;
-};
-macro_brackets: macro_brackets{
-    compatible = "zmk,behavior-macro";
-    label = "macro_brackets";
-    #binding-cells = <0>;
-    bindings = <&kp LBKT>, <&kp RBKT>, <&kp LEFT>;
-};
