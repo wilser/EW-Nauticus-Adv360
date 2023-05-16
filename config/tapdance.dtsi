@@ -8,7 +8,7 @@ tdEmjWin: tap_dance_emoji_winchange {
     label = "tap_dance_emoji_winchange";
     #binding-cells = <0>;
     tapping-term-ms = <300>;
-    bindings = <&kp RG(SEMI)>, <&kp RG(TAB)>;
+    bindings = <&kp RG(SEMI)>, <&kp RG(TAB)>;  /*  ← this actually worked! */
 };
 
 
