@@ -239,7 +239,7 @@
          *
          */
         fnkeys_layer { bindings = <
-            _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                _x_    _x_    &kp F10  &kp F11  &kp F12  _x_    _x_
+            _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                ___    _x_    &kp F10  &kp F11  &kp F12  _x_    _x_
             _x_    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    _x_                                    _x_    _x_    &kp F7   &kp F8   &kp F9   _x_    _x_
             _x_    _x_        _x_         _x_        _x_        _x_    _x_                                    _x_    _x_    &kp F4   &kp F5   &kp F6   _x_    _x_
             _x_    _x_        _x_         _x_        _x_        _x_                                                  _x_    &kp F1   &kp F2   &kp F3   _x_    _x_
@@ -266,7 +266,7 @@
         #define _MONOFF &kp RC(RG(L)) // Win+Ctrl+L invokes my AHK lock+monoff macro
 
         util_layer { bindings = <
-            _x_     &to 1         &to 2         &to 3         &to 4         &to 5         &to L_0                                _x_       &to 6      &to 7        &to 8        &to 9        &to 0        _x_
+            _x_     &to 1         &to 2         &to 3         &to 4         &to 5         &to L_0                                ___       &to 6      &to 7        &to 8        &to 9        &to 0        _x_
             _x_     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  _x_                                    &m_SLEEP  _x_        _x_          _x_          _x_          _x_          _x_
             _x_     _x_           _x_           _x_           _x_           _x_           _x_                                    _MONOFF   _x_        _x_          &m_CUST_RFP  &m_CUST_TFP  _x_          _x_
             _x_     _x_           _x_           _x_           _x_           _x_                                                            &m_TESTM1  &m_TESTM2    &m_TESTM3    &m_TESTM4    &m_TESTM5    _x_
@@ -291,7 +291,7 @@
          * [ ] TODO - r.h. side not complete to match Moonlander 
          */
         navnedit_layer { bindings = <
-            _x_    _x_        _x_           _x_            _x_            _x_        &to L_0                                        _x_        _x_         _x_        _x_        _x_        _x_          _x_
+            _x_    _x_        _x_           _x_            _x_            _x_        &to L_0                                        ___        _x_         _x_        _x_        _x_        _x_          _x_
             ___    &kp LWIN   &kp LSHFT     &kp LALT       &kp LCTRL      &kp LC(U)  _x_                                            _x_        &m_SEL_WRD  &kp PG_UP  &kp UP     &kp PG_DN  &m_SEL_LINE  _x_
             ___    _x_        &kp LC(X)     &kp LC(C)      &kp LC(V)      &kp LC(I)  _x_                                            _x_        _x_         &kp LEFT   &kp DOWN   &kp RIGHT  _x_          _x_
             ___    _x_        &kp LG(V)     &kp LC(LG(C))  &kp LC(LG(V))  &kp LC(B)                                                            _x_         _x_        _x_        _x_        _x_          _x_
@@ -307,7 +307,7 @@
          * [ ] TODO: &trans through edge/useful keys
          */
         kp_layer { bindings = <
-            _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                _x_    _x_    _x_         _x_         _x_         _x_    _x_
+            _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                ___    _x_    _x_         _x_         _x_         _x_    _x_
             _x_    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    _x_                                    _x_    _x_    &kp KP_N7   &kp KP_N8   &kp KP_N9   _x_    _x_
             _x_    _x_        _x_         _x_        _x_        _x_    _x_                                    _x_    _x_    &kp KP_N4   &kp KP_N5   &kp KP_N6   _x_    _x_
             _x_    _x_        _x_         _x_        _x_        _x_                                                  _x_    &kp KP_N1   &kp KP_N2   &kp KP_N3   _x_    _x_
@@ -322,7 +322,7 @@
          * L7: higher F## keys 13-24; in case need for testing
          */
         fnkeys_layer { bindings = <
-            _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                _x_    _x_    &kp F22   &kp F23   &kp F24   _x_    _x_
+            _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                ___    _x_    &kp F22   &kp F23   &kp F24   _x_    _x_
             _x_    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    _x_                                    _x_    _x_    &kp F19   &kp F20   &kp F21   _x_    _x_
             _x_    _x_        _x_         _x_        _x_        _x_    _x_                                    _x_    _x_    &kp F16   &kp F17   &kp F18   _x_    _x_
             _x_    _x_        _x_         _x_        _x_        _x_                                                  _x_    &kp F13   &kp F14   &kp F15   _x_    _x_
