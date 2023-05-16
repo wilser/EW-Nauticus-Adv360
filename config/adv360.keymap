@@ -275,20 +275,20 @@
          *      The BT/Bklt have some issue - maybe revisit later...
          */
         #define _BTLD &bootloader
-        #define _RgbTog &rgb_ug RGB_TOG
         #define _RgbMem &rgb_ug RGB_MEFS_CMD
-        #define _BkltTog &bl BL_TOG
-        #define _MonOff &kp RC(RG(L)) // Win+Ctrl+L invokes my AHK lock+monoff macro
+        #define _RGB_TG &rgb_ug RGB_TOG
+        #define _BKL_TG &bl BL_TOG
+        #define _MONOFF &kp RC(RG(L)) // Win+Ctrl+L invokes my AHK lock+monoff macro
 
         util_layer { bindings = <
-            _x_    &to 1  &to 2  &to 3  &to 4  &to 5  &to L_0                                _x_       &to 6      &to 7        &to 8        &to 9        &to 0        _x_
-            _x_    _x_    _x_    _x_    _x_    _x_    _x_                                    &m_SLEEP  _x_        _x_          _x_          _x_          _x_          _x_
-            _x_    _x_    _x_    _x_    _x_    _x_    _x_                                    _MonOff   _x_        &m_TestF11   &m_CUST_RFP  &m_CUST_TFP  _x_          _x_
-            _x_    _x_    _x_    _x_    _x_    _x_                                                     &m_TESTM1  &m_TESTM2    &m_TESTM3    &m_TESTM4    &m_TESTM5    _x_
-            _BTLD  _x_    _x_    _x_    _x_                                                                       _x_          _x_          _x_          _x_          _BTLD
-                                                          _x_    _x_          _RgbTog    _x_
-                                                                _x_            _x_
-                                                 _x_    _x_    _x_              _x_    _x_    _x_
+            _x_     &to 1         &to 2         &to 3         &to 4         &to 5         &to L_0                                _x_       &to 6      &to 7        &to 8        &to 9        &to 0        _x_
+            _x_     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  _x_                                    &m_SLEEP  _x_        _x_          _x_          _x_          _x_          _x_
+            _x_     _x_           _x_           _x_           _x_           _x_           _x_                                    _MONOFF   _x_        _x_          &m_CUST_RFP  &m_CUST_TFP  _x_          _x_
+            _x_     _x_           _x_           _x_           _x_           _x_                                                            &m_TESTM1  &m_TESTM2    &m_TESTM3    &m_TESTM4    &m_TESTM5    _x_
+            _BTLD   _x_           _x_           _x_           _x_                                                                                     _x_          _x_          _x_          _x_          _BTLD
+                                                                                           &bt BT_CLR    _BKL_TG      _RGB_TG    &bt BT_CLR
+                                                                                                        _x_            _x_
+                                                                                         _x_    _x_    _x_              _x_    _x_    _x_
             /* wanted - some controls on BT, RGB, Backlight. 2023-05-14 ran into weird can't sort through build errors if use these in combo. (Got RGB_TOG fine or BK_LT by itself, but not combined.)
                                                      _RgbMem    _RgbTog      _RgbTog    _RgbMem
                                                                _BkltTog       _BkltTog
@@ -296,8 +296,9 @@
         >; };
         #undef _BTLD
         #undef _RgbMem
-        #undef _RgbTog
-        #undef _BkltTog
+        #undef _RGB_TG
+        #undef _BKL_TG
+        #undef _MONOFF
 
 
         /*****************************************************************************************************
