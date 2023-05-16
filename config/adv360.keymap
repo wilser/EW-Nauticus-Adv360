@@ -51,14 +51,15 @@
 #define ___ &trans
 #define _x_ &none
 
-/* LED layer colors:  0 ⚫  1 ⚪  2 🔵  3 🟢  4 🔴  5 🟣  6 ⏺️  7      */
+/* LED layer colors:  0 ⚫  1 ⚪  2 🔵  3 🟢  4 🔴  5 🟣  6 ⏺️  7       */
+/*                    DVK    CMK   NUM    FNC   UTIL  NavEd   *KP   *F13   */
 #define L_0 0
 #define L_DVK 0
 #define L_CMK 1
 #define L_NUM 2
 #define L_FNC 3
-#define L_NVE 4
-#define L_UTL 5
+#define L_UTL 4
+#define L_NVE 5
 #define L_KP 6
 #define L_F13 7
 
@@ -250,23 +251,7 @@
 
 
         /*****************************************************************************************************
-         * L4: Nav & Edit
-         * [ ] TODO - r.h. side not complete to match Moonlander 
-         */
-        navnedit_layer { bindings = <
-            _x_    _x_        _x_           _x_            _x_            _x_        &to L_0                                        _x_        _x_         _x_        _x_        _x_        _x_          _x_
-            ___    &kp LWIN   &kp LSHFT     &kp LALT       &kp LCTRL      &kp LC(U)  _x_                                            _x_        &m_SEL_WRD  &kp PG_UP  &kp UP     &kp PG_DN  &m_SEL_LINE  _x_
-            ___    _x_        &kp LC(X)     &kp LC(C)      &kp LC(V)      &kp LC(I)  _x_                                            _x_        _x_         &kp LEFT   &kp DOWN   &kp RIGHT  _x_          _x_
-            ___    _x_        &kp LG(V)     &kp LC(LG(C))  &kp LC(LG(V))  &kp LC(B)                                                            _x_         _x_        _x_        _x_        _x_          _x_
-            ___    _x_        _x_           &kp PG_UP      &kp PG_DN                                                                                       ___        ___        _x_        _x_          _x_
-                                                                                          _x_        _x_            _x_        _x_
-                                                                                                    _x_              _x_
-                                                                             _x_        _x_        _x_                _x_        _x_        _x_
-        >; };
-
-
-        /*****************************************************************************************************
-         * L5: Utils & Specials
+         * L4: Utils & Specials
          * 
          * # keys send to that layer #
          * &m_SLEEP does Win-compat key shortcuts to invoke Sleep from menu
@@ -299,6 +284,22 @@
         #undef _RGB_TG
         #undef _BKL_TG
         #undef _MONOFF
+
+
+        /*****************************************************************************************************
+         * L5: Nav & Edit
+         * [ ] TODO - r.h. side not complete to match Moonlander 
+         */
+        navnedit_layer { bindings = <
+            _x_    _x_        _x_           _x_            _x_            _x_        &to L_0                                        _x_        _x_         _x_        _x_        _x_        _x_          _x_
+            ___    &kp LWIN   &kp LSHFT     &kp LALT       &kp LCTRL      &kp LC(U)  _x_                                            _x_        &m_SEL_WRD  &kp PG_UP  &kp UP     &kp PG_DN  &m_SEL_LINE  _x_
+            ___    _x_        &kp LC(X)     &kp LC(C)      &kp LC(V)      &kp LC(I)  _x_                                            _x_        _x_         &kp LEFT   &kp DOWN   &kp RIGHT  _x_          _x_
+            ___    _x_        &kp LG(V)     &kp LC(LG(C))  &kp LC(LG(V))  &kp LC(B)                                                            _x_         _x_        _x_        _x_        _x_          _x_
+            ___    _x_        _x_           &kp PG_UP      &kp PG_DN                                                                                       ___        ___        _x_        _x_          _x_
+                                                                                          _x_        _x_            _x_        _x_
+                                                                                                    _x_              _x_
+                                                                             _x_        _x_        _x_                _x_        _x_        _x_
+        >; };
 
 
         /*****************************************************************************************************
