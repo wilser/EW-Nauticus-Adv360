@@ -51,7 +51,7 @@
 #define ___ &trans
 #define _x_ &none
 
-/* LED layer colors:  0 ⚫  1 ⚪  2 🔵  3 🟢  4 🔴  5 🟣  6 ⏺️  7       */
+/* LED layer colors:  0 ⚫  1 ⚪  2 🔵  3 🟢  4 🔴  5 🟣  6 ⏺️  7 ??     */
 /*                    DVK    CMK   NUM    FNC   UTIL  NavEd   *KP   *F13   */
 #define L_0 0
 #define L_DVK 0
