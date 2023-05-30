@@ -123,6 +123,19 @@
         /* TEMP: ↑ adding MODS_RIGHT to see if can n-hold better */
     };
 
+    /* [ ] experimental: "slower" home-row mod for Win key since don't need to be fast and false-taps mess up worse */
+    hm_slw: homerow_mods {
+        compatible = "zmk,behavior-hold-tap";
+        label = "HOMEROW_MODS";
+        #binding-cells = <2>;
+        tapping-term-ms = <400>;
+        quick-tap-ms = <200>;  /* was typo, and 175 */
+        flavor = "balanced";
+        bindings = <&kp>, <&kp>;
+    };
+
+
+
     /* TBD auto-shift; adapted from here: https://github.com/serebrov/zmk-config/blob/master/config/microdox.keymap */
     as: auto_shift {
         compatible = "zmk,behavior-hold-tap";
@@ -156,15 +169,15 @@
          */
 
         // top-row mods:
-        #define _SQT_GUI &hm_l LGUI SQT     // GUI/Win on pinkie fingers
-        #define _CMA_SFT &hm_l LSHFT COMMA  // Shift on ring fingers
-        #define _DOT_ALT &hm_l LALT DOT     // Alt on middle fingers
-        #define _P_CTL   &hm_l LCTRL P      // Ctrl on indexs
-        #define _G_CTL   &hm_r RCTRL G      // Ctrl
-        #define _C_ALT   &hm_r RALT C       // Alt
-        #define _R_SFT   &hm_r RSHFT R      // Shift 
-        #define _L_GUI   &hm_r RGUI L       // GUI/Win
-        #define _Y_RALT  &hm_r RALT Y       // *Special extra Right-Alt when don't want l-alt because of AltSnap utility use
+        #define _SQT_GUI &hm_slw LGUI SQT       // GUI/Win on pinkie fingers / [] revisit if R.h. / L.h. differences put back
+        #define _CMA_SFT &hm_l LSHFT COMMA      // Shift on ring fingers
+        #define _DOT_ALT &hm_l LALT DOT         // Alt on middle fingers
+        #define _P_CTL   &hm_l LCTRL P          // Ctrl on indexs
+        #define _G_CTL   &hm_r RCTRL G          // Ctrl
+        #define _C_ALT   &hm_r RALT C           // Alt
+        #define _R_SFT   &hm_r RSHFT R          // Shift 
+        #define _L_GUI   &hm_slw RGUI L         // GUI/Win / [] revisit if R.h. / L.h. differences put back
+        #define _Y_RALT  &hm_slw RALT Y         // *Special extra Right-Alt when don't want l-alt because of AltSnap utility use
         
         // Mod-tap names / tap-holds:
         #define MT_SFT_DEL &hm_l LSHFT DEL
@@ -195,15 +208,15 @@
          */
         
         // top-row mods:
-        #define _Q_GUI   &hm_l LGUI Q       // GUI/Win on pinkie fingers
+        #define _Q_GUI   &hm_slw LGUI Q       // GUI/Win on pinkie fingers
         #define _W_SFT   &hm_l LSHFT W      // Shift on ring fingers
         #define _F_ALT   &hm_l LALT F       // Alt on middle fingers
         #define _P_CTL   &hm_l LCTRL P      // Ctrl on index fingers
         #define _L_CTL   &hm_r RCTRL L      // Ctrl
         #define _Y_SFT   &hm_r RSHFT Y      // Alt
         #define _U_ALT   &hm_r RALT U       // Shift
-        #define _SQT_GUI &hm_r RGUI SQT     // GUI/Win
-        #define _B_RALT  &hm_r RALT B       // *Special extra Right-Alt when don't want l-alt because of AltSnap utility use
+        #define _SQT_GUI &hm_slw RGUI SQT     // GUI/Win
+        #define _B_RALT  &hm_slw RALT B       // *Special extra Right-Alt when don't want l-alt because of AltSnap utility use
 
         colemak_layer { bindings = <
             ___      ___                ___                ___          ___           ___         &to L_DVK                              ___         ___          ___        ___                  ___              ___                  ___
