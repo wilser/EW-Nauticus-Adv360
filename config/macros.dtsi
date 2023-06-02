@@ -83,6 +83,7 @@ m_TestF11: m_TestF11 {
 /* ************************************************** */
 /* TEST macros to futz with settings in batches and string helpers
     tries with Shift and with Punctuation and spaces...
+    [ ] does separating keys matter?
 */
 m_M1: m_M1 {
     wait-ms = <30>;
@@ -90,7 +91,7 @@ m_M1: m_M1 {
     compatible = "zmk,behavior-macro";
     label = "m_M1";
     #binding-cells = <0>;
-    bindings = <&kp LS(T) &kp H &kp I &kp S &kp SPACE>;
+    bindings = <&kp LS(T)>, <&kp H>, <&kp I>, <&kp S>, <&kp SPACE>;
 };
 
 m_M2: m_M2 {
@@ -99,7 +100,7 @@ m_M2: m_M2 {
     compatible = "zmk,behavior-macro";
     label = "m_M2";
     #binding-cells = <0>;
-    bindings = <&kp I &kp S &kp SPACE>;
+    bindings = <&kp I>, <&kp S>, <&kp SPACE>;
 };
 
 m_M3: m_M3 {
@@ -135,7 +136,7 @@ m_M5: m_M6 {
     compatible = "zmk,behavior-macro";
     label = "m_M5";
     #binding-cells = <0>;
-    bindings = <&kp C &kp A &kp M &kp P &kp E &kp R &kp S;
+    bindings = <&kp C &kp A &kp M &kp P &kp E &kp R &kp S>;
 };
 
 m_M5: m_M7 {
