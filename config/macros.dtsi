@@ -100,9 +100,10 @@ m_M1: m_M1 {
 */
 
 /* TEMP try with dup of a prior one that worked */
+/* did NOT work -- seems something around comments or gaps??? */
 m_M1: m_M1 {
     wait-ms = <200>;
-    tap-ms = <200>;  /* trying longer */
+    tap-ms = <200>; 
     compatible = "zmk,behavior-macro";
     label = "m_M1";
     #binding-cells = <0>;
