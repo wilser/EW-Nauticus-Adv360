@@ -6,18 +6,21 @@
     [ ] does separating keys inside bindings= expression matter?
 */
 
+#define _WAIT <5>
+#define _TAP <5>
+
 m_M1: m_M1 {
-    wait-ms = <30>;
-    tap-ms = <20>;
+    wait-ms = _WAIT;
+    tap-ms = _TAP;
     compatible = "zmk,behavior-macro";
     label = "m_M1";
     #binding-cells = <0>;
-    bindings = <&kp LS(T) &kp H &kp I &kp S>;
+    bindings = <&kp LS(T) &kp H &kp I &kp S &kp SPACE>;
 };
 
 m_M2: m_M2 {
-    wait-ms = <30>;
-    tap-ms = <20>;
+    wait-ms = _WAIT;
+    tap-ms = _TAP;
     compatible = "zmk,behavior-macro";
     label = "m_M2";
     #binding-cells = <0>;
@@ -25,8 +28,8 @@ m_M2: m_M2 {
 };
 
 m_M3: m_M3 {
-    wait-ms = <30>;
-    tap-ms = <20>;
+    wait-ms = _WAIT;
+    tap-ms = _TAP;
     compatible = "zmk,behavior-macro";
     label = "m_M3";
     #binding-cells = <0>;
@@ -34,8 +37,8 @@ m_M3: m_M3 {
 };
 
 m_M4: m_M4 {
-    wait-ms = <30>;
-    tap-ms = <20>;
+    wait-ms = _WAIT;
+    tap-ms = _TAP;
     compatible = "zmk,behavior-macro";
     label = "m_M4";
     #binding-cells = <0>;
@@ -43,8 +46,8 @@ m_M4: m_M4 {
 };
 
 m_M5: m_M5 {
-    wait-ms = <30>;
-    tap-ms = <20>;
+    wait-ms = _WAIT;
+    tap-ms = _TAP;
     compatible = "zmk,behavior-macro";
     label = "m_M5";
     #binding-cells = <0>;
@@ -52,8 +55,8 @@ m_M5: m_M5 {
 };
 
 m_M6: m_M6 {
-    wait-ms = <30>;
-    tap-ms = <20>;
+    wait-ms = _WAIT;
+    tap-ms = _TAP;
     compatible = "zmk,behavior-macro";
     label = "m_M6";
     #binding-cells = <0>;
@@ -61,20 +64,20 @@ m_M6: m_M6 {
 };
 
 m_M7: m_M7 {
-    wait-ms = <10>;
-    tap-ms = <10>;
+    wait-ms = _WAIT;
+    tap-ms = _TAP;
     compatible = "zmk,behavior-macro";
     label = "m_M7";
     #binding-cells = <0>;
-    bindings = <&kp T &kp H &kp I &kp S  &kp I &kp S &kp N1 &kp N0  &kp M &kp S>;
+    bindings = <&kp H &kp I &kp K &kp I &kp N &kp G>;
 };
 
 m_M8: m_M8 {
-    wait-ms = <5>;
-    tap-ms = <5>;
+    wait-ms = _WAIT;
+    tap-ms = _TAP;
     compatible = "zmk,behavior-macro";
     label = "m_M8";
     #binding-cells = <0>;
-    bindings = <&kp T &kp H &kp I &kp S  &kp I &kp S &kp N5 &kp M &kp S>;
+    bindings = <&kp T &kp E &kp S &kp T &kp SPACE &kp L &kp O &kp N &kp G &kp E &kp R &kp SPACE &kp W &kp I &kp T &kp H>;
 };
 

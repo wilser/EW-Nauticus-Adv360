@@ -275,17 +275,11 @@
 
         /*****************************************************************************************************
          * L4: Utils & Specials & Macros & Easy certain symbols
-         * 
-         * # keys send to that layer #
-         * &m_SLEEP does Win-compat key shortcuts to invoke Sleep from menu
+         *  # keys send to that layer-#
+         *  &m_SLEEP does Windows-menu-compatible key shortcuts to invoke Sleep from menu
          *
          * [ ] TODO:
-         *      The BT/Bklt have some issue - maybe revisit later...
-         *      With M1-M3, got error
-         *      With just M1 got error, trying M3 since different syntax
-         *      With just M3 got error
-         *      Sub'ing other working macro content in, STILL failed - WTF?
-         *      try taking off the shift-2 in row 297? → still failed
+         *      [ ] put back LS(N2)..N4?
 
          */
         #define _BTLD &bootloader
@@ -299,20 +293,10 @@
             _x_     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  _x_                                    &m_SLEEP  _x_        &kp N1      &kp N2       &kp N3       &kp N4       _x_
             _x_     _x_           _x_           _x_           _x_           _x_           _x_                                    _MONOFF   _x_        &m_M1       &m_M2        &m_M3        &m_M4        _x_
             _x_     _x_           _x_           _x_           _x_           _x_                                                            _x_        &m_M5       &m_M6        &m_M7        &m_M8        _x_
-
-/* TEMP cmt out to test
-            _x_     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  _x_                                    &m_SLEEP  _x_        &kp N1      &kp N2       &kp N3       &kp N4       &kp LS(N2)   
-            _x_     _x_           _x_           _x_           _x_           _x_           _x_                                    _MONOFF   _x_        &m m_M1     &m m_M1      &m m_M1      &m m_M1      &kp LS(N3)
-            _x_     _x_           _x_           _x_           _x_           _x_                                                            _x_        &m m_M1     &m m_M1      &m m_M1      &m m_M1      &kp LS(N4)
-*/
             _BTLD   _x_           _x_           _x_           _x_                                                                                     _x_         _x_          _x_          _x_          _BTLD
                                                                                            &bt BT_CLR    _BKL_TG      _RGB_TG    &bt BT_CLR
                                                                                                         _x_            _x_
                                                                                          _x_    _x_    _x_              _x_    _x_    _x_
-            /* wanted - some controls on BT, RGB, Backlight. 2023-05-14 ran into weird can't sort through build errors if use these in combo. (Got RGB_TOG fine or BK_LT by itself, but not combined.)
-                                                     _RgbMem    _RgbTog      _RgbTog    _RgbMem
-                                                               _BkltTog       _BkltTog
-            */
         >; };
         #undef _BTLD
         #undef _RgbMem
