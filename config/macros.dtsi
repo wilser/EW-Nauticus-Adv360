@@ -70,6 +70,7 @@ m_CUST_TFP: m_CUST_TFP {
 /* simple F11 send works fine... A simple send F16 seems to do nothing... Is it the ≥F12 cases that's the issue? */
 /* related to this option? https://github.com/zmkfirmware/zmk/issues/1460 ... ?  commented out this in 2 files (left, right): CONFIG_ZMK_HID_REPORT_TYPE_NKRO=y */
 /* ******** YES YES ^^ commenting out this option then worked!  ********** */
+/*
 m_TestF11: m_TestF11 {
     wait-ms = <100>;
     tap-ms = <100>;
@@ -78,7 +79,7 @@ m_TestF11: m_TestF11 {
     #binding-cells = <0>;
     bindings = <&kp F11>;
 };
-
+*/
 
 /* ************************************************** */
 /* TEST macros to futz with settings in batches and string helpers
@@ -87,6 +88,7 @@ m_TestF11: m_TestF11 {
 */
 
 /* TEMP comment out parts troubleshooting */
+/*
 m_M1: m_M1 {
     wait-ms = <30>;
     tap-ms = <20>;
@@ -95,6 +97,18 @@ m_M1: m_M1 {
     #binding-cells = <0>;
     bindings = <&kp LS(T)>, <&kp H>, <&kp I>, <&kp S>, <&kp SPACE>;
 };
+*/
+
+/* TEMP try with dup of a prior one that worked */
+m_M1: m_M1 {
+    wait-ms = <200>;
+    tap-ms = <200>;  /* trying longer */
+    compatible = "zmk,behavior-macro";
+    label = "m_M1";
+    #binding-cells = <0>;
+    bindings = <&kp LG(X)>, <&kp U>, <&kp S>; /* try separated? */
+};
+
 
 
 m_M2: m_M2 {
