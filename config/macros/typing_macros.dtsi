@@ -61,20 +61,20 @@ m_M6: m_M6 {
 };
 
 m_M7: m_M7 {
-    wait-ms = <30>;
-    tap-ms = <20>;
+    wait-ms = <10>;
+    tap-ms = <10>;
     compatible = "zmk,behavior-macro";
     label = "m_M7";
     #binding-cells = <0>;
-    bindings = <&kp M &kp A &kp C &kp R &kp O &kp S>;
+    bindings = <&kp T &kp H &kp I &kp S  &kp I &kp S &kp N1 &kp N0  &kp M &kp S>;
 };
 
 m_M8: m_M8 {
-    wait-ms = <30>;
-    tap-ms = <20>;
+    wait-ms = <5>;
+    tap-ms = <5>;
     compatible = "zmk,behavior-macro";
     label = "m_M8";
     #binding-cells = <0>;
-    bindings = <&kp SPACE &kp SPACE &kp SPACE>;
+    bindings = <&kp T &kp H &kp I &kp S  &kp I &kp S &kp N5 &kp M &kp S>;
 };
 
