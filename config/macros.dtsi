@@ -86,7 +86,7 @@ m_TestF11: m_TestF11 {
     [ ] does separating keys matter?
 */
 
-/* TEMP comment out parts troubleshooting
+/* TEMP comment out parts troubleshooting */
 m_M1: m_M1 {
     wait-ms = <30>;
     tap-ms = <20>;
@@ -95,7 +95,7 @@ m_M1: m_M1 {
     #binding-cells = <0>;
     bindings = <&kp LS(T)>, <&kp H>, <&kp I>, <&kp S>, <&kp SPACE>;
 };
-*/
+
 
 m_M2: m_M2 {
     wait-ms = <30>;
