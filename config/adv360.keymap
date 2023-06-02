@@ -284,7 +284,8 @@
          *      With just M1 got error, trying M3 since different syntax
          *      With just M3 got error
          *      Sub'ing other working macro content in, STILL failed - WTF?
-         *      try taking off the shift-2 in row 297?
+         *      try taking off the shift-2 in row 297? → still failed
+
          */
         #define _BTLD &bootloader
         #define _RgbMem &rgb_ug RGB_MEFS_CMD
@@ -295,7 +296,7 @@
         util_layer { bindings = <
             _x_     &to 1         &to 2         &to 3         &to 4         &to 5         &to L_0                                ___       &to 6      &to 7       &to 8        &to 9        &to 0        _x_
             _x_     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  _x_                                    &m_SLEEP  _x_        &kp N1      &kp N2       &kp N3       &kp N4       _x_
-            _x_     _x_           _x_           _x_           _x_           _x_           _x_                                    _MONOFF   _x_        &m m_M1     _x_          _x_          _x_          _x_
+            _x_     _x_           _x_           _x_           _x_           _x_           _x_                                    _MONOFF   _x_        &m_M1       _x_          _x_          _x_          _x_
             _x_     _x_           _x_           _x_           _x_           _x_                                                            _x_        _x_         _x_          _x_          _x_          _x_
 
 /* TEMP cmt out to test
