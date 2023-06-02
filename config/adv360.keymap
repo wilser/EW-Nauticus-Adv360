@@ -273,7 +273,7 @@
 
 
         /*****************************************************************************************************
-         * L4: Utils & Specials
+         * L4: Utils & Specials & Macros & Easy certain symbols
          * 
          * # keys send to that layer #
          * &m_SLEEP does Win-compat key shortcuts to invoke Sleep from menu
@@ -288,11 +288,11 @@
         #define _MONOFF &kp RC(RG(L)) // Win+Ctrl+L invokes my AHK lock+monoff macro
 
         util_layer { bindings = <
-            _x_     &to 1         &to 2         &to 3         &to 4         &to 5         &to L_0                                ___       &to 6      &to 7        &to 8        &to 9        &to 0        _x_
-            _x_     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  _x_                                    &m_SLEEP  _x_        _x_          _x_          _x_          _x_          _x_
-            _x_     _x_           _x_           _x_           _x_           _x_           _x_                                    _MONOFF   _x_        _x_          &m_CUST_RFP  &m_CUST_TFP  _x_          _x_
-            _x_     _x_           _x_           _x_           _x_           _x_                                                            &m_TESTM1  &m_TESTM2    &m_TESTM3    &m_TESTM4    &m_TESTM5    _x_
-            _BTLD   _x_           _x_           _x_           _x_                                                                                     _x_          _x_          _x_          _x_          _BTLD
+            _x_     &to 1         &to 2         &to 3         &to 4         &to 5         &to L_0                                ___       &to 6      &to 7       &to 8        &to 9        &to 0        _x_
+            _x_     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  _x_                                    &m_SLEEP  _x_        &kp N1      &kp N2       &kp N3       &kp N4       &kp LS(N2)   
+            _x_     _x_           _x_           _x_           _x_           _x_           _x_                                    _MONOFF   _x_        &m m_M1     &m m_M2      &m m_M3      &m m_M4      &kp LS(N3)
+            _x_     _x_           _x_           _x_           _x_           _x_                                                            _x_        &m m_M5     &m m_M6      &m m_M7      &m m_M8      &kp LS(N4)
+            _BTLD   _x_           _x_           _x_           _x_                                                                                     _x_         _x_          _x_          _x_          _BTLD
                                                                                            &bt BT_CLR    _BKL_TG      _RGB_TG    &bt BT_CLR
                                                                                                         _x_            _x_
                                                                                          _x_    _x_    _x_              _x_    _x_    _x_

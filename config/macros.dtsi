@@ -1,4 +1,5 @@
 /* € - but clunky; seems some newer macros send Unicode better - need to search */
+#include <dt-bindings/zmk/keys.h>
 m_CHR_EU: m_CHR_EU{
     compatible = "zmk,behavior-macro";
     label = "m_CHR_EU";
@@ -65,23 +66,6 @@ m_CUST_TFP: m_CUST_TFP {
     bindings = <&kp F16>, <&kp N1>, <&kp N2>, <&kp SPACE>, <&kp LS(F16)>;
 };
 
-/* CUST_RFP - similar as above ... */
-m_CUST_RFP: m_CUST_RFP {
-    wait-ms = <40>;
-    tap-ms = <20>;
-    compatible = "zmk,behavior-macro";
-    label = "m_CUST_RFP";
-    #binding-cells = <0>;
-    /*bindings = <&kp F17 &kp N8 &kp LC(F17) &kp LS(F17)>;   || only getting the numbers...*/
-    bindings = <&macro_tap &kp F17 &kp N8>
-             , <&macro_press &kp LCTRL>
-             , <&macro_tap &kp F17>
-             , <&macro_release &kp LCTRL>
-             , <&macro_press &kp LSHFT>
-             , <&macro_tap &kp F17>
-             , <&macro_release &kp LSHFT>
-             ;
-};
 
 /* simple F11 send works fine... A simple send F16 seems to do nothing... Is it the ≥F12 cases that's the issue? */
 /* related to this option? https://github.com/zmkfirmware/zmk/issues/1460 ... ?  commented out this in 2 files (left, right): CONFIG_ZMK_HID_REPORT_TYPE_NKRO=y */
@@ -97,55 +81,80 @@ m_TestF11: m_TestF11 {
 
 
 /* ************************************************** */
-/* TEST macros to futz with settings in batches */
-m_TESTM1: m_TESTM1 {
-    wait-ms = <100>;
-    tap-ms = <100>;
+/* TEST macros to futz with settings in batches and string helpers
+    tries with Shift and with Punctuation and spaces...
+*/
+m_M1: m_M1 {
+    wait-ms = <30>;
+    tap-ms = <20>;
     compatible = "zmk,behavior-macro";
-    label = "m_TESTM1";
+    label = "m_M1";
     #binding-cells = <0>;
-    bindings = <&kp F16>;
+    bindings = <&kp LS(T) &kp H &kp I &kp S &kp SPACE>;
 };
 
-m_TESTM2: m_TESTM2 {
-    wait-ms = <100>;
-    tap-ms = <100>;
+m_M2: m_M2 {
+    wait-ms = <30>;
+    tap-ms = <20>;
     compatible = "zmk,behavior-macro";
-    label = "m_TESTM2";
+    label = "m_M2";
     #binding-cells = <0>;
-    bindings = <&macro_press &kp LSHFT>
-             , <&macro_tap &kp F16>
-             , <&macro_release &kp LSHFT>
-             ;
+    bindings = <&kp I &kp S &kp SPACE>;
 };
 
-m_TESTM3: m_TESTM3 {
-    wait-ms = <100>;
-    tap-ms = <100>;
+m_M3: m_M3 {
+    wait-ms = <30>;
+    tap-ms = <20>;
     compatible = "zmk,behavior-macro";
-    label = "m_TESTM3";
+    label = "m_M3";
     #binding-cells = <0>;
-    bindings = <&kp LS(F16)>;
+    bindings = <&kp T &kp I &kp M &kp E &kp S>;
 };
 
-m_TESTM4: m_TESTM4 {
-    wait-ms = <100>;
-    tap-ms = <100>;
+m_M4: m_M4 {
+    wait-ms = <30>;
+    tap-ms = <20>;
     compatible = "zmk,behavior-macro";
-    label = "m_TESTM4";
+    label = "m_M4";
     #binding-cells = <0>;
-    bindings = <&kp F16>;
+    bindings = <&kp T &kp R &kp I &kp E &kp S>;
 };
 
-m_TESTM5: m_TESTM5 {
-    wait-ms = <100>;
-    tap-ms = <100>;
+m_M5: m_M5 {
+    wait-ms = <30>;
+    tap-ms = <20>;
     compatible = "zmk,behavior-macro";
-    label = "m_TESTM5";
+    label = "m_M5";
     #binding-cells = <0>;
-    bindings = <&kp F16>;
+    bindings = <&kp LS(H) &kp A &kp P &kp P &kp Y &kp SPACE>;
 };
 
+m_M5: m_M6 {
+    wait-ms = <30>;
+    tap-ms = <20>;
+    compatible = "zmk,behavior-macro";
+    label = "m_M5";
+    #binding-cells = <0>;
+    bindings = <&kp C &kp A &kp M &kp P &kp E &kp R &kp S;
+};
+
+m_M5: m_M7 {
+    wait-ms = <30>;
+    tap-ms = <20>;
+    compatible = "zmk,behavior-macro";
+    label = "m_M5";
+    #binding-cells = <0>;
+    bindings = <&kp M &kp A &kp C &kp R &kp O &kp S>;
+};
+
+m_M5: m_M8 {
+    wait-ms = <30>;
+    tap-ms = <20>;
+    compatible = "zmk,behavior-macro";
+    label = "m_M5";
+    #binding-cells = <0>;
+    bindings = <&kp SPACE &kp SPACE &kp SPACE>;
+};
 
 
 
