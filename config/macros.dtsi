@@ -85,6 +85,8 @@ m_TestF11: m_TestF11 {
     tries with Shift and with Punctuation and spaces...
     [ ] does separating keys matter?
 */
+
+/* TEMP comment out all for troubleshooting
 m_M1: m_M1 {
     wait-ms = <30>;
     tap-ms = <20>;
@@ -157,7 +159,7 @@ m_M8: m_M8 {
     bindings = <&kp SPACE &kp SPACE &kp SPACE>;
 };
 
-
+*/
 
 
 /* ************************************************** */
