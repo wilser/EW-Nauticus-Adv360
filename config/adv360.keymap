@@ -86,7 +86,7 @@
 
 
   behaviors {
-    #include "macros.dtsi"
+    #include "macros/macros.dtsi"
     #include "tapdance.dtsi"
 
     /*
