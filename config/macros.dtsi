@@ -130,7 +130,7 @@ m_M5: m_M5 {
     bindings = <&kp LS(H) &kp A &kp P &kp P &kp Y &kp SPACE>;
 };
 
-m_M5: m_M6 {
+m_M6: m_M6 {
     wait-ms = <30>;
     tap-ms = <20>;
     compatible = "zmk,behavior-macro";
@@ -139,7 +139,7 @@ m_M5: m_M6 {
     bindings = <&kp C &kp A &kp M &kp P &kp E &kp R &kp S>;
 };
 
-m_M5: m_M7 {
+m_M7: m_M7 {
     wait-ms = <30>;
     tap-ms = <20>;
     compatible = "zmk,behavior-macro";
@@ -148,7 +148,7 @@ m_M5: m_M7 {
     bindings = <&kp M &kp A &kp C &kp R &kp O &kp S>;
 };
 
-m_M5: m_M8 {
+m_M8: m_M8 {
     wait-ms = <30>;
     tap-ms = <20>;
     compatible = "zmk,behavior-macro";
