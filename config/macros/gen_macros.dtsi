@@ -1,0 +1,66 @@
+#include <dt-bindings/zmk/keys.h>
+
+
+/* TODO
+    [ ] can omit the macro_tap and just go straight for keys when don't need press+release?
+
+
+*/
+
+/* € - but clunky; seems some newer macros send Unicode better - need to search */
+m_CHR_EU: m_CHR_EU{
+    compatible = "zmk,behavior-macro";
+    label = "m_CHR_EU";
+    wait-ms = <20>;
+    tap-ms = <30>;
+    #binding-cells = <0>;
+    bindings
+        = <&macro_press   &kp LALT>
+        , <&macro_tap     &kp KP_N0 &kp KP_N1 &kp KP_N2 &kp KP_N8>
+        , <&macro_release &kp LALT>
+        ;
+};
+
+/* SELECT WORD: Ctrl+LEFT, Ctrl+Shift+RIGHT */
+m_SEL_WRD: m_SEL_WRD{
+    compatible = "zmk,behavior-macro";
+    label = "m_SEL_WRD";
+    wait-ms = <40>;  /* 40,40 seems more reliable than 30,20 or faster */
+    tap-ms = <20>;
+    #binding-cells = <0>;
+    bindings
+        = <&macro_press &kp LCTRL>
+        , <&macro_tap &kp LEFT>
+        , <&macro_release &kp LCTRL>
+        , <&macro_press &kp LSHFT &kp LCTRL>
+        , <&macro_tap &kp RIGHT>
+        , <&macro_release &kp LSHFT &kp LCTRL>
+        ;
+};
+
+/* SELECT LINE: Home, Shift+End */
+m_SEL_LINE: m_SEL_LINE{
+    compatible = "zmk,behavior-macro";
+    label = "m_SEL_LINE";
+    wait-ms = <40>;
+    tap-ms = <20>;
+    #binding-cells = <0>;
+    bindings
+        = <&macro_tap &kp HOME>
+        , <&macro_press &kp LSHFT>
+        , <&macro_tap &kp END>
+        , <&macro_release &kp LSHFT>
+        ;
+};
+
+/* WINDOWS SLEEP: Win+X, U, S    (because the k-sleep and c-sleep don't seem to work / see https://github.com/zmkfirmware/zmk/issues/1077) */
+/* NOT working yet; maybe need more pausing or split the sends?? */
+m_SLEEP: m_SLEEP {
+    wait-ms = <200>;
+    tap-ms = <200>;  /* trying longer */
+    compatible = "zmk,behavior-macro";
+    label = "m_SLEEP";
+    #binding-cells = <0>;
+    bindings = <&kp LG(X)>, <&kp U>, <&kp S>; /* try separated? */
+};
+
