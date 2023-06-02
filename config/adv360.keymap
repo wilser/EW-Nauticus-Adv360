@@ -86,7 +86,7 @@
 
 
   behaviors {
-    #include "macros.dtsi"
+    #include "./macros/macros.dtsi"
     #include "tapdance.dtsi"
 
     /*
@@ -181,7 +181,7 @@
         #define _SQT_GUI &hm_slw LGUI SQT       // GUI/Win on pinkie fingers / [] revisit if R.h. / L.h. differences put back
         #define _CMA_SFT &hm_l LSHFT COMMA      // Shift on ring fingers
         #define _DOT_ALT &hm_l LALT DOT         // Alt on middle fingers
-        #define _P_CTL   &hm_l LCTRL P          // Ctrl on indexs
+        #define _P_CTL   &hm_l LCTRL P          // Ctrl on indexes
         #define _G_CTL   &hm_r RCTRL G          // Ctrl
         #define _C_ALT   &hm_r RALT C           // Alt
         #define _R_SFT   &hm_r RSHFT R          // Shift 
@@ -304,21 +304,22 @@
                                                                                            &bt BT_CLR    _BKL_TG      _RGB_TG    &bt BT_CLR
                                                                                                         _x_            _x_
                                                                                          _x_    _x_    _x_              _x_    _x_    _x_
-            /* wanted - some controls on BT, RGB, Backlight. 2023-05-14 ran into weird can't sort through build errors if use these in combo. (Got RGB_TOG fine or BK_LT by itself, but not combined.)
-                                                     _RgbMem    _RgbTog      _RgbTog    _RgbMem
-                                                               _BkltTog       _BkltTog
-
-
-            &m_M1       &m_M2        &m_M3        &m_M4 
-            &m_M5       &m_M6        &m_M7        &m_M8 
-
-            */
         >; };
         #undef _BTLD
         #undef _RgbMem
         #undef _RGB_TG
         #undef _BKL_TG
         #undef _MONOFF
+        /* wanted - some controls on BT, RGB, Backlight. 2023-05-14 ran into weird can't sort through build errors if use these in combo. (Got RGB_TOG fine or BK_LT by itself, but not combined.)
+                                                _RgbMem    _RgbTog      _RgbTog    _RgbMem
+                                                        _BkltTog       _BkltTog
+
+        Also:
+        &m_M1       &m_M2        &m_M3        &m_M4 
+        &m_M5       &m_M6        &m_M7        &m_M8 
+
+        -- and put back the Shift(#)s on the right edge
+        */
 
 
         /*****************************************************************************************************
