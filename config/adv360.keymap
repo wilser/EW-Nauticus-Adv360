@@ -272,13 +272,13 @@
          */
         fn_1_12_layer { bindings = <
             _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                ___    _x_    &kp F10  &kp F11  &kp F12  _x_    _x_
-            _x_    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    _x_                                    _x_    _x_    &kp F7   &kp F8   &kp F9   _x_    _x_
-            _x_    _x_        _x_         _x_        _x_        _x_    _x_                                    _x_    _x_    &kp F4   &kp F5   &kp F6   _x_    _x_
+            ___    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    _x_                                    _x_    _x_    &kp F7   &kp F8   &kp F9   _x_    _x_
+            ___    _x_        _x_         _x_        _x_        _x_    _x_                                    _x_    _x_    &kp F4   &kp F5   &kp F6   _x_    _x_
             _x_    _x_        _x_         _x_        _x_        _x_                                                  _x_    &kp F1   &kp F2   &kp F3   _x_    _x_
-            _x_    _x_        _x_         _x_        _x_                                                                    _x_      _x_      _x_      _x_    _x_
+            _x_    _x_        _x_         ___        ___                                                                    _x_      _x_      _x_      _x_    _x_
                                                                             _x_    _x_        _x_    _x_
                                                                                   _x_          _x_
-                                                                   _x_    _x_    _x_            _x_    _x_    _x_
+                                                                   ___    ___    _x_            _x_    _x_    _x_
         >; };
 
 
