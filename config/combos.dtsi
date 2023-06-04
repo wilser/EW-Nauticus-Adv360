@@ -11,8 +11,25 @@
  *              70 71 72  73 74 75
  */
 
+ /* NOTES
+    https://zmk.dev/docs/features/combos
+    https://zmk.dev/docs/config/combos
+
+    timeout-ms: must hit combo w/in that time
+    layers = <0 1 ...> // OPTIONAL - to restrict combo to only work on that/those layers
+
+ */
+
+#include <dt-bindings/zmk/keys.h>
+
 combo_caps_word {
     timeout-ms = <50>;
     key-positions = <49 50>;
     bindings = <&caps_word>;
 };
+
+combo_backspace {
+    timeout-ms = <50>;
+    key-positions = <37 40>;
+    bindings = <&kp BACKSPACE>;
+}
