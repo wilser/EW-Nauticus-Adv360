@@ -184,7 +184,7 @@
 
 
         /*****************************************************************************************************
-         * L0: DVORAK (default)
+         * L0 ⚫: DVORAK (default)
          */
 
         // top-row mods:
@@ -220,7 +220,7 @@
 
 
         /*****************************************************************************************************
-         * L1: COLEMAK 
+         * L1 ⚪: COLEMAK 
          * Specials and some punctuation re-mapped via Windows Keyboard layout driver file: 
          *   ; → (     ` → )     F23 → :     F24 → " 
          *   And many of the Shift+___ cases.
@@ -250,7 +250,7 @@
 
 
         /*****************************************************************************************************
-         * L2: Standard numpad layer
+         * L2 🔵: Standard numpad layer
          *      Uses non-keypad number variants since plan to use as "main" numbers method eventually as practice more.
          * [ ] TODO: € seems wonky / seems better Alt-Code methods?
          */ 
@@ -267,7 +267,7 @@
 
 
         /*****************************************************************************************************
-         * L3: Function Keys
+         * L3 🟢: Function Keys
          *
          */
         fn_1_12_layer { bindings = <
@@ -283,7 +283,7 @@
 
 
         /*****************************************************************************************************
-         * L4: Utils & Specials & Macros & Easy certain symbols
+         * L4 🔴: Utils & Specials & Macros/tests & Easy certain symbols
          *  # keys send to that layer-#
          *  &m_SLEEP does Windows-menu-compatible key shortcuts to invoke Sleep from menu
          *
@@ -315,8 +315,8 @@
 
 
         /*****************************************************************************************************
-         * L5: Nav & Edit
-         * [ ] TODO - r.h. side not complete to match Moonlander 
+         * L5 🟣: Nav & Edit
+         * [ ] other r.h.s. useful things?
          */
         navnedit_layer { bindings = <
             _x_    _x_        _x_           _x_            _x_            _x_        &to L_0                                        ___        _x_         _x_        _x_        _x_        _x_          _x_
@@ -331,33 +331,32 @@
 
 
         /*****************************************************************************************************
-         * L6: Alt Numpad - using actual KP versions of numbers; in case need like Alt+<code> testing.
-         * [ ] TODO: &trans through edge/useful keys
+         * L6 🧢: Alt Numpad - using actual KP versions of numbers; in case need like Alt+<code> testing.
          */
         kp_layer { bindings = <
             _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                ___    _x_    _x_         _x_         _x_         _x_    _x_
-            _x_    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    _x_                                    _x_    _x_    &kp KP_N7   &kp KP_N8   &kp KP_N9   _x_    _x_
-            _x_    _x_        _x_         _x_        _x_        _x_    _x_                                    _x_    _x_    &kp KP_N4   &kp KP_N5   &kp KP_N6   _x_    _x_
+            ___    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    _x_                                    _x_    _x_    &kp KP_N7   &kp KP_N8   &kp KP_N9   _x_    _x_
+            ___    _x_        _x_         _x_        _x_        _x_    _x_                                    _x_    _x_    &kp KP_N4   &kp KP_N5   &kp KP_N6   _x_    _x_
             _x_    _x_        _x_         _x_        _x_        _x_                                                  _x_    &kp KP_N1   &kp KP_N2   &kp KP_N3   _x_    _x_
-            _x_    _x_        _x_         _x_        _x_                                                                    _x_         _x_         _x_         _x_    _x_
+            _x_    _x_        _x_         ___        ___                                                                    _x_         _x_         _x_         _x_    _x_
                                                                             _x_    _x_        _x_    _x_
                                                                                   _x_          _x_
-                                                                   _x_    _x_    _x_            _x_    &kp ENTER  &kp KP_N0
+                                                                   ___    ___    _x_            _x_    &kp ENTER  &kp KP_N0
         >; };
 
 
         /*****************************************************************************************************
-         * L7: higher F## keys 13-24; in case need for testing
+         * L🟡: higher F## keys 13-24; in case need for testing
          */
         fn_13_24_layer { bindings = <
             _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                ___    _x_    &kp F22   &kp F23   &kp F24   _x_    _x_
-            _x_    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    _x_                                    _x_    _x_    &kp F19   &kp F20   &kp F21   _x_    _x_
-            _x_    _x_        _x_         _x_        _x_        _x_    _x_                                    _x_    _x_    &kp F16   &kp F17   &kp F18   _x_    _x_
+            ___    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    _x_                                    _x_    _x_    &kp F19   &kp F20   &kp F21   _x_    _x_
+            ___    _x_        _x_         _x_        _x_        _x_    _x_                                    _x_    _x_    &kp F16   &kp F17   &kp F18   _x_    _x_
             _x_    _x_        _x_         _x_        _x_        _x_                                                  _x_    &kp F13   &kp F14   &kp F15   _x_    _x_
-            _x_    _x_        _x_         _x_        _x_                                                                    _x_       _x_       _x_       _x_    _x_
+            _x_    _x_        _x_         ___        ___                                                                    ___       ___       _x_       _x_    _x_
                                                                             _x_    _x_        _x_    _x_
                                                                                   _x_          _x_
-                                                                   _x_    _x_    _x_            _x_    _x_    _x_
+                                                                   ___    ___    _x_            _x_    ___    ___
         >; };
 
     };
