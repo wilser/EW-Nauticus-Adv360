@@ -162,7 +162,7 @@
     };
 
     combo_backspace {
-        key-positions = <37 40>;
+        key-positions = <49 52>; // r.h. 1 & 4, 1 row down
         bindings = <&kp BACKSPACE>;
         layers = <0 1>; // Dvorak and Colemak (main typing) only
     };
