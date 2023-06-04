@@ -166,8 +166,7 @@
         bindings = <&kp BACKSPACE>;
         layers = <0 1>; // Dvorak and Colemak (main typing) only
     };
-
-  }
+  };
 
 
     keymap {
