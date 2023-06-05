@@ -36,9 +36,12 @@
 #define THUMBS THUMBS_LEFT THUMBS_RIGHT
 /*wonder: if add the same-side mods to ones allowed to hold? ... */
 /* NO - seems not to affect - seems related to the 175 or 200ms timing things or the mode overall maybe */
+/* Ah ↓ the MODS I didn't refine from homerow to up1 row */
 
-#define MODS_LEFT 29 30 31 32
-#define MODS_RIGHT 37 38 39 40
+#define MODS_LEFT 15 16 17 18
+#define MODS_RIGHT 23 24 25 26
+/* #define MODS_LEFT 29 30 31 32 */
+/* #define MODS_RIGHT 37 38 39 40 */
 
 // Helpers for common key-defaults (block [&none] or passthrough [&trans])
 #define ___ &trans
@@ -110,7 +113,7 @@
         quick-tap-ms = <125>; /* was typo, and 175 */
         flavor = "balanced";
         bindings = <&kp>, <&kp>;
-        /* hold-trigger-key-positions = <KEYS_RIGHT THUMBS MODS_LEFT>; */
+        hold-trigger-key-positions = <KEYS_RIGHT THUMBS MODS_LEFT>;
         /* TEMP: ↑ adding MODS_LEFT to see if can n-hold mods */
     };
 
@@ -122,7 +125,7 @@
         quick-tap-ms = <125>;  /* was typo, and 175 */
         flavor = "balanced";
         bindings = <&kp>, <&kp>;
-        /* hold-trigger-key-positions = <KEYS_LEFT THUMBS MODS_RIGHT>; */
+        hold-trigger-key-positions = <KEYS_LEFT THUMBS MODS_RIGHT>;
         /* TEMP: ↑ adding MODS_RIGHT to see if can n-hold better */
     };
 
