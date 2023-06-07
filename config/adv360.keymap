@@ -215,9 +215,9 @@
             MT_TB_SHFTB          &kp A           &kp O          &kp E          &kp I          &kp U          _MEH                                               _x_         &kp D          &kp H          &kp T          &kp N              &kp S              &as LS(MINUS) MINUS
             &caps_word           &lt L_NVE SEMI  &kp Q          &kp J          &lt L_NUM K    &lt L_UTL X                                                                   &lt L_UTL B    &kp M          &kp W          &kp V              &kp Z              &as &caps_word COLON
             &tdEmjWin            &kp GRAVE       &kp LC(Q)      &kp LEFT       &kp RIGHT                                                                                                   &kp UP         &kp DOWN       &as LS(LBKT) LBKT  &as LS(RBKT) RBKT  &to L_NUM
-                                                                                                                   &kp LSHFT   &kp LALT   &kp LGUI    &kp RSHFT
-                                                                                                                              &kp PG_UP    &kp PG_DN   
-                                                                                                       &kp BSPC  MT_SFT_DEL  &kp HOME       &kp END    &lt L_FNC ENTER   &kp SPACE
+                                                                                                                   &kp LSHFT   &kp LCTRL  &kp RCTRL    &kp RSHFT
+                                                                                                                              &kp HOME     &kp PG_UP   
+                                                                                                       &kp BSPC  MT_SFT_DEL  &kp END        &kp PG_DN    &lt L_FNC ENTER   &kp SPACE
         >; };
         #undef _SQT_GUI // reused below
 
