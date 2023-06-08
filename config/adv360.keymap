@@ -47,8 +47,8 @@
 #define ___ &trans
 #define _x_ &none
 
-/* LED layer colors:  0 ⚫  1 ⚪  2 🔵  3 🟢  4 🔴  5 🟣  6 🧢  7 🟡     */
-/*                    DVK    CMK   NUM    FNC   UTIL  NavEd   KP    F13+   */
+/* LED layer colors:  0 ⚫  1 ⚪  2 🔵  3 🟢  4 🔴  5 🟣  6 🧢  7 🟡   8     */
+/*                    DVK    CMK   NUM    FNC   UTIL  NavEd   LR    KP    F13+   */
 #define L_0 0
 #define L_DVK 0
 #define L_CMK 1
@@ -56,8 +56,9 @@
 #define L_FNC 3
 #define L_UTL 4
 #define L_NVE 5
-#define L_KP 6
-#define L_F13 7
+#define L_LR 6
+#define L_KP 7
+#define L_F13 8
 
 /* TAPPING timeouts, flavors, etc.
     try disable global-quick-tap, & set quick-tap-ms faster like 125
@@ -188,6 +189,8 @@
 
         /*****************************************************************************************************
          * L0 ⚫: DVORAK (default)
+         *      http://www.keyboard-layout-editor.com/#/gists/fdcbdec4d9a329533f670a566a99338f
+         *  [ ] TBD toggle to LR layer...
          */
 
         // top-row mods:
@@ -215,7 +218,7 @@
             MT_TB_SHFTB          &kp A           &kp O          &kp E          &kp I          &kp U          _MEH                                               _x_         &kp D          &kp H          &kp T          &kp N              &kp S              &as LS(MINUS) MINUS
             &caps_word           &lt L_NVE SEMI  &kp Q          &kp J          &lt L_NUM K    &lt L_UTL X                                                                   &lt L_UTL B    &kp M          &kp W          &kp V              &kp Z              &as &caps_word COLON
             &tdEmjWin            &kp GRAVE       &kp LC(Q)      &kp LEFT       &kp RIGHT                                                                                                   &kp UP         &kp DOWN       &as LS(LBKT) LBKT  &as LS(RBKT) RBKT  &to L_NUM
-                                                                                                                   &kp LSHFT   &kp LCTRL  &kp RCTRL    &kp RSHFT
+                                                                                                                   &kp LSHFT   &to L_LR   &kp RCTRL    &kp RSHFT
                                                                                                                               &kp HOME     &kp PG_UP   
                                                                                                        &kp BSPC  MT_SFT_DEL  &kp END        &kp PG_DN    &lt L_FNC ENTER   &kp SPACE
         >; };
@@ -224,6 +227,7 @@
 
         /*****************************************************************************************************
          * L1 ⚪: COLEMAK 
+         *      http://www.keyboard-layout-editor.com/#/gists/d5273d628b4d4cc48be28dc629304b95
          * Specials and some punctuation re-mapped via Windows Keyboard layout driver file: 
          *   ; → (     ` → )     F23 → :     F24 → " 
          *   And many of the Shift+___ cases.
@@ -254,6 +258,7 @@
 
         /*****************************************************************************************************
          * L2 🔵: Standard numpad layer
+         *      http://www.keyboard-layout-editor.com/#/gists/c51e298f5744feba159cde9973f47b92
          *      Uses non-keypad number variants since plan to use as "main" numbers method eventually as practice more.
          * [ ] TODO: € seems wonky / seems better Alt-Code methods?
          */ 
@@ -271,6 +276,7 @@
 
         /*****************************************************************************************************
          * L3 🟢: Function Keys
+         *      http://www.keyboard-layout-editor.com/#/gists/d61490ab54f1d9c63f17ee2d25b40732
          *
          */
         fn_1_12_layer { bindings = <
@@ -287,6 +293,7 @@
 
         /*****************************************************************************************************
          * L4 🔴: Utils & Specials & Macros/tests & Easy certain symbols
+        *       http://www.keyboard-layout-editor.com/#/gists/2d2d37deb742cc77638e81cb0b875106
          *  # keys send to that layer-#
          *  &m_SLEEP does Windows-menu-compatible key shortcuts to invoke Sleep from menu
          *
@@ -319,6 +326,7 @@
 
         /*****************************************************************************************************
          * L5 🟣: Nav & Edit
+         *      http://www.keyboard-layout-editor.com/#/gists/18e13161cf62a37e0ba0d751735110a1
          * [ ] other r.h.s. useful things?
          */
         navnedit_layer { bindings = <
@@ -334,7 +342,25 @@
 
 
         /*****************************************************************************************************
-         * L6 🧢: Alt Numpad - using actual KP versions of numbers; in case need like Alt+<code> testing.
+         * L6 🧢: Lightroom (& TBD Photoshop)
+         *      http://www.keyboard-layout-editor.com/#/gists/ce40ef1f57700f3871b7af5a965ad51b
+         *      This is for when the RIGHT HAND is on the mouse primarily; so r.h.s. just left to entirely float through. See notes on KLE.
+         */
+         lr_layer { bindings = <
+            &kp G  ___    ___    ___    ___    ___    &to L_0                                ___    ___    ___    ___    ___    ___    ___
+            ___    &kp N6 &kp N7 &kp N8 &kp N9 ___    ___                                    ___    ___    ___    ___    ___    ___    ___
+            &kp D  ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
+            &kp R  ___    ___    ___    ___    ___                                                  ___    ___    ___    ___    ___    ___
+            ___    ___    ___    ___    ___                                                                ___    ___    ___    ___    ___
+                                                     &kp SPACE    &kp LEFT_ALT    ___    ___
+                                                                ___                ___
+                                                ___    ___    ___                    ___    ___    ___
+        >; };
+
+
+        /*****************************************************************************************************
+         * L7 🟡: Alt Numpad - using actual KP versions of numbers; in case need like Alt+<code> testing.
+         *      (no yet KeyboardLayoutEditor)
          */
         kp_layer { bindings = <
             _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                ___    _x_    _x_         _x_         _x_         _x_    _x_
@@ -349,7 +375,8 @@
 
 
         /*****************************************************************************************************
-         * L🟡: higher F## keys 13-24; in case need for testing
+         * L8 : higher F## keys 13-24; in case need for testing
+         *      (no yet KeyboardLayoutEditor)
          */
         fn_13_24_layer { bindings = <
             _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                ___    _x_    &kp F22   &kp F23   &kp F24   _x_    _x_
