@@ -347,14 +347,14 @@
          *      This is for when the RIGHT HAND is on the mouse primarily; so r.h.s. just left to entirely float through. See notes on KLE.
          */
          lr_layer { bindings = <
-            ___    &as N6 N1  &as N7 N2  &as N8 N3  &as N9 N4  &as F9 N5  &to L_0                           ___    ___    ___    ___    ___    ___    ___
-            ___    &kp G      &kp LSHFT  &kp LALT   &kp LCTRL  ___        ___                               ___    ___    ___    ___    ___    ___    ___
-            ___    ___        &kp X      &kp U      &kp P      &kp S      ___                               ___    ___    ___    ___    ___    ___    ___
-            &kp D  &kp N6     &kp N7     &kp N8     &kp N9     ___                                                 ___    ___    ___    ___    ___    ___
-            &kp R  ___        ___        ___        ___                                                               ___    ___    ___    ___    ___
-                                                                  &kp SPACE         &to L_0      ___    ___
-                                                                                  &kp LALT         ___
-                                                        ___         ___         &kp LCTRL            ___    ___    ___
+            &kp RS(E)  &as N6 N1  &as N7 N2  &as N8 N3  &as N9 N4  &as F9 N5  &to L_0                           ___    ___    ___    ___    ___    ___    ___
+            ___        &kp G      &kp LSHFT  &kp LALT   &kp LCTRL  ___        ___                               ___    ___    ___    ___    ___    ___    ___
+            ___        &kp B      &kp X      &kp U      &kp P      &kp S      ___                               ___    ___    ___    ___    ___    ___    ___
+            &kp D      &kp N6     &kp N7     &kp N8     &kp N9     &kp A                                               ___    ___    ___    ___    ___    ___
+            &kp R      ___        ___        ___        ___                                                               ___    ___    ___    ___    ___
+                                                                      &kp SPACE         &to L_0      ___    ___
+                                                                                      &kp LALT         ___
+                                                            ___         ___         &kp LCTRL            ___    ___    ___
         >; };
 
 
