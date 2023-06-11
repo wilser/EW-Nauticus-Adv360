@@ -2,6 +2,7 @@
  *      TAP DANCE configurations
  *
  *****************************************************************************************************/
+#include <dt-bindings/zmk/keys.h>
 
 tdEmjWin: tap_dance_emoji_winchange {
     compatible = "zmk,behavior-tap-dance";
@@ -10,6 +11,14 @@ tdEmjWin: tap_dance_emoji_winchange {
     tapping-term-ms = <300>;
     bindings = <&kp RG(SEMI)>, <&kp RG(TAB)>;  /*  ← this actually worked! */
 };
+
+tdCapsWrdLck: tap_dance_capsword_capslock {
+     compatible = "zmk,behavior-tap-dance";
+    label = "tap_dance_capsword_capslock";
+    #binding-cells = <0>;
+    tapping-term-ms = <300>;
+    bindings = <&caps_word> <&kp CAPSLOCK>
+}
 
 
 
