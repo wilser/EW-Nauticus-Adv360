@@ -348,7 +348,7 @@
          *      This is for when the RIGHT HAND is on the mouse primarily; so r.h.s. just left to entirely float through. See notes on KLE.
          */
          lr_layer { bindings = <
-            &kp RS(E)  &as N6 N1  &as N7 N2  &as N8 N3  &as N9 N4  &as F9 N5  &to L_0                           ___    ___    ___    ___    ___    ___    ___
+            &tdLR_E    &as N6 N1  &as N7 N2  &as N8 N3  &as N9 N4  &as F9 N5  &to L_0                           ___    ___    ___    ___    ___    ___    ___
             ___        &kp G      &kp LSHFT  &kp LALT   &kp LCTRL  ___        ___                               ___    ___    ___    ___    ___    ___    ___
             ___        &kp A      &kp X      &kp U      &kp P      &kp S      ___                               ___    ___    ___    ___    ___    ___    ___
             &kp D      &kp B      ___        ___        ___        ___                                                 ___    ___    ___    ___    ___    ___

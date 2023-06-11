@@ -13,11 +13,21 @@ tdEmjWin: tap_dance_emoji_winchange {
 };
 
 tdCapsWrdLck: tap_dance_capsword_capslock {
-     compatible = "zmk,behavior-tap-dance";
+    compatible = "zmk,behavior-tap-dance";
     label = "tap_dance_capsword_capslock";
     #binding-cells = <0>;
     tapping-term-ms = <300>;
     bindings = <&caps_word>, <&kp CAPSLOCK>;
+};
+
+tdLR_E: tap_dance_lightroom_e_key {
+    // (1x) Shift+E (toggle preview window)
+    // (2x) Ctrl+E (edit in Photoshop)
+    compatible = "zmk,behavior-tap-dance";
+    label = "tap_dance_lightroom_e_key";
+    #binding-cells = <0>;
+    tapping-term-ms = <300>;
+    bindings = <&kp LS(E)>, <&kp LC(E)>;
 };
 
 
