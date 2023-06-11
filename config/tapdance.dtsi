@@ -17,8 +17,8 @@ tdCapsWrdLck: tap_dance_capsword_capslock {
     label = "tap_dance_capsword_capslock";
     #binding-cells = <0>;
     tapping-term-ms = <300>;
-    bindings = <&caps_word> <&kp CAPSLOCK>
-}
+    bindings = <&caps_word>, <&kp CAPSLOCK>;
+};
 
 
 
