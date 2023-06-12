@@ -1,11 +1,5 @@
 #define str(s) #s
 
-/* MAYBE these wrong layout transform?
-#define LEFT_KEYS 0 1 2 3 4 5 6 14 15 16 17 18 19 20 28 29 30 31 32 33 34 46 47 48 49 50 51 66 67 68 69 70
-#define RIGHT_KEYS 7 8 9 10 11 12 13 21 22 23 24 25 26 27 39 40 41 42 43 44 45 60 61 62 63 64 65 77 78 79 80 81
-#define THUMB_KEYS 35 36 37 38 52 53 54 55 56 57 58 59 71 72 73 74 75 76
-*/
-
 #define LEFT_KEYS 0  1  2  3  4  5  6 14 15 16 17 18 19 20 28 29 30 31 32 33 34 42 43 44 45 46 47 54 55 56 57 58  
 #define RIGHT_KEYS 7  8  9  10 11 12 13 21 22 23 24 25 26 27 35 36 37 38 39 40 41 48 49 50 51 52 53 59 60 61 62 63
 #define THUMBS_LEFT 64 65 68 70 71 72
@@ -26,21 +20,34 @@
     mods = <MODS>; \
   };
 
-/* Programmer's Dvorak shifts morphs */
-MOD_MORPH(dllr_hash,  DLLR,  HASH,  (MOD_LSFT|MOD_RSFT))
-MOD_MORPH(n1_plus,    PLUS,  N1,    (MOD_LSFT|MOD_RSFT))
-MOD_MORPH(n2_lbkt,    LBKT,  N2,    (MOD_LSFT|MOD_RSFT))
-MOD_MORPH(n3_lbrc,    LBRC,  N3,    (MOD_LSFT|MOD_RSFT))
-MOD_MORPH(n4_lpar,    LPAR,  N4,    (MOD_LSFT|MOD_RSFT))
-MOD_MORPH(n5_amps,    AMPS,  N5,    (MOD_LSFT|MOD_RSFT))
-MOD_MORPH(n6_equal,   EQUAL, N6,    (MOD_LSFT|MOD_RSFT))
-MOD_MORPH(n7_rpar,    RPAR,  N7,    (MOD_LSFT|MOD_RSFT))
-MOD_MORPH(n8_rbrc,    RBRC,  N8,    (MOD_LSFT|MOD_RSFT))
-MOD_MORPH(n9_rbkt,    RBKT,  N9,    (MOD_LSFT|MOD_RSFT))
-MOD_MORPH(n0_star,    STAR,  N0,    (MOD_LSFT|MOD_RSFT))
-MOD_MORPH(excl_prcnt, EXCL,  PRCNT, (MOD_LSFT|MOD_RSFT))
+/* Programmer's Dvorak shifts morphs // EW: some prior example*/
+    /*
+    MOD_MORPH(dllr_hash,  DLLR,  HASH,  (MOD_LSFT|MOD_RSFT))
+    MOD_MORPH(n1_plus,    PLUS,  N1,    (MOD_LSFT|MOD_RSFT))
+    MOD_MORPH(n2_lbkt,    LBKT,  N2,    (MOD_LSFT|MOD_RSFT))
+    MOD_MORPH(n3_lbrc,    LBRC,  N3,    (MOD_LSFT|MOD_RSFT))
+    MOD_MORPH(n4_lpar,    LPAR,  N4,    (MOD_LSFT|MOD_RSFT))
+    MOD_MORPH(n5_amps,    AMPS,  N5,    (MOD_LSFT|MOD_RSFT))
+    MOD_MORPH(n6_equal,   EQUAL, N6,    (MOD_LSFT|MOD_RSFT))
+    MOD_MORPH(n7_rpar,    RPAR,  N7,    (MOD_LSFT|MOD_RSFT))
+    MOD_MORPH(n8_rbrc,    RBRC,  N8,    (MOD_LSFT|MOD_RSFT))
+    MOD_MORPH(n9_rbkt,    RBKT,  N9,    (MOD_LSFT|MOD_RSFT))
+    MOD_MORPH(n0_star,    STAR,  N0,    (MOD_LSFT|MOD_RSFT))
+    MOD_MORPH(excl_prcnt, EXCL,  PRCNT, (MOD_LSFT|MOD_RSFT))
+    MOD_MORPH(at_caret,   AT,    CARET, (MOD_LSFT|MOD_RSFT))
+    */
 
-MOD_MORPH(at_caret,   AT,    CARET, (MOD_LSFT|MOD_RSFT))
+/* Eric Colemak #s with alt Punctuation*/
+    MOD_MORPH(cmk_grave_n1,  GRAVE,     N1, (MOD_LSFT|MOD_RSFT))
+    MOD_MORPH(cmk_at_n2,     AT,        N2, (MOD_LSFT|MOD_RSFT))
+    MOD_MORPH(cmk_star_n3,   STAR,      N3, (MOD_LSFT|MOD_RSFT))
+    MOD_MORPH(cmk_amps_n4,   AMPS,      N4, (MOD_LSFT|MOD_RSFT))
+    MOD_MORPH(cmk_tilde_n5,  TILDE,     N5, (MOD_LSFT|MOD_RSFT))
+    MOD_MORPH(cmk_caret_n6,  CARET,     N6, (MOD_LSFT|MOD_RSFT))
+    MOD_MORPH(cmk_dllr_n7,   DLLR,      N7, (MOD_LSFT|MOD_RSFT))
+    MOD_MORPH(cmk_hash_n8,   HASH,      N8, (MOD_LSFT|MOD_RSFT))
+    MOD_MORPH(cmk_prcnt_n9,  PRCNT,     N9, (MOD_LSFT|MOD_RSFT))
+    MOD_MORPH(cmk_lsF24_n0,    LS(F24),   N0, (MOD_LSFT|MOD_RSFT))
 
 lhm: left_homerow_mods {
     compatible = "zmk,behavior-hold-tap";
