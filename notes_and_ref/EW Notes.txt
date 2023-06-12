@@ -10,6 +10,8 @@ EW Notes
 
     Inside the JSON parts, comments aren't allowed; but people do like _comment: "some comment here"
 
+MODS
+    - when used inline (not just solo key, but F(x) style), then must do the short form: LS(A) (Left-Shift + A), not LSHIFT, or other variations.
 
 MACRO fun...
     [x] using functions inside one string &macro_tap NOT working; e.g. using LC(LEFT)
