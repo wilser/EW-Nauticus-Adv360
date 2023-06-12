@@ -47,7 +47,7 @@
     MOD_MORPH(cmk_dllr_n7,   DLLR,      N7, (MOD_LSFT|MOD_RSFT))
     MOD_MORPH(cmk_hash_n8,   HASH,      N8, (MOD_LSFT|MOD_RSFT))
     MOD_MORPH(cmk_prcnt_n9,  PRCNT,     N9, (MOD_LSFT|MOD_RSFT))
-    MOD_MORPH(cmk_lsF24_n0,    LS(F24),   N0, (MOD_LSFT|MOD_RSFT))
+    MOD_MORPH(cmk_lsF24_n0,  LS(F24),   N0, (MOD_LSFT|MOD_RSFT))
 
 lhm: left_homerow_mods {
     compatible = "zmk,behavior-hold-tap";
