@@ -350,7 +350,6 @@ keymap {
                                                                                          _x_        _x_            _x_        _x_
                                                                                                    _x_              _x_
                                                                             ___        ___        _x_                _x_        _x_        _x_
-            &kp NO
         >; };
     // END Nav / Edit
 
