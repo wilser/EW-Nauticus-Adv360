@@ -247,6 +247,8 @@ keymap {
         #define _U_ALT   &hm_r RALT U       // Shift
         #define _SQT_GUI &hm_slw RGUI SQT     // GUI/Win
         #define _B_RALT  &hm_slw RALT B       // *Special extra Right-Alt when don't want l-alt because of AltSnap utility use
+        // [.] ModMorphs: {symb} first, then Shift+ or Hold+ => ##
+        // [.] `1  @2  *3  &4  ~5  ^6  $7  #8  %9  •0 
 
         colemak_layer { bindings = <
           /*___      &mm_cmk_grave_n1   &mm_cmk_at_n2      &mm_cmk_star_n3    &mm_cmk_amps_n4    &mm_cmk_tilde_n5   &to L_DVK                              ___         &mm_cmk_caret_n6   &mm_cmk_dllr_n7    &mm_cmk_hash_n8      &mm_cmk_prcnt_n9   &mm_cmk_lsF24_n0     ___ */
@@ -348,10 +350,15 @@ keymap {
             ___    _x_       &kp LC(X)   &kp LC(C)      &kp LC(V)      &kp LC(I)  _MEH_S                                         _x_        _x_         &kp LEFT   &kp DOWN   &kp RIGHT  &m_SEL_WRD   _x_
             ___    _x_       _MEH_V      &kp LC(LG(C))  &kp LC(LG(V))  &kp LC(B)                                                            _x_         _x_        _x_        _x_        _x_          _x_
             ___    _x_       _x_         ___            ___                                                                                             ___        ___        _x_        _x_          _x_
-                                                                                         _x_        _x_            _x_        _x_
-                                                                                                   _x_              _x_
-                                                                            ___        ___        _x_                _x_        _x_        _x_
+                                                                                         _x_        &m_SEL_WRD     _x_        _x_
+                                                                                                   &m_SEL_LINE      _x_
+                                                                            ___        ___        &kp RC(A)           _x_        _x_        _x_
         >; };
+
+        // #UNDEFs
+            #undef _MEH_V
+            #undef _MEH_S
+
     // END Nav / Edit
 
     /*****************************************************************************************************
