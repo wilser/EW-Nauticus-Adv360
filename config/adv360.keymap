@@ -202,8 +202,8 @@ keymap {
 
         dvorak_layer { bindings = <
             &as RS(EQUAL) EQUAL  &as RS(N1) N1   &as RS(N2) N2  &as RS(N3) N3  &as RS(N4) N4  &as RS(N5) N5  &to L_CMK                                          &sl L_UTL   &as LS(N6) N6  &as LS(N7) N7  &as LS(N8) N8  &as LS(N9) N9      &as LS(N0) N0      &as LS(BSLH) BSLH
-            &kp ESC              _SQT_GUI        _CMA_SFT       _DOT_ALT       _P_CTL         _Y_RALT        _HYPER                                             _x_         &kp F          _G_CTL         _C_ALT         _R_SFT             _L_GUI             &as LS(SLASH) SLASH
-            MT_TB_SHFTB          &kp A           &kp O          &kp E          &kp I          &kp U          _MEH                                               _x_         &kp D          &kp H          &kp T          &kp N              &kp S              &as LS(MINUS) MINUS
+            &kp ESC              _SQT_GUI        _CMA_SFT       _DOT_ALT       _P_CTL         _Y_RALT        _HYPER                                             _HYPER      &kp F          _G_CTL         _C_ALT         _R_SFT             _L_GUI             &as LS(SLASH) SLASH
+            MT_TB_SHFTB          &kp A           &kp O          &kp E          &kp I          &kp U          _MEH                                               _MEH        &kp D          &kp H          &kp T          &kp N              &kp S              &as LS(MINUS) MINUS
             &tdCapsWrdLck        &lt L_NVE SEMI  &kp Q          &kp J          &lt L_NUM K    &lt L_UTL X                                                                   &lt L_UTL B    &kp M          &kp W          &kp V              &kp Z              &as &caps_word COLON
             &tdEmjWin            &kp GRAVE       &kp LC(Q)      &kp LEFT       &kp RIGHT                                                                                                   &kp UP         &kp DOWN       &as LS(LBKT) LBKT  &as LS(RBKT) RBKT  &to L_NUM
                                                                                                                    &kp LSHFT   &to L_LR   &kp RCTRL    &kp RSHFT
