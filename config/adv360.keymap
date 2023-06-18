@@ -81,7 +81,7 @@
     behaviors {
         #include "macros/gen_macros.dtsi"
         #include "macros/typing_macros.dtsi"
-        #include "macros/cpp_templated_macros.dtsi"
+        //#include "macros/cpp_templated_macros.dtsi"
         #include "tapdance.dtsi"
 
         /*
@@ -375,7 +375,7 @@
             *      [.] trying some #define macros to "press once" instead of Hold → repeat 6, etc. See "cpp_templated_macros". But not working yet
             */
             lr_layer { bindings = <
-                &tdLR_E  &as1t N6 N1    &as N7 N2            &as N8 N3            &as N9 N4            &as F9 N5                 &to L_0                           _x_           &kp LC(LA(N1))   &kp LC(LA(N2))   &kp LC(LA(N3))   &kp LC(LA(N6))   &kp LC(LA(N7))   &kp N0
+                &tdLR_E  &as N6 N1    &as N7 N2            &as N8 N3            &as N9 N4            &as F9 N5                 &to L_0                           _x_           &kp LC(LA(N1))   &kp LC(LA(N2))   &kp LC(LA(N3))   &kp LC(LA(N6))   &kp LC(LA(N7))   &kp N0
                 ___        &kp G                &kp LSHFT            &kp LALT             &kp LCTRL            &kp M                     &kp D                             _x_           _x_              _x_              _x_              _x_              _x_              &as BSLH LC(L)
                 ___        &kp A                &kp X                &kp U                &kp P                &kp S                     &kp R                             _x_           _x_              _x_              ___              _x_              _x_              _x_
                 _x_        &kp B                &kp Q                _x_                  _x_                  &kp LC(LS(D))                                                             _x_              _x_              _x_              _x_              ___              _x_
