@@ -41,6 +41,7 @@
         bindings = <&macro_press &kp KEY>, <&macro_release &kp KEY>; \
     }; 
 
+
 // build CPP-macro created list:
 /*
 {
