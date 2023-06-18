@@ -7,17 +7,28 @@
  */
 
 // unsure need:
+// #pragma once
 
-#pragma once
-
-// CPP macro:
+// CPP macro from example:
+/*
 #define m_TAPONCE(CODE) \
 / { \
   macros { \
     ZMK_MACRO(m_taponce_##CODE, bindings = <&macro_press &kp CODE>, <&macro_release &kp CODE>;) \
   }; \
 };
+*/
 
+// EW try own CPP macro format:
+#define m_TAP1(CODE) \
+    m_TAP1_##CODE: m_TAP1_##CODE { \
+        compatible = "zmk,behavior-macro"; \
+        label = "m_TAP1_##CODE"; \
+        wait-ms = <20>; \
+        tap-ms = <30>; \
+        #binding-cells = <0>;
+        bindings = <&macro_press &kp CODE>, <&macro_release &kp CODE>; \
+    }; \
 
 // build CPP-macro created list:
 /*
@@ -33,6 +44,6 @@
 };
 */
 
-m_TAPONCE(N6)
-m_TAPONCE(N7)
+m_TAP1(N6)
+m_TAP1(N7)
 
