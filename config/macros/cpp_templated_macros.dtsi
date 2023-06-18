@@ -27,7 +27,7 @@
         wait-ms = <20>; \
         tap-ms = <30>; \
         #binding-cells = <0>;
-        bindings = <&macro_press &kp CODE>, <&macro_release &kp CODE>; \
+        bindings = <&macro_press &kp ##CODE>, <&macro_release &kp ##CODE>; \
     }; \
 
 // build CPP-macro created list:
