@@ -27,13 +27,14 @@
 
 //==================================================
 
-// maybe fix "label" to just a string?
+// maybe fix "label" to just a string - string concat issue?
 
 // EW try own CPP macro format:
 #define m_1TAP(CODE) \
     m_1TAP_##KEY: m_1TAP_##KEY { \
         compatible = "zmk,behavior-macro"; \
-        label = "m_1TAP_" str(KEY) ; \
+        //label = "m_1TAP_" str(KEY) ; \
+        label = str(KEY) ; \
         wait-ms = <20>; \
         tap-ms = <30>; \
         #binding-cells = <0>; \
@@ -65,5 +66,5 @@ m_1TAP_EW_N6: m_1TAP_EW_N6{
 };
 
 m_1TAP(N7)
-m_1TAP(N8)
+//m_1TAP(N8)
 
