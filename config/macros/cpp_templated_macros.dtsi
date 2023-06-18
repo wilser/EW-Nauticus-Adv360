@@ -1,3 +1,4 @@
+#include <dt-bindings/zmk/keys.h>
 
 /* TAP ONCE (don't repeat when held)
  * TBD experiment - macro to "press once" a key / based on CPP template
@@ -6,7 +7,7 @@
  */
 
 // unsure need:
-/*
+
 #pragma once
 
 // CPP macro:
@@ -16,9 +17,10 @@
     ZMK_MACRO(m_taponce_##CODE, bindings = <&macro_press &kp CODE>, <&macro_release &kp CODE>;) \
   }; \
 };
-*/
+
 
 // build CPP-macro created list:
+/*
 {
     // 2023-06-18: temp test: need #6-9, and F9 for Lightroom layer
     macros {
@@ -29,3 +31,8 @@
         ZMK_MACRO(m_taponce_F9, bindings = <&macro_press &kp F9>, <&macro_release &kp F9>);
     };
 };
+*/
+
+m_TAPONCE(N6)
+m_TAPONCE(N7)
+
