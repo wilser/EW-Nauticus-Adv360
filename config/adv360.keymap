@@ -83,7 +83,7 @@
     behaviors {
     #include "macros/gen_macros.dtsi"
     #include "macros/typing_macros.dtsi"
-    #include "macros/cpp_templated_macros.dtsi"
+    //#include "macros/cpp_templated_macros.dtsi"
     #include "tapdance.dtsi"
 
     /*
