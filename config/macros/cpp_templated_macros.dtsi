@@ -27,17 +27,17 @@
 
 //==================================================
 
-
+// maybe fix "label" to just a string?
 
 // EW try own CPP macro format:
 #define m_1TAP(CODE) \
-    m_1TAP_##CODE: m_1TAP_##CODE { \
+    m_1TAP_##KEY: m_1TAP_##KEY { \
         compatible = "zmk,behavior-macro"; \
-        label = "m_1TAP_" STRINGIFY(CODE) ; \
+        label = "m_1TAP_" str(KEY) ; \
         wait-ms = <20>; \
         tap-ms = <30>; \
         #binding-cells = <0>; \
-        bindings = <&macro_press &kp CODE>, <&macro_release &kp CODE>; \
+        bindings = <&macro_press &kp KEY>, <&macro_release &kp KEY>; \
     }; 
 
 // build CPP-macro created list:
