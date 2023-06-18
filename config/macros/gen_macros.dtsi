@@ -64,3 +64,4 @@ m_SLEEP: m_SLEEP {
     bindings = <&kp LG(X)>, <&kp U>, <&kp S>; /* try separated? */
 };
 
+

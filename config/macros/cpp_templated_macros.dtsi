@@ -1,0 +1,31 @@
+
+/* TAP ONCE (don't repeat when held)
+ * TBD experiment - macro to "press once" a key / based on CPP template
+ * adapted from: https://github.com/manna-harbour/miryoku_zmk/blob/master/miryoku/miryoku_kludge_tapdelay.h
+ * see also: https://www.reddit.com/r/olkb/comments/ys9y1h/how_to_prevent_zmk_repeating_a_key_when_held/
+ */
+
+// unsure need:
+/*
+#pragma once
+
+// CPP macro:
+#define m_TAPONCE(CODE) \
+/ { \
+  macros { \
+    ZMK_MACRO(m_taponce_##CODE, bindings = <&macro_press &kp CODE>, <&macro_release &kp CODE>;) \
+  }; \
+};
+*/
+
+// build CPP-macro created list:
+{
+    // 2023-06-18: temp test: need #6-9, and F9 for Lightroom layer
+    macros {
+        ZMK_MACRO(m_taponce_N6, bindings = <&macro_press &kp N6>, <&macro_release &kp N6>);
+        ZMK_MACRO(m_taponce_N7, bindings = <&macro_press &kp N7>, <&macro_release &kp N7>);
+        ZMK_MACRO(m_taponce_N8, bindings = <&macro_press &kp N8>, <&macro_release &kp N8>);
+        ZMK_MACRO(m_taponce_N9, bindings = <&macro_press &kp N9>, <&macro_release &kp N9>);
+        ZMK_MACRO(m_taponce_F9, bindings = <&macro_press &kp F9>, <&macro_release &kp F9>);
+    };
+};
