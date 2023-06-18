@@ -1,3 +1,4 @@
+// needed if included elsewhere?
 #include <dt-bindings/zmk/keys.h>
 
 /* TAP ONCE (don't repeat when held)
@@ -29,15 +30,15 @@
 
 
 // EW try own CPP macro format:
-#define m_TAP1(CODE) \
-    m_TAP1_##CODE: m_TAP1_##CODE { \
+#define m_1TAP(CODE) \
+    m_1TAP_##CODE: m_1TAP_##CODE { \
         compatible = "zmk,behavior-macro"; \
-        label = "m_TAP1_##CODE"; \
+        label = "m_1TAP_" STRINGIFY(CODE) ; \
         wait-ms = <20>; \
         tap-ms = <30>; \
         #binding-cells = <0>; \
-        bindings = <&macro_press &kp ##CODE>, <&macro_release &kp ##CODE>; \
-    }; \
+        bindings = <&macro_press &kp CODE>, <&macro_release &kp CODE>; \
+    }; 
 
 // build CPP-macro created list:
 /*
@@ -53,6 +54,16 @@
 };
 */
 
-m_TAP1(N6)
-m_TAP1(N7)
+m_1TAP(N7)
+m_1TAP(N8)
+
+// try one more brute force to see if works
+m_1TAP_EW_N6: m_1TAP_EW_N6{
+    compatible = "zmk,behavior-macro";
+    label = "m_1TAP_EW_N6";
+    wait-ms = <40>;
+    tap-ms = <20>;
+    #binding-cells = <0>;
+    bindings = <&macro_press &kp N6>;
+};
 

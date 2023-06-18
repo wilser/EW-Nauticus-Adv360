@@ -78,81 +78,76 @@
 };
 
 / {
-
-
     behaviors {
-    #include "macros/gen_macros.dtsi"
-    #include "macros/typing_macros.dtsi"
-    //#include "macros/cpp_templated_macros.dtsi"
-    #include "tapdance.dtsi"
+        #include "macros/gen_macros.dtsi"
+        #include "macros/typing_macros.dtsi"
+        #include "macros/cpp_templated_macros.dtsi"
+        #include "tapdance.dtsi"
 
-    /*
-        FLAVORS: https://zmk.dev/docs/behaviors/hold-tap
-            balanced: best for most cases, if hold long enough, thinks a hold, or if fast but w/in time, then hold, else tap (*default best)
-            tap-preferred: assume tap unless more strict timing met; more 'deliberate'
-            hold-preferred: more forgiving (& more false-holds)
-            tap-unless-interrupted: [NMI] seems to assume tap even if slower, unless some other key pressed (so if - was the hold, would yield ----------.... I think, but "-x" faster would be <Hold>+<X>)
+        /*
+            FLAVORS: https://zmk.dev/docs/behaviors/hold-tap
+                balanced: best for most cases, if hold long enough, thinks a hold, or if fast but w/in time, then hold, else tap (*default best)
+                tap-preferred: assume tap unless more strict timing met; more 'deliberate'
+                hold-preferred: more forgiving (& more false-holds)
+                tap-unless-interrupted: [NMI] seems to assume tap even if slower, unless some other key pressed (so if - was the hold, would yield ----------.... I think, but "-x" faster would be <Hold>+<X>)
 
-    */
+        */
 
-    hm: homerow_mods {
-        compatible = "zmk,behavior-hold-tap";
-        label = "HOMEROW_MODS";
-        #binding-cells = <2>;
-        tapping-term-ms = <200>;
-        quick-tap-ms = <125>;  /* was typo, and 175 */
-        flavor = "balanced";
-        bindings = <&kp>, <&kp>;
-    };
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <125>;  /* was typo, and 175 */
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+        };
 
-    hm_l: homerow_mods_left {
-        compatible = "zmk,behavior-hold-tap";
-        label = "HOMEROW_MODS_LEFT";
-        #binding-cells = <2>;
-        tapping-term-ms = <200>;
-        quick-tap-ms = <125>; /* was typo, and 175 */
-        flavor = "balanced";
-        bindings = <&kp>, <&kp>;
-        hold-trigger-key-positions = <KEYS_RIGHT THUMBS MODS_LEFT>;
-        /* TEMP: ↑ adding MODS_LEFT to see if can n-hold mods */
-    };
+        hm_l: homerow_mods_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_LEFT";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <125>; /* was typo, and 175 */
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_RIGHT THUMBS MODS_LEFT>;
+            /* TEMP: ↑ adding MODS_LEFT to see if can n-hold mods */
+        };
 
-    hm_r: homerow_mods_right {
-        compatible = "zmk,behavior-hold-tap";
-        label = "HOMEROW_MODS_RIGHT";
-        #binding-cells = <2>;
-        tapping-term-ms = <200>;
-        quick-tap-ms = <125>;  /* was typo, and 175 */
-        flavor = "balanced";
-        bindings = <&kp>, <&kp>;
-        hold-trigger-key-positions = <KEYS_LEFT THUMBS MODS_RIGHT>;
-        /* TEMP: ↑ adding MODS_RIGHT to see if can n-hold better */
-    };
+        hm_r: homerow_mods_right {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS_RIGHT";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <125>;  /* was typo, and 175 */
+            flavor = "balanced";
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <KEYS_LEFT THUMBS MODS_RIGHT>;
+            /* TEMP: ↑ adding MODS_RIGHT to see if can n-hold better */
+        };
 
-    /* [ ] experimental: "slower" home-row mod for Win key since don't need to be fast and false-taps mess up worse */
-    hm_slw: homerow_mods {
-        compatible = "zmk,behavior-hold-tap";
-        label = "HOMEROW_MODS";
-        #binding-cells = <2>;
-        tapping-term-ms = <300>;
-        quick-tap-ms = <200>; 
-        flavor = "tap-preferred";
-        bindings = <&kp>, <&kp>;
-    };
+        /* [ ] experimental: "slower" home-row mod for Win key since don't need to be fast and false-taps mess up worse */
+        hm_slw: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <200>; 
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
 
-
-
-    /* TBD auto-shift; adapted from here: https://github.com/serebrov/zmk-config/blob/master/config/microdox.keymap */
-    as: auto_shift {
-        compatible = "zmk,behavior-hold-tap";
-        label = "AUTO_SHIFT";
-        #binding-cells = <2>;
-        tapping_term_ms = <150>;
-        quick_tap_ms = <0>;
-        flavor = "tap-preferred";
-        bindings = <&kp>, <&kp>;
-    };
-
+        /* TBD auto-shift; adapted from here: https://github.com/serebrov/zmk-config/blob/master/config/microdox.keymap */
+        as: auto_shift {
+            compatible = "zmk,behavior-hold-tap";
+            label = "AUTO_SHIFT";
+            #binding-cells = <2>;
+            tapping_term_ms = <150>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
     };
 
     combos {
@@ -171,249 +166,247 @@
     };
     };
 
-keymap {
+    keymap {
         compatible = "zmk,keymap";
-    
-    /*****************************************************************************************************
-    * L0 ⚫: DVORAK (default)
-         *      http://www.keyboard-layout-editor.com/#/gists/fdcbdec4d9a329533f670a566a99338f
-         *  [ ] TBD toggle to LR layer...
-         */
+        
+        /*****************************************************************************************************
+        * L0 ⚫: DVORAK (default)
+            *      http://www.keyboard-layout-editor.com/#/gists/fdcbdec4d9a329533f670a566a99338f
+            *  [ ] TBD toggle to LR layer...
+            */
 
-        // #DEFINEs
-            // top-row mods:
-            #define _SQT_GUI &hm_slw LGUI SQT       // GUI/Win on pinkie fingers / [] revisit if R.h. / L.h. differences put back
-            #define _CMA_SFT &hm_l LSHFT COMMA      // Shift on ring fingers
-            #define _DOT_ALT &hm_l LALT DOT         // Alt on middle fingers
-            #define _P_CTL   &hm_l LCTRL P          // Ctrl on indexs
-            #define _G_CTL   &hm_r RCTRL G          // Ctrl
-            #define _C_ALT   &hm_r RALT C           // Alt
-            #define _R_SFT   &hm_r RSHFT R          // Shift 
-            #define _L_GUI   &hm_slw RGUI L         // GUI/Win / [] revisit if R.h. / L.h. differences put back
-            #define _Y_RALT  &hm_slw RALT Y         // *Special extra Right-Alt when don't want l-alt because of AltSnap utility use
+            // #DEFINEs
+                // top-row mods:
+                #define _SQT_GUI &hm_slw LGUI SQT       // GUI/Win on pinkie fingers / [] revisit if R.h. / L.h. differences put back
+                #define _CMA_SFT &hm_l LSHFT COMMA      // Shift on ring fingers
+                #define _DOT_ALT &hm_l LALT DOT         // Alt on middle fingers
+                #define _P_CTL   &hm_l LCTRL P          // Ctrl on indexs
+                #define _G_CTL   &hm_r RCTRL G          // Ctrl
+                #define _C_ALT   &hm_r RALT C           // Alt
+                #define _R_SFT   &hm_r RSHFT R          // Shift 
+                #define _L_GUI   &hm_slw RGUI L         // GUI/Win / [] revisit if R.h. / L.h. differences put back
+                #define _Y_RALT  &hm_slw RALT Y         // *Special extra Right-Alt when don't want l-alt because of AltSnap utility use
+                
+                // Mod-tap names / tap-holds:
+                // #define MT_SFT_DEL &hm_l LSHFT DEL
+                #define MT_TB_SHFTB &mt LS(TAB) TAB
+                #define MT_CpW_CpL &as &caps_word 
+
+                // Other conveniences:
+                #define _HYPER &kp LC(LA(LS(LGUI)))
+                #define _MEH &kp LC(LA(LSHFT))
+
+            dvorak_layer { bindings = <
+                &as RS(EQUAL) EQUAL  &as RS(N1) N1   &as RS(N2) N2  &as RS(N3) N3  &as RS(N4) N4  &as RS(N5) N5  &to L_CMK                                          &sl L_UTL   &as LS(N6) N6  &as LS(N7) N7  &as LS(N8) N8  &as LS(N9) N9      &as LS(N0) N0      &as LS(BSLH) BSLH
+                &kp ESC              _SQT_GUI        _CMA_SFT       _DOT_ALT       _P_CTL         _Y_RALT        _HYPER                                             _HYPER      &kp F          _G_CTL         _C_ALT         _R_SFT             _L_GUI             &as LS(SLASH) SLASH
+                MT_TB_SHFTB          &kp A           &kp O          &kp E          &kp I          &kp U          _MEH                                               _MEH        &kp D          &kp H          &kp T          &kp N              &kp S              &as LS(MINUS) MINUS
+                &tdCapsWrdLck        &lt L_NVE SEMI  &kp Q          &kp J          &lt L_NUM K    &lt L_UTL X                                                                   &lt L_UTL B    &kp M          &kp W          &kp V              &kp Z              &as &caps_word COLON
+                &tdEmjWin            &kp GRAVE       &kp LC(Q)      &kp LEFT       &kp RIGHT                                                                                                   &kp UP         &kp DOWN       &as LS(LBKT) LBKT  &as LS(RBKT) RBKT  &to L_NUM
+                                                                                                                    &kp LSHFT   &to L_LR   &kp RCTRL    &kp RSHFT
+                                                                                                                                &kp HOME     &kp PG_UP   
+                                                                                                        &kp BSPC  &kp DEL     &kp END        &kp PG_DN    &lt L_FNC ENTER   &kp SPACE
+            >; };
+
+            // #UNDEFs
+                #undef _SQT_GUI // reused below
+                #undef _SQT_GUI
+                #undef _CMA_SFT
+                #undef _DOT_ALT
+                #undef _P_CTL  
+                #undef _G_CTL  
+                #undef _C_ALT  
+                #undef _R_SFT  
+                #undef _L_GUI  
+                #undef _Y_RALT 
+                #undef MT_TB_SH
+                #undef MT_CpW_C
+                #undef _HYPER
+                #undef _MEH
+        // END Dvorak
+        
+        /*****************************************************************************************************
+        * L1 ⚪: COLEMAK 
+            *      http://www.keyboard-layout-editor.com/#/gists/d5273d628b4d4cc48be28dc629304b95
+            * Specials and some punctuation re-mapped via Windows Keyboard layout driver file: 
+            *   ; → (     ` → )     F23 → :     F24 → " 
+            *   And many of the Shift+___ cases.
+            * SEE ModMorphs for the Punc.+## combos
+            */
             
-            // Mod-tap names / tap-holds:
-            // #define MT_SFT_DEL &hm_l LSHFT DEL
-            #define MT_TB_SHFTB &mt LS(TAB) TAB
-            #define MT_CpW_CpL &as &caps_word 
+            // top-row mods:
+            #define _Q_GUI   &hm_slw LGUI Q       // GUI/Win on pinkie fingers
+            #define _W_SFT   &hm_l LSHFT W      // Shift on ring fingers
+            #define _F_ALT   &hm_l LALT F       // Alt on middle fingers
+            #define _P_CTL   &hm_l LCTRL P      // Ctrl on index fingers
+            #define _L_CTL   &hm_r RCTRL L      // Ctrl
+            #define _Y_SFT   &hm_r RSHFT Y      // Alt
+            #define _U_ALT   &hm_r RALT U       // Shift
+            #define _SQT_GUI &hm_slw RGUI SQT     // GUI/Win
+            #define _B_RALT  &hm_slw RALT B       // *Special extra Right-Alt when don't want l-alt because of AltSnap utility use
+            // [.] ModMorphs: {symb} first, then Shift+ or Hold+ => ##
+            // [.] `1  @2  *3  &4  ~5  ^6  $7  #8  %9  •0 
 
-            // Other conveniences:
-            #define _HYPER &kp LC(LA(LS(LGUI)))
-            #define _MEH &kp LC(LA(LSHFT))
+            colemak_layer { bindings = <
+            /*___      &mm_cmk_grave_n1   &mm_cmk_at_n2      &mm_cmk_star_n3    &mm_cmk_amps_n4    &mm_cmk_tilde_n5   &to L_DVK                              ___         &mm_cmk_caret_n6   &mm_cmk_dllr_n7    &mm_cmk_hash_n8      &mm_cmk_prcnt_n9   &mm_cmk_lsF24_n0     ___ */
+                ___      ___                ___                ___                ___                ___                &to L_DVK                              ___         ___                ___                ___                  ___                ___                  ___                
+                ___      _Q_GUI             _W_SFT             _F_ALT             _P_CTL             _B_RALT            ___                                    ___         &kp J              _L_CTL             _U_ALT               _Y_SFT             _SQT_GUI             &as LS(F24) F24
+                ___      &kp A              &kp R              &kp S              &kp T              &kp G              ___                                    ___         &kp M              &kp N              &kp E                &kp I              &kp O                ___
+                ___      &lt L_NVE Z        &kp X              &kp C              &lt L_NUM D        &lt L_UTL V                                                           &lt L_UTL K        &kp H              &as LS(COMMA) COMMA  &as LS(DOT) DOT    &as LS(SLASH) SLASH  &as LS(F23) F23
+                ___      &as LS(LBKT) LBKT  &as LS(RBKT) RBKT  ___                ___                                                                                                         ___                ___                  ___                ___                  ___
+                                                                                                                        ___    ___        ___    ___
+                                                                                                                                ___          ___
+                                                                                                                ___    ___    ___            ___    ___    ___
+            >; };
+        // END Colemak
 
-        dvorak_layer { bindings = <
-            &as RS(EQUAL) EQUAL  &as RS(N1) N1   &as RS(N2) N2  &as RS(N3) N3  &as RS(N4) N4  &as RS(N5) N5  &to L_CMK                                          &sl L_UTL   &as LS(N6) N6  &as LS(N7) N7  &as LS(N8) N8  &as LS(N9) N9      &as LS(N0) N0      &as LS(BSLH) BSLH
-            &kp ESC              _SQT_GUI        _CMA_SFT       _DOT_ALT       _P_CTL         _Y_RALT        _HYPER                                             _HYPER      &kp F          _G_CTL         _C_ALT         _R_SFT             _L_GUI             &as LS(SLASH) SLASH
-            MT_TB_SHFTB          &kp A           &kp O          &kp E          &kp I          &kp U          _MEH                                               _MEH        &kp D          &kp H          &kp T          &kp N              &kp S              &as LS(MINUS) MINUS
-            &tdCapsWrdLck        &lt L_NVE SEMI  &kp Q          &kp J          &lt L_NUM K    &lt L_UTL X                                                                   &lt L_UTL B    &kp M          &kp W          &kp V              &kp Z              &as &caps_word COLON
-            &tdEmjWin            &kp GRAVE       &kp LC(Q)      &kp LEFT       &kp RIGHT                                                                                                   &kp UP         &kp DOWN       &as LS(LBKT) LBKT  &as LS(RBKT) RBKT  &to L_NUM
-                                                                                                                   &kp LSHFT   &to L_LR   &kp RCTRL    &kp RSHFT
-                                                                                                                              &kp HOME     &kp PG_UP   
-                                                                                                       &kp BSPC  &kp DEL     &kp END        &kp PG_DN    &lt L_FNC ENTER   &kp SPACE
-        >; };
+        /*****************************************************************************************************
+        * L2 🔵: Standard numpad layer
+            *      http://www.keyboard-layout-editor.com/#/gists/c51e298f5744feba159cde9973f47b92
+            *      Uses non-keypad number variants since plan to use as "main" numbers method eventually as practice more.
+            * [ ] TODO: € seems wonky / seems better Alt-Code methods?
+            */ 
+            numpad_layer { bindings = <
+                ___    ___       ___    ___    ___    ___    &to L_0                                ___    &m_CHR_EU      &kp DOLLAR  &kp HASH   &kp PERCENT    &kp EQUAL         _x_
+                ___    ___       ___    ___    ___    ___    ___                                    ___    &kp BSPC       &kp N7      &kp N8     &kp N9         &kp KP_ASTERISK   &kp KP_DIVIDE
+                ___    &kp BSPC  ___    ___    ___    ___    ___                                    ___    &as LBKT LPAR  &kp N4      &kp N5     &kp N6         &as RBKT RPAR     &as LS(MINUS) KP_MINUS
+                ___    ___       ___    ___    ___    ___                                                  &kp SPACE      &kp N1      &kp N2     &kp N3         &as SEMI KP_PLUS  ___
+                ___    ___       ___    ___    ___                                                                        ___         ___        &as COMMA DOT  &kp KP_ENTER      &to L_0 
+                                                                    ___    ___        ___    &kp SPACE
+                                                                        ___            ___
+                                                        ___    ___    ___               ___    ___    &kp N0
+            >; };
+        // END Numpad
 
-        // #UNDEFs
-            #undef _SQT_GUI // reused below
-            #undef _SQT_GUI
-            #undef _CMA_SFT
-            #undef _DOT_ALT
-            #undef _P_CTL  
-            #undef _G_CTL  
-            #undef _C_ALT  
-            #undef _R_SFT  
-            #undef _L_GUI  
-            #undef _Y_RALT 
-            #undef MT_TB_SH
-            #undef MT_CpW_C
-            #undef _HYPER
-            #undef _MEH
-    // END Dvorak
-    
-    /*****************************************************************************************************
-    * L1 ⚪: COLEMAK 
-         *      http://www.keyboard-layout-editor.com/#/gists/d5273d628b4d4cc48be28dc629304b95
-         * Specials and some punctuation re-mapped via Windows Keyboard layout driver file: 
-         *   ; → (     ` → )     F23 → :     F24 → " 
-         *   And many of the Shift+___ cases.
-         * SEE ModMorphs for the Punc.+## combos
-         */
-        
-        // top-row mods:
-        #define _Q_GUI   &hm_slw LGUI Q       // GUI/Win on pinkie fingers
-        #define _W_SFT   &hm_l LSHFT W      // Shift on ring fingers
-        #define _F_ALT   &hm_l LALT F       // Alt on middle fingers
-        #define _P_CTL   &hm_l LCTRL P      // Ctrl on index fingers
-        #define _L_CTL   &hm_r RCTRL L      // Ctrl
-        #define _Y_SFT   &hm_r RSHFT Y      // Alt
-        #define _U_ALT   &hm_r RALT U       // Shift
-        #define _SQT_GUI &hm_slw RGUI SQT     // GUI/Win
-        #define _B_RALT  &hm_slw RALT B       // *Special extra Right-Alt when don't want l-alt because of AltSnap utility use
-        // [.] ModMorphs: {symb} first, then Shift+ or Hold+ => ##
-        // [.] `1  @2  *3  &4  ~5  ^6  $7  #8  %9  •0 
+        /*****************************************************************************************************
+        * L3 🟢: Function Keys
+            *      http://www.keyboard-layout-editor.com/#/gists/d61490ab54f1d9c63f17ee2d25b40732
+            *
+            */
+            fn_1_12_layer { bindings = <
+                _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                ___    _x_    &kp F10  &kp F11  &kp F12  _x_    _x_
+                ___    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    _x_                                    _x_    _x_    &kp F7   &kp F8   &kp F9   _x_    _x_
+                ___    _x_        _x_         _x_        _x_        _x_    _x_                                    _x_    _x_    &kp F4   &kp F5   &kp F6   _x_    _x_
+                _x_    _x_        _x_         _x_        _x_        _x_                                                  _x_    &kp F1   &kp F2   &kp F3   _x_    _x_
+                _x_    _x_        _x_         ___        ___                                                                    _x_      _x_      _x_      _x_    _x_
+                                                                                _x_    _x_        _x_    _x_
+                                                                                    _x_          _x_
+                                                                    ___    ___    _x_            _x_    _x_    _x_
+            >; };
+        // END Fn Keys
 
-        colemak_layer { bindings = <
-          /*___      &mm_cmk_grave_n1   &mm_cmk_at_n2      &mm_cmk_star_n3    &mm_cmk_amps_n4    &mm_cmk_tilde_n5   &to L_DVK                              ___         &mm_cmk_caret_n6   &mm_cmk_dllr_n7    &mm_cmk_hash_n8      &mm_cmk_prcnt_n9   &mm_cmk_lsF24_n0     ___ */
-            ___      ___                ___                ___                ___                ___                &to L_DVK                              ___         ___                ___                ___                  ___                ___                  ___                
-            ___      _Q_GUI             _W_SFT             _F_ALT             _P_CTL             _B_RALT            ___                                    ___         &kp J              _L_CTL             _U_ALT               _Y_SFT             _SQT_GUI             &as LS(F24) F24
-            ___      &kp A              &kp R              &kp S              &kp T              &kp G              ___                                    ___         &kp M              &kp N              &kp E                &kp I              &kp O                ___
-            ___      &lt L_NVE Z        &kp X              &kp C              &lt L_NUM D        &lt L_UTL V                                                           &lt L_UTL K        &kp H              &as LS(COMMA) COMMA  &as LS(DOT) DOT    &as LS(SLASH) SLASH  &as LS(F23) F23
-            ___      &as LS(LBKT) LBKT  &as LS(RBKT) RBKT  ___                ___                                                                                                         ___                ___                  ___                ___                  ___
-                                                                                                                       ___    ___        ___    ___
-                                                                                                                             ___          ___
-                                                                                                              ___    ___    ___            ___    ___    ___
-        >; };
-    // END Colemak
+        /*****************************************************************************************************
+        * L4 🔴: Utils & Specials & Macros/tests & Easy certain symbols
+            *       http://www.keyboard-layout-editor.com/#/gists/2d2d37deb742cc77638e81cb0b875106
+            *  # keys send to that layer-#
+            *  &m_SLEEP does Windows-menu-compatible key shortcuts to invoke Sleep from menu
+            *
+            * [ ] TODO:
+            *      [ ] put back LS(N2)..N4?
+            */
+            
+            // #DEFs
+                #define _BTLD &bootloader
+                #define _RgbMem &rgb_ug RGB_MEFS_CMD
+                #define _RGB_TG &rgb_ug RGB_TOG
+                #define _BKL_TG &bl BL_TOG
+                #define _MONOFF &kp RC(RG(L)) // Win+Ctrl+L invokes my AHK lock+monoff macro
 
-    /*****************************************************************************************************
-    * L2 🔵: Standard numpad layer
-         *      http://www.keyboard-layout-editor.com/#/gists/c51e298f5744feba159cde9973f47b92
-         *      Uses non-keypad number variants since plan to use as "main" numbers method eventually as practice more.
-         * [ ] TODO: € seems wonky / seems better Alt-Code methods?
-         */ 
-        numpad_layer { bindings = <
-            ___    ___       ___    ___    ___    ___    &to L_0                                ___    &m_CHR_EU      &kp DOLLAR  &kp HASH   &kp PERCENT    &kp EQUAL         _x_
-            ___    ___       ___    ___    ___    ___    ___                                    ___    &kp BSPC       &kp N7      &kp N8     &kp N9         &kp KP_ASTERISK   &kp KP_DIVIDE
-            ___    &kp BSPC  ___    ___    ___    ___    ___                                    ___    &as LBKT LPAR  &kp N4      &kp N5     &kp N6         &as RBKT RPAR     &as LS(MINUS) KP_MINUS
-            ___    ___       ___    ___    ___    ___                                                  &kp SPACE      &kp N1      &kp N2     &kp N3         &as SEMI KP_PLUS  ___
-            ___    ___       ___    ___    ___                                                                        ___         ___        &as COMMA DOT  &kp KP_ENTER      &to L_0 
-                                                                ___    ___        ___    &kp SPACE
-                                                                    ___            ___
-                                                    ___    ___    ___               ___    ___    &kp N0
-        >; };
-    // END Numpad
+            util_layer { bindings = <
+                _x_     &to 1         &to 2         &to 3         &to 4         &to 5         &to L_0                                ___       &to 6      &to 7       &to 8        &to 9        &to 0        _x_
+                ___     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  _x_                                    &m_SLEEP  _x_        &kp N1      &kp N2       &kp N3       &kp N4       &kp RS(N2)
+                ___     _x_           _x_           _x_           _x_           _x_           _x_                                    _MONOFF   _x_        &m_M1       &m_M2        &m_M3        &m_M4        &kp RS(N3)
+                _x_     _x_           _x_           _x_           _x_           _x_                                                            _x_        &m_M5       &m_M6        &m_M7        &m_M8        &kp RS(N4)
+                _BTLD   _x_           _x_           ___           ___                                                                                     ___         ___          _x_          _x_          _BTLD
+                                                                                            &bt BT_CLR    _BKL_TG      _RGB_TG    &bt BT_CLR
+                                                                                                            _x_            _x_
+                                                                                            ___    ___    _x_              _x_    ___    ___
+            >; };
 
-    /*****************************************************************************************************
-    * L3 🟢: Function Keys
-         *      http://www.keyboard-layout-editor.com/#/gists/d61490ab54f1d9c63f17ee2d25b40732
-         *
-         */
-        fn_1_12_layer { bindings = <
-            _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                ___    _x_    &kp F10  &kp F11  &kp F12  _x_    _x_
-            ___    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    _x_                                    _x_    _x_    &kp F7   &kp F8   &kp F9   _x_    _x_
-            ___    _x_        _x_         _x_        _x_        _x_    _x_                                    _x_    _x_    &kp F4   &kp F5   &kp F6   _x_    _x_
-            _x_    _x_        _x_         _x_        _x_        _x_                                                  _x_    &kp F1   &kp F2   &kp F3   _x_    _x_
-            _x_    _x_        _x_         ___        ___                                                                    _x_      _x_      _x_      _x_    _x_
-                                                                            _x_    _x_        _x_    _x_
-                                                                                  _x_          _x_
-                                                                   ___    ___    _x_            _x_    _x_    _x_
-        >; };
-    // END Fn Keys
+            // #UNDEFs
+                #undef _BTLD
+                #undef _RgbMem
+                #undef _RGB_TG
+                #undef _BKL_TG
+                #undef _MONOFF
+        // END Utils
 
-    /*****************************************************************************************************
-    * L4 🔴: Utils & Specials & Macros/tests & Easy certain symbols
-         *       http://www.keyboard-layout-editor.com/#/gists/2d2d37deb742cc77638e81cb0b875106
-         *  # keys send to that layer-#
-         *  &m_SLEEP does Windows-menu-compatible key shortcuts to invoke Sleep from menu
-         *
-         * [ ] TODO:
-         *      [ ] put back LS(N2)..N4?
-         */
-        
-        // #DEFs
-            #define _BTLD &bootloader
-            #define _RgbMem &rgb_ug RGB_MEFS_CMD
-            #define _RGB_TG &rgb_ug RGB_TOG
-            #define _BKL_TG &bl BL_TOG
-            #define _MONOFF &kp RC(RG(L)) // Win+Ctrl+L invokes my AHK lock+monoff macro
+        /*****************************************************************************************************
+        * L5 🟣: Nav & Edit
+            *      http://www.keyboard-layout-editor.com/#/gists/18e13161cf62a37e0ba0d751735110a1
+            * [ ] other r.h.s. useful things?
+            */
+            
+            // #DEFs
+                #define _MEH_V &kp LC(LA(LS(V)))        // Toggle ClipMate
+                #define _MEH_S &kp LC(LA(LS(S)))        // Toggle "Everything" search app
+            
+            navnedit_layer { bindings = <
+                _x_    _x_       _x_         _x_            _x_            _x_        &to L_0                                        ___        _x_         _x_        _x_        _x_        _x_          _x_
+                ___    &kp LWIN  &kp LSHFT   &kp LALT       &kp LCTRL      &kp LC(U)  _x_                                            _x_        _x_         &kp PG_UP  &kp UP     &kp PG_DN  &m_SEL_LINE  _x_
+                ___    _x_       &kp LC(X)   &kp LC(C)      &kp LC(V)      &kp LC(I)  _MEH_S                                         _x_        _x_         &kp LEFT   &kp DOWN   &kp RIGHT  &m_SEL_WRD   _x_
+                ___    _x_       _MEH_V      &kp LC(LG(C))  &kp LC(LG(V))  &kp LC(B)                                                            _x_         _x_        _x_        _x_        _x_          _x_
+                ___    _x_       _x_         ___            ___                                                                                             ___        ___        _x_        _x_          _x_
+                                                                                            _x_        &m_SEL_WRD     _x_        _x_
+                                                                                                    &m_SEL_LINE      _x_
+                                                                                ___        ___        &kp RC(A)           _x_        _x_        _x_
+            >; };
 
-        util_layer { bindings = <
-            _x_     &to 1         &to 2         &to 3         &to 4         &to 5         &to L_0                                ___       &to 6      &to 7       &to 8        &to 9        &to 0        _x_
-            ___     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  _x_                                    &m_SLEEP  _x_        &kp N1      &kp N2       &kp N3       &kp N4       &kp RS(N2)
-            ___     _x_           _x_           _x_           _x_           _x_           _x_                                    _MONOFF   _x_        &m_M1       &m_M2        &m_M3        &m_M4        &kp RS(N3)
-            _x_     _x_           _x_           _x_           _x_           _x_                                                            _x_        &m_M5       &m_M6        &m_M7        &m_M8        &kp RS(N4)
-            _BTLD   _x_           _x_           ___           ___                                                                                     ___         ___          _x_          _x_          _BTLD
-                                                                                           &bt BT_CLR    _BKL_TG      _RGB_TG    &bt BT_CLR
-                                                                                                        _x_            _x_
-                                                                                         ___    ___    _x_              _x_    ___    ___
-        >; };
+            // #UNDEFs
+                #undef _MEH_V
+                #undef _MEH_S
 
-        // #UNDEFs
-            #undef _BTLD
-            #undef _RgbMem
-            #undef _RGB_TG
-            #undef _BKL_TG
-            #undef _MONOFF
-    // END Utils
+        // END Nav / Edit
 
-    /*****************************************************************************************************
-    * L5 🟣: Nav & Edit
-         *      http://www.keyboard-layout-editor.com/#/gists/18e13161cf62a37e0ba0d751735110a1
-         * [ ] other r.h.s. useful things?
-         */
-        
-        // #DEFs
-            #define _MEH_V &kp LC(LA(LS(V)))        // Toggle ClipMate
-            #define _MEH_S &kp LC(LA(LS(S)))        // Toggle "Everything" search app
-        
-        navnedit_layer { bindings = <
-            _x_    _x_       _x_         _x_            _x_            _x_        &to L_0                                        ___        _x_         _x_        _x_        _x_        _x_          _x_
-            ___    &kp LWIN  &kp LSHFT   &kp LALT       &kp LCTRL      &kp LC(U)  _x_                                            _x_        _x_         &kp PG_UP  &kp UP     &kp PG_DN  &m_SEL_LINE  _x_
-            ___    _x_       &kp LC(X)   &kp LC(C)      &kp LC(V)      &kp LC(I)  _MEH_S                                         _x_        _x_         &kp LEFT   &kp DOWN   &kp RIGHT  &m_SEL_WRD   _x_
-            ___    _x_       _MEH_V      &kp LC(LG(C))  &kp LC(LG(V))  &kp LC(B)                                                            _x_         _x_        _x_        _x_        _x_          _x_
-            ___    _x_       _x_         ___            ___                                                                                             ___        ___        _x_        _x_          _x_
-                                                                                         _x_        &m_SEL_WRD     _x_        _x_
-                                                                                                   &m_SEL_LINE      _x_
-                                                                            ___        ___        &kp RC(A)           _x_        _x_        _x_
-        >; };
+        /*****************************************************************************************************
+        * L6 🧢: Lightroom (& TBD Photoshop)
+            *      http://www.keyboard-layout-editor.com/#/gists/ce40ef1f57700f3871b7af5a965ad51b
+            *      This is for when the RIGHT HAND is on the mouse primarily; so r.h.s. just left to entirely float through. See notes on KLE.
+            *      ... some keys 'float through' for now, where still useful (Z etc.)
+            *      [.] trying some #define macros to "press once" instead of Hold → repeat 6, etc. See "cpp_templated_macros". But not working yet
+            */
+            lr_layer { bindings = <
+                &tdLR_E  &as m_1TAP_EW_N6 N1    &as m_1TAP_N7 N2            &as N8 N3            &as N9 N4            &as F9 N5                 &to L_0                           _x_           &kp LC(LA(N1))   &kp LC(LA(N2))   &kp LC(LA(N3))   &kp LC(LA(N6))   &kp LC(LA(N7))   &kp N0
+                ___        &kp G                &kp LSHFT            &kp LALT             &kp LCTRL            &kp M                     &kp D                             _x_           _x_              _x_              _x_              _x_              _x_              &as BSLH LC(L)
+                ___        &kp A                &kp X                &kp U                &kp P                &kp S                     &kp R                             _x_           _x_              _x_              ___              _x_              _x_              _x_
+                _x_        &kp B                &kp Q                _x_                  _x_                  &kp LC(LS(D))                                                             _x_              _x_              _x_              _x_              ___              _x_
+                &kp LC(Z)  _x_                  _x_                  ___                  ___                                                                                                             ___              ___              _x_              _x_              &kp LC(APOS)
+                                                                                                                                    &kp SPACE     &to L_0      _x_    _x_       
+                                                                                                                                                &kp LALT       _x_       
+                                                                                                                                    ___    ___    &kp LCTRL        _x_    ___           ___
+            >; };
+        // END Lightroom
 
-        // #UNDEFs
-            #undef _MEH_V
-            #undef _MEH_S
+        /*****************************************************************************************************
+        * L7 🟡: Alt Numpad - using actual KP versions of numbers; in case need like Alt+<code> testing.
+            *      (no yet KeyboardLayoutEditor)
+            */
+            kp_layer { bindings = <
+                _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                ___    _x_    _x_         _x_         _x_         _x_    _x_
+                ___    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    _x_                                    _x_    _x_    &kp KP_N7   &kp KP_N8   &kp KP_N9   _x_    _x_
+                ___    _x_        _x_         _x_        _x_        _x_    _x_                                    _x_    _x_    &kp KP_N4   &kp KP_N5   &kp KP_N6   _x_    _x_
+                _x_    _x_        _x_         _x_        _x_        _x_                                                  _x_    &kp KP_N1   &kp KP_N2   &kp KP_N3   _x_    _x_
+                _x_    _x_        _x_         ___        ___                                                                    _x_         _x_         _x_         _x_    _x_
+                                                                                _x_    _x_        _x_    _x_
+                                                                                    _x_          _x_
+                                                                    ___    ___    _x_            _x_    &kp ENTER  &kp KP_N0
+            >; };
+        // END KP Numpad
 
-    // END Nav / Edit
-
-    /*****************************************************************************************************
-    * L6 🧢: Lightroom (& TBD Photoshop)
-         *      http://www.keyboard-layout-editor.com/#/gists/ce40ef1f57700f3871b7af5a965ad51b
-         *      This is for when the RIGHT HAND is on the mouse primarily; so r.h.s. just left to entirely float through. See notes on KLE.
-         *      ... some keys 'float through' for now, where still useful (Z etc.)
-         *      [.] trying some #define macros to "press once" instead of Hold → repeat 6, etc. See "cpp_templated_macros". But not working yet
-         */
-         lr_layer { bindings = <
-            &tdLR_E    &as N6 N1            &as N7 N2            &as N8 N3            &as N9 N4            &as F9 N5                 &to L_0                           _x_           &kp LC(LA(N1))   &kp LC(LA(N2))   &kp LC(LA(N3))   &kp LC(LA(N6))   &kp LC(LA(N7))   &kp N0
-            ___        &kp G                &kp LSHFT            &kp LALT             &kp LCTRL            &kp M                     &kp D                             _x_           _x_              _x_              _x_              _x_              _x_              &as BSLH LC(L)
-            ___        &kp A                &kp X                &kp U                &kp P                &kp S                     &kp R                             _x_           _x_              _x_              ___              _x_              _x_              _x_
-            _x_        &kp B                &kp Q                _x_                  _x_                  &kp LC(LS(D))                                                             _x_              _x_              _x_              _x_              ___              _x_
-            &kp LC(Z)  _x_                  _x_                  ___                  ___                                                                                                             ___              ___              _x_              _x_              &kp LC(APOS)
-                                                                                                                                  &kp SPACE     &to L_0      _x_    _x_       
-                                                                                                                                               &kp LALT       _x_       
-                                                                                                                                ___    ___    &kp LCTRL        _x_    ___           ___
-        >; };
-    // END Lightroom
-
-
-    /*****************************************************************************************************
-    * L7 🟡: Alt Numpad - using actual KP versions of numbers; in case need like Alt+<code> testing.
-         *      (no yet KeyboardLayoutEditor)
-         */
-        kp_layer { bindings = <
-            _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                ___    _x_    _x_         _x_         _x_         _x_    _x_
-            ___    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    _x_                                    _x_    _x_    &kp KP_N7   &kp KP_N8   &kp KP_N9   _x_    _x_
-            ___    _x_        _x_         _x_        _x_        _x_    _x_                                    _x_    _x_    &kp KP_N4   &kp KP_N5   &kp KP_N6   _x_    _x_
-            _x_    _x_        _x_         _x_        _x_        _x_                                                  _x_    &kp KP_N1   &kp KP_N2   &kp KP_N3   _x_    _x_
-            _x_    _x_        _x_         ___        ___                                                                    _x_         _x_         _x_         _x_    _x_
-                                                                            _x_    _x_        _x_    _x_
-                                                                                  _x_          _x_
-                                                                   ___    ___    _x_            _x_    &kp ENTER  &kp KP_N0
-        >; };
-    // END KP Numpad
-
-    /*****************************************************************************************************
-    * L8 : higher F## keys 13-24; in case need for testing
-         *      (no yet KeyboardLayoutEditor)
-         */
-        fn_13_24_layer { bindings = <
-            _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                ___    _x_    &kp F22   &kp F23   &kp F24   _x_    _x_
-            ___    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    _x_                                    _x_    _x_    &kp F19   &kp F20   &kp F21   _x_    _x_
-            ___    _x_        _x_         _x_        _x_        _x_    _x_                                    _x_    _x_    &kp F16   &kp F17   &kp F18   _x_    _x_
-            _x_    _x_        _x_         _x_        _x_        _x_                                                  _x_    &kp F13   &kp F14   &kp F15   _x_    _x_
-            _x_    _x_        _x_         ___        ___                                                                    ___       ___       _x_       _x_    _x_
-                                                                            _x_    _x_        _x_    _x_
-                                                                                  _x_          _x_
-                                                                   ___    ___    _x_            _x_    ___    ___
-        >; };
-    // END FN 13-24
-
+        /*****************************************************************************************************
+        * L8 : higher F## keys 13-24; in case need for testing
+            *      (no yet KeyboardLayoutEditor)
+            */
+            fn_13_24_layer { bindings = <
+                _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                ___    _x_    &kp F22   &kp F23   &kp F24   _x_    _x_
+                ___    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    _x_                                    _x_    _x_    &kp F19   &kp F20   &kp F21   _x_    _x_
+                ___    _x_        _x_         _x_        _x_        _x_    _x_                                    _x_    _x_    &kp F16   &kp F17   &kp F18   _x_    _x_
+                _x_    _x_        _x_         _x_        _x_        _x_                                                  _x_    &kp F13   &kp F14   &kp F15   _x_    _x_
+                _x_    _x_        _x_         ___        ___                                                                    ___       ___       _x_       _x_    _x_
+                                                                                _x_    _x_        _x_    _x_
+                                                                                    _x_          _x_
+                                                                    ___    ___    _x_            _x_    ___    ___
+            >; };
+        // END FN 13-24
     };
 };
 
