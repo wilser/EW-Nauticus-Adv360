@@ -54,10 +54,7 @@
 };
 */
 
-m_1TAP(N7)
-m_1TAP(N8)
-
-// try one more brute force to see if works
+// try one brute force to see if works before the sub ones
 m_1TAP_EW_N6: m_1TAP_EW_N6{
     compatible = "zmk,behavior-macro";
     label = "m_1TAP_EW_N6";
@@ -66,4 +63,7 @@ m_1TAP_EW_N6: m_1TAP_EW_N6{
     #binding-cells = <0>;
     bindings = <&macro_press &kp N6>;
 };
+
+m_1TAP(N7)
+m_1TAP(N8)
 
