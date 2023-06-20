@@ -66,6 +66,9 @@ m_1TAP_EW_N6: m_1TAP_EW_N6{
     bindings = <&macro_press &kp N6>;
 };
 
+// generate many via macros:
 m_1TAP(N7)
 //m_1TAP(N8)
 
+// [ ] maybe a direct "hold tap" case but which sends the "macro press" instead of just &kp?
+// see as1t in adv360.keymap also
