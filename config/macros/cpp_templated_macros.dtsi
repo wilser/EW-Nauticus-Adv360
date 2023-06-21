@@ -63,7 +63,7 @@ m_1TAP_EW_N6: m_1TAP_EW_N6{
     wait-ms = <40>;
     tap-ms = <20>;
     #binding-cells = <0>;
-    bindings = <&macro_press &kp N6>;
+    bindings = <&macro_tap &kp N6>;
 };
 
 // generate many via macros:

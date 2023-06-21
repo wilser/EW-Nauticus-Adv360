@@ -156,7 +156,7 @@
             tapping_term_ms = <150>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
-            bindings = <&macro_press &kp>, <&kp>; // will this cause just the 'press' event to fire, but then not repeat?
+            bindings = <&macro_tap &kp>, <&kp>; // will this cause just the 'press' event to fire, but then not repeat?
         };
     };
 
@@ -373,6 +373,7 @@
             *      This is for when the RIGHT HAND is on the mouse primarily; so r.h.s. just left to entirely float through. See notes on KLE.
             *      ... some keys 'float through' for now, where still useful (Z etc.)
             *      [.] trying some #define macros to "press once" instead of Hold → repeat 6, etc. See "cpp_templated_macros". But not working yet
+            *       [.] trying &as1t - auto-shift, only tap once the held one / 6/21; compiled, but doesn't work (doesn't send the 8)
             */
             lr_layer { bindings = <
                 &tdLR_E    &as N6 N1    &as N7 N2            &as1t N8 N3            &as N9 N4            &as F9 N5                 &to L_0                           _x_           &kp LC(LA(N1))   &kp LC(LA(N2))   &kp LC(LA(N3))   &kp LC(LA(N6))   &kp LC(LA(N7))   &kp N0
