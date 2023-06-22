@@ -150,6 +150,7 @@
             bindings = <&kp>, <&kp>;
         };
 
+/*
         AS1T_2: AS_1TAP_2 {
             compatible = "zmk,behavior-hold-tap";
             label = "AS_1TAP_2";
@@ -169,7 +170,7 @@
             flavor = "tap-preferred";
             bindings = &macro_tap <&kp>, <&kp>; // can we force the "macro tap" in a pattern?
         };
-
+*/
         AS1T_4: AS1T_4 {
             compatible = "zmk,behavior-hold-tap";
             label = "AS1T_4";
