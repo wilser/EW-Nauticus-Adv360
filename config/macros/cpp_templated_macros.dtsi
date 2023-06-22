@@ -30,6 +30,7 @@
 // maybe fix "label" to just a string - string concat issue?
 
 // EW try own CPP macro format:
+/*
 #define m_1TAP(KEY) \
     m_1TAP_##KEY: m_1TAP_##KEY { \
         compatible = "zmk,behavior-macro"; \
@@ -40,7 +41,7 @@
         #binding-cells = <0>; \
         bindings = <&macro_press &kp KEY>, <&macro_release &kp KEY>; \
     }; 
-
+*/
 
 // build CPP-macro created list:
 /*
@@ -67,8 +68,8 @@ m_1TAP_EW_N6: m_1TAP_EW_N6{
 };
 
 // generate many via macros:
-m_1TAP(N7)
-//m_1TAP(N8)
+// m_1TAP(N7)
+// m_1TAP(N8)
 
-// [ ] maybe a direct "hold tap" case but which sends the "macro press" instead of just &kp?
+// [ ] maybe a direct "hold tap" case but which sends the "macro tap" instead of just &kp?
 // see as1t in adv360.keymap also
