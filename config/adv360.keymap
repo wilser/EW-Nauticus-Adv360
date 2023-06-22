@@ -149,14 +149,14 @@
             bindings = <&kp>, <&kp>;
         };
 
-        as1t: auto_shift_1_tap {
+         AS1T_3: AS1T_3 {
             compatible = "zmk,behavior-hold-tap";
-            label = "auto_shift_1_tap";
+            label = "AS1T_3";
             #binding-cells = <2>;
             tapping_term_ms = <150>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
-            bindings = <&macro_tap &kp>, <&kp>; // will this cause just the 'press' event to fire, but then not repeat?
+            bindings = &macro_tap <&kp>, <&kp>; // can we force the "macro tap" in a pattern?
         };
 
         AS1T_2: AS_1TAP_2 {
@@ -166,7 +166,7 @@
             tapping_term_ms = <150>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
-            bindings = <&m_1TAP_EW_N6>, <&kp>; // try with 1st position a direct "tap key" macro?
+            bindings = <&m_1TAP_EW_N6>, <&kp>; // try with 1st position a direct "tap key" macro? !!! THIS WORKS (but would require special AS and Macro for each)
         };
         
     };
@@ -388,7 +388,7 @@
             *       [.] fixed from macro-press to macro-tap / still no love
             */
             lr_layer { bindings = <
-                &tdLR_E    &as N6 N1    &as N7 N2            &AS1T_2 N8 N3            &as N9 N4            &as F9 N5                 &to L_0                           _x_           &kp LC(LA(N1))   &kp LC(LA(N2))   &kp LC(LA(N3))   &kp LC(LA(N6))   &kp LC(LA(N7))   &kp N0
+                &tdLR_E    &as N6 N1    &as N7 N2            &AS1T_3 N8 N3            &as N9 N4            &as F9 N5                 &to L_0                           _x_           &kp LC(LA(N1))   &kp LC(LA(N2))   &kp LC(LA(N3))   &kp LC(LA(N6))   &kp LC(LA(N7))   &kp N0
                 ___        &kp G                &kp LSHFT            &kp LALT             &kp LCTRL            &kp M                     &kp D                             _x_           _x_              _x_              _x_              _x_              _x_              &as BSLH LC(L)
                 ___        &kp A                &kp X                &kp U                &kp P                &kp S                     &kp R                             _x_           _x_              _x_              ___              _x_              _x_              _x_
                 _x_        &kp B                &kp Q                _x_                  _x_                  &kp LC(LS(D))                                                             _x_              _x_              _x_              _x_              ___              _x_
