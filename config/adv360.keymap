@@ -187,11 +187,15 @@
             //label = "fake-temp-label"; \
         // str(NAME) fails - whole 'empty_file' error, so can't tell...
             //label = str(NAME); \
-        // try tips here - make "" #VAR which supposedly gets concatenated under the hood?
+        // try tips here - make "" #VAR which supposedly gets concatenated under the hood? - NO, got , or ; expected error
+            //ref: https://stackoverflow.com/questions/10507264/how-to-use-macro-argument-as-string-literal
+            //label = "mms_" #NAME          // which per ↑ would get combined automatically?
+        // try JUST the #VAR ?
+            //label = #NAME; \
 
         #define MOD_MORPH_SHIFT(NAME, KEY, MOD_KEY) mms_##NAME: mms_##NAME { \
             compatible = "zmk,behavior-mod-morph"; \
-            label = "mms_" #NAME; \
+            label = #NAME; \
             #binding-cells = <0>; \
             bindings = <&kp KEY>, <&kp MOD_KEY>; \
             mods = <(MOD_LSFT|MOD_RSFT)>; \
