@@ -11,14 +11,13 @@
 #define QUICK_TAP_HOMEROW 100
 #define QUICK_TAP_THUMB 180
 
-#define MOD_MORPH(NAME, KEY, MOD_KEY, MODS) \
-  mm_##NAME: mm_##NAME { \
+#define MOD_MORPH(NAME, KEY, MOD_KEY, MODS) (mm_##NAME: mm_##NAME { \
     compatible = "zmk,behavior-mod-morph"; \
     label = str(NAME); \
     #binding-cells = <0>; \
     bindings = <&kp KEY>, <&kp MOD_KEY>; \
     mods = <MODS>; \
-  };
+  };)
 
 /* Programmer's Dvorak shifts morphs // EW: some prior example*/
     /*
