@@ -53,6 +53,10 @@
         * must be inside <> and within () inside that
         * PIPE delimited list
 
+        * [] once get working? to combine with hold-tap for also the hold-shift behavior?
+            seems useful: https://github.com/zmkfirmware/zmk/issues/1474
+            
+
 */
 
 

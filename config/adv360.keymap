@@ -185,14 +185,15 @@
         // without parens, seemed to choke (malformed value) around the Label assign function...
         #define MOD_MORPH_SHIFT(NAME, KEY, MOD_KEY) mms_##NAME: mms_##NAME { \
             compatible = "zmk,behavior-mod-morph"; \
-            label = "fake-temp-label"; \
+            //label = "fake-temp-label"; \
+            label = str(NAME); \
             #binding-cells = <0>; \
             bindings = <&kp KEY>, <&kp MOD_KEY>; \
             mods = <(MOD_LSFT|MOD_RSFT)>; \
         };
 
         MOD_MORPH_SHIFT(CMK_2AT, N2, AT)
-        MOD_MORPH_SHIFT(CMK_3STAR, N3, STAR)
+        MOD_MORPH_SHIFT(CMK_3STAR, N3, STAR)  // << this one replaced ↑ previous one - probably because same label...
 
 
 
