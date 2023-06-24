@@ -2,6 +2,8 @@
 /*  TODO
     * [] once get working? to combine with hold-tap for also the hold-shift behavior?
         seems useful: https://github.com/zmkfirmware/zmk/issues/1474
+    * [] 0Ø
+    * [] ,;  .?  /!
 */
 
 
@@ -24,7 +26,7 @@ MOD_MORPH_SHIFT(CMK_6CARET, N6, CARET)
 MOD_MORPH_SHIFT(CMK_7DLLR,  N7, DLLR)
 MOD_MORPH_SHIFT(CMK_8HASH,  N8, HASH)
 MOD_MORPH_SHIFT(CMK_9PRCNT, N9, PRCNT)
-//MOD_MORPH_SHIFT(CMK_0F24 -- tbd if mod(key) will work inside this - need SHIFT+F24
+MOD_MORPH_SHIFT(CMK_0NIL,   N0, LS(F24))   // tbd if mod(key) will work inside this - send SHIFT+F24 which AHK turns to nill (Ø) symbol
 
 /*  NOTES - mod morph
     * need the "MOD_" version of the key
