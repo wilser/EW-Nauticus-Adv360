@@ -183,10 +183,15 @@
         // [ ] WIP try with C-macro:
         // with parens around def, still got "expected node name..." where the : seemed to resolve after the label
         // without parens, seemed to choke (malformed value) around the Label assign function...
+        // with hard-coded Label, it 'works' but the 2nd macro use overwrites the first in usage
+            //label = "fake-temp-label"; \
+        // str(NAME) fails - whole 'empty_file' error, so can't tell...
+            //label = str(NAME); \
+        // try tips here - make "" #VAR which supposedly gets concatenated under the hood?
+
         #define MOD_MORPH_SHIFT(NAME, KEY, MOD_KEY) mms_##NAME: mms_##NAME { \
             compatible = "zmk,behavior-mod-morph"; \
-            //label = "fake-temp-label"; \
-            label = str(NAME); \
+            label = "mms_" #NAME; \
             #binding-cells = <0>; \
             bindings = <&kp KEY>, <&kp MOD_KEY>; \
             mods = <(MOD_LSFT|MOD_RSFT)>; \
