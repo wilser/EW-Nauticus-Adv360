@@ -1,0 +1,52 @@
+
+/*  TODO
+    * [] once get working? to combine with hold-tap for also the hold-shift behavior?
+        seems useful: https://github.com/zmkfirmware/zmk/issues/1474
+*/
+
+
+// TEMP for now: the NAME part has to be unique-enough globally
+// see NOTES below
+
+#define MOD_MORPH_SHIFT(NAME, KEY, MOD_KEY) mms_##NAME: mms_##NAME { \
+    compatible = "zmk,behavior-mod-morph"; \
+    label = #NAME; \
+    #binding-cells = <0>; \
+    bindings = <&kp KEY>, <&kp MOD_KEY>; \
+    mods = <(MOD_LSFT|MOD_RSFT)>; \
+};
+MOD_MORPH_SHIFT(CMK_1GRAVE, N1, GRAVE)
+MOD_MORPH_SHIFT(CMK_2AT,    N2, AT)
+MOD_MORPH_SHIFT(CMK_3STAR,  N3, STAR)
+MOD_MORPH_SHIFT(CMK_4AMPS,  N4, AMPS)
+MOD_MORPH_SHIFT(CMK_5TILDE, N5, TILDE)
+MOD_MORPH_SHIFT(CMK_6CARET, N6, CARET)
+MOD_MORPH_SHIFT(CMK_7DLLR,  N7, DLLR)
+MOD_MORPH_SHIFT(CMK_8HASH,  N8, HASH)
+MOD_MORPH_SHIFT(CMK_9PRCNT, N9, PRCNT)
+//MOD_MORPH_SHIFT(CMK_0F24 -- tbd if mod(key) will work inside this - need SHIFT+F24
+
+/*  NOTES - mod morph
+    * need the "MOD_" version of the key
+    * must be inside <> and within () inside that
+    * PIPE delimited list
+*/
+
+/*  NOTES - C macros
+    // Fun with c-macro syntax headaches...
+
+    // with parens around def, still got "expected node name..." where the : seemed to resolve after the label
+    // without parens, seemed to choke (malformed value) around the Label assign function...
+    // with hard-coded Label, it 'works' [once] but the 2nd macro use overwrites the first in usage
+        //label = "fake-temp-label"; \
+    // str(NAME) fails - whole 'empty_file' error, so can't tell...
+        //label = str(NAME); \
+    // try tips here - make "" #VAR which supposedly gets concatenated under the hood? - NO, got , or ; expected error
+        //ref: https://stackoverflow.com/questions/10507264/how-to-use-macro-argument-as-string-literal
+        //label = "mms_" #NAME          // which per ↑ would get combined automatically?
+        // did not work
+    // try JUST the #VAR ?
+        //label = #NAME; \    ****** <<<<< THIS ONE WORKED!
+        // so can use ↑ pattern, as long as just the NAME part is unique globally to be also a label
+        // (... or could add a separate LABEL param... if needed)
+*/

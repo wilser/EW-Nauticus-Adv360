@@ -87,33 +87,21 @@
     };
 
     combos {
-        compatible = "zmk,combos";
-        timeout-ms = <50>;
-
-        combo_caps_word {
-            key-positions = <49 50>;
-            bindings = <&caps_word>;
-        };
-
-        combo_backspace {
-            key-positions = <49 52>; // r.h. 1 & 4, 1 row down
-            bindings = <&kp BACKSPACE>;
-            layers = <0 1>; // Dvorak and Colemak (main typing) only
-        };
+        #include "combos.dtsi"
     };
 
     behaviors {
         #include "tapdance/general_tapdance.dtsi"
         #include "tapdance/lightroom_tapdance.dtsi"
         //#include "tapdance/templated_hold_onetap.dtsi" // not working 2023-06-20
+        #include "behaviors/mod_morphs_colemak.dtsi"
 
-        /*
+        /*  NOTES - hold-tap
             FLAVORS: https://zmk.dev/docs/behaviors/hold-tap
                 balanced: best for most cases, if hold long enough, thinks a hold, or if fast but w/in time, then hold, else tap (*default best)
                 tap-preferred: assume tap unless more strict timing met; more 'deliberate'
                 hold-preferred: more forgiving (& more false-holds)
                 tap-unless-interrupted: [NMI] seems to assume tap even if slower, unless some other key pressed (so if - was the hold, would yield ----------.... I think, but "-x" faster would be <Hold>+<X>)
-
         */
 
         hm: homerow_mods {
@@ -172,44 +160,6 @@
             bindings = <&kp>, <&kp>;
         };
         
-        // [ ] TEST direct mod-morph for Colemak, bypassing the macro-defined attempts in behaviors.dtsi
-        mm_TEST1: mm_TEST1 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "mm_TEST1";
-            #binding-cells = <0>;
-            bindings = <&kp N1>, <&kp GRAVE>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        // [ ] WIP try with C-macro:
-        // with parens around def, still got "expected node name..." where the : seemed to resolve after the label
-        // without parens, seemed to choke (malformed value) around the Label assign function...
-        // with hard-coded Label, it 'works' but the 2nd macro use overwrites the first in usage
-            //label = "fake-temp-label"; \
-        // str(NAME) fails - whole 'empty_file' error, so can't tell...
-            //label = str(NAME); \
-        // try tips here - make "" #VAR which supposedly gets concatenated under the hood? - NO, got , or ; expected error
-            //ref: https://stackoverflow.com/questions/10507264/how-to-use-macro-argument-as-string-literal
-            //label = "mms_" #NAME          // which per ↑ would get combined automatically?
-        // try JUST the #VAR ?
-            //label = #NAME; \                      ****** <<<<< THIS ONE WORKED!
-
-        #define MOD_MORPH_SHIFT(NAME, KEY, MOD_KEY) mms_##NAME: mms_##NAME { \
-            compatible = "zmk,behavior-mod-morph"; \
-            label = #NAME; \
-            #binding-cells = <0>; \
-            bindings = <&kp KEY>, <&kp MOD_KEY>; \
-            mods = <(MOD_LSFT|MOD_RSFT)>; \
-        };
-        MOD_MORPH_SHIFT(CMK_1GRAVE, N1, GRAVE)
-        MOD_MORPH_SHIFT(CMK_2AT,    N2, AT)
-        MOD_MORPH_SHIFT(CMK_3STAR,  N3, STAR)
-        MOD_MORPH_SHIFT(CMK_4AMPS,  N4, AMPS)
-        MOD_MORPH_SHIFT(CMK_5TILDE, N5, TILDE)
-        MOD_MORPH_SHIFT(CMK_6CARET, N6, CARET)
-        MOD_MORPH_SHIFT(CMK_7DLLR,  N7, DLLR)
-        MOD_MORPH_SHIFT(CMK_8HASH,  N8, HASH)
-        MOD_MORPH_SHIFT(CMK_9PRCNT, N9, PRCNT)
-        //MOD_MORPH_SHIFT(CMK_0F24 -- tbd if mod(key) will work inside this
     };
 
     keymap {
@@ -292,7 +242,9 @@
             #define _B_RALT  &hm_slw RALT B     // *Special extra Right-Alt when don't want l-alt because of AltSnap utility use
             // [.] ModMorphs: {symb} first, then Shift+ or Hold+ => ##
             //      having issues with them not being defined
-            // [.] `1  @2  *3  &4  ~5  ^6  $7  #8  %9  •0 
+            // [.] `1  @2  *3  &4  ~5  ^6  $7  #8  %9  Ø0 
+            // [ ] bottom-right ( ) and < >
+            // [ ] if/when want Punc. first and #s 2nd, simply swap the ModMorph order
 
             colemak_layer { bindings = <
                 ___      &mms_CMK_1GRAVE    &mms_CMK_2AT       &mms_CMK_3STAR     &mms_CMK_4AMPS     &mms_CMK_5TILDE    &to L_DVK                              ___         &mms_CMK_6CARET    &mms_CMK_7DLLR     &mms_CMK_8HASH       &mms_CMK_9PRCNT    ___                  ___                

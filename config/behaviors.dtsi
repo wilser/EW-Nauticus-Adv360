@@ -36,29 +36,7 @@
     MOD_MORPH(at_caret,   AT,    CARET, (MOD_LSFT|MOD_RSFT))
     */
 
-/* Eric Colemak #s with alt Punctuation*/
-    MOD_MORPH(cmk_grave_n1,  GRAVE,     N1, (MOD_LSFT|MOD_RSFT))
-    MOD_MORPH(cmk_at_n2,     AT,        N2, (MOD_LSFT|MOD_RSFT))
-    MOD_MORPH(cmk_star_n3,   STAR,      N3, (MOD_LSFT|MOD_RSFT))
-    MOD_MORPH(cmk_amps_n4,   AMPS,      N4, (MOD_LSFT|MOD_RSFT))
-    MOD_MORPH(cmk_tilde_n5,  TILDE,     N5, (MOD_LSFT|MOD_RSFT))
-    MOD_MORPH(cmk_caret_n6,  CARET,     N6, (MOD_LSFT|MOD_RSFT))
-    MOD_MORPH(cmk_dllr_n7,   DLLR,      N7, (MOD_LSFT|MOD_RSFT))
-    MOD_MORPH(cmk_hash_n8,   HASH,      N8, (MOD_LSFT|MOD_RSFT))
-    MOD_MORPH(cmk_prcnt_n9,  PRCNT,     N9, (MOD_LSFT|MOD_RSFT))
-    MOD_MORPH(cmk_lsF24_n0,  LS(F24),   N0, (MOD_LSFT|MOD_RSFT))
-
-/* ^ NOTES
-        * need the "MOD_" version of the key
-        * must be inside <> and within () inside that
-        * PIPE delimited list
-
-        * [] once get working? to combine with hold-tap for also the hold-shift behavior?
-            seems useful: https://github.com/zmkfirmware/zmk/issues/1474
-            
-
-*/
-
+// ↑ SEE SEPARATE "mod_morphs_colemak.dtsi" file
 
 
 lhm: left_homerow_mods {
