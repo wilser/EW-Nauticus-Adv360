@@ -238,31 +238,32 @@
             *   ; → (     ` → )     F23 → :     F24 → " 
             *   And many of the Shift+___ cases.
             * SEE ModMorphs for the Punc.+## combos
+            * 
             */
             
             // top-row mods:
-            #define _Q_GUI   &hm_slw LGUI Q       // GUI/Win on pinkie fingers
+            #define _Q_GUI   &hm_slw LGUI Q     // GUI/Win on pinkie fingers
             #define _W_SFT   &hm_l LSHFT W      // Shift on ring fingers
             #define _F_ALT   &hm_l LALT F       // Alt on middle fingers
             #define _P_CTL   &hm_l LCTRL P      // Ctrl on index fingers
             #define _L_CTL   &hm_r RCTRL L      // Ctrl
             #define _Y_SFT   &hm_r RSHFT Y      // Alt
             #define _U_ALT   &hm_r RALT U       // Shift
-            #define _SQT_GUI &hm_slw RGUI SQT     // GUI/Win
-            #define _B_RALT  &hm_slw RALT B       // *Special extra Right-Alt when don't want l-alt because of AltSnap utility use
+            #define _SQT_GUI &hm_slw RGUI SQT   // GUI/Win
+            #define _B_RALT  &hm_slw RALT B     // *Special extra Right-Alt when don't want l-alt because of AltSnap utility use
             // [.] ModMorphs: {symb} first, then Shift+ or Hold+ => ##
             // [.] `1  @2  *3  &4  ~5  ^6  $7  #8  %9  •0 
 
             colemak_layer { bindings = <
             /*___      &mm_cmk_grave_n1   &mm_cmk_at_n2      &mm_cmk_star_n3    &mm_cmk_amps_n4    &mm_cmk_tilde_n5   &to L_DVK                              ___         &mm_cmk_caret_n6   &mm_cmk_dllr_n7    &mm_cmk_hash_n8      &mm_cmk_prcnt_n9   &mm_cmk_lsF24_n0     ___ */
-                ___      ___                ___                ___                ___                ___                &to L_DVK                              ___         ___                ___                ___                  ___                ___                  ___                
+                ___      &mm_cmk_grave_n1   ___                ___                ___                ___                &to L_DVK                              ___         ___                ___                ___                  ___                ___                  ___                
                 ___      _Q_GUI             _W_SFT             _F_ALT             _P_CTL             _B_RALT            ___                                    ___         &kp J              _L_CTL             _U_ALT               _Y_SFT             _SQT_GUI             &as LS(F24) F24
                 ___      &kp A              &kp R              &kp S              &kp T              &kp G              ___                                    ___         &kp M              &kp N              &kp E                &kp I              &kp O                ___
                 ___      &lt L_NVE Z        &kp X              &kp C              &lt L_NUM D        &lt L_UTL V                                                           &lt L_UTL K        &kp H              &as LS(COMMA) COMMA  &as LS(DOT) DOT    &as LS(SLASH) SLASH  &as LS(F23) F23
                 ___      &as LS(LBKT) LBKT  &as LS(RBKT) RBKT  ___                ___                                                                                                         ___                ___                  ___                ___                  ___
-                                                                                                                        ___    ___        ___    ___
-                                                                                                                                ___          ___
-                                                                                                                ___    ___    ___            ___    ___    ___
+                                                                                                                           ___    ___        ___    ___
+                                                                                                                                ___           ___
+                                                                                                                ___    ___    ___              ___    ___    ___
             >; };
         // END Colemak
 
