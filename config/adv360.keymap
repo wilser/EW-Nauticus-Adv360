@@ -83,7 +83,7 @@
         #include "macros/general_macros.dtsi"
         #include "macros/shortcuts_macros.dtsi"
         //#include "macros/tap_hold_macros.dtsi"
-    }
+    };
 
     combos {
         compatible = "zmk,combos";
