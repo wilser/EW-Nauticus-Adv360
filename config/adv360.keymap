@@ -191,7 +191,7 @@
             //ref: https://stackoverflow.com/questions/10507264/how-to-use-macro-argument-as-string-literal
             //label = "mms_" #NAME          // which per ↑ would get combined automatically?
         // try JUST the #VAR ?
-            //label = #NAME; \
+            //label = #NAME; \                      ****** <<<<< THIS ONE WORKED!
 
         #define MOD_MORPH_SHIFT(NAME, KEY, MOD_KEY) mms_##NAME: mms_##NAME { \
             compatible = "zmk,behavior-mod-morph"; \
@@ -200,13 +200,16 @@
             bindings = <&kp KEY>, <&kp MOD_KEY>; \
             mods = <(MOD_LSFT|MOD_RSFT)>; \
         };
-
-        MOD_MORPH_SHIFT(CMK_2AT, N2, AT)
-        MOD_MORPH_SHIFT(CMK_3STAR, N3, STAR)  // << this one replaced ↑ previous one - probably because same label...
-
-
-
-
+        MOD_MORPH_SHIFT(CMK_1GRAVE, N1, GRAVE)
+        MOD_MORPH_SHIFT(CMK_2AT,    N2, AT)
+        MOD_MORPH_SHIFT(CMK_3STAR,  N3, STAR)
+        MOD_MORPH_SHIFT(CMK_4AMPS,  N4, AMPS)
+        MOD_MORPH_SHIFT(CMK_5TILDE, N5, TILDE)
+        MOD_MORPH_SHIFT(CMK_6CARET, N6, CARET)
+        MOD_MORPH_SHIFT(CMK_7DLLR,  N7, DLLR)
+        MOD_MORPH_SHIFT(CMK_8HASH,  N8, HASH)
+        MOD_MORPH_SHIFT(CMK_9PRCNT, N9, PRCNT)
+        //MOD_MORPH_SHIFT(CMK_0F24 -- tbd if mod(key) will work inside this
     };
 
     keymap {
@@ -292,8 +295,7 @@
             // [.] `1  @2  *3  &4  ~5  ^6  $7  #8  %9  •0 
 
             colemak_layer { bindings = <
-            /*___      &mm_cmk_grave_n1   &mm_cmk_at_n2      &mm_cmk_star_n3    &mm_cmk_amps_n4    &mm_cmk_tilde_n5   &to L_DVK                              ___         &mm_cmk_caret_n6   &mm_cmk_dllr_n7    &mm_cmk_hash_n8      &mm_cmk_prcnt_n9   &mm_cmk_lsF24_n0     ___ */
-                ___      &mm_TEST1          &mms_CMK_2AT       &mms_CMK_3STAR     ___                ___                &to L_DVK                              ___         ___                ___                ___                  ___                ___                  ___                
+                ___      &mms_1GRAVE        &mms_CMK_2AT       &mms_CMK_3STAR     &mms_CMK_4AMPS     &mms_CMK_5TILDE    &to L_DVK                              ___         &mms_CMK_6CARET    &mms_CMK_7DLLR     &mms_CMK_8HASH       &mms_CMK_9PRCNT    ___                  ___                
                 ___      _Q_GUI             _W_SFT             _F_ALT             _P_CTL             _B_RALT            ___                                    ___         &kp J              _L_CTL             _U_ALT               _Y_SFT             _SQT_GUI             &as LS(F24) F24
                 ___      &kp A              &kp R              &kp S              &kp T              &kp G              ___                                    ___         &kp M              &kp N              &kp E                &kp I              &kp O                ___
                 ___      &lt L_NVE Z        &kp X              &kp C              &lt L_NUM D        &lt L_UTL V                                                           &lt L_UTL K        &kp H              &as LS(COMMA) COMMA  &as LS(DOT) DOT    &as LS(SLASH) SLASH  &as LS(F23) F23
