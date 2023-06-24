@@ -1,0 +1,62 @@
+/*****************************************************************************************************
+ *  TAP DANCE configurations
+ *  for LIGHTROOM special cases
+ *****************************************************************************************************/
+
+// to INCLUDE inside Behaviors section of Keymap where other dependencies already pre-included
+
+TD_LR_E: tapdance_lightroom_e {
+    // (1x) Shift+E (toggle preview window)
+    // (2x) Ctrl+E (edit in Photoshop)
+    compatible = "zmk,behavior-tap-dance";
+    label = "tapdance_lightroom_e";
+    #binding-cells = <0>;
+    tapping-term-ms = <300>;
+    bindings = <&kp LS(E)>, <&kp LC(E)>;
+};
+
+
+// --------------------------------------------------
+// Lightroom #1 - #5:
+// 1-tap for 1-2-3-4-5 (stars), 2x-tap for 6-7-8-9-F9 (colors)
+// [ ] TODO: C-macro-ify to reduce repetition? {namepart, K1, K2}
+
+TD_LR_1: tapdance_lightroom_1 {
+    compatible = "zmk,behavior-tap-dance";
+    label = "tapdance_lightroom_1";
+    #binding-cells = <0>;
+    tapping-term-ms = <300>;
+    bindings = <&kp N1>, <&kp N6>;
+};
+
+TD_LR_2: tapdance_lightroom_2 {
+    compatible = "zmk,behavior-tap-dance";
+    label = "tapdance_lightroom_2";
+    #binding-cells = <0>;
+    tapping-term-ms = <300>;
+    bindings = <&kp N2>, <&kp N7>;
+};
+
+TD_LR_3: tapdance_lightroom_3 {
+    compatible = "zmk,behavior-tap-dance";
+    label = "tapdance_lightroom_#";
+    #binding-cells = <0>;
+    tapping-term-ms = <300>;
+    bindings = <&kp N3>, <&kp N8>;
+};
+
+TD_LR_4: tapdance_lightroom_4 {
+    compatible = "zmk,behavior-tap-dance";
+    label = "tapdance_lightroom_4";
+    #binding-cells = <0>;
+    tapping-term-ms = <300>;
+    bindings = <&kp N4>, <&kp N8>;
+};
+
+TD_LR_5: tapdance_lightroom_5 {
+    compatible = "zmk,behavior-tap-dance";
+    label = "tapdance_lightroom_5";
+    #binding-cells = <0>;
+    tapping-term-ms = <300>;
+    bindings = <&kp N5>, <&kp F9>;
+};

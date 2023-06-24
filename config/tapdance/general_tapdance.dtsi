@@ -1,0 +1,23 @@
+/*****************************************************************************************************
+ *  TAP DANCE configurations
+ *  for general cases
+ *****************************************************************************************************/
+
+// to INCLUDE inside Behaviors section of Keymap where other dependencies already pre-included
+
+TD_Emj_WinDsk: tapdance_emoji_windesktopchange {
+    compatible = "zmk,behavior-tap-dance";
+    label = "tapdance_emoji_windesktopchange";
+    #binding-cells = <0>;
+    tapping-term-ms = <300>;
+    bindings = <&kp RG(SEMI)>, <&kp RG(TAB)>;  /*  ← this actually worked! */
+};
+
+TD_CpWrd_CpLock: tapdance_capsword_capslock {
+    compatible = "zmk,behavior-tap-dance";
+    label = "tapdance_capsword_capslock";
+    #binding-cells = <0>;
+    tapping-term-ms = <300>;
+    bindings = <&caps_word>, <&kp CAPSLOCK>;
+};
+
