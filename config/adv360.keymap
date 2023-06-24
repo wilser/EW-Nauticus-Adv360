@@ -178,7 +178,7 @@
             label = "mm_TEST1";
             #binding-cells = <0>;
             bindings = <&kp N1>, <&kp GRAVE>;
-            mods = (LSHFT, RSHFT);
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
 

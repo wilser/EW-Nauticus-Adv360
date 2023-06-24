@@ -49,6 +49,15 @@
     MOD_MORPH(cmk_prcnt_n9,  PRCNT,     N9, (MOD_LSFT|MOD_RSFT))
     MOD_MORPH(cmk_lsF24_n0,  LS(F24),   N0, (MOD_LSFT|MOD_RSFT))
 
+/* ^ NOTES
+        * need the "MOD_" version of the key
+        * must be inside <> and within () inside that
+        * PIPE delimited list
+
+*/
+
+
+
 lhm: left_homerow_mods {
     compatible = "zmk,behavior-hold-tap";
     label = "LEFT_HOMEROW_MODS";
