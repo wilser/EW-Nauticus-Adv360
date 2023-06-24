@@ -181,13 +181,14 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         // [ ] WIP try with C-macro:
-        #define MOD_MORPH_SHIFT(NAME, KEY, MOD_KEY) (mms_##NAME: mms_##NAME { \
+        // with parens around def, still got "expected node name..." where the : seemed to resolve after the label
+        #define MOD_MORPH_SHIFT(NAME, KEY, MOD_KEY) mms_##NAME: mms_##NAME { \
             compatible = "zmk,behavior-mod-morph"; \
             label = strcat("mms_", str(NAME)); \
             #binding-cells = <0>; \
             bindings = <&kp KEY>, <&kp MOD_KEY>; \
             mods = <(MOD_LSFT|MOD_RSFT)>; \
-        };)
+        };
 
         MOD_MORPH_SHIFT(CMK2, N2, AT)
 
