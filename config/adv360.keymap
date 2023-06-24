@@ -191,7 +191,8 @@
             mods = <(MOD_LSFT|MOD_RSFT)>; \
         };
 
-        MOD_MORPH_SHIFT(CMK2, N2, AT)
+        MOD_MORPH_SHIFT(CMK_2AT, N2, AT)
+        MOD_MORPH_SHIFT(CMK_3STAR, N3, STAR)
 
 
 
@@ -282,7 +283,7 @@
 
             colemak_layer { bindings = <
             /*___      &mm_cmk_grave_n1   &mm_cmk_at_n2      &mm_cmk_star_n3    &mm_cmk_amps_n4    &mm_cmk_tilde_n5   &to L_DVK                              ___         &mm_cmk_caret_n6   &mm_cmk_dllr_n7    &mm_cmk_hash_n8      &mm_cmk_prcnt_n9   &mm_cmk_lsF24_n0     ___ */
-                ___      &mm_TEST1          &mms_CMK2          ___                ___                ___                &to L_DVK                              ___         ___                ___                ___                  ___                ___                  ___                
+                ___      &mm_TEST1          &mms_CMK_2AT       &mms_CMK_3STAR     ___                ___                &to L_DVK                              ___         ___                ___                ___                  ___                ___                  ___                
                 ___      _Q_GUI             _W_SFT             _F_ALT             _P_CTL             _B_RALT            ___                                    ___         &kp J              _L_CTL             _U_ALT               _Y_SFT             _SQT_GUI             &as LS(F24) F24
                 ___      &kp A              &kp R              &kp S              &kp T              &kp G              ___                                    ___         &kp M              &kp N              &kp E                &kp I              &kp O                ___
                 ___      &lt L_NVE Z        &kp X              &kp C              &lt L_NUM D        &lt L_UTL V                                                           &lt L_UTL K        &kp H              &as LS(COMMA) COMMA  &as LS(DOT) DOT    &as LS(SLASH) SLASH  &as LS(F23) F23
