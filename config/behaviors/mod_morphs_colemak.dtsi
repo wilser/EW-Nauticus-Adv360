@@ -62,3 +62,18 @@ MOD_MORPH_SHIFT(CMK_RParGT,   RPAR,   GREATER_THAN)
         // so can use ↑ pattern, as long as just the NAME part is unique globally to be also a label
         // (... or could add a separate LABEL param... if needed)
 */
+
+/*  NOTES - combining ModMorph with AutoShift (hold tap)
+    General: define a mod-morph per above ('MM') then make a hold-tap auto-shift ('AS') taking the ModMorph pre-bound
+
+        Binding in Keymap →
+    ↓ AS bindings
+                        | 0 GRAVE                               | 0 N1
+                        --------------------                    --------------------
+         <MM> <&kp>     | tap: shifted char (`)                 | tap:
+                        | hold: wanted normal char (1)          | hold: 
+                        | Shft(tap): shifted held char (~)      | Shft(tap): 
+
+
+*/
+
