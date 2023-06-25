@@ -162,14 +162,13 @@
 
 
         // [.] try an AUTO-SHIFT, but where the 'TAP' binding is a ModMorph (probably won't work)
-        as_mm_cmk_1grave: as_mm_cmk_1grave {
+        as_mm_cmk_1grave_TST: as_mm_cmk_1grave_TST {
             compatible = "zmk,behavior-hold-tap";
-            label = "as_mm_cmk_1grave";
+            label = "as_mm_cmk_1grave_TST";
             #binding-cells = <2>;
             tapping_term_ms = <150>;
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
-            //bindings = <&mms_CMK_1GRAVE>, <&kp>;
             bindings = <&kp>, <&mms_CMK_1GRAVE>;
         };
         
@@ -260,7 +259,7 @@
             // [.] try AS-MM : <&modmorph> 
 
             colemak_layer { bindings = <
-                ___      &as_mm_cmk_1grave GRAVE 0            &mms_CMK_2AT       &mms_CMK_3STAR     &mms_CMK_4AMPS     &mms_CMK_5TILDE    &to L_DVK                              ___         &mms_CMK_6CARET    &mms_CMK_7DLLR     &mms_CMK_8HASH       &mms_CMK_9PRCNT    &mms_CMK_0NIL        ___                
+                ___      &as_mm_cmk_1grave_TST GRAVE 0        &as_mms_CMK_2AT AT 0       &mms_CMK_3STAR     &mms_CMK_4AMPS     &mms_CMK_5TILDE    &to L_DVK                              ___         &mms_CMK_6CARET    &mms_CMK_7DLLR     &mms_CMK_8HASH       &mms_CMK_9PRCNT    &mms_CMK_0NIL        ___                
                 ___      _Q_GUI                               _W_SFT             _F_ALT             _P_CTL             _B_RALT            ___                                    ___         &kp J              _L_CTL             _U_ALT               _Y_SFT             _SQT_GUI             &as LS(F24) F24
                 ___      &kp A                                &kp R              &kp S              &kp T              &kp G              ___                                    ___         &kp M              &kp N              &kp E                &kp I              &kp O                ___
                 ___      &lt L_NVE Z                          &kp X              &kp C              &lt L_NUM D        &lt L_UTL V                                                           &lt L_UTL K        &kp H              &mms_CMK_CmaSemi     &mms_CMK_DotQstn   &mms_CMK_SlshExc     &as LS(F23) F23

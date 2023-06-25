@@ -2,20 +2,32 @@
 /*  TODO
     * [] once get working? to combine with hold-tap for also the hold-shift behavior?
         seems useful: https://github.com/zmkfirmware/zmk/issues/1474
-    * [] ,;  .?  /!
+    * [] ADD Mod-Morphs together with Auto-Shifts
+    * [] Make combo ↑ into c-macro-ified
 */
 
 
 // TEMP for now: the NAME part has to be unique-enough globally
 // see NOTES below
 
-#define MOD_MORPH_SHIFT(NAME, KEY, MOD_KEY) mms_##NAME: mms_##NAME { \
+#define MOD_MORPH_SHIFT(NAME, KEY, MOD_KEY) \
+mms_##NAME: mms_##NAME { \
     compatible = "zmk,behavior-mod-morph"; \
     label = #NAME; \
     #binding-cells = <0>; \
     bindings = <&kp KEY>, <&kp MOD_KEY>; \
     mods = <(MOD_LSFT|MOD_RSFT)>; \
-};
+}; \
+as_mms_##NAME: as_mms_##NAME { \
+    compatible = "zmk,behavior-hold-tap"; \
+    label = "as_mms_" #NAME; \
+    #binding-cells = <2>; \ 
+    tapping_term_ms = <150>; \
+    quick_tap_ms = <0>; \
+    flavor = "tap-preferred"; \
+    bindings = <&kp>, <&mms_##NAME>; \
+}; /
+
 
 // #s 1-0
 MOD_MORPH_SHIFT(CMK_1GRAVE, N1, GRAVE)
@@ -75,16 +87,12 @@ MOD_MORPH_SHIFT(CMK_RParGT,   RPAR,   GREATER_THAN)
                         | Shft(tap): shifted held char (~)      | Shft(tap): !
 
 
-                        | GRAVE 0                               | N1 0
+                        | GRAVE 0   ⭐                          | N1 0
                         --------------------                    --------------------
-        <&kp> <MM>      | tap:                 | tap: 1 √
-                        | hold:           | hold: 1-repeat ❌
-                        | Shft(tap):      | Shft(tap): ` √
-
-
-
-
-
+        <&kp> <MM>      | tap: 1 √                              | tap: 1 √
+                        | hold: ` √                             | hold: 1-repeat ❌
+                        | Shft(tap): ` √                        | Shft(tap): ` √
+                        | BONUS: Shift+Hold => ~ (shift-grave)
 
 */
 
