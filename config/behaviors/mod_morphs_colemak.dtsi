@@ -75,11 +75,11 @@ MOD_MORPH_SHIFT(CMK_RParGT,   RPAR,   GREATER_THAN)
                         | Shft(tap): shifted held char (~)      | Shft(tap): !
 
 
-                        | 0 GRAVE                               | N1 0
+                        | GRAVE 0                               | N1 0
                         --------------------                    --------------------
-        <&kp> <MM>      | tap:                 | tap: 
-                        | hold:           | hold: 
-                        | Shft(tap):      | Shft(tap): 
+        <&kp> <MM>      | tap:                 | tap: 1 √
+                        | hold:           | hold: 1-repeat ❌
+                        | Shft(tap):      | Shft(tap): ` √
 
 
 
