@@ -27,13 +27,13 @@ MOD_MORPH_SHIFT(CMK_6CARET, N6, CARET)
 MOD_MORPH_SHIFT(CMK_7DLLR,  N7, DLLR)
 MOD_MORPH_SHIFT(CMK_8HASH,  N8, HASH)
 MOD_MORPH_SHIFT(CMK_9PRCNT, N9, PRCNT)
-MOD_MORPH_SHIFT(CMK_0NIL,   N0, LS(F24))
+MOD_MORPH_SHIFT(CMK_0NIL,   N0, LS(F22))    // AHK: F22 → Ø
 
 // ,;  .?  /!  (<  )>
 MOD_MORPH_SHIFT(CMK_CmaSemi,  COMMA,  SEMI)
-MOD_MORPH_SHIFT(CMK_DotQstn,  DOT,    QUESTION)        // not sure legit qmark|question
-MOD_MORPH_SHIFT(CMK_SlshExc,  SLASH,  EXCLAMATION)   // not sure legit exclm.
-MOD_MORPH_SHIFT(CMK_LParLT,   LPAR,   LESS_THAN)      // or LT?
+MOD_MORPH_SHIFT(CMK_DotQstn,  DOT,    QUESTION)    // not sure legit qmark|question
+MOD_MORPH_SHIFT(CMK_SlshExc,  SLASH,  EXCLAMATION) // not sure legit exclm.
+MOD_MORPH_SHIFT(CMK_LParLT,   LPAR,   LESS_THAN)
 MOD_MORPH_SHIFT(CMK_RParGT,   RPAR,   GREATER_THAN)
 //[.] if not work, change weird ones to whatever Shift+__ need
 
