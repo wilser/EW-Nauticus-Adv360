@@ -31,7 +31,7 @@ m_##AS_NAME: m_##AS_NAME { \
 }; \
 
 
-// #s 1-0
+// #s 1-0                         //after macro ref:  m_mmas_CMK_...
 MOD_MORPH_SHIFT(mm_CMK_1GRAVE,   N1 ,    GRAVE        , mmas_CMK_1GRAVE  )
 MOD_MORPH_SHIFT(mm_CMK_2AT,      N2 ,    AT           , mmas_CMK_2AT     )
 MOD_MORPH_SHIFT(mm_CMK_3STAR,    N3 ,    STAR         , mmas_CMK_3STAR   )
