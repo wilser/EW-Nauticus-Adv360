@@ -27,7 +27,7 @@ m_##AS_NAME: m_##AS_NAME { \
     tapping_term_ms = <150>; \
     quick_tap_ms = <0>; \
     flavor = "tap-preferred"; \
-    bindings = <&kp>, <&##MM_NAME>; \
+    bindings = <&kp>, <&m_##MM_NAME>; \
 }; \
 
 
