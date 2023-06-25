@@ -138,7 +138,7 @@
             /* TEMP: ↑ adding MODS_RIGHT to see if can n-hold better */
         };
 
-        /* [ ] experimental: "slower" home-row mod for Win key since don't need to be fast and false-taps mess up worse */
+        /* [.] experimental: "slower" home-row mod for Win key since don't need to be fast and false-taps mess up worse */
         hm_slw: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_MODS";
@@ -158,6 +158,18 @@
             quick_tap_ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
+        };
+
+
+        // [.] try an AUTO-SHIFT, but where the 'TAP' binding is a ModMorph (probably won't work)
+        as_mm_cmk_1grave: as_mm_cmk_1grave {
+            compatible = "zmk,behavior-hold-tap";
+            label = "as_mm_cmk_1grave";
+            #binding-cells = <2>;
+            tapping_term_ms = <150>;
+            quick_tap_ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&mms_CMK_1GRAVE>, <&kp>;
         };
         
     };
@@ -247,11 +259,11 @@
             // [ ] if/when want Punc. first and #s 2nd, simply swap the ModMorph order
 
             colemak_layer { bindings = <
-                ___      &mms_CMK_1GRAVE    &mms_CMK_2AT       &mms_CMK_3STAR     &mms_CMK_4AMPS     &mms_CMK_5TILDE    &to L_DVK                              ___         &mms_CMK_6CARET    &mms_CMK_7DLLR     &mms_CMK_8HASH       &mms_CMK_9PRCNT    &mms_CMK_0NIL        ___                
-                ___      _Q_GUI             _W_SFT             _F_ALT             _P_CTL             _B_RALT            ___                                    ___         &kp J              _L_CTL             _U_ALT               _Y_SFT             _SQT_GUI             &as LS(F24) F24
-                ___      &kp A              &kp R              &kp S              &kp T              &kp G              ___                                    ___         &kp M              &kp N              &kp E                &kp I              &kp O                ___
-                ___      &lt L_NVE Z        &kp X              &kp C              &lt L_NUM D        &lt L_UTL V                                                           &lt L_UTL K        &kp H              &mms_CMK_CmaSemi     &mms_CMK_DotQstn   &mms_CMK_SlshExc     &as LS(F23) F23
-                ___      &as LS(LBKT) LBKT  &as LS(RBKT) RBKT  ___                ___                                                                                                         ___                ___                  &mms_CMK_LParLT    &mms_CMK_RParGT      ___
+                ___      &as_mm_cmk_1grave 0 GRAVE            &mms_CMK_2AT       &mms_CMK_3STAR     &mms_CMK_4AMPS     &mms_CMK_5TILDE    &to L_DVK                              ___         &mms_CMK_6CARET    &mms_CMK_7DLLR     &mms_CMK_8HASH       &mms_CMK_9PRCNT    &mms_CMK_0NIL        ___                
+                ___      _Q_GUI                               _W_SFT             _F_ALT             _P_CTL             _B_RALT            ___                                    ___         &kp J              _L_CTL             _U_ALT               _Y_SFT             _SQT_GUI             &as LS(F24) F24
+                ___      &kp A                                &kp R              &kp S              &kp T              &kp G              ___                                    ___         &kp M              &kp N              &kp E                &kp I              &kp O                ___
+                ___      &lt L_NVE Z                          &kp X              &kp C              &lt L_NUM D        &lt L_UTL V                                                           &lt L_UTL K        &kp H              &mms_CMK_CmaSemi     &mms_CMK_DotQstn   &mms_CMK_SlshExc     &as LS(F23) F23
+                ___      &as LS(LBKT) LBKT                    &as LS(RBKT) RBKT  ___                ___                                                                                                         ___                ___                  &mms_CMK_LParLT    &mms_CMK_RParGT      ___
                                                                                                                            ___    ___        ___    ___
                                                                                                                                 ___           ___
                                                                                                                 ___    ___    ___              ___    ___    ___
