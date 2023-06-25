@@ -11,6 +11,7 @@
 // TEMP for now: the NAME part has to be unique-enough globally
 // Makes a ModMorph to override Shift+<> to be some alternate punctuation. Then adds Auto-Shift for same combo.
 // see NOTES below
+// m_mmas - macro'd mod-morph auto shift
 
 #define MOD_MORPH_SHIFT(MM_NAME, KEY, MOD_KEY, AS_NAME) m_##MM_NAME: m_##MM_NAME { \
     compatible = "zmk,behavior-mod-morph"; \
@@ -31,23 +32,23 @@ m_##AS_NAME: m_##AS_NAME { \
 
 
 // #s 1-0
-MOD_MORPH_SHIFT(mms_CMK_1GRAVE,   N1 ,    GRAVE        , mmsas_CMK_1GRAVE  )
-MOD_MORPH_SHIFT(mms_CMK_2AT,      N2 ,    AT           , mmsas_CMK_2AT     )
-MOD_MORPH_SHIFT(mms_CMK_3STAR,    N3 ,    STAR         , mmsas_CMK_3STAR   )
-MOD_MORPH_SHIFT(mms_CMK_4AMPS,    N4 ,    AMPS         , mmsas_CMK_4AMPS   )
-MOD_MORPH_SHIFT(mms_CMK_5TILDE,   N5 ,    TILDE        , mmsas_CMK_5TILDE  )
-MOD_MORPH_SHIFT(mms_CMK_6CARET,   N6 ,    CARET        , mmsas_CMK_6CARET  )
-MOD_MORPH_SHIFT(mms_CMK_7DLLR,    N7 ,    DLLR         , mmsas_CMK_7DLLR   )
-MOD_MORPH_SHIFT(mms_CMK_8HASH,    N8 ,    HASH         , mmsas_CMK_8HASH   )
-MOD_MORPH_SHIFT(mms_CMK_9PRCNT,   N9 ,    PRCNT        , mmsas_CMK_9PRCNT  )
-MOD_MORPH_SHIFT(mms_CMK_0NIL,     N0 ,    LS(F22)      , mmsas_CMK_0NIL    )    // AHK: F22 → Ø
+MOD_MORPH_SHIFT(mm_CMK_1GRAVE,   N1 ,    GRAVE        , mmas_CMK_1GRAVE  )
+MOD_MORPH_SHIFT(mm_CMK_2AT,      N2 ,    AT           , mmas_CMK_2AT     )
+MOD_MORPH_SHIFT(mm_CMK_3STAR,    N3 ,    STAR         , mmas_CMK_3STAR   )
+MOD_MORPH_SHIFT(mm_CMK_4AMPS,    N4 ,    AMPS         , mmas_CMK_4AMPS   )
+MOD_MORPH_SHIFT(mm_CMK_5TILDE,   N5 ,    TILDE        , mmas_CMK_5TILDE  )
+MOD_MORPH_SHIFT(mm_CMK_6CARET,   N6 ,    CARET        , mmas_CMK_6CARET  )
+MOD_MORPH_SHIFT(mm_CMK_7DLLR,    N7 ,    DLLR         , mmas_CMK_7DLLR   )
+MOD_MORPH_SHIFT(mm_CMK_8HASH,    N8 ,    HASH         , mmas_CMK_8HASH   )
+MOD_MORPH_SHIFT(mm_CMK_9PRCNT,   N9 ,    PRCNT        , mmas_CMK_9PRCNT  )
+MOD_MORPH_SHIFT(mm_CMK_0NIL,     N0 ,    LS(F22)      , mmas_CMK_0NIL    )    // AHK: F22 → Ø
 
 // ,;  .?  /!  (<  )>
-MOD_MORPH_SHIFT(mms_CMK_CmaSemi,  COMMA,  SEMI         , mmsas_CMK_CmaSemi )
-MOD_MORPH_SHIFT(mms_CMK_DotQstn,  DOT,    QUESTION     , mmsas_CMK_DotQstn )  
-MOD_MORPH_SHIFT(mms_CMK_SlshExc,  SLASH,  EXCLAMATION  , mmsas_CMK_SlshExc ) 
-MOD_MORPH_SHIFT(mms_CMK_LParLT,   LPAR,   LESS_THAN    , mmsas_CMK_LParLT  )
-MOD_MORPH_SHIFT(mms_CMK_RParGT,   RPAR,   GREATER_THAN , mmsas_CMK_RParGT  )
+MOD_MORPH_SHIFT(mm_CMK_CmaSemi,  COMMA,  SEMI         , mmas_CMK_CmaSemi )
+MOD_MORPH_SHIFT(mm_CMK_DotQstn,  DOT,    QUESTION     , mmas_CMK_DotQstn )  
+MOD_MORPH_SHIFT(mm_CMK_SlshExc,  SLASH,  EXCLAMATION  , mmas_CMK_SlshExc ) 
+MOD_MORPH_SHIFT(mm_CMK_LParLT,   LPAR,   LESS_THAN    , mmas_CMK_LParLT  )
+MOD_MORPH_SHIFT(mm_CMK_RParGT,   RPAR,   GREATER_THAN , mmas_CMK_RParGT  )
 
 /*  NOTES - mod morph
     * need the "MOD_" version of the key
