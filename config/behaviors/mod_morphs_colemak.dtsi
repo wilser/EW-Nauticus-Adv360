@@ -12,16 +12,16 @@
 // Makes a ModMorph to override Shift+<> to be some alternate punctuation. Then adds Auto-Shift for same combo.
 // see NOTES below
 
-#define MOD_MORPH_SHIFT(MM_NAME, KEY, MOD_KEY, AS_NAME) ##MM_NAME: ##MM_NAME { \
+#define MOD_MORPH_SHIFT(MM_NAME, KEY, MOD_KEY, AS_NAME) m##MM_NAME: m##MM_NAME { \
     compatible = "zmk,behavior-mod-morph"; \
-    label = ##MM_NAME; \
+    label = m##MM_NAME; \
     #binding-cells = <0>; \
     bindings = <&kp KEY>, <&kp MOD_KEY>; \
     mods = <(MOD_LSFT|MOD_RSFT)>; \
 }; \
-##AS_NAME: ##AS_NAME { \
+m##AS_NAME: m##AS_NAME { \
     compatible = "zmk,behavior-hold-tap"; \
-    label = ##AS_NAME; \
+    label = m##AS_NAME; \
     #binding-cells = <2>; \
     tapping_term_ms = <150>; \
     quick_tap_ms = <0>; \
