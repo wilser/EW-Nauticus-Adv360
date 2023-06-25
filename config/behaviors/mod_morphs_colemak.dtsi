@@ -15,14 +15,14 @@
 
 #define MOD_MORPH_SHIFT(MM_NAME, KEY, MOD_KEY, AS_NAME) m_##MM_NAME: m_##MM_NAME { \
     compatible = "zmk,behavior-mod-morph"; \
-    label = m_##MM_NAME; \
+    label = #MM_NAME; \
     #binding-cells = <0>; \
     bindings = <&kp KEY>, <&kp MOD_KEY>; \
     mods = <(MOD_LSFT|MOD_RSFT)>; \
 }; \
 m_##AS_NAME: m_##AS_NAME { \
     compatible = "zmk,behavior-hold-tap"; \
-    label = m_##AS_NAME; \
+    label = #AS_NAME; \
     #binding-cells = <2>; \
     tapping_term_ms = <150>; \
     quick_tap_ms = <0>; \
