@@ -361,18 +361,13 @@
         * L6 🧢: Lightroom (& TBD Photoshop)
             *      http://www.keyboard-layout-editor.com/#/gists/ce40ef1f57700f3871b7af5a965ad51b
             *      This is for when the RIGHT HAND is on the mouse primarily; so r.h.s. just left to entirely float through. See notes on KLE.
-            *      ... some keys 'float through' for now, where still useful (Z etc.)
-            *      [.] trying some #define macros to "press once" instead of Hold → repeat 6, etc. See "cpp_templated_macros". But not working yet
-            *       [.] trying &as1t - auto-shift, only tap once the held one / 6/21; compiled, but doesn't work (doesn't send the 8)
-            *       [.] fixed from macro-press to macro-tap / still no love
-            *       [.] &LT for Num and Util - not sure what to put 'normal'
             */
             lr_layer { bindings = <
                 &TD_LR_E   &TD_LR_1       &TD_LR_2          &TD_LR_3         &TD_LR_4            &TD_LR_5              &to L_0                           _x_           &kp LC(LA(N1))   &kp LC(LA(N2))   &kp LC(LA(N3))   &kp LC(LA(N6))   &kp LC(LA(N7))   &kp N0
-                ___        &kp G          &kp LSHFT         &kp LALT         &kp LCTRL           &kp M                 &kp D                             _x_           _x_              _x_              _x_              _x_              _x_              &as BSLH LC(L)
-                ___        &kp A          &kp X             &kp U            &kp P               &kp S                 &kp R                             _x_           _x_              _x_              ___              _x_              _x_              _x_
-                _x_        &lt L_NVE Q    &kp B             _x_              &lt L_NUM SPACE     &kp LC(LS(D))                                                         _x_              _x_              _x_              _x_              ___              _x_
-                &kp LC(Z)  _x_            _x_               ___              ___                                                                                                        ___              ___              _x_              _x_              &kp LC(APOS)
+                ___        &kp G          &kp LSHFT         &kp LALT         &kp LCTRL           &kp M                 &kp D                             _x_           ___              ___              ___              ___              ___              &as BSLH LC(L)
+                ___        &kp A          &kp X             &kp U            &kp P               &kp S                 &kp R                             _x_           ___              ___              ___              ___              ___              ___
+                _x_        &lt L_NVE Q    &kp B             _x_              &lt L_NUM SPACE     &kp LC(LS(D))                                                         ___              ___              ___              ___              ___              ___
+                &kp LC(Z)  _x_            _x_               ___              ___                                                                                                        ___              ___              ___              ___              &kp LC(APOS)
                                                                                                                   &kp SPACE     &to L_0           _x_    _x_       
                                                                                                                               &kp LALT             _x_       
                                                                                                               ___    ___    &kp LCTRL               _x_    ___           ___
