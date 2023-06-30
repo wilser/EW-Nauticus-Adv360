@@ -67,3 +67,6 @@ CONFIG_ZMK_USB_LOGGING=y
 
 
 CONFIG_BUILD_OUTPUT_UF2=y
+
+# EW test 'idle' setting for hacking the small LED status lights timeout - see notes in LEFT file
+CONFIG_ZMK_IDLE_TIMEOUT=600000
