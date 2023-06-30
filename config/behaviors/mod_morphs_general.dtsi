@@ -1,0 +1,24 @@
+#include <dt-bindings/zmk/keys.h>
+
+/* pattern
+
+m_##MM_NAME: m_##MM_NAME { \
+    compatible = "zmk,behavior-mod-morph"; \
+    label = #MM_NAME; \
+    #binding-cells = <0>; \
+    bindings = <&kp KEY>, <&kp MOD_KEY>; \
+    mods = <(MOD_LSFT|MOD_RSFT)>; \
+}; \
+
+*/
+
+// When LEFT SHIFT being held, make the RIGHT SHIFT act as backspace for convenience
+// (because in my layout, I usually hold left-thumb shift, but backspace normally is on a different left-thumb key)
+mm_SHIFT_BACKSPACE: mm_SHIFT_BACKSPACE {
+    compatible = "zmk,behavior-mod-morph";
+    label = "mm_SHIFT_BACKSPACE";
+    #binding-cells = <0>;
+    bindings = <&kp RSHFT>, <&kp BACKSPACE>;
+    mods = <(MOD_LSFT)>;
+};
+

@@ -95,6 +95,7 @@
         #include "tapdance/lightroom_tapdance.dtsi"
         //#include "tapdance/templated_hold_onetap.dtsi" // not working 2023-06-20
         #include "behaviors/mod_morphs_colemak.dtsi"
+        #include "behaviors/mod_morphs_general.dtsi"
 
         /*  NOTES - hold-tap
             FLAVORS: https://zmk.dev/docs/behaviors/hold-tap
@@ -192,6 +193,7 @@
                 // Other conveniences:
                 #define _HYPER &kp LC(LA(LS(LGUI)))
                 #define _MEH &kp LC(LA(LSHFT))
+                #define _SHF_BKSP &mm_SHIFT_BACKSPACE
 
             dvorak_layer { bindings = <
                 &as RS(EQUAL) EQUAL  &as RS(N1) N1   &as RS(N2) N2  &as RS(N3) N3  &as RS(N4) N4  &as RS(N5) N5  &to L_CMK                                          &sl L_UTL   &as LS(N6) N6  &as LS(N7) N7  &as LS(N8) N8  &as LS(N9) N9      &as LS(N0) N0      &as LS(BSLH) BSLH
@@ -199,7 +201,7 @@
                 MT_TB_SHFTB          &kp A           &kp O          &kp E          &kp I          &kp U          _MEH                                               _MEH        &kp D          &kp H          &kp T          &kp N              &kp S              &as LS(MINUS) MINUS
                 &TD_CpWrd_CpLock     &lt L_NVE SEMI  &kp Q          &kp J          &lt L_NUM K    &lt L_UTL X                                                                   &lt L_UTL B    &kp M          &kp W          &kp V              &kp Z              &as SEMI COLON
                 &TD_Emj_WinDsk       &kp GRAVE       &kp LC(Q)      &kp LEFT       &kp RIGHT                                                                                                   &kp UP         &kp DOWN       &as LS(LBKT) LBKT  &as LS(RBKT) RBKT  &to L_NUM
-                                                                                                                    &kp LSHFT   &to L_LR   _x_          &kp RSHFT
+                                                                                                                    &kp LSHFT   &to L_LR   _x_          _SHF_BKSP
                                                                                                                                &kp PG_UP    &kp PG_DN  
                                                                                                         &kp BSPC  &kp DEL     &kp HOME        &kp END     &lt L_FNC ENTER   &kp SPACE
             >; };
