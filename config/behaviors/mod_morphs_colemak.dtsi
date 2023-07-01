@@ -41,7 +41,7 @@ MOD_MORPH_SHIFT(mm_CMK_6CARET,   N6 ,    CARET        , mmas_CMK_6CARET  )
 MOD_MORPH_SHIFT(mm_CMK_7DLLR,    N7 ,    DLLR         , mmas_CMK_7DLLR   )
 MOD_MORPH_SHIFT(mm_CMK_8HASH,    N8 ,    HASH         , mmas_CMK_8HASH   )
 MOD_MORPH_SHIFT(mm_CMK_9PRCNT,   N9 ,    PRCNT        , mmas_CMK_9PRCNT  )
-MOD_MORPH_SHIFT(mm_CMK_0NIL,     N0 ,    LS(F22)      , mmas_CMK_0NIL    )    // AHK: F22 → Ø
+MOD_MORPH_SHIFT(mm_CMK_0NIL,     N0 ,    F22          , mmas_CMK_0NIL    )    // AHK: F22 → Ø
 
 // ,;  .?  /!  (<  )>
 MOD_MORPH_SHIFT(mm_CMK_CmaSemi,  COMMA,  SEMI         , mmas_CMK_CmaSemi )
