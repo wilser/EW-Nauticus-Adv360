@@ -43,6 +43,7 @@
 // Helpers for common key-defaults (block [&none] or passthrough [&trans])
 #define ___ &trans
 #define _x_ &none
+#define _tbd_ &none
 #define nil 0
 
 // DEFINES for layers:
@@ -203,7 +204,7 @@
                 MT_TB_SHFTB          &kp A           &kp O          &kp E          &kp I          &kp U          _MEH                                        _MEH        &kp D          &kp H          &kp T          &kp N              &kp S              &as LS(MINUS) MINUS
                 &TD_CpWrd_CpLock     &lt L_NVE SEMI  &kp Q          &kp J          &lt L_NUM K    &lt L_UTL X                                                            &lt L_UTL B    &kp M          &kp W          &kp V              &kp Z              &as SEMI COLON
                 &TD_Emj_WinDsk       &kp GRAVE       &TD_LR_Q_TO    &kp LEFT       &kp RIGHT                                                                                            &kp UP         &kp DOWN       &as LS(LBKT) LBKT  &as LS(RBKT) RBKT  &to L_NUM
-                                                                                                                   _SHF_BSP_L   _NM_NMLCK   &to L_LR    _SHF_BSP_R
+                                                                                                                   _SHF_BSP_L   _NM_NMLCK   _tbd_       _SHF_BSP_R
                                                                                                                                &kp HOME      &kp PG_UP  
                                                                                                         &kp BSPC  &kp DEL     &kp END         &kp PG_DN   &lt L_FNC ENTER   &kp SPACE
             >; };
@@ -354,9 +355,9 @@
                 ___    _x_       &kp LC(X)   &kp LC(C)      &kp LC(V)      &kp LC(I)  _MEH_S                                         _x_        _x_         &kp LEFT   &kp DOWN   &kp RIGHT  &m_SEL_WRD   _x_
                 ___    _x_       _MEH_V      &kp LC(LG(C))  &kp LC(LG(V))  &kp LC(B)                                                            _x_         _x_        _x_        _x_        _x_          _x_
                 ___    _x_       _x_         ___            ___                                                                                             ___        ___        _x_        _x_          _x_
-                                                                                            _x_        &m_SEL_WRD     _x_        _x_
-                                                                                                    &m_SEL_LINE      _x_
-                                                                                ___        ___        &kp RC(A)           _x_        _x_        _x_
+                                                                                            _x_       &m_SEL_WRD     _x_      _x_
+                                                                                                    &m_SEL_LINE       _x_
+                                                                                ___        ___       &kp RC(A)         _x_      _x_        _x_
             >; };
 
             // #UNDEFs
