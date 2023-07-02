@@ -15,6 +15,15 @@ TD_LR_E: tapdance_lightroom_e {
     bindings = <&kp LS(E)>, <&kp LC(E)>;
 };
 
+// tap: Ctrl+Q, 2x-tap: switch to LR layer (for use on main layer)
+TD_LR_Q_TO: tapdance_lightroom_ctrlq_tolayer {
+    compatible = "zmk,behavior-tap-dance";
+    label = "tapdance_lightroom_ctrlq_tolayer";
+    #binding-cells = <0>;
+    tapping-term-ms = <300>;
+    bindings = <&kp RC(Q)>, <&to L_LR>;
+};
+
 
 // --------------------------------------------------
 // Lightroom #1 - #5:
