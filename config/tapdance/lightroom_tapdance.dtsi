@@ -59,7 +59,7 @@ TD_LR_4: tapdance_lightroom_4 {
     label = "tapdance_lightroom_4";
     #binding-cells = <0>;
     tapping-term-ms = <300>;
-    bindings = <&kp N4>, <&kp N8>;
+    bindings = <&kp N4>, <&kp N9>;
 };
 
 TD_LR_5: tapdance_lightroom_5 {

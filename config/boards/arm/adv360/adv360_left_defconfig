@@ -72,4 +72,4 @@ CONFIG_BUILD_OUTPUT_UF2=y
 # ms before keyboard enters idle (first-tier sleep) which should turn off lights, but keep BT enabled and keyboard active
 # https://zmk.dev/docs/config/power
 # trying 10 minutes
-CONFIG_ZMK_IDLE_TIMEOUT=600000
+CONFIG_ZMK_IDLE_TIMEOUT=200000
