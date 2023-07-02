@@ -372,8 +372,8 @@
             */
             lr_layer { bindings = <
                 _x_        &TD_LR_1       &TD_LR_2          &TD_LR_3         &TD_LR_4            &TD_LR_5              &to L_0                           _x_           &kp LC(LA(N1))   &kp LC(LA(N2))   &kp LC(LA(N3))   &kp LC(LA(N6))   &kp LC(LA(N7))   &kp N0
-                ___        &kp G          &kp LSHFT         &hm_slw LALT P   &kp LCTRL           &kp M                 &kp D                             _x_           ___              ___              ___              ___              ___              &as BSLH LC(L)
-                ___        &kp A          &kp B             &kp U            &kp P               &kp S                 &kp R                             _x_           ___              ___              ___              ___              ___              ___
+                ___        &kp G          &kp LSHFT         &hm_slw LALT P   &kp LCTRL           &kp M                 _x_                               _x_           ___              ___              ___              ___              ___              &as BSLH LC(L)
+                ___        &kp A          &kp B             &kp U            &kp D               &kp S                 &kp R                             _x_           ___              ___              ___              ___              ___              ___
                 _x_        &lt L_NVE Q    &TD_LR_E          &kp X            &lt L_NUM SPACE     &kp LC(LS(D))                                                         ___              ___              ___              ___              ___              ___
                 &kp LC(Z)  _x_            &to L_0           ___              ___                                                                                                        ___              ___              ___              ___              &kp LC(APOS)
                                                                                                                   &kp SPACE     &to L_0           _x_    _x_       
