@@ -21,7 +21,7 @@ TD_CpWrd_CpLock: tapdance_capsword_capslock {
     bindings = <&caps_word>, <&kp CAPSLOCK>;
 };
 
-TD_Num_NumLock: tapdance_num_lr_numlock {
+TD_Num_LR_NLock: tapdance_num_lr_numlock {
     compatible = "zmk,behavior-tap-dance";
     label = "tapdance_num_lr_numlock";
     #binding-cells = <0>;
