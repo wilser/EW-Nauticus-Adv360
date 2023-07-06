@@ -21,17 +21,7 @@
 
  */
 
- /* #DEFs...  see adv360.keymap for main & adjust here as use/need */
-    //#define L_0 0
-    #define L_DVK 0
-    #define L_CMK 1
-    //#define L_NUM 2
-    //#define L_FNC 3
-    //#define L_UTL 4
-    //#define L_NVE 5
-    #define L_LR 6
-
- 
+ /* #DEFs...  see adv360.keymap : this file included below the #defs */
 
 compatible = "zmk,combos";
 timeout-ms = <50>;
@@ -54,6 +44,3 @@ combo_space {
     
 };
 
-#undef L_DVK
-#undef L_CMK
-#undef L_LR
