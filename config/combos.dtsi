@@ -21,6 +21,18 @@
 
  */
 
+ /* #DEFs...  see adv360.keymap for main & adjust here as use/need */
+    //#define L_0 0
+    #define L_DVK 0
+    #define L_CMK 1
+    //#define L_NUM 2
+    //#define L_FNC 3
+    //#define L_UTL 4
+    //#define L_NVE 5
+    #define L_LR 6
+
+ 
+
 compatible = "zmk,combos";
 timeout-ms = <50>;
 
@@ -32,7 +44,16 @@ combo_caps_word {
 combo_backspace {
     key-positions = <49 52>; // RH, Fng 1,4, 1-row down
     bindings = <&kp BACKSPACE>;
-    layers = <0 1>; // Dvorak and Colemak (main typing) only
+    layers = <L_DVK L_CMK>; // (main typing) only
 };
 
+combo_space {
+    key-positions = <29 64>; // LH, Fng 1+thumb (A+top-left-thumb)
+    bindings = <&kp SPACE>;
+    layers = <L_DVK L_CMK L_LR>;
+    
+};
 
+#undef L_DVK
+#undef L_CMK
+#undef L_LR
