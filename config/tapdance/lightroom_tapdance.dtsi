@@ -2,18 +2,31 @@
  *  TAP DANCE configurations
  *  for LIGHTROOM special cases
  *****************************************************************************************************/
+#include <dt-bindings/zmk/keys.h>
 
 // to INCLUDE inside Behaviors section of Keymap where other dependencies already pre-included
 
 TD_LR_E: tapdance_lightroom_e {
     // (1x) Shift+E (toggle preview window)
     // (2x) Ctrl+E (edit in Photoshop)
+    // (3x) Ctrl+Alt+X (open as SmartObject in PS)
     compatible = "zmk,behavior-tap-dance";
     label = "tapdance_lightroom_e";
     #binding-cells = <0>;
     tapping-term-ms = <300>;
-    bindings = <&kp LS(E)>, <&kp LC(E)>;
+    bindings = <&kp LS(E)>, <&kp LC(E)>, <&kp LC(LA(X))>;
 };
+
+TD_LR_U: tapdance_lightroom_u {
+    // (1x) U (unpick)
+    // (2x) Ctrl+U (Auto-exposure)
+    compatible = "zmk,behavior-tap-dance";
+    label = "tapdance_lightroom_u";
+    #binding-cells = <0>;
+    tapping-term-ms = <300>;
+    bindings = <&kp U>, <&kp LC(U)>;
+};
+
 
 // tap: Ctrl+Q, 2x-tap: switch to LR layer (for use on main layer)
 /* CURRENTLY unused

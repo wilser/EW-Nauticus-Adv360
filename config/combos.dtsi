@@ -38,9 +38,8 @@ combo_backspace {
 };
 
 combo_space {
-    key-positions = <29 64>; // LH, Fng 1+thumb (A+top-left-thumb)
+    key-positions = <29 64>; // LH, (Fng 1 /A + top-left-thumb)
     bindings = <&kp SPACE>;
     layers = <L_DVK L_CMK L_LR>;
-    
 };
 

@@ -375,10 +375,10 @@
             *   [.] layer-hold else TD - works? 7/3 "expected number or parenthesized expression"; try adding & bef TD? → compiled, but the TD didn't fire at all, just layer-hold
             */
             lr_layer { bindings = <
-                _x_        &TD_LR_1          &TD_LR_2         &TD_LR_3         &TD_LR_4            &TD_LR_5              &to L_0                           _x_           &kp LC(LA(N1))   &kp LC(LA(N2))   &kp LC(LA(N3))   &kp LC(LA(N6))   &kp LC(LA(N7))   &kp N0
-                ___        &kp G             &kp LSHFT        &hm_slw LALT P   &kp LCTRL           &kp M                 _x_                               _x_           ___              ___              ___              ___              ___              &as BSLH LC(L)
-                ___        &kp A             &kp B            &kp U            &kp D               &kp S                 &kp R                             _x_           ___              ___              ___              ___              ___              ___
-                _x_        &lt L_NVE Q       &kp J            &kp X            &TD_LR_E            &kp LC(LS(D))                                                         ___              ___              ___              ___              ___              ___
+                &TD_LR_E   &TD_LR_1          &TD_LR_2         &TD_LR_3         &TD_LR_4            &TD_LR_5              &to L_0                           _x_           &kp LC(LA(N1))   &kp LC(LA(N2))   &kp LC(LA(N3))   &kp LC(LA(N6))   &kp LC(LA(N7))   &kp N0
+                ___        &kp G             &hm_slw LSHFT O  &kp LALT         &hm_slw LCTRL P     &kp M                 &kp LS(W)                         _x_           ___              ___              ___              ___              ___              &as BSLH LC(L)
+                ___        &kp A             &kp B            &kp D            &TD_LR_U            &kp S                 &kp R                             _x_           ___              ___              ___              ___              ___              ___
+                _x_        &lt L_NVE Q       &kp J            &kp LC(LS(D))    &kp X               ___                                                                   ___              ___              ___              ___              ___              ___
                 &kp LC(Z)  _x_               _x_              ___              ___                                                                                                        ___              ___              ___              ___              &kp LC(APOS)
                                                                                                                     &kp SPACE     &to L_0           _x_    _x_       
                                                                                                                                 &kp LALT             _x_       
