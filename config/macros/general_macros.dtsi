@@ -14,11 +14,15 @@ m_CHR_EU: m_CHR_EU{
     wait-ms = <20>;
     tap-ms = <30>;
     #binding-cells = <0>;
+    // Alt+0128 seems slow & doesn't work as expected - revisit later?
+        //bindings
+        //    = <&macro_press   &kp LALT>
+        //    , <&macro_tap     &kp KP_N0 &kp KP_N1 &kp KP_N2 &kp KP_N8>
+        //    , <&macro_release &kp LALT>
+        //    ;
+    // try "e u \" to fire AHK shortcut?
     bindings
-        = <&macro_press   &kp LALT>
-        , <&macro_tap     &kp KP_N0 &kp KP_N1 &kp KP_N2 &kp KP_N8>
-        , <&macro_release &kp LALT>
-        ;
+        = <&macro_tap &kp E &kp U &kp BACKSLASH>;
 };
 
 /* SELECT WORD: Ctrl+LEFT, Ctrl+Shift+RIGHT */
