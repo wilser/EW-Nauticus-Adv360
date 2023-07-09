@@ -200,14 +200,14 @@
 
 
             dvorak_layer { bindings = <
-                &as RS(EQUAL) EQUAL  &as RS(N1) N1   &as RS(N2) N2  &as RS(N3) N3  &as RS(N4) N4  &as RS(N5) N5  &to L_CMK                                   &sl L_UTL   &as LS(N6) N6  &as LS(N7) N7  &as LS(N8) N8  &as LS(N9) N9      &as LS(N0) N0      &as LS(BSLH) BSLH
-                &kp ESC              _SQT_GUI        _CMA_SFT       _DOT_ALT       _P_CTL         _Y_RALT        _HYPER                                      _HYPER      &kp F          _G_CTL         _C_ALT         _R_SFT             _L_GUI             &as LS(SLASH) SLASH
-                MT_TB_SHFTB          &kp A           &kp O          &kp E          &kp I          &kp U          _MEH                                        _MEH        &kp D          &kp H          &kp T          &kp N              &kp S              &as LS(MINUS) MINUS
-                &TD_CpWrd_CpLock     &lt L_NVE SEMI  &kp Q          &kp J          &lt L_NUM K    &lt L_UTL X                                                            &lt L_UTL B    &kp M          &kp W          &kp V              &kp Z              &as SEMI COLON
-                &TD_Emj_WinDsk       &kp GRAVE       &kp RC(Q)      &kp LEFT       &kp RIGHT                                                                                            &kp UP         &kp DOWN       &as LS(LBKT) LBKT  &as LS(RBKT) RBKT  &to L_NUM
-                                                                                                                   _SHF_BSP_L   _Nm_LR_NmLck   _tbd_       _SHF_BSP_R
-                                                                                                                               MT_Hm_Spc        &kp PG_UP  
-                                                                                                        &kp BSPC  &kp DEL     &kp END            &kp PG_DN   &lt L_FNC ENTER   &kp SPACE
+                &as RS(EQUAL) EQUAL  &as RS(N1) N1   &as RS(N2) N2  &as RS(N3) N3  &as RS(N4) N4  &as RS(N5) N5  &to L_CMK                                         &sl L_UTL   &as LS(N6) N6  &as LS(N7) N7  &as LS(N8) N8  &as LS(N9) N9      &as LS(N0) N0      &as LS(BSLH) BSLH
+                &kp ESC              _SQT_GUI        _CMA_SFT       _DOT_ALT       _P_CTL         _Y_RALT        _HYPER                                            _HYPER      &kp F          _G_CTL         _C_ALT         _R_SFT             _L_GUI             &as LS(SLASH) SLASH
+                MT_TB_SHFTB          &kp A           &kp O          &kp E          &kp I          &kp U          _MEH                                              _MEH        &kp D          &kp H          &kp T          &kp N              &kp S              &as LS(MINUS) MINUS
+                &TD_CpWrd_CpLock     &lt L_NVE SEMI  &kp Q          &kp J          &lt L_NUM K    &lt L_UTL X                                                                  &lt L_UTL B    &kp M          &kp W          &kp V              &kp Z              &as SEMI COLON
+                &TD_Emj_WinDsk       &kp GRAVE       &kp RC(Q)      &kp LEFT       &kp RIGHT                                                                                                  &kp UP         &kp DOWN       &as LS(LBKT) LBKT  &as LS(RBKT) RBKT  &to L_NUM
+                                                                                                                   _SHF_BSP_L   _Nm_LR_NmLck         _tbd_       _SHF_BSP_R
+                                                                                                                               &TD_Hm_CtrlHm          &kp PG_UP  
+                                                                                                        &kp BSPC  &kp DEL     &TD_En_CtrlEn            &kp PG_DN   &lt L_FNC ENTER   &kp SPACE
             >; };
 
             // #UNDEFs
@@ -378,7 +378,7 @@
                 &TD_LR_E   &TD_LR_1          &TD_LR_2         &TD_LR_3         &TD_LR_4            &TD_LR_5              &to L_0                           _x_           &kp LC(LA(N1))   &kp LC(LA(N2))   &kp LC(LA(N3))   &kp LC(LA(N6))   &kp LC(LA(N7))   &kp N0
                 ___        &kp G             &hm_slw LSHFT O  &kp LALT         &hm_slw LCTRL P     &kp M                 &kp LS(W)                         _x_           ___              ___              ___              ___              ___              &as BSLH LC(L)
                 ___        &kp A             &kp B            &kp D            &TD_LR_U            &kp S                 &kp R                             _x_           ___              ___              ___              ___              ___              ___
-                _x_        &lt L_NVE Q       &kp J            &kp LC(LS(D))    &kp X               ___                                                                   ___              ___              ___              ___              ___              ___
+                ___        &lt L_NVE Q       &kp J            &kp LC(LS(D))    &kp X               ___                                                                   ___              ___              ___              ___              ___              ___
                 &kp LC(Z)  _x_               _x_              ___              ___                                                                                                        ___              ___              ___              ___              &kp LC(APOS)
                                                                                                                     &kp SPACE     &to L_0           _x_    _x_       
                                                                                                                                 &kp LALT             _x_       

@@ -2,6 +2,7 @@
  *  TAP DANCE configurations
  *  for general cases
  *****************************************************************************************************/
+#include <dt-bindings/zmk/keys.h>
 
 // to INCLUDE inside Behaviors section of Keymap where other dependencies already pre-included
 
@@ -28,3 +29,20 @@ TD_Num_LR_NLock: tapdance_num_lr_numlock {
     tapping-term-ms = <300>;
     bindings = <&mo L_NUM>, <&to L_LR>, <&to L_NUM>;
 };
+
+TD_Hm_CtrlHm: tapdance_home_ctrlhome {
+    compatible = "zmk,behavior-tap-dance";
+    label = "tapdance_home_ctrlhome";
+    #binding-cells = <0>;
+    tapping-term-ms = <300>;
+    bindings = <&kp HOME>, <&kp RC(HOME)>;
+};
+
+TD_En_CtrlEn: tapdance_end_ctrlend {
+    compatible = "zmk,behavior-tap-dance";
+    label = "tapdance_end_ctrlend";
+    #binding-cells = <0>;
+    tapping-term-ms = <300>;
+    bindings = <&kp END>, <&kp RC(END)>;
+};
+
