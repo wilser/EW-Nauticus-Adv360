@@ -382,8 +382,8 @@
                 ___        &lt L_NVE Q       &kp J            &kp LC(LS(D))    &kp X               ___                                                                   ___              ___              ___              ___              ___              ___
                 &kp LC(Z)  _x_               _x_              ___              ___                                                                                                        ___              ___              ___              ___              &kp LC(APOS)
                                                                                                                     &kp SPACE     &to L_0           _x_    _x_       
-                                                                                                                                &kp LALT             _x_       
-                                                                                                                ___    ___    &kp LCTRL               _x_    ___           ___
+                                                                                                                                &kp LALT             ___       
+                                                                                                                ___    ___    &kp LCTRL               ___    ___           ___
             >; };
         // END Lightroom
 
