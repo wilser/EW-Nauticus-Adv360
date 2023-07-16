@@ -39,13 +39,19 @@ m_TO_L_Num: m_TO_L_Num{
     #binding-cells = <0>; wait-ms = <10>; tap-ms = <20>;
     bindings = <&to L_NUM>;
 };
+m_MO_L_LR: m_MO_L_LR{
+    compatible = "zmk,behavior-macro";
+    label = "m_MO_L_LR";
+    #binding-cells = <0>; wait-ms = <10>; tap-ms = <20>;
+    bindings = <&mo L_LR>;
+};
 
 TD_HNum_1TLR_2TNum: tapdance_HNum_1TLR_2TNum {
     compatible = "zmk,behavior-tap-dance";
     label = "tapdance_HNum_1TLR_2TNum";
     #binding-cells = <0>;
-    tapping-term-ms = <300>;
-    bindings = <&lt L_LR &m_TO_L_Num>, <&to L_NUM>; // first tap is a layer-mod-tap (hold → Nums, tap → LR layer)
+    tapping-term-ms = <200>;
+    bindings = <&mt &m_MO_L_LR &m_TO_L_Num>, <&to L_NUM>; // first tap is a layer-mod-tap (hold → Nums, tap → LR layer)
 };
 
 
