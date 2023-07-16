@@ -48,15 +48,15 @@
 
 // DEFINES for layers:
     /* LED layer colors:  0 ⚫  1 ⚪  2 🔵  3 🟢  4 🔴  5 🟣  6 🧢  7 🟡   8     */
-    /*                    DVK    CMK   NUM    FNC   UTIL  NavEd   LR    KP    F13+   */
+    /*                    DVK    CMK   LR     NUM    UTIL  FNC   NavEd    N#    F13+   */
     #define L_0 0
     #define L_DVK 0
     #define L_CMK 1
-    #define L_NUM 2
-    #define L_FNC 3
-    #define L_UTL 4
-    #define L_NVE 5
-    #define L_LR 6
+    #define L_LR 2
+    #define L_NUM 3
+    #define L_FNC 4
+    #define L_UTL 5
+    #define L_NVE 6
     #define L_KP 7
     #define L_F13 8
 // END defines for layers
@@ -272,7 +272,25 @@
         // END Colemak
 
         /*****************************************************************************************************
-        * L2 🔵: Standard numpad layer
+        * L2 🔵: Lightroom (& TBD Photoshop)
+            *      http://www.keyboard-layout-editor.com/#/gists/ce40ef1f57700f3871b7af5a965ad51b
+            *      This is for when the RIGHT HAND is on the mouse primarily; so r.h.s. just left to entirely float through. See notes on KLE.
+            *   [.] layer-hold else TD - works? 7/3 "expected number or parenthesized expression"; try adding & bef TD? → compiled, but the TD didn't fire at all, just layer-hold
+            */
+            lr_layer { bindings = <
+                &TD_LR_E   &TD_LR_1          &TD_LR_2         &TD_LR_3         &TD_LR_4            &TD_LR_5              &to L_0                           _x_           &kp LC(LA(N1))   &kp LC(LA(N2))   &kp LC(LA(N3))   &kp LC(LA(N6))   &kp LC(LA(N7))   &kp N0
+                ___        &kp G             &hm_slw LSHFT O  &kp LALT         &hm_slw LCTRL P     &kp M                 &kp LS(W)                         _x_           ___              ___              ___              ___              ___              &as BSLH LC(L)
+                ___        &kp A             &kp B            &kp D            &TD_LR_U            &kp S                 &kp R                             _x_           ___              ___              ___              ___              ___              ___
+                ___        &lt L_NVE Q       &kp J            &kp LC(LS(D))    &kp X               ___                                                                   ___              ___              ___              ___              ___              ___
+                &kp LC(Z)  _x_               _x_              ___              ___                                                                                                        ___              ___              ___              ___              &kp LC(APOS)
+                                                                                                                    &kp SPACE     &to L_0           _x_    _x_       
+                                                                                                                                &kp LALT             ___       
+                                                                                                                ___    ___    &kp LCTRL               ___    ___           ___
+            >; };
+        // END Lightroom
+
+        /*****************************************************************************************************
+        * L3 🟢: Standard numpad layer
             *      http://www.keyboard-layout-editor.com/#/gists/c51e298f5744feba159cde9973f47b92
             *      Uses non-keypad number variants since plan to use as "main" numbers method eventually as practice more.
             * [ ] TODO: € seems wonky / seems better Alt-Code methods? / maybe just ignore? maybe trigger AHK?
@@ -288,23 +306,6 @@
                                                         ___    ___    ___               ___    ___    &kp N0
             >; };
         // END Numpad
-
-        /*****************************************************************************************************
-        * L3 🟢: Function Keys
-            *      http://www.keyboard-layout-editor.com/#/gists/d61490ab54f1d9c63f17ee2d25b40732
-            *
-            */
-            fn_1_12_layer { bindings = <
-                _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                ___    _x_    &kp F10  &kp F11  &kp F12  _x_    _x_
-                ___    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    _x_                                    _x_    _x_    &kp F7   &kp F8   &kp F9   _x_    _x_
-                ___    _x_        _x_         _x_        _x_        _x_    _x_                                    _x_    _x_    &kp F4   &kp F5   &kp F6   _x_    _x_
-                _x_    _x_        _x_         _x_        _x_        _x_                                                  _x_    &kp F1   &kp F2   &kp F3   _x_    _x_
-                _x_    _x_        _x_         ___        ___                                                                    _x_      _x_      _x_      _x_    _x_
-                                                                                _x_    _x_        _x_    _x_
-                                                                                    _x_          _x_
-                                                                    ___    ___    _x_            _x_    _x_    _x_
-            >; };
-        // END Fn Keys
 
         /*****************************************************************************************************
         * L4 🔴: Utils & Specials & Macros/tests & Easy certain symbols
@@ -343,7 +344,24 @@
         // END Utils
 
         /*****************************************************************************************************
-        * L5 🟣: Nav & Edit
+        * L5 🟣: Function Keys
+            *      http://www.keyboard-layout-editor.com/#/gists/d61490ab54f1d9c63f17ee2d25b40732
+            *
+            */
+            fn_1_12_layer { bindings = <
+                _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                ___    _x_    &kp F10  &kp F11  &kp F12  _x_    _x_
+                ___    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    _x_                                    _x_    _x_    &kp F7   &kp F8   &kp F9   _x_    _x_
+                ___    _x_        _x_         _x_        _x_        _x_    _x_                                    _x_    _x_    &kp F4   &kp F5   &kp F6   _x_    _x_
+                _x_    _x_        _x_         _x_        _x_        _x_                                                  _x_    &kp F1   &kp F2   &kp F3   _x_    _x_
+                _x_    _x_        _x_         ___        ___                                                                    _x_      _x_      _x_      _x_    _x_
+                                                                                _x_    _x_        _x_    _x_
+                                                                                    _x_          _x_
+                                                                    ___    ___    _x_            _x_    _x_    _x_
+            >; };
+        // END Fn Keys
+
+        /*****************************************************************************************************
+        * L6 🧢: Nav & Edit
             *      http://www.keyboard-layout-editor.com/#/gists/18e13161cf62a37e0ba0d751735110a1
             * [ ] other r.h.s. useful things?
             */
@@ -370,24 +388,6 @@
         // END Nav / Edit
 
         /*****************************************************************************************************
-        * L6 🧢: Lightroom (& TBD Photoshop)
-            *      http://www.keyboard-layout-editor.com/#/gists/ce40ef1f57700f3871b7af5a965ad51b
-            *      This is for when the RIGHT HAND is on the mouse primarily; so r.h.s. just left to entirely float through. See notes on KLE.
-            *   [.] layer-hold else TD - works? 7/3 "expected number or parenthesized expression"; try adding & bef TD? → compiled, but the TD didn't fire at all, just layer-hold
-            */
-            lr_layer { bindings = <
-                &TD_LR_E   &TD_LR_1          &TD_LR_2         &TD_LR_3         &TD_LR_4            &TD_LR_5              &to L_0                           _x_           &kp LC(LA(N1))   &kp LC(LA(N2))   &kp LC(LA(N3))   &kp LC(LA(N6))   &kp LC(LA(N7))   &kp N0
-                ___        &kp G             &hm_slw LSHFT O  &kp LALT         &hm_slw LCTRL P     &kp M                 &kp LS(W)                         _x_           ___              ___              ___              ___              ___              &as BSLH LC(L)
-                ___        &kp A             &kp B            &kp D            &TD_LR_U            &kp S                 &kp R                             _x_           ___              ___              ___              ___              ___              ___
-                ___        &lt L_NVE Q       &kp J            &kp LC(LS(D))    &kp X               ___                                                                   ___              ___              ___              ___              ___              ___
-                &kp LC(Z)  _x_               _x_              ___              ___                                                                                                        ___              ___              ___              ___              &kp LC(APOS)
-                                                                                                                    &kp SPACE     &to L_0           _x_    _x_       
-                                                                                                                                &kp LALT             ___       
-                                                                                                                ___    ___    &kp LCTRL               ___    ___           ___
-            >; };
-        // END Lightroom
-
-        /*****************************************************************************************************
         * L7 🟡: Alt Numpad - using actual KP versions of numbers; in case need like Alt+<code> testing.
             *      (no yet KeyboardLayoutEditor)
             */
@@ -404,7 +404,7 @@
         // END KP Numpad
 
         /*****************************************************************************************************
-        * L8 : higher F## keys 13-24; in case need for testing
+        * L8 ❓: higher F## keys 13-24; in case need for testing (not sure LED color)
             *      (no yet KeyboardLayoutEditor)
             */
             fn_13_24_layer { bindings = <
