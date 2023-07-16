@@ -71,3 +71,19 @@ m_1TAP_EW_N6: m_1TAP_EW_N6{
 
 // [ ] maybe a direct "hold tap" case but which sends the "macro tap" instead of just &kp?
 // see as1t in adv360.keymap also
+
+
+
+// **************************************************
+// Macros just because certain other behaviors expect a single parameter but want something more complex
+// to use with, e.g., l_m (layer-macro) hold-tap behavior
+// **************************************************
+
+// [ ] todo: hold → Layer1/temp, tap → Layer2/toggle
+// see: https://www.reddit.com/r/ErgoMechKeyboards/comments/123sapj/zmk_question_can_i_layertap_with_a_macro/
+
+// Ideas: make Macro to hard-code the "&to LYR" part, then combine with the &l_m, such as &l_m HOLD_LAYER 0 (where 0 because macro no parm)
+// OR: make the Macro parameterized to take a LYR number, then could have like hold-tap-layer: <hold-layer> <tap-to-layer>
+// OR: maybe not needed because can define a hold-tap behavior with <&mo><&to> bindings and just pass layer numbers for both?!
+
+

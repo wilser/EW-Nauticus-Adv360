@@ -27,6 +27,8 @@ TD_LR_U: tapdance_lightroom_u {
     bindings = <&kp U>, <&kp LC(U)>;
 };
 
+
+// ====================
 // Hold: L_NUM, Tap: TO L_LR, 2xTap: TO L_NUM
 // first-tap; &mt (modtap); 1st hold, 2nd tap
 // [ ] &lt expects layer-num and &kp as 2nd ... Macro to workaround?
@@ -36,27 +38,29 @@ TD_LR_U: tapdance_lightroom_u {
 //      ... trying macros for both bindings...
 //      ... think had LR/Num TO vs. MO backwards, trying again
 
-m_TO_L_LR: m_TO_L_LR{
-    compatible = "zmk,behavior-macro";
-    label = "m_TO_L_LR";
-    #binding-cells = <0>; wait-ms = <20>; tap-ms = <20>;
-    bindings = <&to L_LR>;
-};
-m_MO_L_NUM: m_MO_L_NUM{
-    compatible = "zmk,behavior-macro";
-    label = "m_MO_L_NUM";
-    #binding-cells = <0>; wait-ms = <20>; tap-ms = <20>;
-    bindings = <&mo L_NUM>;
-};
+// m_TO_L_LR: m_TO_L_LR{
+//     compatible = "zmk,behavior-macro";
+//     label = "m_TO_L_LR";
+//     #binding-cells = <0>; wait-ms = <20>; tap-ms = <20>;
+//     bindings = <&to L_LR>;
+// };
+// m_MO_L_NUM: m_MO_L_NUM{
+//     compatible = "zmk,behavior-macro";
+//     label = "m_MO_L_NUM";
+//     #binding-cells = <0>; wait-ms = <20>; tap-ms = <20>;
+//     bindings = <&mo L_NUM>;
+// };
 
-// wow, super not working; 2x works, but 1x is "i" and hold is "j" - WTF?
-TD_HNum_1TLR_2TNum: tapdance_HNum_1TLR_2TNum {
-    compatible = "zmk,behavior-tap-dance";
-    label = "tapdance_HNum_1TLR_2TNum";
-    #binding-cells = <0>;
-    tapping-term-ms = <300>;
-    bindings = <&mt &m_MO_L_NUM &m_TO_L_LR>, <&to L_NUM>; // first tap(hold) is a layer-mod-tap (hold → Nums, tap → LR layer)
-};
+// // wow, super not working; 2x works, but 1x is "i" and hold is "j" - WTF?
+// TD_HNum_1TLR_2TNum: tapdance_HNum_1TLR_2TNum {
+//     compatible = "zmk,behavior-tap-dance";
+//     label = "tapdance_HNum_1TLR_2TNum";
+//     #binding-cells = <0>;
+//     tapping-term-ms = <300>;
+//     bindings = <&mt &m_MO_L_NUM &m_TO_L_LR>, <&to L_NUM>; // first tap(hold) is a layer-mod-tap (hold → Nums, tap → LR layer)
+// };
+
+// ====================
 
 
 
