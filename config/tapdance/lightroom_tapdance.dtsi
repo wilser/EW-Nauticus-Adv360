@@ -55,7 +55,7 @@ TD_HNum_1TLR_2TNum: tapdance_HNum_1TLR_2TNum {
     label = "tapdance_HNum_1TLR_2TNum";
     #binding-cells = <0>;
     tapping-term-ms = <300>;
-    bindings = <&mt &m_MO_L_NUM &m_TO_L_Num>, <&to L_NUM>; // first tap is a layer-mod-tap (hold → Nums, tap → LR layer)
+    bindings = <&mt &m_MO_L_NUM &m_TO_L_LR>, <&to L_NUM>; // first tap(hold) is a layer-mod-tap (hold → Nums, tap → LR layer)
 };
 
 
