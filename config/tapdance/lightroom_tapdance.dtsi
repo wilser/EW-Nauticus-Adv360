@@ -36,8 +36,7 @@ TD_LR_U: tapdance_lightroom_u {
 m_TO_L_Num: m_TO_L_Num{
     compatible = "zmk,behavior-macro";
     label = "m_TO_L_Num";
-    #binding-cells = <0>;
-    tapping-term-ms = <300>;
+    #binding-cells = <0>; wait-ms = <10>; tap-ms = <20>;
     bindings = <&to L_NUM>;
 };
 
