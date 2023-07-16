@@ -212,9 +212,9 @@
                 //#define TD_Nm_LR_Nm &TD_HNum_1TLR_2TNum         // Hold: temp-num-layer; 1-tap: TO LR layer; 2-tap; TO Num layer; NOT working; see commented out in "lightroom_tapdance.dtsi" file
 
                 // TBD maybe not use if other ideas work...
-                #define _Nm_LR_NmLck &TD_Num_LR_NLock
+                //#define _Nm_LR_NmLck &TD_Num_LR_NLock
                 // TBD if works, replace ^^ case // & forget about the 2x for Nums for now...
-                #define LHT_Num_LR &lht L_NUM L_LR
+                #define LHT_Num_LR &lht L_NUM L_LR // 2023-07-16 THIS worked, GEFN I think
 
             // end defs
 
@@ -297,7 +297,7 @@
             */
             lr_layer { bindings = <
                 &TD_LR_E   &TD_LR_1          &TD_LR_2         &TD_LR_3         &TD_LR_4            &TD_LR_5              &to L_0                           _x_           &kp LC(LA(N1))   &kp LC(LA(N2))   &kp LC(LA(N3))   &kp LC(LA(N6))   &kp LC(LA(N7))   &kp N0
-                ___        &kp G             &hm_slw LSHFT O  &kp LALT         &hm_slw LCTRL P     &kp M                 &kp LS(W)                         _x_           ___              ___              ___              ___              ___              &as BSLH LC(L)
+                ___        &kp G             &hm_slw LSHFT O  &kp RALT         &hm_slw LCTRL P     &kp M                 &kp LS(W)                         _x_           ___              ___              ___              ___              ___              &as BSLH LC(L)
                 ___        &kp A             &kp B            &kp D            &TD_LR_U            &kp S                 &kp R                             _x_           ___              ___              ___              ___              ___              ___
                 ___        &lt L_NVE Q       &kp J            &kp LC(LS(D))    &kp X               ___                                                                   ___              ___              ___              ___              ___              ___
                 &kp LC(Z)  _x_               _x_              ___              ___                                                                                                        ___              ___              ___              ___              &kp LC(APOS)
@@ -368,8 +368,8 @@
             */
             fn_1_12_layer { bindings = <
                 _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                ___    _x_    &kp F10  &kp F11  &kp F12  _x_    _x_
-                ___    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    _x_                                    _x_    _x_    &kp F7   &kp F8   &kp F9   _x_    _x_
-                ___    _x_        _x_         _x_        _x_        _x_    _x_                                    _x_    _x_    &kp F4   &kp F5   &kp F6   _x_    _x_
+                ___    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    ___                                    ___    _x_    &kp F7   &kp F8   &kp F9   _x_    _x_
+                ___    _x_        _x_         _x_        _x_        _x_    ___                                    ___    _x_    &kp F4   &kp F5   &kp F6   _x_    _x_
                 _x_    _x_        _x_         _x_        _x_        _x_                                                  _x_    &kp F1   &kp F2   &kp F3   _x_    _x_
                 _x_    _x_        _x_         ___        ___                                                                    _x_      _x_      _x_      _x_    _x_
                                                                                 _x_    _x_        _x_    _x_
