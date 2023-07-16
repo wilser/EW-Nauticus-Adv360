@@ -4,7 +4,7 @@
  *****************************************************************************************************/
 #include <dt-bindings/zmk/keys.h>
 
-// to INCLUDE inside Behaviors section of Keymap where other dependencies already pre-included
+// to INCLUDE inside Behaviors section of Keymap where other dependencies already pre-included like Layer #def constants
 
 TD_LR_E: tapdance_lightroom_e {
     // (1x) Shift+E (toggle preview window)
@@ -26,6 +26,25 @@ TD_LR_U: tapdance_lightroom_u {
     tapping-term-ms = <300>;
     bindings = <&kp U>, <&kp LC(U)>;
 };
+
+// Hold: L_NUM, Tap: TO L_LR, 2xTap: TO L_NUM
+// first-tap; &mt (modtap); 1st hold, 2nd tap
+// [ ] &lt expects layer-num and &kp as 2nd ... Macro to workaround?
+//      bindings = <&lt L_LR &mo L_NUM>, <&to L_NUM>; 
+// [ ] maybe macro can be templated and reusable?
+
+// m_TMP_: m_SEL_WRD{
+//     compatible = "zmk,behavior-macro";
+
+TD_HNum_1TLR_2TNum: tapdance_HNum_1TLR_2TNum {
+    compatible = "zmk,behavior-tap-dance";
+    label = "tapdance_HNum_1TLR_2TNum";
+    #binding-cells = <0>;
+    tapping-term-ms = <300>;
+    bindings = <&lt L_LR &mo L_NUM>, <&to L_NUM>; // first tap is a layer-mod-tap (hold → Nums, tap → LR layer)
+};
+
+
 
 
 // tap: Ctrl+Q, 2x-tap: switch to LR layer (for use on main layer)

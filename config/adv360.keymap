@@ -197,8 +197,12 @@
                 #define _MEH &kp LC(LA(LSHFT))
                 #define _SHF_BSP_R &mm_SHIFT_BACKSPACE_R
                 #define _SHF_BSP_L &mm_SHIFT_BACKSPACE_L
-                #define _Nm_LR_NmLck &TD_Num_LR_NLock
 
+                #define TD_Nm_LR_Nm &TD_HNum_1TLR_2TNum         // Hold: temp-num-layer; 1-tap: TO LR layer; 2-tap; TO Num layer
+
+                // TBD unused if new (2023-07-16) concept works:
+                #define _Nm_LR_NmLck &TD_Num_LR_NLock
+            // end defs
 
             dvorak_layer { bindings = <
                 &as RS(EQUAL) EQUAL  &as RS(N1) N1   &as RS(N2) N2  &as RS(N3) N3  &as RS(N4) N4  &as RS(N5) N5  &to L_CMK                                            &sl L_UTL   &as LS(N6) N6  &as LS(N7) N7  &as LS(N8) N8  &as LS(N9) N9      &as LS(N0) N0      &as LS(BSLH) BSLH
@@ -206,7 +210,7 @@
                 MT_TB_SHFTB          &kp A           &kp O          &kp E          &kp I          &kp U          _MEH                                                 _MEH        &kp D          &kp H          &kp T          &kp N              &kp S              &as LS(MINUS) MINUS
                 &TD_CpWrd_CpLock     &lt L_NVE SEMI  &kp Q          &kp J          &lt L_NUM K    &lt L_UTL X                                                                     &lt L_UTL B    &kp M          &kp W          &kp V              &kp Z              &as SEMI COLON
                 &TD_Emj_WinDsk       &kp GRAVE       &kp RC(Q)      &kp LEFT       &kp RIGHT                                                                                                     &kp UP         &kp DOWN       &as LS(LBKT) LBKT  &as LS(RBKT) RBKT  &to L_NUM
-                                                                                                                   _SHF_BSP_L   _Nm_LR_NmLck         TD_ScrnShots   _SHF_BSP_R
+                                                                                                                   _SHF_BSP_L   TD_Nm_LR_Nm          TD_ScrnShots   _SHF_BSP_R
                                                                                                                                &TD_Hm_CtrlHm          &kp PG_UP     
                                                                                                         &kp BSPC  &kp DEL     &TD_En_CtrlEn            &kp PG_DN      &lt L_FNC ENTER   &kp SPACE
             >; };
