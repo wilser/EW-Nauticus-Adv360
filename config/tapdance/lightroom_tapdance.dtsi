@@ -30,18 +30,23 @@ TD_LR_U: tapdance_lightroom_u {
 // Hold: L_NUM, Tap: TO L_LR, 2xTap: TO L_NUM
 // first-tap; &mt (modtap); 1st hold, 2nd tap
 // [ ] &lt expects layer-num and &kp as 2nd ... Macro to workaround?
-//      bindings = <&lt L_LR &mo L_NUM>, <&to L_NUM>; 
+//      "bindings = <&lt L_LR &mo L_NUM>, <&to L_NUM>" doesn't work e.g. because 2nd param isn't a &kp or equivalent
 // [ ] maybe macro can be templated and reusable?
 
-// m_TMP_: m_SEL_WRD{
-//     compatible = "zmk,behavior-macro";
+m_TO_L_Num: m_TO_L_Num{
+    compatible = "zmk,behavior-macro";
+    label = "m_TO_L_Num";
+    #binding-cells = <0>;
+    tapping-term-ms = <300>;
+    bindings = <&to L_NUM>;
+};
 
 TD_HNum_1TLR_2TNum: tapdance_HNum_1TLR_2TNum {
     compatible = "zmk,behavior-tap-dance";
     label = "tapdance_HNum_1TLR_2TNum";
     #binding-cells = <0>;
     tapping-term-ms = <300>;
-    bindings = <&lt L_LR &mo L_NUM>, <&to L_NUM>; // first tap is a layer-mod-tap (hold → Nums, tap → LR layer)
+    bindings = <&lt L_LR &m_TO_L_Num>, <&to L_NUM>; // first tap is a layer-mod-tap (hold → Nums, tap → LR layer)
 };
 
 
