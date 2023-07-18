@@ -25,10 +25,10 @@ m_CHR_EU: m_CHR_EU{
         = <&macro_tap &kp E &kp U &kp BACKSLASH>;
 };
 
-/* SELECT WORD: Ctrl+LEFT, Ctrl+Shift+RIGHT */
-m_SEL_WRD: m_SEL_WRD{
+/* SELECT WORD: Ctrl+LEFT, Ctrl+Shift+RIGHT - for mid or at end of a word (see other) */
+m_SEL_WRD_L: m_SEL_WRD_L{
     compatible = "zmk,behavior-macro";
-    label = "m_SEL_WRD";
+    label = "m_SEL_WRD_L";
     wait-ms = <40>;  /* 40,40 seems more reliable than 30,20 or faster */
     tap-ms = <20>;
     #binding-cells = <0>;
@@ -38,6 +38,23 @@ m_SEL_WRD: m_SEL_WRD{
         , <&macro_release &kp LCTRL>
         , <&macro_press &kp LSHFT &kp LCTRL>
         , <&macro_tap &kp RIGHT>
+        , <&macro_release &kp LSHFT &kp LCTRL>
+        ;
+};
+
+/* SELECT WORD: Ctrl+RIGHT, Ctrl+Shift+LEFT - for mid or at beginning of a word (see other) */
+m_SEL_WRD_R: m_SEL_WRD_R{
+    compatible = "zmk,behavior-macro";
+    label = "m_SEL_WRD_R";
+    wait-ms = <40>;  /* 40,40 seems more reliable than 30,20 or faster */
+    tap-ms = <20>;
+    #binding-cells = <0>;
+    bindings
+        = <&macro_press &kp LCTRL>
+        , <&macro_tap &kp RIGHT>
+        , <&macro_release &kp LCTRL>
+        , <&macro_press &kp LSHFT &kp LCTRL>
+        , <&macro_tap &kp LEFT>
         , <&macro_release &kp LSHFT &kp LCTRL>
         ;
 };
