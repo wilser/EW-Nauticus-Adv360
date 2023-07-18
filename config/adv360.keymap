@@ -390,11 +390,11 @@
             
             navnedit_layer { bindings = <
                 _x_    _x_       _x_         _x_            _x_            _x_        &to L_0                                        ___        _x_         _x_        _x_        _x_        _x_          _x_
-                ___    &kp LWIN  &kp LSHFT   &kp LALT       &kp LCTRL      &kp LC(U)  _x_                                            _x_        _x_         &kp PG_UP  &kp UP     &kp PG_DN  &m_SEL_LINE  _x_
-                ___    _x_       &kp LC(X)   &kp LC(C)      &kp LC(V)      &kp LC(B)  _MEH_S                                         _x_        _x_         &kp LEFT   &kp DOWN   &kp RIGHT  &m_SEL_WRD   _x_
+                ___    &kp LWIN  &kp LSHFT   &kp LALT       &kp LCTRL      &kp LC(U)  _x_                                            _x_        _x_         &kp PG_UP  &kp UP     &kp PG_DN  _x_          _x_
+                ___    _x_       &kp LC(X)   &kp LC(C)      &kp LC(V)      &kp LC(B)  _MEH_S                                         _x_        _x_         &kp LEFT   &kp DOWN   &kp RIGHT  _x_          _x_
                 ___    _x_       _MEH_V      &kp LC(LG(C))  &kp LC(LG(V))  &kp LC(I)                                                            _x_         _x_        _x_        _x_        _x_          _x_
                 ___    _x_       _x_         ___            ___                                                                                             ___        ___        _x_        _x_          _x_
-                                                                                    &m_SEL_WRD_L       &m_SEL_WRD_R     _x_      _x_
+                                                                                        &m_SEL_WRD_L   &m_SEL_WRD_R     _x_      _x_
                                                                                                        &m_SEL_LINE       _x_
                                                                                 ___        ___          &kp RC(A)         _x_      _x_        _x_
             >; };
