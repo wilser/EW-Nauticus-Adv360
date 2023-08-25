@@ -319,9 +319,9 @@
                 ___    &kp BSPC  &kp LEFT    &kp RIGHT    ___    ___    ___                                    ___    &as LBKT LPAR  &kp N4      &kp N5     &kp N6         &as RBKT RPAR     &as LS(MINUS) KP_MINUS
                 ___    ___       ___         ___          ___    ___                                                  &kp SPACE      &kp N1      &kp N2     &kp N3         &as SEMI KP_PLUS  ___
                 ___    ___       ___         ___          ___                                                                        ___         ___        &as COMMA DOT  &kp KP_ENTER      &to L_0 
-                                                                            ___  &to L_0        ___    &kp SPACE
+                                                                            ___  &to L_0        &kp BSPC  &kp SPACE
                                                                                    ___            ___
-                                                                   ___    ___    ___               ___    ___    &kp N0
+                                                                   ___    ___    ___               ___       ___    &kp N0
             >; };
         // END Numpad
 
