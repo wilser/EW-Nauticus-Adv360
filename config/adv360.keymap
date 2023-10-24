@@ -50,15 +50,16 @@
     /* LED layer colors:  0 ⚫  1 ⚪  2 🔵  3 🟢  4 🔴  5 🟣  6 🧢  7 🟡   8     */
     /*                    DVK    CMK   LR     NUM    UTIL  FNC   NavEd    N#    F13+   */
     #define L_0 0
-    #define L_DVK 0
-    #define L_CMK 1
-    #define L_LR 2
-    #define L_NUM 3
-    #define L_UTL 4
-    #define L_FNC 5
-    #define L_NVE 6
-    #define L_KP 7
-    #define L_F13 8
+    #define L_DVK 0     // dvorak
+    #define L_CMK 1     // colemak
+    #define L_NGR 2     // engram
+    #define L_LR 3      // Lightroom
+    #define L_NUM 4     // numpad
+    #define L_UTL 5     // utils
+    #define L_FNC 6     // function keys 1-12 (like numpad)
+    #define L_NVE 7     // nav & edit 
+    #define L_KP 8      // keypad (*actual KP key codes) (rare)
+    #define L_F13 9     // function keys 13-24 (rare)
 // END defines for layers
 
 /* TAPPING timeouts, flavors, etc.
@@ -278,7 +279,7 @@
             //          [.] ↑ mostly working, the 0 not though
 
             colemak_layer { bindings = <
-                ___      &m_mmas_CMK_1GRAVE GRAVE 0   &m_mmas_CMK_2AT AT 0   &m_mmas_CMK_3STAR STAR 0   &m_mmas_CMK_4AMPS AMPS 0   &m_mmas_CMK_5TILDE TILDE 0   &to L_DVK                      ___         &m_mmas_CMK_6CARET CARET 0   &m_mmas_CMK_7DLLR DLLR 0   &m_mmas_CMK_8HASH HASH 0     &m_mmas_CMK_9PRCNT PRCNT 0         &m_mmas_CMK_0NIL LS(F22) 0              ___                
+                ___      &m_mmas_CMK_1GRAVE GRAVE 0   &m_mmas_CMK_2AT AT 0   &m_mmas_CMK_3STAR STAR 0   &m_mmas_CMK_4AMPS AMPS 0   &m_mmas_CMK_5TILDE TILDE 0   &to L_NGR                      ___         &m_mmas_CMK_6CARET CARET 0   &m_mmas_CMK_7DLLR DLLR 0   &m_mmas_CMK_8HASH HASH 0     &m_mmas_CMK_9PRCNT PRCNT 0         &m_mmas_CMK_0NIL LS(F22) 0              ___                
                 ___      _Q_GUI                       _W_SFT                 _F_ALT                     _P_CTL                     _B_RALT                      ___                            ___         &kp J                        _L_CTL                     _U_ALT                       _Y_SFT                             _SQT_GUI                                &as LS(F24) F24
                 ___      &kp A                        &kp R                  &kp S                      &kp T                      &kp G                        ___                            ___         &kp M                        &kp N                      &kp E                        &kp I                              &kp O                                   ___
                 ___      &lt L_NVE Z                  &kp X                  &kp C                      &lt L_NUM D                &lt L_UTL V                                                             &lt L_UTL K                  &kp H                      &m_mmas_CMK_CmaSemi SEMI 0   &m_mmas_CMK_DotQstn QUESTION 0     &m_mmas_CMK_SlshExc EXCLAMATION 0       &as LS(F23) F23
@@ -288,6 +289,50 @@
                                                                                                                                                         ___    ___    ___              ___    ___    ___
             >; };
         // END Colemak
+
+        /*****************************************************************************************************
+        * L2 🔵: ENGRAM
+            *      http://www.keyboard-layout-editor.com/#/gists/32760c7c88bd4bd39b3eba742b14dcb7
+            *  Very much WIP / experimental...
+            */
+            
+            // top-row mods - REDO if keep beyond testing some bare typing:
+            #define _B_GUI   &hm_slw LGUI B     // GUI/Win on pinkie fingers
+            #define _Y_SFT   &hm_l LSHFT Y      // Shift on ring fingers
+            #define _O_ALT   &hm_l LALT O       // Alt on middle fingers
+            #define _U_CTL   &hm_l LCTRL U      // Ctrl on index fingers
+            #define _L_CTL   &hm_r RCTRL L      // Ctrl
+            #define _D_SFT   &hm_r RSHFT D      // Alt
+            #define _W_ALT   &hm_r RALT W       // Shift
+            #define _V_GUI   &hm_slw RGUI V   // GUI/Win
+            //#define _B_RALT  &hm_slw RALT B     // *Special extra Right-Alt when don't want l-alt because of AltSnap utility use
+
+            // TIDY up from Colemak - [] top row / [] bottom-right symbols
+
+            engram_layer { bindings = <
+                ___      &m_mmas_CMK_1GRAVE GRAVE 0   &m_mmas_CMK_2AT AT 0   &m_mmas_CMK_3STAR STAR 0   &m_mmas_CMK_4AMPS AMPS 0   &m_mmas_CMK_5TILDE TILDE 0   &to L_DVK                      ___         &m_mmas_CMK_6CARET CARET 0   &m_mmas_CMK_7DLLR DLLR 0   &m_mmas_CMK_8HASH HASH 0     &m_mmas_CMK_9PRCNT PRCNT 0         &m_mmas_CMK_0NIL LS(F22) 0              ___                
+                ___      _B_GUI                       _Y_SFT                 _O_ALT                     _U_CTL                     &COMMA                       ___                            ___         &kp DOUBLE_QUOTES            _L_CTL                     _D_ALT                       _W_SFT                             _V_GUI                                  &kp Z
+                ___      &kp A                        &kp R                  &kp S                      &kp T                      &kp G                        ___                            ___         &kp PERIOD                   &kp H                      &kp T                        &kp S                              &kp N                                   &kp Q
+                ___      &lt L_NVE Z                  &kp X                  &kp C                      &lt L_NUM D                &lt L_UTL V                                                             &kp QUESTION                 &kp R                      &kp M                        &kp F                              &kp P                                   &as LS(F23) F23
+                ___      &as LS(LBKT) LBKT            &as LS(RBKT) RBKT      ___                        ___                                                                                                                             ___                        ___                          &m_mmas_CMK_LParLT LESS_THAN 0     &m_mmas_CMK_RParGT GREATER_THAN         ___
+                                                                                                                                                                   ___    ___        ___    ___
+                                                                                                                                                                        ___           ___
+                                                                                                                                                        ___    ___    ___              ___    ___    ___
+            >; };
+            // #UNDEFs
+                #undef _B_GUI
+                #undef _Y_SFT
+                #undef _O_ALT
+                #undef _U_CTL
+                #undef _L_CTL
+                #undef _D_SFT
+                #undef _W_ALT
+                #undef _V_GUI
+        // END Engram
+
+
+
+/**** [ ] TODO - tidy up L# labels and Color dots ****/
 
         /*****************************************************************************************************
         * L2 🔵: Lightroom (& TBD Photoshop)
