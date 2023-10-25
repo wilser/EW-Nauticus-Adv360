@@ -288,6 +288,18 @@
                                                                                                                                                                         ___           ___
                                                                                                                                                         ___    ___    ___              ___    ___    ___
             >; };
+
+            // #UNDEFs
+                #undef _Q_GUI  
+                #undef _W_SFT  
+                #undef _F_ALT  
+                #undef _P_CTL  
+                #undef _L_CTL  
+                #undef _Y_SFT  
+                #undef _U_ALT  
+                #undef _SQT_GUI
+                #undef _B_RALT 
+
         // END Colemak
 
         /*****************************************************************************************************
@@ -307,11 +319,11 @@
             #define _V_GUI   &hm_slw RGUI V   // GUI/Win
             //#define _B_RALT  &hm_slw RALT B     // *Special extra Right-Alt when don't want l-alt because of AltSnap utility use
 
-            // TIDY up from Colemak - [] top row / [] bottom-right symbols
+            // TIDY up from Colemak - [] top row / [] bottom-right symbols / [] special punctuation combos (incl. AHK handlers?)
 
             engram_layer { bindings = <
                 ___      &m_mmas_CMK_1GRAVE GRAVE 0   &m_mmas_CMK_2AT AT 0   &m_mmas_CMK_3STAR STAR 0   &m_mmas_CMK_4AMPS AMPS 0   &m_mmas_CMK_5TILDE TILDE 0   &to L_DVK                      ___         &m_mmas_CMK_6CARET CARET 0   &m_mmas_CMK_7DLLR DLLR 0   &m_mmas_CMK_8HASH HASH 0     &m_mmas_CMK_9PRCNT PRCNT 0         &m_mmas_CMK_0NIL LS(F22) 0              ___                
-                ___      _B_GUI                       _Y_SFT                 _O_ALT                     _U_CTL                     &COMMA                       ___                            ___         &kp DOUBLE_QUOTES            _L_CTL                     _D_ALT                       _W_SFT                             _V_GUI                                  &kp Z
+                ___      _B_GUI                       _Y_SFT                 _O_ALT                     _U_CTL                     &kp COMMA                       ___                            ___      &kp DOUBLE_QUOTES            _L_CTL                     _D_ALT                       _W_SFT                             _V_GUI                                  &kp Z
                 ___      &kp A                        &kp R                  &kp S                      &kp T                      &kp G                        ___                            ___         &kp PERIOD                   &kp H                      &kp T                        &kp S                              &kp N                                   &kp Q
                 ___      &lt L_NVE Z                  &kp X                  &kp C                      &lt L_NUM D                &lt L_UTL V                                                             &kp QUESTION                 &kp R                      &kp M                        &kp F                              &kp P                                   &as LS(F23) F23
                 ___      &as LS(LBKT) LBKT            &as LS(RBKT) RBKT      ___                        ___                                                                                                                             ___                        ___                          &m_mmas_CMK_LParLT LESS_THAN 0     &m_mmas_CMK_RParGT GREATER_THAN         ___
@@ -332,7 +344,7 @@
 
 
 
-/**** [ ] TODO - tidy up L# labels and Color dots ****/
+/**** [ ] TODO - tidy up L# labels and Color dots ↓ ****/
 
         /*****************************************************************************************************
         * L2 🔵: Lightroom (& TBD Photoshop)
