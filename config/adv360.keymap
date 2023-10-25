@@ -307,7 +307,7 @@
             *      http://www.keyboard-layout-editor.com/#/gists/32760c7c88bd4bd39b3eba742b14dcb7
             *  Very much WIP / experimental...
             */
-            
+/* TEMP
             // top-row mods - REDO if keep beyond testing some bare typing:
             #define _B_GUI   &hm_slw LGUI B     // GUI/Win on pinkie fingers
             #define _Y_SFT   &hm_l LSHFT Y      // Shift on ring fingers
@@ -341,7 +341,7 @@
                 #undef _W_ALT
                 #undef _V_GUI
         // END Engram
-
+ END TEMP COMMENT OUT */
 
 /**** [ ] TODO - tidy up L# labels and Color dots ↓ ****/
 
