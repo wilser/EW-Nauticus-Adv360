@@ -52,7 +52,7 @@
     #define L_0 0
     #define L_DVK 0     // dvorak
     #define L_CMK 1     // colemak
-    #define L_NGR 2     // engram
+    #define L_NGM 2     // engram
     #define L_LR 3      // Lightroom
     #define L_NUM 4     // numpad
     #define L_UTL 5     // utils
@@ -279,7 +279,7 @@
             //          [.] ↑ mostly working, the 0 not though
 
             colemak_layer { bindings = <
-                ___      &m_mmas_CMK_1GRAVE GRAVE 0   &m_mmas_CMK_2AT AT 0   &m_mmas_CMK_3STAR STAR 0   &m_mmas_CMK_4AMPS AMPS 0   &m_mmas_CMK_5TILDE TILDE 0   &to L_NGR                      ___         &m_mmas_CMK_6CARET CARET 0   &m_mmas_CMK_7DLLR DLLR 0   &m_mmas_CMK_8HASH HASH 0     &m_mmas_CMK_9PRCNT PRCNT 0         &m_mmas_CMK_0NIL LS(F22) 0              ___                
+                ___      &m_mmas_CMK_1GRAVE GRAVE 0   &m_mmas_CMK_2AT AT 0   &m_mmas_CMK_3STAR STAR 0   &m_mmas_CMK_4AMPS AMPS 0   &m_mmas_CMK_5TILDE TILDE 0   &to L_NGM                      ___         &m_mmas_CMK_6CARET CARET 0   &m_mmas_CMK_7DLLR DLLR 0   &m_mmas_CMK_8HASH HASH 0     &m_mmas_CMK_9PRCNT PRCNT 0         &m_mmas_CMK_0NIL LS(F22) 0              ___                
                 ___      _Q_GUI                       _W_SFT                 _F_ALT                     _P_CTL                     _B_RALT                      ___                            ___         &kp J                        _L_CTL                     _U_ALT                       _Y_SFT                             _SQT_GUI                                &as LS(F24) F24
                 ___      &kp A                        &kp R                  &kp S                      &kp T                      &kp G                        ___                            ___         &kp M                        &kp N                      &kp E                        &kp I                              &kp O                                   ___
                 ___      &lt L_NVE Z                  &kp X                  &kp C                      &lt L_NUM D                &lt L_UTL V                                                             &lt L_UTL K                  &kp H                      &m_mmas_CMK_CmaSemi SEMI 0   &m_mmas_CMK_DotQstn QUESTION 0     &m_mmas_CMK_SlshExc EXCLAMATION 0       &as LS(F23) F23
@@ -337,8 +337,9 @@
 */
 
               engram_layer { bindings = <
-                ___    ___      ___      ___      ___      ___          ___                                    ___    ___    ___      ___      ___      ___      ___
-                ___    &kp B    &kp Y    &kp O    &kp U    &kp COMMA    ___                                    ___    _x_    &kp L    &kp D    &kp W    &kp V    &kp Z
+                ___    ___      ___      ___      ___      ___          &to L_DVK                              ___    ___    ___      ___      ___      ___      ___
+/*              ___    &kp B    &kp Y    &kp O    &kp U    &kp COMMA    ___                                    ___    _x_    &kp L    &kp D    &kp W    &kp V    &kp Z   */
+                ___    &kp B    _Y_SFT   _O_ALT   _U_CTL   &kp COMMA    ___                                    ___    _x_    &kp L    &kp D    &kp W    &kp V    &kp Z
                 ___    &kp C    &kp I    &kp E    &kp A    &kp PERIOD   ___                                    ___    _x_    &kp H    &kp T    &kp S    &kp N    &kp Q
                 ___    &kp G    &kp X    &kp J    &kp K    &kp MINUS                                                  _x_    &kp R    &kp M    &kp F    &kp P    _x_
                 ___    ___      ___      ___      ___                                                                        ___      ___      ___      ___      _x_
