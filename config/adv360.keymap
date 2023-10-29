@@ -309,15 +309,15 @@
             */
 
             // top-row mods - REDO if keep beyond testing some bare typing:
-            #define _B_GUI   &hm_slw LGUI B     // GUI/Win on pinkie fingers
-            #define _Y_SFT   &hm_l LSHFT Y      // Shift on ring fingers
-            #define _O_ALT   &hm_l LALT O       // Alt on middle fingers
-            #define _U_CTL   &hm_l LCTRL U      // Ctrl on index fingers
-            #define _L_CTL   &hm_r RCTRL L      // Ctrl
-            #define _D_SFT   &hm_r RSHFT D      // Alt
-            #define _W_ALT   &hm_r RALT W       // Shift
-            #define _V_GUI   &hm_slw RGUI V     // GUI/Win
-            #define _APOS_RALT  &hm_slw RALT APOS     // *Special extra Right-Alt when don't want l-alt because of AltSnap utility use
+            #define _B_GUI      &hm_slw LGUI B      // GUI/Win on pinkie fingers
+            #define _Y_SFT      &hm_l LSHFT Y       // Shift on ring fingers
+            #define _O_ALT      &hm_l LALT O        // Alt on middle fingers
+            #define _U_CTL      &hm_l LCTRL U       // Ctrl on index fingers
+            #define _L_CTL      &hm_r RCTRL L       // Ctrl
+            #define _D_SFT      &hm_r RSHFT D       // Alt
+            #define _W_ALT      &hm_r RALT W        // Shift
+            #define _V_GUI      &hm_slw RGUI V      // GUI/Win
+            #define _APOS_RALT  &hm_slw RALT APOS   // *Special extra Right-Alt when don't want l-alt because of AltSnap utility use
 
             // TIDY up from Colemak - [] top row / [] bottom-right symbols / [] special punctuation combos (incl. AHK handlers?)
             // [ ] errors - is it just the &kp LS(KEY) type cases?
@@ -337,15 +337,14 @@
 */
 
               engram_layer { bindings = <
-                ___    ___      ___      ___      ___      ___          &to L_DVK                              ___    ___    ___      ___      ___      ___      ___
-/*              ___    &kp B    &kp Y    &kp O    &kp U    &kp COMMA    ___                                    ___    _x_    &kp L    &kp D    &kp W    &kp V    &kp Z   */
-                ___    &kp B    _Y_SFT   _O_ALT   _U_CTL   &kp COMMA    ___                                    ___    _x_    &kp L    &kp D    &kp W    &kp V    &kp Z
-                ___    &kp C    &kp I    &kp E    &kp A    &kp PERIOD   ___                                    ___    _x_    &kp H    &kp T    &kp S    &kp N    &kp Q
-                ___    &kp G    &kp X    &kp J    &kp K    &kp MINUS                                                  _x_    &kp R    &kp M    &kp F    &kp P    _x_
-                ___    ___      ___      ___      ___                                                                        ___      ___      ___      ___      _x_
-                                                                               ___    ___        ___    ___
+                ___    ___      ___      ___      ___      ___          &to L_DVK                          ___    ___         ___      ___      ___      ___      ___
+                ___    &kp B    _Y_SFT   _O_ALT   _U_CTL   &kp APOS     ___                                ___    &kp DOUBLE_QUOTES         _L_CTL   _D_SFT   _W_ALT   _V_GUI   &kp Z
+                ___    &kp C    &kp I    &kp E    &kp A    &kp COMMA    ___                                ___    &kp PERIOD  &kp H    &kp T    &kp S    &kp N    &kp Q
+                ___    &kp G    &kp X    &kp J    &kp K    &kp MINUS                                              &kp QUESTION        &kp R    &kp M    &kp F    &kp P    _x_
+                ___    ___      ___      ___      ___                                                                         ___      ___      ___      ___      _x_
+                                                                             ___    ___        ___    ___
                                                                                    ___          ___
-                                                                       ___    ___    ___            ___    ___    ___
+                                                                    ___    ___    ___            ___    ___    ___
             >; };
 
 
@@ -463,7 +462,7 @@
             // #DEFs
                 #define _MEH_V &kp LC(LA(LS(V)))        // Toggle ClipMate
                 #define _MEH_S &kp LC(LA(LS(S)))        // Toggle "Everything" search app
-                // [ ] TODO: add F-- to top for OneNote+AHK macros
+                // [ ] TODO: add F-- to top for OneNote+AHK macros - NOT really working; think undo or replace with something more useful
             
             navnedit_layer { bindings = <
                 _x_    _x_       _x_         _x_            &kp LC(LA(F16))  &kp LC(LS(F16))  &to L_0                                        ___        _x_         _x_        _x_        _x_        _x_          _x_
