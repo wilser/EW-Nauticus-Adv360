@@ -323,25 +323,18 @@
             // [ ] errors - is it just the &kp LS(KEY) type cases?
                 // [ ] maybe clone CMK then slowly sub in changes?
                 // [ ] 2023-10-25 - no idea; getting "expected number or parenthesized ..." but can't see it
-
-/*            engram_layer { bindings = <
-                ___      &m_mmas_CMK_1GRAVE GRAVE 0   &m_mmas_CMK_2AT AT 0   &m_mmas_CMK_3STAR STAR 0   &m_mmas_CMK_4AMPS AMPS 0   &m_mmas_CMK_5TILDE TILDE 0   &to L_DVK                      ___         &m_mmas_CMK_6CARET CARET 0   &m_mmas_CMK_7DLLR DLLR 0   &m_mmas_CMK_8HASH HASH 0     &m_mmas_CMK_9PRCNT PRCNT 0         &m_mmas_CMK_0NIL LS(F22) 0          ___                
-                ___      _B_GUI                       _Y_SFT                 _O_ALT                     _U_CTL                     &kp COMMA                    ___                            ___         &kp LS(SINGLE_QUOTE)         _L_CTL                     _D_ALT                       _W_SFT                             _V_GUI                              &kp Z
-                ___      &kp C                        &kp I                  &kp E                      &kp A                      &kp PERIOD                   ___                            ___         &kp PERIOD                   &kp H                      &kp T                        &kp S                              &kp N                               &kp Q
-                ___      &lt L_NVE G                  &kp X                  &kp J                      &lt L_NUM K                &lt L_UTL MINUS                                                         &kp LS(SLASH)                &kp R                      &kp M                        &kp F                              &kp P                               &as LS(F23) F23
-                ___      &as LS(LBKT) LBKT            &as LS(RBKT) RBKT      ___                        ___                                                                                                                             ___                        ___                          &kp LS(NUMBER_3)                   &kp LS(NUMBER_2)                    ___
-                                                                                                                                                                   ___    ___        ___    ___
-                                                                                                                                                                        ___           ___
-                                                                                                                                                        ___    ___    ___              ___    ___    ___
-            >; };
-*/
+            // [ ] "shifted" keys on base layer: see https://github.com/zmkfirmware/zmk/issues/86
+                // can use &lsft <key> or &kp (<key> | LSFT) / << sort of an expression, it seems.
+                // They recommend NOT sending direct keycodes (like QUESTION) because its effect depends on locale - only if your native KEY layout has those already
+            
+            // [ ] TO TRY: replace like {&kp DOUBLE_QUOTES} with {&kp (APOS | LSFT)}
 
               engram_layer { bindings = <
-                ___    ___      ___      ___      ___      ___          &to L_DVK                          ___    ___         ___      ___      ___      ___      ___
-                ___    &kp B    _Y_SFT   _O_ALT   _U_CTL   &kp APOS     ___                                ___    &kp DOUBLE_QUOTES         _L_CTL   _D_SFT   _W_ALT   _V_GUI   &kp Z
-                ___    &kp C    &kp I    &kp E    &kp A    &kp COMMA    ___                                ___    &kp PERIOD  &kp H    &kp T    &kp S    &kp N    &kp Q
-                ___    &kp G    &kp X    &kp J    &kp K    &kp MINUS                                              &kp QUESTION        &kp R    &kp M    &kp F    &kp P    _x_
-                ___    ___      ___      ___      ___                                                                         ___      ___      ___      ___      _x_
+                ___    ___      ___      ___      ___      ___          &to L_DVK                          ___    ___                 ___      ___      ___      ___      ___
+                ___    &kp B    _Y_SFT   _O_ALT   _U_CTL   &kp APOS     ___                                ___    &kp (APOS | LSFT)   _L_CTL   _D_SFT   _W_ALT   _V_GUI   &kp Z
+                ___    &kp C    &kp I    &kp E    &kp A    &kp COMMA    ___                                ___    &kp PERIOD          &kp H    &kp T    &kp S    &kp N    &kp Q
+                ___    &kp G    &kp X    &kp J    &kp K    &kp MINUS                                              &kp (SLASH | LSFT)  &kp R    &kp M    &kp F    &kp P    _x_
+                ___    ___      ___      ___      ___                                                                                 ___      ___      ___      ___      _x_
                                                                              ___    ___        ___    ___
                                                                                    ___          ___
                                                                     ___    ___    ___            ___    ___    ___
