@@ -320,15 +320,9 @@
             #define _APOS_RALT  &hm_slw RALT APOS   // *Special extra Right-Alt when don't want l-alt because of AltSnap utility use
 
             // TIDY up from Colemak - [] top row / [] bottom-right symbols / [] special punctuation combos (incl. AHK handlers?)
-            // [ ] errors - is it just the &kp LS(KEY) type cases?
-                // [ ] maybe clone CMK then slowly sub in changes?
-                // [ ] 2023-10-25 - no idea; getting "expected number or parenthesized ..." but can't see it
             // [ ] "shifted" keys on base layer: see https://github.com/zmkfirmware/zmk/issues/86
-                // can use &lsft <key> or &kp (<key> | LSFT) / << sort of an expression, it seems.
-                // They recommend NOT sending direct keycodes (like QUESTION) because its effect depends on locale - only if your native KEY layout has those already
-            
-            // [ ] TO TRY: replace like {&kp DOUBLE_QUOTES} with {&kp (APOS | LSFT)}
-                // seems not to have worked...? Trying back with direct-punc.
+                // can use &lsft <key> or &kp (<key> | LSFT) / << sort of an expression, it seems. | UPD: seems not working, either wrong or something. Will use mod-morphs anyway, so ...
+            // [ ] TODO: once using, tidy up the SYMBOLS - see CMK mod-morphs but need new Engram ones
 
               engram_layer { bindings = <
                 ___    ___      ___      ___      ___      ___          &to L_DVK                          ___    ___                 ___      ___      ___      ___      ___
@@ -340,7 +334,6 @@
                                                                                    ___          ___
                                                                     ___    ___    ___            ___    ___    ___
             >; };
-
 
             // #UNDEFs
                 #undef _B_GUI
@@ -354,11 +347,8 @@
                 #undef _APOS_RALT
         // END Engram
 
-
-/**** [ ] TODO - tidy up L# labels and Color dots ↓ ****/
-
         /*****************************************************************************************************
-        * L2 🔵: Lightroom (& TBD Photoshop)
+        * L3 🟢: Lightroom (& TBD Photoshop)
             *      http://www.keyboard-layout-editor.com/#/gists/ce40ef1f57700f3871b7af5a965ad51b
             *      This is for when the RIGHT HAND is on the mouse primarily; so r.h.s. just left to entirely float through. See notes on KLE.
             *   [.] layer-hold else TD - works? 7/3 "expected number or parenthesized expression"; try adding & bef TD? → compiled, but the TD didn't fire at all, just layer-hold
@@ -376,7 +366,7 @@
         // END Lightroom
 
         /*****************************************************************************************************
-        * L3 🟢: Standard numpad layer
+        * L4 🔴: Standard numpad layer
             *      http://www.keyboard-layout-editor.com/#/gists/c51e298f5744feba159cde9973f47b92
             *      Uses non-keypad number variants since plan to use as "main" numbers method eventually as practice more.
             * [ ] TODO: € seems wonky / seems better Alt-Code methods? / maybe just ignore? maybe trigger AHK?
@@ -394,7 +384,7 @@
         // END Numpad
 
         /*****************************************************************************************************
-        * L4 🔴: Utils & Specials & Macros/tests & Easy certain symbols
+        * L5 🟣: Utils & Specials & Macros/tests & Easy certain symbols
             *       http://www.keyboard-layout-editor.com/#/gists/2d2d37deb742cc77638e81cb0b875106
             *  # keys send to that layer-#
             *  &m_SLEEP does Windows-menu-compatible key shortcuts to invoke Sleep from menu
@@ -430,7 +420,7 @@
         // END Utils
 
         /*****************************************************************************************************
-        * L5 🟣: Function Keys
+        * L6 🧢: Function Keys
             *      http://www.keyboard-layout-editor.com/#/gists/d61490ab54f1d9c63f17ee2d25b40732
             *
             */
@@ -447,7 +437,7 @@
         // END Fn Keys
 
         /*****************************************************************************************************
-        * L6 🧢: Nav & Edit
+        * L7 🟡: Edit
             *      http://www.keyboard-layout-editor.com/#/gists/18e13161cf62a37e0ba0d751735110a1
             * [ ] other r.h.s. useful things?
             * Top ^!F16 and ^+F16 map to AHK overrides in OneNote only
@@ -461,8 +451,8 @@
             navnedit_layer { bindings = <
                 _x_    _x_       _x_         _x_            &kp LC(LA(F16))  &kp LC(LS(F16))  &to L_0                                        ___        _x_         _x_        _x_        _x_        _x_          _x_
                 ___    &kp LWIN  &kp LSHFT   &kp LALT       &kp LCTRL        &kp LC(U)        _x_                                            _x_        _x_         &kp PG_UP  &kp UP     &kp PG_DN  _x_          _x_
-                ___    _x_       &kp LC(X)   &kp LC(C)      &kp LC(V)        &kp LC(B)        _x_                                            _x_        _x_         &kp LEFT   &kp DOWN   &kp RIGHT  _x_          _x_
-                ___    _x_       _x_         &kp LC(LG(C))  &kp LC(LG(V))    &kp LC(I)                                                                  _x_         _x_        _x_        _x_        _x_          _x_
+                ___    _x_       &kp LC(X)   &kp LC(C)      &kp LC(V)        &kp LC(B)        &kp LC(K)                                      _x_        _x_         &kp LEFT   &kp DOWN   &kp RIGHT  _x_          _x_
+                ___    _x_       &kp LC(Z)   &kp LC(LG(C))  &kp LC(LG(V))    &kp LC(I)                                                                  _x_         _x_        _x_        _x_        _x_          _x_
                 ___    _x_       _x_         ___            ___                                                                                                     ___        ___        _x_        _x_          _x_
                                                                                                 &m_SEL_WRD_L   &m_SEL_WRD_R     _x_      _x_
                                                                                                                &m_SEL_LINE       _x_
@@ -476,7 +466,7 @@
         // END Nav / Edit
 
         /*****************************************************************************************************
-        * L7 🟡: Alt Numpad - using actual KP versions of numbers; in case need like Alt+<code> testing.
+        * L8 ⚫: Alt Numpad - using actual KP versions of numbers; in case need like Alt+<code> testing.
             *      (no yet KeyboardLayoutEditor)
             */
             kp_layer { bindings = <
@@ -492,7 +482,7 @@
         // END KP Numpad
 
         /*****************************************************************************************************
-        * L8 ❓: higher F## keys 13-24; in case need for testing (not sure LED color)
+        * L9 ⚫: higher F## keys 13-24; in case need for testing (not sure LED color)
             *      (no yet KeyboardLayoutEditor)
             */
             fn_13_24_layer { bindings = <
