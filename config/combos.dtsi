@@ -26,20 +26,30 @@
 compatible = "zmk,combos";
 timeout-ms = <50>;
 
+// C1
+combo_space {
+    key-positions = <29 64>; // LH, (Fng 1 /A + top-left-thumb)
+    bindings = <&kp SPACE>;
+    layers = <L_DVK L_CMK L_LR>;
+};
+
+// C2
 combo_caps_word {
     key-positions = <49 50>; // RH, Fng 1,2, 1-row down
     bindings = <&caps_word>;
 };
 
+// C3
 combo_backspace {
     key-positions = <49 52>; // RH, Fng 1,4, 1-row down
     bindings = <&kp BACKSPACE>;
     layers = <L_DVK L_CMK>; // (main typing) only
 };
 
-combo_space {
-    key-positions = <29 64>; // LH, (Fng 1 /A + top-left-thumb)
-    bindings = <&kp SPACE>;
+// C4
+combo_context_menu {
+    key-positions = <66 67>; // RH, top-2 thumb keys
+    bindings = <&kp K_CONTEXT_MENU>;
     layers = <L_DVK L_CMK L_LR>;
 };
 

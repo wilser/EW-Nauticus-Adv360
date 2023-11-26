@@ -355,9 +355,9 @@
             */
             lr_layer { bindings = <
                 &TD_LR_E      &TD_LR_1          &TD_LR_2         &TD_LR_3         &TD_LR_4            &TD_LR_5              &to L_0                           _x_           &kp LC(LA(N1))   &kp LC(LA(N2))   &kp LC(LA(N3))   &kp LC(LA(N6))   &kp N0           ___  
-                ___           &kp G             &hm_slw LSHFT B  &kp RALT         &hm_slw LCTRL P     &kp M                 &kp LS(W)                         _x_           ___              ___              ___              ___              ___              &as BSLH LC(L)
+                ___           &kp G             &hm_slw LSHFT B  &hm_slw LALT Y   &hm_slw LCTRL P     &hm_slw RALT M        &kp LS(W)                         _x_           ___              ___              ___              ___              ___              &as BSLH LC(L)
                 ___           &kp A             &kp O            &kp D            &TD_LR_U            &kp S                 &kp R                             _x_           ___              ___              ___              ___              ___              ___
-                &kp LC(APOS)  &lt L_NVE Q       &kp LC(LS(D))    &kp J            &lt L_NUM X         ___                                                                   ___              ___              ___              ___              ___              ___
+                &kp LC(APOS)  &lt L_NVE Q       &kp LC(LS(D))    &kp J            &lt L_NUM X         &kp Z                                                                 ___              ___              ___              ___              ___              ___
                 &kp LC(Z)     _x_               _x_              ___              ___                                                                                                        ___              ___              ___              ___              &kp LC(APOS)
                                                                                                                        &kp SPACE     &to L_0           _x_    _x_       
                                                                                                                                    &kp RALT             ___       
