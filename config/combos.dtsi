@@ -53,3 +53,9 @@ combo_context_menu {
     layers = <L_DVK L_CMK L_LR>;
 };
 
+// C5
+combo_caps_lock {
+    key-positions = <64 67>; // Both top/inner smaller thumb keys (currently each assigned to Shift)
+    bindings = <&kp K_CONTEXT_MENU>;
+    layers = <L_DVK L_CMK L_LR>;
+};
