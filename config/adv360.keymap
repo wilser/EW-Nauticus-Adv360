@@ -47,18 +47,18 @@
 #define nil 0
 
 // DEFINES for layers:
-    /* LED layer colors:  0 ⚫  1 ⚪  2 🔵  3 🟢  4 🔴  5 🟣  6 🧢  7 🟡   8     */
-    /*                    DVK    CMK   LR     NUM    UTIL  FNC   NavEd    N#    F13+   */
+    /* LED layer colors:  0 ⚫   1 ⚪   2 🔵   3 🟢   4 🔴   5 🟣   6 🧢   7 🟡   8  ??  9 ??   */
+    /*                    DVK     LR      NUM    UTIL   FNC    NavEd   N#     F13+                  */
     #define L_0 0
     #define L_DVK 0     // dvorak
-    #define L_CMK 1     // colemak
-    #define L_NGM 2     // engram
-    #define L_LR 3      // Lightroom
-    #define L_NUM 4     // numpad
-    #define L_UTL 5     // utils
-    #define L_FNC 6     // function keys 1-12 (like numpad)
-    #define L_NVE 7     // nav & edit 
-    #define L_KP 8      // keypad (*actual KP key codes) (rare)
+    //#define L_CMK 1     // colemak
+    #define L_NGM 1     // engram
+    #define L_LR 2      // Lightroom
+    #define L_NUM 3     // numpad
+    #define L_UTL 4     // utils
+    #define L_FNC 5     // function keys 1-12 (like numpad)
+    #define L_NVE 6     // nav & edit 
+    #define L_KP 7      // keypad (*actual KP key codes) (rare)
     #define L_F13 9     // function keys 13-24 (rare)
 // END defines for layers
 
@@ -220,7 +220,7 @@
             // end defs
 
             dvorak_layer { bindings = <
-                &as RS(EQUAL) EQUAL  &as RS(N1) N1   &as RS(N2) N2  &as RS(N3) N3  &as RS(N4) N4  &as RS(N5) N5  &to L_CMK                                            &sl L_UTL   &as LS(N6) N6  &as LS(N7) N7  &as LS(N8) N8  &as LS(N9) N9      &as LS(N0) N0      &as LS(BSLH) BSLH
+                &as RS(EQUAL) EQUAL  &as RS(N1) N1   &as RS(N2) N2  &as RS(N3) N3  &as RS(N4) N4  &as RS(N5) N5  &to L_NGM                                            &sl L_UTL   &as LS(N6) N6  &as LS(N7) N7  &as LS(N8) N8  &as LS(N9) N9      &as LS(N0) N0      &as LS(BSLH) BSLH
                 &kp ESC              _SQT_GUI        _CMA_SFT       _DOT_ALT       _P_CTL         _Y_RALT        _HYPER                                               _HYPER      &kp F          _G_CTL         _C_ALT         _R_SFT             _L_GUI             &as LS(SLASH) SLASH
                 MT_TB_SHFTB          &kp A           &kp O          &kp E          &kp I          &kp U          _MEH                                                 _MEH        &kp D          &kp H          &kp T          &kp N              &kp S              &as LS(MINUS) MINUS
                 &TD_CpWrd_CpLock     &lt L_NVE SEMI  &kp Q          &kp J          &lt L_NUM K    &lt L_UTL X                                                                     &lt L_UTL B    &kp M          &kp W          &kp V              &kp Z              &as SEMI COLON
@@ -252,84 +252,42 @@
         // END Dvorak
         
         /*****************************************************************************************************
-        * L1 ⚪: COLEMAK 
-            *      http://www.keyboard-layout-editor.com/#/gists/d5273d628b4d4cc48be28dc629304b95
-            * Specials and some punctuation re-mapped via Windows Keyboard layout driver file (for Moonlander case; trying ModMorphs here...)
-            *   ; → (     ` → )     F23 → :     F24 → " 
-            *   And many of the Shift+___ cases.
-            * SEE "mod_morphs_colemak.dtsi"
-            * 
-            */
-            
-            // top-row mods:
-            #define _Q_GUI   &hm_slw LGUI Q     // GUI/Win on pinkie fingers
-            #define _W_SFT   &hm_l LSHFT W      // Shift on ring fingers
-            #define _F_ALT   &hm_l LALT F       // Alt on middle fingers
-            #define _P_CTL   &hm_l LCTRL P      // Ctrl on index fingers
-            #define _L_CTL   &hm_r RCTRL L      // Ctrl
-            #define _Y_SFT   &hm_r RSHFT Y      // Alt
-            #define _U_ALT   &hm_r RALT U       // Shift
-            #define _SQT_GUI &hm_slw RGUI SQT   // GUI/Win
-            #define _B_RALT  &hm_slw RALT B     // *Special extra Right-Alt when don't want l-alt because of AltSnap utility use
-            // [ ] if/when want Punc. first and #s 2nd, simply swap the ModMorph order
-
-            // [ ] the AS-MM has <&MM> <&kp> / invoke with &AS-MM 0 <shifted char>
-                    // => did shifted char when tapped, did normal char when held, but when shift+Tap did (Shift+<shifted-char>)
-            // [.] try AS-MM : <&modmorph> 
-            //          [.] ↑ mostly working, the 0 not though
-
-            colemak_layer { bindings = <
-                ___      &m_mmas_CMK_1GRAVE GRAVE 0   &m_mmas_CMK_2AT AT 0   &m_mmas_CMK_3STAR STAR 0   &m_mmas_CMK_4AMPS AMPS 0   &m_mmas_CMK_5TILDE TILDE 0   &to L_NGM                      ___         &m_mmas_CMK_6CARET CARET 0   &m_mmas_CMK_7DLLR DLLR 0   &m_mmas_CMK_8HASH HASH 0     &m_mmas_CMK_9PRCNT PRCNT 0         &m_mmas_CMK_0NIL LS(F22) 0              ___                
-                ___      _Q_GUI                       _W_SFT                 _F_ALT                     _P_CTL                     _B_RALT                      ___                            ___         &kp J                        _L_CTL                     _U_ALT                       _Y_SFT                             _SQT_GUI                                &as LS(F24) F24
-                ___      &kp A                        &kp R                  &kp S                      &kp T                      &kp G                        ___                            ___         &kp M                        &kp N                      &kp E                        &kp I                              &kp O                                   ___
-                ___      &lt L_NVE Z                  &kp X                  &kp C                      &lt L_NUM D                &lt L_UTL V                                                             &lt L_UTL K                  &kp H                      &m_mmas_CMK_CmaSemi SEMI 0   &m_mmas_CMK_DotQstn QUESTION 0     &m_mmas_CMK_SlshExc EXCLAMATION 0       &as LS(F23) F23
-                ___      &as LS(LBKT) LBKT            &as LS(RBKT) RBKT      ___                        ___                                                                                                                             ___                        ___                          &m_mmas_CMK_LParLT LESS_THAN 0     &m_mmas_CMK_RParGT GREATER_THAN         ___
-                                                                                                                                                                   ___    ___        ___    ___
-                                                                                                                                                                        ___           ___
-                                                                                                                                                        ___    ___    ___              ___    ___    ___
-            >; };
-
-            // #UNDEFs
-                #undef _Q_GUI  
-                #undef _W_SFT  
-                #undef _F_ALT  
-                #undef _P_CTL  
-                #undef _L_CTL  
-                #undef _Y_SFT  
-                #undef _U_ALT  
-                #undef _SQT_GUI
-                #undef _B_RALT 
-
-        // END Colemak
+        *    [OLD] COLEMAK  -- 2023-12-20 removed from main layout - trying Engram instead - see /notes_and_ref/old_Colemak.keymap
+        */
 
         /*****************************************************************************************************
-        * L2 🔵: ENGRAM
+        * L1 ⚪ ENGRAM
             *      http://www.keyboard-layout-editor.com/#/gists/32760c7c88bd4bd39b3eba742b14dcb7
-            *  Very much WIP / experimental...
+
+                TODO:
+                ▢ TIDY up vs Colemak - [] top row / [] bottom-right symbols / [] special punctuation combos (incl. AHK handlers &| Windows key layout?)
+                ▢ tidy up the SYMBOLS - esp. all SHIFT+ cases - see CMK mod-morphs but need new Engram ones
+                ▢ see also Keyboard Layout Editor for TODO items (↑ link above)
+                ▢ revisit top-row mods, esp. RH-Alt
+
+                WIP or NEEDS ATTENTION:
+                // [ ] "shifted" keys on base layer: see https://github.com/zmkfirmware/zmk/issues/86
+                    // can use &lsft <key> or &kp (<key> | LSFT) / << sort of an expression, it seems. | UPD: seems not working, either wrong or something. Will use mod-morphs anyway, so ...
             */
 
-            // top-row mods - REDO if keep beyond testing some bare typing:
-            #define _B_GUI      &hm_slw LGUI B      // GUI/Win on pinkie fingers
-            #define _Y_SFT      &hm_l LSHFT Y       // Shift on ring fingers
-            #define _O_ALT      &hm_l LALT O        // Alt on middle fingers
-            #define _U_CTL      &hm_l LCTRL U       // Ctrl on index fingers
-            #define _L_CTL      &hm_r RCTRL L       // Ctrl
-            #define _D_ALT      &hm_r RALT D        // Alt
-            #define _W_SFT      &hm_r RSFT W        // Shift
-            #define _V_GUI      &hm_slw RGUI V      // GUI/Win
-            #define _APOS_RALT  &hm_slw RALT APOS   // *Special extra Right-Alt when don't want l-alt because of AltSnap utility use
-
-            // TIDY up from Colemak - [] top row / [] bottom-right symbols / [] special punctuation combos (incl. AHK handlers?)
-            // [ ] "shifted" keys on base layer: see https://github.com/zmkfirmware/zmk/issues/86
-                // can use &lsft <key> or &kp (<key> | LSFT) / << sort of an expression, it seems. | UPD: seems not working, either wrong or something. Will use mod-morphs anyway, so ...
-            // [ ] TODO: once using, tidy up the SYMBOLS - see CMK mod-morphs but need new Engram ones
-
-              engram_layer { bindings = <
-                ___    ___      ___      ___      ___      ___          &to L_DVK                          ___    ___                 ___      ___      ___      ___      ___
-                ___    &kp B    _Y_SFT   _O_ALT   _U_CTL   &kp APOS     ___                                ___    &kp DOUBLE_QUOTES   _L_CTL   _D_ALT   _W_SFT   _V_GUI   &kp Z
-                ___    &kp C    &kp I    &kp E    &kp A    &kp COMMA    ___                                ___    &kp PERIOD          &kp H    &kp T    &kp S    &kp N    &kp Q
-                ___    &kp G    &kp X    &kp J    &kp K    &kp MINUS                                              &kp QUESTION        &kp R    &kp M    &kp F    &kp P    _x_
-                ___    ___      ___      ___      ___                                                                                 ___      ___      ___      ___      _x_
+            // DEFINES:
+                #define _B_GUI      &hm_slw LGUI B      // GUI/Win on pinkie fingers
+                #define _Y_SFT      &hm_l LSHFT Y       // Shift on ring fingers
+                #define _O_ALT      &hm_l LALT O        // Alt on middle fingers
+                #define _U_CTL      &hm_l LCTRL U       // Ctrl on index fingers
+                #define _L_CTL      &hm_r RCTRL L       // Ctrl
+                #define _D_ALT      &hm_r RALT D        // Alt
+                #define _W_SFT      &hm_r RSFT W        // Shift
+                #define _V_GUI      &hm_slw RGUI V      // GUI/Win
+                //#define _APOS_RALT  &hm_slw RALT APOS   // *Special extra Right-Alt when don't want l-alt because of AltSnap utility use
+            // end defines
+            
+            engram_layer { bindings = <
+                ___    ___       ___      ___      ___      ___          &to L_DVK                          ___    ___                 ___      ___      ___      ___      ___
+                ___    &kp B     _Y_SFT   _O_ALT   _U_CTL   &kp APOS     ___                                ___    &kp DOUBLE_QUOTES   _L_CTL   _D_ALT   _W_SFT   _V_GUI   &kp Z
+                ___    &kp C     &kp I    &kp E    &kp A    &kp COMMA    ___                                ___    &kp PERIOD          &kp H    &kp T    &kp S    &kp N    &kp Q
+                ___    &kp G     &kp X    &kp J    &kp K    &kp MINUS                                              &kp QUESTION        &kp R    &kp M    &kp F    &kp P    &kp COLON
+                ___    &kp HASH  &kp AT   ___      ___                                                                                 ___      ___      ___      ___      _x_
                                                                              ___    ___        ___    ___
                                                                                    ___          ___
                                                                     ___    ___    ___            ___    ___    ___
@@ -344,11 +302,13 @@
                 #undef _D_SFT
                 #undef _W_ALT
                 #undef _V_GUI
-                #undef _APOS_RALT
+                //#undef _APOS_RALT
+            // end undefs
+
         // END Engram
 
         /*****************************************************************************************************
-        * L3 🟢: Lightroom (& TBD Photoshop)
+        * L2 🔵 Lightroom (& TBD Photoshop)
             *      http://www.keyboard-layout-editor.com/#/gists/ce40ef1f57700f3871b7af5a965ad51b
             *      This is for when the RIGHT HAND is on the mouse primarily; so r.h.s. just left to entirely float through. See notes on KLE.
             *   [.] layer-hold else TD - works? 7/3 "expected number or parenthesized expression"; try adding & bef TD? → compiled, but the TD didn't fire at all, just layer-hold
@@ -366,7 +326,7 @@
         // END Lightroom
 
         /*****************************************************************************************************
-        * L4 🔴: Standard numpad layer
+        * L3 🟢 Standard numpad layer
             *      http://www.keyboard-layout-editor.com/#/gists/c51e298f5744feba159cde9973f47b92
             *      Uses non-keypad number variants since plan to use as "main" numbers method eventually as practice more.
             * [ ] TODO: € seems wonky / seems better Alt-Code methods? / maybe just ignore? maybe trigger AHK?
@@ -384,7 +344,7 @@
         // END Numpad
 
         /*****************************************************************************************************
-        * L5 🟣: Utils & Specials & Macros/tests & Easy certain symbols
+        * L4 🔴 Utils & Specials & Macros/tests & Easy certain symbols
             *       http://www.keyboard-layout-editor.com/#/gists/2d2d37deb742cc77638e81cb0b875106
             *  # keys send to that layer-#
             *  &m_SLEEP does Windows-menu-compatible key shortcuts to invoke Sleep from menu
@@ -420,7 +380,7 @@
         // END Utils
 
         /*****************************************************************************************************
-        * L6 🧢: Function Keys
+        * L5 🟣 Function Keys
             *      http://www.keyboard-layout-editor.com/#/gists/d61490ab54f1d9c63f17ee2d25b40732
             *
             */
@@ -437,7 +397,7 @@
         // END Fn Keys
 
         /*****************************************************************************************************
-        * L7 🟡: Edit
+        * L6 🧢 Edit
             *      http://www.keyboard-layout-editor.com/#/gists/18e13161cf62a37e0ba0d751735110a1
             * [ ] other r.h.s. useful things?
             * Top ^!F16 and ^+F16 map to AHK overrides in OneNote only
@@ -466,7 +426,7 @@
         // END Nav / Edit
 
         /*****************************************************************************************************
-        * L8 ⚫: Alt Numpad - using actual KP versions of numbers; in case need like Alt+<code> testing.
+        * L7 🟡 Alt Numpad - using actual KP versions of numbers; in case need like Alt+<code> testing.
             *      (no yet KeyboardLayoutEditor)
             */
             kp_layer { bindings = <
@@ -482,7 +442,7 @@
         // END KP Numpad
 
         /*****************************************************************************************************
-        * L9 ⚫: higher F## keys 13-24; in case need for testing (not sure LED color)
+        * L8 ⚫ higher F## keys 13-24; in case need for testing (not sure LED color)
             *      (no yet KeyboardLayoutEditor)
             */
             fn_13_24_layer { bindings = <
