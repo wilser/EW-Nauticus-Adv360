@@ -30,7 +30,7 @@ timeout-ms = <50>;
 combo_space {
     key-positions = <29 64>; // LH, (Fng 1 /A + top-left-thumb)
     bindings = <&kp SPACE>;
-    layers = <L_DVK L_CMK L_LR>;
+    layers = <L_DVK L_ENG L_LR>;
 };
 
 // C2
@@ -43,25 +43,25 @@ combo_caps_word {
 combo_backspace {
     key-positions = <49 52>; // RH, Fng 1,4, 1-row down
     bindings = <&kp BACKSPACE>;
-    layers = <L_DVK L_CMK>; // (main typing) only
+    layers = <L_DVK L_ENG>; // (main typing) only
 };
 
 // C4a
 combo_context_menu_lh {
     key-positions = <64 65>; // LH, top-2 thumb keys
     bindings = <&kp K_CONTEXT_MENU>;
-    layers = <L_DVK L_CMK L_LR>;
+    layers = <L_DVK L_ENG L_LR>;
 };
 // C4b
 combo_context_menu_rh {
     key-positions = <66 67>; // RH, top-2 thumb keys
     bindings = <&kp K_CONTEXT_MENU>;
-    layers = <L_DVK L_CMK L_LR>;
+    layers = <L_DVK L_ENG L_LR>;
 };
 
 // C5
 combo_caps_lock {
     key-positions = <64 67>; // Both top/inner smaller thumb keys (currently each assigned to Shift)
     bindings = <&kp CAPSLOCK>;
-    layers = <L_DVK L_CMK L_LR>;
+    layers = <L_DVK L_ENG L_LR>;
 };
