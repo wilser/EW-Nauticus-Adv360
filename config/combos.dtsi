@@ -46,8 +46,14 @@ combo_backspace {
     layers = <L_DVK L_CMK>; // (main typing) only
 };
 
-// C4
-combo_context_menu {
+// C4a
+combo_context_menu_lh {
+    key-positions = <64 65>; // LH, top-2 thumb keys
+    bindings = <&kp K_CONTEXT_MENU>;
+    layers = <L_DVK L_CMK L_LR>;
+};
+// C4b
+combo_context_menu_rh {
     key-positions = <66 67>; // RH, top-2 thumb keys
     bindings = <&kp K_CONTEXT_MENU>;
     layers = <L_DVK L_CMK L_LR>;
