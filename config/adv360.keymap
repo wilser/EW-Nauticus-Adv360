@@ -59,7 +59,7 @@
     #define L_FNC 5     // function keys 1-12 (like numpad)
     #define L_NVE 6     // nav & edit 
     #define L_KP 7      // keypad (*actual KP key codes) (rare)
-    #define L_F13 9     // function keys 13-24 (rare)
+    #define L_F13 8     // function keys 13-24 (rare)
 // END defines for layers
 
 /* TAPPING timeouts, flavors, etc.
