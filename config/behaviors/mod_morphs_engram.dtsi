@@ -3,7 +3,7 @@
 
 /*
     2023-12-21: trying shorter macro-sub names vs. prior Colemak cases
-
+        [.] weird parse errors; not sure
 
 */
 
@@ -38,14 +38,15 @@ MOD_MORPH_SHIFT(mmENG_8,  N8 ,  HASH          , mmENG_8 )
 MOD_MORPH_SHIFT(mmENG_9,  N9 ,  PRCNT         , mmENG_9 )
 MOD_MORPH_SHIFT(mmENG_0,  N0 ,  F22           , mmENG_0 )    // AHK: F22 → Ø
 
-//  #$  @`  ,;  '(  ")  .&  ?!
+//  #$  @`  ,;  '(  ")  .&  ?!  /\
 MOD_MORPH_SHIFT(mmENG_Hash,  HASH,           DLLR         , mmENG_Hash )
 MOD_MORPH_SHIFT(mmENG_At,    AT,             GRAVE        , mmENG_At   )  
-MOD_MORPH_SHIFT(mmENG_Cmma,  COMMA,          SEMI         , mmENG_Cmma ) 
 MOD_MORPH_SHIFT(mmENG_Apos,  APOS,           LPAR         , mmENG_Apos )
+MOD_MORPH_SHIFT(mmENG_Cmma,  COMMA,          SEMI         , mmENG_Cmma ) 
 MOD_MORPH_SHIFT(mmENG_Quot,  DOUBLE_QUOTES,  RPAR         , mmENG_Quot )
 MOD_MORPH_SHIFT(mmENG_Perd,  PERIOD,         AMPS         , mmENG_Perd )
 MOD_MORPH_SHIFT(mmENG_Qust,  QUESTION,       EXCLAMATION  , mmENG_Qust )
+MOD_MORPH_SHIFT(mmENG_Slsh,  SLASH,          BACKSLASH    , mmENG_Slsh )
 
 // already 'normal':  -_  [{   ]}
 
