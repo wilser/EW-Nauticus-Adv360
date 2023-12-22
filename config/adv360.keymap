@@ -286,7 +286,8 @@
             
             // TEMP: all PASSTHRU for troubleshooting:
             engram_layer { bindings = <
-                ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
+/*                ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___ */
+                ___    &m_mmsNGM_1 PIPE 0 &m_mmsNGM_2 CARET 0 &m_mmsNGM_3 TILDE 0 &m_mmsNGM_4 STAR 0  &m_mmsNGM_5 LESS_THAN 0  &to L_DVK                          ___    &m_mmsNGM_6 GREATER_THAN 0  &m_mmsNGM_7 DLLR 0  &m_mmsNGM_8 HASH 0  &m_mmsNGM_9 PRCNT 0 &m_mmsNGM_0 LS(F22) 0  &m_mmsNGM_Slsh BACKSLASH 0 
                 ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
                 ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
                 ___    ___    ___    ___    ___    ___                                                  ___    ___    ___    ___    ___    ___
