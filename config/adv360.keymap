@@ -284,11 +284,14 @@
                 //#define _APOS_RALT  &hm_slw RALT APOS   // *Special extra Right-Alt when don't want l-alt because of AltSnap utility use
             // end defines
             
-            // TEMP: all PASSTHRU for troubleshooting:
+            // TEMP: all PASSTHRU for troubleshooting: 🗹 R1 ▢ R2
             engram_layer { bindings = <
-/*                ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___ */
+/* 1               ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
+   2               ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
+
+*/
                 ___    &m_mmsNGM_1 PIPE 0 &m_mmsNGM_2 CARET 0 &m_mmsNGM_3 TILDE 0 &m_mmsNGM_4 STAR 0  &m_mmsNGM_5 LESS_THAN 0  &to L_DVK                          ___    &m_mmsNGM_6 GREATER_THAN 0  &m_mmsNGM_7 DLLR 0  &m_mmsNGM_8 HASH 0  &m_mmsNGM_9 PRCNT 0 &m_mmsNGM_0 LS(F22) 0  &m_mmsNGM_Slsh BACKSLASH 0 
-                ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
+                ___    &kp B              _Y_SFT              _O_ALT              _U_CTL              &m_mmsNGM_Apos           ___                                ___    &m_mmsNGM_Quot              _L_CTL              _D_ALT              _W_SFT              _V_GUI                 &kp Z
                 ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
                 ___    ___    ___    ___    ___    ___                                                  ___    ___    ___    ___    ___    ___
                 ___    ___    ___    ___    ___                                                                ___    ___    ___    ___    ___
