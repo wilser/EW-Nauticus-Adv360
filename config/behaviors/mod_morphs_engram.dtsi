@@ -1,0 +1,76 @@
+
+/*  TODO & NOTES - see mod_morphs_colemak file */
+
+/*
+    2023-12-21: trying shorter macro-sub names vs. prior Colemak cases
+
+
+*/
+
+#define MOD_MORPH_SHIFT(MM_NAME, KEY, MOD_KEY, AS_NAME) m_##MM_NAME: m_##MM_NAME { \
+    compatible = "zmk,behavior-mod-morph"; \
+    label = #MM_NAME; \
+    #binding-cells = <0>; \
+    bindings = <&kp KEY>, <&kp MOD_KEY>; \
+    mods = <(MOD_LSFT|MOD_RSFT)>; \
+}; \
+m_##AS_NAME: m_##AS_NAME { \
+    compatible = "zmk,behavior-hold-tap"; \
+    label = #AS_NAME; \
+    #binding-cells = <2>; \
+    tapping_term_ms = <150>; \
+    quick_tap_ms = <0>; \
+    flavor = "tap-preferred"; \
+    bindings = <&kp>, <&m_##MM_NAME>; \
+}; \
+
+
+//  1|  2^  3~  4*  5<  6>  7$  8#  9%  0<Ø>
+// #s 1-0       // ref ↓              //after macro ref ↓:  m_<var-name>...
+MOD_MORPH_SHIFT(mmENG_1,  N1 ,  PIPE          , mmENG_1 )   // => "m_mmENG_1" ... etc. below
+MOD_MORPH_SHIFT(mmENG_2,  N2 ,  CARET         , mmENG_2 )
+MOD_MORPH_SHIFT(mmENG_3,  N3 ,  TILDE         , mmENG_3 )
+MOD_MORPH_SHIFT(mmENG_4,  N4 ,  STAR          , mmENG_4 )
+MOD_MORPH_SHIFT(mmENG_5,  N5 ,  LESS_THAN     , mmENG_5 )
+MOD_MORPH_SHIFT(mmENG_6,  N6 ,  GREATER_THAN  , mmENG_6 )
+MOD_MORPH_SHIFT(mmENG_7,  N7 ,  DLLR          , mmENG_7 )
+MOD_MORPH_SHIFT(mmENG_8,  N8 ,  HASH          , mmENG_8 )
+MOD_MORPH_SHIFT(mmENG_9,  N9 ,  PRCNT         , mmENG_9 )
+MOD_MORPH_SHIFT(mmENG_0,  N0 ,  F22           , mmENG_0 )    // AHK: F22 → Ø
+
+//  #$  @`  ,;  '(  ")  .&  ?!
+MOD_MORPH_SHIFT(mmENG_Hash,  HASH,           DLLR         , mmENG_Hash )
+MOD_MORPH_SHIFT(mmENG_At,    AT,             GRAVE        , mmENG_At   )  
+MOD_MORPH_SHIFT(mmENG_Cmma,  COMMA,          SEMI         , mmENG_Cmma ) 
+MOD_MORPH_SHIFT(mmENG_Apos,  APOS,           LPAR         , mmENG_Apos )
+MOD_MORPH_SHIFT(mmENG_Quot,  DOUBLE_QUOTES,  RPAR         , mmENG_Quot )
+MOD_MORPH_SHIFT(mmENG_Perd,  PERIOD,         AMPS         , mmENG_Perd )
+MOD_MORPH_SHIFT(mmENG_Qust,  QUESTION,       EXCLAMATION  , mmENG_Qust )
+
+// already 'normal':  -_  [{   ]}
+
+
+/*
+
+GRAVE       
+AT          
+STAR        
+AMPS        
+TILDE       
+CARET       
+DLLR        
+HASH        
+PRCNT       
+F22         
+SEMI        
+QUESTION    
+EXCLAMATION 
+LESS_THAN   
+GREATER_THAN
+COMMA,
+DOT,  
+SLASH,
+LPAR, 
+RPAR, 
+
+*/
