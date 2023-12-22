@@ -258,18 +258,12 @@
 
         /*****************************************************************************************************
         * L1 ⚪ ENGRAM
-            *      http://www.keyboard-layout-editor.com/#/gists/32760c7c88bd4bd39b3eba742b14dcb7
-
-                TODO:
-                ▢ TIDY up vs Colemak - [] top row / [] bottom-right symbols / [] special punctuation combos (incl. AHK handlers &| Windows key layout?)
-                ▢ tidy up the SYMBOLS - esp. all SHIFT+ cases - see CMK mod-morphs but need new Engram ones
-                    [.] 12/21 WIP
+            URL layout: http://www.keyboard-layout-editor.com/#/gists/32760c7c88bd4bd39b3eba742b14dcb7
+            NOTES:
+                • SYNTAX for mod-morph holds: "&<macro-named> <hold-key> 0"
+            TODO:
                 ▢ see also Keyboard Layout Editor for TODO items (↑ link above)
                 ▢ revisit top-row mods, esp. RH-Alt
-
-                WIP or NEEDS ATTENTION:
-                // [ ] "shifted" keys on base layer: see https://github.com/zmkfirmware/zmk/issues/86
-                    // can use &lsft <key> or &kp (<key> | LSFT) / << sort of an expression, it seems. | UPD: seems not working, either wrong or something. Will use mod-morphs anyway, so ...
             */
 
             // DEFINES:
@@ -284,24 +278,12 @@
                 //#define _APOS_RALT  &hm_slw RALT APOS   // *Special extra Right-Alt when don't want l-alt because of AltSnap utility use
             // end defines
             
-            // TEMP: all PASSTHRU for troubleshooting: 🗹 R1 ▢ R2
-            // NEED for mod-morph holds: "&<macro-named> <hold-key> 0"
             engram_layer { bindings = <
-/* 1            ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
-   2            ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
-                ___    ___    ___    ___    ___    ___    ___                                    ___    ___    ___    ___    ___    ___    ___
-                ___    ___    ___    ___    ___    ___                                                  ___    ___    ___    ___    ___    ___
-                ___    ___    ___    ___    ___                                                                ___    ___    ___    ___    ___
-                                                                ___    ___        ___    ___
-                                                                    ___          ___
-                                                        ___    ___    ___            ___    ___    ___
-*/
-
                 ___    &m_mmsNGM_1 PIPE 0      &m_mmsNGM_2 CARET 0    &m_mmsNGM_3 TILDE 0  &m_mmsNGM_4 STAR 0  &m_mmsNGM_5 LESS_THAN 0  &to L_DVK                          ___    &m_mmsNGM_6 GREATER_THAN 0       &m_mmsNGM_7 DLLR 0  &m_mmsNGM_8 HASH 0  &m_mmsNGM_9 PRCNT 0  &m_mmsNGM_0 LS(F22) 0  &m_mmsNGM_Slsh BACKSLASH 0 
-                ___    _B_GUI                  _Y_SFT                 _O_ALT               _U_CTL              &m_mmsNGM_Apos LPAR 0    ___                                ___    &m_mmsNGM_Quot DOUBLE_QUOTES 0   _L_CTL              _D_ALT              _W_SFT               _V_GUI                 &kp Z
+                ___    _B_GUI                  _Y_SFT                 _O_ALT               _U_CTL              &m_mmsNGM_Apos LPAR 0    ___                                ___    &m_mmsNGM_Quot RPAR 0            _L_CTL              _D_ALT              _W_SFT               _V_GUI                 &kp Z
                 ___    &kp C                   &kp I                  &kp E                &kp A               &m_mmsNGM_Cmma SEMI 0    ___                                ___    &m_mmsNGM_Perd AMPS 0            &kp H               &kp T               &kp S                &kp N                  &kp Q
                 ___    &kp G                   &kp X                  &kp J                &kp K               &kp MINUS                                                          &m_mmsNGM_Qust EXCLAMATION 0     &kp R               &kp M               &kp F                &kp P                  &kp COLON
-                ___    &m_mmsNGM_Hash DLLR 0   &m_mmsNGM_At GRAVE 0   ___                  ___                                                                                                                     ___                 ___                 ___                  ___                    _x_
+                ___    &m_mmsNGM_Hash DLLR 0   &m_mmsNGM_At GRAVE 0   ___                  ___                                                                                                                     ___                 ___                 ___                  ___                    ___
                                                                                                                                             ___    ___        ___    ___
                                                                                                                                                   ___          ___
                                                                                                                                    ___    ___    ___            ___    ___    ___
