@@ -1,5 +1,5 @@
-
-/*  TODO & NOTES - see mod_morphs_colemak file */
+/* TODO & NOTES - see mod_morphs_colemak file */
+/* CODES ref: https://zmk.dev/docs/codes */
 
 /*
     2023-12-21: trying shorter macro-sub names vs. prior Colemak cases
@@ -27,51 +27,25 @@ m_##AS_NAME: m_##AS_NAME { \
 
 //  1|  2^  3~  4*  5<  6>  7$  8#  9%  0<Ø>
 // #s 1-0       // ref ↓              //after macro ref ↓:  m_<var-name>...
-MOD_MORPH_SHIFT(mmENG_1,  N1 ,  PIPE          , mmENG_1 )   // => "m_mmENG_1" ... etc. below
-MOD_MORPH_SHIFT(mmENG_2,  N2 ,  CARET         , mmENG_2 )
-MOD_MORPH_SHIFT(mmENG_3,  N3 ,  TILDE         , mmENG_3 )
-MOD_MORPH_SHIFT(mmENG_4,  N4 ,  STAR          , mmENG_4 )
-MOD_MORPH_SHIFT(mmENG_5,  N5 ,  LESS_THAN     , mmENG_5 )
-MOD_MORPH_SHIFT(mmENG_6,  N6 ,  GREATER_THAN  , mmENG_6 )
-MOD_MORPH_SHIFT(mmENG_7,  N7 ,  DLLR          , mmENG_7 )
-MOD_MORPH_SHIFT(mmENG_8,  N8 ,  HASH          , mmENG_8 )
-MOD_MORPH_SHIFT(mmENG_9,  N9 ,  PRCNT         , mmENG_9 )
-MOD_MORPH_SHIFT(mmENG_0,  N0 ,  F22           , mmENG_0 )    // AHK: F22 → Ø
+MOD_MORPH_SHIFT(mmENG_1,  N1 ,  PIPE          , mmsENG_1 )   // => "m_mmENG_1" ... etc. below
+MOD_MORPH_SHIFT(mmENG_2,  N2 ,  CARET         , mmsENG_2 )
+MOD_MORPH_SHIFT(mmENG_3,  N3 ,  TILDE         , mmsENG_3 )
+MOD_MORPH_SHIFT(mmENG_4,  N4 ,  STAR          , mmsENG_4 )
+MOD_MORPH_SHIFT(mmENG_5,  N5 ,  LESS_THAN     , mmsENG_5 )
+MOD_MORPH_SHIFT(mmENG_6,  N6 ,  GREATER_THAN  , mmsENG_6 )
+MOD_MORPH_SHIFT(mmENG_7,  N7 ,  DLLR          , mmsENG_7 )
+MOD_MORPH_SHIFT(mmENG_8,  N8 ,  HASH          , mmsENG_8 )
+MOD_MORPH_SHIFT(mmENG_9,  N9 ,  PRCNT         , mmsENG_9 )
+MOD_MORPH_SHIFT(mmENG_0,  N0 ,  F22           , mmsENG_0 )    // AHK: F22 → Ø
 
 //  #$  @`  ,;  '(  ")  .&  ?!  /\
-MOD_MORPH_SHIFT(mmENG_Hash,  HASH,           DLLR         , mmENG_Hash )
-MOD_MORPH_SHIFT(mmENG_At,    AT,             GRAVE        , mmENG_At   )  
-MOD_MORPH_SHIFT(mmENG_Apos,  APOS,           LPAR         , mmENG_Apos )
-MOD_MORPH_SHIFT(mmENG_Cmma,  COMMA,          SEMI         , mmENG_Cmma ) 
-MOD_MORPH_SHIFT(mmENG_Quot,  DOUBLE_QUOTES,  RPAR         , mmENG_Quot )
-MOD_MORPH_SHIFT(mmENG_Perd,  PERIOD,         AMPS         , mmENG_Perd )
-MOD_MORPH_SHIFT(mmENG_Qust,  QUESTION,       EXCLAMATION  , mmENG_Qust )
-MOD_MORPH_SHIFT(mmENG_Slsh,  SLASH,          BACKSLASH    , mmENG_Slsh )
+MOD_MORPH_SHIFT(mmENG_Hash,  HASH,           DLLR         , mmsENG_Hash )
+MOD_MORPH_SHIFT(mmENG_At,    AT,             GRAVE        , mmsENG_At   )  
+MOD_MORPH_SHIFT(mmENG_Apos,  APOS,           LPAR         , mmsENG_Apos )
+MOD_MORPH_SHIFT(mmENG_Cmma,  COMMA,          SEMI         , mmsENG_Cmma ) 
+MOD_MORPH_SHIFT(mmENG_Quot,  DOUBLE_QUOTES,  RPAR         , mmsENG_Quot )
+MOD_MORPH_SHIFT(mmENG_Perd,  PERIOD,         AMPS         , mmsENG_Perd )
+MOD_MORPH_SHIFT(mmENG_Qust,  QUESTION,       EXCLAMATION  , mmsENG_Qust )
+MOD_MORPH_SHIFT(mmENG_Slsh,  SLASH,          BACKSLASH    , mmsENG_Slsh )
 
 // already 'normal':  -_  [{   ]}
-
-
-/*
-
-GRAVE       
-AT          
-STAR        
-AMPS        
-TILDE       
-CARET       
-DLLR        
-HASH        
-PRCNT       
-F22         
-SEMI        
-QUESTION    
-EXCLAMATION 
-LESS_THAN   
-GREATER_THAN
-COMMA,
-DOT,  
-SLASH,
-LPAR, 
-RPAR, 
-
-*/
