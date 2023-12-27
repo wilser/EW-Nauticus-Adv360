@@ -250,8 +250,7 @@
                 #undef MT_Hm_Spc
         // END Dvorak
         
-        /*****************************************************************************************************
-        *    [OLD] COLEMAK  -- 2023-12-20 removed from main layout - trying Engram instead - see /notes_and_ref/old_Colemak.keymap
+        /* [OLD] COLEMAK  -- 2023-12-20 removed from main layout - see /notes_and_ref/old_Colemak.keymap
         */
 
         /*****************************************************************************************************

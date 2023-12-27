@@ -87,7 +87,7 @@ m_SLEEP: m_SLEEP {
     bindings = <&kp LG(X)>, <&kp U>, <&kp S>;
 };
 
-/* WINDOWS HIBERNATE: Win+X, U, H (see also m_SLEEP)
+/* WINDOWS HIBERNATE: Win+X, U, H (see also m_SLEEP) */
 m_HIBER: m_HIBER {
     wait-ms = <200>;
     tap-ms = <200>;
