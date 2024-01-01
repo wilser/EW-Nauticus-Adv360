@@ -40,9 +40,10 @@ MOD_MORPH_SHIFT(mmNGM_0,  N0 ,  F22           , mmsNGM_0 )    // AHK: F22 → Ø
 
 /*  #$  @`  ,;  '(  ")  .&  ?!  /\   */
 MOD_MORPH_SHIFT(mmNGM_Hash,  HASH,           DLLR         , mmsNGM_Hash )
-MOD_MORPH_SHIFT(mmNGM_At,    AT,             GRAVE        , mmsNGM_At   )  
+MOD_MORPH_SHIFT(mmNGM_At,    AT,             GRAVE        , mmsNGM_At   )
 MOD_MORPH_SHIFT(mmNGM_Apos,  APOS,           LPAR         , mmsNGM_Apos )
-MOD_MORPH_SHIFT(mmNGM_Cmma,  COMMA,          SEMI         , mmsNGM_Cmma ) 
+MOD_MORPH_SHIFT(mmNGM_Cmma,  COMMA,          SEMI         , mmsNGM_Cmma )
+MOD_MORPH_SHIFT(mmNGM_Mnus,  MINUS,          UNDERSCORE   , mmsNGM_Mnus )
 MOD_MORPH_SHIFT(mmNGM_Quot,  DOUBLE_QUOTES,  RPAR         , mmsNGM_Quot )
 MOD_MORPH_SHIFT(mmNGM_Perd,  PERIOD,         AMPS         , mmsNGM_Perd )
 MOD_MORPH_SHIFT(mmNGM_Qust,  QUESTION,       EXCLAMATION  , mmsNGM_Qust )
