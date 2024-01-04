@@ -39,5 +39,5 @@
 
 macros {
     // e.g. SFT_ED(EXCL, "shifted_excl");
-    CSA_ED(R, "CSA_R");          // => "m_CSA_R" macro name
+    CSA_ED(R, "m_CSA_R");          // "m_CSA_R" macro name
 };
