@@ -4,6 +4,7 @@
 */
 
 // Shift+(sym)
+/* TODO - revise syntax similar as mod_morphs_... 
 #define SFT_ED(sym, macro_label) m_##sym: m_##sym {\
         label = macro_label;\
         compatible = "zmk,behavior-macro";\
@@ -17,10 +18,11 @@
             , <&macro_release &kp sym>\
             ;\
     }
+*/
 
 // Ctrl+Shift+Alt+(sym)
-#define CSA_ED(sym, macro_label) m_##sym: m_##sym {\
-        label = macro_label;\
+#define CSA_ED(MACNAME, KEY) m_##MACNAME: m_##MACNAME {\
+        label = #MACNAME;\
         compatible = "zmk,behavior-macro";\
         wait-ms = <50>;\
         #binding-cells = <0>;\
@@ -28,7 +30,7 @@
             = <&macro_press &kp LCTRL>\
             , <&macro_press &kp LALT>\
             , <&macro_press &kp LSHFT>\
-            , <&macro_press &kp sym>\
+            , <&macro_press &kp KEY>\
             , <&macro_release &kp LSHFT>\
             , <&macro_release &kp LALT>\
             , <&macro_release &kp LCTRL>\
@@ -39,5 +41,5 @@
 
 macros {
     // e.g. SFT_ED(EXCL, "shifted_excl");
-    CSA_ED(R, "CSA_R");          // "m_CSA_R" macro name
+    CSA_ED(CSA_R, R);          // => "m_CSA_R" macro name
 };
