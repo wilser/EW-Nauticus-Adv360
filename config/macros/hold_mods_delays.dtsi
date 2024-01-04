@@ -19,7 +19,7 @@
     }
 
 // Ctrl+Shift+Alt+(sym)
-#define CSA_ED(sym, macro_label) s_##sym: s_##sym {\
+#define CSA_ED(sym, macro_label) m_##sym: m_##sym {\
         label = macro_label;\
         compatible = "zmk,behavior-macro";\
         wait-ms = <50>;\
@@ -39,5 +39,5 @@
 
 macros {
     // e.g. SFT_ED(EXCL, "shifted_excl");
-    CSA_ED(R, "m_CSA_R");          // "m_CSA_R" macro name
+    CSA_ED(R, "CSA_R");          // "m_CSA_R" macro name
 };
