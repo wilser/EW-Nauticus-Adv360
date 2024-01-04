@@ -20,7 +20,10 @@
     }
 */
 
-/* TRY hard coded if this doesn't work... #MACNAME or not # ? */
+/* TRY hard coded if this doesn't work... #MACNAME or not # ? 
+        think ##MACNAME => literal, and #MACNAME => "macname" such as for label?
+        before was getting a ; vs } error somewhere; but couldn't see why
+*/
 // Ctrl+Shift+Alt+(sym)
 #define CSA_ED(MACNAME, KEY) m_##MACNAME: m_##MACNAME {\
         label = #MACNAME;\
