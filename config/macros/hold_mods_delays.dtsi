@@ -1,5 +1,5 @@
 m_CSA_R: m_CSA_R {
-    label = m_CSA_R;
+    label = "m_CSA_R";
     compatible = "zmk,behavior-macro";
     wait-ms = <50>;
     #binding-cells = <0>;
