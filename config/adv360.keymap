@@ -85,6 +85,7 @@
     macros {
         #include "macros/general_macros.dtsi"
         #include "macros/shortcuts_macros.dtsi"
+        #include "macros/hold_mods_delays.dtsi"
         //#include "macros/tap_hold_macros.dtsi"
     };
 
@@ -366,7 +367,9 @@
                 #define _RGB_TG &rgb_ug RGB_TOG
                 #define _BKL_TG &bl BL_TOG
                 #define _MONOFF &kp RC(RG(L)) // Win+Ctrl+L invokes my AHK lock+monoff macro
-                #define _SLICK &kp LC(LS(LA(R))) // Ctrl+Shift+Alt+R -> Slickrun (∵ kept doing accidentally)
+                //#define _SLICK &kp LC(LS(LA(R))) // Ctrl+Shift+Alt+R -> Slickrun (∵ kept doing accidentally)
+                // try Macro to hold deliberately so works also on RDP connections. See "hold_mods_delays.dtsi" file.
+                #define _SLICK &m_CSA_R
 
             util_layer { bindings = <
                 &m_SLEEP   &to 1         &to 2         &to 3         &to 4         &to 5         &to L_0                                ___       &to 6      &to 7       &to 8        &to 9        &to 0        _x_
