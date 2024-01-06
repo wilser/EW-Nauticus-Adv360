@@ -67,3 +67,27 @@ ZMK_MACRO(m_TEST2
     bindings = <&kp A>, <&kp B>;
 )
 */
+
+----------------------------------------------------------------------------------------------------
+ISSUES & NOTES
+    2024-01-05 Win+<> timing and REMOTE DESKTOP
+        Util+{SR-shortcut} Ø work on remote-laptop / but the normal Meh+R does. WTH?
+		seems to send like CS-R or CA-R, not whole combo... Keyboard/ZMK issue?
+		seems known bug 2021? https://github.com/zmkfirmware/zmk/issues/759
+			one person says on RDP issue, but Windows-Store "RDP Classic" Ø have the issue?
+			one wondered if BT v USB could impact
+			one says also affects capsWORD sometimes (but maybe only certain OSes)
+			[.] ** one suggests macro: <down>key<up> etc. **
+				this reply has good Macro template: https://github.com/zmkfirmware/zmk/issues/759#issuecomment-1348836836
+				[ ] if do this ^, make note to re-visit after if/when upgrade baseline firmware
+				also relevant: https://github.com/zmkfirmware/zmk/issues/986
+				✔️ so far works!
+			[❌] "run Windows Shortcuts on the client only" RDP option?
+				"windows" key not officially supported, so hit and miss - and might be better in "full screen" mode than windowed - https://superuser.com/questions/815583/remote-desktop-sending-windows-key-shortcuts-to-both-local-machine-and-to-remote
+				options? https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/rdp-files
+				seems best is "keyboardhook:i:1" but that's already the setting ... Hrm
+					https://superuser.com/questions/1456642/windows-keyboard-shortcuts-wont-work-in-remote-desktop
+			[?..] wonder if this would also have fixed the Clipmate issues... Seems so	
+
+
+

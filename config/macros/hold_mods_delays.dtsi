@@ -1,3 +1,6 @@
+// TODO: re-figure the CPP macro syntax to get thes cleaner...
+
+// Ctrl+Shift+Alt+R => SlickRun
 m_CSA_R: m_CSA_R {
     label = "m_CSA_R";
     compatible = "zmk,behavior-macro";
@@ -12,5 +15,36 @@ m_CSA_R: m_CSA_R {
             , <&macro_release &kp LCTRL>
             , <&macro_pause_for_release>
             , <&macro_release &kp R>
+            ;
+};
+
+// Win+Ctrl+C & Win+Ctrl+V - Copy/Paste *unformatted* (via AHK macro)
+m_WC_C: m_WC_C {
+    label = "m_WC_C";
+    compatible = "zmk,behavior-macro";
+    wait-ms = <50>;
+    #binding-cells = <0>;
+    bindings = <&macro_press &kp LGUI>
+            , <&macro_press &kp LCTRL>
+            , <&macro_press &kp C>
+            , <&macro_release &kp LCTRL>
+            , <&macro_release &kp LGUI>
+            , <&macro_pause_for_release>
+            , <&macro_release &kp C>
+            ;
+};
+
+m_WC_V: m_WC_V {
+    label = "m_WC_V";
+    compatible = "zmk,behavior-macro";
+    wait-ms = <50>;
+    #binding-cells = <0>;
+    bindings = <&macro_press &kp LGUI>
+            , <&macro_press &kp LCTRL>
+            , <&macro_press &kp V>
+            , <&macro_release &kp LCTRL>
+            , <&macro_release &kp LGUI>
+            , <&macro_pause_for_release>
+            , <&macro_release &kp V>
             ;
 };
