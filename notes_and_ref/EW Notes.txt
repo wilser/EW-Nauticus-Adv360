@@ -20,6 +20,8 @@ EW Notes
 
     Inside the JSON parts, comments aren't allowed; but people do like _comment: "some comment here"
 
+    LED (small) timeouts - see inside adv360_left_defconfig & ...right... // think (ms) timing
+
 MODS
     - when used inline (not just solo key, but F(x) style), then must do the short form: LS(A) (Left-Shift + A), not LSHIFT, or other variations.
 
@@ -88,6 +90,7 @@ ISSUES & NOTES
 				seems best is "keyboardhook:i:1" but that's already the setting ... Hrm
 					https://superuser.com/questions/1456642/windows-keyboard-shortcuts-wont-work-in-remote-desktop
 			[?..] wonder if this would also have fixed the Clipmate issues... Seems so	
+    
 
 
 
