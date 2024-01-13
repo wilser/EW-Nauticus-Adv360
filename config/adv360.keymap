@@ -334,14 +334,14 @@
             // end defines
         
             numpad_layer { bindings = <
-                ___    ___       ___         ___          ___    ___    &to L_0                                ___    &m_CHR_EU      &kp DOLLAR  &kp HASH   &kp PERCENT    &kp EQUAL         _x_
-                ___    ___       ___         ___          ___    ___    ___                                    ___    &kp BSPC       _7_CTL      _8_ALT     _9_SFT         &kp KP_ASTERISK   &kp KP_DIVIDE
-                ___    &kp BSPC  &kp LEFT    &kp RIGHT    ___    ___    ___                                    ___    &as LBKT LPAR  &kp N4      &kp N5     &kp N6         &as RBKT RPAR     &as LS(MINUS) KP_MINUS
-                ___    ___       ___         ___          ___    ___                                                  &kp SPACE      &kp N1      &kp N2     &kp N3         &as SEMI KP_PLUS  ___
-                ___    ___       ___         ___          ___                                                                        ___         ___        &as COMMA DOT  &kp KP_ENTER      &to L_0 
-                                                                      &kp LSHFT  &to L_0        &kp BSPC    &kp SPACE
-                                                                                   ___            &kp TAB
-                                                                   ___    ___    ___               &kp RS(TAB)  ___    &kp N0
+                ___    ___       ___         ___         ___         ___    &to L_0                                ___    &m_CHR_EU      &kp DOLLAR  &kp HASH   &kp PERCENT    &kp EQUAL         _x_
+                ___    &kp LWIN  &kp LSHFT   &kp LALT    &kp LCTRL   ___    ___                                    ___    &kp BSPC       _7_CTL      _8_ALT     _9_SFT         &kp KP_ASTERISK   &kp KP_DIVIDE
+                ___    &kp BSPC  &kp LEFT    &kp RIGHT   ___         ___    ___                                    ___    &as LBKT LPAR  &kp N4      &kp N5     &kp N6         &as RBKT RPAR     &as LS(MINUS) KP_MINUS
+                ___    ___       ___         ___         ___         ___                                                  &kp SPACE      &kp N1      &kp N2     &kp N3         &as SEMI KP_PLUS  ___
+                ___    ___       ___         ___         ___                                                                             ___         ___        &as COMMA DOT  &kp KP_ENTER      &to L_0 
+                                                                          &kp LSHFT  &to L_0        &kp BSPC    &kp SPACE
+                                                                                       ___            &kp TAB
+                                                                       ___    ___    ___               &kp RS(TAB)  ___    &kp N0
             >; };
 
             // #UNDEFS:
@@ -439,14 +439,14 @@
             *      (no yet KeyboardLayoutEditor)
             */
             kp_layer { bindings = <
-                _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                ___    _x_    _x_         _x_         _x_         _x_    _x_
-                ___    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    _x_                                    _x_    _x_    &kp KP_N7   &kp KP_N8   &kp KP_N9   _x_    _x_
-                ___    _x_        _x_         _x_        _x_        _x_    _x_                                    _x_    _x_    &kp KP_N4   &kp KP_N5   &kp KP_N6   _x_    _x_
-                _x_    _x_        _x_         _x_        _x_        _x_                                                  _x_    &kp KP_N1   &kp KP_N2   &kp KP_N3   _x_    _x_
-                _x_    _x_        _x_         ___        ___                                                                    _x_         _x_         _x_         _x_    _x_
+                _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                             ___    _x_    _x_         _x_         _x_         _x_    _x_
+                ___    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    _x_                                 _x_    _x_    &kp KP_N7   &kp KP_N8   &kp KP_N9   _x_    _x_
+                ___    _x_        _x_         _x_        _x_        _x_    _x_                                 _x_    _x_    &kp KP_N4   &kp KP_N5   &kp KP_N6   _x_    _x_
+                _x_    _x_        _x_         _x_        _x_        _x_                                               _x_    &kp KP_N1   &kp KP_N2   &kp KP_N3   _x_    _x_
+                _x_    _x_        _x_         ___        ___                                                                 _x_         _x_         _x_         _x_    _x_
                                                                                 _x_    _x_        _x_    _x_
-                                                                                    _x_          _x_
-                                                                    ___    ___    _x_            _x_    &kp ENTER  &kp KP_N0
+                                                                                    _x_            _x_
+                                                                    ___    ___    _x_               _x_    &kp ENTER  &kp KP_N0
             >; };
         // END KP Numpad
 
