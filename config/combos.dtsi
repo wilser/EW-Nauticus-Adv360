@@ -43,7 +43,7 @@ combo_caps_word {
 combo_backspace {
     key-positions = <49 52>; // RH, Fng 1,4, 1-row down
     bindings = <&kp BACKSPACE>;
-    layers = <L_DVK L_NGM>; // (main typing) only
+    layers = <L_DVK>; // (main typing) only / removed from Engram because much more frequent letter combo (PR) vs (MZ) on Dvorakps
 };
 
 // C4a
