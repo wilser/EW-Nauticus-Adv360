@@ -7,6 +7,7 @@
 
 */
 
+/* #define - see the dvorak version/
 #define MOD_MORPH_SHIFT(MM_NAME, KEY, MOD_KEY, AS_NAME) m_##MM_NAME: m_##MM_NAME { \
     compatible = "zmk,behavior-mod-morph"; \
     label = #MM_NAME; \
@@ -23,7 +24,7 @@ m_##AS_NAME: m_##AS_NAME { \
     flavor = "tap-preferred"; \
     bindings = <&kp>, <&m_##MM_NAME>; \
 }; \
-
+*/
 
 //  1|  2^  3~  4*  5<  6>  7$  8#  9%  0<Ø>
 // #s 1-0       // ref ↓              //after macro ref ↓:  m_<var-name>...
