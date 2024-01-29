@@ -36,7 +36,7 @@ MOD_MORPH_SHIFT(mmNGM_6,  N6 ,  GREATER_THAN  , mmsNGM_6 )
 MOD_MORPH_SHIFT(mmNGM_7,  N7 ,  DLLR          , mmsNGM_7 )
 MOD_MORPH_SHIFT(mmNGM_8,  N8 ,  HASH          , mmsNGM_8 )
 MOD_MORPH_SHIFT(mmNGM_9,  N9 ,  PRCNT         , mmsNGM_9 )
-MOD_MORPH_SHIFT(mmNGM_0,  N0 ,  F22           , mmsNGM_0 )    // AHK: F22 → Ø
+MOD_MORPH_SHIFT(mmNGM_0,  N0 ,  LS(F24)       , mmsNGM_0 )    // AHK: Shift+F24 → •
 
 /*  #$  @`  ,;  '(  ")  .&  ?!  /\   */
 MOD_MORPH_SHIFT(mmNGM_Hash,  HASH,           DLLR         , mmsNGM_Hash )
