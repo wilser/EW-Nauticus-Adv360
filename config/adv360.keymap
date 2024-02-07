@@ -203,7 +203,7 @@
                 #define MT_TB_SHFTB &mt LS(TAB) TAB
                 #define MT_CpW_CpL &as &caps_word
                 #define MT_Hm_Spc &mt SPACE HOME
-                #define MT_AMnu_CtrlQ &mt RQ(Q) K_CONTEXT_MENU         // tap: App/Context-menu, hold: Ctrl+Q (mark read in Outlook)
+                //#define MT_AMnu_CtrlQ &mt RQ(Q) K_CONTEXT_MENU         // tap: App/Context-menu, hold: Ctrl+Q (mark read in Outlook)
                 #define TD_ScrnShots &TD_WinScreenshot_SnagIt       // 1x: Win+Shift+S   2x: Ctrl+Alt+P
 
                 // Other conveniences:
@@ -222,14 +222,14 @@
             // end defs
 
             dvorak_layer { bindings = <
-                &as RS(EQUAL) EQUAL  &as RS(N1) N1   &as RS(N2) N2  &as RS(N3) N3  &as RS(N4) N4  &as RS(N5) N5  &to L_NGM                                            &sl L_UTL   &as LS(N6) N6  &as LS(N7) N7  &as LS(N8) N8  &as LS(N9) N9      &as LS(N0) N0      &as LS(BSLH) BSLH
-                &kp ESC              _SQT_GUI        _CMA_SFT       _DOT_ALT       _P_CTL         _Y_RALT        _HYPER                                               _HYPER      &kp F          _G_CTL         _C_ALT         _R_SFT             _L_GUI             &as LS(SLASH) SLASH
-                MT_TB_SHFTB          &kp A           &kp O          &kp E          &kp I          &kp U          _MEH                                                 _MEH        &kp D          &kp H          &kp T          &kp N              &kp S              &as LS(MINUS) MINUS
-                &TD_CpWrd_CpLock     &lt L_NVE SEMI  &kp Q          &lt L_UTL J    &lt L_NUM K    &kp X                                                                           &kp B          &kp M          &kp W          &kp V              &kp Z              &m_mmsDVK_Colon LS(F24) 0
-                &TD_Emj_WinDsk       &kp GRAVE       MT_AMnu_CtrlQ  &kp LEFT       &kp RIGHT                                                                                                     &kp UP         &kp DOWN       &as LS(LBKT) LBKT  &as LS(RBKT) RBKT  &to L_NUM
-                                                                                                                   _SHF_BSP_L   LHT_Num_LR          TD_ScrnShots   _SHF_BSP_R
-                                                                                                                               &TD_Hm_CtrlHm          &kp PG_UP     
-                                                                                                        &kp BSPC  &kp DEL     &TD_En_CtrlEn            &kp PG_DN      &lt L_FNC ENTER   &kp SPACE
+                &as RS(EQUAL) EQUAL  &as RS(N1) N1   &as RS(N2) N2      &as RS(N3) N3  &as RS(N4) N4  &as RS(N5) N5  &to L_NGM                                            &sl L_UTL   &as LS(N6) N6  &as LS(N7) N7  &as LS(N8) N8  &as LS(N9) N9      &as LS(N0) N0      &as LS(BSLH) BSLH
+                &kp ESC              _SQT_GUI        _CMA_SFT           _DOT_ALT       _P_CTL         _Y_RALT        _HYPER                                               _HYPER      &kp F          _G_CTL         _C_ALT         _R_SFT             _L_GUI             &as LS(SLASH) SLASH
+                MT_TB_SHFTB          &kp A           &kp O              &kp E          &kp I          &kp U          _MEH                                                 _MEH        &kp D          &kp H          &kp T          &kp N              &kp S              &as LS(MINUS) MINUS
+                &TD_CpWrd_CpLock     &lt L_NVE SEMI  &kp Q              &lt L_UTL J    &lt L_NUM K    &kp X                                                                           &kp B          &kp M          &kp W          &kp V              &kp Z              &m_mmsDVK_Colon LS(F24) 0
+                &TD_Emj_WinDsk       &kp GRAVE       &as RC(Q) K_CMENU  &kp LEFT       &kp RIGHT                                                                                                     &kp UP         &kp DOWN       &as LS(LBKT) LBKT  &as LS(RBKT) RBKT  &to L_NUM
+                                                                                                                        _SHF_BSP_L   LHT_Num_LR          TD_ScrnShots   _SHF_BSP_R
+                                                                                                                                    &TD_Hm_CtrlHm          &kp PG_UP     
+                                                                                                             &kp BSPC  &kp DEL     &TD_En_CtrlEn            &kp PG_DN      &lt L_FNC ENTER   &kp SPACE
             >; };
 
             // #UNDEFs
@@ -250,7 +250,7 @@
                 #undef _SHF_BKSP_L
                 #undef _NM_NMLCK
                 #undef MT_Hm_Spc
-                #undef MT_AMnu_CtrlQ
+                //#undef MT_AMnu_CtrlQ
         // END Dvorak
         
         /* [OLD] COLEMAK  -- 2023-12-20 removed from main layout - see /notes_and_ref/old_Colemak.keymap
