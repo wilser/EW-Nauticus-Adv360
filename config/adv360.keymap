@@ -485,15 +485,15 @@
                 #define _W_GUI      &hm_slw RGUI W      // GUI/Win
             // end defines
             
-            engram_layer { bindings = <
+            mtgap_layer { bindings = <
                 ___    &m_mmsNGM_1 PIPE 0      &m_mmsNGM_2 CARET 0    &m_mmsNGM_3 TILDE 0  &m_mmsNGM_4 STAR 0  &m_mmsNGM_5 LESS_THAN 0        &to 0                              ___    &m_mmsNGM_6 GREATER_THAN 0    &m_mmsNGM_7 DLLR 0  &m_mmsNGM_8 HASH 0  &m_mmsNGM_9 PRCNT 0  &m_mmsNGM_0 LS(F24) 0  &m_mmsNGM_Slsh BACKSLASH 0 
                 ___    _Y_GUI                  _P_SFT                 _O_ALT               _U_CTL              &kp J                          ___                                ___    &kp K                         _D_CTL              _L_ALT              _C_SFT               _W_GUI                 ___
                 ___    &kp I                   &kp N                  &kp E                &kp A               &m_mmsNGM_Cmma SEMI 0          ___                                ___    &kp M                         &kp H               &kp T               &kp S                &kp R                  &kp APOS
                 ___    &lt L_NVE Q             &kp Z                  &lt L_UTL SLASH      &lt L_NUM PERIOD    &m_mmsNGM_Mnus UNDERSCORE 0                                              &kp B                         &kp F               &kp G               &kp V                &kp X                  &kp COLON
                 ___    &m_mmsNGM_Hash DLLR 0   &m_mmsNGM_At GRAVE 0   ___                  ___                                                                                                                        ___                 ___                 ___                  ___                    ___
                                                                                                                                                     ___    ___        ___    ___
-                                                                                                                                                        ___          ___
-                                                                                                                                        ___    ___    ___            ___    ___    ___
+                                                                                                                                                        ___            ___
+                                                                                                                                        ___    ___    ___               ___    ___    ___
             >; };
 
             // #UNDEFs
@@ -531,15 +531,15 @@
                 #define _X_GUI      &hm_slw RGUI V      // GUI/Win
             // end defines
             
-            engram_layer { bindings = <
-                ___    &m_mmsNGM_1 PIPE 0      &m_mmsNGM_2 CARET 0    &m_mmsNGM_3 TILDE 0  &m_mmsNGM_4 STAR 0  &m_mmsNGM_5 LESS_THAN 0        &to 0                              ___    &m_mmsNGM_6 GREATER_THAN 0       &m_mmsNGM_7 DLLR 0  &m_mmsNGM_8 HASH 0  &m_mmsNGM_9 PRCNT 0  &m_mmsNGM_0 LS(F24) 0  &m_mmsNGM_Slsh BACKSLASH 0 
-                ___    _B_GUI                  _Y_SFT                 _O_ALT               _U_CTL              &m_mmsNGM_Apos LPAR 0          ___                                ___    &m_mmsNGM_Quot RPAR 0            _L_CTL              _D_ALT              _W_SFT               _V_GUI                 &kp Z
-                ___    &kp C                   &kp I                  &kp E                &kp A               &m_mmsNGM_Cmma SEMI 0          ___                                ___    &m_mmsNGM_Perd AMPS 0            &kp H               &kp T               &kp S                &kp N                  &kp Q
-                ___    &lt L_NVE G             &kp X                  &lt L_UTL J          &lt L_NUM K         &m_mmsNGM_Mnus UNDERSCORE 0                                              &m_mmsNGM_Qust EXCLAMATION 0     &kp R               &kp M               &kp F                &kp P                  &kp COLON
+            uciea_layer { bindings = <
+                ___    &m_mmsNGM_1 PIPE 0      &m_mmsNGM_2 CARET 0    &m_mmsNGM_3 TILDE 0  &m_mmsNGM_4 STAR 0  &m_mmsNGM_5 LESS_THAN 0        &to 0                              ___    &m_mmsNGM_6 GREATER_THAN 0     &m_mmsNGM_7 DLLR 0  &m_mmsNGM_8 HASH 0  &m_mmsNGM_9 PRCNT 0  &m_mmsNGM_0 LS(F24) 0  &m_mmsNGM_Slsh BACKSLASH 0 
+                ___    _P_GUI                  _Y_SFT                 _U_ALT               _O_CTL              &kp SEMI                       ___                                ___    &kp K                          _D_CTL              _H_ALT              _F_SFT               _X_GUI                 &kp Q
+                ___    &kp C                   &kp I                  &kp E                &kp A               &kp APOS                       ___                                ___    &kp G                          &kp T               &kp N               &kp S                &kp R                  &kp J
+                ___    &lt L_NVE Z             &kp SLASH              &lt L_UTL COMMA      &lt L_NUM PERIOD    &m_mmsNGM_Mnus UNDERSCORE 0                                              &mp W                          &kp M               &kp L               &kp B                &kp V                  &kp COLON
                 ___    &m_mmsNGM_Hash DLLR 0   &m_mmsNGM_At GRAVE 0   ___                  ___                                                                                                                     ___                 ___                 ___                  ___                    ___
                                                                                                                                                     ___    ___        ___    ___
-                                                                                                                                                        ___          ___
-                                                                                                                                        ___    ___    ___            ___    ___    ___
+                                                                                                                                                        ___            ___
+                                                                                                                                        ___    ___    ___               ___    ___    ___
             >; };
 
             // #UNDEFs
