@@ -81,7 +81,9 @@ MOD_MORPH_SHIFT(mmNGM_Perd,  PERIOD,         EXCLAMATION  , mmsNGM_Perd )
 
 // REMAINING (L to R)
 // [??  ]??  <{  >}  :;
-//[] MOD_MORPH_SHIFT(mmNGM_Perd,  PERIOD,         AMPS         , mmsNGM_Perd )
-//[] MOD_MORPH_SHIFT(mmNGM_Qust,  QUESTION,       EXCLAMATION  , mmsNGM_Qust )
-//[] MOD_MORPH_SHIFT(mmNGM_Slsh,  SLASH,          BACKSLASH    , mmsNGM_Slsh )
+MOD_MORPH_SHIFT(mmNGM_LBrk,  LBKT,         QUESTION         , mmsNGM_LBrk )
+MOD_MORPH_SHIFT(mmNGM_RBrk,  RBKT,         QUESTION         , mmsNGM_RBrk )
+MOD_MORPH_SHIFT(mmNGM_LThn,  LESS_THAN,    LBRC             , mmsNGM_LThn )
+MOD_MORPH_SHIFT(mmNGM_GThn,  GREATER_THAN, RBRC             , mmsNGM_RThn )
+MOD_MORPH_SHIFT(mmNGM_Coln,  COLON,        SEMI             , mmsNGM_Coln )
 
