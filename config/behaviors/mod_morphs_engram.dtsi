@@ -58,10 +58,12 @@ m_##AS_NAME: m_##AS_NAME { \
 // TOP ROW (L to R)
 // +`  1_  2@  3*  4~  5•  6^  7$  8#  9%  0Ø  \|      [ 6 and \ are 'normal']
 MOD_MORPH_SHIFT(mnNGM_PLUS,  PLUS ,  GRAVE       , mmsNGM_PLUS)
-MOD_MORPH_SHIFT(mmNGM_1,     N1   ,  UNDERSCORE  , mmsNGM_1 )   // => "m_mmENG_1" ... etc. below
+//MOD_MORPH_SHIFT(mmNGM_1,     N1   ,  UNDERSCORE  , mmsNGM_1 )   // => "m_mmENG_1" ... etc. below
+MOD_MORPH_SHIFT(mmNGM_1,     N1   ,  TILDE       , mmsNGM_1 )   // => "m_mmENG_1" ... etc. below
 MOD_MORPH_SHIFT(mmNGM_2,     N2   ,  AT          , mmsNGM_2 )
 MOD_MORPH_SHIFT(mmNGM_3,     N3   ,  STAR        , mmsNGM_3 )
-MOD_MORPH_SHIFT(mmNGM_4,     N4   ,  TILDE       , mmsNGM_4 )
+//MOD_MORPH_SHIFT(mmNGM_4,     N4   ,  TILDE       , mmsNGM_4 )
+MOD_MORPH_SHIFT(mmNGM_4,     N4   ,  UNDERSCORE  , mmsNGM_4 )
 MOD_MORPH_SHIFT(mmNGM_5,     N5   ,  LS(F24)     , mmsNGM_5 ) // AHK: •
 //MOD_MORPH_SHIFT(mmNGM_6,     N6   ,  GREATER_THAN  , mmsNGM_6 ) // normal 6
 MOD_MORPH_SHIFT(mmNGM_7,     N7   ,  DLLR        , mmsNGM_7 )
