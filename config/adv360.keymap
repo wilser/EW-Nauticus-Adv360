@@ -395,9 +395,9 @@
                 ___         _x_           _x_           _x_           _x_           _x_           _x_                                    _MONOFF   _x_        &m_M1       &m_M2        &m_M3        &m_M4        &kp RS(N3)
                 &bt BT_CLR  _x_           _x_           _x_           _x_           _x_                                                            _x_        &m_M5       &m_M6        &m_M7        &m_M8        &kp RS(N4)
                 _BTLD       _x_           _x_           ___           ___                                                                                     ___         ___          _x_          _x_          _BTLD
-                                                                                                   _x_   &bt C_VOL_UP      _RGB_TG    &bt BT_CLR
-                                                                                                       &bt C_VOL_DN          _BKL_TG
-                                                                                        ___    ___   &bt C_MUTE                _x_     ___    ___
+                                                                                                   _x_   &kp C_VOL_UP      _RGB_TG    &bt BT_CLR
+                                                                                                       &kp C_VOL_DN          _BKL_TG
+                                                                                        ___    ___   &kp C_MUTE                _x_     ___    ___
             >; };
 
             // #UNDEFs
