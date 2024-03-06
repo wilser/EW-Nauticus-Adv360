@@ -390,14 +390,14 @@
                 #define _MONOFF &kp RC(RG(L)) // Win+Ctrl+L invokes my AHK lock+monoff macro
 
             util_layer { bindings = <
-                &m_SLEEP   &to 1         &to 2         &to 3         &to 4         &to 5         &to L_0                                ___       &to 6      &to 7       &to 8        &to 9        &to 10       &to 0
-                &m_HIBER   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  _x_                                    _x_       _x_        &kp N1      &kp N2       &m_CSA_R     &kp N3       &kp RS(N2)
-                ___        _x_           _x_           _x_           _x_           _x_           _x_                                    _MONOFF   _x_        &m_M1       &m_M2        &m_M3        &m_M4        &kp RS(N3)
-                _x_        _x_           _x_           _x_           _x_           _x_                                                            _x_        &m_M5       &m_M6        &m_M7        &m_M8        &kp RS(N4)
-                _BTLD      _x_           _x_           ___           ___                                                                                     ___         ___          _x_          _x_          _BTLD
-                                                                                               &bt BT_CLR    _BKL_TG      _RGB_TG    &bt BT_CLR
-                                                                                                               _x_          C_VOL_UP
-                                                                                               ___    ___    _x_              C_VOL_DN   ___    ___
+                &m_SLEEP    &to 1         &to 2         &to 3         &to 4         &to 5         &to L_0                                ___       &to 6      &to 7       &to 8        &to 9        &to 10       &to 0
+                &m_HIBER    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  _x_                                    _x_       _x_        &kp N1      &kp N2       &m_CSA_R     &kp N3       &kp RS(N2)
+                ___         _x_           _x_           _x_           _x_           _x_           _x_                                    _MONOFF   _x_        &m_M1       &m_M2        &m_M3        &m_M4        &kp RS(N3)
+                &bt BT_CLR  _x_           _x_           _x_           _x_           _x_                                                            _x_        &m_M5       &m_M6        &m_M7        &m_M8        &kp RS(N4)
+                _BTLD       _x_           _x_           ___           ___                                                                                     ___         ___          _x_          _x_          _BTLD
+                                                                                                   _x_   &bt C_VOL_UP      _RGB_TG    &bt BT_CLR
+                                                                                                       &bt C_VOL_DN          _BKL_TG
+                                                                                        ___    ___   &bt C_MUTE                _x_     ___    ___
             >; };
 
             // #UNDEFs
