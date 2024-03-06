@@ -396,8 +396,8 @@
                 _x_        _x_           _x_           _x_           _x_           _x_                                                            _x_        &m_M5       &m_M6        &m_M7        &m_M8        &kp RS(N4)
                 _BTLD      _x_           _x_           ___           ___                                                                                     ___         ___          _x_          _x_          _BTLD
                                                                                                &bt BT_CLR    _BKL_TG      _RGB_TG    &bt BT_CLR
-                                                                                                               _x_            _x_
-                                                                                               ___    ___    _x_              _x_    ___    ___
+                                                                                                               _x_          C_VOL_UP
+                                                                                               ___    ___    _x_              C_VOL_DN   ___    ___
             >; };
 
             // #UNDEFs
