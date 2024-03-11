@@ -356,7 +356,7 @@
             numpad_layer { bindings = <
                 ___    ___       ___         ___         ___         ___    &to L_0                                ___    &m_CHR_EU      &kp DOLLAR  &kp HASH   &kp PERCENT    &kp EQUAL         &m_CSA_R
                 ___    &kp LWIN  &kp LSHFT   &kp LALT    &kp LCTRL   ___    ___                                    ___    &kp BSPC       _7_CTL      _8_ALT     _9_SFT         &kp KP_ASTERISK   &kp KP_DIVIDE
-                ___    &kp BSPC  &kp LEFT    &kp RIGHT   ___         ___    ___                                    ___    &as LBKT LPAR  &kp N4      &kp N5     &kp N6         &as RBKT RPAR     &as LS(MINUS) KP_MINUS
+                ___    &kp BSPC  ___         &kp LEFT    &kp RIGHT   ___    ___                                    ___    &as LBKT LPAR  &kp N4      &kp N5     &kp N6         &as RBKT RPAR     &as LS(MINUS) KP_MINUS
                 ___    ___       ___         ___         ___         ___                                                  &kp SPACE      &kp N1      &kp N2     &kp N3         &as SEMI KP_PLUS  ___
                 ___    ___       ___         ___         ___                                                                             ___         ___        &as COMMA DOT  &kp KP_ENTER      &to L_0 
                                                                           &kp LSHFT  &to L_0        &kp BSPC    &kp SPACE
