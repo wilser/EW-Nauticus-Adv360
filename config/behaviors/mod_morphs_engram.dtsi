@@ -61,7 +61,7 @@ m_##AS_NAME: m_##AS_NAME { \
 //MOD_MORPH_SHIFT(mmNGM_1,     N1      ,  UNDERSCORE    , mmsNGM_1 )   // => "m_mmENG_1" ... etc. below
 //MOD_MORPH_SHIFT(mnNGM_PLUS,  PLUS    ,  GRAVE         , mmsNGM_PLUS)
 MOD_MORPH_SHIFT(mnNGM_Apos,  APOS      ,  GRAVE         , mmsNGM_Apos)
-MOD_MORPH_SHIFT(mmNGM_1,     N1        ,  PIPE          , mmsNGM_1 )   
+MOD_MORPH_SHIFT(mmNGM_1,     N1        ,  EXCLAMATION   , mmsNGM_1 )   
 MOD_MORPH_SHIFT(mmNGM_2,     N2        ,  AT            , mmsNGM_2 )
 MOD_MORPH_SHIFT(mmNGM_3,     N3        ,  EQUAL          , mmsNGM_3 )
 //MOD_MORPH_SHIFT(mmNGM_4,     N4       ,  TILDE         , mmsNGM_4 )
@@ -74,7 +74,7 @@ MOD_MORPH_SHIFT(mmNGM_7,     N7        ,  DLLR          , mmsNGM_7 )
 MOD_MORPH_SHIFT(mmNGM_8,     N8        ,  HASH          , mmsNGM_8 )
 MOD_MORPH_SHIFT(mmNGM_9,     N9        ,  PRCNT         , mmsNGM_9 )
 MOD_MORPH_SHIFT(mmNGM_0,     N0        ,  F22           , mmsNGM_0 )    // AHK: Ø
-MOD_MORPH_SHIFT(mmNGM_Qstn,  QUESTION  ,  EXCLAMATION   , mmsNGM_Qstn )
+MOD_MORPH_SHIFT(mmNGM_Qstn,  QUESTION  ,  PIPE          , mmsNGM_Qstn )
 
 
 // CENTER COLUMNS SIX (L-down > R-down)
