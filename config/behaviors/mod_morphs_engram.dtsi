@@ -87,7 +87,7 @@ m_##AS_NAME: m_##AS_NAME { \
 //MOD_MORPH_SHIFT(mmNGM_Mnus  , MINUS         , LPAR            , mmsNGM_Mnus )
 //MOD_MORPH_SHIFT(mmNGM_Cmma  , COMMA         , EXCLAMATION     , mmsNGM_Cmma )
 //MOD_MORPH_SHIFT(mmNGM_Amps  , AMPS          , UNDERSCORE      , mmsNGM_Amps )
-  MOD_MORPH_SHIFT(mmNGM_Amps  , AMPS          , QUESTION        , mmsNGM_Amps )
+  MOD_MORPH_SHIFT(mmNGM_Star  , STAR          , EXCLAMATION     , mmsNGM_Star )
   MOD_MORPH_SHIFT(mmNGM_Mnus  , MINUS         , LPAR            , mmsNGM_Mnus )
   MOD_MORPH_SHIFT(mmNGM_Cmma  , COMMA         , TILDE           , mmsNGM_Cmma )
 //MOD_MORPH_SHIFT(mmNGM_Slsh  , SLASH         , RPAR            , mmsNGM_Slsh )
@@ -95,7 +95,7 @@ m_##AS_NAME: m_##AS_NAME { \
 //MOD_MORPH_SHIFT(mmNGM_Perd  , PERIOD        , QUESTION        , mmsNGM_Perd )
 //MOD_MORPH_SHIFT(mmNGM_Perd  , PERIOD        , DOUBLE_QUOTES   , mmsNGM_Perd )
 //MOD_MORPH_SHIFT(mmNGM_Star  , STAR          , DOUBLE_QUOTES   , mmsNGM_Star )
-  MOD_MORPH_SHIFT(mmNGM_Star  , STAR          , EXCLAMATION     , mmsNGM_Star )
+  MOD_MORPH_SHIFT(mmNGM_Amps  , AMPS          , QUESTION        , mmsNGM_Amps )
   MOD_MORPH_SHIFT(mmNGM_Perd  , PERIOD        , RPAR            , mmsNGM_Perd )
   MOD_MORPH_SHIFT(mmNGM_Slsh  , SLASH         , BACKSLASH       , mmsNGM_Slsh )
 
