@@ -67,11 +67,13 @@ m_##AS_NAME: m_##AS_NAME { \
   MOD_MORPH_SHIFT(mmNGM_2     , N2            ,  AT             , mmsNGM_2 )
 //MOD_MORPH_SHIFT(mmNGM_3     , N3            ,  EQUAL          , mmsNGM_3 )
 //MOD_MORPH_SHIFT(mmNGM_3     , N3            ,  PLUS           , mmsNGM_3 )
-  MOD_MORPH_SHIFT(mmNGM_3     , N3            ,  UNDERSCORE     , mmsNGM_3 )
+//MOD_MORPH_SHIFT(mmNGM_3     , N3            ,  UNDERSCORE     , mmsNGM_3 )
+  MOD_MORPH_SHIFT(mmNGM_3     , N3            ,  BACKSLASH      , mmsNGM_3 )
 //MOD_MORPH_SHIFT(mmNGM_4     , N4            ,  TILDE          , mmsNGM_4 )
 //MOD_MORPH_SHIFT(mmNGM_4     , N4            ,  UNDERSCORE     , mmsNGM_4 )
-  MOD_MORPH_SHIFT(mmNGM_4     , N4            ,  PLUS           , mmsNGM_4 )
 //MOD_MORPH_SHIFT(mmNGM_4     , N4            ,  GRAVE          , mmsNGM_4 ) 
+//MOD_MORPH_SHIFT(mmNGM_4     , N4            ,  PLUS           , mmsNGM_4 )
+  MOD_MORPH_SHIFT(mmNGM_4     , N4            ,  PIPE           , mmsNGM_4 )
   MOD_MORPH_SHIFT(mmNGM_5     , N5            ,  F22            , mmsNGM_5 )        // Ø
 //MOD_MORPH_SHIFT(mmNGM_5     , N5            ,  EXCLAMATION    , mmsNGM_5 )
 //MOD_MORPH_SHIFT(mmNGM_6     , N6            ,  GREATER_THAN   , mmsNGM_6 )
@@ -99,11 +101,14 @@ m_##AS_NAME: m_##AS_NAME { \
 //MOD_MORPH_SHIFT(mmNGM_Star  , STAR          , DOUBLE_QUOTES   , mmsNGM_Star )
   MOD_MORPH_SHIFT(mmNGM_Amps  , AMPS          , QUESTION        , mmsNGM_Amps )
   MOD_MORPH_SHIFT(mmNGM_Perd  , PERIOD        , RPAR            , mmsNGM_Perd )
-  MOD_MORPH_SHIFT(mmNGM_Slsh  , SLASH         , BACKSLASH       , mmsNGM_Slsh )
+//MOD_MORPH_SHIFT(mmNGM_Slsh  , SLASH         , BACKSLASH       , mmsNGM_Slsh )
+  MOD_MORPH_SHIFT(mmNGM_Apos  , APOS          , UNDERSCORE      , mmsNGM_Apos )
 
 // REMAINING (RH side top>bottom, then bottom row L>R)
-  MOD_MORPH_SHIFT(mmNGM_Quot  , DOUBLE_QUOTES , PIPE            , mmsNGM_Quot )
-  MOD_MORPH_SHIFT(mmNGM_Apos  , APOS          , SEMI            , mmsNGM_Apos )
+//MOD_MORPH_SHIFT(mmNGM_Quot  , DOUBLE_QUOTES , PIPE            , mmsNGM_Quot )
+  MOD_MORPH_SHIFT(mmNGM_Quot  , DOUBLE_QUOTES , PLUS            , mmsNGM_Quot )
+//MOD_MORPH_SHIFT(mmNGM_Apos  , APOS          , SEMI            , mmsNGM_Apos )
+  MOD_MORPH_SHIFT(mmNGM_Slsh  , SLASH         , SEMI            , mmsNGM_Slsh )
   MOD_MORPH_SHIFT(mmNGM_Coln  , COLON         , LS(F24)         , mmsNGM_Coln )     // •
       
   MOD_MORPH_SHIFT(mmNGM_LBrk  , LBKT          , QUESTION        , mmsNGM_LBrk )
