@@ -422,7 +422,7 @@
             */
             
             navnedit_layer { bindings = <
-                _x_    _x_       _x_         _x_            _x_              _x_              &to L_0                                            ___        _x_         _x_        _x_        _x_        _x_          _x_
+                _x_    _x_       _x_         &kp LC(O)      &kp LC(S)        &kp LC(W)        &to L_0                                            ___        _x_         _x_        _x_        _x_        _x_          _x_
                 ___    _x_       _x_         _x_            &kp LC(K)        &kp LC(U)        _x_                                                _x_        _x_         _x_        _x_        _x_        _x_          _x_
                 ___    _x_       &kp LC(X)   &kp LC(C)      &kp LC(V)        &kp LC(B)        &m_CSA_V                                           _x_        _x_         _x_        _x_        _x_        _x_          _x_
                 ___    _x_       _x_         &kp F13        &kp LC(F13)      &kp LC(I)                                                                      _x_         _x_        _x_        &m_CSA_V   _x_          _x_
