@@ -125,7 +125,8 @@ m_##AS_NAME: m_##AS_NAME { \
 
 // BOTTOM ROW L- to R-
 //MOD_MORPH_SHIFT(mmNGM_LBrk  , LBKT          , QUESTION        , mmsNGM_LBrk )
-  MOD_MORPH_SHIFT(mmNGM_Semi  , SEMI          , QUESTION        , mmsNGM_Semi )
+//MOD_MORPH_SHIFT(mmNGM_Semi  , SEMI          , QUESTION        , mmsNGM_Semi )
+  MOD_MORPH_SHIFT(mmNGM_Semi  , SEMI          , TILDE           , mmsNGM_Semi )
 //MOD_MORPH_SHIFT(mmNGM_RBrk  , RBKT          , QUESTION        , mmsNGM_RBrk )
-  MOD_MORPH_SHIFT(mmNGM_Tild  , TILDE         , QUESTION        , mmsNGM_Tild )
+//MOD_MORPH_SHIFT(mmNGM_Tild  , TILDE         , QUESTION        , mmsNGM_Tild )
 
