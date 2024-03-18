@@ -116,18 +116,19 @@ m_##AS_NAME: m_##AS_NAME { \
 // REMAINING RH side top>bottom
 //MOD_MORPH_SHIFT(mmNGM_Quot  , DOUBLE_QUOTES , PIPE            , mmsNGM_Quot )
 //MOD_MORPH_SHIFT(mmNGM_Quot  , DOUBLE_QUOTES , PLUS            , mmsNGM_Quot )
-//MOD_MORPH_SHIFT(mmNGM_Apos  , APOS          , SEMI            , mmsNGM_Apos )
 //MOD_MORPH_SHIFT(mmNGM_Slsh  , SLASH         , SEMI            , mmsNGM_Slsh )
   MOD_MORPH_SHIFT(mmNGM_Slsh  , SLASH         , LS(F24)         , mmsNGM_Slsh )
 //MOD_MORPH_SHIFT(mmNGM_Coln  , COLON         , LS(F24)         , mmsNGM_Coln )     // •
 //MOD_MORPH_SHIFT(mmNGM_Mnus  , MINUS         , UNDERSCORE      , mmsNGM_Mnus )     // •
-  MOD_MORPH_SHIFT(mmNGM_Apos  , APOS          , UNDERSCORE      , mmsNGM_Apos )     // •
+//MOD_MORPH_SHIFT(mmNGM_Apos  , APOS          , UNDERSCORE      , mmsNGM_Apos )     // •
+  MOD_MORPH_SHIFT(mmNGM_Apos  , APOS          , SEMI            , mmsNGM_Apos )
   MOD_MORPH_SHIFT(mmNGM_Coln  , COLON         , PLUS            , mmsNGM_Coln )     // •
 
 // BOTTOM ROW L- to R-
 //MOD_MORPH_SHIFT(mmNGM_LBrk  , LBKT          , QUESTION        , mmsNGM_LBrk )
 //MOD_MORPH_SHIFT(mmNGM_Semi  , SEMI          , QUESTION        , mmsNGM_Semi )
-  MOD_MORPH_SHIFT(mmNGM_Semi  , SEMI          , TILDE           , mmsNGM_Semi )
+//MOD_MORPH_SHIFT(mmNGM_Semi  , SEMI          , TILDE           , mmsNGM_Semi )
+  MOD_MORPH_SHIFT(mmNGM_Undr  , UNDERSCORE    , TILDE           , mmsNGM_Undr )
 //MOD_MORPH_SHIFT(mmNGM_RBrk  , RBKT          , QUESTION        , mmsNGM_RBrk )
 //MOD_MORPH_SHIFT(mmNGM_Tild  , TILDE         , QUESTION        , mmsNGM_Tild )
 
