@@ -74,8 +74,9 @@ m_##AS_NAME: m_##AS_NAME { \
 //MOD_MORPH_SHIFT(mmNGM_4     , N4            , GRAVE           , mmsNGM_4 ) 
 //MOD_MORPH_SHIFT(mmNGM_4     , N4            , PLUS            , mmsNGM_4 )
   MOD_MORPH_SHIFT(mmNGM_4     , N4            , PIPE            , mmsNGM_4 )
-  MOD_MORPH_SHIFT(mmNGM_5     , N5            , F22             , mmsNGM_5 )        // Ø
 //MOD_MORPH_SHIFT(mmNGM_5     , N5            , EXCLAMATION     , mmsNGM_5 )
+//MOD_MORPH_SHIFT(mmNGM_5     , N5            , F22             , mmsNGM_5 )        // Ø
+  MOD_MORPH_SHIFT(mmNGM_5     , N5            , TILDE           , mmsNGM_5 )        // Ø
 //MOD_MORPH_SHIFT(mmNGM_6     , N6            , GREATER_THAN    , mmsNGM_6 )
   MOD_MORPH_SHIFT(mmNGM_7     , N7            , DLLR            , mmsNGM_7 )
   MOD_MORPH_SHIFT(mmNGM_8     , N8            , HASH            , mmsNGM_8 )
@@ -121,19 +122,23 @@ m_##AS_NAME: m_##AS_NAME { \
 //MOD_MORPH_SHIFT(mmNGM_Quot  , DOUBLE_QUOTES , PIPE            , mmsNGM_Quot )
 //MOD_MORPH_SHIFT(mmNGM_Quot  , DOUBLE_QUOTES , PLUS            , mmsNGM_Quot )
 //MOD_MORPH_SHIFT(mmNGM_Slsh  , SLASH         , SEMI            , mmsNGM_Slsh )
-  MOD_MORPH_SHIFT(mmNGM_Slsh  , SLASH         , LS(F24)         , mmsNGM_Slsh )
+//MOD_MORPH_SHIFT(mmNGM_Slsh  , SLASH         , LS(F24)         , mmsNGM_Slsh )
+  MOD_MORPH_SHIFT(mmNGM_Slsh  , SLASH         , UNDERSCORE      , mmsNGM_Slsh )
 //MOD_MORPH_SHIFT(mmNGM_Coln  , COLON         , LS(F24)         , mmsNGM_Coln )     // •
 //MOD_MORPH_SHIFT(mmNGM_Mnus  , MINUS         , UNDERSCORE      , mmsNGM_Mnus )     // •
 //MOD_MORPH_SHIFT(mmNGM_Apos  , APOS          , UNDERSCORE      , mmsNGM_Apos )     // •
 //MOD_MORPH_SHIFT(mmNGM_Apos  , APOS          , SEMI            , mmsNGM_Apos )
-  MOD_MORPH_SHIFT(mmNGM_Quot  , DOUBLE_QUOTES , SEMI            , mmsNGM_Quot )
-  MOD_MORPH_SHIFT(mmNGM_Coln  , COLON         , PLUS            , mmsNGM_Coln )     // •
+  MOD_MORPH_SHIFT(mmNGM_Coln  , COLON         , DOUBLE_QUOTES   , mmsNGM_Coln )     // •
+//MOD_MORPH_SHIFT(mmNGM_Quot  , DOUBLE_QUOTES , SEMI            , mmsNGM_Quot )
+//MOD_MORPH_SHIFT(mmNGM_Coln  , COLON         , PLUS            , mmsNGM_Coln )     // •
+  MOD_MORPH_SHIFT(mmNGM_Semi  , SEMI          , PLUS            , mmsNGM_Semi )
 
 // BOTTOM ROW L- to R-
 //MOD_MORPH_SHIFT(mmNGM_LBrk  , LBKT          , QUESTION        , mmsNGM_LBrk )
 //MOD_MORPH_SHIFT(mmNGM_Semi  , SEMI          , QUESTION        , mmsNGM_Semi )
 //MOD_MORPH_SHIFT(mmNGM_Semi  , SEMI          , TILDE           , mmsNGM_Semi )
-  MOD_MORPH_SHIFT(mmNGM_Undr  , UNDERSCORE    , TILDE           , mmsNGM_Undr )
+//MOD_MORPH_SHIFT(mmNGM_Undr  , UNDERSCORE    , TILDE           , mmsNGM_Undr )
+  MOD_MORPH_SHIFT(mmNGM_Bllt  , LS(F24)       , F22             , mmsNGM_Bllt )
 //MOD_MORPH_SHIFT(mmNGM_RBrk  , RBKT          , QUESTION        , mmsNGM_RBrk )
 //MOD_MORPH_SHIFT(mmNGM_Tild  , TILDE         , QUESTION        , mmsNGM_Tild )
 
