@@ -73,10 +73,10 @@ m_##AS_NAME: m_##AS_NAME { \
 //MOD_MORPH_SHIFT(mmNGM_4     , N4            , UNDERSCORE      , mmsNGM_4 )
 //MOD_MORPH_SHIFT(mmNGM_4     , N4            , GRAVE           , mmsNGM_4 ) 
 //MOD_MORPH_SHIFT(mmNGM_4     , N4            , PLUS            , mmsNGM_4 )
-  MOD_MORPH_SHIFT(mmNGM_4     , N4            , PIPE            , mmsNGM_4 )
+  MOD_MORPH_SHIFT(mmNGM_4     , N4            , TILDE           , mmsNGM_4 )
 //MOD_MORPH_SHIFT(mmNGM_5     , N5            , EXCLAMATION     , mmsNGM_5 )
 //MOD_MORPH_SHIFT(mmNGM_5     , N5            , F22             , mmsNGM_5 )        // Ø
-  MOD_MORPH_SHIFT(mmNGM_5     , N5            , TILDE           , mmsNGM_5 )        // Ø
+  MOD_MORPH_SHIFT(mmNGM_5     , N5            , PIPE            , mmsNGM_5 )        // Ø
 //MOD_MORPH_SHIFT(mmNGM_6     , N6            , GREATER_THAN    , mmsNGM_6 )
   MOD_MORPH_SHIFT(mmNGM_7     , N7            , DLLR            , mmsNGM_7 )
   MOD_MORPH_SHIFT(mmNGM_8     , N8            , HASH            , mmsNGM_8 )
