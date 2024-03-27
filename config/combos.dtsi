@@ -42,7 +42,7 @@ combo_caps_word {
 
 // C2b
 combo_caps_word_NGM {
-    key-positions = <35 38>; // HN {RH: index,pinkie}
+    key-positions = <37 40>; // HN {RH: index,pinkie}
     bindings = <&caps_word>;
     layers = <L_NGM>;
 };
