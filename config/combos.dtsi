@@ -33,10 +33,18 @@ combo_space {
     layers = <L_DVK L_NGM L_LR>;
 };
 
-// C2
+// C2a
 combo_caps_word {
-    key-positions = <49 50>; // RH, Fng 1,2, 1-row down
+    key-positions = <49 50>; // 
     bindings = <&caps_word>;
+    layers = <L_DVK>;
+};
+
+// C2b
+combo_caps_word_NGM {
+    key-positions = <35 38>; // HN {RH: index,pinkie}
+    bindings = <&caps_word>;
+    layers = <L_NGM>;
 };
 
 // C3
