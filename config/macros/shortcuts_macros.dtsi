@@ -81,3 +81,11 @@ m_M8: m_M8 {
     bindings = <&kp T &kp E &kp S &kp T &kp SPACE &kp L &kp O &kp N &kp G &kp E &kp R &kp SPACE &kp W &kp I &kp T &kp H>;
 };
 
+m_ion: m_ion {
+    wait-ms = _WAIT;
+    tap-ms = _TAP;
+    compatible = "zmk,behavior-macro";
+    label = "m_ion";
+    #binding-cells = <0>;
+    bindings = <&kp I &kp O &kp N>;
+};
