@@ -151,5 +151,5 @@ m_##AS_NAME: m_##AS_NAME { \
 //MOD_MORPH_SHIFT(mmNGM_Tild  , TILDE         , QUESTION        , mmsNGM_Tild )
 
 //MOD_MORPH_SHIFT(mmNGM_Bllt  , F22           , LS(F22)         , mmsNGM_Bllt )
-  MOD_MORPH_SHIFT(mmNGM_Ing   , F21           , F22             , mmsNGM_Ing ) // F21 "ing" F22 "•"
+  MOD_MORPH_SHIFT(mmNGM_Sffx  , F21           , LS(F21)         , mmsNGM_Ing ) // F21 "ing" F22 "•"
 
