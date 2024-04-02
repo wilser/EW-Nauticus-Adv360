@@ -60,7 +60,8 @@ m_##AS_NAME: m_##AS_NAME { \
 // TOP ROW (L to R)
 //MOD_MORPH_SHIFT(mmNGM_1     , N1            , UNDERSCORE      , mmsNGM_1 )   // => "m_mmENG_1" ... etc. below
 //MOD_MORPH_SHIFT(mnNGM_PLUS  , PLUS          , GRAVE           , mmsNGM_PLUS)
-  MOD_MORPH_SHIFT(mmNGM_LThn  , LESS_THAN     , LBRC            , mmsNGM_LThn )
+//MOD_MORPH_SHIFT(mmNGM_LThn  , LESS_THAN     , LBRC            , mmsNGM_LThn )
+  MOD_MORPH_SHIFT(mmNGM_Lbrc  , LBRC          , RBRC            , mmsNGM_Lbrc )
 //MOD_MORPH_SHIFT(mnNGM_Apos  , APOS          , GRAVE           , mmsNGM_Apos)
 //MOD_MORPH_SHIFT(mmNGM_1     , N1            , UNDERSCORE      , mmsNGM_1 )   
   MOD_MORPH_SHIFT(mmNGM_1     , N1            , GRAVE           , mmsNGM_1 )   
@@ -84,7 +85,8 @@ m_##AS_NAME: m_##AS_NAME { \
 //MOD_MORPH_SHIFT(mmNGM_0     , N0            , F22             , mmsNGM_0 )        // Ø
   MOD_MORPH_SHIFT(mmNGM_0     , N0            , EQUAL           , mmsNGM_0 )        // {0,=} match Num layer
 //MOD_MORPH_SHIFT(mmNGM_Qstn  , QUESTION      , PIPE            , mmsNGM_Qstn )
-  MOD_MORPH_SHIFT(mmNGM_GThn  , GREATER_THAN  , RBRC            , mmsNGM_GThn )
+//MOD_MORPH_SHIFT(mmNGM_GThn  , GREATER_THAN  , RBRC            , mmsNGM_GThn )
+  MOD_MORPH_SHIFT(mmNGM_Star  , STAR          , PLUS            , mmsNGM_Star )
 
 
 // CENTER COLUMNS SIX (L-down > R-down)
@@ -101,7 +103,8 @@ m_##AS_NAME: m_##AS_NAME { \
 //MOD_MORPH_SHIFT(mmNGM_Apos  , APOS          , EXCLAMATION     , mmsNGM_Apos )
 //MOD_MORPH_SHIFT(mmNGM_Apos  , APOS          , QUESTION        , mmsNGM_Apos )
 //MOD_MORPH_SHIFT(mmNGM_Apos  , APOS          , AMPS            , mmsNGM_Apos )
-  MOD_MORPH_SHIFT(mmNGM_Apos  , APOS          , STAR            , mmsNGM_Apos )
+//MOD_MORPH_SHIFT(mmNGM_Apos  , APOS          , STAR            , mmsNGM_Apos )
+  MOD_MORPH_SHIFT(mmNGM_Apos  , APOS          , LESS_THAN       , mmsNGM_Apos )
   MOD_MORPH_SHIFT(mmNGM_Cmma  , COMMA         , LPAR            , mmsNGM_Cmma )
   MOD_MORPH_SHIFT(mmNGM_Amps  , AMPS          , LBKT            , mmsNGM_Amps )
 //MOD_MORPH_SHIFT(mmNGM_Lpar  , LPAR          , LBKT            , mmsNGM_Lpar )
@@ -115,7 +118,8 @@ m_##AS_NAME: m_##AS_NAME { \
 //MOD_MORPH_SHIFT(mmNGM_Quot  , DOUBLE_QUOTES , QUESTION        , mmsNGM_Quot )
 //MOD_MORPH_SHIFT(mmNGM_Quot  , DOUBLE_QUOTES , EXCLAMATION     , mmsNGM_Quot )
 //MOD_MORPH_SHIFT(mmNGM_Quot  , DOUBLE_QUOTES , RBKT            , mmsNGM_Quot )
-  MOD_MORPH_SHIFT(mmNGM_Quot  , DOUBLE_QUOTES , PLUS            , mmsNGM_Quot )
+//MOD_MORPH_SHIFT(mmNGM_Quot  , DOUBLE_QUOTES , PLUS            , mmsNGM_Quot )
+  MOD_MORPH_SHIFT(mmNGM_Quot  , DOUBLE_QUOTES , GREATER_THAN    , mmsNGM_Quot )
   MOD_MORPH_SHIFT(mmNGM_Perd  , PERIOD        , RPAR            , mmsNGM_Perd )
 //MOD_MORPH_SHIFT(mmNGM_Slsh  , SLASH         , EXCLAMATION     , mmsNGM_Slsh )
 //MOD_MORPH_SHIFT(mmNGM_Perd  , PERIOD        , QUESTION        , mmsNGM_Perd )
