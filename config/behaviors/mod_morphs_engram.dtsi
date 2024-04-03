@@ -138,7 +138,7 @@ m_##AS_NAME: m_##AS_NAME { \
 //MOD_MORPH_SHIFT(mmNGM_Rpar  , RPAR          , GREATER_THAN    , mmsNGM_Rpar )
 //MOD_MORPH_SHIFT(mmNGM_Coln  , COLON         , RBKT            , mmsNGM_Coln )     // •
 //MOD_MORPH_SHIFT(mmNGM_Coln  , COLON         , GREATER_THAN    , mmsNGM_Coln )     // •
-  MOD_MORPH_SHIFT(mmNGM_Equl  , EQUAL         , GREATER_THAN    , mmsNGM_Coln )     // •
+  MOD_MORPH_SHIFT(mmNGM_Equl  , EQUAL         , GREATER_THAN    , mmsNGM_Equl )     // •
   MOD_MORPH_SHIFT(mmNGM_Perd  , PERIOD        , QUESTION        , mmsNGM_Perd )
   MOD_MORPH_SHIFT(mmNGM_Rpar  , RPAR          , RBKT            , mmsNGM_Rpar )
 
