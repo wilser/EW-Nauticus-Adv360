@@ -89,7 +89,9 @@ m_##AS_NAME: m_##AS_NAME { \
 //MOD_MORPH_SHIFT(mmNGM_Star  , STAR          , PLUS            , mmsNGM_Star )
 //MOD_MORPH_SHIFT(mmNGM_Star  , STAR          , F22             , mmsNGM_Star )
 //MOD_MORPH_SHIFT(mmNGM_Quot  , DOUBLE_QUOTES , STAR            , mmsNGM_Quot )
-  MOD_MORPH_SHIFT(mmNGM_Qstn  , QUESTION      , STAR            , mmsNGM_Qstn )
+//MOD_MORPH_SHIFT(mmNGM_Qstn  , QUESTION      , STAR            , mmsNGM_Qstn )
+  MOD_MORPH_SHIFT(mmNGM_Semi  , SEMI          , STAR            , mmsNGM_Semi )
+
 
 // BOTTOM LEFT
   MOD_MORPH_SHIFT(mmNGM_Apos  , APOS          , LS(F22)         , mmsNGM_Apos )
@@ -115,8 +117,9 @@ m_##AS_NAME: m_##AS_NAME { \
 //MOD_MORPH_SHIFT(mmNGM_Lpar  , LPAR          , LESS_THAN       , mmsNGM_Lpar )
 //MOD_MORPH_SHIFT(mmNGM_Amps  , AMPS          , LBKT            , mmsNGM_Amps )
   MOD_MORPH_SHIFT(mmNGM_Amps  , AMPS          , LESS_THAN       , mmsNGM_Amps )
-  MOD_MORPH_SHIFT(mmNGM_Cmma  , COMMA         , SEMI            , mmsNGM_Cmma )
+  MOD_MORPH_SHIFT(mmNGM_Cmma  , COMMA         , QUESTION        , mmsNGM_Cmma )
   MOD_MORPH_SHIFT(mmNGM_Lpar  , LPAR          , LBKT            , mmsNGM_Lpar )
+//MOD_MORPH_SHIFT(mmNGM_Cmma  , COMMA         , SEMI            , mmsNGM_Cmma )
 //MOD_MORPH_SHIFT(mmNGM_Cmma  , COMMA         , LBKT            , mmsNGM_Cmma )
 //MOD_MORPH_SHIFT(mmNGM_Slsh  , SLASH         , RPAR            , mmsNGM_Slsh )
 //MOD_MORPH_SHIFT(mmNGM_Slsh  , SLASH         , QUESTION        , mmsNGM_Slsh )
@@ -133,7 +136,6 @@ m_##AS_NAME: m_##AS_NAME { \
 //MOD_MORPH_SHIFT(mmNGM_Slsh  , SLASH         , BACKSLASH       , mmsNGM_Slsh )
 //MOD_MORPH_SHIFT(mmNGM_Apos  , APOS          , UNDERSCORE      , mmsNGM_Apos )
 //MOD_MORPH_SHIFT(mmNGM_Cmma  , COMMA         , EXCLAMATION     , mmsNGM_Cmma )
-//MOD_MORPH_SHIFT(mmNGM_Cmma  , COMMA         , QUESTION        , mmsNGM_Cmma )
 //MOD_MORPH_SHIFT(mmNGM_Coln  , COLON         , QUESTION        , mmsNGM_Coln )     // •
 //MOD_MORPH_SHIFT(mmNGM_Rpar  , RPAR          , GREATER_THAN    , mmsNGM_Rpar )
 //MOD_MORPH_SHIFT(mmNGM_Coln  , COLON         , RBKT            , mmsNGM_Coln )     // •
