@@ -145,9 +145,9 @@
         };
 
         /* [.] experimental: "slower" home-row mod for Win key since don't need to be fast and false-taps mess up worse */
-        hm_slw: homerow_mods {
+        hm_slw: homerow_mods_slw {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
+            label = "HOMEROW_MODS_SLW";
             #binding-cells = <2>;
             tapping-term-ms = <300>;
             quick-tap-ms = <200>; 
