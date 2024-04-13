@@ -1,0 +1,100 @@
+#include <dt-bindings/zmk/keys.h>
+
+
+/* TODO
+    [ ] can omit the macro_tap and just go straight for keys when don't need press+release?
+
+
+*/
+
+/* € - but clunky; seems some newer macros send Unicode better - need to search */
+m_CHR_EU: m_CHR_EU{
+    compatible = "zmk,behavior-macro";
+    label = "m_CHR_EU";
+    wait-ms = <20>;
+    tap-ms = <30>;
+    #binding-cells = <0>;
+    // Alt+0128 seems slow & doesn't work as expected - revisit later?
+        //bindings
+        //    = <&macro_press   &kp LALT>
+        //    , <&macro_tap     &kp KP_N0 &kp KP_N1 &kp KP_N2 &kp KP_N8>
+        //    , <&macro_release &kp LALT>
+        //    ;
+    // try "e u \" to fire AHK shortcut?
+    bindings
+        = <&macro_tap &kp E &kp U &kp BACKSLASH>;
+};
+
+/* SELECT WORD: Ctrl+LEFT, Ctrl+Shift+RIGHT - for mid or at end of a word (see other) */
+m_SEL_WRD_L: m_SEL_WRD_L{
+    compatible = "zmk,behavior-macro";
+    label = "m_SEL_WRD_L";
+    wait-ms = <40>;  /* 40,40 seems more reliable than 30,20 or faster */
+    tap-ms = <20>;
+    #binding-cells = <0>;
+    bindings
+        = <&macro_press &kp LCTRL>
+        , <&macro_tap &kp LEFT>
+        , <&macro_release &kp LCTRL>
+        , <&macro_press &kp LSHFT &kp LCTRL>
+        , <&macro_tap &kp RIGHT>
+        , <&macro_release &kp LSHFT &kp LCTRL>
+        ;
+};
+
+/* SELECT WORD: Ctrl+RIGHT, Ctrl+Shift+LEFT - for mid or at beginning of a word (see other) */
+m_SEL_WRD_R: m_SEL_WRD_R{
+    compatible = "zmk,behavior-macro";
+    label = "m_SEL_WRD_R";
+    wait-ms = <40>;  /* 40,40 seems more reliable than 30,20 or faster */
+    tap-ms = <20>;
+    #binding-cells = <0>;
+    bindings
+        = <&macro_press &kp LCTRL>
+        , <&macro_tap &kp RIGHT>
+        , <&macro_release &kp LCTRL>
+        , <&macro_press &kp LSHFT &kp LCTRL>
+        , <&macro_tap &kp LEFT>
+        , <&macro_release &kp LSHFT &kp LCTRL>
+        ;
+};
+
+/* SELECT LINE: Home, Shift+End */
+m_SEL_LINE: m_SEL_LINE{
+    compatible = "zmk,behavior-macro";
+    label = "m_SEL_LINE";
+    wait-ms = <40>;
+    tap-ms = <20>;
+    #binding-cells = <0>;
+    bindings
+        = <&macro_tap &kp HOME>
+        , <&macro_press &kp LSHFT>
+        , <&macro_tap &kp END>
+        , <&macro_release &kp LSHFT>
+        ;
+};
+
+/* WINDOWS SLEEP: Win+X, U, S    (because the k-sleep and c-sleep don't seem to work / see https://github.com/zmkfirmware/zmk/issues/1077)
+    wait & tap <200> ms seems to work okay
+    separating key-tap sends seems mostly reliable
+*/
+m_SLEEP: m_SLEEP {
+    wait-ms = <200>;
+    tap-ms = <200>;
+    compatible = "zmk,behavior-macro";
+    label = "m_SLEEP";
+    #binding-cells = <0>;
+    bindings = <&kp LG(X)>, <&kp U>, <&kp S>;
+};
+
+/* WINDOWS HIBERNATE: Win+X, U, H (see also m_SLEEP) */
+m_HIBER: m_HIBER {
+    wait-ms = <200>;
+    tap-ms = <200>;
+    compatible = "zmk,behavior-macro";
+    label = "m_HIBER";
+    #binding-cells = <0>;
+    bindings = <&kp LG(X)>, <&kp U>, <&kp H>;
+};
+
+

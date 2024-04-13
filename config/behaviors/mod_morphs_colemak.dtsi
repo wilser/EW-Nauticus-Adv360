@@ -1,0 +1,98 @@
+
+/*  TODO
+    * [] once get working? to combine with hold-tap for also the hold-shift behavior?
+        seems useful: https://github.com/zmkfirmware/zmk/issues/1474
+    * [] ADD Mod-Morphs together with Auto-Shifts
+    * [] Make combo ↑ into c-macro-ified
+    * [] can't figure how to do c-macro with concat string-literal + resolved macro-param inside string...
+*/
+
+
+// TEMP for now: the NAME part has to be unique-enough globally
+// Makes a ModMorph to override Shift+<> to be some alternate punctuation. Then adds Auto-Shift for same combo.
+// see NOTES below
+// m_mmas - macro'd mod-morph auto shift
+
+#define MOD_MORPH_SHIFT(MM_NAME, KEY, MOD_KEY, AS_NAME) m_##MM_NAME: m_##MM_NAME { \
+    compatible = "zmk,behavior-mod-morph"; \
+    label = #MM_NAME; \
+    #binding-cells = <0>; \
+    bindings = <&kp KEY>, <&kp MOD_KEY>; \
+    mods = <(MOD_LSFT|MOD_RSFT)>; \
+}; \
+m_##AS_NAME: m_##AS_NAME { \
+    compatible = "zmk,behavior-hold-tap"; \
+    label = #AS_NAME; \
+    #binding-cells = <2>; \
+    tapping_term_ms = <150>; \
+    quick_tap_ms = <0>; \
+    flavor = "tap-preferred"; \
+    bindings = <&kp>, <&m_##MM_NAME>; \
+}; \
+
+
+// #s 1-0                         //after macro ref:  m_mmas_CMK_...
+MOD_MORPH_SHIFT(mm_CMK_1GRAVE,   N1 ,    GRAVE        , mmas_CMK_1GRAVE  )
+MOD_MORPH_SHIFT(mm_CMK_2AT,      N2 ,    AT           , mmas_CMK_2AT     )
+MOD_MORPH_SHIFT(mm_CMK_3STAR,    N3 ,    STAR         , mmas_CMK_3STAR   )
+MOD_MORPH_SHIFT(mm_CMK_4AMPS,    N4 ,    AMPS         , mmas_CMK_4AMPS   )
+MOD_MORPH_SHIFT(mm_CMK_5TILDE,   N5 ,    TILDE        , mmas_CMK_5TILDE  )
+MOD_MORPH_SHIFT(mm_CMK_6CARET,   N6 ,    CARET        , mmas_CMK_6CARET  )
+MOD_MORPH_SHIFT(mm_CMK_7DLLR,    N7 ,    DLLR         , mmas_CMK_7DLLR   )
+MOD_MORPH_SHIFT(mm_CMK_8HASH,    N8 ,    HASH         , mmas_CMK_8HASH   )
+MOD_MORPH_SHIFT(mm_CMK_9PRCNT,   N9 ,    PRCNT        , mmas_CMK_9PRCNT  )
+MOD_MORPH_SHIFT(mm_CMK_0NIL,     N0 ,    F22          , mmas_CMK_0NIL    )    // AHK: F22 → Ø
+
+// ,;  .?  /!  (<  )>
+MOD_MORPH_SHIFT(mm_CMK_CmaSemi,  COMMA,  SEMI         , mmas_CMK_CmaSemi )
+MOD_MORPH_SHIFT(mm_CMK_DotQstn,  DOT,    QUESTION     , mmas_CMK_DotQstn )  
+MOD_MORPH_SHIFT(mm_CMK_SlshExc,  SLASH,  EXCLAMATION  , mmas_CMK_SlshExc ) 
+MOD_MORPH_SHIFT(mm_CMK_LParLT,   LPAR,   LESS_THAN    , mmas_CMK_LParLT  )
+MOD_MORPH_SHIFT(mm_CMK_RParGT,   RPAR,   GREATER_THAN , mmas_CMK_RParGT  )
+
+/*  NOTES - mod morph
+    * need the "MOD_" version of the key
+    * must be inside <> and within () inside that
+    * PIPE delimited list
+*/
+
+/*  NOTES - C macros
+    // Fun with c-macro syntax headaches...
+
+    // with parens around def, still got "expected node name..." where the : seemed to resolve after the label
+    // without parens, seemed to choke (malformed value) around the Label assign function...
+    // with hard-coded Label, it 'works' [once] but the 2nd macro use overwrites the first in usage
+        //label = "fake-temp-label"; \
+    // str(NAME) fails - whole 'empty_file' error, so can't tell...
+        //label = str(NAME); \
+    // try tips here - make "" #VAR which supposedly gets concatenated under the hood? - NO, got , or ; expected error
+        //ref: https://stackoverflow.com/questions/10507264/how-to-use-macro-argument-as-string-literal
+        //label = "mms_" #NAME          // which per ↑ would get combined automatically?
+        // did not work
+    // try JUST the #VAR ?
+        //label = #NAME; \    ****** <<<<< THIS ONE WORKED!
+        // so can use ↑ pattern, as long as just the NAME part is unique globally to be also a label
+        // (... or could add a separate LABEL param... if needed)
+*/
+
+/*  NOTES - combining ModMorph with AutoShift (hold tap)
+    General: define a mod-morph per above ('MM') then make a hold-tap auto-shift ('AS') taking the ModMorph pre-bound
+
+        Binding in Keymap →
+    
+     ↓ AS bindings      | 0 GRAVE                               | 0 N1
+                        --------------------                    --------------------
+        <MM> <&kp>      | tap: shifted char (`)                 | tap: 1
+                        | hold: wanted normal char (1)          | hold: 1(repeat)
+                        | Shft(tap): shifted held char (~)      | Shft(tap): !
+
+
+                        | GRAVE 0   ⭐                          | N1 0
+                        --------------------                    --------------------
+        <&kp> <MM>      | tap: 1 √                              | tap: 1 √
+                        | hold: ` √                             | hold: 1-repeat ❌
+                        | Shft(tap): ` √                        | Shft(tap): ` √
+                        | BONUS: Shift+Hold => ~ (shift-grave)
+
+*/
+

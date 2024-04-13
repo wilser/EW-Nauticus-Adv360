@@ -1,0 +1,75 @@
+// #include <dt-bindings/zmk/keys.h>
+
+/*  KEYMAP ref ##s
+ *
+ *  0  1  2  3  4  5  6   7  8  9  10 11 12 13
+ *  14 15 16 17 18 19 20  21 22 23 24 25 26 27
+ *  28 29 30 31 32 33 34  35 36 37 38 39 40 41
+ *  42 43 44 45 46 47        48 49 50 51 52 53
+ *  54 55 56 57 58              59 60 61 62 63
+ *                 64 65  66 67
+ *                    68  69
+ *              70 71 72  73 74 75
+*/
+
+ /* NOTES
+    https://zmk.dev/docs/features/combos
+    https://zmk.dev/docs/config/combos
+
+    timeout-ms: must hit combo w/in that time
+    layers = <0 1 ...> // OPTIONAL - to restrict combo to only work on that/those layers
+
+ */
+
+ /* #DEFs...  see adv360.keymap : this file included below the #defs */
+
+compatible = "zmk,combos";
+timeout-ms = <50>;
+
+// C1
+combo_space {
+    key-positions = <29 64>; // LH, (Fng 1 /A + top-left-thumb)
+    bindings = <&kp SPACE>;
+    layers = <L_DVK L_NGM L_LR>;
+};
+
+// C2a
+combo_caps_word {
+    key-positions = <49 50>; // 
+    bindings = <&caps_word>;
+    layers = <L_DVK>;
+};
+
+// C2b
+combo_caps_word_NGM {
+    key-positions = <37 40>; // HN {RH: index,pinkie}
+    bindings = <&caps_word>;
+    layers = <L_NGM>;
+};
+
+// C3
+combo_backspace {
+    key-positions = <49 52>; // RH, Fng 1,4, 1-row down
+    bindings = <&kp BACKSPACE>;
+    layers = <L_DVK>; // (main typing) only / removed from Engram because much more frequent letter combo (PR) vs (MZ) on Dvorakps
+};
+
+// C4a
+combo_context_menu_lh {
+    key-positions = <64 65>; // LH, top-2 thumb keys
+    bindings = <&kp K_CONTEXT_MENU>;
+    layers = <L_DVK L_NGM L_LR>;
+};
+// C4b
+combo_context_menu_rh {
+    key-positions = <66 67>; // RH, top-2 thumb keys
+    bindings = <&kp K_CONTEXT_MENU>;
+    layers = <L_DVK L_NGM L_LR>;
+};
+
+// C5
+combo_caps_lock {
+    key-positions = <64 67>; // Both top/inner smaller thumb keys (currently each assigned to Shift)
+    bindings = <&kp CAPSLOCK>;
+    layers = <L_DVK L_NGM L_LR>;
+};

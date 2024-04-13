@@ -1,0 +1,28 @@
+EW TODO
+    [∙] !! Toprow Mods not being combined...?? 
+            At least if done quickly... If r e a l l y   s l o w, then seems to work
+            maybe see: https://www.reddit.com/r/ErgoMechKeyboards/comments/rxxc8s/new_zmk_features_better_homerow_mods/ 
+            Removing the cross-hold limit seems to mostly fix it; but not optimal yet. See OneNote notes & links.
+    [ ] figure plain key-hold for other function
+    [ ] figure tap-tap & tap-hold ways
+    [ ] figure basic ASCII code macro
+    [ ] revisit the various conditional holds (diff. options, diff. timings) / & see new-ish blog entries on other options recently added
+    [ ] seems "sticky layers" are like the One-Shot-KEY from Moonlander
+    [ ] how to 'hold to shift' like the punctuation
+    [ ] tinker with capsWORD settings - like Char-list (add _ maybe?)
+    [ ] macros:
+        [] seems maybe change "behaviors queue" size (to larger?)
+    [ ] "mod morph" ?? -- seems ability to have Mod+Key at keyboard layer therefore send something different key
+
+Maybe
+    [ ] whole "activate layer, but it's a stack" concept? (seems different than the standard "transparent" setting)
+    [ ] some "convenience C macro" for making Macros - 20230514 first try didn't work; didn't play with it to see why
+
+
+DONE
+    [V] figure how other layer-holds work
+    [v] figure how to make HYPER & Meh - 
+            ❌ Maybe use Sticky-key notion too?
+
+
+   

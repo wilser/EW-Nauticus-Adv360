@@ -1,0 +1,183 @@
+#define ___ &trans
+#define _x_ &none
+
+#define HYP LG(LA(LCTRL))
+#define M_CUT LG(X)
+#define M_CPY LG(C)
+#define M_PST LG(V)
+#define M_UDO LG(Z)
+#define M_RDO LG(LS(Z))
+
+/* Number row */
+#define MM_F &mm_dllr_hash
+#define MM_1 &mm_n1_plus
+#define MM_2 &mm_n2_lbkt
+#define MM_3 &mm_n3_lbrc
+#define MM_4 &mm_n4_lpar
+#define MM_5 &mm_n5_amps
+#define MM_6 &mm_n6_equal
+#define MM_7 &mm_n7_rpar
+#define MM_8 &mm_n8_rbrc
+#define MM_9 &mm_n9_rbkt
+#define MM_0 &mm_n0_star
+#define MM_L &mm_excl_prcnt
+
+#define MM_AC &mm_at_caret
+/* Thumb keys */
+#define LT_2U_1 &kp BSPC
+#define LT_2U_2 &lt NUM DEL
+#define LT_1U_1 &kp LGUI
+#define LT_1U_2 &kp LALT
+#define LT_1U_3 ___
+#define LT_1U_4 &mt LCTRL ESC
+
+#define RT_2U_1 &kp SPACE
+#define RT_2U_2 &lt NAV ENTER
+#define RT_1U_1 &kp RGUI
+#define RT_1U_2 &kp RALT
+#define RT_1U_3 ___
+#define RT_1U_4 &mt RCTRL ESC
+
+#define BOOT &bootloader
+#define LED_IND_TOG &rgb_ug RGB_TOG
+#define LED_IND_BTS &rgb_ug RGB_MEFS_CMD 5
+
+#define BS(POS) &bt BT_SEL POS
+
+dvorak {
+    bindings = <
+        MM_F        MM_1        MM_2        MM_3        MM_4        MM_5        &tog NUM    &mo MOD     MM_6        MM_7        MM_8        MM_9        MM_0        MM_L
+        &kp TAB     &kp SEMI    &kp COMMA   &kp DOT     &kp P       &kp Y       &tog QWE    ___         &kp F       &kp G       &kp C       &kp R       &kp L       &kp FSLH
+        &kp ESC     &kp A       &kp O       &kp E       &kp U       &kp I       ___         ___         &kp D       &kp H       &kp T       &kp N       &kp S       &kp MINUS
+        &lstapd     &kp SQT     &kp Q       &kp J       &kp K       &kp X                               &kp B       &kp M       &kp W       &kp V       &kp Z       &rstapd
+        &mo FUN     &kp GRAVE   &kp CAPS    &kp LEFT    &kp RIGHT                                                   &kp DOWN    &kp UP      MM_AC       &kp BSLH    &mo FUN
+                                                                    LT_1U_4     LT_1U_3     RT_1U_3     RT_1U_4
+                                                                                LT_1U_2     RT_1U_2
+                                                        LT_2U_1     LT_2U_2     LT_1U_1     RT_1U_1     RT_2U_2     RT_2U_1
+    >;
+};
+
+qwerty {
+    bindings = <
+        &kp EQUAL   &kp N1      &kp N2      &kp N3      &kp N4      &kp N5      ___         ___         &kp N6      &kp N7      &kp N8      &kp N9      &kp N0      &kp MINUS
+        ___         &kp Q       &kp W       &kp E       &kp R       &kp T       ___         ___         &kp Y       &kp U       &kp I       &kp O       &kp P       &kp BSLH
+        ___         &kp A       &kp S       &kp D       &kp F       &kp G       ___         ___         &kp H       &kp J       &kp K       &kp L       &kp SEMI    &kp SQT
+        ___         &kp Z       &kp X       &kp C       &kp V       &kp B                               &kp N       &kp M       &kp COMMA   &kp DOT     &kp FSLH    ___
+        ___         &kp GRAVE   &kp CAPS    &kp LEFT    &kp RIGHT                                                   &kp DOWN    &kp UP      &kp LBKT    &kp RBKT    ___
+                                                                    ___         ___         ___         ___
+                                                                                ___         ___
+                                                        ___         ___         ___         ___         ___         ___
+    >;
+};
+
+nav {
+    bindings = <
+        &kp GRAVE   ___         ___         ___         ___         ___         ___         ___         _x_         _x_         _x_         _x_         _x_         _x_
+        &kp TAB     &kp PG_UP   &kp HOME    &kp UP      &kp END     _x_         ___         ___         _x_         _x_         _x_         _x_         _x_         _x_
+        ___         &kp PG_DN   &kp LEFT    &kp DOWN    &kp RIGHT   _x_         ___         ___         _x_         &sk RCTRL   &sk RSHFT   &sk RALT    &sk RGUI    _x_
+        ___         &kp M_UDO   &kp M_CUT   &kp M_CPY   &kp M_PST   &kp M_RDO                           _x_         _x_         _x_         _x_         &sk HYP     _x_
+        ___         ___         ___         ___         ___                                                         _x_         _x_         _x_         _x_         _x_
+                                                                    ___         ___         ___         ___
+                                                                                ___         ___
+                                                        ___         ___         ___         ___         ___         ___
+    >;
+};
+
+sym {
+    bindings = <
+        ___         ___         ___         ___         ___         ___         ___         ___         &kp CARET   &kp EXCL    &kp QMARK   &kp GRAVE   &kp AT      ___
+        ___         ___         ___         ___         ___         ___         _x_         _x_         &kp DLLR    &kp LPAR    &kp RPAR    &kp PRCNT   &kp STAR    ___
+        ___         &sk LGUI    &sk RALT    &sk LSHFT   &sk LCTRL   ___         _x_         _x_         &kp MINUS   &kp EQUAL   &kp DQT     &kp PLUS    &kp COLON   &kp UNDER
+        ___         &sk HYP     ___         ___         ___         ___                                 &kp HASH    &kp LBRC    &kp RBRC    &kp AMPS    &kp PIPE    ___
+        ___         ___         ___         ___         ___                                                         &kp FSLH    &kp BSLH    &kp LBKT    &kp RBKT    ___
+                                                                    ___         ___         ___         ___
+                                                                                ___         ___
+                                                        ___         ___         ___         ___         ___         ___
+    >;
+};
+
+num {
+    bindings = <
+        ___         ___         ___         ___         ___         ___         ___         &mo MOD     &kp KP_NUM  ___         ___         ___         ___         ___
+        ___         ___         ___         ___         ___         ___         _x_         _x_         &kp LBKT    &kp KP_N7   &kp KP_N8   &kp KP_N9   &kp RBKT    ___
+        ___         &sk LGUI    &sk RALT    &sk LSHFT   &sk LCTRL   ___         _x_         _x_         &kp EQUAL   &kp KP_N4   &kp KP_N5   &kp KP_N6   &kp COLON   ___
+        ___         &sk HYP     ___         ___         ___         ___                                 &kp BSLH    &kp KP_N1   &kp KP_N2   &kp KP_N3   ___         ___
+        ___         ___         ___         ___         ___                                                         ___         &kp COMMA   &kp KP_DOT  _x_         ___
+                                                                    ___         ___         ___         ___
+                                                                                ___         ___
+                                                        ___         ___         ___         ___         ___         &kp KP_N0
+    >;
+};
+
+fun {
+    bindings = <
+        &kp F1      &kp F2      &kp F3      &kp F4      &kp F5      &kp F6      &tog NUM    &mo MOD     &kp F7      &kp F8      &kp F9      &kp F10     &kp F11     &kp F12
+        ___         ___         ___         ___         ___         ___         _x_         _x_         ___         ___         ___         ___         ___         ___
+        ___         ___         ___         ___         ___         ___         _x_         _x_         ___         ___         ___         ___         ___         ___
+        ___         ___         ___         ___         ___         ___                                 ___         ___         ___         ___         ___         ___
+        ___         ___         ___         &kp C_PREV  &kp C_NEXT                                                  &kp C_VOL_DN &kp C_VOL_UP ___       ___         ___
+                                                                    ___         ___         ___         ___
+                                                                                ___         ___
+                                                        ___         ___         ___         ___         ___         &kp C_PP
+    >;
+};
+
+mod {
+    bindings = <
+        _x_         BS(0)       BS(1)       BS(2)       BS(3)       BS(4)       _x_         ___         BS(0)       BS(1)       BS(2)       BS(3)       BS(4)       _x_
+        _x_         _x_         _x_         _x_         _x_         _x_         BOOT        BOOT        _x_         _x_         _x_         _x_         _x_         _x_
+        _x_         _x_         _x_         _x_         _x_         _x_         LED_IND_BTS LED_IND_BTS _x_         _x_         _x_         _x_         _x_         _x_
+        _x_         _x_         _x_         _x_         _x_         _x_                                 _x_         _x_         _x_         _x_         _x_         _x_
+        _x_         _x_         _x_         &bl BL_INC  &bl BL_DEC                                                  &bl BL_DEC  &bl BL_INC  _x_         _x_         _x_
+                                                                    &bt BT_CLR  &bt BT_CLR  &bt BT_CLR  &bt BT_CLR
+                                                                                _x_         _x_
+                                                        LED_IND_TOG &bl BL_TOG  _x_         _x_         &bl BL_TOG  LED_IND_TOG
+    >;
+};
+
+#undef ___
+#undef _x_
+
+#undef HYP
+#undef M_CUT
+#undef M_CPY
+#undef M_PST
+#undef M_UDO
+#undef M_RDO
+
+/* Number row */
+#undef MM_F
+#undef MM_1
+#undef MM_2
+#undef MM_3
+#undef MM_4
+#undef MM_5
+#undef MM_6
+#undef MM_7
+#undef MM_8
+#undef MM_9
+#undef MM_0
+#undef MM_L
+
+#undef MM_AC
+/* Thumb keys */
+#undef LT_2U_1
+#undef LT_2U_2
+#undef LT_1U_1
+#undef LT_1U_2
+#undef LT_1U_3
+#undef LT_1U_4
+
+#undef RT_2U_1
+#undef RT_2U_2
+#undef RT_1U_1
+#undef RT_1U_2
+#undef RT_1U_3
+#undef RT_1U_4
+
+#undef BOOT
+#undef LED_IND_TOG
+#undef LED_IND_BTS
+#undef BS
+
+// vim: set cc=8,20,32,44,56,68,80,92,104,116,128,140,152,164,176:

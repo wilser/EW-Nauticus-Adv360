@@ -1,0 +1,96 @@
+
+Standards/ conventions:
+    For mod-tap, morphs, etc. - abbreviations for names:
+        H- hold behavior
+        T- tap behavior
+        TT- 2x-tap behavior (TTT, etc)
+
+
+
+EW Notes
+
+    - adv360.keymap seems the only file need to edit / unless split out some *.dtsi to include and if edit those sections
+    - keymap.json = seems only needed to drive the online GUI
+    - send Mod+CHAR like functions: <L|R><S|C|A|G> Left or Right | Shift, Ctrl, Alt, Win(GUI) - https://zmk.dev/docs/codes/modifiers 
+        E.g.: &kp RC(LA(B)) sends Ctrl+Alt+B (using r-ctrl, and l-alt)
+    &lt <#> <char> = Hold layer # unless quick then output <char>
+    &mo <lr#> = hold for that layer, return when release (use &lt instead if want quick tap to do something different)
+
+    "sticky layer" &sl # - is same as "one shot layer" toggle in QMK
+
+    Inside the JSON parts, comments aren't allowed; but people do like _comment: "some comment here"
+
+    LED (small) timeouts - see inside adv360_left_defconfig & ...right... // think (ms) timing
+
+MODS
+    - when used inline (not just solo key, but F(x) style), then must do the short form: LS(A) (Left-Shift + A), not LSHIFT, or other variations.
+
+MACRO fun...
+    [x] using functions inside one string &macro_tap NOT working; e.g. using LC(LEFT)
+            <&macro_tap &kp LC(LEFT) &kp LC(LS(RIGHT))>
+    [x] more simple didn't work - is it the FUNC uses?
+            <&kp LC(LEFT)>, <&kp LC(LS(RIGHT))>
+    [v] basic a, then b, then c as separate an no mods WORKED fine
+
+    If need LONGER THAN 64 actions (and &kp is two: down, up) - then revisit the "behavior queue limit"...
+
+    TIMINGS...
+        wait-time = pause *between* each action in the "bindings=" list. Default is 100ms
+        tap-time  = time a tap is 'held' when emulating press. Default is 100ms
+        default = 100
+        20-30 seems much tidier; caution if too close on the tap-ms can cause issues
+        Seems need 40 for some cases of reliability with modifiers
+
+
+Macro Notes
+
+    Sending F13-F24 - NEEDS WORKARONUD
+        /* simple F11 send works fine... A simple send F16 seems to do nothing... Is it the ≥F12 cases that's the issue? */
+        /* related to this option? https://github.com/zmkfirmware/zmk/issues/1460 ... ?  commented out this in 2 files (left, right): CONFIG_ZMK_HID_REPORT_TYPE_NKRO=y */
+        /* ******** YES YES ^^ commenting out this option then worked!  ********** */
+        /*
+        m_TestF11: m_TestF11 {
+            wait-ms = <100>;
+            tap-ms = <100>;
+            compatible = "zmk,behavior-macro";
+            label = "m_TestF11";
+            #binding-cells = <0>;
+            bindings = <&kp F11>;
+        };
+        */
+
+
+[ ] MACRO TODO - simplified helper function - only specify what's different
+/* try ZMK macro helper shortcut -- NOT WORKING with nested FN() calls -- come back to later? */
+/*
+ZMK_MACRO(m_TEST2
+    wait-ms = <30>;
+    tap-ms = <20>;
+    bindings = <&kp A>, <&kp B>;
+)
+*/
+
+----------------------------------------------------------------------------------------------------
+ISSUES & NOTES
+    2024-01-05 Win+<> timing and REMOTE DESKTOP
+        Util+{SR-shortcut} Ø work on remote-laptop / but the normal Meh+R does. WTH?
+		seems to send like CS-R or CA-R, not whole combo... Keyboard/ZMK issue?
+		seems known bug 2021? https://github.com/zmkfirmware/zmk/issues/759
+			one person says on RDP issue, but Windows-Store "RDP Classic" Ø have the issue?
+			one wondered if BT v USB could impact
+			one says also affects capsWORD sometimes (but maybe only certain OSes)
+			[.] ** one suggests macro: <down>key<up> etc. **
+				this reply has good Macro template: https://github.com/zmkfirmware/zmk/issues/759#issuecomment-1348836836
+				[ ] if do this ^, make note to re-visit after if/when upgrade baseline firmware
+				also relevant: https://github.com/zmkfirmware/zmk/issues/986
+				✔️ so far works!
+			[❌] "run Windows Shortcuts on the client only" RDP option?
+				"windows" key not officially supported, so hit and miss - and might be better in "full screen" mode than windowed - https://superuser.com/questions/815583/remote-desktop-sending-windows-key-shortcuts-to-both-local-machine-and-to-remote
+				options? https://learn.microsoft.com/en-us/windows-server/remote/remote-desktop-services/clients/rdp-files
+				seems best is "keyboardhook:i:1" but that's already the setting ... Hrm
+					https://superuser.com/questions/1456642/windows-keyboard-shortcuts-wont-work-in-remote-desktop
+			[?..] wonder if this would also have fixed the Clipmate issues... Seems so	
+    
+
+
+
