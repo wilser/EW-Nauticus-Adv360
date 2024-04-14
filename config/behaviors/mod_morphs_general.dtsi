@@ -29,3 +29,29 @@ mm_SHIFT_BACKSPACE_L: mm_SHIFT_BACKSPACE_L {
     bindings = <&kp LSHFT>, <&kp BACKSPACE>;
     mods = <(MOD_RSFT)>;
 };
+
+
+// GENERAL HELPER FOR ALT LAYOUTS - NEEDED FOR NON-STANDARD KEY | SHIFT-KEY COMBOS ...
+// [ ] TODO: still need to make it so the last-param (name) isn't needed; funky C-style syntax, not sure... (2024-04-14)
+#define MOD_MORPH_SHIFT(MM_NAME, KEY, MOD_KEY, AS_NAME) m_##MM_NAME: m_##MM_NAME { \
+    compatible = "zmk,behavior-mod-morph"; \
+    label = #MM_NAME; \
+    #binding-cells = <0>; \
+    bindings = <&kp KEY>, <&kp MOD_KEY>; \
+    mods = <(MOD_LSFT|MOD_RSFT)>; \
+}; \
+m_##AS_NAME: m_##AS_NAME { \
+    compatible = "zmk,behavior-hold-tap"; \
+    label = #AS_NAME; \
+    #binding-cells = <2>; \
+    tapping_term_ms = <150>; \
+    quick_tap_ms = <0>; \
+    flavor = "tap-preferred"; \
+    bindings = <&kp>, <&m_##MM_NAME>; \
+}; \
+
+
+// MISC for other layers (one-offs so not separate files)
+
+MOD_MORPH_SHIFT(mmNUM_Coln     , COLON            , SEMI            , mmsNUM_Coln )
+

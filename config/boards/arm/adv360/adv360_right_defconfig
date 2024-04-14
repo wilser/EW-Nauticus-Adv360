@@ -53,6 +53,9 @@ CONFIG_USB_DEVICE_MANUFACTURER="Kinesis Corporation"
 CONFIG_BT_CTLR_TX_PWR_PLUS_8=y
 
 #see https://zmk.dev/docs/config/system
+#see https://github.com/zmkfirmware/zmk/issues/1460
+#see https://github.com/zmkfirmware/zmk/issues/1236
+
 #seems NKRO (default) a mostly compatible, but allows some extended codes. But not reliably working with F13-F24...
 #might need also the Extended Report option?
 #CONFIG_ZMK_HID_REPORT_TYPE_NKRO=y 
@@ -60,6 +63,7 @@ CONFIG_BT_CTLR_TX_PWR_PLUS_8=y
 #and-or maybe this option related to F13-F24 - to FULL instead of BASIC (default)
 #CONFIG_ZMK_HID_CONSUMER_REPORT_USAGES_BASIC=y
 #CONFIG_ZMK_HID_CONSUMER_REPORT_USAGES_FULL=y
+#conclusion 2024-04-13: just commenting OUT the NKRO line worked
 
 CONFIG_BUILD_OUTPUT_UF2=y
 

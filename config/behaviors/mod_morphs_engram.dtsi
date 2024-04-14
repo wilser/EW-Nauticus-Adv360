@@ -7,50 +7,7 @@
 
 */
 
-/* #define - see the dvorak version/
-#define MOD_MORPH_SHIFT(MM_NAME, KEY, MOD_KEY, AS_NAME) m_##MM_NAME: m_##MM_NAME { \
-    compatible = "zmk,behavior-mod-morph"; \
-    label = #MM_NAME; \
-    #binding-cells = <0>; \
-    bindings = <&kp KEY>, <&kp MOD_KEY>; \
-    mods = <(MOD_LSFT|MOD_RSFT)>; \
-}; \
-m_##AS_NAME: m_##AS_NAME { \
-    compatible = "zmk,behavior-hold-tap"; \
-    label = #AS_NAME; \
-    #binding-cells = <2>; \
-    tapping_term_ms = <150>; \
-    quick_tap_ms = <0>; \
-    flavor = "tap-preferred"; \
-    bindings = <&kp>, <&m_##MM_NAME>; \
-}; \
-*/
-
-//  1|  2^  3~  4*  5<  6>  7$  8#  9%  0<Ø>
-// #s 1-0       // ref ↓              //after macro ref ↓:  m_<var-name>...
-//MOD_MORPH_SHIFT(mmNGM_1,  N1 ,  PIPE          , mmsNGM_1 )   // => "m_mmENG_1" ... etc. below
-//MOD_MORPH_SHIFT(mmNGM_2,  N2 ,  CARET         , mmsNGM_2 )
-//MOD_MORPH_SHIFT(mmNGM_3,  N3 ,  TILDE         , mmsNGM_3 )
-//MOD_MORPH_SHIFT(mmNGM_4,  N4 ,  STAR          , mmsNGM_4 )
-//MOD_MORPH_SHIFT(mmNGM_5,  N5 ,  LESS_THAN     , mmsNGM_5 )
-//MOD_MORPH_SHIFT(mmNGM_6,  N6 ,  GREATER_THAN  , mmsNGM_6 )
-//MOD_MORPH_SHIFT(mmNGM_7,  N7 ,  DLLR          , mmsNGM_7 )
-//MOD_MORPH_SHIFT(mmNGM_8,  N8 ,  HASH          , mmsNGM_8 )
-//MOD_MORPH_SHIFT(mmNGM_9,  N9 ,  PRCNT         , mmsNGM_9 )
-//MOD_MORPH_SHIFT(mmNGM_0,  N0 ,  LS(F24)       , mmsNGM_0 )    // AHK: Shift+F24 → •
-
-/*  #$  @`  ,;  '(  ")  .&  ?!  /\   */
-//MOD_MORPH_SHIFT(mmNGM_Hash,  HASH,           DLLR         , mmsNGM_Hash )
-//MOD_MORPH_SHIFT(mmNGM_At,    AT,             GRAVE        , mmsNGM_At   )
-//MOD_MORPH_SHIFT(mmNGM_Apos,  APOS,           LPAR         , mmsNGM_Apos )
-//MOD_MORPH_SHIFT(mmNGM_Cmma,  COMMA,          SEMI         , mmsNGM_Cmma )
-//MOD_MORPH_SHIFT(mmNGM_Mnus,  MINUS,          UNDERSCORE   , mmsNGM_Mnus )
-//MOD_MORPH_SHIFT(mmNGM_Quot,  DOUBLE_QUOTES,  RPAR         , mmsNGM_Quot )
-//MOD_MORPH_SHIFT(mmNGM_Perd,  PERIOD,         AMPS         , mmsNGM_Perd )
-//MOD_MORPH_SHIFT(mmNGM_Qust,  QUESTION,       EXCLAMATION  , mmsNGM_Qust )
-//MOD_MORPH_SHIFT(mmNGM_Slsh,  SLASH,          BACKSLASH    , mmsNGM_Slsh )
-
-/* already 'normal':  -_  [{   ]}   */
+/* ASSUMES GENERAL ONE INCLUDED BEFORE THIS ONE! */
 
 
 // ---------- NEW WIP LAYOUTS 2024-02-19+ ---------- //
