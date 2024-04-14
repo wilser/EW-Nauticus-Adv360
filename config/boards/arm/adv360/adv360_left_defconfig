@@ -72,3 +72,9 @@ CONFIG_ZMK_BLE_PASSKEY_ENTRY=n
 CONFIG_ZMK_BLE=y
 CONFIG_ZMK_USB=y
 CONFIG_ZMK_HID_INDICATORS=y
+
+# EW test 'idle' setting for hacking the small LED status lights timeout
+# ms before keyboard enters idle (first-tier sleep) which should turn off lights, but keep BT enabled and keyboard active
+# https://zmk.dev/docs/config/power
+# trying 20 minutes [1200000 ms] for LH side / [] can LH and RH have diff. values? (see right config)
+CONFIG_ZMK_IDLE_TIMEOUT=1200000

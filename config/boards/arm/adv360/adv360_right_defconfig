@@ -59,3 +59,7 @@ CONFIG_ZMK_BLE_EXPERIMENTAL_FEATURES=y
 
 CONFIG_ZMK_BLE=y
 CONFIG_ZMK_USB=y
+
+# EW test 'idle' setting for hacking the small LED status lights timeout - see notes in LEFT file
+# trying 5 minutes RH but 20 min LH / with diff. settings, seemed timed out sooner / try 20 min on both sides
+CONFIG_ZMK_IDLE_TIMEOUT=1200000
