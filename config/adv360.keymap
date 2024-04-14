@@ -333,14 +333,11 @@
             // end defines
         
             numpad_layer { bindings = <
-                ___    ___       ___         ___         ___         ___    &to L_0                                ___    &m_CHR_EU      &kp DOLLAR  &kp HASH   &kp PERCENT    &kp EQUAL         &m_CSA_R
-                ___    &kp LWIN  &kp LSHFT   &kp LALT    &kp LCTRL   ___    ___                                    ___    &kp BSPC       _7_CTL      _8_ALT     _9_SFT         &kp KP_ASTERISK   &kp KP_DIVIDE
-                ___    &kp BSPC  ___         &kp LEFT    &kp RIGHT   ___    ___                                    ___    &as LBKT LPAR  &kp N4      &kp N5     &kp N6         &as RBKT RPAR     &as LS(MINUS) KP_MINUS
-                ___    ___       ___         ___         ___         ___                                                  &kp SPACE      &kp N1      &kp N2     &kp N3         &as SEMI KP_PLUS  ___
-                ___    ___       ___         ___         ___                                                                             ___         ___        &as COMMA DOT  &kp KP_ENTER      &to L_0 
-                                                                          &kp LSHFT  &to L_0        &kp BSPC    &kp SPACE
-                                                                                       ___            &kp TAB
-                                                                       ___    ___    ___               &kp RS(TAB)  ___    &kp N0
+                ___    ___       ___         ___         ___         ___    &to L_0                                                           ___    &m_CHR_EU      &kp DOLLAR  &kp HASH   &kp PERCENT    &kp EQUAL         &m_CSA_R
+                ___    &kp LWIN  &kp LSHFT   &kp LALT    &kp LCTRL   ___    ___                                                               ___    &kp BSPC       _7_CTL      _8_ALT     _9_SFT         &kp KP_ASTERISK   &kp KP_DIVIDE
+                ___    &kp BSPC  ___         &kp LEFT    &kp RIGHT   ___    ___      &kp LSHFT  &to L_0        &kp BSPC    &kp SPACE          ___    &as LBKT LPAR  &kp N4      &kp N5     &kp N6         &as RBKT RPAR     &as LS(MINUS) KP_MINUS
+                ___    ___       ___         ___         ___         ___                          ___            &kp TAB                             &kp SPACE      &kp N1      &kp N2     &kp N3         &as SEMI KP_PLUS  ___
+                ___    ___       ___         ___         ___                      ___    ___    ___               &kp RS(TAB)  ___    &kp N0                        ___         ___        &as COMMA DOT  &kp KP_ENTER      &to L_0 
             >; };
 
             // #UNDEFS:
@@ -369,14 +366,11 @@
                 #define _MONOFF &kp RC(RG(L)) // Win+Ctrl+L invokes my AHK lock+monoff macro
 
             util_layer { bindings = <
-                &m_SLEEP    &to 1         &to 2         &to 3         &to 4         &to 5         &to L_0                                ___       &to 6      &to 7       &to 8        &to 9        &to 10       &to 0
-                &m_HIBER    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  _x_                                    _x_       _x_        &kp N1      &kp N2       &m_CSA_R     &kp N3       &kp RS(N2)
-                ___         _x_           _x_           _x_           _x_           _x_           _x_                                    _MONOFF   _x_        &m_M1       &m_M2        &m_M3        &m_M4        &kp RS(N3)
-                &bt BT_CLR  _x_           _x_           _x_           _x_           _x_                                                            _x_        &m_M5       &m_M6        &m_M7        &m_M8        &kp RS(N4)
-                _BTLD       _x_           _x_           ___           ___                                                                                     ___         ___          _x_          _x_          _BTLD
-                                                                                                   _x_   &kp C_VOL_UP      _RGB_TG    &bt BT_CLR
-                                                                                                       &kp C_VOL_DN          _BKL_TG
-                                                                                        ___    ___   &kp C_MUTE                _x_     ___    ___
+                &m_SLEEP    &to 1         &to 2         &to 3         &to 4         &to 5         &to L_0                                                            ___       &to 6   &to 7    &to 8    &to 9      &to 10   &to 0
+                &m_HIBER    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  _x_                                                                _x_       _x_     &kp N1   &kp N2   &m_CSA_R   &kp N3   &kp RS(N2)
+                ___         _x_           _x_           _x_           _x_           _x_           _x_              _x_   &kp C_VOL_UP      _RGB_TG    &bt BT_CLR               _MONOFF   _x_     &m_M1    &m_M2    &m_M3      &m_M4    &kp RS(N3)
+                &bt BT_CLR  _x_           _x_           _x_           _x_           _x_                                &kp C_VOL_DN          _BKL_TG                                     _x_     &m_M5    &m_M6    &m_M7      &m_M8    &kp RS(N4)
+                _BTLD       _x_           _x_           ___           ___                               ___    ___   &kp C_MUTE                _x_     ___    ___                                ___      ___      _x_        _x_      _BTLD
             >; };
 
             // #UNDEFs
@@ -393,14 +387,11 @@
             *
             */
             fn_1_12_layer { bindings = <
-                _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                ___    _x_    &kp F10  &kp F11  &kp F12  _x_    _x_
-                ___    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    ___                                    ___    _x_    &kp F7   &kp F8   &kp F9   _x_    _x_
-                ___    _x_        _x_         _x_        _x_        _x_    ___                                    ___    _x_    &kp F4   &kp F5   &kp F6   _x_    _x_
-                _x_    _x_        _x_         _x_        _x_        _x_                                                  _x_    &kp F1   &kp F2   &kp F3   _x_    _x_
-                _x_    _x_        _x_         ___        ___                                                                    _x_      _x_      _x_      _x_    _x_
-                                                                                _x_    _x_        _x_    _x_
-                                                                                    _x_          _x_
-                                                                    ___    ___    _x_            _x_    _x_    _x_
+                _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                            ___    _x_    &kp F10  &kp F11  &kp F12  _x_    _x_
+                ___    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    ___                                                ___    _x_    &kp F7   &kp F8   &kp F9   _x_    _x_
+                ___    _x_        _x_         _x_        _x_        _x_    ___              _x_   _x_     _x_   _x_           ___    _x_    &kp F4   &kp F5   &kp F6   _x_    _x_
+                _x_    _x_        _x_         _x_        _x_        _x_                         _x_         _x_                      _x_    &kp F1   &kp F2   &kp F3   _x_    _x_
+                _x_    _x_        _x_         ___        ___                        ___  ___  _x_            _x_  _x_  _x_                  _x_      _x_      _x_      _x_    _x_
             >; };
         // END Fn Keys
 
@@ -416,14 +407,11 @@
             */
             
             navnedit_layer { bindings = <
-                _x_    _x_       _x_         &kp LC(S)      &kp LC(O)        &kp LC(W)        &to L_0                                            ___        _x_         _x_        _x_        _x_        _x_          _x_
-                ___    _x_       _x_         _x_            &kp LC(K)        &kp LC(I)        _x_                                                _x_        _x_         _x_        _x_        _x_        _x_          _x_
-                ___    _x_       &kp LC(X)   &kp LC(C)      &kp LC(V)        &kp LC(B)        _x_                                                _x_        _x_         _x_        _x_        _x_        _x_          _x_
-                ___    _x_       _x_         &kp F13        &kp LC(F13)      &m_CSA_V                                                                       _x_         _x_        _x_        &m_CSA_V   _x_          _x_
-                ___    _x_       _x_         ___            ___                                                                                                         ___        ___        _x_        _x_          _x_
-                                                                                                &m_SEL_WRD_L   &m_SEL_WRD_R         _x_      _x_
-                                                                                                               &m_SEL_LINE           _x_
-                                                                                  &kp LC(Z)      &kp LC(Y)      &kp RC(A)             _x_      _x_        _x_
+                _x_  _x_   _x_         &kp LC(S)   &kp LC(O)     &kp LC(W)   &to L_0                                                              ___   _x_   _x_   _x_   _x_        _x_   _x_
+                ___  _x_   _x_         _x_         &kp LC(K)     &kp LC(I)   _x_                                                                  _x_   _x_   _x_   _x_   _x_        _x_   _x_
+                ___  _x_   &kp LC(X)   &kp LC(C)   &kp LC(V)     &kp LC(B)   _x_                  &m_SEL_WRD_L   &m_SEL_WRD_R     _x_   _x_             _x_   _x_   _x_   _x_   _x_        _x_   _x_
+                ___  _x_   _x_         &kp F13     &kp LC(F13)   &m_CSA_V                                        &m_SEL_LINE       _x_                        _x_   _x_   _x_   &m_CSA_V   _x_   _x_
+                ___  _x_   _x_         ___         ___                              &kp LC(Z)      &kp LC(Y)      &kp RC(A)         _x_   _x_   _x_                 ___   ___   _x_        _x_   _x_
             >; };
             
         // END Nav / Edit
@@ -433,14 +421,11 @@
             *      (no yet KeyboardLayoutEditor)
             */
             kp_layer { bindings = <
-                _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                             ___    _x_    _x_         _x_         _x_         _x_    _x_
-                ___    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    _x_                                 _x_    _x_    &kp KP_N7   &kp KP_N8   &kp KP_N9   _x_    _x_
-                ___    _x_        _x_         _x_        _x_        _x_    _x_                                 _x_    _x_    &kp KP_N4   &kp KP_N5   &kp KP_N6   _x_    _x_
-                _x_    _x_        _x_         _x_        _x_        _x_                                               _x_    &kp KP_N1   &kp KP_N2   &kp KP_N3   _x_    _x_
-                _x_    _x_        _x_         ___        ___                                                                 _x_         _x_         _x_         _x_    _x_
-                                                                                _x_    _x_        _x_    _x_
-                                                                                    _x_            _x_
-                                                                    ___    ___    _x_               _x_    &kp ENTER  &kp KP_N0
+                _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                                   ___    _x_    _x_         _x_         _x_         _x_    _x_
+                ___    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    _x_                                                       _x_    _x_    &kp KP_N7   &kp KP_N8   &kp KP_N9   _x_    _x_
+                ___    _x_        _x_         _x_        _x_        _x_    _x_           _x_  _x_    _x_   _x_                       _x_    _x_    &kp KP_N4   &kp KP_N5   &kp KP_N6   _x_    _x_
+                _x_    _x_        _x_         _x_        _x_        _x_                      _x_      _x_                                   _x_    &kp KP_N1   &kp KP_N2   &kp KP_N3   _x_    _x_
+                _x_    _x_        _x_         ___        ___                      ___  ___  _x_        _x_  &kp ENTER  &kp KP_N0                   _x_         _x_         _x_         _x_    _x_
             >; };
         // END KP Numpad
 
@@ -449,14 +434,11 @@
             *      (no yet KeyboardLayoutEditor)
             */
             fn_13_24_layer { bindings = <
-                _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                ___    _x_    &kp F22   &kp F23   &kp F24   _x_    _x_
-                ___    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    _x_                                    _x_    _x_    &kp F19   &kp F20   &kp F21   _x_    _x_
-                ___    _x_        _x_         _x_        _x_        _x_    _x_                                    _x_    _x_    &kp F16   &kp F17   &kp F18   _x_    _x_
-                _x_    _x_        _x_         _x_        _x_        _x_                                                  _x_    &kp F13   &kp F14   &kp F15   _x_    _x_
-                _x_    _x_        _x_         ___        ___                                                                    ___       ___       _x_       _x_    _x_
-                                                                                _x_    _x_        _x_    _x_
-                                                                                    _x_          _x_
-                                                                    ___    ___    _x_            _x_    ___    ___
+                _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                          ___    _x_    &kp F22   &kp F23   &kp F24   _x_    _x_
+                ___    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    _x_                                              _x_    _x_    &kp F19   &kp F20   &kp F21   _x_    _x_
+                ___    _x_        _x_         _x_        _x_        _x_    _x_           _x_   _x_        _x_   _x_         _x_    _x_    &kp F16   &kp F17   &kp F18   _x_    _x_
+                _x_    _x_        _x_         _x_        _x_        _x_                       _x_          _x_                     _x_    &kp F13   &kp F14   &kp F15   _x_    _x_
+                _x_    _x_        _x_         ___        ___                       ___  ___  _x_            _x_   ___   ___               ___       ___       _x_       _x_    _x_
             >; };
         // END FN 13-24
 
