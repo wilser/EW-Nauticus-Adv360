@@ -258,9 +258,6 @@
                 //#undef MT_AMnu_CtrlQ
         // END Dvorak
         
-        /* [OLD] COLEMAK  -- 2023-12-20 removed from main layout - see /notes_and_ref/old_Colemak.keymap
-        */
-
         /*****************************************************************************************************
         * L1 ⚪ ENGRAM
             URL layout: http://www.keyboard-layout-editor.com/#/gists/32760c7c88bd4bd39b3eba742b14dcb7
@@ -286,14 +283,11 @@
             // end defines
 
             engram_layer { bindings = <
-                &m_mmsNGM_Lbrc RBRC 0       &m_mmsNGM_1 GRAVE 0         &m_mmsNGM_2 AT 0            &m_mmsNGM_3 BACKSLASH 0    &m_mmsNGM_4 TILDE 0  &m_mmsNGM_5 PIPE 0             &to L_DVK                 ___    &as LS(N6) N6                   &m_mmsNGM_7 DLLR 0   &m_mmsNGM_8 HASH 0   &m_mmsNGM_9 PRCNT 0   &m_mmsNGM_0 EQUAL 0   &m_mmsNGM_Qstn EXCLAMATION 0
-                ___                         _B_GUI                      _Y_SFT                      _O_ALT                     _U_CTL               &m_mmsNGM_Amps LESS_THAN 0     ___                       ___    &m_mmsNGM_Equl GREATER_THAN 0   _L_CTL               _D_ALT               _W_SFT                _V_GUI                &m_mmsNGM_Slsh STAR 0
-                ___                         &kp C                       &kp I                       &kp E                      &kp A                &m_mmsNGM_Cmma SEMI 0          ___                       ___    &m_mmsNGM_Perd DOUBLE_QUOTES 0  &kp H                &kp T                &kp S                 &kp N                 &m_mmsNGM_Mnus UNDERSCORE 0
-                &m_mmsNGM_Apos LS(F22) 0    &lt L_NVE G                 &kp X                       &lt L_UTL J                &lt L_NUM K          &m_mmsNGM_Lpar LBKT 0                                           &m_mmsNGM_Rpar RBKT 0           &kp R                &kp M                &kp F                 &kp P                 &m_mmsNGM_Coln PLUS 0
-                ___                         &m_mmsNGM_Ing LS(F21) 0     &as RC(Q) K_CMENU           ___                        ___                                                                                                                  ___                  ___                  &kp Q                 &kp Z                 ___
-                                                                                                                                                                                     ___    ___        ___    ___
-                                                                                                                                                                                           ___          ___
-                                                                                                                                                                            ___    ___    ___            ___    ___    ___
+                &m_mmsNGM_Lbrc RBRC 0       &m_mmsNGM_1 GRAVE 0        &m_mmsNGM_2 AT 0     &m_mmsNGM_3 BACKSLASH 0    &m_mmsNGM_4 TILDE 0   &m_mmsNGM_5 PIPE 0             &to L_DVK                                              ___    &as LS(N6) N6                    &m_mmsNGM_7 DLLR 0   &m_mmsNGM_8 HASH 0   &m_mmsNGM_9 PRCNT 0   &m_mmsNGM_0 EQUAL 0   &m_mmsNGM_Qstn EXCLAMATION 0
+                ___                         _B_GUI                     _Y_SFT               _O_ALT                     _U_CTL                &m_mmsNGM_Amps LESS_THAN 0     ___               ___   ___        ___   ___           ___    &m_mmsNGM_Equl GREATER_THAN 0    _L_CTL               _D_ALT               _W_SFT                _V_GUI                &m_mmsNGM_Slsh STAR 0
+                ___                         &kp C                      &kp I                &kp E                      &kp A                 &m_mmsNGM_Cmma SEMI 0          ___                    ___          ___                ___    &m_mmsNGM_Perd DOUBLE_QUOTES 0   &kp H                &kp T                &kp S                 &kp N                 &m_mmsNGM_Mnus UNDERSCORE 0
+                &m_mmsNGM_Apos LS(F22) 0    &lt L_NVE G                &kp X                &lt L_UTL J                &lt L_NUM K           &m_mmsNGM_Lpar LBKT 0                    ___   ___   ___            ___   ___   ___          &m_mmsNGM_Rpar RBKT 0            &kp R                &kp M                &kp F                 &kp P                 &m_mmsNGM_Coln PLUS 0
+                ___                         &m_mmsNGM_Ing LS(F21) 0    &as RC(Q) K_CMENU    ___                        ___                                                                                                                                                 ___                  ___                  &kp Q                 &kp Z                 ___
             >; };
 
             // #UNDEFs
@@ -317,14 +311,11 @@
             *   [.] layer-hold else TD - works? 7/3 "expected number or parenthesized expression"; try adding & bef TD? → compiled, but the TD didn't fire at all, just layer-hold
             */
             lr_layer { bindings = <
-                &TD_LR_E      &TD_LR_1          &TD_LR_2         &TD_LR_3         &TD_LR_4            &TD_LR_5              &to L_0                           ___           &kp LC(LA(N1))   &kp LC(LA(N2))   &kp LC(LA(N3))   &kp LC(LA(N6))   &kp N0           ___  
-                ___           &hm_slw LGUI G    &hm_slw LSHFT B  &hm_slw LALT Y   &hm_slw LCTRL P     &hm_slw RALT M        &kp LS(W)                         _x_           ___              ___              ___              ___              _x_              &as BSLH LC(L)
-                ___           &kp A             &kp O            &kp D            &TD_LR_U            &kp S                 &kp R                             _x_           ___              ___              ___              ___              ___              ___
-                &kp LC(APOS)  &lt L_NVE Q       &kp LC(LS(D))    &kp J            &lt L_NUM X         &kp Z                                                                 ___              ___              ___              ___              ___              ___
-                &kp LC(Z)     &kp LS(T)         _x_              ___              ___                                                                                                        ___              ___              ___              ___              &kp LC(APOS)
-                                                                                                                             ___     &to L_0           _x_    _x_       
-                                                                                                                                   &kp C                ___       
-                                                                                                                   ___    ___    &kp N                    ___    ___           ___
+                &TD_LR_E      &TD_LR_1        &TD_LR_2         &TD_LR_3        &TD_LR_4         &TD_LR_5         &to L_0                                                 ___    &kp LC(LA(N1))   &kp LC(LA(N2))   &kp LC(LA(N3))   &kp LC(LA(N6))   &kp N0    ___  
+                ___           &hm_slw LGUI G  &hm_slw LSHFT B  &hm_slw LALT Y  &hm_slw LCTRL P  &hm_slw RALT M   &kp LS(W)                                               _x_    ___              ___              ___              ___              _x_       &as BSLH LC(L)
+                ___           &kp A           &kp O            &kp D           &TD_LR_U         &kp S            &kp R               ___   &to L_0    _x_  _x_           _x_    ___              ___              ___              ___              ___       ___
+                &kp LC(APOS)  &lt L_NVE Q     &kp LC(LS(D))    &kp J           &lt L_NUM X      &kp Z                                     &kp C         ___                     ___              ___              ___              ___              ___       ___
+                &kp LC(Z)     &kp LS(T)       _x_              ___             ___                                          ___   ___   &kp N             ___  ___  ___                          ___              ___              ___              ___       &kp LC(APOS)
             >; };
         // END Lightroom
 
@@ -468,98 +459,6 @@
                                                                     ___    ___    _x_            _x_    ___    ___
             >; };
         // END FN 13-24
-
-        /*****************************************************************************************************
-        * L9 ▢ MTGAP / modified ["MTG"]
-            URL layout: http://www.keyboard-layout-editor.com/#/gists/8b6804a7d06d148e4298ca4d7c8e3d56
-            NOTES:
-                • SYNTAX for mod-morph holds: "&<macro-named> <hold-key> 0"
-            TODO:
-                ▢ IF decide to keep, LOTS of more work to do
-                ▢ #-row not done; most punc. not done
-                ▢ CHORDS not added to layer-list
-            */
-
-            // DEFINES:
-                #define _Y_GUI      &hm_slw LGUI Y      // GUI/Win on pinkie fingers
-                #define _P_SFT      &hm_l LSHFT P       // Shift on ring fingers
-                #define _O_ALT      &hm_l LALT O        // Alt on middle fingers
-                #define _U_CTL      &hm_l LCTRL U       // Ctrl on index fingers
-                #define _D_CTL      &hm_r RCTRL D       // Ctrl
-                #define _L_ALT      &hm_r RALT L        // Alt
-                #define _C_SFT      &hm_r RSFT C        // Shift
-                #define _W_GUI      &hm_slw RGUI W      // GUI/Win
-            // end defines
-            
-            mtgap_layer { bindings = <
-                ___    &kp N1                  &kp N2                 &kp N3               &kp N4              &kp N5                         &to 0                              &sl L_UTL   &kp N6                        &kp N7              &kp N8              &kp N9               &kp N0                 &m_mmsNGM_Slsh BACKSLASH 0 
-                ___    _Y_GUI                  _P_SFT                 _O_ALT               _U_CTL              &kp J                          ___                                ___         &kp K                         _D_CTL              _L_ALT              _C_SFT               _W_GUI                 ___
-                ___    &kp I                   &kp N                  &kp E                &kp A               &m_mmsNGM_Cmma SEMI 0          ___                                ___         &kp M                         &kp H               &kp T               &kp S                &kp R                  &kp APOS
-                ___    &lt L_NVE Q             &kp Z                  &lt L_UTL SLASH      &lt L_NUM PERIOD    &m_mmsNGM_Mnus UNDERSCORE 0                                                   &kp B                         &kp F               &kp G               &kp V                &kp X                  &kp COLON
-                ___    &kp QUESTION            &kp QUESTION           ___                  ___                                                                                                                             ___                 ___                 ___                  ___                    ___
-                                                                                                                                                    ___    ___        ___    ___
-                                                                                                                                                        ___            ___
-                                                                                                                                        ___    ___    ___               ___    ___    ___
-            >; };
-
-            // #UNDEFs
-                #undef _Y_GUI
-                #undef _P_SFT
-                #undef _O_ALT
-                #undef _U_CTL
-                #undef _D_CTL
-                #undef _L_ALT
-                #undef _C_SFT
-                #undef _W_GUI
-            // end undefs
-
-        // END MTGAP
-
-        /*****************************************************************************************************
-        * L10 ▢ UCIEA ["UCI"]
-            URL layout: http://www.keyboard-layout-editor.com/#/gists/94ae7d27f9aecccdd9e53759ab2de91e
-            NOTES:
-                • SYNTAX for mod-morph holds: "&<macro-named> <hold-key> 0"
-            TODO:
-                ▢ IF decide to keep, LOTS of more work to do
-                ▢ #-row not done; most punc. not done
-                ▢ CHORDS not added to layer-list
-            */
-
-            // DEFINES:
-                #define _P_GUI      &hm_slw LGUI P      // GUI/Win on pinkie fingers
-                #define _Y_SFT      &hm_l LSHFT Y       // Shift on ring fingers
-                #define _U_ALT      &hm_l LALT U        // Alt on middle fingers
-                #define _O_CTL      &hm_l LCTRL O       // Ctrl on index fingers
-                #define _D_CTL      &hm_r RCTRL D       // Ctrl
-                #define _H_ALT      &hm_r RALT H        // Alt
-                #define _F_SFT      &hm_r RSFT F        // Shift
-                #define _X_GUI      &hm_slw RGUI X      // GUI/Win
-            // end defines
-            
-            uciea_layer { bindings = <
-                ___    &kp N1                  &kp N2                 &kp N3               &kp N4              &kp N5                         &to 0                              &sl L_UTL   &kp N6                        &kp N7              &kp N8              &kp N9               &kp N0                 &m_mmsNGM_Slsh BACKSLASH 0 
-                ___    _P_GUI                  _Y_SFT                 _U_ALT               _O_CTL              &kp SEMI                       ___                                ___         &kp K                         _D_CTL              _H_ALT              _F_SFT               _X_GUI                 &kp Q
-                ___    &kp C                   &kp I                  &kp E                &kp A               &kp APOS                       ___                                ___         &kp G                         &kp T               &kp N               &kp S                &kp R                  &kp J
-                ___    &lt L_NVE Z             &kp SLASH              &lt L_UTL COMMA      &lt L_NUM PERIOD    &m_mmsNGM_Mnus UNDERSCORE 0                                                   &kp W                         &kp M               &kp L               &kp B                &kp V                  &kp COLON
-                ___    &kp QUESTION            &kp QUESTION           ___                  ___                                                                                                                             ___                 ___                 ___                  ___                    ___
-                                                                                                                                                    ___    ___        ___    ___
-                                                                                                                                                        ___            ___
-                                                                                                                                        ___    ___    ___               ___    ___    ___
-            >; };
-
-            // #UNDEFs
-                #undef _P_GUI
-                #undef _Y_SFT
-                #undef _U_ALT
-                #undef _O_CTL
-                #undef _D_CTL
-                #undef _H_ALT
-                #undef _F_SFT
-                #undef _X_GUI
-            // end undefs
-
-        // END UCIEA
 
     };
 };

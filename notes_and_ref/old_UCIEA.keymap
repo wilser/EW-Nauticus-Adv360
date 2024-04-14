@@ -1,0 +1,45 @@
+        /*****************************************************************************************************
+        * L10 ▢ UCIEA ["UCI"]
+            URL layout: http://www.keyboard-layout-editor.com/#/gists/94ae7d27f9aecccdd9e53759ab2de91e
+            NOTES:
+                • SYNTAX for mod-morph holds: "&<macro-named> <hold-key> 0"
+            TODO:
+                ▢ IF decide to keep, LOTS of more work to do
+                ▢ #-row not done; most punc. not done
+                ▢ CHORDS not added to layer-list
+            */
+
+            // DEFINES:
+                #define _P_GUI      &hm_slw LGUI P      // GUI/Win on pinkie fingers
+                #define _Y_SFT      &hm_l LSHFT Y       // Shift on ring fingers
+                #define _U_ALT      &hm_l LALT U        // Alt on middle fingers
+                #define _O_CTL      &hm_l LCTRL O       // Ctrl on index fingers
+                #define _D_CTL      &hm_r RCTRL D       // Ctrl
+                #define _H_ALT      &hm_r RALT H        // Alt
+                #define _F_SFT      &hm_r RSFT F        // Shift
+                #define _X_GUI      &hm_slw RGUI X      // GUI/Win
+            // end defines
+            
+            uciea_layer { bindings = <
+                ___    &kp N1                  &kp N2                 &kp N3               &kp N4              &kp N5                         &to 0                              &sl L_UTL   &kp N6                        &kp N7              &kp N8              &kp N9               &kp N0                 &m_mmsNGM_Slsh BACKSLASH 0 
+                ___    _P_GUI                  _Y_SFT                 _U_ALT               _O_CTL              &kp SEMI                       ___                                ___         &kp K                         _D_CTL              _H_ALT              _F_SFT               _X_GUI                 &kp Q
+                ___    &kp C                   &kp I                  &kp E                &kp A               &kp APOS                       ___                                ___         &kp G                         &kp T               &kp N               &kp S                &kp R                  &kp J
+                ___    &lt L_NVE Z             &kp SLASH              &lt L_UTL COMMA      &lt L_NUM PERIOD    &m_mmsNGM_Mnus UNDERSCORE 0                                                   &kp W                         &kp M               &kp L               &kp B                &kp V                  &kp COLON
+                ___    &kp QUESTION            &kp QUESTION           ___                  ___                                                                                                                             ___                 ___                 ___                  ___                    ___
+                                                                                                                                                    ___    ___        ___    ___
+                                                                                                                                                        ___            ___
+                                                                                                                                        ___    ___    ___               ___    ___    ___
+            >; };
+
+            // #UNDEFs
+                #undef _P_GUI
+                #undef _Y_SFT
+                #undef _U_ALT
+                #undef _O_CTL
+                #undef _D_CTL
+                #undef _H_ALT
+                #undef _F_SFT
+                #undef _X_GUI
+            // end undefs
+
+        // END UCIEA
