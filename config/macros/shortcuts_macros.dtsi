@@ -106,9 +106,9 @@ m_QU_cap: m_QU_cap {
     label = "m_QU_cap";
     #binding-cells = <0>;
     //bindings = <&kp RS(Q) &kp U>; // but only doing either "qu" or "QU" ...
-    bindings = <&macro_press &kp RSHFT>
-    , <&macro_tap &kp Q>
-    , <&macro_release &kp RSHIFT>
+    bindings =
+      <&macro_tap &kp Q>
+    , <&macro_release &kp LSHIFT> // being held when triggered, so think just release?
     , <&macro_tap &kp U>;
 };
 

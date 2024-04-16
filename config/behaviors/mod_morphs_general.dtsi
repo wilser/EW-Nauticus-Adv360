@@ -37,14 +37,14 @@ mm_SHIFT_BACKSPACE_L: mm_SHIFT_BACKSPACE_L {
 // [ ] TODO: still need to make it so the last-param (name) isn't needed; funky C-style syntax, not sure... (2024-04-14)
 #define MOD_MORPH_SHIFT(MM_NAME, KEY, MOD_KEY, AS_NAME) m_##MM_NAME: m_##MM_NAME { \
     compatible = "zmk,behavior-mod-morph"; \
-    //label = #MM_NAME; \
+    label = #MM_NAME; \
     #binding-cells = <0>; \
     bindings = <&kp KEY>, <&kp MOD_KEY>; \
     mods = <(MOD_LSFT|MOD_RSFT)>; \
 }; \
 m_##AS_NAME: m_##AS_NAME { \
     compatible = "zmk,behavior-hold-tap"; \
-    //label = #AS_NAME; \
+    label = #AS_NAME; \
     #binding-cells = <2>; \
     tapping-term-ms = <150>; \
     quick-tap-ms = <0>; \
