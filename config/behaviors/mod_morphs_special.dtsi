@@ -19,7 +19,7 @@
 as_mm_Qu: autoshift_modmorph_Qu {
     compatible = "zmk,behavior-hold-tap";
     label = "autoshift_modmorph_Qu";
-    #binding-cells = <0>;
+    #binding-cells = <2>;
     tapping-term-ms = <200>;
     quick-tap-ms = <0>;
     flavor = "tap-preferred";
@@ -30,7 +30,7 @@ mm_SHIFT_QU: mm_SHIFT_QU {
     compatible = "zmk,behavior-mod-morph";
     label = "mm_SHIFT_QU";
     #binding-cells = <2>;
-    bindings = <&m_QU>, <&m_QU_cap>;
+    bindings = <&m_QU &m_QU_cap>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 };
 
