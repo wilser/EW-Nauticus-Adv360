@@ -1,0 +1,26 @@
+
+
+/* TBD / WIP
+    trying for one setup which will do these behaviors on one key assignment:
+        tap: "qu"
+        Shift+tap: "Qu"
+        hold: "q"
+            (implying Shift+_hold_ => "Q")
+*/
+
+// see also mod_morphs_general for c-macro example
+// shortcuts_macros.dtsi for the Qu and qu macros
+
+
+// mod-morph so Shift+KEY => "Qu" macro
+// bindings = <1-non-shifted> <2-shifted> results ↓
+    // When tap (#1) "qu" macro; when shift-tap (#2) "Qu" macro
+mm_SHIFT_QU: mm_SHIFT_QU {
+    compatible = "zmk,behavior-mod-morph";
+    label = "mm_SHIFT_QU";
+    #binding-cells = <0>;
+    bindings = <&m_QU>, <&m_QU_cap>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+};
+
+

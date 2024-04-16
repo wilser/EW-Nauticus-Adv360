@@ -109,6 +109,7 @@
         #include "behaviors/mod_morphs_general.dtsi"
         #include "behaviors/mod_morphs_dvorak.dtsi"
         #include "behaviors/mod_morphs_engram.dtsi"
+        #include "behaviors/mod_morphs_special.dtsi"
 
         /*  NOTES - hold-tap
             FLAVORS: https://zmk.dev/docs/behaviors/hold-tap

@@ -89,3 +89,22 @@ m_ion: m_ion {
     #binding-cells = <0>;
     bindings = <&kp I &kp O &kp N>;
 };
+
+m_QU: m_QU {    
+    wait-ms = _WAIT;
+    tap-ms = _TAP;
+    compatible = "zmk,behavior-macro";
+    label = "m_QU";
+    #binding-cells = <0>;
+    bindings = <&kp Q &kp U>;
+};
+
+m_QU_cap: m_QU_cap {    
+    wait-ms = _WAIT;
+    tap-ms = _TAP;
+    compatible = "zmk,behavior-macro";
+    label = "m_QU_cap";
+    #binding-cells = <0>;
+    bindings = <&kp LS(Q) &kp U>;
+};
+
