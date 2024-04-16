@@ -23,7 +23,7 @@ as_mm_Qu: autoshift_modmorph_Qu {
     tapping-term-ms = <200>;
     quick-tap-ms = <0>;
     flavor = "tap-preferred";
-    bindings = <&kp>, <&mm_SHIFT_QU 0 0>;
+    bindings = <&kp &mm_SHIFT_QU>;
 };
 
 mm_SHIFT_QU: mm_SHIFT_QU {
