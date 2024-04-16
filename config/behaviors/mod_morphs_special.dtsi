@@ -15,6 +15,18 @@
 // mod-morph so Shift+KEY => "Qu" macro
 // bindings = <1-non-shifted> <2-shifted> results ↓
     // When tap (#1) "qu" macro; when shift-tap (#2) "Qu" macro
+
+as_mm_Qu: autoshift_modmorph_Qu {
+    compatible = "zmk,behavior-hold-tap";
+    label = autoshift_morph;
+    #binding-cells = <2>;
+    tapping-term-ms = <200>;
+    quick-tap-ms = <0>;
+    flavor = "tap-preferred";
+    bindings = <&kp Q>, <&mm_SHIFT_QU>;
+
+}
+
 mm_SHIFT_QU: mm_SHIFT_QU {
     compatible = "zmk,behavior-mod-morph";
     label = "mm_SHIFT_QU";
