@@ -6,6 +6,14 @@
         Shift+tap: "Qu"
         hold: "q"
             (implying Shift+_hold_ => "Q")
+
+    NOTES learned:
+        #binding-cells = # parms the behavior needs
+        some can change, some must match the YAML template
+        so hold-tap requires <2>, and they can be refs to further behaviors, but those need parms passed in
+        e.g. &kp takes 1 key, then the &macro can take 0, (not pass any thru)
+            but it does need dummy-0 passed at Keybinding layer to honor the 
+            mod-morph required 2 parms
 */
 
 // see also mod_morphs_general for c-macro example
@@ -16,11 +24,13 @@
 // bindings = <1-non-shifted> <2-shifted> results ↓
     // When tap (#1) "qu" macro; when shift-tap (#2) "Qu" macro
 
+
+
 as_mm_Qu: autoshift_modmorph_Qu {
     compatible = "zmk,behavior-hold-tap";
     //label = "autoshift_modmorph_Qu"; // deprecated prop?
     #binding-cells = <2>; // must have 2 per ZMK docs
-    tapping-term-ms = <200>;
+    tapping-term-ms = <120>;
     quick-tap-ms = <0>;
     flavor = "tap-preferred";
     bindings = <&kp>, <&mm_SHIFT_QU>;
@@ -31,7 +41,7 @@ mm_SHIFT_QU: mm_SHIFT_QU {
     //label = "mm_SHIFT_QU"; // deprecated prop?
     #binding-cells = <0>; // so expects no (further) params
     bindings = <&m_QU>, <&m_QU_cap>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
+    mods = <(MOD_LSFT)>;
 };
 
 

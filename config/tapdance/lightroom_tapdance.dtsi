@@ -11,7 +11,7 @@ TD_LR_E: tapdance_lightroom_e {
     // (2x) Ctrl+E (edit in Photoshop)
     // (3x) Ctrl+Alt+X (open as SmartObject in PS)
     compatible = "zmk,behavior-tap-dance";
-    label = "tapdance_lightroom_e";
+    //label = "tapdance_lightroom_e";
     #binding-cells = <0>;
     tapping-term-ms = <300>;
     bindings = <&kp LS(E)>, <&kp LC(E)>, <&kp LC(LA(X))>;
@@ -21,7 +21,7 @@ TD_LR_U: tapdance_lightroom_u {
     // (1x) U (unpick)
     // (2x) Ctrl+U (Auto-exposure)
     compatible = "zmk,behavior-tap-dance";
-    label = "tapdance_lightroom_u";
+    //label = "tapdance_lightroom_u";
     #binding-cells = <0>;
     tapping-term-ms = <300>;
     bindings = <&kp U>, <&kp LC(U)>;
@@ -84,7 +84,7 @@ TD_LR_Q_TO: tapdance_lightroom_ctrlq_tolayer {
 
 TD_LR_1: tapdance_lightroom_1 {
     compatible = "zmk,behavior-tap-dance";
-    label = "tapdance_lightroom_1";
+    //label = "tapdance_lightroom_1";
     #binding-cells = <0>;
     tapping-term-ms = <300>;
     bindings = <&kp N1>, <&kp N6>;
@@ -92,7 +92,7 @@ TD_LR_1: tapdance_lightroom_1 {
 
 TD_LR_2: tapdance_lightroom_2 {
     compatible = "zmk,behavior-tap-dance";
-    label = "tapdance_lightroom_2";
+    //label = "tapdance_lightroom_2";
     #binding-cells = <0>;
     tapping-term-ms = <300>;
     bindings = <&kp N2>, <&kp N7>;
@@ -100,7 +100,7 @@ TD_LR_2: tapdance_lightroom_2 {
 
 TD_LR_3: tapdance_lightroom_3 {
     compatible = "zmk,behavior-tap-dance";
-    label = "tapdance_lightroom_#";
+    //label = "tapdance_lightroom_#";
     #binding-cells = <0>;
     tapping-term-ms = <300>;
     bindings = <&kp N3>, <&kp N8>;
@@ -108,7 +108,7 @@ TD_LR_3: tapdance_lightroom_3 {
 
 TD_LR_4: tapdance_lightroom_4 {
     compatible = "zmk,behavior-tap-dance";
-    label = "tapdance_lightroom_4";
+    //label = "tapdance_lightroom_4";
     #binding-cells = <0>;
     tapping-term-ms = <300>;
     bindings = <&kp N4>, <&kp N9>;
@@ -116,7 +116,7 @@ TD_LR_4: tapdance_lightroom_4 {
 
 TD_LR_5: tapdance_lightroom_5 {
     compatible = "zmk,behavior-tap-dance";
-    label = "tapdance_lightroom_5";
+    //label = "tapdance_lightroom_5";
     #binding-cells = <0>;
     tapping-term-ms = <300>;
     bindings = <&kp N5>, <&kp F9>;

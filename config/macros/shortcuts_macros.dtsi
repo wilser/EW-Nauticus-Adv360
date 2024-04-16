@@ -105,6 +105,10 @@ m_QU_cap: m_QU_cap {
     compatible = "zmk,behavior-macro";
     label = "m_QU_cap";
     #binding-cells = <0>;
-    bindings = <&kp LS(Q) &kp U>;
+    //bindings = <&kp RS(Q) &kp U>; // but only doing either "qu" or "QU" ...
+    bindings = <&macro_press &kp RSHFT>
+    , <&macro_tap &kp Q>
+    , <&macro_release &kp RSHIFT>
+    , <&macro_tap &kp U>;
 };
 

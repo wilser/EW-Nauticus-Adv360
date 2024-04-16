@@ -10,13 +10,15 @@ m_##MM_NAME: m_##MM_NAME { \
     mods = <(MOD_LSFT|MOD_RSFT)>; \
 }; \
 
+[] 2024-04-16 think label property deprecated for most(all?) behaviors
+
 */
 
 // When LEFT SHIFT being held, make the RIGHT SHIFT act as backspace for convenience
 // (because in my layout, I usually hold left-thumb shift, but backspace normally is on a different left-thumb key)
 mm_SHIFT_BACKSPACE_R: mm_SHIFT_BACKSPACE_R {
     compatible = "zmk,behavior-mod-morph";
-    label = "mm_SHIFT_BACKSPACE_R";
+    //label = "mm_SHIFT_BACKSPACE_R";
     #binding-cells = <0>;
     bindings = <&kp RSHFT>, <&kp BACKSPACE>;
     mods = <(MOD_LSFT)>;
@@ -24,7 +26,7 @@ mm_SHIFT_BACKSPACE_R: mm_SHIFT_BACKSPACE_R {
 
 mm_SHIFT_BACKSPACE_L: mm_SHIFT_BACKSPACE_L {
     compatible = "zmk,behavior-mod-morph";
-    label = "mm_SHIFT_BACKSPACE_L";
+    //label = "mm_SHIFT_BACKSPACE_L";
     #binding-cells = <0>;
     bindings = <&kp LSHFT>, <&kp BACKSPACE>;
     mods = <(MOD_RSFT)>;
