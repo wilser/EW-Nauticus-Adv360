@@ -18,7 +18,7 @@
 
 as_mm_Qu: autoshift_modmorph_Qu {
     compatible = "zmk,behavior-hold-tap";
-    label = autoshift_morph;
+    label = "autoshift_modmorph_Qu";
     #binding-cells = <2>;
     tapping-term-ms = <200>;
     quick-tap-ms = <0>;
