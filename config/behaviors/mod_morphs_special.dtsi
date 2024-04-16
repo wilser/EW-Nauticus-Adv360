@@ -23,14 +23,14 @@ as_mm_Qu: autoshift_modmorph_Qu {
     tapping-term-ms = <200>;
     quick-tap-ms = <0>;
     flavor = "tap-preferred";
-    bindings = <&kp>, <&mm_SHIFT_QU>;
+    bindings = <&kp Q>, <&mm_SHIFT_QU 0 0>;
 
 }
 
 mm_SHIFT_QU: mm_SHIFT_QU {
     compatible = "zmk,behavior-mod-morph";
     label = "mm_SHIFT_QU";
-    #binding-cells = <0>;
+    #binding-cells = <2>;
     bindings = <&m_QU>, <&m_QU_cap>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
 };
