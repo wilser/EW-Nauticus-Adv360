@@ -5,8 +5,8 @@
             compatible = "zmk,behavior-hold-tap";
             label = "AS_1TAP_2";
             #binding-cells = <2>;
-            tapping_term_ms = <150>;
-            quick_tap_ms = <0>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&m_1TAP_EW_N6>, <&kp>; // try with 1st position a direct "tap key" macro? !!! THIS WORKS (but would require special AS and Macro for each)
         };
@@ -15,8 +15,8 @@
             compatible = "zmk,behavior-hold-tap";
             label = "AS1T_3";
             #binding-cells = <2>;
-            tapping_term_ms = <150>;
-            quick_tap_ms = <0>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = &macro_tap <&kp>, <&kp>; // can we force the "macro tap" in a pattern?
         };
@@ -25,8 +25,8 @@
             compatible = "zmk,behavior-hold-tap";
             label = "AS1T_4";
             #binding-cells = <2>;
-            tapping_term_ms = <150>;
-            quick_tap_ms = <0>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&macro_tap N8>, <&kp>; // try hard-coded 1st binding (& pass dummy 0)
         };

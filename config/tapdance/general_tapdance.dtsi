@@ -9,7 +9,7 @@
 
 TD_Emj_WinDsk: tapdance_emoji_windesktopchange {
     compatible = "zmk,behavior-tap-dance";
-    label = "tapdance_emoji_windesktopchange";
+    //label = "tapdance_emoji_windesktopchange";
     #binding-cells = <0>;
     tapping-term-ms = <300>;
     bindings = <&kp RG(SEMI)>, <&kp RG(TAB)>; // [1x] Win+; (Emoji pop-up)    [2x] Win+Tab (Windows desktops)
@@ -17,7 +17,7 @@ TD_Emj_WinDsk: tapdance_emoji_windesktopchange {
 
 TD_CpWrd_CpLock: tapdance_capsword_capslock {
     compatible = "zmk,behavior-tap-dance";
-    label = "tapdance_capsword_capslock";
+    //label = "tapdance_capsword_capslock";
     #binding-cells = <0>;
     tapping-term-ms = <300>;
     bindings = <&caps_word>, <&kp CAPSLOCK>;
@@ -25,7 +25,7 @@ TD_CpWrd_CpLock: tapdance_capsword_capslock {
 
 TD_Num_LR_NLock: tapdance_num_lr_numlock {
     compatible = "zmk,behavior-tap-dance";
-    label = "tapdance_num_lr_numlock";
+    //label = "tapdance_num_lr_numlock";
     #binding-cells = <0>;
     tapping-term-ms = <300>;
     bindings = <&mo L_NUM>, <&to L_LR>, <&to L_NUM>; // [hold] Num   [2x] to LR   [3x] to NUM
@@ -33,7 +33,7 @@ TD_Num_LR_NLock: tapdance_num_lr_numlock {
 
 TD_Hm_CtrlHm: tapdance_home_ctrlhome {
     compatible = "zmk,behavior-tap-dance";
-    label = "tapdance_home_ctrlhome";
+    //label = "tapdance_home_ctrlhome";
     #binding-cells = <0>;
     tapping-term-ms = <300>;
     bindings = <&kp HOME>, <&kp RC(HOME)>;
@@ -41,7 +41,7 @@ TD_Hm_CtrlHm: tapdance_home_ctrlhome {
 
 TD_En_CtrlEn: tapdance_end_ctrlend {
     compatible = "zmk,behavior-tap-dance";
-    label = "tapdance_end_ctrlend";
+    //label = "tapdance_end_ctrlend";
     #binding-cells = <0>;
     tapping-term-ms = <300>;
     bindings = <&kp END>, <&kp RC(END)>;
@@ -49,7 +49,7 @@ TD_En_CtrlEn: tapdance_end_ctrlend {
 
 TD_WinScreenshot_SnagIt: tapdance_winss_snagitss {
     compatible = "zmk,behavior-tap-dance";
-    label = "tapdance_winss_snagitss";
+    //label = "tapdance_winss_snagitss";
     #binding-cells = <0>;
     tapping-term-ms = <300>;
     bindings = <&kp LG(LS(S))>, <&kp RC(RA(P))>;  // [1x] Win+Shift+S   [2x] Ctrl+Alt+P (customized in SnagIt settings)
