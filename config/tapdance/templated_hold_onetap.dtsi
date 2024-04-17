@@ -3,7 +3,6 @@
 /*
         AS1T_2: AS_1TAP_2 {
             compatible = "zmk,behavior-hold-tap";
-            label = "AS_1TAP_2";
             #binding-cells = <2>;
             tapping-term-ms = <150>;
             quick-tap-ms = <0>;
@@ -13,7 +12,6 @@
         
          AS1T_3: AS1T_3 {
             compatible = "zmk,behavior-hold-tap";
-            label = "AS1T_3";
             #binding-cells = <2>;
             tapping-term-ms = <150>;
             quick-tap-ms = <0>;
@@ -23,7 +21,6 @@
 */
         AS1T_4: AS1T_4 {
             compatible = "zmk,behavior-hold-tap";
-            label = "AS1T_4";
             #binding-cells = <2>;
             tapping-term-ms = <150>;
             quick-tap-ms = <0>;
@@ -36,7 +33,6 @@
 #define gen_AS_1TAP_HOLD(HOLDKEY, NORMKEY) \
     AS1TAP_##HOLDKEY_##NORMKEY: AS1TAP_##HOLDKEY_##NORMKEY { \
         compatible = "zmk,behavior-macro"; \
-        label = "DOES LABEL MATTER" ; \
         wait-ms = <20>; \
         tap-ms = <30>; \
         #binding-cells = <0>; \

@@ -25,15 +25,13 @@
 
 //==================================================
 
-// maybe fix "label" to just a string - string concat issue?
+// [Note 2024-04-16: label removed in ZMK v3, so might be easier.]
 
 // EW try own CPP macro format:
 /*
 #define m_1TAP(KEY) \
     m_1TAP_##KEY: m_1TAP_##KEY { \
         compatible = "zmk,behavior-macro"; \
-        label = "m_1TAP_" str(KEY) ; \
-        //label = str(KEY) ; \  <-- maybe don't need or can hard-code literal?
         wait-ms = <20>; \
         tap-ms = <30>; \
         #binding-cells = <0>; \
@@ -58,7 +56,6 @@
 // try one brute force to see if works before the sub ones
 m_1TAP_EW_N6: m_1TAP_EW_N6{
     compatible = "zmk,behavior-macro";
-    label = "m_1TAP_EW_N6";
     wait-ms = <40>;
     tap-ms = <20>;
     #binding-cells = <0>;

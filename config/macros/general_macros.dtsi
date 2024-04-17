@@ -10,7 +10,6 @@
 /* € - but clunky; seems some newer macros send Unicode better - need to search */
 m_CHR_EU: m_CHR_EU{
     compatible = "zmk,behavior-macro";
-    label = "m_CHR_EU";
     wait-ms = <20>;
     tap-ms = <30>;
     #binding-cells = <0>;
@@ -28,7 +27,6 @@ m_CHR_EU: m_CHR_EU{
 /* SELECT WORD: Ctrl+LEFT, Ctrl+Shift+RIGHT - for mid or at end of a word (see other) */
 m_SEL_WRD_L: m_SEL_WRD_L{
     compatible = "zmk,behavior-macro";
-    label = "m_SEL_WRD_L";
     wait-ms = <40>;  /* 40,40 seems more reliable than 30,20 or faster */
     tap-ms = <20>;
     #binding-cells = <0>;
@@ -45,7 +43,6 @@ m_SEL_WRD_L: m_SEL_WRD_L{
 /* SELECT WORD: Ctrl+RIGHT, Ctrl+Shift+LEFT - for mid or at beginning of a word (see other) */
 m_SEL_WRD_R: m_SEL_WRD_R{
     compatible = "zmk,behavior-macro";
-    label = "m_SEL_WRD_R";
     wait-ms = <40>;  /* 40,40 seems more reliable than 30,20 or faster */
     tap-ms = <20>;
     #binding-cells = <0>;
@@ -62,7 +59,6 @@ m_SEL_WRD_R: m_SEL_WRD_R{
 /* SELECT LINE: Home, Shift+End */
 m_SEL_LINE: m_SEL_LINE{
     compatible = "zmk,behavior-macro";
-    label = "m_SEL_LINE";
     wait-ms = <40>;
     tap-ms = <20>;
     #binding-cells = <0>;
@@ -82,7 +78,6 @@ m_SLEEP: m_SLEEP {
     wait-ms = <200>;
     tap-ms = <200>;
     compatible = "zmk,behavior-macro";
-    label = "m_SLEEP";
     #binding-cells = <0>;
     bindings = <&kp LG(X)>, <&kp U>, <&kp S>;
 };
@@ -92,7 +87,6 @@ m_HIBER: m_HIBER {
     wait-ms = <200>;
     tap-ms = <200>;
     compatible = "zmk,behavior-macro";
-    label = "m_HIBER";
     #binding-cells = <0>;
     bindings = <&kp LG(X)>, <&kp U>, <&kp H>;
 };

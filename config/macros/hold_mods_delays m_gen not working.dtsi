@@ -6,7 +6,6 @@
 // Shift+(sym)
 /* TODO - revise syntax similar as mod_morphs_... 
 #define SFT_ED(sym, macro_label) m_##sym: m_##sym {\
-        label = macro_label;\
         compatible = "zmk,behavior-macro";\
         wait-ms = <50>;\
         #binding-cells = <0>;\
@@ -26,7 +25,6 @@
 */
 // Ctrl+Shift+Alt+(sym)
 #define CSA_ED(MACNAME, KEY) m_##MACNAME: m_##MACNAME {\
-        label = #MACNAME;\
         compatible = "zmk,behavior-macro";\
         wait-ms = <50>;\
         #binding-cells = <0>;\
@@ -51,7 +49,6 @@ CSA_ED(CSA_R, R)
 
 /* -------------------- brute force later? ----------
 m_CSA_R: m_CSA_R {
-    label = m_CSA_R;
     compatible = "zmk,behavior-macro";
     wait-ms = <50>;
     #binding-cells = <0>;

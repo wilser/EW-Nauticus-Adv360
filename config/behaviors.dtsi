@@ -25,7 +25,6 @@
 
 #define MOD_MORPH(NAME, KEY, MOD_KEY, MODS) (mm_##NAME: mm_##NAME { \
     compatible = "zmk,behavior-mod-morph"; \
-    label = str(NAME); \
     #binding-cells = <0>; \
     bindings = <&kp KEY>, <&kp MOD_KEY>; \
     mods = <MODS>; \
@@ -53,7 +52,6 @@
 
 lhm: left_homerow_mods {
     compatible = "zmk,behavior-hold-tap";
-    label = "LEFT_HOMEROW_MODS";
     #binding-cells = <2>;
     tapping-term-ms = <100>;
     quick-tap-ms = <200>;
@@ -65,7 +63,6 @@ lhm: left_homerow_mods {
 
 rhm: right_homerow_mods {
     compatible = "zmk,behavior-hold-tap";
-    label = "RIGHT_HOMEROW_MODS";
     #binding-cells = <2>;
     tapping-term-ms = <100>;
     quick-tap-ms = <200>;
@@ -77,7 +74,6 @@ rhm: right_homerow_mods {
 
 thht: thumb_keys_hold_tap {
     compatible = "zmk,behavior-hold-tap";
-    label = "RIGHT_HOMEROW_LAYER";
     #binding-cells = <2>;
     tapping-term-ms = <TAPPING_TERM_THUMB_KEYS>;
     quick-tap-ms = <QUICK_TAP_THUMB>;
@@ -88,7 +84,6 @@ thht: thumb_keys_hold_tap {
 
 hm: homerow_mods {
     compatible = "zmk,behavior-hold-tap";
-    label = "HOMEROW_MODS";
     #binding-cells = <2>;
     tapping-term-ms = <200>;
     quick-tap-ms = <175>;
@@ -98,7 +93,6 @@ hm: homerow_mods {
 
 bspcdel: bspc_del {
     compatible = "zmk,behavior-mod-morph";
-    label = "BACKSPACE_DELETE";
     #binding-cells = <0>;
     bindings = <&kp BSPC>, <&kp DEL>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -106,7 +100,6 @@ bspcdel: bspc_del {
 
 lstapd: left_shift_tap_dance {
     compatible = "zmk,behavior-tap-dance";
-    label = "LEFT_SHIFT_TAP_DANCE";
     #binding-cells = <0>;
     tapping-term-ms = <200>;
     bindings = <&kp LSHFT>, <&caps_word>;
@@ -114,7 +107,6 @@ lstapd: left_shift_tap_dance {
 
 rstapd: right_shift_tap_dance {
     compatible = "zmk,behavior-tap-dance";
-    label = "RIGHT_SHIFT_TAP_DANCE";
     #binding-cells = <0>;
     tapping-term-ms = <200>;
     bindings = <&kp RSHFT>, <&caps_word>;

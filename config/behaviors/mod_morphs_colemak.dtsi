@@ -15,14 +15,12 @@
 
 #define MOD_MORPH_SHIFT(MM_NAME, KEY, MOD_KEY, AS_NAME) m_##MM_NAME: m_##MM_NAME { \
     compatible = "zmk,behavior-mod-morph"; \
-    label = #MM_NAME; \
     #binding-cells = <0>; \
     bindings = <&kp KEY>, <&kp MOD_KEY>; \
     mods = <(MOD_LSFT|MOD_RSFT)>; \
 }; \
 m_##AS_NAME: m_##AS_NAME { \
     compatible = "zmk,behavior-hold-tap"; \
-    label = #AS_NAME; \
     #binding-cells = <2>; \
     tapping-term-ms = <150>; \
     quick-tap-ms = <0>; \
@@ -57,22 +55,7 @@ MOD_MORPH_SHIFT(mm_CMK_RParGT,   RPAR,   GREATER_THAN , mmas_CMK_RParGT  )
 */
 
 /*  NOTES - C macros
-    // Fun with c-macro syntax headaches...
-
-    // with parens around def, still got "expected node name..." where the : seemed to resolve after the label
-    // without parens, seemed to choke (malformed value) around the Label assign function...
-    // with hard-coded Label, it 'works' [once] but the 2nd macro use overwrites the first in usage
-        //label = "fake-temp-label"; \
-    // str(NAME) fails - whole 'empty_file' error, so can't tell...
-        //label = str(NAME); \
-    // try tips here - make "" #VAR which supposedly gets concatenated under the hood? - NO, got , or ; expected error
-        //ref: https://stackoverflow.com/questions/10507264/how-to-use-macro-argument-as-string-literal
-        //label = "mms_" #NAME          // which per ↑ would get combined automatically?
-        // did not work
-    // try JUST the #VAR ?
-        //label = #NAME; \    ****** <<<<< THIS ONE WORKED!
-        // so can use ↑ pattern, as long as just the NAME part is unique globally to be also a label
-        // (... or could add a separate LABEL param... if needed)
+    // Fun with c-macro syntax headaches... [note: after ZMK V3 might be easier, Label prop deprecated]
 */
 
 /*  NOTES - combining ModMorph with AutoShift (hold tap)

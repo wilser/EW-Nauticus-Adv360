@@ -2,7 +2,6 @@
 
 // Ctrl+Shift+Alt+R => SlickRun
 m_CSA_R: m_CSA_R {
-    label = "m_CSA_R";
     compatible = "zmk,behavior-macro";
     wait-ms = <50>;
     #binding-cells = <0>;
@@ -20,7 +19,6 @@ m_CSA_R: m_CSA_R {
 
 // Ctrl+Shift+Alt+V => ClipMate show
 m_CSA_V: m_CSA_V {
-    label = "m_CSA_V";
     compatible = "zmk,behavior-macro";
     wait-ms = <50>;
     #binding-cells = <0>;
@@ -38,7 +36,6 @@ m_CSA_V: m_CSA_V {
 
 // Win+Ctrl+C & Win+Ctrl+V - Copy/Paste *unformatted* (via AHK macro)
 m_WC_C: m_WC_C {
-    label = "m_WC_C";
     compatible = "zmk,behavior-macro";
     wait-ms = <50>;
     #binding-cells = <0>;
@@ -53,7 +50,6 @@ m_WC_C: m_WC_C {
 };
 
 m_WC_V: m_WC_V {
-    label = "m_WC_V";
     compatible = "zmk,behavior-macro";
     wait-ms = <50>;
     #binding-cells = <0>;

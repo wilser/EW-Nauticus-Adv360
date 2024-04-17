@@ -120,7 +120,6 @@
 
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <125>;  /* was typo, and 175 */
@@ -130,7 +129,6 @@
 
         hm_l: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_LEFT";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <125>; /* was typo, and 175 */
@@ -142,7 +140,6 @@
 
         hm_r: homerow_mods_right {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_RIGHT";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <125>;  /* was typo, and 175 */
@@ -155,7 +152,6 @@
         /* [.] experimental: "slower" home-row mod for Win key since don't need to be fast and false-taps mess up worse */
         hm_slw: homerow_mods_slw {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_MODS_SLW";
             #binding-cells = <2>;
             tapping-term-ms = <300>;
             quick-tap-ms = <200>; 
@@ -168,7 +164,6 @@
         */
         as: auto_shift {
             compatible = "zmk,behavior-hold-tap";
-            label = "AUTO_SHIFT";
             #binding-cells = <2>;
             tapping-term-ms = <150>;
             quick-tap-ms = <0>;
@@ -179,7 +174,6 @@
         // TBD layer Hold for 1, Tap for 2; adapted from https://www.reddit.com/r/ErgoMechKeyboards/comments/123sapj/zmk_question_can_i_layertap_with_a_macro/
         lht: layer_hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_HOLD_TAP";
             #binding-cells = <2>;
             tapping-term-ms = <150>;
             quick-tap-ms = <0>;

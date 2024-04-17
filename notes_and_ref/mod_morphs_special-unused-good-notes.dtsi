@@ -30,7 +30,6 @@
 
 as_mm_Qu: autoshift_modmorph_Qu {
     compatible = "zmk,behavior-hold-tap";
-    //label = "autoshift_modmorph_Qu"; // deprecated prop?
     #binding-cells = <2>; // must have 2 per ZMK docs
     tapping-term-ms = <120>;
     quick-tap-ms = <0>;
@@ -40,7 +39,6 @@ as_mm_Qu: autoshift_modmorph_Qu {
 
 mm_SHIFT_QU: mm_SHIFT_QU {
     compatible = "zmk,behavior-mod-morph";
-    //label = "mm_SHIFT_QU"; // deprecated prop?
     #binding-cells = <0>; // so expects no (further) params
     bindings = <&m_QU>, <&m_QU_cap>;
     mods = <(MOD_LSFT)>;
