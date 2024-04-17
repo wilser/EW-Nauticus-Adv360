@@ -90,6 +90,8 @@ m_ion: m_ion {
     bindings = <&kp I &kp O &kp N>;
 };
 
+/* 2024-04-16 couldn't figure how to make Shift+<key> ⇒ "Qu" only, always did QU. Changed to AHK and F23 overrides... */
+/*
 m_QU: m_QU {    
     wait-ms = _WAIT;
     tap-ms = _TAP;
@@ -112,4 +114,4 @@ m_QU_cap: m_QU_cap {
     , <&macro_release &kp RSHIFT>
     , <&macro_tap &kp U>;
 };
-
+*/

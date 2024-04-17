@@ -109,7 +109,6 @@
         #include "behaviors/mod_morphs_general.dtsi"
         #include "behaviors/mod_morphs_dvorak.dtsi"
         #include "behaviors/mod_morphs_engram.dtsi"
-        #include "behaviors/mod_morphs_special.dtsi"
 
         /*  NOTES - hold-tap
             FLAVORS: https://zmk.dev/docs/behaviors/hold-tap
@@ -268,6 +267,7 @@
             URL layout: http://www.keyboard-layout-editor.com/#/gists/32760c7c88bd4bd39b3eba742b14dcb7
             NOTES:
                 • SYNTAX for mod-morph holds: "&<macro-named> <hold-key> 0"
+                • AHK F23 mapped to "qu"
             TODO:
                 ALT LAYOUTS must be LOWER in stack than any higher ones want to layer-hold shift to
                 ▢ see also Keyboard Layout Editor for TODO items (↑ link above)
@@ -292,7 +292,7 @@
                 ___                         _B_GUI                     _Y_SFT               _O_ALT                     _U_CTL                &m_mmsNGM_Amps LESS_THAN 0     ___                                                    ___    &m_mmsNGM_Equl GREATER_THAN 0    _L_CTL               _D_ALT               _W_SFT                _V_GUI                &m_mmsNGM_Slsh STAR 0
                 ___                         &kp C                      &kp I                &kp E                      &kp A                 &m_mmsNGM_Cmma SEMI 0          ___               ___   ___        ___   ___           ___    &m_mmsNGM_Perd DOUBLE_QUOTES 0   &kp H                &kp T                &kp S                 &kp N                 &m_mmsNGM_Mnus UNDERSCORE 0
                 &m_mmsNGM_Apos LS(F22) 0    &lt L_NVE G                &kp X                &lt L_UTL J                &lt L_NUM K           &m_mmsNGM_Lpar LBKT 0                                 ___          ___                       &m_mmsNGM_Rpar RBKT 0            &kp R                &kp M                &kp F                 &kp P                 &m_mmsNGM_Coln PLUS 0
-                ___                         &m_mmsNGM_Ing LS(F21) 0    &as RC(Q) K_CMENU    ___                        ___                                                            ___   ___   ___            ___   ___   ___                                           ___                  ___                  &as_mm_Qu Q 0         &kp Z                 ___
+                ___                         &m_mmsNGM_Ing LS(F21) 0    &as RC(Q) K_CMENU    ___                        ___                                                            ___   ___   ___            ___   ___   ___                                           ___                  ___                  &as Q F23             &kp Z                 ___
             >; };
 
             // #UNDEFs

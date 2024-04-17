@@ -25,6 +25,8 @@
     // When tap (#1) "qu" macro; when shift-tap (#2) "Qu" macro
 
 
+// WORKING sort of, but couldn't get the Shift+Q working right. So abandoned and went with AHK+F# instead.
+// BUT seems the syntax for mod-morph and hold-tap combining is working w.r.t. the Binding-Cells and such.
 
 as_mm_Qu: autoshift_modmorph_Qu {
     compatible = "zmk,behavior-hold-tap";
