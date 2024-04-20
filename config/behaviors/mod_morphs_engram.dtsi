@@ -134,5 +134,5 @@
 //MOD_MORPH_SHIFT(mmNGM_Tild  , TILDE         , QUESTION        , mmsNGM_Tild )
 
 //MOD_MORPH_SHIFT(mmNGM_Bllt  , F22           , LS(F22)         , mmsNGM_Bllt )
-  MOD_MORPH_SHIFT(mmNGM_Ing   , F21           , LS(F21)         , mmsNGM_Ing  ) // F21 "ing" / +F21 "tion"
+  MOD_MORPH_SHIFT(mmNGM_Ing   , F24           , LS(F24)         , mmsNGM_Ing  ) // F21 "ing" / +F21 "tion"
 

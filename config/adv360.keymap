@@ -6,7 +6,7 @@
 #include <behaviors.dtsi>   // TODO: much of this overridden (I think) or bypassed by parts inside this *keymap file / UNSURE WHAT NEEDED (2024-04-13)
 
 
-// DEFINE keymaps and subsets // NOTE: major re-numbering after V3 rebase.
+// DEFINE keymaps and subsets // NOTE: major re-numbering after V3 rebase. Moves thumb-keys inline to rows 3-5.
 
     /* Keymap layout vs. Numbers
 
@@ -295,7 +295,7 @@
                 ___                         _B_GUI                     _Y_SFT               _O_ALT                     _U_CTL                &m_mmsNGM_Amps LESS_THAN 0     ___                                                    ___    &m_mmsNGM_Equl GREATER_THAN 0    _L_CTL               _D_ALT               _W_SFT                _V_GUI                &m_mmsNGM_Slsh STAR 0
                 ___                         &kp C                      &kp I                &kp E                      &kp A                 &m_mmsNGM_Cmma SEMI 0          ___               ___   ___        ___   ___           ___    &m_mmsNGM_Perd DOUBLE_QUOTES 0   &kp H                &kp T                &kp S                 &kp N                 &m_mmsNGM_Mnus UNDERSCORE 0
                 &m_mmsNGM_Apos LS(F22) 0    &lt L_NVE G                &kp X                &lt L_UTL J                &lt L_NUM K           &m_mmsNGM_Lpar LBKT 0                                 ___          ___                       &m_mmsNGM_Rpar RBKT 0            &kp R                &kp M                &kp F                 &kp P                 &m_mmsNGM_Coln PLUS 0
-                ___                         &m_mmsNGM_Ing LS(F21) 0    &as RC(Q) K_CMENU    ___                        ___                                                            ___   ___   ___            ___   ___   ___                                           ___                  ___                  &as Q F23             &kp Z                 ___
+                ___                         &m_mmsNGM_Ing LS(F24) 0    &as RC(Q) K_CMENU    ___                        ___                                                            ___   ___   ___            ___   ___   ___                                           ___                  ___                  &as Q F23             &kp Z                 ___
             >; };
 
             // #UNDEFs
@@ -335,9 +335,9 @@
             */ 
 
             // DEFINES:
-                #define _7_CTL      &hm_l RCTRL N7      // ... and next, Ctrl+, Alt+, Shift+ holds on RH (7, 8, 9)
-                #define _8_ALT      &hm_l RALT N8       
-                #define _9_SFT      &hm_l RSFT N9        
+                #define _7_CTL      &hm_r RCTRL N7      // ... and next, Ctrl+, Alt+, Shift+ holds on RH (7, 8, 9)
+                #define _8_ALT      &hm_r RALT N8       
+                #define _9_SFT      &hm_r RSFT N9        
             // end defines
         
             numpad_layer { bindings = <
@@ -393,15 +393,34 @@
         * L5 🟣 Function Keys
             *      http://www.keyboard-layout-editor.com/#/gists/d61490ab54f1d9c63f17ee2d25b40732
             *    NOTES:
-            *       [.] 2024-04-14 trying more lateral for easier reach for commons; (and makes room for upper-ones)
+            *       [x] 2024-04-14 trying more lateral for easier reach for commons; (and makes room for upper-ones) // nah, too awkward
+            *       [.] 2024-04-20 trying alt with 13-24 on left hand
             */
+
+            // #DEF
+                #define _F19_SFT &hm_l LSHIFT F19
+                #define _F20_ALT &hm_l LALT F20
+                #define _F21_CTL &hm_l LCTRL F21
+                #define  _F7_CTL &hm_r RCTRL F7
+                #define  _F8_ALT &hm_r RALT F8
+                #define  _F9_SFT &hm_r RSHIFT F9
+
             fn_1_12_layer { bindings = <
-                _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                            ___    &kp F19 &kp F20 &kp F21 &kp F22 &kp F23 &kp F24
-                ___    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    ___                                                ___    &kp F13 &kp F14 &kp F15 &kp F16 &kp F17 &kp F18
-                ___    _x_        _x_         _x_        _x_        _x_    ___              _x_   _x_     _x_   _x_           ___    &kp F7  &kp F8  &kp F9  &kp F10 &kp F11 &kp F12
-                _x_    _x_        _x_         _x_        _x_        _x_                         _x_         _x_                      &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F6
-                _x_    _x_        _x_         ___        ___                        ___  ___  _x_            _x_  _x_  _x_                   _x_     _x_     _x_     _x_     _x_
+                _x_    _x_       &kp F22   &kp F23   &kp F24   _x_   &to L_0                                         ___   _x_   &kp F10   &kp F11   &kp F12    _x_       _x_
+                ___    &kp LWIN  _F19_SFT  _F20_ALT  _F21_CTL  _x_   ___                                             ___   _x_   _F7_CTL   _F8_ALT   _F9_SFT    &kp LWIN  _x_
+                ___    _x_       &kp F16   &kp F17   &kp F18   _x_   ___              _x_   _x_     _x_   _x_        ___   _x_   &kp F4    &kp F5    &kp F6     _x_       _x_
+                _x_    _x_       &kp F13   &kp F14   &kp F15   _x_                        _x_         _x_                  _x_   &kp F1    &kp F2    &kp F3     _x_       _x_
+                _x_    _x_       _x_       ___       ___                      ___  ___  _x_            _x_  _x_  _x_             ___       ___       _x_        _x_       _x_
             >; };
+
+            // #UNDEF
+                #undef _F19_SFT
+                #undef _F20_ALT
+                #undef _F21_CTL
+                #undef _F7_CTL
+                #undef _F8_ALT
+                #undef _F9_SFT
+
         // END Fn Keys
 
         /*****************************************************************************************************
