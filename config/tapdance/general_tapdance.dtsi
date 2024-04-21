@@ -51,3 +51,12 @@ TD_WinScreenshot_SnagIt: tapdance_winss_snagitss {
     bindings = <&kp LG(LS(S))>, <&kp RC(RA(P))>;  // [1x] Win+Shift+S   [2x] Ctrl+Alt+P (customized in SnagIt settings)
 };
 
+// goal: 1x tap = BKSP, Hold = Ctl(bksp), 2x-tap-hold = repeat-backspace (see use with &as)
+// idea: 2x-tap skips over the Hold behavior the &as would have caused.
+// 2024-04-21: WIP, not in use yet; seems doesn't fit the layout mapping terms
+TD_BkspHoldTap: tapdance_bksp_holdtap {
+    compatible = "zmk,behavior-tap-dance";
+    #binding-cells = <0>;
+    tapping-term-ms = <300>;
+    bindings = <&kp BKSP>, <&kp BKSP>;
+};
