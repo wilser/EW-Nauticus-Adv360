@@ -30,6 +30,7 @@ TD_Num_LR_NLock: tapdance_num_lr_numlock {
     bindings = <&mo L_NUM>, <&to L_LR>, <&to L_NUM>; // [hold] Num   [2x] to LR   [3x] to NUM
 };
 
+/* Home/End: 2024-04-21 replaced with Hold/Tap instead of 2x-tap
 TD_Hm_CtrlHm: tapdance_home_ctrlhome {
     compatible = "zmk,behavior-tap-dance";
     #binding-cells = <0>;
@@ -43,6 +44,7 @@ TD_En_CtrlEn: tapdance_end_ctrlend {
     tapping-term-ms = <300>;
     bindings = <&kp END>, <&kp RC(END)>;
 };
+*/
 
 TD_WinScreenshot_SnagIt: tapdance_winss_snagitss {
     compatible = "zmk,behavior-tap-dance";
@@ -54,6 +56,7 @@ TD_WinScreenshot_SnagIt: tapdance_winss_snagitss {
 // goal: 1x tap = BKSP, Hold = Ctl(bksp), 2x-tap-hold = repeat-backspace (see use with &as)
 // idea: 2x-tap skips over the Hold behavior the &as would have caused.
 // 2024-04-21: WIP, not in use yet; not right combo-syntax for the layout.
+// 2024-04-21: an auto-shift with deliberate tapping-term &c works - see layout
 // TD_BkspHoldTap: tapdance_bksp_holdtap {
 //     compatible = "zmk,behavior-tap-dance";
 //     #binding-cells = <0>;

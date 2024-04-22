@@ -228,8 +228,10 @@
                 #define MT_TB_SHFTB &mt LS(TAB) TAB
                 #define MT_CpW_CpL &as &caps_word
                 #define MT_Hm_Spc &mt SPACE HOME
-                //#define MT_AMnu_CtrlQ &mt RQ(Q) K_CONTEXT_MENU         // tap: App/Context-menu, hold: Ctrl+Q (mark read in Outlook)
                 #define TD_ScrnShots &TD_WinScreenshot_SnagIt       // 1x: Win+Shift+S   2x: Ctrl+Alt+P
+                #define AS_Hm_CtlHm &as_slw RC(HOME) HOME
+                #define AS_En_CtlEn &as_slw RC(END) END
+                #define AS_Bk_CtlBk &as_slw RC(BSPC) BSPC
 
                 // Other conveniences:
                 #define _HYPER &kp LC(LA(LS(LGUI)))
@@ -250,8 +252,8 @@
                 &as RS(EQUAL) EQUAL  &as RS(N1) N1   &as RS(N2) N2      &as RS(N3) N3  &as RS(N4) N4  &as RS(N5) N5  &to L_NGM                                                                                              &sl L_UTL   &as LS(N6) N6  &as LS(N7) N7  &as LS(N8) N8  &as LS(N9) N9      &as LS(N0) N0      &as LS(BSLH) BSLH
                 &kp ESC              _SQT_GUI        _CMA_SFT           _DOT_ALT       _P_CTL         _Y_RALT        _HYPER                                                                                                 _HYPER      &kp F          _G_CTL         _C_ALT         _R_SFT             _L_GUI             &as LS(SLASH) SLASH
                 MT_TB_SHFTB          &kp A           &kp O              &kp E          &kp I          &kp U          _MEH                  _SHF_BSP_L   LHT_Num_LR          TD_ScrnShots   _SHF_BSP_R                       _MEH        &kp D          &kp H          &kp T          &kp N              &kp S              &as LS(MINUS) MINUS
-                &TD_CpWrd_CpLock     &lt L_NVE SEMI  &kp Q              &lt L_UTL J    &lt L_NUM K    &kp X                                         &TD_Hm_CtrlHm            &kp PG_UP                                                  &kp B          &kp M          &kp W          &kp V              &kp Z              &m_mmsDVK_Colon F22 0
-                &TD_Emj_WinDsk       &kp GRAVE       &as RC(Q) K_CMENU  &kp LEFT       &kp RIGHT                  &as_2tap RC(BSPC) BSPC  &kp DEL  &TD_En_CtrlEn              &kp PG_DN      &lt L_FNC ENTER   &kp SPACE                               &kp UP         &kp DOWN       &as LS(LBKT) LBKT  &as LS(RBKT) RBKT  &to L_NUM
+                &TD_CpWrd_CpLock     &lt L_NVE SEMI  &kp Q              &lt L_UTL J    &lt L_NUM K    &kp X                                          AS_Hm_CtlHm            &kp PG_UP                                                  &kp B          &kp M          &kp W          &kp V              &kp Z              &m_mmsDVK_Colon F22 0
+                &TD_Emj_WinDsk       &kp GRAVE       &as RC(Q) K_CMENU  &kp LEFT       &kp RIGHT                              AS_Bk_CtlBk  &kp DEL  AS_En_CtlEn              &kp PG_DN      &lt L_FNC ENTER   &kp SPACE                               &kp UP         &kp DOWN       &as LS(LBKT) LBKT  &as LS(RBKT) RBKT  &to L_NUM
             >; };
 
             // #UNDEFs
@@ -272,7 +274,9 @@
                 #undef _SHF_BKSP_L
                 #undef _NM_NMLCK
                 #undef MT_Hm_Spc
-                //#undef MT_AMnu_CtrlQ
+                #undef AS_Hm_CtlHm
+                #undef AS_En_CtlEn
+                #undef AS_Bk_CtlBk
         // END Dvorak
         
         /*****************************************************************************************************
