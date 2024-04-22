@@ -180,6 +180,16 @@
             bindings = <&kp>, <&kp>;
         };
 
+        as_2tap: auto_shift_2tap_revert {
+            // making quick-tap longer, like tapping-term, lets 2x-tap-then-hold repeat the key
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <230>;
+            quick-tap-ms = <230>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+
         // TBD layer Hold for 1, Tap for 2; adapted from https://www.reddit.com/r/ErgoMechKeyboards/comments/123sapj/zmk_question_can_i_layertap_with_a_macro/
         lht: layer_hold_tap {
             compatible = "zmk,behavior-hold-tap";
@@ -241,7 +251,7 @@
                 &kp ESC              _SQT_GUI        _CMA_SFT           _DOT_ALT       _P_CTL         _Y_RALT        _HYPER                                                                                                 _HYPER      &kp F          _G_CTL         _C_ALT         _R_SFT             _L_GUI             &as LS(SLASH) SLASH
                 MT_TB_SHFTB          &kp A           &kp O              &kp E          &kp I          &kp U          _MEH                  _SHF_BSP_L   LHT_Num_LR          TD_ScrnShots   _SHF_BSP_R                       _MEH        &kp D          &kp H          &kp T          &kp N              &kp S              &as LS(MINUS) MINUS
                 &TD_CpWrd_CpLock     &lt L_NVE SEMI  &kp Q              &lt L_UTL J    &lt L_NUM K    &kp X                                         &TD_Hm_CtrlHm            &kp PG_UP                                                  &kp B          &kp M          &kp W          &kp V              &kp Z              &m_mmsDVK_Colon F22 0
-                &TD_Emj_WinDsk       &kp GRAVE       &as RC(Q) K_CMENU  &kp LEFT       &kp RIGHT                   &as_slw RC(BSPC) BSPC  &kp DEL  &TD_En_CtrlEn              &kp PG_DN      &lt L_FNC ENTER   &kp SPACE                               &kp UP         &kp DOWN       &as LS(LBKT) LBKT  &as LS(RBKT) RBKT  &to L_NUM
+                &TD_Emj_WinDsk       &kp GRAVE       &as RC(Q) K_CMENU  &kp LEFT       &kp RIGHT                  &as_2tap RC(BSPC) BSPC  &kp DEL  &TD_En_CtrlEn              &kp PG_DN      &lt L_FNC ENTER   &kp SPACE                               &kp UP         &kp DOWN       &as LS(LBKT) LBKT  &as LS(RBKT) RBKT  &to L_NUM
             >; };
 
             // #UNDEFs
