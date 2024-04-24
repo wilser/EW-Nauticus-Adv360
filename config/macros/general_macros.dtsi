@@ -91,4 +91,14 @@ m_HIBER: m_HIBER {
     bindings = <&kp LG(X)>, <&kp U>, <&kp H>;
 };
 
+m_qu: m_qu {
+    compatible = "zmk,behavior-macro";
+    wait-ms = <10>;
+    tap-ms = <5>;
+    #binding-cells = <0>;
+    bindings
+        = <&macro_tap &kp Q>
+        , <&macro_press &kp U>
+        ;
+};
 
