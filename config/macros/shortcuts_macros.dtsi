@@ -72,7 +72,23 @@ m_M8: m_M8 {
     tap-ms = _TAP;
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
-    bindings = <&kp T &kp E &kp S &kp T &kp SPACE &kp L &kp O &kp N &kp G &kp E &kp R &kp SPACE &kp W &kp I &kp T &kp H>;
+    bindings = <&kp P &kp H &kp O &kp T &kp O &kp S>;
+};
+
+m_M9: m_M9 {
+    wait-ms = _WAIT;
+    tap-ms = _TAP;
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp LS(F) &kp U &kp N &kp N &kp Y &kp SPACE>;
+};
+
+m_M10: m_M10 {
+    wait-ms = _WAIT;
+    tap-ms = _TAP;
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp L &kp U &kp C &kp K>;
 };
 
 m_ion: m_ion {
@@ -83,26 +99,4 @@ m_ion: m_ion {
     bindings = <&kp I &kp O &kp N>;
 };
 
-/* 2024-04-16 couldn't figure how to make Shift+<key> ⇒ "Qu" only, always did QU. Changed to AHK and F23 overrides... */
-/*
-m_QU: m_QU {    
-    wait-ms = _WAIT;
-    tap-ms = _TAP;
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings = <&kp Q &kp U>;
-};
 
-m_QU_cap: m_QU_cap {    
-    wait-ms = _WAIT;
-    tap-ms = _TAP;
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    //bindings = <&kp RS(Q) &kp U>; // but only doing either "qu" or "QU" ...
-    bindings =
-      <&kp Q>
-    , <&macro_release &kp LSHIFT> // being held when triggered, so think just release?
-    , <&macro_release &kp RSHIFT>
-    , <&macro_tap &kp U>;
-};
-*/

@@ -91,6 +91,10 @@ m_HIBER: m_HIBER {
     bindings = <&kp LG(X)>, <&kp U>, <&kp H>;
 };
 
+
+// trying to get into key layout:
+// tap: qu, shift-tap: Qu, hold: q, shift-hold: Q
+// 2024-04-24 - NOT working
 m_qu: m_qu {
     compatible = "zmk,behavior-macro";
     wait-ms = <10>;
