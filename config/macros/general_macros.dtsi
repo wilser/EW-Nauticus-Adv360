@@ -104,7 +104,7 @@ m_qu: m_qu {
     bindings = <&kp Q>, <&kp U>;
 };
 
-m_qu: m_qu_cap {
+m_qu_cap: m_qu_cap {
     compatible = "zmk,behavior-macro";
     wait-ms = <10>;
     tap-ms = <5>;
