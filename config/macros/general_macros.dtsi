@@ -95,6 +95,7 @@ m_HIBER: m_HIBER {
 // trying to get into key layout:
 // tap: qu, shift-tap: Qu, hold: q, shift-hold: Q
 // 2024-04-24 - NOT working w.r.t. shifting
+//      still Ø - either "qu" or "QU" ...
 // ▢ if work, tidy up files/dependencies
 m_qu: m_qu {
     compatible = "zmk,behavior-macro";
@@ -104,12 +105,19 @@ m_qu: m_qu {
     bindings = <&kp Q>, <&kp U>;
 };
 
+// ▢ how get Ø-shifted U?
+// maybe <&macro_pause_for_release> between?
 m_qu_cap: m_qu_cap {
     compatible = "zmk,behavior-macro";
     wait-ms = <10>;
     tap-ms = <5>;
     #binding-cells = <0>;
-    bindings = <&kp LS(Q)>, <&kp U>;
+    bindings =
+              <&kp LS(Q)>
+            //, <&macro_release &kp LSHIFT>
+            , <&macro_pause_for_release>
+            , <&kp U>
+    ;
 };
 
 // MOD MORPH for qu Qu - note not &kp based!
