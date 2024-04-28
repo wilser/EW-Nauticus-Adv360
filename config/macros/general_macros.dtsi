@@ -95,6 +95,7 @@ m_HIBER: m_HIBER {
 // trying to get into key layout:
 // tap: qu, shift-tap: Qu, hold: q, shift-hold: Q
 // 2024-04-24 - NOT working w.r.t. shifting
+// ▢ if work, tidy up files/dependencies
 m_qu: m_qu {
     compatible = "zmk,behavior-macro";
     wait-ms = <10>;
@@ -111,4 +112,12 @@ m_qu: m_qu_cap {
     bindings = <&kp LS(Q)>, <&kp U>;
 };
 
+// MOD MORPH for qu Qu - note not &kp based!
+mm_QU: mm_QU {
+    compatible = "zmk,behavior-mod-morph";
+    #binding-cells = <0>;
+    bindings = <&m_qu>, <&m_qu_cap>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+  };
+  
 

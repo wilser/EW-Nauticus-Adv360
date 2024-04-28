@@ -138,10 +138,3 @@
 
 
 
-// MOD MORPH for qu Qu - note not &kp based!
-mm_QU: mm_QU {
-  compatible = "zmk,behavior-mod-morph";
-  #binding-cells = <0>;
-  bindings = <&m_qu>, <&m_qu_cap>;
-  mods = <(MOD_LSFT|MOD_RSFT)>;
-};
