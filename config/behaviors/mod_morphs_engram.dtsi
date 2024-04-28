@@ -136,3 +136,12 @@
 //MOD_MORPH_SHIFT(mmNGM_Bllt  , F22           , LS(F22)         , mmsNGM_Bllt )
   MOD_MORPH_SHIFT(mmNGM_Ing   , F24           , LS(F24)         , mmsNGM_Ing  ) // F21 "ing" / +F21 "tion"
 
+
+
+// MOD MORPH for qu Qu - note not &kp based!
+mm_QU: mm_QU {
+  compatible = "zmk,behavior-mod-morph";
+  #binding-cells = <0>;
+  bindings = <&m_qu>, <&m_qu_cap>;
+  mods = <(MOD_LSFT|MOD_RSFT)>;
+};

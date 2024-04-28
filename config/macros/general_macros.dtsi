@@ -94,15 +94,21 @@ m_HIBER: m_HIBER {
 
 // trying to get into key layout:
 // tap: qu, shift-tap: Qu, hold: q, shift-hold: Q
-// 2024-04-24 - NOT working
+// 2024-04-24 - NOT working w.r.t. shifting
 m_qu: m_qu {
     compatible = "zmk,behavior-macro";
     wait-ms = <10>;
     tap-ms = <5>;
     #binding-cells = <0>;
-    bindings
-        = <&macro_tap &kp Q>
-        , <&macro_press &kp U>
-        ;
+    bindings = <&kp Q>, <&kp U>;
 };
+
+m_qu: m_qu_cap {
+    compatible = "zmk,behavior-macro";
+    wait-ms = <10>;
+    tap-ms = <5>;
+    #binding-cells = <0>;
+    bindings = <&kp LS(Q)>, <&kp U>;
+};
+
 
