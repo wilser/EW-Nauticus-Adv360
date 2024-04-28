@@ -91,6 +91,11 @@
     tapping-term-ms = <300>;
 };
 
+// capsWORD symbols accepted list overrides (additional ones to NOT disrupt). These are my prefs for mostly business, not coding, use-cases.
+&caps_word {
+    continue-list = <UNDERSCORE MINUS SLASH PIPE>;
+};
+
 / {
     macros {
         #include "macros/general_macros.dtsi"
