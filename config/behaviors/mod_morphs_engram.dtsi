@@ -51,12 +51,14 @@
 //MOD_MORPH_SHIFT(mmNGM_Quot  , DOUBLE_QUOTES , STAR            , mmsNGM_Quot )
 //MOD_MORPH_SHIFT(mmNGM_Qstn  , QUESTION      , STAR            , mmsNGM_Qstn )
 //MOD_MORPH_SHIFT(mmNGM_Qstn  , QUESTION      , EXCLAMATION     , mmsNGM_Qstn )     // •
-  MOD_MORPH_SHIFT(mmNGM_Excl  , EXCLAMATION   , LS(F22)         , mmsNGM_Excl )     // •
+//MOD_MORPH_SHIFT(mmNGM_Excl  , EXCLAMATION   , LS(F22)         , mmsNGM_Excl )     // •
+  MOD_MORPH_SHIFT(mmNGM_Apos  , APOS          , EXCLAMATION     , mmsNGM_Apos )
 //MOD_MORPH_SHIFT(mmNGM_Semi  , SEMI          , STAR            , mmsNGM_Semi )
 
 
 // BOTTOM LEFT
-  MOD_MORPH_SHIFT(mmNGM_Apos  , APOS          , F22             , mmsNGM_Apos )
+//MOD_MORPH_SHIFT(mmNGM_Apos  , APOS          , F22             , mmsNGM_Apos )
+  MOD_MORPH_SHIFT(mmNGM_Nill  , LS(F22)       , F22             , mmsNGM_Nill )
 
 
 // CENTER COLUMNS SIX (L-down > R-down)
@@ -70,7 +72,6 @@
 //MOD_MORPH_SHIFT(mmNGM_Mnus  , MINUS         , QUESTION        , mmsNGM_Mnus )
 //MOD_MORPH_SHIFT(mmNGM_Mnus  , MINUS         , EXCLAMATION     , mmsNGM_Mnus )
 //MOD_MORPH_SHIFT(mmNGM_Cmma  , COMMA         , EXCLAMATION     , mmsNGM_Cmma )
-//MOD_MORPH_SHIFT(mmNGM_Apos  , APOS          , EXCLAMATION     , mmsNGM_Apos )
 //MOD_MORPH_SHIFT(mmNGM_Apos  , APOS          , QUESTION        , mmsNGM_Apos )
 //MOD_MORPH_SHIFT(mmNGM_Apos  , APOS          , AMPS            , mmsNGM_Apos )
 //MOD_MORPH_SHIFT(mmNGM_Apos  , APOS          , STAR            , mmsNGM_Apos )
