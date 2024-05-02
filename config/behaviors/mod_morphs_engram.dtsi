@@ -15,12 +15,12 @@
 // F22 >> AHK(•)
 
 // TOP ROW (L to R)
-  MOD_MORPH_SHIFT(mmNGM_Qstn  , QUESTION      , GRAVE           , mmsNGM_Qstn )
 //MOD_MORPH_SHIFT(mmNGM_1     , N1            , UNDERSCORE      , mmsNGM_1 )   // => "m_mmENG_1" ... etc. below
 //MOD_MORPH_SHIFT(mnNGM_PLUS  , PLUS          , GRAVE           , mmsNGM_PLUS)
 //MOD_MORPH_SHIFT(mmNGM_LThn  , LESS_THAN     , LBRC            , mmsNGM_LThn )
 //MOD_MORPH_SHIFT(mmNGM_Lbrc  , LBRC          , RBRC            , mmsNGM_Lbrc )
-//MOD_MORPH_SHIFT(mnNGM_Apos  , APOS          , GRAVE           , mmsNGM_Apos)
+//MOD_MORPH_SHIFT(mmNGM_Qstn  , QUESTION      , GRAVE           , mmsNGM_Qstn )
+  MOD_MORPH_SHIFT(mnNGM_Apos  , APOS          , GRAVE           , mmsNGM_Apos)
 //MOD_MORPH_SHIFT(mmNGM_1     , N1            , UNDERSCORE      , mmsNGM_1 )   
 //MOD_MORPH_SHIFT(mmNGM_1     , N1            , GRAVE           , mmsNGM_1 )   
   MOD_MORPH_SHIFT(mmNGM_1     , N1            , LBRC            , mmsNGM_1 )   
@@ -50,9 +50,9 @@
 //MOD_MORPH_SHIFT(mmNGM_Star  , STAR          , F22             , mmsNGM_Star )
 //MOD_MORPH_SHIFT(mmNGM_Quot  , DOUBLE_QUOTES , STAR            , mmsNGM_Quot )
 //MOD_MORPH_SHIFT(mmNGM_Qstn  , QUESTION      , STAR            , mmsNGM_Qstn )
-//MOD_MORPH_SHIFT(mmNGM_Qstn  , QUESTION      , EXCLAMATION     , mmsNGM_Qstn )     // •
 //MOD_MORPH_SHIFT(mmNGM_Excl  , EXCLAMATION   , LS(F22)         , mmsNGM_Excl )     // •
-  MOD_MORPH_SHIFT(mmNGM_Apos  , APOS          , EXCLAMATION     , mmsNGM_Apos )
+  MOD_MORPH_SHIFT(mmNGM_Qstn  , QUESTION      , EXCLAMATION     , mmsNGM_Qstn )     // •
+//MOD_MORPH_SHIFT(mmNGM_Apos  , APOS          , EXCLAMATION     , mmsNGM_Apos )
 //MOD_MORPH_SHIFT(mmNGM_Semi  , SEMI          , STAR            , mmsNGM_Semi )
 
 
