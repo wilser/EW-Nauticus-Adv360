@@ -48,7 +48,3 @@ m_##AS_NAME: m_##AS_NAME { \
 }; \
 
 
-// MISC for other layers (one-offs so not separate files)
-
-MOD_MORPH_SHIFT(mmNUM_Coln     , COLON            , SEMI            , mmsNUM_Coln )
-

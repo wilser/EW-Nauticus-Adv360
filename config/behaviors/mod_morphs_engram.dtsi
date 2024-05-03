@@ -20,7 +20,7 @@
 //MOD_MORPH_SHIFT(mmNGM_LThn  , LESS_THAN     , LBRC            , mmsNGM_LThn )
 //MOD_MORPH_SHIFT(mmNGM_Lbrc  , LBRC          , RBRC            , mmsNGM_Lbrc )
 //MOD_MORPH_SHIFT(mmNGM_Qstn  , QUESTION      , GRAVE           , mmsNGM_Qstn )
-  MOD_MORPH_SHIFT(mnNGM_Apos  , APOS          , GRAVE           , mmsNGM_Apos)
+  MOD_MORPH_SHIFT(mmGM_Apos  , APOS          , GRAVE           , mmsNGM_Apos)
 //MOD_MORPH_SHIFT(mmNGM_1     , N1            , UNDERSCORE      , mmsNGM_1 )   
 //MOD_MORPH_SHIFT(mmNGM_1     , N1            , GRAVE           , mmsNGM_1 )   
   MOD_MORPH_SHIFT(mmNGM_1     , N1            , LBRC            , mmsNGM_1 )   

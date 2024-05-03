@@ -1,0 +1,37 @@
+/* TODO & NOTES - see mod_morphs_colemak file */
+/* CODES ref: https://zmk.dev/docs/codes */
+
+/*
+    2023-12-21: trying shorter macro-sub names vs. prior Colemak cases
+        [.] weird parse errors; not sure
+
+*/
+
+/* ASSUMES GENERAL ONE INCLUDED BEFORE THIS ONE! */
+
+
+// ---------- NEW WIP LAYOUTS 2024-05+ ---------- //
+
+//Defines
+    #define _CSA_F22 LC(LS(LA(F22)))    // AHK: °
+    #define _CSA_F23 LC(LS(LA(F23)))    // AHK: ×
+    #define _CSA_F24 LC(LS(LA(F24)))    // AHK: ÷
+
+// LH Side
+MOD_MORPH_SHIFT(mmNUM_Semi  , SEMI            , _CSA_F22        , mmsNUM_Semi) // ; °
+
+// Num-pad side (L to R, Top to Bottom)
+MOD_MORPH_SHIFT(mmNUM_Mult  , KP_ASTERISK     , _CSA_F23        , mmsNUM_Mult) // * ×
+MOD_MORPH_SHIFT(mmNUM_Divd  , KP_DIVIDE       , _CSA_F24        , mmsNUM_Divd) // / ÷
+MOD_MORPH_SHIFT(mmNUM_Lpar  , LPAR            , LBKT            , mmsNUM_Lpar) // ( [
+MOD_MORPH_SHIFT(mmNUM_Mnus  , KP_MINUS        , LS(MINUS)       , mmsNUM_Mnus) // - _
+MOD_MORPH_SHIFT(mmNUM_Rpar  , RPAR            , RBKT            , mmsNUM_Rpar) // ) ]
+MOD_MORPH_SHIFT(mmNUM_Plus  , KP_PLUS         , LS(N7)          , mmsNUM_Plus) // + & 
+MOD_MORPH_SHIFT(mmNUM_Coln  , COLON           , SEMI            , mmsNUM_Coln) // : ; 
+MOD_MORPH_SHIFT(mmNUM_Dot   , DOT             , COMMA           , mmsNUM_Dot ) // . ,
+
+
+//Undefines
+    #undef _CSA_F22
+    #undef _CSA_F23
+    #undef _CSA_F24

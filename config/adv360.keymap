@@ -114,6 +114,7 @@
         #include "behaviors/mod_morphs_general.dtsi"
         #include "behaviors/mod_morphs_dvorak.dtsi"
         #include "behaviors/mod_morphs_engram.dtsi"
+        #include "behaviors/mod_morphs_nums.dtsi"
 
         /*  NOTES - hold-tap
             FLAVORS: https://zmk.dev/docs/behaviors/hold-tap
@@ -350,27 +351,40 @@
         * L3 🟢 Standard numpad layer
             *      http://www.keyboard-layout-editor.com/#/gists/c51e298f5744feba159cde9973f47b92
             *      Uses non-keypad number variants since plan to use as "main" numbers method eventually as practice more.
+            *      Uses some #defs from the mod_morphs file
             * [ ] TODO: € seems wonky / seems better Alt-Code methods? / maybe just ignore? maybe trigger AHK?
             */ 
 
             // DEFINES:
                 #define _7_CTL      &hm_r RCTRL N7      // ... and next, Ctrl+, Alt+, Shift+ holds on RH (7, 8, 9)
                 #define _8_ALT      &hm_r RALT N8       
-                #define _9_SFT      &hm_r RSFT N9        
+                #define _9_SFT      &hm_r RSFT N9 
+                #define _SEMI_DEG   &m_mmsNUM_Semi LC(LS(LA(F22))) 0    // AHK: °
+                #define _MULT_TIMES &m_mmsNUM_Mult LC(LS(LA(F23))) 0    // AHK: ×
+                #define _SLSH_DIV   &m_mmsNUM_Divd LC(LS(LA(F24))) 0    // AHK: ÷
+                #define _LPAR_LBKT  &m_mmsNUM_Lpar LBKT 0
+                #define _MNUS_UNDR  &m_mmsNUM_Mnus LS(MINUS) 0
+                #define _RPAR_RBKT  &m_mmsNUM_Rpar RBKT 0
+                #define _PLUS_AMP   &m_mmsNUM_Plus LS(N7) 0
+                #define _COLN_SEMI  &m_mmsNUM_Coln SEMI 0
+                #define _DOT_CMMA   &m_mmsNUM_Dot COMMA 0
             // end defines
         
             numpad_layer { bindings = <
-                ___    ___       ___         ___         ___         ___    &to L_0                                                           ___    &m_CHR_EU      &kp DOLLAR  &kp HASH   &kp PERCENT    &kp EQUAL                &m_CSA_R
-                ___    &kp LWIN  &kp LSHFT   &kp LALT    &kp LCTRL   ___    ___                                                               ___    &kp BSPC       _7_CTL      _8_ALT     _9_SFT         &kp KP_ASTERISK          &kp KP_DIVIDE
-                ___    &kp BSPC  ___         &kp LEFT    &kp RIGHT   ___    ___      &kp LSHFT  &to L_0        &kp BSPC    &kp SPACE          ___    &as LBKT LPAR  &kp N4      &kp N5     &kp N6         &as LS(MINUS) KP_MINUS   &as RBKT RPAR
-                ___    ___       ___         ___         ___         ___                          ___            &kp TAB                             &kp SPACE      &kp N1      &kp N2     &kp N3         &as SEMI KP_PLUS         &m_mmsNUM_Coln SEMI 0
-                ___    ___       ___         ___         ___                      ___    ___    ___               &kp RS(TAB)  ___    &kp N0                        ___         ___        &as COMMA DOT  &kp KP_ENTER             &to L_0 
+                ___      ___       ___         ___         ___         ___    &to L_0                                                           ___    ___          &kp DOLLAR   &kp HASH   &kp PERCENT   &kp EQUAL      &m_CSA_R
+                ___      &kp APOS  &kp COMMA   &kp PERIOD  _SEMI_DEG   ___    ___                                                               ___    &kp BSPC     _7_CTL       _8_ALT     _9_SFT        _MULT_TIMES    _SLSH_DIV
+                ___      &kp BSPC  &kp LSHFT   &kp LALT    &kp LCTRL   ___    ___      &kp LSHFT  &to L_0        &kp BSPC    &kp SPACE          ___    _LPAR_LBKT   &kp N4       &kp N5     &kp N6        _MNUS_UNDR     _RPAR_RBKT
+                &kp ESC  &kp BSPC  &kp LEFT    &kp RIGHT   ___         ___                          ___            &kp TAB                             &kp SPACE    &kp N1       &kp N2     &kp N3        _PLUS_AMP      _COLN_SEMI
+                ___      ___       ___         ___         ___                      ___    ___    ___               &kp RS(TAB)  ___    &kp N0                      ___          ___        _DOT_CMMA     &kp KP_ENTER   &to L_0 
             >; };
 
             // #UNDEFS:
                 #undef _7_CTL
                 #undef _8_ALT
                 #undef _9_SFT
+                #undef _SEMI_DEG
+                #undef _SEMI_DEG
+                #undef _SEMI_DEG                
             // END UNDEFS
         // END Numpad
 
