@@ -315,7 +315,7 @@
                 ___                         _B_GUI                     _Y_SFT               _O_ALT                     _U_CTL                &m_mmsNGM_Lpar LBKT 0          ___                                                    ___    &m_mmsNGM_Rpar RBKT 0            _L_CTL               _D_ALT               _W_SFT                _V_GUI                &m_mmsNGM_Slsh STAR 0
                 ___                         &kp C                      &kp I                &kp E                      &kp A                 &m_mmsNGM_Cmma SEMI 0          ___               ___   ___        ___   ___           ___    &m_mmsNGM_Perd DOUBLE_QUOTES 0   &kp H                &kp T                &kp S                 &kp N                 &m_mmsNGM_Mnus UNDERSCORE 0
                 &m_mmsNGM_Nill F22 0        &lt L_NVE G                &kp X                &lt L_UTL J                &lt L_NUM K           &m_mmsNGM_Amps LESS_THAN 0                            ___          ___                       &m_mmsNGM_Equl GREATER_THAN 0    &kp R                &kp M                &kp F                 &kp P                 &m_mmsNGM_Coln PLUS 0
-                ___                         &m_mmsNGM_Ing LS(F24) 0    &as RC(Q) K_CMENU    ___                        ___                                                            ___   ___   ___            ___   ___   ___                                           ___                  ___                  &mm_QU                &kp Z                 ___
+                ___                         &m_mmsNGM_Ing LA(F24) 0    &as RC(Q) K_CMENU    ___                        ___                                                            ___   ___   ___            ___   ___   ___                                           ___                  ___                  &mm_QU                &kp Z                 ___
             >; };
 
             // #UNDEFs
@@ -359,9 +359,9 @@
                 #define _7_CTL      &hm_r RCTRL N7      // ... and next, Ctrl+, Alt+, Shift+ holds on RH (7, 8, 9)
                 #define _8_ALT      &hm_r RALT N8       
                 #define _9_SFT      &hm_r RSFT N9 
-                #define _SEMI_DEG   &m_mmsNUM_Semi LC(LS(LA(F22))) 0    // AHK: °
-                #define _MULT_TIMES &m_mmsNUM_Mult LC(LS(LA(F23))) 0    // AHK: ×
-                #define _SLSH_DIV   &m_mmsNUM_Divd LC(LS(LA(F24))) 0    // AHK: ÷
+                #define _SEMI_DEG   &m_mmsNUM_Semi LC(LA(F22))) 0    // AHK: °
+                #define _MULT_TIMES &m_mmsNUM_Mult LC(LA(F23))) 0    // AHK: ×
+                #define _SLSH_DIV   &m_mmsNUM_Divd LC(LA(F24))) 0    // AHK: ÷
                 #define _LPAR_LBKT  &m_mmsNUM_Lpar LBKT 0
                 #define _MNUS_UNDR  &m_mmsNUM_Mnus LS(MINUS) 0
                 #define _RPAR_RBKT  &m_mmsNUM_Rpar RBKT 0

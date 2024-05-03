@@ -20,7 +20,7 @@
 //MOD_MORPH_SHIFT(mmNGM_LThn  , LESS_THAN     , LBRC            , mmsNGM_LThn )
 //MOD_MORPH_SHIFT(mmNGM_Lbrc  , LBRC          , RBRC            , mmsNGM_Lbrc )
 //MOD_MORPH_SHIFT(mmNGM_Qstn  , QUESTION      , GRAVE           , mmsNGM_Qstn )
-  MOD_MORPH_SHIFT(mmGM_Apos  , APOS          , GRAVE           , mmsNGM_Apos)
+  MOD_MORPH_SHIFT(mmGM_Apos   , APOS          , GRAVE           , mmsNGM_Apos)
 //MOD_MORPH_SHIFT(mmNGM_1     , N1            , UNDERSCORE      , mmsNGM_1 )   
 //MOD_MORPH_SHIFT(mmNGM_1     , N1            , GRAVE           , mmsNGM_1 )   
   MOD_MORPH_SHIFT(mmNGM_1     , N1            , LBRC            , mmsNGM_1 )   
@@ -58,7 +58,7 @@
 
 // BOTTOM LEFT
 //MOD_MORPH_SHIFT(mmNGM_Apos  , APOS          , F22             , mmsNGM_Apos )
-  MOD_MORPH_SHIFT(mmNGM_Nill  , LS(F22)       , F22             , mmsNGM_Nill )
+  MOD_MORPH_SHIFT(mmNGM_Nill  , LA(F22)       , F22             , mmsNGM_Nill )
 
 
 // CENTER COLUMNS SIX (L-down > R-down)
@@ -140,6 +140,6 @@
 //MOD_MORPH_SHIFT(mmNGM_Tild  , TILDE         , QUESTION        , mmsNGM_Tild )
 
 //MOD_MORPH_SHIFT(mmNGM_Bllt  , F22           , LS(F22)         , mmsNGM_Bllt )
-  MOD_MORPH_SHIFT(mmNGM_Ing   , F24           , LS(F24)         , mmsNGM_Ing  ) // F21 "ing" / +F21 "tion"
+  MOD_MORPH_SHIFT(mmNGM_Ing   , F24           , LA(F24)         , mmsNGM_Ing  ) // F24 "ing" / Alt+F24 "tion"
 
 
