@@ -367,17 +367,17 @@
                 #define _PLUS_AMP   &m_mmsNUM_Plus LS(N7) 0
                 #define _COLN_SEMI  &m_mmsNUM_Coln SEMI 0
                 #define _DOT_CMMA   &m_mmsNUM_Dot COMMA 0
-                #define as_APOS_QT  &as RS(APOS) APOS
-                #define as_CMMA_LT  &as RS(COMMA) COMMA
-                #define as_PERD_GT  &as RS(PERIOD) PERIOD
-                #define as_SEMI_ED  &lt L_EDT SEMI
+                #define _APOS_QT  &as RS(APOS) APOS
+                #define _CMMA_LT  &as RS(COMMA) COMMA
+                #define _PERD_GT  &as RS(PERIOD) PERIOD
+                #define _SEMI_ED  &lt L_EDT SEMI
             // end defines
         
             numpad_layer { bindings = <
                 ___      ___         ___         ___         ___         ___    &to L_0                                                           ___    ___          &kp DOLLAR   &kp HASH   &kp PERCENT   &kp EQUAL      &m_CSA_R
-                ___      as_APOS_QT  as_CMMA_LT  as_PERD_GT  _SEMI_DEG   ___    ___                                                               ___    &kp BSPC     _7_CTL       _8_ALT     _9_SFT        _MULT_TIMES    _SLSH_DIV
+                ___      _APOS_QT    _CMMA_LT    _PERD_GT    _SEMI_DEG   ___    ___                                                               ___    &kp BSPC     _7_CTL       _8_ALT     _9_SFT        _MULT_TIMES    _SLSH_DIV
                 ___      &kp BSPC    &kp LSHFT   &kp LALT    &kp LCTRL   ___    ___      &kp LSHFT  &to L_0        &kp BSPC    &kp SPACE          ___    _LPAR_LBKT   &kp N4       &kp N5     &kp N6        _MNUS_UNDR     _RPAR_RBKT
-                &kp ESC  as_SEMI_ED  LBRC        RBRC        _x_         ___                          ___            &kp TAB                             &kp SPACE    &kp N1       &kp N2     &kp N3        _PLUS_AMP      _COLN_SEMI
+                &kp ESC  _SEMI_ED    &kp LBRC    &kp RBRC    _x_         ___                          ___            &kp TAB                             &kp SPACE    &kp N1       &kp N2     &kp N3        _PLUS_AMP      _COLN_SEMI
                 ___      ___         ___         ___         ___                      ___    ___    ___               &kp RS(TAB)  ___    &kp N0                      ___          ___        _DOT_CMMA     &kp KP_ENTER   &to L_0 
             >; };
 
@@ -394,10 +394,10 @@
                 #undef _PLUS_AMP                 
                 #undef _COLN_SEMI                
                 #undef _DOT_CMMA                 
-                #undef as_APOS_QT                
-                #undef as_CMMA_LT                
-                #undef as_PERD_GT                
-                #undef as_SEMI_ED                
+                #undef _APOS_QT                
+                #undef _CMMA_LT                
+                #undef _PERD_GT                
+                #undef _SEMI_ED                
             // END UNDEFS
         // END Numpad
 
@@ -504,6 +504,7 @@
         // END KP Numpad
 
         /*****************************************************************************************************
+        * UPDATE: 2024-05 NOT NEEDED since put all on F# layer...
         * L8 ⚫ higher F## keys 13-24; in case need for testing (not sure LED color)
             *      (no yet KeyboardLayoutEditor)
             *   [.] with WIP may Fn layer changes, think don't need...
