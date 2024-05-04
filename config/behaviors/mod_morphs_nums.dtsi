@@ -13,9 +13,9 @@
 // ---------- NEW WIP LAYOUTS 2024-05+ ---------- //
 
 //Defines
-    #define _CA_F22 LC(LA(F22)))    // AHK: degree symb.
-    #define _CA_F23 LC(LA(F23)))    // AHK: times symb.
-    #define _CA_F24 LC(LA(F24)))    // AHK: divide symb.
+    #define _CA_F22 LC(LA(F22))    // AHK: degree symb.
+    #define _CA_F23 LC(LA(F23))    // AHK: times symb.
+    #define _CA_F24 LC(LA(F24))    // AHK: divide symb.
 
 // LH Side
 MOD_MORPH_SHIFT(mmNUM_Semi  , SEMI            , _CA_F22         , mmsNUM_Semi)
