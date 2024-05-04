@@ -359,9 +359,9 @@
                 #define _7_CTL      &hm_r RCTRL N7      // ... and next, Ctrl+, Alt+, Shift+ holds on RH (7, 8, 9)
                 #define _8_ALT      &hm_r RALT N8       
                 #define _9_SFT      &hm_r RSFT N9 
-                #define _SEMI_DEG   &m_mmsNUM_Semi LC(LA(F22))) 0    // AHK: °
-                #define _MULT_TIMES &m_mmsNUM_Mult LC(LA(F23))) 0    // AHK: ×
-                #define _SLSH_DIV   &m_mmsNUM_Divd LC(LA(F24))) 0    // AHK: ÷
+                #define _SEMI_DEG   &m_mmsNUM_Semi LC(LA(F22)) 0    // AHK: °
+                #define _MULT_TIMES &m_mmsNUM_Mult LC(LA(F23)) 0    // AHK: ×
+                #define _SLSH_DIV   &m_mmsNUM_Divd LC(LA(F24)) 0    // AHK: ÷
                 #define _LPAR_LBKT  &m_mmsNUM_Lpar LBKT 0
                 #define _MNUS_UNDR  &m_mmsNUM_Mnus LS(MINUS) 0
                 #define _RPAR_RBKT  &m_mmsNUM_Rpar RBKT 0
