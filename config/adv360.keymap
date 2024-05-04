@@ -19,7 +19,7 @@
 
     */
 
-    /* THINK this map is correct for the 'thumbs-below' alternate mapping this project uses */
+    /* define LEFT, RIGHT, and THUMBS to affect hold-tap timings vs. finger rolls */
     #define KEYS_LEFT    0  1  2  3  4  5  6 \
                         14 15 16 17 18 19 20 \
                         28 29 30 31 32 33 34 \
@@ -63,7 +63,7 @@
     #define L_NUM 3     // numpad
     #define L_UTL 4     // utils
     #define L_FNC 5     // function keys 1-12 (like numpad)
-    #define L_NVE 6     // nav & edit 
+    #define L_EDT 6     // edit (mostly LH while RH uses mouse, or general use)
     #define L_KP 7      // keypad (*actual KP key codes) (rare)
     //  #define L_F13 8     // function keys 13-24 (rare) / [.] WIP combined with F1-12 layer
     //  #define L_MTG 9     // MTGAP [tbd, trying] / [.] removed since focusing on Engram
@@ -74,7 +74,6 @@
 
 /* TAPPING timeouts, flavors, etc.
     try disable global-quick-tap, & set quick-tap-ms faster like 125
-    also starter example had typo, so seems quick-tap wasn't being set
     one suggested like 75 for the "global-quick-tap-ms" [which seems maybe new/ish]
     try remove 'hold trigger' positions to see
         so far seems better; maybe the #-key array is off? - [] how to test?
@@ -258,7 +257,7 @@
                 &as RS(EQUAL) EQUAL  &as RS(N1) N1   &as RS(N2) N2      &as RS(N3) N3  &as RS(N4) N4  &as RS(N5) N5  &to L_NGM                                                                                              &sl L_UTL   &as LS(N6) N6  &as LS(N7) N7  &as LS(N8) N8  &as LS(N9) N9      &as LS(N0) N0      &as LS(BSLH) BSLH
                 &kp ESC              _SQT_GUI        _CMA_SFT           _DOT_ALT       _P_CTL         _Y_RALT        _HYPER                                                                                                 _HYPER      &kp F          _G_CTL         _C_ALT         _R_SFT             _L_GUI             &as LS(SLASH) SLASH
                 MT_TB_SHFTB          &kp A           &kp O              &kp E          &kp I          &kp U          _MEH                  _SHF_BSP_L   LHT_Num_LR          TD_ScrnShots   _SHF_BSP_R                       _MEH        &kp D          &kp H          &kp T          &kp N              &kp S              &as LS(MINUS) MINUS
-                &TD_CpWrd_CpLock     &lt L_NVE SEMI  &kp Q              &lt L_UTL J    &lt L_NUM K    &kp X                                          AS_Hm_CtlHm            &kp PG_UP                                                  &kp B          &kp M          &kp W          &kp V              &kp Z              &m_mmsDVK_Colon F22 0
+                &TD_CpWrd_CpLock     &lt L_EDT SEMI  &kp Q              &lt L_UTL J    &lt L_NUM K    &kp X                                          AS_Hm_CtlHm            &kp PG_UP                                                  &kp B          &kp M          &kp W          &kp V              &kp Z              &m_mmsDVK_Colon F22 0
                 &TD_Emj_WinDsk       &kp GRAVE       &as RC(Q) K_CMENU  &kp LEFT       &kp RIGHT                              AS_Bk_CtlBk  &kp DEL  AS_En_CtlEn              &kp PG_DN      &lt L_FNC ENTER   &kp SPACE                               &kp UP         &kp DOWN       &as LS(LBKT) LBKT  &as LS(RBKT) RBKT  &to L_NUM
             >; };
 
@@ -314,7 +313,7 @@
                 &m_mmsNGM_Apos GRAVE 0      &m_mmsNGM_1 LBRC 0         &m_mmsNGM_2 AT 0     &m_mmsNGM_3 BACKSLASH 0    &m_mmsNGM_4 TILDE 0   &m_mmsNGM_5 PIPE 0             &to L_DVK                                              ___    &as LS(N6) N6                    &m_mmsNGM_7 DLLR 0   &m_mmsNGM_8 HASH 0   &m_mmsNGM_9 PRCNT 0   &m_mmsNGM_0 RBRC 0    &m_mmsNGM_Qstn EXCLAMATION 0
                 ___                         _B_GUI                     _Y_SFT               _O_ALT                     _U_CTL                &m_mmsNGM_Lpar LBKT 0          ___                                                    ___    &m_mmsNGM_Rpar RBKT 0            _L_CTL               _D_ALT               _W_SFT                _V_GUI                &m_mmsNGM_Slsh STAR 0
                 ___                         &kp C                      &kp I                &kp E                      &kp A                 &m_mmsNGM_Cmma SEMI 0          ___               ___   ___        ___   ___           ___    &m_mmsNGM_Perd DOUBLE_QUOTES 0   &kp H                &kp T                &kp S                 &kp N                 &m_mmsNGM_Mnus UNDERSCORE 0
-                &m_mmsNGM_Nill F22 0        &lt L_NVE G                &kp X                &lt L_UTL J                &lt L_NUM K           &m_mmsNGM_Amps LESS_THAN 0                            ___          ___                       &m_mmsNGM_Equl GREATER_THAN 0    &kp R                &kp M                &kp F                 &kp P                 &m_mmsNGM_Coln PLUS 0
+                &m_mmsNGM_Nill F22 0        &lt L_EDT G                &kp X                &lt L_UTL J                &lt L_NUM K           &m_mmsNGM_Amps LESS_THAN 0                            ___          ___                       &m_mmsNGM_Equl GREATER_THAN 0    &kp R                &kp M                &kp F                 &kp P                 &m_mmsNGM_Coln PLUS 0
                 ___                         &m_mmsNGM_Ing LA(F24) 0    &as RC(Q) K_CMENU    ___                        ___                                                            ___   ___   ___            ___   ___   ___                                           ___                  ___                  &mm_QU                &kp Z                 ___
             >; };
 
@@ -342,7 +341,7 @@
                 &TD_LR_E      &TD_LR_1        &TD_LR_2         &TD_LR_3        &TD_LR_4         &TD_LR_5         &to L_0                                                 ___    &kp LC(LA(N1))   &kp LC(LA(N2))   &kp LC(LA(N3))   &kp LC(LA(N6))   &kp N0    ___  
                 ___           &hm_slw LGUI G  &hm_slw LSHFT B  &hm_slw LALT Y  &hm_slw LCTRL P  &hm_slw RALT M   &kp LS(W)                                               _x_    ___              ___              ___              ___              _x_       &as BSLH LC(L)
                 ___           &kp A           &kp O            &kp D           &TD_LR_U         &kp S            &kp R               ___   &to L_0    _x_  _x_           _x_    ___              ___              ___              ___              ___       ___
-                &kp LC(APOS)  &lt L_NVE Q     &kp LC(LS(D))    &kp J           &lt L_NUM X      &kp Z                                     &kp C         ___                     ___              ___              ___              ___              ___       ___
+                &kp LC(APOS)  &lt L_EDT Q     &kp LC(LS(D))    &kp J           &lt L_NUM X      &kp Z                                     &kp C         ___                     ___              ___              ___              ___              ___       ___
                 &kp LC(Z)     &kp LS(T)       _x_              ___             ___                                          ___   ___   &kp N             ___  ___  ___                          ___              ___              ___              ___       &kp LC(APOS)
             >; };
         // END Lightroom
@@ -368,23 +367,37 @@
                 #define _PLUS_AMP   &m_mmsNUM_Plus LS(N7) 0
                 #define _COLN_SEMI  &m_mmsNUM_Coln SEMI 0
                 #define _DOT_CMMA   &m_mmsNUM_Dot COMMA 0
+                #define as_APOS_QT  &as RS(APOS) APOS
+                #define as_CMMA_LT  &as RS(COMMA) COMMA
+                #define as_PERD_GT  &as RS(PERIOD) PERIOD
+                #define as_SEMI_ED  &lt L_EDT SEMI
             // end defines
         
             numpad_layer { bindings = <
-                ___      ___       ___         ___         ___         ___    &to L_0                                                           ___    ___          &kp DOLLAR   &kp HASH   &kp PERCENT   &kp EQUAL      &m_CSA_R
-                ___      &kp APOS  &kp COMMA   &kp PERIOD  _SEMI_DEG   ___    ___                                                               ___    &kp BSPC     _7_CTL       _8_ALT     _9_SFT        _MULT_TIMES    _SLSH_DIV
-                ___      &kp BSPC  &kp LSHFT   &kp LALT    &kp LCTRL   ___    ___      &kp LSHFT  &to L_0        &kp BSPC    &kp SPACE          ___    _LPAR_LBKT   &kp N4       &kp N5     &kp N6        _MNUS_UNDR     _RPAR_RBKT
-                &kp ESC  &kp BSPC  &kp LEFT    &kp RIGHT   ___         ___                          ___            &kp TAB                             &kp SPACE    &kp N1       &kp N2     &kp N3        _PLUS_AMP      _COLN_SEMI
-                ___      ___       ___         ___         ___                      ___    ___    ___               &kp RS(TAB)  ___    &kp N0                      ___          ___        _DOT_CMMA     &kp KP_ENTER   &to L_0 
+                ___      ___         ___         ___         ___         ___    &to L_0                                                           ___    ___          &kp DOLLAR   &kp HASH   &kp PERCENT   &kp EQUAL      &m_CSA_R
+                ___      as_APOS_QT  as_CMMA_LT  as_PERD_GT  _SEMI_DEG   ___    ___                                                               ___    &kp BSPC     _7_CTL       _8_ALT     _9_SFT        _MULT_TIMES    _SLSH_DIV
+                ___      &kp BSPC    &kp LSHFT   &kp LALT    &kp LCTRL   ___    ___      &kp LSHFT  &to L_0        &kp BSPC    &kp SPACE          ___    _LPAR_LBKT   &kp N4       &kp N5     &kp N6        _MNUS_UNDR     _RPAR_RBKT
+                &kp ESC  as_SEMI_ED  LBRC        RBRC        _x_         ___                          ___            &kp TAB                             &kp SPACE    &kp N1       &kp N2     &kp N3        _PLUS_AMP      _COLN_SEMI
+                ___      ___         ___         ___         ___                      ___    ___    ___               &kp RS(TAB)  ___    &kp N0                      ___          ___        _DOT_CMMA     &kp KP_ENTER   &to L_0 
             >; };
 
             // #UNDEFS:
                 #undef _7_CTL
                 #undef _8_ALT
                 #undef _9_SFT
-                #undef _SEMI_DEG
-                #undef _SEMI_DEG
-                #undef _SEMI_DEG                
+                #undef _SEMI_DEG 
+                #undef _MULT_TIMES
+                #undef _SLSH_DIV                 
+                #undef _LPAR_LBKT                
+                #undef _MNUS_UNDR                
+                #undef _RPAR_RBKT                
+                #undef _PLUS_AMP                 
+                #undef _COLN_SEMI                
+                #undef _DOT_CMMA                 
+                #undef as_APOS_QT                
+                #undef as_CMMA_LT                
+                #undef as_PERD_GT                
+                #undef as_SEMI_ED                
             // END UNDEFS
         // END Numpad
 
