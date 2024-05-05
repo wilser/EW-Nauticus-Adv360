@@ -9,5 +9,5 @@
 
 */
 
-MOD_MORPH_SHIFT(mmDVK_Colon,  COLON,           LS(F24)         , mmsDVK_Colon )     // : • 
+MOD_MORPH_SHIFT(mmDVK_Colon,  COLON,           F21         , mmsDVK_Colon )     // : • 
 

@@ -54,8 +54,8 @@
 #define nil 0
 
 // DEFINES for layers:
-    /* LED layer colors:  0 ⚫   1 ⚪   2 🔵   3 🟢   4 🔴   5 🟣   6 🧢   7 🟡   8  ??  9 ??   */
-    /*                    DVK     LR      NUM    UTIL   FNC    NavEd   N#     F13+                  */
+    /* LED layer colors:  0 ⚫   1 ⚪   2 🔵   3 🟢   4 🔴   5 🟣   6 🧢    7 ▢    */
+    /*                    DVK    NGM     LR      NUM    UTIL    FNC    NavEd   kp#     */
     #define L_0 0
     #define L_DVK 0     // dvorak
     #define L_NGM 1     // engram
@@ -65,10 +65,6 @@
     #define L_FNC 5     // function keys 1-12 (like numpad)
     #define L_EDT 6     // edit (mostly LH while RH uses mouse, or general use)
     #define L_KP 7      // keypad (*actual KP key codes) (rare)
-    //  #define L_F13 8     // function keys 13-24 (rare) / [.] WIP combined with F1-12 layer
-    //  #define L_MTG 9     // MTGAP [tbd, trying] / [.] removed since focusing on Engram
-    //  #define L_UCI 10    // UCIEA [tbd, trying] / [.] removed since focusing on Engram
-    //  #define L_CMK 1     // colemak
     
 // END defines for layers
 
@@ -254,11 +250,11 @@
             // end defs
 
             dvorak_layer { bindings = <
-                &as RS(EQUAL) EQUAL  &as RS(N1) N1   &as RS(N2) N2      &as RS(N3) N3  &as RS(N4) N4  &as RS(N5) N5  &to L_NGM                                                                                              &sl L_UTL   &as LS(N6) N6  &as LS(N7) N7  &as LS(N8) N8  &as LS(N9) N9      &as LS(N0) N0      &as LS(BSLH) BSLH
-                &kp ESC              _SQT_GUI        _CMA_SFT           _DOT_ALT       _P_CTL         _Y_RALT        _HYPER                                                                                                 _HYPER      &kp F          _G_CTL         _C_ALT         _R_SFT             _L_GUI             &as LS(SLASH) SLASH
-                MT_TB_SHFTB          &kp A           &kp O              &kp E          &kp I          &kp U          _MEH                  _SHF_BSP_L   LHT_Num_LR          TD_ScrnShots   _SHF_BSP_R                       _MEH        &kp D          &kp H          &kp T          &kp N              &kp S              &as LS(MINUS) MINUS
-                &TD_CpWrd_CpLock     &lt L_EDT SEMI  &kp Q              &lt L_UTL J    &lt L_NUM K    &kp X                                          AS_Hm_CtlHm            &kp PG_UP                                                  &kp B          &kp M          &kp W          &kp V              &kp Z              &m_mmsDVK_Colon F22 0
-                &TD_Emj_WinDsk       &kp GRAVE       &as RC(Q) K_CMENU  &kp LEFT       &kp RIGHT                              AS_Bk_CtlBk  &kp DEL  AS_En_CtlEn              &kp PG_DN      &lt L_FNC ENTER   &kp SPACE                               &kp UP         &kp DOWN       &as LS(LBKT) LBKT  &as LS(RBKT) RBKT  &to L_NUM
+                &as RS(EQUAL) EQUAL  &as RS(N1) N1   &as RS(N2) N2      &as RS(N3) N3  &as RS(N4) N4  &as RS(N5) N5  &to L_NGM                                                                       &sl L_UTL   &as LS(N6) N6  &as LS(N7) N7  &as LS(N8) N8  &as LS(N9) N9      &as LS(N0) N0      &as LS(BSLH) BSLH
+                &kp ESC              _SQT_GUI        _CMA_SFT           _DOT_ALT       _P_CTL         _Y_RALT        _HYPER                                                                          _HYPER      &kp F          _G_CTL         _C_ALT         _R_SFT             _L_GUI             &as LS(SLASH) SLASH
+                MT_TB_SHFTB          &kp A           &kp O              &kp E          &kp I          &kp U          _MEH              _SHF_BSP_L   LHT_Num_LR    TD_ScrnShots  _SHF_BSP_R           _MEH        &kp D          &kp H          &kp T          &kp N              &kp S              &as LS(MINUS) MINUS
+                &TD_CpWrd_CpLock     &lt L_EDT SEMI  &kp Q              &lt L_UTL J    &lt L_NUM K    &kp X                                       AS_Hm_CtlHm      &kp PG_UP                                     &kp B          &kp M          &kp W          &kp V              &kp Z              &m_mmsDVK_Colon F21 0
+                &TD_Emj_WinDsk       &kp GRAVE       &as RC(Q) K_CMENU  &kp LEFT       &kp RIGHT                           AS_Bk_CtlBk  &kp DEL  AS_En_CtlEn        &kp PG_DN     &lt L_FNC ENTER  &kp SPACE                    &kp UP         &kp DOWN       &as LS(LBKT) LBKT  &as LS(RBKT) RBKT  &to L_NUM
             >; };
 
             // #UNDEFs
@@ -288,12 +284,15 @@
         * L1 ⚪ ENGRAM
             URL layout: http://www.keyboard-layout-editor.com/#/gists/32760c7c88bd4bd39b3eba742b14dcb7
             NOTES:
+                • ALT LAYOUTS must be LOWER in stack than any higher ones want to layer-hold shift to
                 • SYNTAX for mod-morph holds: "&<macro-named> <hold-key> 0"
-                • X/ AHK F23 Qu, qu / but not working well
-                • AHK F22 = • / Shift+F22 = Ø
-                • AHK F24 = -ing / Shift+F24 = -tion
+                • AHK mappings (updated 2024-05-05)
+                    F14 ~ing
+                    F15 ~tion
+                    F20 Ø
+                    F21 •
+            
             TODO:
-                ALT LAYOUTS must be LOWER in stack than any higher ones want to layer-hold shift to
                 ▢ see also Keyboard Layout Editor for TODO items (↑ link above)
             */
 
@@ -310,11 +309,11 @@
             // end defines
 
             engram_layer { bindings = <
-                &m_mmsNGM_Apos GRAVE 0      &m_mmsNGM_1 LBRC 0         &m_mmsNGM_2 AT 0     &m_mmsNGM_3 BACKSLASH 0    &m_mmsNGM_4 TILDE 0   &m_mmsNGM_5 PIPE 0             &to L_DVK                                              ___    &as LS(N6) N6                    &m_mmsNGM_7 DLLR 0   &m_mmsNGM_8 HASH 0   &m_mmsNGM_9 PRCNT 0   &m_mmsNGM_0 RBRC 0    &m_mmsNGM_Qstn EXCLAMATION 0
-                ___                         _B_GUI                     _Y_SFT               _O_ALT                     _U_CTL                &m_mmsNGM_Lpar LBKT 0          ___                                                    ___    &m_mmsNGM_Rpar RBKT 0            _L_CTL               _D_ALT               _W_SFT                _V_GUI                &m_mmsNGM_Slsh STAR 0
-                ___                         &kp C                      &kp I                &kp E                      &kp A                 &m_mmsNGM_Cmma SEMI 0          ___               ___   ___        ___   ___           ___    &m_mmsNGM_Perd DOUBLE_QUOTES 0   &kp H                &kp T                &kp S                 &kp N                 &m_mmsNGM_Mnus UNDERSCORE 0
-                &m_mmsNGM_Nill F22 0        &lt L_EDT G                &kp X                &lt L_UTL J                &lt L_NUM K           &m_mmsNGM_Amps LESS_THAN 0                            ___          ___                       &m_mmsNGM_Equl GREATER_THAN 0    &kp R                &kp M                &kp F                 &kp P                 &m_mmsNGM_Coln PLUS 0
-                ___                         &m_mmsNGM_Ing LA(F24) 0    &as RC(Q) K_CMENU    ___                        ___                                                            ___   ___   ___            ___   ___   ___                                           ___                  ___                  &mm_QU                &kp Z                 ___
+                &m_mmsNGM_Apos GRAVE 0   &m_mmsNGM_1 LBRC 0    &m_mmsNGM_2 AT 0    &m_mmsNGM_3 BACKSLASH 0   &m_mmsNGM_4 TILDE 0   &m_mmsNGM_5 PIPE 0           &to L_DVK                                       ___   &as LS(N6) N6                    &m_mmsNGM_7 DLLR 0   &m_mmsNGM_8 HASH 0   &m_mmsNGM_9 PRCNT 0   &m_mmsNGM_0 RBRC 0    &m_mmsNGM_Qstn EXCLAMATION 0
+                ___                      _B_GUI                _Y_SFT              _O_ALT                    _U_CTL                &m_mmsNGM_Lpar LBKT 0        ___                                             ___   &m_mmsNGM_Rpar RBKT 0            _L_CTL               _D_ALT               _W_SFT                _V_GUI                &m_mmsNGM_Slsh STAR 0
+                ___                      &kp C                 &kp I               &kp E                     &kp A                 &m_mmsNGM_Cmma SEMI 0        ___            ___   ___    ___   ___           ___   &m_mmsNGM_Perd DOUBLE_QUOTES 0   &kp H                &kp T                &kp S                 &kp N                 &m_mmsNGM_Mnus UNDERSCORE 0
+                &m_mmsNGM_Nill F21 0     &lt L_EDT G           &kp X               &lt L_UTL J               &lt L_NUM K           &m_mmsNGM_Amps LESS_THAN 0                       ___      ___                      &m_mmsNGM_Equl GREATER_THAN 0    &kp R                &kp M                &kp F                 &kp P                 &m_mmsNGM_Coln PLUS 0
+                ___                      &m_mmsNGM_Ing F15 0   &as RC(Q) K_CMENU   ___                       ___                                                       ___   ___   ___        ___   ___   ___                                          ___                  ___                  &mm_QU                &kp Z                 ___
             >; };
 
             // #UNDEFs
@@ -502,25 +501,6 @@
                 _x_    _x_        _x_         ___        ___                      ___  ___  _x_        _x_  &kp ENTER  &kp KP_N0                   _x_         _x_         _x_         _x_    _x_
             >; };
         // END KP Numpad
-
-        /*****************************************************************************************************
-        * UPDATE: 2024-05 NOT NEEDED since put all on F# layer...
-        * L8 ⚫ higher F## keys 13-24; in case need for testing (not sure LED color)
-            *      (no yet KeyboardLayoutEditor)
-            *   [.] with WIP may Fn layer changes, think don't need...
-            */
-
-            /*
-            fn_13_24_layer { bindings = <
-                _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                          ___    _x_    &kp F22   &kp F23   &kp F24   _x_    _x_
-                ___    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    _x_                                              _x_    _x_    &kp F19   &kp F20   &kp F21   _x_    _x_
-                ___    _x_        _x_         _x_        _x_        _x_    _x_           _x_   _x_        _x_   _x_         _x_    _x_    &kp F16   &kp F17   &kp F18   _x_    _x_
-                _x_    _x_        _x_         _x_        _x_        _x_                       _x_          _x_                     _x_    &kp F13   &kp F14   &kp F15   _x_    _x_
-                _x_    _x_        _x_         ___        ___                       ___  ___  _x_            _x_   ___   ___               ___       ___       _x_       _x_    _x_
-            >; };
-            */
-
-        // END FN 13-24
 
     };
 };
