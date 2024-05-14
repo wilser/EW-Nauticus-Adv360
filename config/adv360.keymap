@@ -360,7 +360,7 @@
             // end defines
 
             engram_layer { bindings = <
-                &m_mmsNG2_Ing F15 0  &m_mmsNG2_Plus N1 0  &m_mmsNG2_Semi N2 0  &m_mmsNG2_Apos N3 0  &m_mmsNG2_Qstn N4 0  &m_mmsNG2_LsTh N5 0      &to L_DVK                           ___  &m_mmsNG2_GrTh N6 0     &m_mmsNG2_Quot N7 0  &m_mmsNG2_Star N8 0  &m_mmsNG2_Bksl N9 0  &m_mmsNG2_Equl N0 0  &mm_QU
+                &m_mmsNG2_Ing F15 0  &m_mmsNG2_Plus N1 0  &m_mmsNG2_Semi N2 0  &m_mmsNG2_Apos N3 0  &m_mmsNG2_Qstn N4 0  &m_mmsNG2_LsTh N5 0      &to L_DVK                           ___  &m_mmsNG2_GrTh N6 0     &m_mmsNG2_Star N7 0  &m_mmsNG2_Quot N8 0  &m_mmsNG2_Bksl N9 0  &m_mmsNG2_Equl N0 0  &mm_QU
                 ___                  _B_GUI               _Y_SFT               _O_ALT               _U_CTL               &m_mmsNG2_Amps AT 0      ___                                 ___  &m_mmsNG2_Hash DLLR 0   _L_CTL               _D_ALT               _W_SFT               _V_GUI               &m_mmsNG2_Slsh EXCLAMATION 0
                 ___                  &kp C                &kp I                &kp E                &kp A                &m_mmsNG2_Cmma TILDE 0  ___        ___  ___  ___  ___        ___  &m_mmsNG2_Perd PRCNT 0  &kp H                &kp T                &kp S                &kp N                &m_mmsNG2_Mnus UNDERSCORE 0
                 &kp Z                &lt L_EDT G          &kp X                &lt L_UTL J          &lt L_NUM K          &m_mmsNG2_Lpar GRAVE 0                  ___    ___                &m_mmsNG2_Rpar PIPE 0   &kp R                &kp M                &kp F                &kp P                &m_mmsNG2_Coln CARET 0
