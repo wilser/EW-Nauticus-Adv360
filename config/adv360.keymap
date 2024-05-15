@@ -180,7 +180,7 @@
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             //bindings = <&kp>, <&m_qu>; // works with QU and Q (not Shift)
-            bindings = <&kp>, <&mm_QU> // can do to mod-morph?
+            bindings = <&kp>, <&mm_QU>; // can do to mod-morph?
         };
 
         as_slw: auto_shift_slw {
