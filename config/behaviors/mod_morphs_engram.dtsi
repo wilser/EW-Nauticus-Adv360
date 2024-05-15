@@ -50,6 +50,20 @@
   MOD_MORPH_SHIFT(mmNG2_Coln  , COLON           , CARET        , mmsNG2_Coln)
   
 
+  // Special for Q:
+    // tap/shift {qu,QU}; hold/shift {q,Q}
+    // uses "&as_Qu Q 0" in map; 0 parm for the nil macro parm
+    as_Qu: auto_shift_Qu {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      tapping-term-ms = <150>;
+      quick-tap-ms = <0>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&mm_QU>; // can do to mod-morph?
+  };
+  
+  
+
 
 /* OLD for ref
 

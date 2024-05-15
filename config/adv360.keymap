@@ -172,17 +172,6 @@
             bindings = <&kp>, <&kp>;
         };
 
-        // ▢ if works, re-structure into NGM content somewhere?
-        as_Qu: auto_shift_Qu {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            //bindings = <&kp>, <&m_qu>; // works with QU and Q (not Shift)
-            bindings = <&kp>, <&mm_QU>; // can do to mod-morph?
-        };
-
         as_slw: auto_shift_slw {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
