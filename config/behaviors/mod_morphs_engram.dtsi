@@ -22,9 +22,9 @@
   MOD_MORPH_SHIFT(mmNG2_At    , AT              , N2           , mmsNG2_At  )
   MOD_MORPH_SHIFT(mmNG2_Apos  , APOS            , N3           , mmsNG2_Apos)
   MOD_MORPH_SHIFT(mmNG2_LsTh  , LESS_THAN       , N4           , mmsNG2_LsTh)
-  MOD_MORPH_SHIFT(mmNG2_Tild  , TILDE           , N5           , mmsNG2_Tild)
+  MOD_MORPH_SHIFT(mmNG2_Star  , STAR            , N5           , mmsNG2_Star)
   
-  MOD_MORPH_SHIFT(mmNG2_Star  , STAR            , N6           , mmsNG2_Star)
+  MOD_MORPH_SHIFT(mmNG2_Tild  , TILDE           , N6           , mmsNG2_Tild)
   MOD_MORPH_SHIFT(mmNG2_GrTh  , GREATER_THAN    , N7           , mmsNG2_GrTh)
   MOD_MORPH_SHIFT(mmNG2_Quot  , DOUBLE_QUOTES   , N8           , mmsNG2_Quot)
   MOD_MORPH_SHIFT(mmNG2_Qstn  , QUESTION        , N9           , mmsNG2_Qstn)
