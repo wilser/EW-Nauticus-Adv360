@@ -19,7 +19,7 @@
   MOD_MORPH_SHIFT(mmNG2_Ing   , F14             , F15          , mmsNG2_Ing ) // F14 "ing" / F15 "tion"
   
   MOD_MORPH_SHIFT(mmNG2_Plus  , PLUS            , N1           , mmsNG2_Plus)
-  MOD_MORPH_SHIFT(mmNG2_Excl  , EXCLAMATION     , N2           , mmsNG2_Excl)
+  MOD_MORPH_SHIFT(mmNG2_At    , AT              , N2           , mmsNG2_At  )
   MOD_MORPH_SHIFT(mmNG2_Apos  , APOS            , N3           , mmsNG2_Apos)
   MOD_MORPH_SHIFT(mmNG2_LsTh  , LESS_THAN       , N4           , mmsNG2_LsTh)
   MOD_MORPH_SHIFT(mmNG2_Tild  , TILDE           , N5           , mmsNG2_Tild)
@@ -32,7 +32,7 @@
  
 // L-MID COLUMN (T to B): 
   MOD_MORPH_SHIFT(mmNG2_Amps  , AMPS            , PIPE         , mmsNG2_Amps)
-  MOD_MORPH_SHIFT(mmNG2_Perd  , PERIOD          , AT           , mmsNG2_Perd)
+  MOD_MORPH_SHIFT(mmNG2_Perd  , PERIOD          , EXCLAMATION  , mmsNG2_Perd)
   MOD_MORPH_SHIFT(mmNG2_Lpar  , LPAR            , GRAVE        , mmsNG2_Lpar)
  
 // R-MID COLUMN (T to B): 
