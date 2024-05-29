@@ -24,8 +24,10 @@
   MOD_MORPH_SHIFT(mmNG2_Semi  , SEMI            , N4           , mmsNG2_Semi)
   MOD_MORPH_SHIFT(mmNG2_Star  , STAR            , N5           , mmsNG2_Star)
   
-  MOD_MORPH_SHIFT(mmNG2_At    , AT              , N6           , mmsNG2_At  )
-  MOD_MORPH_SHIFT(mmNG2_Coln  , COLON           , N7           , mmsNG2_Coln)
+//MOD_MORPH_SHIFT(mmNG2_At    , AT              , N6           , mmsNG2_At  )
+  MOD_MORPH_SHIFT(mmNG2_Bksl  , BACKSLASH       , N6           , mmsNG2_Bksl)
+//MOD_MORPH_SHIFT(mmNG2_Coln  , COLON           , N7           , mmsNG2_Coln)
+  MOD_MORPH_SHIFT(mmNG2_Dllr  , DLLR            , N7           , mmsNG2_Dllr)
   MOD_MORPH_SHIFT(mmNG2_Quot  , DOUBLE_QUOTES   , N8           , mmsNG2_Quot)
   MOD_MORPH_SHIFT(mmNG2_Qstn  , QUESTION        , N9           , mmsNG2_Qstn)
   MOD_MORPH_SHIFT(mmNG2_Equl  , EQUAL           , N0           , mmsNG2_Equl)
@@ -39,12 +41,12 @@
   MOD_MORPH_SHIFT(mmNG2_Lpar  , LPAR            , PIPE         , mmsNG2_Lpar)
  
 // R-MID COLUMN (T to B): 
-  MOD_MORPH_SHIFT(mmNG2_Hash  , HASH            , PRCNT        , mmsNG2_Hash)
-  MOD_MORPH_SHIFT(mmNG2_Perd  , PERIOD          , DLLR         , mmsNG2_Perd)
+  MOD_MORPH_SHIFT(mmNG2_Hash  , HASH            , AT           , mmsNG2_Hash)
+  MOD_MORPH_SHIFT(mmNG2_Perd  , PERIOD          , COLON        , mmsNG2_Perd)
   MOD_MORPH_SHIFT(mmNG2_Rpar  , RPAR            , CARET        , mmsNG2_Rpar)
    
 // Rh COLUMN (T to B): 
-  MOD_MORPH_SHIFT(mmNG2_Slsh  , SLASH           , BACKSLASH    , mmsNG2_Slsh)
+  MOD_MORPH_SHIFT(mmNG2_Slsh  , SLASH           , PERCENT      , mmsNG2_Slsh)
   MOD_MORPH_SHIFT(mmNG2_Mnus  , MINUS           , UNDERSCORE   , mmsNG2_Mnus)
   
 
