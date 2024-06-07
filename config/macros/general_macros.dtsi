@@ -81,10 +81,14 @@ m_HIBER: m_HIBER {
 // 2024-04-24 - NOT working w.r.t. shifting
 //      still Ø - either "qu" or "QU" ...
 // ▢ if work, tidy up files/dependencies
+// timings - see https://zmk.dev/docs/behaviors/macros#wait-time 
+    // wait-time = how long between <bindings>
+    // tap-time = how long each binding is 'held'
+// when timing too slow, fast typing injects other keystrokes between the Q and the U
 m_qu: m_qu {
     compatible = "zmk,behavior-macro";
-    wait-ms = <10>;
-    tap-ms = <5>;
+    wait-ms = <1>; // was 10
+    tap-ms = <2>; // was 5
     #binding-cells = <0>;
     bindings = <&kp Q>, <&kp U>;
 };
