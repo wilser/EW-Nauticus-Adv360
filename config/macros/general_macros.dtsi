@@ -87,8 +87,8 @@ m_HIBER: m_HIBER {
 // when timing too slow, fast typing injects other keystrokes between the Q and the U
 m_qu: m_qu {
     compatible = "zmk,behavior-macro";
-    wait-ms = <1>; // was 10
-    tap-ms = <2>; // was 5
+    wait-ms = <0>; // was 10
+    tap-ms = <1>; // was 5
     #binding-cells = <0>;
     bindings = <&kp Q>, <&kp U>;
 };
