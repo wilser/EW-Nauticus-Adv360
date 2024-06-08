@@ -21,7 +21,8 @@
   MOD_MORPH_SHIFT(mmNG2_LsTh  , LESS_THAN       , N1           , mmsNG2_LsTh)
   MOD_MORPH_SHIFT(mmNG2_GrTh  , GREATER_THAN    , N2           , mmsNG2_GrTh)
   MOD_MORPH_SHIFT(mmNG2_Apos  , APOS            , N3           , mmsNG2_Apos)
-  MOD_MORPH_SHIFT(mmNG2_Semi  , SEMI            , N4           , mmsNG2_Semi)
+//MOD_MORPH_SHIFT(mmNG2_Semi  , SEMI            , N4           , mmsNG2_Semi)
+  MOD_MORPH_SHIFT(mmNG2_Coln  , COLON           , N4           , mmsNG2_Coln)
   MOD_MORPH_SHIFT(mmNG2_Star  , STAR            , N5           , mmsNG2_Star)
   
 //MOD_MORPH_SHIFT(mmNG2_At    , AT              , N6           , mmsNG2_At  )
@@ -45,7 +46,7 @@
 // R-MID COLUMN (T to B): 
   MOD_MORPH_SHIFT(mmNG2_Hash  , HASH            , AT           , mmsNG2_Hash)
 //MOD_MORPH_SHIFT(mmNG2_Perd  , PERIOD          , DLLR         , mmsNG2_Perd)
-  MOD_MORPH_SHIFT(mmNG2_Perd  , PERIOD          , COLON        , mmsNG2_Perd)
+  MOD_MORPH_SHIFT(mmNG2_Perd  , PERIOD          , SEMI         , mmsNG2_Perd)
   MOD_MORPH_SHIFT(mmNG2_Rpar  , RPAR            , CARET        , mmsNG2_Rpar)
    
 // Rh COLUMN (T to B): 
