@@ -97,6 +97,7 @@
         #include "macros/shortcuts_macros.dtsi"
         #include "macros/hold_mods_delays.dtsi"
         //#include "macros/tap_hold_macros.dtsi"
+        #include "macros/combo_letters_macros.dtsi"
     };
 
     combos {
