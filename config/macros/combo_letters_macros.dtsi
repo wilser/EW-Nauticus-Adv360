@@ -83,7 +83,7 @@ m_4th: m_4th {
 
 
 // tap: the &kp, hold: the &macro for the letters...
-// uses "&as_XX X 0" in map; 0 parm for the nil macro parm
+// uses "&as_XX 0 #" in map; 0 parm for the nil macro parm; note macro is FIRST
 // 
 as_1st: auto_shift_1st {
     compatible = "zmk,behavior-hold-tap";
