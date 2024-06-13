@@ -46,7 +46,7 @@ mm_QU: mm_QU {
 
 
 // for Nth cases: st, nd, rd, th - to put on NUM shift/holds
-m_st: m_st {
+m_1st: m_1st {
     compatible = "zmk,behavior-macro";
     wait-ms = <0>; // was 10
     tap-ms = <1>; // was 5
@@ -54,7 +54,7 @@ m_st: m_st {
     bindings = <&kp S>, <&kp T>;
 };
 
-m_nd: m_nd {
+m_2nd: m_2nd {
     compatible = "zmk,behavior-macro";
     wait-ms = <0>; // was 10
     tap-ms = <1>; // was 5
@@ -62,7 +62,7 @@ m_nd: m_nd {
     bindings = <&kp N>, <&kp D>;
 };
 
-m_rd: m_rd {
+m_3rd: m_3rd {
     compatible = "zmk,behavior-macro";
     wait-ms = <0>; // was 10
     tap-ms = <1>; // was 5
@@ -70,7 +70,7 @@ m_rd: m_rd {
     bindings = <&kp R>, <&kp D>;
 };
 
-m_th: m_th {
+m_4th: m_4th {
     compatible = "zmk,behavior-macro";
     wait-ms = <0>; // was 10
     tap-ms = <1>; // was 5
