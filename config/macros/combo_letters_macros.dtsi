@@ -43,4 +43,77 @@ mm_QU: mm_QU {
     bindings = <&m_qu>, <&m_qu_cap>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
   };
-  
+
+
+// for Nth cases: st, nd, rd, th - to put on NUM shift/holds
+m_st: m_st {
+    compatible = "zmk,behavior-macro";
+    wait-ms = <0>; // was 10
+    tap-ms = <1>; // was 5
+    #binding-cells = <0>;
+    bindings = <&kp S>, <&kp T>;
+};
+
+m_nd: m_nd {
+    compatible = "zmk,behavior-macro";
+    wait-ms = <0>; // was 10
+    tap-ms = <1>; // was 5
+    #binding-cells = <0>;
+    bindings = <&kp N>, <&kp D>;
+};
+
+m_rd: m_rd {
+    compatible = "zmk,behavior-macro";
+    wait-ms = <0>; // was 10
+    tap-ms = <1>; // was 5
+    #binding-cells = <0>;
+    bindings = <&kp R>, <&kp D>;
+};
+
+m_th: m_th {
+    compatible = "zmk,behavior-macro";
+    wait-ms = <0>; // was 10
+    tap-ms = <1>; // was 5
+    #binding-cells = <0>;
+    bindings = <&kp T>, <&kp H>;
+};
+
+// mod-morph shifts for these:
+// ▢ TODO: see also the Q case. And make C-macros for...
+
+
+// tap: the &kp, hold: the &macro for the letters...
+// uses "&as_XX X 0" in map; 0 parm for the nil macro parm
+// 
+as_1st: auto_shift_1st {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    tapping-term-ms = <150>;
+    quick-tap-ms = <0>;
+    flavor = "tap-preferred";
+    bindings = <&m_1st>, <&kp>; 
+};
+as_2nd: auto_shift_2nd {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    tapping-term-ms = <150>;
+    quick-tap-ms = <0>;
+    flavor = "tap-preferred";
+    bindings = <&m_2nd>, <&kp>; 
+};
+as_3rd: auto_shift_3rd {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    tapping-term-ms = <150>;
+    quick-tap-ms = <0>;
+    flavor = "tap-preferred";
+    bindings = <&m_3rd>, <&kp>; 
+};
+as_4th: auto_shift_4th {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    tapping-term-ms = <150>;
+    quick-tap-ms = <0>;
+    flavor = "tap-preferred";
+    bindings = <&m_4th>, <&kp>; 
+};

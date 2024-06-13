@@ -427,11 +427,11 @@
             // end defines
         
             numpad_layer { bindings = <
-                ___      ___         ___         ___         ___         ___    &to L_0                                                           ___    ___          &kp DOLLAR   &kp HASH   &kp PERCENT   &kp EQUAL      &m_CSA_R
-                ___      _APOS_QT    _CMMA_LT    _PERD_GT    _SEMI_DEG   ___    ___                                                               ___    &kp BSPC     _7_CTL       _8_ALT     _9_SFT        _MULT_TIMES    _SLSH_DIV
-                ___      &kp BSPC    &kp LSHFT   &kp LALT    &kp LCTRL   ___    ___      &kp LSHFT  &to L_0        &kp BSPC    &kp SPACE          ___    _LPAR_LBKT   &kp N4       &kp N5     &kp N6        _MNUS_UNDR     _RPAR_RBKT
-                &kp ESC  _SEMI_ED    &kp LBRC    &kp RBRC    _x_         ___                          ___            &kp TAB                             &kp SPACE    &kp N1       &kp N2     &kp N3        _PLUS_AMP      _COLN_SEMI
-                ___      ___         ___         ___         ___                      ___    ___    ___               &kp RS(TAB)  ___    &kp N0                      ___          ___        _DOT_CMMA     &kp KP_ENTER   &to L_0 
+                ___      ___         ___         ___         ___         ___    &to L_0                                                           ___    ___          &kp DOLLAR    &kp HASH      &kp PERCENT   &kp EQUAL     &m_CSA_R
+                ___      _APOS_QT    _CMMA_LT    _PERD_GT    _SEMI_DEG   ___    ___                                                               ___    &kp BSPC     _7_CTL        _8_ALT        _9_SFT        _MULT_TIMES   _SLSH_DIV
+                ___      &kp BSPC    &kp LSHFT   &kp LALT    &kp LCTRL   ___    ___      &kp LSHFT  &to L_0        &kp BSPC    &kp SPACE          ___    _LPAR_LBKT   &as_4th N4 0  &kp N5        &kp N6        _MNUS_UNDR    _RPAR_RBKT
+                &kp ESC  _SEMI_ED    &kp LBRC    &kp RBRC    _x_         ___                          ___            &kp TAB                             &kp SPACE    &as_1st N1 0  &as_2nd N2 0  &as_3rd N3 0  _PLUS_AMP     _COLN_SEMI
+                ___      ___         ___         ___         ___                      ___    ___    ___               &kp RS(TAB)  ___    &kp N0                      ___           ___           _DOT_CMMA     &kp KP_ENTER  &to L_0 
             >; };
 
             // #UNDEFS:
