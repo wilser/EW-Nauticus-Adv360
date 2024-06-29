@@ -27,8 +27,8 @@
   
   MOD_MORPH_SHIFT(mmNG2_Tion  , F15             , N6           , mmsNG2_Tion) // F15 tion
   MOD_MORPH_SHIFT(mmNG2_Coln  , COLON           , N7           , mmsNG2_Coln)
-  MOD_MORPH_SHIFT(mmNG2_Qstn  , QUESTION        , N8           , mmsNG2_Qstn)
-  MOD_MORPH_SHIFT(mmNG2_Quot  , DOUBLE_QUOTES   , N9           , mmsNG2_Quot)
+  MOD_MORPH_SHIFT(mmNG2_Quot  , DOUBLE_QUOTES   , N8           , mmsNG2_Quot)
+  MOD_MORPH_SHIFT(mmNG2_Qstn  , QUESTION        , N9           , mmsNG2_Qstn)
   MOD_MORPH_SHIFT(mmNG2_Equl  , EQUAL           , N0           , mmsNG2_Equl)
  
 // L-BOTTOM CORNER
