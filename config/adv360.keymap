@@ -431,7 +431,7 @@
                 ___  ___           ___        ___       ___        ___  &to L_0                                                ___  &kp BSPC               &kp DOLLAR    &kp HASH      &kp PERCENT   &kp EQUAL     &m_CSA_R
                 ___  &kp LEFT_GUI  &kp LSHFT  &kp LALT  &kp LCTRL  ___  ___                                                    ___  &m_mmsNG2_Hash DLLR 0  _7_CTL        _8_ALT        _9_SFT        _MULT_TIMES   _SLSH_DIV
                 ___  _APOS_QT      _CMMA_LT   _PERD_GT  _SEMI_DEG  ___  ___      &kp LSHFT  &to L_0    &kp BSPC  &kp SPACE     ___  _DOT_CMMA              &as_4th 0 N4  &kp N5        &kp N6        _PLUS_AMP     _MNUS_UNDR
-                ___  _SEMI_ED      &kp LBRC   &kp RBRC  &kp X      ___                         ___      &kp RS(TAB)                 &kp SPACE              &as_1st 0 N1  &as_2nd 0 N2  &as_3rd 0 N3  _COLN_SEMI    _RPAR_RBKT
+                ___  _SEMI_ED      &kp LBRC   &kp RBRC  &kp X      ___                         ___      &kp RS(TAB)                 _LPAR_LBKT             &as_1st 0 N1  &as_2nd 0 N2  &as_3rd 0 N3  _COLN_SEMI    _RPAR_RBKT
                 ___  ___           ___        ___       ___                         ___  ___  ___        &kp TAB  ___  &kp N0                              ___           ___           ___           ___           &to L_0 
             >; };
             //&kp KP_ENTER - put back?
