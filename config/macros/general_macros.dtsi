@@ -75,4 +75,11 @@ m_HIBER: m_HIBER {
     bindings = <&kp LG(X)>, <&kp U>, <&kp H>;
 };
 
-
+/* MINIMIZE current Window: Alt+SPACE, N */
+m_MinWin: m_MinWin {
+    wait-ms = <200>;
+    tap-ms = <200>;
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp LA(SPACE)>, <&kp N>;
+};
