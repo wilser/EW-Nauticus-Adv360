@@ -363,7 +363,7 @@
             // end defines
 
             engram_layer { bindings = <
-                &TD_Emj_WinDsk         &m_mmsNG2_Semi N1 0     &m_mmsNG2_Qstn N2 0  &m_mmsNG2_Quot N3 0  &m_mmsNG2_Apos N4 0  &m_mmsNG2_Star N5 0     &to L_DVK                        ___  &m_mmsNG2_Tion N6 0           &m_mmsNG2_LsTh N7 0  &m_mmsNG2_Coln N8 0  &m_mmsNG2_GrTh N9 0  &m_mmsNG2_Equl N0 0  &to L_NUM
+                &TD_Emj_WinDsk         &m_mmsNG2_Semi N1 0     &m_mmsNG2_Qstn N2 0  &m_mmsNG2_Apos N3 0  &m_mmsNG2_Quot N4 0  &m_mmsNG2_Star N5 0     &to L_DVK                        ___  &m_mmsNG2_Tion N6 0           &m_mmsNG2_LsTh N7 0  &m_mmsNG2_Coln N8 0  &m_mmsNG2_GrTh N9 0  &m_mmsNG2_Equl N0 0  &to L_NUM
                 ___                    _B_GUI                  _Y_SFT               _O_ALT               _U_CTL               &m_mmsNG2_Amps F20 0    ___                              ___  &m_mmsNG2_Hash DLLR 0         _L_CTL               _D_ALT               _W_SFT               _V_GUI               &m_mmsNG2_Slsh PERCENT 0
                 ___                    &kp C                   &kp I                &kp E                &kp A                &m_mmsNG2_Cmma AT 0     ___      ___  ___  ___  ___      ___  &m_mmsNG2_Perd PLUS 0         &kp H                &kp T                &kp S                &kp N                &m_mmsNG2_Mnus UNDERSCORE 0
                 &m_mmsNG2_Ing F21 0    &lt L_EDT G             &kp X                &lt L_UTL J          &lt L_NUM K          &m_mmsNG2_Lpar TILDE 0               ___    ___               &m_mmsNG2_Rpar EXCLAMATION 0  &kp R                &kp M                &kp F                &kp P                &as_Qu Q 0
