@@ -15,10 +15,10 @@
 // F15 >> AHK(~tion)
 // Note: (` grave; # hash, - minus, ...)
 
-// TOP ROW (L to R)
 //MOD_MORPH_SHIFT(mmNG2_Bksl  , BACKSLASH       , F20          , mmsNG2_Bksl) // F20 Ø
   MOD_MORPH_SHIFT(mmNG2_Bksl  , BACKSLASH       , PIPE         , mmsNG2_Bksl)
   
+// TOP ROW (L to R)
 //MOD_MORPH_SHIFT(mmNG2_LsTh  , LESS_THAN       , N1           , mmsNG2_LsTh)
   MOD_MORPH_SHIFT(mmNG2_Semi  , SEMI            , N1           , mmsNG2_Semi)
 //MOD_MORPH_SHIFT(mmNG2_GrTh  , GREATER_THAN    , N2           , mmsNG2_GrTh)
@@ -39,10 +39,10 @@
  
 // L-BOTTOM CORNER
   MOD_MORPH_SHIFT(mmNG2_Ing   , F14             , F21          , mmsNG2_Ing ) // F14 "ing", F21 •
-  MOD_MORPH_SHIFT(mmNG2_Nill  , F20             , GRAVE        , mmsNG2_Nill) // F20 Ø
+  MOD_MORPH_SHIFT(mmNG2_Cret  , CARET           , GRAVE        , mmsNG2_Cret)
 
 // L-MID COLUMN (T to B): 
-  MOD_MORPH_SHIFT(mmNG2_Amps  , AMPS            , CARET        , mmsNG2_Amps)
+  MOD_MORPH_SHIFT(mmNG2_Amps  , AMPS            , F20          , mmsNG2_Amps) // F20 Ø
   MOD_MORPH_SHIFT(mmNG2_Cmma  , COMMA           , AT           , mmsNG2_Cmma)
   MOD_MORPH_SHIFT(mmNG2_Lpar  , LPAR            , TILDE        , mmsNG2_Lpar)
  
