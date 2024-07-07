@@ -431,7 +431,7 @@
                 #define _D_C        &m_mmsNUM_DC LS(C) 0
                 #define _F_E        &m_mmsNUM_FE LS(E) 0
                 #define _LT_APOS    &m_mmsNUM_LsTh APOS 0
-                #define _GT_QUOT    &m_mmsNUM_GrTh DOUBLE_QUOTE 0
+                #define _GT_QUOT    &m_mmsNUM_GrTh DOUBLE_QUOTES 0
                 #define _EQAL_DEG   &m_mmsNUM_Eqal LC(LA(F22)) 0
             // end defines
         

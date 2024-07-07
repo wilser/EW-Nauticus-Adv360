@@ -36,7 +36,7 @@ MOD_MORPH_SHIFT(mmNUM_DC    , LS(D)          , LS(C)         , mmsNUM_DC)
 MOD_MORPH_SHIFT(mmNUM_FE    , LS(F)          , LS(E)         , mmsNUM_FE)
 MOD_MORPH_SHIFT(mmNUM_LsTh  , LESS_THAN      , APOS          , mmsNUM_LsTh)
 // : ; - see above
-MOD_MORPH_SHIFT(mmNUM_GrTh  , GREATER_THAN   , DOUBLE_QUOTE  , mmsNUM_GrTh)
+MOD_MORPH_SHIFT(mmNUM_GrTh  , GREATER_THAN   , DOUBLE_QUOTES , mmsNUM_GrTh)
 MOD_MORPH_SHIFT(mmNUM_Eqal  , EQUAL          , _CA_F22       , mmsNUM_Eqal) // CA_F22 - degree symb
 
 
