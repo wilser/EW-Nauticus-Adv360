@@ -391,11 +391,11 @@
             *   [.] layer-hold else TD - works? 7/3 "expected number or parenthesized expression"; try adding & bef TD? → compiled, but the TD didn't fire at all, just layer-hold
             */
             lr_layer { bindings = <
-                &TD_LR_E      &TD_LR_1        &TD_LR_2         &TD_LR_3        &TD_LR_4         &TD_LR_5         &to L_NGM                                               ___    &kp LC(LA(N1))   &kp LC(LA(N2))   &kp LC(LA(N3))   &kp LC(LA(N6))   &kp N0    &kp LC(APOS)  
-                ___           &hm_slw LGUI G  &hm_slw LSHFT B  &hm_slw LALT Y  &hm_slw LCTRL P  &hm_slw RALT M   &kp LS(W)                                               _x_    ___              ___              ___              ___              _x_       &as BSLH LC(L)
-                ___           &kp A           &kp O            &kp D           &TD_LR_U         &kp S            &kp R               ___   &to L_0    _x_  _x_           _x_    ___              ___              ___              ___              ___       ___
-                &kp LC(APOS)  &lt L_EDT Q     &kp LC(LS(D))    &kp J           &lt L_NUM X      &kp Z                                     &kp C         ___                     ___              ___              ___              ___              ___       ___
-                &kp LC(Z)     &kp LS(T)       _x_              ___             ___                                          ___   ___   &kp N             ___  ___  ___                          ___              ___              ___              ___       &to L_DVK
+                &TD_LR_E      &TD_LR_1        &TD_LR_2         &TD_LR_3        &TD_LR_4         &TD_LR_5        &to L_NGM                              ___  &kp LC(LA(N1))  &kp LC(LA(N2))  &kp LC(LA(N3))  &kp LC(LA(N6))  &kp N0  &kp LC(APOS)  
+                ___           &hm_slw LGUI G  &hm_slw LSHFT B  &hm_slw LALT Y  &hm_slw LCTRL P  &hm_slw RALT M  &kp LS(W)                              _x_  ___             ___             ___             ___             _x_     &as BSLH LC(L)
+                ___           &kp A           &kp O            &kp D           &TD_LR_U         &kp S           &kp R      ___  &to L_0  _x_  _x_      _x_  ___             ___             ___             ___             ___     ___
+                &kp LC(APOS)  &lt L_EDT Q     &kp LC(LS(D))    &kp J           &lt L_NUM X      &kp Z                              ___    ___               ___             ___             ___             ___             ___     ___
+                &kp LC(Z)     &kp LS(T)       _x_              ___             ___                                      ___  ___  ___      ___  ___  ___                    ___             ___             ___             ___     &to L_0
             >; };
         // END Lightroom
 
@@ -537,11 +537,11 @@
             */
             
             navnedit_layer { bindings = <
-                _x_  _x_   _x_         &kp LC(S)   &kp LC(O)     &kp LC(W)   &to L_0                                                        ___  _x_  _x_        _x_        _x_              _x_       _x_
-                ___  _x_   _x_         _x_         &kp LC(K)     &kp LC(I)   _x_                                                            _x_  _x_  &kp PSCRN  &kp SLCK   &kp PAUSE_BREAK  &m_CSA_V  _x_
-                ___  _x_   &kp LC(X)   &kp LC(C)   &kp LC(V)     &kp LC(B)   _x_           &m_SEL_WRD_L  &m_SEL_WRD_R   _x_       _x_       _x_  _x_  &kp INS    &kp CAPS   &kp KP_NUMLOCK   _x_       _x_
-                ___  _x_   _x_         &kp F13     &kp LC(F13)   &m_CSA_V                                &m_SEL_LINE     _x_                     _x_  _x_        _x_        &m_CSA_V         _x_       _x_
-                ___  _x_   _x_         ___         ___                       &kp LC(Z)      &kp LC(Y)     &kp RC(A)       &m_MinWin  _x_  _x_         ___        ___        _x_              _x_       _x_
+                _x_  _x_   _x_         &kp LC(S)   &kp LC(O)     &kp LC(W)   &to L_0                                                     ___  _x_  _x_        _x_        _x_              _x_       _x_
+                ___  _x_   _x_         _x_         &kp LC(K)     &kp LC(I)   _x_                                                         _x_  _x_  &kp PSCRN  &kp SLCK   &kp PAUSE_BREAK  &m_CSA_V  _x_
+                ___  _x_   &kp LC(X)   &kp LC(C)   &kp LC(V)     &kp LC(B)   _x_        &m_SEL_WRD_L  &m_SEL_WRD_R   _x_       _x_       _x_  _x_  &kp INS    &kp CAPS   &kp KP_NUMLOCK   _x_       _x_
+                ___  _x_   _x_         &kp F13     &kp LC(F13)   &m_CSA_V                             &m_SEL_LINE     _x_                     _x_  _x_        _x_        &m_CSA_V         _x_       _x_
+                ___  _x_   _x_         ___         ___                       &kp LC(Z)   &kp LC(Y)     &kp RC(A)       &m_MinWin  _x_  _x_         ___        ___        _x_              _x_       _x_
             >; };
             
         // END Nav / Edit
