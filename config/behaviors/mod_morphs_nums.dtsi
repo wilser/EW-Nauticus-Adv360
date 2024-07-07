@@ -2,8 +2,7 @@
 /* CODES ref: https://zmk.dev/docs/codes */
 
 /*
-    2023-12-21: trying shorter macro-sub names vs. prior Colemak cases
-        [.] weird parse errors; not sure
+    [ ] 2024-07-07: ONCE settle, clean up unused ones
 
 */
 
@@ -18,17 +17,27 @@
     #define _CA_F24 LC(LA(F24))    // AHK: divide symb.
 
 // LH Side
-MOD_MORPH_SHIFT(mmNUM_Semi  , SEMI            , _CA_F22         , mmsNUM_Semi)
+MOD_MORPH_SHIFT(mmNUM_Semi  , SEMI           , _CA_F22       , mmsNUM_Semi)
 
 // Num-pad side (L to R, Top to Bottom)
-MOD_MORPH_SHIFT(mmNUM_Mult  , KP_ASTERISK     , _CA_F23         , mmsNUM_Mult)
-MOD_MORPH_SHIFT(mmNUM_Divd  , KP_DIVIDE       , _CA_F24         , mmsNUM_Divd)
-MOD_MORPH_SHIFT(mmNUM_Lpar  , LPAR            , LBKT            , mmsNUM_Lpar)
-MOD_MORPH_SHIFT(mmNUM_Mnus  , KP_MINUS        , LS(MINUS)       , mmsNUM_Mnus)
-MOD_MORPH_SHIFT(mmNUM_Rpar  , RPAR            , RBKT            , mmsNUM_Rpar)
-MOD_MORPH_SHIFT(mmNUM_Plus  , KP_PLUS         , LS(N7)          , mmsNUM_Plus) 
-MOD_MORPH_SHIFT(mmNUM_Coln  , COLON           , SEMI            , mmsNUM_Coln) 
-MOD_MORPH_SHIFT(mmNUM_Dot   , DOT             , COMMA           , mmsNUM_Dot )
+MOD_MORPH_SHIFT(mmNUM_Mult  , KP_ASTERISK    , _CA_F23       , mmsNUM_Mult)
+MOD_MORPH_SHIFT(mmNUM_Divd  , KP_DIVIDE      , _CA_F24       , mmsNUM_Divd)
+MOD_MORPH_SHIFT(mmNUM_Dot   , DOT            , COMMA         , mmsNUM_Dot )
+MOD_MORPH_SHIFT(mmNUM_Plus  , KP_PLUS        , LS(N7)        , mmsNUM_Plus) 
+MOD_MORPH_SHIFT(mmNUM_Mnus  , KP_MINUS       , LS(MINUS)     , mmsNUM_Mnus)
+MOD_MORPH_SHIFT(mmNUM_Lpar  , LPAR           , LBKT          , mmsNUM_Lpar)
+MOD_MORPH_SHIFT(mmNUM_Coln  , COLON          , SEMI          , mmsNUM_Coln)
+MOD_MORPH_SHIFT(mmNUM_Rpar  , RPAR           , RBKT          , mmsNUM_Rpar)
+
+
+// TEMP nem / after more NGM changes...
+MOD_MORPH_SHIFT(mmNUM_BA    , LS(B)          , LS(A)         , mmsNUM_BA)
+MOD_MORPH_SHIFT(mmNUM_DC    , LS(D)          , LS(C)         , mmsNUM_DC)
+MOD_MORPH_SHIFT(mmNUM_FE    , LS(F)          , LS(E)         , mmsNUM_FE)
+MOD_MORPH_SHIFT(mmNUM_LsTh  , LESS_THAN      , APOS          , mmsNUM_LsTh)
+// : ; - see above
+MOD_MORPH_SHIFT(mmNUM_GrTh  , GREATER_THAN   , DOUBLE_QUOTE  , mmsNUM_GrTh)
+MOD_MORPH_SHIFT(mmNUM_Eqal  , EQUAL          , _CA_F22       , mmsNUM_Eqal) // CA_F22 - degree symb
 
 
 //Undefines
