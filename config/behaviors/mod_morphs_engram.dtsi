@@ -24,8 +24,8 @@
 //MOD_MORPH_SHIFT(mmNG2_Semi  , SEMI            , N4           , mmsNG2_Semi)
   MOD_MORPH_SHIFT(mmNG2_Semi  , SEMI            , N1           , mmsNG2_Semi)
   MOD_MORPH_SHIFT(mmNG2_Qstn  , QUESTION        , N2           , mmsNG2_Qstn)
-  MOD_MORPH_SHIFT(mmNG2_Apos  , APOS            , N3           , mmsNG2_Apos)
-  MOD_MORPH_SHIFT(mmNG2_Quot  , DOUBLE_QUOTES   , N4           , mmsNG2_Quot)  
+  MOD_MORPH_SHIFT(mmNG2_Quot  , DOUBLE_QUOTES   , N3           , mmsNG2_Quot)  
+  MOD_MORPH_SHIFT(mmNG2_Apos  , APOS            , N4           , mmsNG2_Apos)
   MOD_MORPH_SHIFT(mmNG2_Star  , STAR            , N5           , mmsNG2_Star)
   
 //MOD_MORPH_SHIFT(mmNG2_Coln  , COLON           , N7           , mmsNG2_Coln)
