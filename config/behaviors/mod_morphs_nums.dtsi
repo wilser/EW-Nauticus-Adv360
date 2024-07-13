@@ -21,7 +21,7 @@ MOD_MORPH_SHIFT(mmNUM_Semi  , SEMI           , _CA_F22       , mmsNUM_Semi)
 
 // Num-pad side (L to R, Top to Bottom)
 MOD_MORPH_SHIFT(mmNUM_Mult  , KP_ASTERISK    , _CA_F23       , mmsNUM_Mult)
-MOD_MORPH_SHIFT(mmNUM_Divd  , KP_DIVIDE      , _CA_F24       , mmsNUM_Divd)
+//MOD_MORPH_SHIFT(mmNUM_Divd  , KP_DIVIDE      , _CA_F24       , mmsNUM_Divd)
 MOD_MORPH_SHIFT(mmNUM_Dot   , DOT            , COMMA         , mmsNUM_Dot )
 MOD_MORPH_SHIFT(mmNUM_Plus  , KP_PLUS        , LS(N7)        , mmsNUM_Plus) 
 MOD_MORPH_SHIFT(mmNUM_Mnus  , KP_MINUS       , LS(MINUS)     , mmsNUM_Mnus)
@@ -38,6 +38,9 @@ MOD_MORPH_SHIFT(mmNUM_LsTh  , LESS_THAN      , APOS          , mmsNUM_LsTh)
 // : ; - see above
 MOD_MORPH_SHIFT(mmNUM_GrTh  , GREATER_THAN   , DOUBLE_QUOTES , mmsNUM_GrTh)
 MOD_MORPH_SHIFT(mmNUM_Eqal  , EQUAL          , _CA_F22       , mmsNUM_Eqal) // CA_F22 - degree symb
+MOD_MORPH_SHIFT(mmNUM_Divd  , KP_DIVIDE      , PERCENT       , mmsNUM_Divd)
+
+
 
 
 //Undefines
