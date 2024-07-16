@@ -1,3 +1,5 @@
+ // COMBOS - aka CHORDS
+ 
 // #include <dt-bindings/zmk/keys.h>
 
 /*  KEYMAP ref ##s
@@ -58,13 +60,13 @@ combo_backspace {
 combo_context_menu_lh {
     key-positions = <35 36>; // LH, top-2 thumb keys
     bindings = <&kp K_CONTEXT_MENU>;
-    layers = <L_DVK L_NGM L_LR>;
+    layers = <L_DVK L_LR>;
 };
 // C4b
 combo_context_menu_rh {
     key-positions = <37 38>; // RH, top-2 thumb keys
     bindings = <&kp K_CONTEXT_MENU>;
-    layers = <L_DVK L_NGM L_LR>;
+    layers = <L_DVK L_LR>;
 };
 
 // C5
@@ -72,4 +74,11 @@ combo_caps_lock {
     key-positions = <35 38>; // Both top/inner smaller thumb keys (currently each assigned to Shift)
     bindings = <&kp CAPSLOCK>;
     layers = <L_DVK L_NGM L_LR>;
+};
+
+// C6
+combo_dot /*period*/ {
+    key-positions = <30 35>; // like SPACE but L-ring instead of L-pinky
+    bindings = <&kp DOT>;
+    layers = <L_NGM>;
 };
