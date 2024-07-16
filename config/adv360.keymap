@@ -438,9 +438,9 @@
             numpad_layer { bindings = <
                 ___  ___           ___        ___       ___        ___  &to L_NGM                                              _B_A  &kp BSPC    _LT_APOS      _COLN_SEMI    _GT_QUOT      _EQAL_DEG     &m_CSA_R
                 ___  &kp LEFT_GUI  &kp LSHFT  &kp LALT  &kp LCTRL  ___  ___                                                    _D_C  _HASH_DLLR  _7_CTL        _8_ALT        _9_SFT        _MULT_TIMES   _DIV_PCT
-                ___  _APOS_QT      _CMMA_LT   _PERD_GT  _SEMI_DEG  ___  ___      &kp LSHFT  &to L_0    &kp BSPC  &kp SPACE     _F_E  _DOT_CMMA   &as_4th 0 N4  &kp N5        &kp N6        _PLUS_AMP     _MNUS_UNDR
+                ___  _APOS_QT      _CMMA_LT   _PERD_GT  _SEMI_DEG  ___  ___      &kp LSHFT  &to L_0    &kp _x_   &kp BSPC      _F_E  _DOT_CMMA   &as_4th 0 N4  &kp N5        &kp N6        _PLUS_AMP     _MNUS_UNDR
                 ___  _SEMI_ED      &kp LBRC   &kp RBRC  &kp X      ___                         ___      &kp RS(TAB)                  _LPAR_LBKT  &as_1st 0 N1  &as_2nd 0 N2  &as_3rd 0 N3  &kp N0        _RPAR_RBKT
-                ___  ___           ___        ___       ___                         ___  ___  ___        &kp TAB  ___  &kp N0                    ___           ___           ___           ___           &to L_0
+                ___  ___           ___        ___       ___                         ___  ___  ___        &kp TAB  ___  &kp SPACE                 ___           ___           ___           ___           &to L_0
             >; };
             //&kp KP_ENTER - put back?
 
