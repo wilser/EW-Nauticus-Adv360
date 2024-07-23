@@ -70,7 +70,7 @@ TD_WinScreenshot_SnagIt: tapdance_winss_snagitss {
 TD_Rtclick_P: tapdance_rtclick_p {
     compatible = "zmk,behavior-tap-dance";
     #binding-cells = <0>;
-    tapping-term-ms = <300>;
+    tapping-term-ms = <150>;
     bindings = <&as RC(Q) K_CMENU>, <&kp P>; // tap: rt-click [menu]; 2-tap: P; Hold: Ctrl+Q
 };
 
