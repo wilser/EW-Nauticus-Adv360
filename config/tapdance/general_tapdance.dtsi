@@ -63,3 +63,14 @@ TD_WinScreenshot_SnagIt: tapdance_winss_snagitss {
 //     tapping-term-ms = <300>;
 //     bindings = <&as_slw RC(BSPC) BSPC>, <&kp BKSP>;
 // };
+
+// 2024-07-23 special for 2x-tap 'Menu-key' to add "P" [for OneNote when rt-click on a paragraph; to get link to paragraph]
+// [ ] not yet compiled / not sure
+// 1-tap is an AutoShift(hold) case
+TD_Rtclick_P: tapdance_rtclick_p {
+    compatible = "zmk,behavior-tap-dance";
+    #binding-cells = <0>;
+    tapping-term-ms = <300>;
+    bindings = <&as RC(Q) K_CMENU>, <&kp P>; // tap: rt-click [menu]; 2-tap: P; Hold: Ctrl+Q
+};
+
