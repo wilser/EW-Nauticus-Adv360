@@ -41,20 +41,20 @@ combo_caps_word {
     bindings = <&caps_word>;
     layers = <L_DVK>;
 };
+//combo_caps_word_NGM_1 {
+//    key-positions = <41 44>; // {RH: index,pinkie}
+//    bindings = <&caps_word>;
+//    layers = <L_NGM>;
+//};
 
 // C2b
-combo_caps_word_NGM_1 {
-    key-positions = <41 44>; // {RH: index,pinkie}
-    bindings = <&caps_word>;
-    layers = <L_NGM>;
-};
 combo_caps_word_NGM_2 {
 key-positions = <33 40>; // {RH-index-in-1; LH-index-in-1}
 bindings = <&caps_word>;
 layers = <L_NGM>;
 };
 
-// C3
+// C3 - [ ] unused really?
 combo_backspace {
     key-positions = <55 58>; // RH, Fng 1,4, 1-row down
     bindings = <&kp BACKSPACE>;
