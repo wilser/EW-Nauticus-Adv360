@@ -81,11 +81,6 @@
     global-quick-tap;
 };
 
-&ltfst {
-    quick-tap-ms = <90>;  /* was 300 */
-    global-quick-tap;
-};
-
 // Mod-tap defaults?
 &mt {
     tapping-term-ms = <300>;
@@ -206,6 +201,11 @@
             flavor = "tap-preferred";
             bindings = <&mo>, <&to>;
         };
+        
+        ltfst: layer_tap_faster {
+            quick-tap-ms = <90>; 
+        };
+                
 
     };
 
