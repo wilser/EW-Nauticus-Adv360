@@ -30,7 +30,7 @@ timeout-ms = <50>;
 
 // C1
 combo_space {
-    key-positions = <29 35>; // LH, (Fng 1 /A + top-left-thumb)
+    key-positions = <29 35>; // L-pinky, L-thumb
     bindings = <&kp SPACE>;
     layers = <L_DVK L_NGM L_LR>;
 };
@@ -83,7 +83,14 @@ combo_caps_lock {
 
 // C6
 combo_dot /*period*/ {
-    key-positions = <30 35>; // like SPACE but L-ring instead of L-pinky
+    key-positions = <30 35>; // L-ring, L-thumb
     bindings = <&kp DOT>;
+    layers = <L_NGM>;
+};
+
+// C7
+combo_enter {
+    key-positions = <31 35>; // L-middle, L-thumb
+    bindings = <&kp ENTER>;
     layers = <L_NGM>;
 };
