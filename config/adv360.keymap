@@ -55,10 +55,10 @@
 
 // DEFINES for layers:
     /* LED layer colors:  0 ⚫   1 ⚪   2 🔵   3 🟢   4 🔴   5 🟣   6 🧢    7 ▢    */
-    /*                    DVK    NGM     LR      NUM    UTIL    FNC    NavEd   kp#     */
+    /*                    NGM     DVK    LR      NUM    UTIL    FNC    NavEd   kp#     */
     #define L_0 0
-    #define L_DVK 0     // dvorak
-    #define L_NGM 1     // engram
+    #define L_NGM 0     // engram
+    #define L_DVK 1     // dvorak
     #define L_LR 2      // Lightroom
     #define L_NUM 3     // numpad
     #define L_UTL 4     // utils
@@ -217,81 +217,7 @@
         compatible = "zmk,keymap";
         
         /*****************************************************************************************************
-        * L0 ⚫: DVORAK (default)
-            *      http://www.keyboard-layout-editor.com/#/gists/fdcbdec4d9a329533f670a566a99338f
-            *   [ ] TBD hold-: should do __?
-            */
-
-            // #DEFINEs
-                // HOLD mods:
-                #define _SQT_GUI &hm_slw LGUI SQT       // GUI/Win on pinkie fingers / [] revisit if R.h. / L.h. differences put back
-                #define _CMA_SFT &hm_l LSHFT COMMA      // Shift on ring fingers
-                #define _DOT_ALT &hm_l LALT DOT         // Alt on middle fingers
-                #define _P_CTL   &hm_l LCTRL P          // Ctrl on indexs
-                #define _G_CTL   &hm_r RCTRL G          // Ctrl
-                #define _C_ALT   &hm_r RALT C           // Alt
-                #define _R_SFT   &hm_r RSHFT R          // Shift 
-                #define _L_GUI   &hm_slw RGUI L         // GUI/Win / [] revisit if R.h. / L.h. differences put back
-                #define _Y_RALT  &hm_slw RALT Y         // *Special extra Right-Alt when don't want l-alt because of AltSnap utility use
-                
-                // Mod-taps, Mod-morphs, etc.:
-                // #define MT_SFT_DEL &hm_l LSHFT DEL
-                #define MT_TB_SHFTB &mt LS(TAB) TAB
-                #define MT_CpW_CpL &as &caps_word
-                #define MT_Hm_Spc &mt SPACE HOME
-                #define TD_ScrnShots &TD_WinScreenshot_SnagIt       // 1x: Win+Shift+S   2x: Ctrl+Alt+P
-                #define AS_Hm_CtlHm &as_slw RC(HOME) HOME
-                #define AS_En_CtlEn &as_slw RC(END) END
-                #define AS_Bk_CtlBk &as_slw RC(BSPC) BSPC
-
-                // Other conveniences:
-                #define _HYPER &kp LC(LA(LS(LGUI)))
-                #define _MEH &kp LC(LA(LSHFT))
-                #define _SHF_BSP_R &mm_SHIFT_BACKSPACE_R
-                #define _SHF_BSP_L &mm_SHIFT_BACKSPACE_L
-
-                //#define TD_Nm_LR_Nm &TD_HNum_1TLR_2TNum         // Hold: temp-num-layer; 1-tap: TO LR layer; 2-tap; TO Num layer; NOT working; see commented out in "lightroom_tapdance.dtsi" file
-
-                // TBD maybe not use if other ideas work...
-                //#define _Nm_LR_NmLck &TD_Num_LR_NLock
-                // TBD if works, replace ^^ case // & forget about the 2x for Nums for now...
-                #define LHT_Num_LR &lht L_NUM L_LR // 2023-07-16 THIS worked, GEFN I think
-
-            // end defs
-
-            dvorak_layer { bindings = <
-                &as RS(EQUAL) EQUAL  &as RS(N1) N1   &as RS(N2) N2      &as RS(N3) N3  &as RS(N4) N4  &as RS(N5) N5  &to L_NGM                                                                       &sl L_UTL   &as LS(N6) N6  &as LS(N7) N7  &as LS(N8) N8  &as LS(N9) N9      &as LS(N0) N0      &as LS(BSLH) BSLH
-                &kp ESC              _SQT_GUI        _CMA_SFT           _DOT_ALT       _P_CTL         _Y_RALT        _HYPER                                                                          _HYPER      &kp F          _G_CTL         _C_ALT         _R_SFT             _L_GUI             &as LS(SLASH) SLASH
-                MT_TB_SHFTB          &kp A           &kp O              &kp E          &kp I          &kp U          _MEH              _SHF_BSP_L   LHT_Num_LR    TD_ScrnShots  _SHF_BSP_R           _MEH        &kp D          &kp H          &kp T          &kp N              &kp S              &as LS(MINUS) MINUS
-                &TD_CpWrd_CpLock     &lt L_EDT SEMI  &kp Q              &lt L_UTL J    &lt L_NUM K    &kp X                                       AS_Hm_CtlHm      &kp PG_UP                                     &kp B          &kp M          &kp W          &kp V              &kp Z              &m_mmsDVK_Colon F21 0
-                &TD_Emj_WinDsk       &kp GRAVE       &as RC(Q) K_CMENU  &kp LEFT       &kp RIGHT                           AS_Bk_CtlBk  &kp DEL  AS_En_CtlEn        &kp PG_DN     &lt L_FNC ENTER  &kp SPACE                    &kp UP         &kp DOWN       &as LS(LBKT) LBKT  &as LS(RBKT) RBKT  &to L_NUM
-            >; };
-
-            // #UNDEFs
-                #undef _SQT_GUI // reused below
-                #undef _CMA_SFT
-                #undef _DOT_ALT
-                #undef _P_CTL  
-                #undef _G_CTL  
-                #undef _C_ALT  
-                #undef _R_SFT  
-                #undef _L_GUI  
-                #undef _Y_RALT
-                #undef MT_TB_SH
-                #undef MT_CpW_C
-                #undef _HYPER
-                #undef _MEH
-                #undef _SHF_BKSP_R
-                #undef _SHF_BKSP_L
-                #undef _NM_NMLCK
-                #undef MT_Hm_Spc
-                #undef AS_Hm_CtlHm
-                #undef AS_En_CtlEn
-                #undef AS_Bk_CtlBk
-        // END Dvorak
-        
-        /*****************************************************************************************************
-        * L1 ⚪ ENGRAM - BAKUP 2024-05-13
+        * ENGRAM - BAKUP 2024-05-13
             URL layout: http://www.keyboard-layout-editor.com/#/gists/32760c7c88bd4bd39b3eba742b14dcb7
             NOTES:
                 • ALT LAYOUTS must be LOWER in stack than any higher ones want to layer-hold shift to
@@ -341,7 +267,7 @@
     // END Engram
 */
 
-    /*****************************************************************************************************
+        /*****************************************************************************************************
         * L1 ⚪ ENGRAM
             URL layout: http://www.keyboard-layout-editor.com/#/gists/32760c7c88bd4bd39b3eba742b14dcb7
             NOTES:
@@ -360,23 +286,40 @@
             */
 
             // DEFINES:
-                #define _B_GUI      &hm_slw LGUI B      // GUI/Win on pinkie fingers
-                #define _Y_SFT      &hm_l LSHFT Y       // Shift on ring fingers
-                #define _O_ALT      &hm_l LALT O        // Alt on middle fingers
-                #define _U_CTL      &hm_l LCTRL U       // Ctrl on index fingers
-                #define _L_CTL      &hm_r RCTRL L       // Ctrl
-                #define _D_ALT      &hm_r RALT D        // Alt
-                #define _W_SFT      &hm_r RSFT W        // Shift
-                #define _V_GUI      &hm_slw RGUI V      // GUI/Win
-                //#define _APOS_RALT  &hm_slw RALT APOS   // *Special extra Right-Alt when don't want l-alt because of AltSnap utility use
+                // HOLD MODS:
+                #define _B_GUI        &hm_slw LGUI B             // GUI/Win on pinkie fingers
+                #define _Y_SFT        &hm_l LSHFT Y              // Shift on ring fingers
+                #define _O_ALT        &hm_l LALT O               // Alt on middle fingers
+                #define _U_CTL        &hm_l LCTRL U              // Ctrl on index fingers
+                #define _L_CTL        &hm_r RCTRL L              // Ctrl
+                #define _D_ALT        &hm_r RALT D               // Alt
+                #define _W_SFT        &hm_r RSFT W               // Shift
+                #define _V_GUI        &hm_slw RGUI V             // GUI/Win
+                
+                // Mod-taps, Mod-morphs, etc.:
+                #define MT_TB_SHFTB   &mt LS(TAB) TAB
+                
+                // Combined mods:
+                #define _HYPER &kp    LC(LA(LS(LGUI)))
+                #define _MEH &kp      LC(LA(LSHFT))
+                
+                // Mod-taps, Mod-morphs, etc. for THUMBS
+                #define _SHF_BSP_L    &mm_SHIFT_BACKSPACE_L
+                #define LHT_Num_LR    &lht L_NUM L_LR            // [1x] LTR, [hold] NUM
+                #define TD_ScrnShots  &TD_WinScreenshot_SnagIt   // 1x: Win+Shift+S   2x: Ctrl+Alt+P
+                #define _SHF_BSP_R    &mm_SHIFT_BACKSPACE_R
+                #define AS_Hm_CtlHm   &as_slw RC(HOME) HOME
+                #define AS_Bk_CtlBk   &as_slw RC(BSPC) BSPC
+                #define AS_En_CtlEn   &as_slw RC(END) END
+                
             // end defines
 
             engram_layer { bindings = <
-                &TD_Emj_WinDsk         &m_mmsNG2_Semi N1 0     &m_mmsNG2_Qstn N2 0  &m_mmsNG2_Quot N3 0  &m_mmsNG2_Apos N4 0  &m_mmsNG2_Star N5 0     &to L_DVK                        ___  &m_mmsNG2_Tion N6 0           &m_mmsNG2_LsTh N7 0  &m_mmsNG2_Coln N8 0  &m_mmsNG2_GrTh N9 0  &m_mmsNG2_Equl N0 0  &to L_NUM
-                ___                    _B_GUI                  _Y_SFT               _O_ALT               _U_CTL               &m_mmsNG2_Amps F20 0    ___                              ___  &m_mmsNG2_Hash DLLR 0         _L_CTL               _D_ALT               _W_SFT               _V_GUI               &m_mmsNG2_Slsh PERCENT 0
-                ___                    &kp C                   &kp I                &kp E                &kp A                &m_mmsNG2_Cmma AT 0     ___      ___  ___  ___  ___      ___  &m_mmsNG2_Perd PLUS 0         &kp H                &kp T                &kp S                &kp N                &m_mmsNG2_Mnus UNDERSCORE 0
-                &m_mmsNG2_Ing F21 0    &lt L_EDT G             &kp X                &lt L_UTL J          &lt_fst L_NUM K      &m_mmsNG2_Lpar TILDE 0               ___    ___               &m_mmsNG2_Rpar EXCLAMATION 0  &kp R                &kp M                &kp F                &kp P                &as_Qu Q 0
-                &m_mmsNG2_Bksl PIPE 0  &m_mmsNG2_Cret GRAVE 0  &TD_Rtclick_P        ___                  ___                                            ___  ___  ___      ___  ___  ___                                  ___                  ___                  &as LS(LBKT) LBKT    &as LS(RBKT) RBKT    &kp Z
+                &TD_Emj_WinDsk         &m_mmsNG2_Semi N1 0     &m_mmsNG2_Qstn N2 0  &m_mmsNG2_Quot N3 0  &m_mmsNG2_Apos N4 0  &m_mmsNG2_Star N5 0     &to L_DVK                                                                           &sl L_UTL  &m_mmsNG2_Tion N6 0     &m_mmsNG2_LsTh N7 0    &m_mmsNG2_Coln N8 0  &m_mmsNG2_GrTh N9 0  &m_mmsNG2_Equl N0 0  &to L_NUM
+                &kp ESC                _B_GUI                  _Y_SFT               _O_ALT               _U_CTL               &m_mmsNG2_Amps F20 0    _HYPER                                                                              _HYPER     &m_mmsNG2_Hash DLLR 0   _L_CTL                 _D_ALT               _W_SFT               _V_GUI               &m_mmsNG2_Slsh PERCENT 0
+                MT_TB_SHFTB            &kp C                   &kp I                &kp E                &kp A                &m_mmsNG2_Cmma AT 0     _MEH              _SHF_BSP_L   LHT_Num_LR    TD_ScrnShots  _SHF_BSP_R               _MEH       &m_mmsNG2_Perd PLUS 0   &kp H                  &kp T                &kp S                &kp N                &m_mmsNG2_Mnus UNDERSCORE 0
+                &m_mmsNG2_Ing F21 0    &lt L_EDT G             &kp X                &lt L_UTL J          &lt_fst L_NUM K      &m_mmsNG2_Lpar TILDE 0                               AS_Hm_CtlHm      &kp PG_UP                                                                &m_mmsNG2_Rpar EXCL 0  &kp R                &kp M                &kp F                &kp P                &as_Qu Q 0
+                &m_mmsNG2_Bksl PIPE 0  &m_mmsNG2_Cret GRAVE 0  &TD_Rtclick_P        &kp LEFT             &kp RIGHT                                          AS_Bk_CtlBk  &kp DEL  AS_En_CtlEn        &kp PG_DN  &lt L_FNC ENTER  &kp SPACE                                                          ___                  ___                  &as LS(LBKT) LBKT    &as LS(RBKT) RBKT    &kp Z
             >; };
 
             // #UNDEFs
@@ -388,11 +331,58 @@
                 #undef _D_SFT
                 #undef _W_ALT
                 #undef _V_GUI
-                //#undef _APOS_RALT
+                #undef MT_TB_SHFTB
+                #undef _HYPER
+                #undef _MEH
+                #undef _SHF_BSP_L 
+                #undef LHT_Num_LR 
+                #undef TD_ScrnShot
+                #undef _SHF_BSP_R 
+                #undef AS_Hm_CtlHm
+                #undef AS_Bk_CtlBk
+                #undef AS_En_CtlEn
             // end undefs
 
         // END Engram
 
+        /*****************************************************************************************************
+        * L0 ⚫: DVORAK
+            *      http://www.keyboard-layout-editor.com/#/gists/fdcbdec4d9a329533f670a566a99338f
+            */
+
+            // #DEFINEs
+                // HOLD mods DVK specific:
+                #define _SQT_GUI      &hm_slw LGUI SQT          // GUI/Win on pinkie fingers / [] revisit if R.h. / L.h. differences put back
+                #define _CMA_SFT      &hm_l LSHFT COMMA         // Shift on ring fingers
+                #define _DOT_ALT      &hm_l LALT DOT            // Alt on middle fingers
+                #define _P_CTL        &hm_l LCTRL P             // Ctrl on indexs
+                #define _Y_RALT       &hm_slw RALT Y            // *Special extra Right-Alt when don't want l-alt because of AltSnap utility use
+                #define _G_CTL        &hm_r RCTRL G             // Ctrl
+                #define _C_ALT        &hm_r RALT C              // Alt
+                #define _R_SFT        &hm_r RSHFT R             // Shift 
+                #define _L_GUI        &hm_slw RGUI L            // GUI/Win / [] revisit if R.h. / L.h. differences put back
+            // end defs
+
+            dvorak_layer { bindings = <
+                &as RS(EQUAL) EQUAL  &as RS(N1) N1   &as RS(N2) N2  &as RS(N3) N3  &as RS(N4) N4  &as RS(N5) N5  &to L_0                              ___   &as LS(N6) N6  &as LS(N7) N7  &as LS(N8) N8  &as LS(N9) N9      &as LS(N0) N0      &as LS(BSLH) BSLH
+                ___                  _SQT_GUI        _CMA_SFT       _DOT_ALT       _P_CTL         _Y_RALT        ___                                  ___   &kp F          _G_CTL         _C_ALT         _R_SFT             _L_GUI             &as LS(SLASH) SLASH
+                ___                  &kp A           &kp O          &kp E          &kp I          &kp U          ___       ___   ___  ___  ___        ___   &kp D          &kp H          &kp T          &kp N              &kp S              &as LS(MINUS) MINUS
+                &TD_CpWrd_CpLock     &lt L_EDT SEMI  &kp Q          &lt L_UTL J    &lt L_NUM K    &kp X                         ___    ___                  &kp B          &kp M          &kp W          &kp V              &kp Z              &m_mmsDVK_Colon F21 0
+                &TD_Emj_WinDsk       ___             ___            ___            ___                               ___  ___  ___      ___  ___  ___                      &kp UP         &kp DOWN       &as LS(LBKT) LBKT  &as LS(RBKT) RBKT  &to L_NUM
+            >; };
+
+            // #UNDEFs
+                #undef _SQT_GUI
+                #undef _CMA_SFT
+                #undef _DOT_ALT
+                #undef _P_CTL  
+                #undef _Y_RALT
+                #undef _G_CTL  
+                #undef _C_ALT  
+                #undef _R_SFT  
+                #undef _L_GUI  
+        // END Dvorak
+        
         /*****************************************************************************************************
         * L2 🔵 Lightroom (& TBD Photoshop)
             *      http://www.keyboard-layout-editor.com/#/gists/ce40ef1f57700f3871b7af5a965ad51b
@@ -400,7 +390,7 @@
             *   [.] layer-hold else TD - works? 7/3 "expected number or parenthesized expression"; try adding & bef TD? → compiled, but the TD didn't fire at all, just layer-hold
             */
             lr_layer { bindings = <
-                &TD_LR_E      &TD_LR_1        &TD_LR_2         &TD_LR_3        &TD_LR_4         &TD_LR_5        &to L_NGM                              ___  &kp LC(LA(N1))  &kp LC(LA(N2))  &kp LC(LA(N3))  &kp LC(LA(N6))  &kp N0  &kp LC(APOS)  
+                &TD_LR_E      &TD_LR_1        &TD_LR_2         &TD_LR_3        &TD_LR_4         &TD_LR_5        &to L_0                                ___  &kp LC(LA(N1))  &kp LC(LA(N2))  &kp LC(LA(N3))  &kp LC(LA(N6))  &kp N0  &kp LC(APOS)  
                 ___           &hm_slw LGUI G  &hm_slw LSHFT B  &hm_slw LALT Y  &hm_slw LCTRL P  &hm_slw RALT M  &kp LS(W)                              _x_  ___             ___             ___             ___             _x_     &as BSLH LC(L)
                 ___           &kp A           &kp O            &kp D           &TD_LR_U         &kp S           &kp R      ___  &to L_0  _x_  _x_      _x_  ___             ___             ___             ___             ___     ___
                 &kp LC(APOS)  &lt L_EDT Q     &kp LC(LS(D))    &kp J           &lt L_NUM X      &kp Z                              ___    ___               ___             ___             ___             ___             ___     ___
@@ -445,7 +435,7 @@
             // end defines
         
             numpad_layer { bindings = <
-                ___  ___           ___        ___       ___        ___  &to L_NGM                                              _B_A  &kp BSPC    _LT_APOS      _COLN_SEMI      _GT_QUOT        _EQAL_DEG     &m_CSA_R
+                ___  ___           ___        ___       ___        ___  &to L_0                                                _B_A  &kp BSPC    _LT_APOS      _COLN_SEMI      _GT_QUOT        _EQAL_DEG     &m_CSA_R
                 ___  &kp LEFT_GUI  &kp LSHFT  &kp LALT  &kp LCTRL  ___  ___                                                    _D_C  _HASH_DLLR  _7_CTL        _8_ALT          _9_SFT          _MULT_TIMES   _DIV_PCT
                 ___  _APOS_QT      _CMMA_LT   _PERD_GT  _SEMI_DEG  ___  ___      &kp LSHFT  &to L_0    &kp _x_   &kp BSPC      _F_E  _DOT_CMMA   &as_4th 0 N4  &as_am_lc 0 N5  &as_pm_lc 0 N6  &kp N0        _MNUS_UNDR
                 ___  _SEMI_ED      &kp X      ___       &kp X      ___                         ___      &kp RS(TAB)                  _LPAR_LBKT  &as_1st 0 N1  &as_2nd 0 N2    &as_3rd 0 N3    _PLUS_AMP     _RPAR_RBKT
