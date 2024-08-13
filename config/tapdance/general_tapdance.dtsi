@@ -50,7 +50,7 @@ TD_WinScreenshot_SnagIt: tapdance_winss_snagitss {
     compatible = "zmk,behavior-tap-dance";
     #binding-cells = <0>;
     tapping-term-ms = <300>;
-    bindings = <&kp LG(LS(S))>, <&kp RC(RA(P))>;  // [1x] Win+Shift+S   [2x] Ctrl+Alt+P (customized in SnagIt settings)
+    bindings = <&kp LG(LS(S))>, <&kp RC(RS(RA(P)))>;  // [1x] Win+Shift+S   [2x] Ctrl+Shift+Alt+P (customized in SnagIt settings)
 };
 
 // goal: 1x tap = BKSP, Hold = Ctl(bksp), 2x-tap-hold = repeat-backspace (see use with &as)
