@@ -15,41 +15,41 @@
 // F15 >> AHK(~tion)
 // Note: (` grave; # hash, - minus, ...)
 
-//MOD_MORPH_SHIFT(mmNG2_Bksl  , BACKSLASH       , F20          , mmsNG2_Bksl) // F20 Ø
-  MOD_MORPH_SHIFT(mmNG2_Bksl  , BACKSLASH       , PIPE         , mmsNG2_Bksl)
+//MOD_MORPH_SHIFT(mmNG2_Bksl  , BSLH       , F20      , mmsNG2_Bksl) // F20 Ø
+  MOD_MORPH_SHIFT(mmNG2_Bksl  , BSLH       , PIPE     , mmsNG2_Bksl)
   
 // TOP ROW (L to R)
-//MOD_MORPH_SHIFT(mmNG2_Qstn  , QUESTION        , N1           , mmsNG2_Qstn)
-  MOD_MORPH_SHIFT(mmNG2_Tild  , TILDE           , N1           , mmsNG2_Tild)
-  MOD_MORPH_SHIFT(mmNG2_Quot  , DOUBLE_QUOTES   , N2           , mmsNG2_Quot)  
-  MOD_MORPH_SHIFT(mmNG2_Apos  , APOS            , N3           , mmsNG2_Apos)
-  MOD_MORPH_SHIFT(mmNG2_Star  , STAR            , N4           , mmsNG2_Star)
-  MOD_MORPH_SHIFT(mmNG2_Semi  , SEMI            , N5           , mmsNG2_Semi)
+//MOD_MORPH_SHIFT(mmNG2_Qstn  , QMARK      , N1       , mmsNG2_Qstn)
+  MOD_MORPH_SHIFT(mmNG2_Tild  , TILDE      , N1       , mmsNG2_Tild)
+  MOD_MORPH_SHIFT(mmNG2_Quot  , DQT        , N2       , mmsNG2_Quot)  
+  MOD_MORPH_SHIFT(mmNG2_Apos  , APOS       , N3       , mmsNG2_Apos)
+  MOD_MORPH_SHIFT(mmNG2_Star  , STAR       , N4       , mmsNG2_Star)
+  MOD_MORPH_SHIFT(mmNG2_Semi  , SEMI       , N5       , mmsNG2_Semi)
   
-  MOD_MORPH_SHIFT(mmNG2_Tion  , F15             , N6           , mmsNG2_Tion) // F15 tion
-  MOD_MORPH_SHIFT(mmNG2_LsTh  , LESS_THAN       , N7           , mmsNG2_LsTh)
-  MOD_MORPH_SHIFT(mmNG2_Coln  , COLON           , N8           , mmsNG2_Coln)
-  MOD_MORPH_SHIFT(mmNG2_GrTh  , GREATER_THAN    , N9           , mmsNG2_GrTh)
-  MOD_MORPH_SHIFT(mmNG2_Equl  , EQUAL           , N0           , mmsNG2_Equl)
+  MOD_MORPH_SHIFT(mmNG2_Tion  , F15        , N6       , mmsNG2_Tion) // F15 tion
+  MOD_MORPH_SHIFT(mmNG2_LsTh  , LT         , N7       , mmsNG2_LsTh)
+  MOD_MORPH_SHIFT(mmNG2_Coln  , COLON      , N8       , mmsNG2_Coln)
+  MOD_MORPH_SHIFT(mmNG2_GrTh  , GT         , N9       , mmsNG2_GrTh)
+  MOD_MORPH_SHIFT(mmNG2_Equl  , EQUAL      , N0       , mmsNG2_Equl)
  
 // L-BOTTOM CORNER
-  MOD_MORPH_SHIFT(mmNG2_Ing   , F14             , F21          , mmsNG2_Ing ) // F14 "ing", F21 •
-  MOD_MORPH_SHIFT(mmNG2_Cret  , CARET           , GRAVE        , mmsNG2_Cret)
+  MOD_MORPH_SHIFT(mmNG2_Ing   , F14        , F21      , mmsNG2_Ing ) // F14 "ing", F21 •
+  MOD_MORPH_SHIFT(mmNG2_Cret  , CARET      , GRAVE    , mmsNG2_Cret)
 
 // L-MID COLUMN (T to B): 
-  MOD_MORPH_SHIFT(mmNG2_Amps  , AMPS            , F20          , mmsNG2_Amps) // F20 Ø
-  MOD_MORPH_SHIFT(mmNG2_Cmma  , COMMA           , AT           , mmsNG2_Cmma)
-//MOD_MORPH_SHIFT(mmNG2_Lpar  , LPAR            , TILDE        , mmsNG2_Lpar)
-  MOD_MORPH_SHIFT(mmNG2_Lpar  , LPAR            , QUESTION     , mmsNG2_Lpar)
+  MOD_MORPH_SHIFT(mmNG2_Amps  , AMPS       , F20      , mmsNG2_Amps) // F20 Ø
+  MOD_MORPH_SHIFT(mmNG2_Cmma  , COMMA      , QMARK    , mmsNG2_Cmma)
+//MOD_MORPH_SHIFT(mmNG2_Lpar  , LPAR       , TILDE    , mmsNG2_Lpar)
+  MOD_MORPH_SHIFT(mmNG2_Lpar  , LPAR       , EXCL     , mmsNG2_Lpar)
  
 // R-MID COLUMN (T to B): 
-  MOD_MORPH_SHIFT(mmNG2_Hash  , HASH            , DLLR         , mmsNG2_Hash)
-  MOD_MORPH_SHIFT(mmNG2_Perd  , PERIOD          , PLUS         , mmsNG2_Perd)
-  MOD_MORPH_SHIFT(mmNG2_Rpar  , RPAR            , EXCLAMATION  , mmsNG2_Rpar)
+  MOD_MORPH_SHIFT(mmNG2_Hash  , HASH       , DLLR     , mmsNG2_Hash)
+  MOD_MORPH_SHIFT(mmNG2_Perd  , PERIOD     , PLUS     , mmsNG2_Perd)
+  MOD_MORPH_SHIFT(mmNG2_Rpar  , RPAR       , AT       , mmsNG2_Rpar)
    
 // Rh COLUMN (T to B): 
-  MOD_MORPH_SHIFT(mmNG2_Slsh  , SLASH           , PERCENT      , mmsNG2_Slsh)
-  MOD_MORPH_SHIFT(mmNG2_Mnus  , MINUS           , UNDERSCORE   , mmsNG2_Mnus)
+  MOD_MORPH_SHIFT(mmNG2_Slsh  , SLASH      , PRCNT    , mmsNG2_Slsh)
+  MOD_MORPH_SHIFT(mmNG2_Mnus  , MINUS      , UNDER    , mmsNG2_Mnus)
   
 
   // Special for Q:
