@@ -19,11 +19,11 @@
   MOD_MORPH_SHIFT(mmNG2_Bksl  , BSLH       , PIPE     , mmsNG2_Bksl)
   
 // TOP ROW (L to R)
-  MOD_MORPH_SHIFT(mmNG2_Star  , STAR       , N1       , mmsNG2_Star)
+  MOD_MORPH_SHIFT(mmNG2_Tild  , TILDE      , N1       , mmsNG2_Tild)
   MOD_MORPH_SHIFT(mmNG2_Qstn  , QMARK      , N2       , mmsNG2_Qstn)
   MOD_MORPH_SHIFT(mmNG2_Quot  , DQT        , N3       , mmsNG2_Quot)  
   MOD_MORPH_SHIFT(mmNG2_Apos  , APOS       , N4       , mmsNG2_Apos)
-  MOD_MORPH_SHIFT(mmNG2_Tild  , TILDE      , N5       , mmsNG2_Tild)
+  MOD_MORPH_SHIFT(mmNG2_Star  , STAR       , N5       , mmsNG2_Star)
 //MOD_MORPH_SHIFT(mmNG2_Semi  , SEMI       , N5       , mmsNG2_Semi)
   
   MOD_MORPH_SHIFT(mmNG2_Tion  , F15        , N6       , mmsNG2_Tion) // F15 tion
