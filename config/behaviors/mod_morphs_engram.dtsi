@@ -35,12 +35,12 @@
 
 // L-MID COLUMN (T to B): 
   MOD_MORPH_SHIFT(mmNG2_Amps  , AMPS       , F20      , mmsNG2_Amps) // F20 Ø
-  MOD_MORPH_SHIFT(mmNG2_Perd  , PERIOD     , SEMI     , mmsNG2_Perd)
+  MOD_MORPH_SHIFT(mmNG2_Cmma  , COMMA      , SEMI     , mmsNG2_Cmma)
   MOD_MORPH_SHIFT(mmNG2_Lpar  , LPAR       , EXCL     , mmsNG2_Lpar)
  
 // R-MID COLUMN (T to B): 
   MOD_MORPH_SHIFT(mmNG2_Hash  , HASH       , DLLR     , mmsNG2_Hash)
-  MOD_MORPH_SHIFT(mmNG2_Cmma  , COMMA      , PLUS     , mmsNG2_Cmma)
+  MOD_MORPH_SHIFT(mmNG2_Perd  , PERIOD     , PLUS     , mmsNG2_Perd)
   MOD_MORPH_SHIFT(mmNG2_Rpar  , RPAR       , AT       , mmsNG2_Rpar)
    
 // Rh COLUMN (T to B): 
