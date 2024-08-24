@@ -311,7 +311,10 @@
                 #define AS_Bk_CtlBk   &as_slw RC(BSPC) BSPC
                 #define AS_En_CtlEn   &as_slw RC(END) END
                 
-                #define LHT_Num_LR    &LHT_Num_ToNumOrLR 0           // [hold] NUM, [1x] NUM, [2x] LTR
+                //#define LHT_Num_LR    &LHT_Num_ToNumOrLR 0           // [hold] NUM, [1x] NUM, [2x] LTR
+                #define LHT_Num_LR    &TD_MO_TO_TO L_NUM L_NUM L_LR           // [hold] NUM, [1-2?x] NUM, [2-3?x] LTR
+
+
             // end defines
 
             engram_layer { bindings = <

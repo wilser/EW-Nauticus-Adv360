@@ -103,22 +103,16 @@ TD_Num_NumLock_LR: tapdance_Num_NumLock_LR {
 // --------------------
 // ▣ NOT WORKING
 // TRY 2: layer-hold-tap , then include pre-defined tap-dance for the <tap> part
+// ALSO not working
 
-TD_ToNum_ToLR: tapdance_ToNum_ToLR {
+
+// --------------------
+// ▣
+// TRY 3: tap-dance that defines 3 parms / but &mo; &to; &to
+TD_MO_TO_TO: tapdance_MO_TO_TO {
     compatible = "zmk,behavior-tap-dance";
-    #binding-cells = <0>;
+    #binding-cells = <3>;
     tapping-term-ms = <300>;
-    bindings = <&to L_NUM>, <&to L_LR>; // 1-tap => NUM; 2-tap => LR
+    bindings = <&mo>, <&to>, <&to>;
 };
-
-LHT_Num_ToNumOrLR: layerholdtap_Num_ToNumOrLR {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <0>; // because passing in directly in definition below
-    tapping-term-ms = <300>;
-    quick-tap-ms = <300>;
-    flavor = "tap-preferred";
-    bindings = <&mo L_NUM>, <&TD_ToNum_ToLR>; // hold = tmp-Num; tap = a tap-dance
-};
-
-
 
