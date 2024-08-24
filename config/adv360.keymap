@@ -305,7 +305,8 @@
                 
                 // Mod-taps, Mod-morphs, etc. for THUMBS
                 #define _SHF_BSP_L    &mm_SHIFT_BACKSPACE_L
-                #define LHT_Num_LR    &lht L_NUM L_LR            // [1x] LTR, [hold] NUM
+//                #define LHT_Num_LR    &lht L_NUM L_LR            // [1x] LTR, [hold] NUM
+                #define LHT_Num_LR    &tapdance_num_lr_numlock   // [hold] NUM, [1x] NUM, [2x] LTR
                 #define TD_ScrnShots  &TD_WinScreenshot_SnagIt   // 1x: Win+Shift+S   2x: Ctrl+Alt+P
                 #define _SHF_BSP_R    &mm_SHIFT_BACKSPACE_R
                 #define AS_Hm_CtlHm   &as_slw RC(HOME) HOME
