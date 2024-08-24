@@ -81,6 +81,7 @@ TD_Rtclick_P: tapdance_rtclick_p {
 // make layer-hold-tap for 1st binding of the tap-dance
 // then 1,2 tap does the layer-hold-tap 1st then 2nd TO layer
 
+/*
 LHT_Num_ToNum: layerholdtap_Num_ToNum {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <0>; // because passing in directly in definition below
@@ -96,11 +97,28 @@ TD_Num_NumLock_LR: tapdance_Num_NumLock_LR {
     tapping-term-ms = <300>;
     bindings = <&LHT_Num_ToNum 0>, <&to L_LR>; // 1-tap = a layer-hold-tap; 2-tap = the jump other layer
 };
+*/
 
 
 // --------------------
 // ▣ NOT WORKING
 // TRY 2: layer-hold-tap , then include pre-defined tap-dance for the <tap> part
+
+TD_ToNum_ToLR: tapdance_ToNum_ToLR {
+    compatible = "zmk,behavior-tap-dance";
+    #binding-cells = <0>;
+    tapping-term-ms = <300>;
+    bindings = <&to L_NUM>, <&to L_LR>; // 1-tap => NUM; 2-tap => LR
+};
+
+LHT_Num_ToNumOrLR: layerholdtap_Num_ToNumOrLR {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <0>; // because passing in directly in definition below
+    tapping-term-ms = <300>;
+    quick-tap-ms = <300>;
+    flavor = "tap-preferred";
+    bindings = <&mo L_NUM>, <&TD_ToNum_ToLR>; // hold = tmp-Num; tap = a tap-dance
+};
 
 
 
