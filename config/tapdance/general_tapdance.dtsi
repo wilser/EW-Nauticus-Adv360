@@ -28,7 +28,8 @@ TD_Num_LR_NLock: tapdance_num_lr_numlock {
     #binding-cells = <0>;
     tapping-term-ms = <300>;
 //    bindings = <&mo L_NUM>, <&to L_LR>, <&to L_NUM>; // [hold] Num   [1x] to LR
-    bindings = <&mo L_NUM>, <&to L_NUM>, <&to L_LR>; // [hold] Num   [1x] to LR
+//    bindings = <&mo L_NUM>, <&to L_NUM>, <&to L_LR>; // [hold] Num   [1x] to LR
+    bindings = <&as &mo L_NUM &to NUM>, <&to L_NR>; // [hold] Num   [1x] to LR  [2x] to NUM
 };
 
 /* Home/End: 2024-04-21 replaced with Hold/Tap instead of 2x-tap
