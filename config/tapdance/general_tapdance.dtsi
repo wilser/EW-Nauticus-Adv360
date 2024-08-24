@@ -23,15 +23,6 @@ TD_CpWrd_CpLock: tapdance_capsword_capslock {
     bindings = <&caps_word>, <&kp CAPSLOCK>;
 };
 
-TD_Num_LR_NLock: tapdance_num_lr_numlock {
-    compatible = "zmk,behavior-tap-dance";
-    #binding-cells = <0>;
-    tapping-term-ms = <300>;
-//    bindings = <&mo L_NUM>, <&to L_LR>, <&to L_NUM>; // [hold] Num   [1x] to LR
-//    bindings = <&mo L_NUM>, <&to L_NUM>, <&to L_LR>; // [hold] Num   [1x] to LR
-    bindings = <&as &mo L_NUM &to NUM>, <&to L_NR>; // [hold] Num   [1x] to LR  [2x] to NUM
-};
-
 /* Home/End: 2024-04-21 replaced with Hold/Tap instead of 2x-tap
 TD_Hm_CtrlHm: tapdance_home_ctrlhome {
     compatible = "zmk,behavior-tap-dance";
@@ -75,4 +66,34 @@ TD_Rtclick_P: tapdance_rtclick_p {
     tapping-term-ms = <225>; // 150 too fast, 300 too slow?
     bindings = <&as RC(Q) K_CMENU>, <&kp P>; 
 };
+
+
+
+
+
+
+// goal: hold = NUM; [1x] >NUM; [2x] >LR
+
+// make layer-hold-tap for 1st binding of the tap-dance
+// then 1,2 tap does the layer-hold-tap 1st then 2nd TO layer
+
+// ▢ tapping terms?
+LHT_Num_ToNum: layerholdtap_Num_ToNum {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <0>; // because passing in directly in def.
+    tapping-term-ms = <300>;
+    quick-tap-ms = <300>;
+    global-quick-tap;
+    flavor = "tap-preferred";
+    bindings = <&mo L_NUM>, <&to L_NUM>; // << putting here means <0> bindings (parms)
+};
+
+TD_Num_NumLock_LR: tapdance_Num_NumLock_LR {
+    compatible = "zmk,behavior-tap-dance";
+    #binding-cells = <0>;
+    tapping-term-ms = <300>;
+    bindings = <&LHT_Num_ToNum>, <&to L_LR>;
+};
+
+
 

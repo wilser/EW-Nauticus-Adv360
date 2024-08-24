@@ -14,6 +14,9 @@
         e.g. &kp takes 1 key, then the &macro can take 0, (not pass any thru)
             but it does need dummy-0 passed at Keybinding layer to honor the 
             mod-morph required 2 parms
+
+    2024-08-24: this seems to allow TAP-DANCE with HOLD-TAP
+        https://www.reddit.com/r/zmk/comments/1ajmjl6/tapdance_with_nested_mt_leads_to_delay_until/
 */
 
 // see also mod_morphs_general for c-macro example
