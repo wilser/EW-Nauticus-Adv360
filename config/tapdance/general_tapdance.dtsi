@@ -100,9 +100,7 @@ TD_Num_NumLock_LR: tapdance_Num_NumLock_LR {
 
 // --------------------
 // ▣ NOT WORKING
-// TRY 1: tap-dance > inner ref to specific layer-hold-tap pre-defined
-// make layer-hold-tap for 1st binding of the tap-dance
-// then 1,2 tap does the layer-hold-tap 1st then 2nd TO layer
+// TRY 2: layer-hold-tap , then include pre-defined tap-dance for the <tap> part
 
 
 

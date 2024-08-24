@@ -78,7 +78,7 @@
 // Layer tap defaults?
 &lt {
     quick-tap-ms = <125>;  /* was 300 */
-    global-quick-tap
+    global-quick-tap;
 };
 
 // Mod-tap defaults?
