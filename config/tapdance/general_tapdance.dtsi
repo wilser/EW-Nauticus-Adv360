@@ -70,14 +70,14 @@ TD_Rtclick_P: tapdance_rtclick_p {
 
 
 // PRIOR one trying to replace:
-/*
+
 TD_Num_LR_NLock: tapdance_num_lr_numlock {
     compatible = "zmk,behavior-tap-dance";
     #binding-cells = <0>;
     tapping-term-ms = <300>;
     bindings = <&mo L_NUM>, <&to L_NUM>, <&to L_LR>; // [hold] Num   [2x] to NUM  [3x] to LR
 };
-*/
+
 
 
 // ************************************************** THUMB - 
@@ -119,10 +119,11 @@ TD_Num_NumLock_LR: tapdance_Num_NumLock_LR {
 // --------------------
 // ▣ NOT working - TEMP using prior one for now
 // TRY 3: tap-dance that defines 3 parms / but &mo; &to; &to
+/*
 TD_MO_TO_TO: tapdance_MO_TO_TO {
     compatible = "zmk,behavior-tap-dance";
     #binding-cells = <3>;
     tapping-term-ms = <300>;
     bindings = <&mo>, <&to>, <&to>;
 };
-
+*/

@@ -344,7 +344,7 @@
                 #undef AS_Bk_CtlBk
                 #undef AS_En_CtlEn
                 #undef LHT_Num_LR 
-                #undef LHT_Num_LR2
+                //#undef LHT_Num_LR2
             // end undefs
 
         // END Engram
