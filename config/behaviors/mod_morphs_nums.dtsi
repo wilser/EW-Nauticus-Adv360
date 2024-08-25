@@ -12,33 +12,41 @@
 // ---------- NEW WIP LAYOUTS 2024-05+ ---------- //
 
 //Defines
-    #define _CA_F22 LC(LA(F22))    // AHK: degree symb.
-    #define _CA_F23 LC(LA(F23))    // AHK: times symb.
-    #define _CA_F24 LC(LA(F24))    // AHK: divide symb.
+    #define _CA_F22 LC(LA(F22))    // AHK: ° - degree
+    #define _CA_F23 LC(LA(F23))    // AHK: × - times
+    #define _CA_F24 LC(LA(F24))    // AHK: ÷ - divide
+    #define _CA_F16 LC(LA(F16))    // AHK: € - euro
 
-// LH Side
-MOD_MORPH_SHIFT(mmNUM_Semi  , SEMI           , _CA_F22       , mmsNUM_Semi)
+  
+  // Num-pad side (L to R, Top to Bottom)
+  MOD_MORPH_SHIFT(mmNUM_Mult  , KP_ASTERISK    , _CA_F23       , mmsNUM_Mult) // _CA_F23: ×
+//MOD_MORPH_SHIFT(mmNUM_Divd  , KP_DIVIDE      , _CA_F24       , mmsNUM_Divd) // _CA_F24: ÷
+  MOD_MORPH_SHIFT(mmNUM_Dot   , DOT            , COMMA         , mmsNUM_Dot )
+  MOD_MORPH_SHIFT(mmNUM_Plus  , KP_PLUS        , LS(N7)        , mmsNUM_Plus) 
+  MOD_MORPH_SHIFT(mmNUM_Mnus  , KP_MINUS       , LS(MINUS)     , mmsNUM_Mnus)
+//MOD_MORPH_SHIFT(mmNUM_Lpar  , LPAR           , LBKT          , mmsNUM_Lpar)
+//MOD_MORPH_SHIFT(mmNUM_Rpar  , RPAR           , RBKT          , mmsNUM_Rpar)
+  
+  
+  // TEMP nem / after more NGM changes...
+  // Column 8 (rh-left-most)
+  MOD_MORPH_SHIFT(mmNUM_BA    , LS(B)          , LS(A)         , mmsNUM_BA)
+  MOD_MORPH_SHIFT(mmNUM_DC    , LS(D)          , LS(C)         , mmsNUM_DC)
+  MOD_MORPH_SHIFT(mmNUM_FE    , LS(F)          , LS(E)         , mmsNUM_FE)
 
-// Num-pad side (L to R, Top to Bottom)
-MOD_MORPH_SHIFT(mmNUM_Mult  , KP_ASTERISK    , _CA_F23       , mmsNUM_Mult)
-//MOD_MORPH_SHIFT(mmNUM_Divd  , KP_DIVIDE      , _CA_F24       , mmsNUM_Divd)
-MOD_MORPH_SHIFT(mmNUM_Dot   , DOT            , COMMA         , mmsNUM_Dot )
-MOD_MORPH_SHIFT(mmNUM_Plus  , KP_PLUS        , LS(N7)        , mmsNUM_Plus) 
-MOD_MORPH_SHIFT(mmNUM_Mnus  , KP_MINUS       , LS(MINUS)     , mmsNUM_Mnus)
-MOD_MORPH_SHIFT(mmNUM_Lpar  , LPAR           , LBKT          , mmsNUM_Lpar)
-MOD_MORPH_SHIFT(mmNUM_Coln  , COLON          , SEMI          , mmsNUM_Coln)
-MOD_MORPH_SHIFT(mmNUM_Rpar  , RPAR           , RBKT          , mmsNUM_Rpar)
+  // Column 9 (just left of #s)
+  MOD_MORPH_SHIFT(mmNUM_Coln  , COLON          , SEMI          , mmsNUM_Coln)
+
+  // Top (just above #s)
+   MOD_MORPH_SHIFT(mmNUM_Lpar  , LPAR           , LT          , mmsNUM_Lpar)
+   MOD_MORPH_SHIFT(mmNUM_Rpar  , RPAR           , GT          , mmsNUM_Rpar)
 
 
-// TEMP nem / after more NGM changes...
-MOD_MORPH_SHIFT(mmNUM_BA    , LS(B)          , LS(A)         , mmsNUM_BA)
-MOD_MORPH_SHIFT(mmNUM_DC    , LS(D)          , LS(C)         , mmsNUM_DC)
-MOD_MORPH_SHIFT(mmNUM_FE    , LS(F)          , LS(E)         , mmsNUM_FE)
-MOD_MORPH_SHIFT(mmNUM_LsTh  , LESS_THAN      , APOS          , mmsNUM_LsTh)
-// : ; - see above
-MOD_MORPH_SHIFT(mmNUM_GrTh  , GREATER_THAN   , DOUBLE_QUOTES , mmsNUM_GrTh)
-MOD_MORPH_SHIFT(mmNUM_Eqal  , EQUAL          , _CA_F22       , mmsNUM_Eqal) // CA_F22 - degree symb
-MOD_MORPH_SHIFT(mmNUM_Divd  , KP_DIVIDE      , PERCENT       , mmsNUM_Divd)
+
+  MOD_MORPH_SHIFT(mmNUM_LsTh  , LT             , APOS          , mmsNUM_LsTh)
+  MOD_MORPH_SHIFT(mmNUM_GrTh  , GT             , DQT           , mmsNUM_GrTh)
+  MOD_MORPH_SHIFT(mmNUM_Eqal  , EQUAL          , _CA_F22       , mmsNUM_Eqal) // _CA_F22: °
+  MOD_MORPH_SHIFT(mmNUM_Divd  , KP_DIVIDE      , PERCENT       , mmsNUM_Divd)
 
 
 
@@ -47,3 +55,16 @@ MOD_MORPH_SHIFT(mmNUM_Divd  , KP_DIVIDE      , PERCENT       , mmsNUM_Divd)
     #undef _CSA_F22
     #undef _CSA_F23
     #undef _CSA_F24
+
+
+// **************************************************
+// OLD ones more for the Dvorak layout:
+  // LH Side
+  MOD_MORPH_SHIFT(mmNUM_Semi  , SEMI           , _CA_F22       , mmsNUM_Semi)
+/*
+  MOD_MORPH_SHIFT(mmNUM_Coln  , COLON          , SEMI          , mmsNUM_Coln)
+
+
+
+
+*/

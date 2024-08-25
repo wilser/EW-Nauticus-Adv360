@@ -111,6 +111,7 @@ m_pm_uc: m_pm_uc {
 };
 
 
+
 // mod-morph shifts for these:
 // ▢ TODO: see also the Q case. And make C-macros for...
 
@@ -152,7 +153,6 @@ as_4th: auto_shift_4th {
 };
 
 // holds on NUM for very common post-NUM {a.m., p.m., AM, PM}
-// trying lower() cases; ▢need thought on CAPS case
 as_am_lc: auto_shift_am_lc {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
@@ -169,4 +169,22 @@ as_pm_lc: auto_shift_pm_lc {
     quick-tap-ms = <0>;
     flavor = "tap-preferred";
     bindings = <&m_pm_lc>, <&kp>; 
+};
+
+as_am_uc: auto_shift_am_uc {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    tapping-term-ms = <150>;
+    quick-tap-ms = <0>;
+    flavor = "tap-preferred";
+    bindings = <&m_am_uc>, <&kp>; 
+};
+
+as_pm_uc: auto_shift_pm_uc {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    tapping-term-ms = <150>;
+    quick-tap-ms = <0>;
+    flavor = "tap-preferred";
+    bindings = <&m_pm_uc>, <&kp>; 
 };

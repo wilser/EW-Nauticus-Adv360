@@ -411,15 +411,13 @@
             */ 
 
             // DEFINES:
-                #define _7_CTL      &hm_r RCTRL N7      // ... and next, Ctrl+, Alt+, Shift+ holds on RH (7, 8, 9)
-                #define _8_ALT      &hm_r RALT N8       
-                #define _9_SFT      &hm_r RSFT N9 
-                #define _SEMI_DEG   &m_mmsNUM_Semi LC(LA(F22)) 0    // AHK: °   // 7/7 unused
+                //#define _7_CTL      &hm_r RCTRL N7
+                //#define _8_ALT      &hm_r RALT N8       
+                //#define _9_SFT      &hm_r RSFT N9 
                 #define _MULT_TIMES &m_mmsNUM_Mult LC(LA(F23)) 0    // AHK: ×
-                //#define _SLSH_DIV   &m_mmsNUM_Divd LC(LA(F24)) 0    // AHK: ÷
-                #define _DIV_PCT    &m_mmsNUM_Divd PERCENT 0
+                //#define _DIV_PCT    &m_mmsNUM_Divd PERCENT 0
                 #define _LPAR_LBKT  &m_mmsNUM_Lpar LBKT 0
-                #define _MNUS_UNDR  &m_mmsNUM_Mnus LS(MINUS) 0
+                //#define _MNUS_UNDR  &m_mmsNUM_Mnus LS(MINUS) 0
                 #define _RPAR_RBKT  &m_mmsNUM_Rpar RBKT 0
                 #define _PLUS_AMP   &m_mmsNUM_Plus LS(N7) 0
                 #define _COLN_SEMI  &m_mmsNUM_Coln SEMI 0
@@ -436,27 +434,24 @@
                 #define _LT_APOS    &m_mmsNUM_LsTh APOS 0
                 #define _GT_QUOT    &m_mmsNUM_GrTh DOUBLE_QUOTES 0
                 #define _EQAL_DEG   &m_mmsNUM_Eqal LC(LA(F22)) 0
+                //#define _SEMI_DEG   &m_mmsNUM_Semi LC(LA(F22)) 0    // AHK: °   // 7/7 unused
+                //#define _SLSH_DIV   &m_mmsNUM_Divd LC(LA(F24)) 0    // AHK: ÷
             // end defines
         
             numpad_layer { bindings = <
                 ___  ___           ___        ___       ___        ___  &to L_0                                                _B_A  &kp BSPC    _LT_APOS      _COLN_SEMI      _GT_QUOT        _EQAL_DEG     &m_CSA_R
-                ___  &kp LEFT_GUI  &kp LSHFT  &kp LALT  &kp LCTRL  ___  ___                                                    _D_C  _HASH_DLLR  _7_CTL        _8_ALT          _9_SFT          _MULT_TIMES   _DIV_PCT
-                ___  _APOS_QT      _CMMA_LT   _PERD_GT  _SEMI_DEG  ___  ___      &kp LSHFT  &to L_0    &kp _x_   &kp BSPC      _F_E  _DOT_CMMA   &as_4th 0 N4  &as_am_lc 0 N5  &as_pm_lc 0 N6  &kp N0        _MNUS_UNDR
+                ___  &kp LEFT_GUI  &kp LSHFT  &kp LALT  &kp LCTRL  ___  ___                                                    _D_C  _HASH_DLLR  &kp N7        &as_am_uc 0 N8  &as_pm_uc 0 N9  _MULT_TIMES   ___
+                ___  _APOS_QT      _CMMA_LT   _PERD_GT  _SEMI_DEG  ___  ___      &kp LSHFT  &to L_0    &kp _x_   &kp BSPC      _F_E  _DOT_CMMA   &as_4th 0 N4  &as_am_lc 0 N5  &as_pm_lc 0 N6  &kp N0        ___
                 ___  _SEMI_ED      &kp X      ___       &kp X      ___                         ___      &kp RS(TAB)                  _LPAR_LBKT  &as_1st 0 N1  &as_2nd 0 N2    &as_3rd 0 N3    _PLUS_AMP     _RPAR_RBKT
                 ___  ___           ___        ___       ___                         ___  ___  ___        &kp TAB  ___  &kp SPACE                 ___           ___             ___             ___           &to L_0
             >; };
             //&kp KP_ENTER - put back?
 
             // #UNDEFS:
-                #undef _7_CTL
-                #undef _8_ALT
-                #undef _9_SFT
-                #undef _SEMI_DEG 
                 #undef _MULT_TIMES
-                //#undef _SLSH_DIV
-                #undef _DIV_PCT
+                //#undef _DIV_PCT
                 #undef _LPAR_LBKT
-                #undef _MNUS_UNDR
+                //#undef _MNUS_UNDR
                 #undef _RPAR_RBKT
                 #undef _PLUS_AMP
                 #undef _COLN_SEMI
@@ -465,6 +460,11 @@
                 #undef _CMMA_LT
                 #undef _PERD_GT
                 #undef _SEMI_ED
+                //#undef _7_CTL
+                //#undef _8_ALT
+                //#undef _9_SFT
+                //#undef _SEMI_DEG 
+                //#undef _SLSH_DIV
             // END UNDEFS
         // END Numpad
 
