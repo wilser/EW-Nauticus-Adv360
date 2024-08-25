@@ -14,39 +14,34 @@
 //Defines
     #define _CA_F22 LC(LA(F22))    // AHK: ° - degree
     #define _CA_F23 LC(LA(F23))    // AHK: × - times
-    #define _CA_F24 LC(LA(F24))    // AHK: ÷ - divide
+    #define _CA_F24 LC(LA(F24))    // AHK: ÷ - divide       // Ø used 2024-08-25
     #define _CA_F16 LC(LA(F16))    // AHK: € - euro
 
   
-  // Num-pad side (L to R, Top to Bottom)
-  MOD_MORPH_SHIFT(mmNUM_Mult  , KP_ASTERISK    , _CA_F23       , mmsNUM_Mult) // _CA_F23: ×
-//MOD_MORPH_SHIFT(mmNUM_Divd  , KP_DIVIDE      , _CA_F24       , mmsNUM_Divd) // _CA_F24: ÷
-  MOD_MORPH_SHIFT(mmNUM_Dot   , DOT            , COMMA         , mmsNUM_Dot )
-  MOD_MORPH_SHIFT(mmNUM_Plus  , KP_PLUS        , LS(N7)        , mmsNUM_Plus) 
-  MOD_MORPH_SHIFT(mmNUM_Mnus  , KP_MINUS       , LS(MINUS)     , mmsNUM_Mnus)
-//MOD_MORPH_SHIFT(mmNUM_Lpar  , LPAR           , LBKT          , mmsNUM_Lpar)
-//MOD_MORPH_SHIFT(mmNUM_Rpar  , RPAR           , RBKT          , mmsNUM_Rpar)
-  
-  
-  // TEMP nem / after more NGM changes...
   // Column 8 (rh-left-most)
   MOD_MORPH_SHIFT(mmNUM_BA    , LS(B)          , LS(A)         , mmsNUM_BA)
   MOD_MORPH_SHIFT(mmNUM_DC    , LS(D)          , LS(C)         , mmsNUM_DC)
   MOD_MORPH_SHIFT(mmNUM_FE    , LS(F)          , LS(E)         , mmsNUM_FE)
 
   // Column 9 (just left of #s)
+  MOD_MORPH_SHIFT(mmNUM_Dllr  , DOLLAR         , _CA_F16       , mmsNUM_Dllr) // _CA_F16: €
   MOD_MORPH_SHIFT(mmNUM_Coln  , COLON          , SEMI          , mmsNUM_Coln)
 
-  // Top (just above #s)
-   MOD_MORPH_SHIFT(mmNUM_Lpar  , LPAR           , LT          , mmsNUM_Lpar)
-   MOD_MORPH_SHIFT(mmNUM_Rpar  , RPAR           , GT          , mmsNUM_Rpar)
+  // Top (just above #s) / R1, C10-12
+  MOD_MORPH_SHIFT(mmNUM_Lpar  , LPAR           , LT            , mmsNUM_Lpar)
+  MOD_MORPH_SHIFT(mmNUM_Dot   , DOT            , COMMA         , mmsNUM_Dot )
+  MOD_MORPH_SHIFT(mmNUM_Rpar  , RPAR           , GT            , mmsNUM_Rpar)
 
+  // Rest of RH side / C13-14
+  MOD_MORPH_SHIFT(mmNUM_Eqal  , EQUAL          , TILDE         , mmsNUM_Eqal)
+  MOD_MORPH_SHIFT(mmNUM_Mult  , KP_ASTERISK    , _CA_F23       , mmsNUM_Mult) // _CA_F23: ×
+  MOD_MORPH_SHIFT(mmNUM_Zero  , N0             , _CA_F22       , mmsNUM_Zero) // _CA_F22: °
+  MOD_MORPH_SHIFT(mmNUM_Plus  , KP_PLUS        , LS(N7)        , mmsNUM_Plus) 
 
-
-  MOD_MORPH_SHIFT(mmNUM_LsTh  , LT             , APOS          , mmsNUM_LsTh)
-  MOD_MORPH_SHIFT(mmNUM_GrTh  , GT             , DQT           , mmsNUM_GrTh)
-  MOD_MORPH_SHIFT(mmNUM_Eqal  , EQUAL          , _CA_F22       , mmsNUM_Eqal) // _CA_F22: °
   MOD_MORPH_SHIFT(mmNUM_Divd  , KP_DIVIDE      , PERCENT       , mmsNUM_Divd)
+  MOD_MORPH_SHIFT(mmNUM_Mnus  , KP_MINUS       , LS(MINUS)     , mmsNUM_Mnus)
+  MOD_MORPH_SHIFT(mmNUM_Cret  , CARET          , GRAVE         , mmsNUM_Cret)
+
 
 
 
