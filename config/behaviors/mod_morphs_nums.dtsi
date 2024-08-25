@@ -1,21 +1,14 @@
-/* TODO & NOTES - see mod_morphs_colemak file */
-/* CODES ref: https://zmk.dev/docs/codes */
-
-/*
-    [ ] 2024-07-07: ONCE settle, clean up unused ones
-
-*/
-
-/* ASSUMES GENERAL ONE INCLUDED BEFORE THIS ONE! */
-
-
 // ---------- NEW WIP LAYOUTS 2024-05+ ---------- //
 
+/* TODO & NOTES - see mod_morphs_colemak file */
+/* CODES ref: https://zmk.dev/docs/codes */
+/* ASSUMES GENERAL ONE INCLUDED BEFORE THIS ONE! */
+
 //Defines
+    #define _CA_F16 LC(LA(F16))    // AHK: € - euro
     #define _CA_F22 LC(LA(F22))    // AHK: ° - degree
     #define _CA_F23 LC(LA(F23))    // AHK: × - times
     #define _CA_F24 LC(LA(F24))    // AHK: ÷ - divide       // Ø used 2024-08-25
-    #define _CA_F16 LC(LA(F16))    // AHK: € - euro
 
   
   // Column 8 (rh-left-most)
@@ -42,24 +35,9 @@
   MOD_MORPH_SHIFT(mmNUM_Mnus  , KP_MINUS       , LS(MINUS)     , mmsNUM_Mnus)
   MOD_MORPH_SHIFT(mmNUM_Cret  , CARET          , GRAVE         , mmsNUM_Cret)
 
-
-
-
-
 //Undefines
+    #undef _CSA_F16
     #undef _CSA_F22
     #undef _CSA_F23
     #undef _CSA_F24
 
-
-// **************************************************
-// OLD ones more for the Dvorak layout:
-  // LH Side
-  MOD_MORPH_SHIFT(mmNUM_Semi  , SEMI           , _CA_F22       , mmsNUM_Semi)
-/*
-  MOD_MORPH_SHIFT(mmNUM_Coln  , COLON          , SEMI          , mmsNUM_Coln)
-
-
-
-
-*/

@@ -406,25 +406,26 @@
         * L3 🟢 NUM-pad layer
             *      http://www.keyboard-layout-editor.com/#/gists/c51e298f5744feba159cde9973f47b92
             *      Uses non-keypad NUMERAL symbols since plan to use as "main" numbers method eventually as practice more.
-            *      Uses some #defs from the mod_morphs file
+            *      See companion 'mod_morphs_nums' file
             *      Some same as NGM / but redefined to use KP symbol: - * / - ... see AHK for couple special-case overrides like Excel
             */ 
 
             // DEFINES:
-                #define _BKSL_PIPE  &m_mmsNG2_Bksl PIPE 0
                 #define _KP_ENT     &kp KP_ENTER
+
                 #define _B_A        &m_mmsNUM_BA LS(A) 0
                 #define _D_C        &m_mmsNUM_DC LS(C) 0
                 #define _F_E        &m_mmsNUM_FE LS(E) 0
 
+                #define _BKSL_PIPE  &m_mmsNG2_Bksl PIPE 0
                 #define _DLLR_EURO  &m_mmsNUM_Dllr LC(LA(F16)) 0    // AHK: €
                 #define _COLN_SEMI  &m_mmsNUM_Coln SEMI 0
 
                 #define _LPAR_LT    &m_mmsNUM_Lpar LT 0
                 #define _DOT_CMMA   &m_mmsNUM_Dot COMMA 0
                 #define _RPAR_GT    &m_mmsNUM_Rpar GT 0
-                #define _EQAL_TILD  &m_mmsNUM_Eqal TILDE 0
 
+                #define _EQAL_TILD  &m_mmsNUM_Eqal TILDE 0
                 #define _MULT_TIMES &m_mmsNUM_Mult LC(LA(F23)) 0    // AHK: ×
                 #define _ZERO_DEGR  &m_mmsNUM_Zero LC(LA(F22)) 0    // AHK: °
                 #define _PLUS_AMP   &m_mmsNUM_Plus LS(N7) 0
@@ -444,14 +445,23 @@
             //&kp KP_ENTER - put back?
 
             // #UNDEFS:
-                #undef _MULT_TIMES
-                #undef _PLUS_AMP
-                #undef _COLN_SEMI
-                #undef _DOT_CMMA 
-
+                #undef _KP_ENT   
+                #undef _B_A      
+                #undef _D_C      
+                #undef _F_E      
+                #undef _BKSL_PIPE
                 #undef _DLLR_EURO
-
-                #undef _RPAR_RBKT
+                #undef _COLN_SEMI
+                #undef _LPAR_LT  
+                #undef _DOT_CMMA 
+                #undef _RPAR_GT  
+                #undef _EQAL_TILD
+                #undef _MULT_TIME
+                #undef _ZERO_DEGR
+                #undef _PLUS_AMP 
+                #undef _DIV_PCT  
+                #undef _MNUS_UNDR
+                #undef _CRET_GRAV
             // END UNDEFS
         // END Numpad
 
