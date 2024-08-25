@@ -311,8 +311,8 @@
                 #define AS_Bk_CtlBk   &as_slw RC(BSPC) BSPC
                 #define AS_En_CtlEn   &as_slw RC(END) END
                 
-                //#define LHT_Num_LR    &LHT_Num_ToNumOrLR 0           // [hold] NUM, [1x] NUM, [2x] LTR
-                #define LHT_Num_LR    &TD_MO_TO_TO L_NUM L_NUM L_LR           // [hold] NUM, [1-2?x] NUM, [2-3?x] LTR
+                #define LHT_Num_LR    &TD_Num_LR_NLock 0            // [hold] NUM, [1x] NUM, [2x] LTR // need 0?
+                #define LHT_Num_LR2   &TD_MO_TO_TO L_NUM L_NUM L_LR 0    // [hold] NUM, [1-2?x] NUM, [2-3?x] LTR
 
 
             // end defines
@@ -338,12 +338,13 @@
                 #undef _HYPER
                 #undef _MEH
                 #undef _SHF_BSP_L 
-                #undef LHT_Num_LR 
                 #undef TD_ScrnShot
                 #undef _SHF_BSP_R 
                 #undef AS_Hm_CtlHm
                 #undef AS_Bk_CtlBk
                 #undef AS_En_CtlEn
+                #undef LHT_Num_LR 
+                #undef LHT_Num_LR2
             // end undefs
 
         // END Engram
