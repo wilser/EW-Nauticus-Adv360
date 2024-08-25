@@ -78,36 +78,40 @@ m_4th: m_4th {
     bindings = <&kp T>, <&kp H>;
 };
 
+// _a.m.
 m_am_lc: m_am_lc {
     compatible = "zmk,behavior-macro";
     wait-ms = <0>; // was 10
     tap-ms = <1>; // was 5
     #binding-cells = <0>;
-    bindings = <&kp A>, <&kp DOT>, <&kp M>, <&kp DOT>;
+    bindings = <&kp SPACE>, <&kp A>, <&kp DOT>, <&kp M>, <&kp DOT>;
 };
 
-m_am_uc: m_am_uc {
-    compatible = "zmk,behavior-macro";
-    wait-ms = <0>; // was 10
-    tap-ms = <1>; // was 5
-    #binding-cells = <0>;
-    bindings = <&kp LS(A)>, <&kp LS(M)>;
-};
-
+// _p.m.
 m_pm_lc: m_pm_lc {
     compatible = "zmk,behavior-macro";
     wait-ms = <0>; // was 10
     tap-ms = <1>; // was 5
     #binding-cells = <0>;
-    bindings = <&kp P>, <&kp DOT>, <&kp M>, <&kp DOT>;
+    bindings = <&kp SPACE>, <&kp P>, <&kp DOT>, <&kp M>, <&kp DOT>;
 };
 
+// _AM
+m_am_uc: m_am_uc {
+    compatible = "zmk,behavior-macro";
+    wait-ms = <0>; // was 10
+    tap-ms = <1>; // was 5
+    #binding-cells = <0>;
+    bindings = <&kp SPACE>, <&kp LS(A)>, <&kp LS(M)>;
+};
+
+// _PM
 m_pm_uc: m_pm_uc {
     compatible = "zmk,behavior-macro";
     wait-ms = <0>; // was 10
     tap-ms = <1>; // was 5
     #binding-cells = <0>;
-    bindings = <&kp LS(P)>, <&kp LS(M)>;
+    bindings = <&kp SPACE>, <&kp LS(P)>, <&kp LS(M)>;
 };
 
 
