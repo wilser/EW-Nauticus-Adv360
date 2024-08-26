@@ -51,7 +51,7 @@
 // Rh COLUMN (T to B): 
   MOD_MORPH_SHIFT(mmNG2_Slsh  , SLASH      , PRCNT    , mmsNG2_Slsh)
   MOD_MORPH_SHIFT(mmNG2_Mnus  , MINUS      , UNDER    , mmsNG2_Mnus)
-  //MOD_MORPH_SHIFT(mmNG2_Cret  , CARET      , GRAVE    , mmsNG2_Cret)
+  MOD_MORPH_SHIFT(mmNG2_Cret  , CARET      , GRAVE    , mmsNG2_Cret)
   MOD_MORPH_SHIFT(mmNG2_Tion  , F15        , N6       , mmsNG2_Tion) // F15 tion
   
 
