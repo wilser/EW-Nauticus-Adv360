@@ -22,24 +22,25 @@
   MOD_MORPH_SHIFT(mmNG2_Apos  , APOS       , N4       , mmsNG2_Apos)
   MOD_MORPH_SHIFT(mmNG2_Excl  , EXCL       , N5       , mmsNG2_Excl)
   
-  MOD_MORPH_SHIFT(mmNG2_Tion  , F15        , N6       , mmsNG2_Tion) // F15 tion
+  //MOD_MORPH_SHIFT(mmNG2_Tion  , F15        , N6       , mmsNG2_Tion) // F15 tion
   //MOD_MORPH_SHIFT(mmNG2_GrTh  , GT         , N7       , mmsNG2_GrTh)
+  MOD_MORPH_SHIFT(mmNG2_LsTh  , LT         , N6       , mmsNG2_LsTh)
   MOD_MORPH_SHIFT(mmNG2_Quot  , DQT        , N7       , mmsNG2_Quot)  
   MOD_MORPH_SHIFT(mmNG2_Perd  , PERIOD     , N8       , mmsNG2_Perd)
   //MOD_MORPH_SHIFT(mmNG2_Quot  , DQT        , N9       , mmsNG2_Quot)  
   MOD_MORPH_SHIFT(mmNG2_GrTh  , GT         , N9       , mmsNG2_GrTh)
   MOD_MORPH_SHIFT(mmNG2_Equl  , EQUAL      , N0       , mmsNG2_Equl)
 
-// L CORNERS
-  MOD_MORPH_SHIFT(mmNG2_Ing   , F14        , F21      , mmsNG2_Ing ) // F14 "ing", F21 •
+// Lft CORNERS
   MOD_MORPH_SHIFT(mmNG2_Bksl  , BSLH       , PIPE     , mmsNG2_Bksl)
-  MOD_MORPH_SHIFT(mmNG2_Cret  , CARET      , GRAVE    , mmsNG2_Cret)
+  MOD_MORPH_SHIFT(mmNG2_Ing   , F14        , F21      , mmsNG2_Ing ) // F14 "ing", F21 •
 
  // L-MID COLUMN (T to B): 
   MOD_MORPH_SHIFT(mmNG2_Lpar  , LPAR       , F20      , mmsNG2_Lpar) // F20 Ø
-//  MOD_MORPH_SHIFT(mmNG2_Cmma  , COMMA      , SEMI     , mmsNG2_Cmma)
+  //  MOD_MORPH_SHIFT(mmNG2_Cmma  , COMMA      , SEMI     , mmsNG2_Cmma)
   MOD_MORPH_SHIFT(mmNG2_Semi  , SEMI       , TILDE    , mmsNG2_Semi)
-  MOD_MORPH_SHIFT(mmNG2_Amps  , AMPS       , LT       , mmsNG2_Amps) 
+  // MOD_MORPH_SHIFT(mmNG2_Amps  , AMPS       , LT       , mmsNG2_Amps) 
+  MOD_MORPH_SHIFT(mmNG2_Amps  , AMPS       , CARET    , mmsNG2_Amps) 
 
 // R-MID COLUMN (T to B): 
   MOD_MORPH_SHIFT(mmNG2_Rpar  , RPAR       , DLLR     , mmsNG2_Rpar)
@@ -50,6 +51,8 @@
 // Rh COLUMN (T to B): 
   MOD_MORPH_SHIFT(mmNG2_Slsh  , SLASH      , PRCNT    , mmsNG2_Slsh)
   MOD_MORPH_SHIFT(mmNG2_Mnus  , MINUS      , UNDER    , mmsNG2_Mnus)
+  //MOD_MORPH_SHIFT(mmNG2_Cret  , CARET      , GRAVE    , mmsNG2_Cret)
+  MOD_MORPH_SHIFT(mmNG2_Tion  , F15        , N6       , mmsNG2_Tion) // F15 tion
   
 
   // Special for Q:
