@@ -69,8 +69,7 @@ TD_Rtclick_P: tapdance_rtclick_p {
 
 
 
-// PRIOR one trying to replace:
-
+// PRIOR one trying to replace [think Ø need / clean up later]
 TD_Num_LR_NLock: tapdance_num_lr_numlock {
     compatible = "zmk,behavior-tap-dance";
     #binding-cells = <0>;
@@ -80,61 +79,13 @@ TD_Num_LR_NLock: tapdance_num_lr_numlock {
 
 
 
-// ************************************************** THUMB - 
-
+// **************************************************
 // goal: hold = NUM; [1x] >NUM; [2x] >LR
-// ▢ tapping terms?
-
-// --------------------
-// ▣ NOT WORKING
-// TRY 1: tap-dance > inner ref to specific layer-hold-tap pre-defined
-// make layer-hold-tap for 1st binding of the tap-dance
-// then 1,2 tap does the layer-hold-tap 1st then 2nd TO layer
-
-/*
-LHT_Num_ToNum: layerholdtap_Num_ToNum {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <0>; // because passing in directly in definition below
-    tapping-term-ms = <300>;
-    quick-tap-ms = <300>;
-    flavor = "tap-preferred";
-    bindings = <&mo L_NUM>, <&to L_NUM>; // << putting here means <0> bindings (parms)
-};
-
-TD_Num_NumLock_LR: tapdance_Num_NumLock_LR {
-    compatible = "zmk,behavior-tap-dance";
-    #binding-cells = <0>;
-    tapping-term-ms = <300>;
-    bindings = <&LHT_Num_ToNum 0>, <&to L_LR>; // 1-tap = a layer-hold-tap; 2-tap = the jump other layer
-};
-*/
-
-
-// --------------------
-// ▣ NOT WORKING
-// TRY 2: layer-hold-tap , then include pre-defined tap-dance for the <tap> part
-// ALSO not working
-
-
-// --------------------
-// ▣ NOT working - TEMP using prior one for now
-// TRY 3: tap-dance that defines 3 parms / but &mo; &to; &to
-/*
-TD_MO_TO_TO: tapdance_MO_TO_TO {
-    compatible = "zmk,behavior-tap-dance";
-    #binding-cells = <3>;
-    tapping-term-ms = <300>;
-    bindings = <&mo>, <&to>, <&to>;
-};
-*/
-
-// --------------------
-// ▢ NOT working - TEMP using prior one for now
 // TRY 4: tap-dance for &to <layer-first-tap>; &to <layer-2nd-tap>
 // ref: https://www.reddit.com/r/zmk/comments/1ajmjl6/tapdance_with_nested_mt_leads_to_delay_until/
 // think all terms-ms need to match?
-// NOTE: HT always takes 2 args / so use like "ht_num_tonum_tolr 0 0"
-// (if works) need 'plain' parms for HT; so pass in the NUM layer in keymap not here: <&mo> not <&mo LAYER> ==> then in keymap: "&macro LNUM 0"
+// NOTE: HT always takes 2 args / so use like "ht_num_tonum_tolr L_NUM 0"
+// NOTE: need 'plain' parms for hold-tap; so pass in the NUM layer in keymap not here: "<&mo>" here not "<&mo LAYER>" ==> then in keymap: "&macro LNUM 0"
 
 td_tonum_tolr: tapdance_ToNum_ToLR {
     compatible = "zmk,behavior-tap-dance";
@@ -151,7 +102,7 @@ ht_num_tonum_tolr: holdtap_Num_ToNum_ToLR {
     quick-tap-ms = <200>;
     bindings = <&mo>, <&td_tonum_tolr>;
     //retro-tap; // need this?
+    // 2024-08-26 changed to "hold-preferred" and removed "retro-tap" / then worked / Ø sure if needed both
 };
 
-// Then ref that TD inside the Hold-Tap
 
