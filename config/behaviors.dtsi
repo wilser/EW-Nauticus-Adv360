@@ -112,19 +112,5 @@ rstapd: right_shift_tap_dance {
     bindings = <&kp RSHFT>, <&caps_word>;
 };
 
-// ****************************************************************************************************
-/* MOMENTARY TOGGLE layer 
-    - tap = &to layer
-    - hold = &mo layer
-    see: https://zmk.dev/docs/keymaps/behaviors/hold-tap#using-different-behavior-types-with-hold-taps
 
-*/
-//#define MO_TOG(layer) &mo_tog layer layer   // Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
-mo_tog: behavior_mo_tog {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    flavor = "hold-preferred";
-    tapping-term-ms = <200>;
-    bindings = <&mo>, <&to> /* had &tog from example */;
-};
 

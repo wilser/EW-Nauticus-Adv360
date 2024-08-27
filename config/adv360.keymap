@@ -313,7 +313,7 @@
                 
                 #define LHT_Num_LR    &TD_Num_LR_NLock             // [hold] NUM, [1x] NUM, [2x] LTR // need 0?
                 //#define LHT_Num_LR2   &TD_MO_TO_TO L_NUM L_NUM L_LR 0    // [hold] NUM, [1-2?x] NUM, [2-3?x] LTR
-                #define MO_TOG_NUM    &mo_tog L_NUM L_NUM   // tap: &to_ hold: &mo_
+                #define MO_TOG_NUM    &lht L_NUM L_NUM   // tap: &to_ hold: &mo_
 
 
 
