@@ -134,6 +134,7 @@ TD_MO_TO_TO: tapdance_MO_TO_TO {
 // ref: https://www.reddit.com/r/zmk/comments/1ajmjl6/tapdance_with_nested_mt_leads_to_delay_until/
 // think all terms-ms need to match?
 // NOTE: HT always takes 2 args / so use like "ht_num_tonum_tolr 0 0"
+// (if works) need 'plain' parms for HT; so pass in the NUM layer in keymap not here: <&mo> not <&mo LAYER> ==> then in keymap: "&macro LNUM 0"
 
 td_tonum_tolr: tapdance_ToNum_ToLR {
     compatible = "zmk,behavior-tap-dance";
@@ -148,7 +149,7 @@ ht_num_tonum_tolr: holdtap_Num_ToNum_ToLR {
     flavor = "tap-preferred";
     tapping-term-ms = <200>;
     quick-tap-ms = <200>;
-    bindings = <&mo L_NUM>, <&td_tonum_tolr>;
+    bindings = <&mo>, <&td_tonum_tolr>;
     retro-tap;
 };
 
