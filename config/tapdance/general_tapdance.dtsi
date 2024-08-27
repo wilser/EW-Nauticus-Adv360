@@ -146,11 +146,11 @@ td_tonum_tolr: tapdance_ToNum_ToLR {
 ht_num_tonum_tolr: holdtap_Num_ToNum_ToLR {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
-    flavor = "tap-preferred";
+    flavor = "hold-preferred"; // which?
     tapping-term-ms = <200>;
     quick-tap-ms = <200>;
     bindings = <&mo>, <&td_tonum_tolr>;
-    retro-tap;
+    //retro-tap; // need this?
 };
 
 // Then ref that TD inside the Hold-Tap
