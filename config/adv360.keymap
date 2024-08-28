@@ -398,11 +398,11 @@
             *   [.] layer-hold else TD - works? 7/3 "expected number or parenthesized expression"; try adding & bef TD? → compiled, but the TD didn't fire at all, just layer-hold
             */
             lr_layer { bindings = <
-                ___           &TD_LR_1        &TD_LR_2         &TD_LR_3        &TD_LR_4         &TD_LR_5        &to L_0                                ___  &kp LC(LA(N1))  &kp LC(LA(N2))  &kp LC(LA(N3))  &kp LC(LA(N6))  &kp N0  ___
-                ___           ___             ___              ___             &hm_slw LCTRL P  &hm_slw RALT M  &kp LS(W)                              _x_  ___             ___             ___             ___             ___     &as BSLH LC(L)
-                ___           &kp A           ___              &kp D           &TD_LR_U         &kp S           &kp R      ___  &to L_0  _x_  _x_      _x_  ___             ___             ___             ___             ___     ___
-                &to L_0       ___             &kp LC(LS(D))    &kp J           &lt L_NUM X      ___                                ___    ___               ___             ___             ___             ___             ___     ___
-                &TD_LR_E      &kp LS(T)       _x_              ___             ___                                      ___  ___  ___      ___  ___  ___                    ___             ___             ___             ___     &to L_0
+                &as LC(L) BSLH  &TD_LR_1        &TD_LR_2         &TD_LR_3        &TD_LR_4         &TD_LR_5        &to L_0                                ___  &kp LC(LA(N1))  &kp LC(LA(N2))  &kp LC(LA(N3))  &kp LC(LA(N6))  &kp N0  ___
+                ___             ___             ___              ___             &hm_slw LCTRL P  &hm_slw RALT M  &kp LS(W)                              _x_  ___             ___             ___             ___             ___     ___
+                ___             ___             ___              ___             &TD_LR_U         &kp S           &kp R      ___  &to L_0  _x_  _x_      _x_  ___             ___             ___             ___             ___     ___
+                &to L_0         ___             &kp LC(LS(D))    &kp J           &lt L_NUM X      ___                                ___    ___               ___             ___             ___             ___             ___     ___
+                &TD_LR_E        &kp LS(T)       _x_              ___             ___                                      ___  ___  ___      ___  ___  ___                    ___             ___             ___             ___     ___
             >; };
 
             /* TODO & REF:
