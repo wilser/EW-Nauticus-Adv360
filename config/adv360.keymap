@@ -397,22 +397,33 @@
             *      This is for when the RIGHT HAND is on the mouse primarily; so r.h.s. just left to entirely float through. See notes on KLE.
             *   [.] layer-hold else TD - works? 7/3 "expected number or parenthesized expression"; try adding & bef TD? → compiled, but the TD didn't fire at all, just layer-hold
             */
+
+            // defines:
+                #define VRT_CPY     &kp LC(APOS)
+
+            // end defines
+
             lr_layer { bindings = <
-                &as LC(L) BSLH  &TD_LR_1        &TD_LR_2         &TD_LR_3        &TD_LR_4         &TD_LR_5        &to L_0                                ___  &kp LC(LA(N1))  &kp LC(LA(N2))  &kp LC(LA(N3))  &kp LC(LA(N6))  &kp N0  ___
-                ___             ___             ___              ___             &hm_slw LCTRL P  &hm_slw RALT M  &kp LS(W)                              _x_  ___             ___             ___             ___             ___     ___
-                ___             ___             ___              ___             &TD_LR_U         &kp S           &kp R      ___  &to L_0  _x_  _x_      _x_  ___             ___             ___             ___             ___     ___
-                &to L_0         ___             &kp LC(LS(D))    &kp J           &lt L_NUM X      ___                                ___    ___               ___             ___             ___             ___             ___     ___
-                &TD_LR_E        &kp LS(T)       _x_              ___             ___                                      ___  ___  ___      ___  ___  ___                    ___             ___             ___             ___     ___
+                &as LC(L) BSLH  &TD_LR_1     &TD_LR_2     &TD_LR_3        &TD_LR_4         &TD_LR_5        &to L_0                                    ___  &kp LC(LA(N1))  &kp LC(LA(N2))  &kp LC(LA(N3))  &kp LC(LA(N6))  &kp N0  ___
+                ___             ___          ___          ___             &hm_slw LCTRL P  &hm_slw RALT M  &kp LS(W)                                  _x_  ___             ___             ___             ___             ___     ___
+                ___             ___          ___          ___             &TD_LR_U         &kp S           &kp R      ___  &to L_0  ___      ___      _x_  ___             ___             ___             ___             ___     ___
+                &to L_0         ___          &kp D        &kp LC(LS(D))   &lt L_NUM X      ___                                ___    ___                   ___             ___             ___             ___             ___     ___
+                &TD_LR_E        &kp LS(T)    _x_          ___             ___                                      ___  ___  ___      ___      ___  ___                    ___             ___             ___             ___     VRT_CPY
             >; };
 
             /* TODO & REF:
-             *  &kp LC(APOS)        virt. copy
              *
              *
              *
              *
              *
              */
+             // undefs
+                #undef VRT_CPY
+
+             // end undefs
+
+
 
         // END Lightroom
 
