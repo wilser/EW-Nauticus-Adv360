@@ -400,15 +400,18 @@
 
             // defines:
                 #define VRT_CPY     &kp LC(APOS)
-
+                #define MOD_LIB     &kp LC(LA(N1))
+                #define MOD_DEV     &kp LC(LA(N2))
+                #define MOD_MAP     &kp LC(LA(N3))
+                #define MOD_PRT     &kp LC(LA(N6))
             // end defines
 
             lr_layer { bindings = <
-                &as LC(L) BSLH  &TD_LR_1     &TD_LR_2     &TD_LR_3        &TD_LR_4         &TD_LR_5        &to L_0                                    ___  &kp LC(LA(N1))  &kp LC(LA(N2))  &kp LC(LA(N3))  &kp LC(LA(N6))  &kp N0  ___
-                ___             ___          ___          ___             &hm_slw LCTRL P  &hm_slw RALT M  &kp LS(W)                                  _x_  ___             ___             ___             ___             ___     ___
-                ___             ___          ___          ___             &TD_LR_U         &kp S           &kp R      ___  &to L_0  ___      ___      _x_  ___             ___             ___             ___             ___     ___
-                &to L_0         ___          &kp D        &kp LC(LS(D))   &lt L_NUM X      ___                                ___    ___                   ___             ___             ___             ___             ___     ___
-                &TD_LR_E        &kp LS(T)    _x_          ___             ___                                      ___  ___  ___      ___      ___  ___                    ___             ___             ___             ___     VRT_CPY
+                &as LC(L) BSLH  &TD_LR_1   &TD_LR_2       &TD_LR_3  &TD_LR_4         &TD_LR_5  &to L_0                                ___  MOD_LIB  MOD_DEV  MOD_MAP  MOD_PRT  &kp N0  ___
+                ___             ___        ___            ___       &hm_slw LCTRL P  &kp M     &kp LS(W)                              _x_  ___      ___      ___      ___      ___     ___
+                ___             ___        ___            ___       &TD_LR_U         &kp S     &kp R      ___  &to L_0  ___  ___      _x_  ___      ___      ___      ___      ___     ___
+                &to L_0         ___        &kp LC(LS(D))  &kp D     &lt L_NUM X      ___                          ___    ___               ___      ___      ___      ___      ___     ___
+                &TD_LR_E        &kp LS(T)  _x_            ___       ___                                ___  ___  ___      ___  ___  ___             ___      ___      ___      ___     VRT_CPY
             >; };
 
             /* TODO & REF:
@@ -420,7 +423,10 @@
              */
              // undefs
                 #undef VRT_CPY
-
+                #undef MOD_LIB
+                #undef MOD_DEV
+                #undef MOD_MAP
+                #undef MOD_PRT
              // end undefs
 
 
