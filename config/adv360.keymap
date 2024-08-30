@@ -405,15 +405,18 @@
                 #define MOD_MAP     &kp LC(LA(N3))
                 #define MOD_PRT     &kp LC(LA(N6))
                 #define R_CA_R      &as LC(R) R
-                #define DE_SEL      &as LC(LS(D)) LC(D)
+                #define DE_SEL      &as LC(D) LC(LS(D))
+                #define SURV_SH     &as LS(N) N
+                #define ZOOM_IN     LC(EQUALS)
+                #define ZOOM_OUT    LC(MINUS)
             // end defines
 
             lr_layer { bindings = <
-                &as LC(L) BSLH  &TD_LR_1   &TD_LR_2  &TD_LR_3  &TD_LR_4         &TD_LR_5  &to L_0                                    _tbd_  MOD_LIB  MOD_DEV  MOD_MAP  MOD_PRT  &kp N0  ___
-                ___             ___        ___       ___       &hm_slw LCTRL P  &kp M     &kp LS(W)                                  _tbd_  _tbd_    ___      ___      ___      ___     ___
-                ___             ___        ___       ___       &TD_LR_U         &kp A     &kp N       R_CA_R  &to L_0  ___  ___      _tbd_  _tbd_    ___      ___      ___      ___     _tbd_
-                &to L_0         ___        DE_SEL    &kp D     &lt L_NUM X      &kp S                            ___    ___                 _tbd_    ___      ___      ___      ___     _tbd_
-                &TD_LR_E        &kp LS(T)  _tbd_     ___       ___                                    ___  ___  ___      ___  ___  ___               ___      ___      ___      ___     VRT_CPY
+                &as LC(L) BSLH  &TD_LR_1   &TD_LR_2  &TD_LR_3  &TD_LR_4         &TD_LR_5  &to L_0                                    ZOOM_OUT  MOD_LIB  MOD_DEV  MOD_MAP  MOD_PRT  &kp N0  ___
+                ___             ___        ___       ___       &hm_slw LCTRL P  &kp M     &kp LS(W)                                  ZOOM_IN   _tbd_    ___      ___      ___      ___     ___
+                ___             ___        ___       ___       &TD_LR_U         &kp A     SURV_SH     R_CA_R  &to L_0  ___  ___      _tbd_     _tbd_    ___      ___      ___      ___     _tbd_
+                &to L_0         ___        DE_SEL    &kp D     &lt L_NUM X      &kp S                            ___    ___                    _tbd_    ___      ___      ___      ___     _tbd_
+                &TD_LR_E        &kp LS(T)  &kp J     ___       ___                                    ___  ___  ___      ___  ___  ___                  ___      ___      ___      ___     VRT_CPY
             >; };
 
              // undefs
@@ -423,6 +426,10 @@
                 #undef MOD_MAP
                 #undef MOD_PRT
                 #undef R_CTL_R
+                #undef DE_SEL
+                #undef SURV_SH
+                #undef ZOOM_IN
+                #undef ZOOM_OUT
              // end undefs
 
         // END Lightroom
