@@ -47,4 +47,12 @@ m_##AS_NAME: m_##AS_NAME { \
     bindings = <&kp>, <&m_##MM_NAME>; \
 }; \
 
+// WIP- have key with { < > } but also be the if-other-Shift-then-Shift mod
+mm_LthGth_Bksp: mm_LthGth_Bksp {
+    compatible = "zmk,behavior-mod-morph";
+    #binding-cells = <0>;
+    bindings = <&as LT GT>, <&kp BACKSPACE>;
+    mods = <(MOD_LSFT)>;
+};
+
 
