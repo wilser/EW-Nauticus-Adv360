@@ -407,8 +407,8 @@
                 #define R_CA_R      &as LC(R) R
                 #define DE_SEL      &as LC(D) LC(LS(D))
                 #define SURV_SH     &as LS(N) N
-                #define ZOOM_IN     LC(EQUALS)
-                #define ZOOM_OUT    LC(MINUS)
+                #define ZOOM_IN     &kp LC(EQUALS)
+                #define ZOOM_OUT    &kp LC(MINUS)
             // end defines
 
             lr_layer { bindings = <
