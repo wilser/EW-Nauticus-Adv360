@@ -315,16 +315,15 @@
                 
                 #define NUM_NUM_LR    &ht_num_tonum_tolr L_NUM 0
 
-                #define ING_BULLET    &m_mmsNG2_Ing F21 0
                 #define TION_GRAVE    &m_mmsNG2_Tion GRAVE 0
             // end defines
 
             engram_layer { bindings = <
-                &m_mmsNG2_Bksl PIPE 0  &m_mmsNG2_Star N1 0     &m_mmsNG2_Qstn N2 0  &m_mmsNG2_Cmma N3 0  &m_mmsNG2_Apos N4 0  &m_mmsNG2_Excl N5 0     &to L_DVK                                                                    &sl L_UTL  &m_mmsNG2_LsTh N6 0    &m_mmsNG2_Quot N7 0  &m_mmsNG2_Perd N8 0  &m_mmsNG2_GrTh N9 0  &m_mmsNG2_Equl N0 0  &kp Z
-                &kp ESC                _B_GUI                  _Y_SFT               _O_ALT               _U_CTL               &m_mmsNG2_Lpar F20 0    _HYPER                                                                       _HYPER     &m_mmsNG2_Rpar DLLR 0  _L_CTL               _D_ALT               _W_SFT               _V_GUI               &m_mmsNG2_Slsh PERCENT 0
-                MT_TB_SHFTB            &kp C                   &kp I                &kp E                &kp A                &m_mmsNG2_Semi TILDE 0  _MEH          _SHF_BSP_L   ING_BULLET    TION_GRAVE  _SHF_BSP_R              _MEH       &m_mmsNG2_Coln PLUS 0  &kp H                &kp T                &kp S                &kp N                &m_mmsNG2_Mnus UNDERSCORE 0
-                NUM_NUM_LR             &lt L_EDT G             &kp X                &lt L_UTL J          &lt_fst L_NUM K      &m_mmsNG2_Amps CARET 0                           AS_Hm_CtlHm      &kp PG_UP                                     &m_mmsNG2_Hash AT 0    &kp R                &kp M                &kp F                &kp P                &as_Qu Q 0
-                &TD_Emj_WinDsk         &m_mmsNG2_Cret GRAVE 0  &TD_Rtclick_P        &kp LEFT             &kp RIGHT                                      AS_Bk_CtlBk  &kp DEL  AS_En_CtlEn        &kp PG_DN  &lt L_FNC ENTER  &kp SPACE                               &kp UP               &kp DOWN             &as LS(LBKT) LBKT    &as LS(RBKT) RBKT    TD_ScrnShots
+                &m_mmsNG2_Bksl PIPE 0   &m_mmsNG2_Star N1 0  &m_mmsNG2_Qstn N2 0  &m_mmsNG2_Cmma N3 0  &m_mmsNG2_Apos N4 0  &m_mmsNG2_Excl N5 0     &to L_DVK                                                                    &sl L_UTL  &m_mmsNG2_Semi N6 0    &m_mmsNG2_Lpar N7 0  &m_mmsNG2_Perd N8 0  &m_mmsNG2_Rpar N9 0  &m_mmsNG2_Equl N0 0  &kp Z
+                &kp ESC                 _B_GUI               _Y_SFT               _O_ALT               _U_CTL               &m_mmsNG2_Ing F20 0     _HYPER                                                                       _HYPER     &m_mmsNG2_Tion DLLR 0  _L_CTL               _D_ALT               _W_SFT               _V_GUI               &m_mmsNG2_Slsh PERCENT 0
+                MT_TB_SHFTB             &kp C                &kp I                &kp E                &kp A                &m_mmsNG2_Quot TILDE 0  _MEH          _SHF_BSP_L   NUM_NUM_LR    _tbd_       _SHF_BSP_R              _MEH       &m_mmsNG2_Coln PLUS 0  &kp H                &kp T                &kp S                &kp N                &m_mmsNG2_Mnus UNDERSCORE 0
+                &TD_Emj_WinDsk          &lt L_EDT G          &kp X                &lt L_UTL J          &lt_fst L_NUM K      &m_mmsNG2_Amps F21 0                             AS_Hm_CtlHm      &kp PG_UP                                     &m_mmsNG2_Hash AT 0    &kp R                &kp M                &kp F                &kp P                &as_Qu Q 0
+                &m_mmsNG2_Cret GRAVE 0  _tbd_                &TD_Rtclick_P        &kp LEFT             &kp RIGHT                                      AS_Bk_CtlBk  &kp DEL  AS_En_CtlEn        &kp PG_DN  &lt L_FNC ENTER  &kp SPACE                               &kp UP               &kp DOWN             &as LS(LBKT) LBKT    &as LS(RBKT) RBKT    TD_ScrnShots
             >; };
 
             // #UNDEFs
@@ -346,8 +345,6 @@
                 #undef AS_Bk_CtlBk
                 #undef AS_En_CtlEn
                 #undef NUM_NUM_LR
-
-                #undef ING_BULLET
                 #undef TION_GRAVE
             // end undefs
 
@@ -409,14 +406,15 @@
                 #define SURV_SH     &as LS(N) N
                 #define ZOOM_IN     &kp LC(EQUAL)
                 #define ZOOM_OUT    &kp LC(MINUS)
+                #define SPOT_LUM    &as LS(Q) Q
             // end defines
 
             lr_layer { bindings = <
-                &as LC(L) BSLH  &TD_LR_1   &TD_LR_2  &TD_LR_3  &TD_LR_4         &TD_LR_5  &to L_0                                    ZOOM_OUT  MOD_LIB  MOD_DEV  MOD_MAP  MOD_PRT  &kp N0  ___
-                ___             ___        ___       ___       &hm_slw LCTRL P  &kp M     &kp LS(W)                                  ZOOM_IN   _tbd_    ___      ___      ___      ___     ___
-                ___             ___        ___       ___       &TD_LR_U         &kp A     SURV_SH     R_CA_R  &to L_0  ___  ___      _tbd_     _tbd_    ___      ___      ___      ___     _tbd_
-                &to L_0         ___        DE_SEL    &kp D     &lt L_NUM X      &kp S                            ___    ___                    _tbd_    ___      ___      ___      ___     _tbd_
-                &TD_LR_E        &kp LS(T)  &kp J     ___       ___                                    ___  ___  ___      ___  ___  ___                  ___      ___      ___      ___     VRT_CPY
+                &as LC(L) BSLH  &TD_LR_1   &TD_LR_2  &TD_LR_3  &TD_LR_4         &TD_LR_5  &to L_0                                       ZOOM_OUT  MOD_LIB  MOD_DEV  MOD_MAP  MOD_PRT  &kp N0  ___
+                ___             ___        ___       ___       &hm_slw LCTRL P  &kp M     &kp LS(W)                                     ZOOM_IN   &kp K    ___      ___      ___      ___     ___
+                ___             ___        ___       ___       &TD_LR_U         &kp A     SURV_SH     R_CA_R  &to L_0  _tbd_  _tbd_     _tbd_     _tbd_    ___      ___      ___      ___     _tbd_
+                &to L_0         ___        DE_SEL    &kp D     &lt L_NUM X      &kp S                            ___    ___                       _tbd_    ___      ___      ___      ___     SPOT_LUM
+                &TD_LR_E        &kp LS(T)  &kp J     ___       ___                                    ___  ___  ___      ___  ___     ___                  ___      ___      ___      ___     VRT_CPY
             >; };
 
              // undefs
@@ -430,6 +428,7 @@
                 #undef SURV_SH
                 #undef ZOOM_IN
                 #undef ZOOM_OUT
+                #undef SPOT_LUM
              // end undefs
 
         // END Lightroom
