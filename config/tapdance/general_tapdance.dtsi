@@ -87,20 +87,20 @@ TD_Num_LR_NLock: tapdance_num_lr_numlock {
 // NOTE: HT always takes 2 args / so use like "ht_num_tonum_tolr L_NUM 0"
 // NOTE: need 'plain' parms for hold-tap; so pass in the NUM layer in keymap not here: "<&mo>" here not "<&mo LAYER>" ==> then in keymap: "&macro LNUM 0"
 
-td_tonum_tolr: tapdance_ToNum_ToLR {
+td_tolr_tonum: tapdance_ToLR_ToNum {
     compatible = "zmk,behavior-tap-dance";
     #binding-cells = <0>;
     tapping-term-ms = <200>;
-    bindings = <&to L_NUM>, <&to L_LR>;
+    bindings = <&to L_LR>, <&to L_NUM>; // 1st tap to 1st layer, 2x tap to 2nd layer
 };
 
-ht_num_tonum_tolr: holdtap_Num_ToNum_ToLR {
+ht_num_tolr_tonum: holdtap_Num_ToLR_ToNum {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
     flavor = "hold-preferred"; // which?
     tapping-term-ms = <200>;
     quick-tap-ms = <200>;
-    bindings = <&mo>, <&td_tonum_tolr>;
+    bindings = <&mo>, <&td_tolr_tonum>;
     //retro-tap; // need this?
     // 2024-08-26 changed to "hold-preferred" and removed "retro-tap" / then worked / Ø sure if needed both
 };
