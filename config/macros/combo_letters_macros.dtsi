@@ -114,6 +114,14 @@ m_pm_uc: m_pm_uc {
     bindings = <&kp SPACE>, <&kp LS(P)>, <&kp LS(M)>;
 };
 
+// minutes
+m_minutes: m_minutes {
+    compatible = "zmk,behavior-macro";
+    wait-ms = <0>; // was 10
+    tap-ms = <1>; // was 5
+    #binding-cells = <0>;
+    bindings = <&kp M>, <&kp I>, <&kp N>, <&kp U>, <&kp T>, <&kp E>, <&kp S>;
+};
 
 
 // mod-morph shifts for these:
@@ -122,7 +130,6 @@ m_pm_uc: m_pm_uc {
 
 // tap: the &kp, hold: the &macro for the letters...
 // uses "&as_XX 0 #" in map; 0 parm for the nil macro parm; note macro is FIRST
-// 
 as_1st: auto_shift_1st {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
@@ -192,3 +199,13 @@ as_pm_uc: auto_shift_pm_uc {
     flavor = "tap-preferred";
     bindings = <&m_pm_uc>, <&kp>; 
 };
+
+as_minutes: auto_shift_minutes {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    tapping-term-ms = <150>;
+    quick-tap-ms = <0>;
+    flavor = "tap-preferred";
+    bindings = <&m_minutes>, <&kp>; 
+};
+
