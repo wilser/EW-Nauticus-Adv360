@@ -523,7 +523,7 @@
                 _x_         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  _x_                                                          &m_SLEEP  _x_      &kp N1   &kp N2    &m_CSA_R   &kp N3   &kp RS(N2)
                 ___         _x_           _x_           _x_           _x_           _x_           _x_         _x_   &kp C_VOL_UP      _RGB_TG   &bt BT_CLR     &m_HIBER  _x_      &m_M1    &m_M2     &m_M3      &m_M4    &kp RS(N3)
                 &bt BT_CLR  _x_           _x_           _x_           _x_           _x_                            &kp C_VOL_DN        _BKL_TG                           _x_      &m_M5    &m_M6     &m_M7      &m_M8    &kp RS(N4)
-                _BTLD       _x_           _x_           ___           ___                             ___    ___   &kp C_MUTE           _x_     ___    ___                        &m_M9    &m_M10    &kp N7     &kp N8   _BTLD
+                _BTLD       _x_           _x_           ___           ___                             ___    ___   &kp C_MUTE           &bt BT_CLR_ALL  ___  ___                  &m_M9    &m_M10    &kp N7     &kp N8   _BTLD
             >; };
 
             // #UNDEFs
