@@ -206,7 +206,7 @@
         lt_fst: layer_shift_faster {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <150>; // 90 seemed too fast
+            tapping-term-ms = <120>; // 90 seemed too fast
             quick-tap-ms = <0>;  // ▢ this also need ∆?
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
@@ -219,57 +219,6 @@
     keymap {
         compatible = "zmk,keymap";
         
-        /*****************************************************************************************************
-        * ENGRAM - BAKUP 2024-05-13
-            URL layout: http://www.keyboard-layout-editor.com/#/gists/32760c7c88bd4bd39b3eba742b14dcb7
-            NOTES:
-                • ALT LAYOUTS must be LOWER in stack than any higher ones want to layer-hold shift to
-                • SYNTAX for mod-morph holds: "&<macro-named> <hold-key> 0"
-                • AHK mappings (updated 2024-05-05)
-                    F14 ~ing
-                    F15 ~tion
-                    F20 Ø
-                    F21 •
-            
-            TODO:
-                ▢ see also Keyboard Layout Editor for TODO items (↑ link above)
-            */
-/*
-            // DEFINES:
-            #define _B_GUI      &hm_slw LGUI B      // GUI/Win on pinkie fingers
-            #define _Y_SFT      &hm_l LSHFT Y       // Shift on ring fingers
-            #define _O_ALT      &hm_l LALT O        // Alt on middle fingers
-            #define _U_CTL      &hm_l LCTRL U       // Ctrl on index fingers
-            #define _L_CTL      &hm_r RCTRL L       // Ctrl
-            #define _D_ALT      &hm_r RALT D        // Alt
-            #define _W_SFT      &hm_r RSFT W        // Shift
-            #define _V_GUI      &hm_slw RGUI V      // GUI/Win
-            //#define _APOS_RALT  &hm_slw RALT APOS   // *Special extra Right-Alt when don't want l-alt because of AltSnap utility use
-        // end defines
-
-        engram_layer { bindings = <
-            &m_mmsNGM_Apos GRAVE 0   &m_mmsNGM_1 LBRC 0    &m_mmsNGM_2 AT 0    &m_mmsNGM_3 BACKSLASH 0   &m_mmsNGM_4 TILDE 0   &m_mmsNGM_5 PIPE 0           &to L_DVK                                       ___   &as LS(N6) N6                    &m_mmsNGM_7 DLLR 0   &m_mmsNGM_8 HASH 0   &m_mmsNGM_9 PRCNT 0   &m_mmsNGM_0 RBRC 0    &m_mmsNGM_Qstn EXCLAMATION 0
-            ___                      _B_GUI                _Y_SFT              _O_ALT                    _U_CTL                &m_mmsNGM_Lpar LBKT 0        ___                                             ___   &m_mmsNGM_Rpar RBKT 0            _L_CTL               _D_ALT               _W_SFT                _V_GUI                &m_mmsNGM_Slsh STAR 0
-            ___                      &kp C                 &kp I               &kp E                     &kp A                 &m_mmsNGM_Cmma SEMI 0        ___            ___   ___    ___   ___           ___   &m_mmsNGM_Perd DOUBLE_QUOTES 0   &kp H                &kp T                &kp S                 &kp N                 &m_mmsNGM_Mnus UNDERSCORE 0
-            &m_mmsNGM_Ing F15 0      &lt L_EDT G           &kp X               &lt L_UTL J               &lt L_NUM K           &m_mmsNGM_Amps LESS_THAN 0                       ___      ___                      &m_mmsNGM_Equl GREATER_THAN 0    &kp R                &kp M                &kp F                 &kp P                 &m_mmsNGM_Coln PLUS 0
-            ___                      &TD_CpWrd_CpLock      &as RC(Q) K_CMENU   ___                       ___                                                       ___   ___   ___        ___   ___   ___                                          ___                  ___                  &mm_QU                &kp Z                 ___
-        >; };
-
-        // #UNDEFs
-            #undef _B_GUI
-            #undef _Y_SFT
-            #undef _O_ALT
-            #undef _U_CTL
-            #undef _L_CTL
-            #undef _D_SFT
-            #undef _W_ALT
-            #undef _V_GUI
-            //#undef _APOS_RALT
-        // end undefs
-
-    // END Engram
-*/
-
         /*****************************************************************************************************
         * L0 ⚪ ENGRAM
             URL layout: http://www.keyboard-layout-editor.com/#/gists/32760c7c88bd4bd39b3eba742b14dcb7
@@ -286,6 +235,7 @@
                 ▢ see also Keyboard Layout Editor for TODO items (↑ link above)
                 ▢ Qu,qu,Q,q ...
                 ▣ trying 'faster' tap-term for the {K,NUM} layer-hold - ▢probably fine tune as get faster
+                ▢ the Hold-RH-Thumb {\} do something else? [right now tap-while-shift = bkspc / hold = pipe]
             */
 
             // DEFINES:
@@ -309,7 +259,6 @@
                 // Mod-taps, Mod-morphs, etc. for THUMBS
                 #define _SHF_BSP_L    &mm_SHIFT_BACKSPACE_L
                 #define _SHF_BSP_R    &mm_SHIFT_BACKSPACE_R
-                #define _SHF_LTGT_BK  &mm_LthGth_Bksp
                 #define AS_Hm_CtlHm   &as_slw RC(HOME) HOME
                 #define AS_Bk_CtlBk   &as_slw RC(BSPC) BSPC
                 #define AS_En_CtlEn   &as_slw RC(END) END
@@ -318,13 +267,16 @@
                 #define NUM_LR_NUM    &ht_num_tolr_tonum L_NUM 0
 
                 #define TION_GRAVE    &m_mmsNG2_Tion GRAVE 0
+
+                //#define _SHF_LTGT_BK  &mm_LthGth_Bksp
+                #define _SHF_BSLH_BKSP  &mm_Bslh_Bksp
             // end defines
 
             engram_layer { bindings = <
-                &m_mmsNG2_Bksl PIPE 0   &m_mmsNG2_Star N1 0  &m_mmsNG2_Qstn N2 0  &m_mmsNG2_Cmma N3 0  &m_mmsNG2_Apos N4 0  &m_mmsNG2_Ing N5 0      &to L_DVK                                                                    &sl L_UTL  &m_mmsNG2_Tion N6 0    &m_mmsNG2_Quot N7 0  &m_mmsNG2_Perd N8 0  &m_mmsNG2_Excl N9 0  &m_mmsNG2_Equl N0 0  &kp Z
-                &kp ESC                 _B_GUI               _Y_SFT               _O_ALT               _U_CTL               &m_mmsNG2_Lpar F20 0    _HYPER                                                                       _HYPER     &m_mmsNG2_Rpar DLLR 0  _L_CTL               _D_ALT               _W_SFT               _V_GUI               &m_mmsNG2_Slsh PERCENT 0
-                MT_TB_SHFTB             &kp C                &kp I                &kp E                &kp A                &m_mmsNG2_Semi TILDE 0  _MEH          _SHF_BSP_L   NUM_LR_NUM    &lt L_LET LT  _SHF_LTGT_BK          _MEH       &m_mmsNG2_Coln PLUS 0  &kp H                &kp T                &kp S                &kp N                &m_mmsNG2_Mnus UNDERSCORE 0
-                &TD_Emj_WinDsk          &lt L_EDT G          &kp X                &lt L_UTL J          &lt_fst L_NUM K      &m_mmsNG2_Amps F21 0                             AS_Hm_CtlHm      &kp PG_UP                                     &m_mmsNG2_Hash AT 0    &kp R                &kp M                &kp F                &kp P                &as_Qu Q 0
+                &m_mmsNG2_Tild PIPE 0   &m_mmsNG2_Star N1 0  &m_mmsNG2_Qstn N2 0  &m_mmsNG2_Cmma N3 0  &m_mmsNG2_Apos N4 0  &m_mmsNG2_Ing N5 0      &to L_DVK                                                                    &sl L_UTL  &m_mmsNG2_Tion N6 0    &m_mmsNG2_Quot N7 0  &m_mmsNG2_Perd N8 0  &m_mmsNG2_Excl N9 0  &m_mmsNG2_Equl N0 0  &kp Z
+                &kp ESC                 _B_GUI               _Y_SFT               _O_ALT               _U_CTL               &m_mmsNG2_Lpar AT 0     _HYPER                                                                       _HYPER     &m_mmsNG2_Rpar DLLR 0  _L_CTL               _D_ALT               _W_SFT               _V_GUI               &m_mmsNG2_Slsh PERCENT 0
+                MT_TB_SHFTB             &kp C                &kp I                &kp E                &kp A                &m_mmsNG2_Semi LT 0     _MEH          _SHF_BSP_L   NUM_LR_NUM    &lt L_LET F20  _SHF_BSLH_BKSP       _MEH       &m_mmsNG2_Coln GT 0    &kp H                &kp T                &kp S                &kp N                &m_mmsNG2_Mnus UNDERSCORE 0
+                &TD_Emj_WinDsk          &lt L_EDT G          &kp X                &lt L_UTL J          &lt_fst L_NUM K      &m_mmsNG2_Amps F21 0                             AS_Hm_CtlHm      &kp PG_UP                                     &m_mmsNG2_Hash PLUS 0  &kp R                &kp M                &kp F                &kp P                &as_Qu Q 0
                 &m_mmsNG2_Cret GRAVE 0  _tbd_                &TD_Rtclick_P        &kp LEFT             &kp RIGHT                                      AS_Bk_CtlBk  &kp DEL  AS_En_CtlEn        &kp PG_DN  &lt L_FNC ENTER  &kp SPACE                               &kp UP               &kp DOWN             &as LS(LBKT) LBKT    &as LS(RBKT) RBKT    TD_ScrnShots
             >; };
 
@@ -348,6 +300,7 @@
                 #undef AS_En_CtlEn
                 #undef NUM_NUM_LR
                 #undef TION_GRAVE
+                #undef _SHF_BSLH_BKSP
             // end undefs
 
         // END Engram
@@ -591,17 +544,18 @@
 
         // END Edit
 
-        /*****************************************************************************************************
-        * L7 PLAIN letters - for hold to override any main-layer holds
-            */
-        plain_letters_layer { bindings = <
-            ___  ___    ___    ___    ___    ___  ___                               ___    ___    ___    ___    ___    ___    ___
-            ___  &kp B  &kp Y  &kp O  &kp U  ___  ___                               ___    ___    &kp L  &kp D  &kp W  &kp V  ___
-            ___  &kp C  &kp I  &kp E  &kp A  ___  ___      ___  ___   ___  ___      ___    ___    &kp H  &kp T  &kp S  &kp N  ___
-            ___  &kp G  &kp X  &kp J  &kp K  ___               ___     ___                 ___    &kp R  &kp M  &kp F  &kp P  ___ 
-            ___  ___    ___    ___    ___           ___  ___  ___       ___  ___  ___             ___    ___    ___    ___    ___
-        >; };
-        // END letters
+        /*****************************************************************************************************/
+        // L7 PLAIN letters - for hold to override any main-layer holds
+            
+            plain_letters_layer { bindings = <
+                ___  ___    ___    ___    ___    ___  ___                               ___    ___    ___    ___    ___    ___    ___
+                ___  &kp B  &kp Y  &kp O  &kp U  ___  ___                               ___    ___    &kp L  &kp D  &kp W  &kp V  ___
+                ___  &kp C  &kp I  &kp E  &kp A  ___  ___      ___  ___   ___  ___      ___    ___    &kp H  &kp T  &kp S  &kp N  ___
+                ___  &kp G  &kp X  &kp J  &kp K  ___               ___     ___                 ___    &kp R  &kp M  &kp F  &kp P  ___ 
+                ___  ___    ___    ___    ___           ___  ___  ___       ___  ___  ___             ___    ___    ___    ___    ___
+            >; };
+
+        // END plain letters
 
 
         /*****************************************************************************************************
