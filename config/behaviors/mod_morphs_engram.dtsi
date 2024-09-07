@@ -41,7 +41,7 @@
 
 // Left Bottom
   //MOD_MORPH_SHIFT(mmNG2_Ing   , F14        , F21      , mmsNG2_Ing ) // F14 "ing", F21 •
-  //MOD_MORPH_SHIFT(mmNG2_Bksl  , BSLH       , PIPE     , mmsNG2_Bksl)
+  MOD_MORPH_SHIFT(mmNG2_Bksl  , BSLH       , PIPE     , mmsNG2_Bksl)
   MOD_MORPH_SHIFT(mmNG2_Cret  , CARET      , GRAVE    , mmsNG2_Cret)
 
  // L-MID COLUMN (T to B): 
