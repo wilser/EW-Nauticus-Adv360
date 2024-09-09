@@ -16,6 +16,8 @@ TD_LR_E: tapdance_lightroom_e {
     bindings = <&kp LS(E)>, <&kp LC(E)>, <&kp LC(LA(X))>;
 };
 
+// ▢ 2024-09-09 unused / see the ...D one
+/*
 TD_LR_U: tapdance_lightroom_u {
     // (1x) U (unpick)
     // (2x) Ctrl+U (Auto-exposure)
@@ -23,6 +25,16 @@ TD_LR_U: tapdance_lightroom_u {
     #binding-cells = <0>;
     tapping-term-ms = <300>;
     bindings = <&kp U>, <&kp LC(U)>;
+};
+*/
+
+TD_D_AUTO: tapdance_lightroom_d {
+    // (1x) D (develop)
+    // (2x) Ctrl+U (Auto-exposure)
+    compatible = "zmk,behavior-tap-dance";
+    #binding-cells = <0>;
+    tapping-term-ms = <300>;
+    bindings = <&kp D>, <&kp LC(U)>;
 };
 
 
