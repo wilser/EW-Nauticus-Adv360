@@ -270,7 +270,7 @@
 
                 //#define _SHF_LTGT_BK  &mm_LthGth_Bksp
                 #define _SHF_BSLH_BKSP  &mm_Bslh_Bksp
-                #define M_DASH        LC(LS(F24))
+                #define M_DASH        LC(F24)
             // end defines
 
             engram_layer { bindings = <
