@@ -206,7 +206,7 @@
         lt_fst: layer_shift_faster {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <135>; // 90 seemed too fast; 150 bit too slow; 120 close, but too fast by tad
+            tapping-term-ms = <140>; // 90 seemed too fast; 150 bit too slow; 120 close, but too fast by tad
             quick-tap-ms = <0>;  // ▢ this also need ∆?
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
