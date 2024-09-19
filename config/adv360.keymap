@@ -256,28 +256,29 @@
                 #define _MEH &kp      LC(LA(LSHFT))
                 
                 // Mod-taps, Mod-morphs, etc. for THUMBS
-                #define _SHF_BSP_L    &mm_SHIFT_BACKSPACE_L
-                #define _SHF_BSP_R    &mm_SHIFT_BACKSPACE_R
-                #define AS_Hm_CtlHm   &as_slw RC(HOME) HOME
-                #define AS_Bk_CtlBk   &as_slw RC(BSPC) BSPC
-                #define AS_En_CtlEn   &as_slw RC(END) END
-                #define TD_ScrnShots  &TD_WinScreenshot_SnagIt   // 1x: Win+Shift+S   2x: Ctrl+Alt+P
-                
-                #define NUM_LR_NUM    &ht_num_tolr_tonum L_NUM 0
-
-                #define TION_GRAVE    &m_mmsNG2_Tion GRAVE 0
+                #define _SHF_BSP_L      &mm_SHIFT_BACKSPACE_L
+                #define _SHF_BSP_R      &mm_SHIFT_BACKSPACE_R
+                #define AS_Hm_CtlHm     &as_slw RC(HOME) HOME
+                #define AS_Bk_CtlBk     &as_slw RC(BSPC) BSPC
+                #define AS_En_CtlEn     &as_slw RC(END) END
+                #define TD_ScrnShots    &TD_WinScreenshot_SnagIt   // 1x: Win+Shift+S   2x: Ctrl+Alt+P
+                  
+                #define NUM_LR_NUM      &ht_num_tolr_tonum L_NUM 0
+  
+                #define TION_GRAVE      &m_mmsNG2_Tion GRAVE 0
 
                 //#define _SHF_LTGT_BK  &mm_LthGth_Bksp
                 #define _SHF_BSLH_BKSP  &mm_Bslh_Bksp
-                #define M_DASH        LC(F24)
+                #define M_DASH          LC(F24)
+                #define BUL_AR_tbd      &as LC(LA(F21)) F21 // for now / but WIP
             // end defines
 
             engram_layer { bindings = <
                 &m_mmsNG2_Tild PIPE 0   &m_mmsNG2_Star N1 0  &m_mmsNG2_Qstn N2 0  &m_mmsNG2_Cmma N3 0  &m_mmsNG2_Apos N4 0  &m_mmsNG2_Ing N5 0      &to L_DVK                                                                    &sl L_UTL  &m_mmsNG2_Tion N6 0    &m_mmsNG2_Quot N7 0  &m_mmsNG2_Perd N8 0  &m_mmsNG2_Excl N9 0  &m_mmsNG2_Equl N0 0  &kp Z
-                &kp ESC                 _B_GUI               _Y_SFT               _O_ALT               _U_CTL               &m_mmsNG2_Lpar AT 0     _HYPER                                                                       _HYPER     &m_mmsNG2_Rpar DLLR 0  _L_CTL               _D_ALT               _W_SFT               _V_GUI               &m_mmsNG2_Slsh PERCENT 0
+                &kp ESC                 _B_GUI               _Y_SFT               _O_ALT               _U_CTL               &m_mmsNG2_Lpar F20 0    _HYPER                                                                       _HYPER     &m_mmsNG2_Rpar DLLR 0  _L_CTL               _D_ALT               _W_SFT               _V_GUI               &m_mmsNG2_Slsh PERCENT 0
                 MT_TB_SHFTB             &kp C                &kp I                &kp E                &kp A                &m_mmsNG2_Semi LT 0     _MEH          _SHF_BSP_L   NUM_LR_NUM    &lt L_LET M_DASH  _SHF_BSLH_BKSP    _MEH       &m_mmsNG2_Coln GT 0    &kp H                &kp T                &kp S                &kp N                &m_mmsNG2_Mnus UNDERSCORE 0
-                &TD_Emj_WinDsk          &lt_fst L_EDT G      &kp X                &lt L_UTL J          &lt_fst L_NUM K      &m_mmsNG2_Amps F21 0                             AS_Hm_CtlHm      &kp PG_UP                                     &m_mmsNG2_Hash PLUS 0  &kp R                &kp M                &kp F                &kp P                &as_Qu Q 0
-                &m_mmsNG2_Cret GRAVE 0  _tbd_                &TD_Rtclick_P        &kp LEFT             &kp RIGHT                                      AS_Bk_CtlBk  &kp DEL  AS_En_CtlEn        &kp PG_DN  &lt L_FNC ENTER  &kp SPACE                               &kp UP               &kp DOWN             &as LS(LBKT) LBKT    &as LS(RBKT) RBKT    TD_ScrnShots
+                &TD_Emj_WinDsk          &lt_fst L_EDT G      &kp X                &lt L_UTL J          &lt_fst L_NUM K      &m_mmsNG2_Amps AT 0                              AS_Hm_CtlHm      &kp PG_UP                                     &m_mmsNG2_Hash PLUS 0  &kp R                &kp M                &kp F                &kp P                &as_Qu Q 0
+                &m_mmsNG2_Cret GRAVE 0  BUL_AR_tbd           &TD_Rtclick_P        &kp LEFT             &kp RIGHT                                      AS_Bk_CtlBk  &kp DEL  AS_En_CtlEn        &kp PG_DN  &lt L_FNC ENTER  &kp SPACE                               &kp UP               &kp DOWN             &as LS(LBKT) LBKT    &as LS(RBKT) RBKT    TD_ScrnShots
             >; };
 
             // #UNDEFs
@@ -478,7 +479,7 @@
 
             util_layer { bindings = <
                 _x_         &to 1          &to 2          &to 3          &to 4          &to 5          &to L_0                                              _MONOFF   &to 6    &to 7    &to 8     &to 9      &to 10   &m_CSA_R
-                _x_         &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4   _x_                                                  &m_SLEEP  _x_      &kp N1   &kp N2    &kp N3     &kp N4   &kp RS(N2)
+                ___         &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4   _x_                                                  &m_SLEEP  _x_      &kp N1   &kp N2    &kp N3     &kp N4   &kp RS(N2)
                 ___         &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4  _x_       _x_   &kp C_VOL_UP  _BKL_TG  _RGB_TG       &m_HIBER  _x_      &m_M1    &m_M2     &m_M3      &m_M4    &kp RS(N3)
                 &bt BT_CLR  _x_            _x_            _x_            _x_            _x_                           &kp C_VOL_DN    &bt BT_CLR                      _x_      &m_M5    &m_M6     &m_M7      &m_M8    &kp RS(N4)
                 _BTLD       _x_            _x_            ___            ___                              ___    ___   &kp C_MUTE      &bt BT_CLR_ALL  ___  ___                &m_M9    &m_M10    &kp N7     &kp N8   _BTLD

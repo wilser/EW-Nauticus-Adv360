@@ -14,6 +14,7 @@
 // F14 >> AHK(~ing)
 // F15 >> AHK(~tion)
 // Ctrl+F24 >> — / m-dash
+// Ctrl+Alt+F21 >> → / rt-arrow
 // Note: (` grave; # hash, - minus, ...)
 
 // TOP ROW (L to R)
@@ -35,9 +36,10 @@
   MOD_MORPH_SHIFT(mmNG2_Cret  , CARET      , GRAVE    , mmsNG2_Cret)
 
  // L-MID COLUMN (T to B): 
-  MOD_MORPH_SHIFT(mmNG2_Lpar  , LPAR       , AT       , mmsNG2_Lpar)
+  //MOD_MORPH_SHIFT(mmNG2_Lpar  , LPAR       , AT       , mmsNG2_Lpar)
+  MOD_MORPH_SHIFT(mmNG2_Lpar  , LPAR       , F20      , mmsNG2_Lpar) // F20 Ø
   MOD_MORPH_SHIFT(mmNG2_Semi  , SEMI       , LT       , mmsNG2_Semi)
-  MOD_MORPH_SHIFT(mmNG2_Amps  , AMPS       , F21      , mmsNG2_Amps) // F21 •
+  MOD_MORPH_SHIFT(mmNG2_Amps  , AMPS       , AT       , mmsNG2_Amps)
 
 // R-MID COLUMN (T to B): 
   MOD_MORPH_SHIFT(mmNG2_Rpar  , RPAR       , DLLR     , mmsNG2_Rpar)
@@ -77,7 +79,6 @@
   //MOD_MORPH_SHIFT(mmNG2_Ing   , F14        , F21      , mmsNG2_Ing ) // F14 "ing", F21 •
   //MOD_MORPH_SHIFT(mmNG2_Ing   , F14        , F20      , mmsNG2_Ing ) // F14 "ing", F20 Ø
   //MOD_MORPH_SHIFT(mmNG2_Quot  , DQT        , TILDE    , mmsNG2_Quot)  
-  //MOD_MORPH_SHIFT(mmNG2_Lpar  , LPAR       , F20      , mmsNG2_Lpar) // F20 Ø
   //MOD_MORPH_SHIFT(mmNG2_Cmma  , COMMA      , SEMI     , mmsNG2_Cmma)
   //MOD_MORPH_SHIFT(mmNG2_Semi  , SEMI       , TILDE    , mmsNG2_Semi)
   //MOD_MORPH_SHIFT(mmNG2_Amps  , AMPS       , LT       , mmsNG2_Amps) 
