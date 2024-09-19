@@ -220,7 +220,7 @@
         compatible = "zmk,keymap";
         
         /*****************************************************************************************************
-        * L0 ⚪ ENGRAM
+        * L0 ⚪ Engram "NGM"
             URL layout: http://www.keyboard-layout-editor.com/#/gists/32760c7c88bd4bd39b3eba742b14dcb7
             NOTES:
                 • ALT LAYOUTS must be LOWER in stack than any higher ones want to layer-hold shift to
@@ -234,8 +234,7 @@
             TODO:
                 ▢ see also Keyboard Layout Editor for TODO items (↑ link above)
                 ▢ Qu,qu,Q,q ...
-                ▣ trying 'faster' tap-term for the {K,NUM} layer-hold - ▢probably fine tune as get faster
-                ▢ the Hold-RH-Thumb {\} do something else? [right now tap-while-shift = bkspc / hold = pipe]
+                ▣ trying 'faster' tap-term for the {K,NUM} layer-hold - ▣ fine tune as get faster
             */
 
             // DEFINES:
@@ -307,7 +306,7 @@
         // END Engram
 
         /*****************************************************************************************************
-        * L1 ⚫: DVORAK
+        * L1 ⚫: Dvorak "DVK"
             *      http://www.keyboard-layout-editor.com/#/gists/fdcbdec4d9a329533f670a566a99338f
             */
 
@@ -345,7 +344,7 @@
         // END Dvorak
         
         /*****************************************************************************************************
-        * L2 🔵 Lightroom (& TBD Photoshop)
+        * L2 🔵 Lightroom "LR"
             *      http://www.keyboard-layout-editor.com/#/gists/ce40ef1f57700f3871b7af5a965ad51b
             *      This is for when the RIGHT HAND is on the mouse primarily; so r.h.s. just left to entirely float through. See notes on KLE.
             *   [.] layer-hold else TD - works? 7/3 "expected number or parenthesized expression"; try adding & bef TD? → compiled, but the TD didn't fire at all, just layer-hold
@@ -392,7 +391,7 @@
         // END Lightroom
 
         /*****************************************************************************************************
-        * L3 🟢 NUM-pad layer
+        * L3 🟢 Num-pad "NUM"
             *      http://www.keyboard-layout-editor.com/#/gists/c51e298f5744feba159cde9973f47b92
             *      Uses non-keypad NUMERAL symbols since plan to use as "main" numbers method eventually as practice more.
             *      See companion 'mod_morphs_nums' file
@@ -458,7 +457,7 @@
         // END Numpad
 
         /*****************************************************************************************************
-        * L4 🔴 UTL - Utils & Specials & Macros/tests & Easy certain symbols
+        * L4 🔴 Utils, Macros, Specials "UTL"
             *       http://www.keyboard-layout-editor.com/#/gists/2d2d37deb742cc77638e81cb0b875106
             *  # keys send to that layer-#
             *  &m_SLEEP & &m_HIBER = Windows-menu-compatible key shortcuts to invoke Sleep, Hibernate from start-menu
@@ -477,8 +476,8 @@
                 #define _MONOFF &kp RC(RG(L)) // Win+Ctrl+L invokes my AHK lock+monoff macro
 
             util_layer { bindings = <
-                _x_         &to 1         &to 2         &to 3         &to 4         &to 5         &to L_0                                                      _MONOFF   &to 6    &to 7    &to 8     &to 9      &to 10   &to 0
-                _x_         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  _x_                                                          &m_SLEEP  _x_      &kp N1   &kp N2    &m_CSA_R   &kp N3   &kp RS(N2)
+                _x_         &to 1         &to 2         &to 3         &to 4         &to 5         &to L_0                                                      _MONOFF   &to 6    &to 7    &to 8     &to 9      &to 10   &m_CSA_R
+                _x_         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  _x_                                                          &m_SLEEP  _x_      &kp N1   &kp N2    &kp N3     &kp N4   &kp RS(N2)
                 ___         _x_           _x_           _x_           _x_           _x_           _x_         _x_   &kp C_VOL_UP      _BKL_TG  _RGB_TG         &m_HIBER  _x_      &m_M1    &m_M2     &m_M3      &m_M4    &kp RS(N3)
                 &bt BT_CLR  _x_           _x_           _x_           _x_           _x_                            &kp C_VOL_DN        &bt BT_CLR                        _x_      &m_M5    &m_M6     &m_M7      &m_M8    &kp RS(N4)
                 _BTLD       _x_           _x_           ___           ___                             ___    ___   &kp C_MUTE           &bt BT_CLR_ALL  ___  ___                  &m_M9    &m_M10    &kp N7     &kp N8   _BTLD
@@ -493,7 +492,7 @@
         // END Utils
 
         /*****************************************************************************************************
-        * L5 🟣 Function Keys
+        * L5 🟣 Function Keys "FNC" (1-12 RH-side, 13-24 LH-side)
             *      http://www.keyboard-layout-editor.com/#/gists/d61490ab54f1d9c63f17ee2d25b40732
             *    NOTES:
             *       [x] 2024-04-14 trying more lateral for easier reach for commons; (and makes room for upper-ones) // nah, too awkward
@@ -527,7 +526,7 @@
         // END Fn Keys
 
         /*****************************************************************************************************
-        * L6 🧢 Edit
+        * L6 🧢 Edit "EDT"
             *      http://www.keyboard-layout-editor.com/#/gists/18e13161cf62a37e0ba0d751735110a1
             * [ ] other r.h.s. useful things?
             * [ ] turn Win+<> into timed-hold Macros? (see the slickrun example) -- for RDP because Win+ not reliable in RDP when sent too fast
@@ -549,7 +548,7 @@
         // END Edit
 
         /*****************************************************************************************************/
-        // L7 PLAIN letters - for hold to override any main-layer holds
+        // L7 Plain letters "LET" - for hold to override any main-layer holds
             
             plain_letters_layer { bindings = <
                 ___  ___    ___    ___    ___    ___  ___                               ___    ___    ___    ___    ___    ___    ___
@@ -563,7 +562,7 @@
 
 
         /*****************************************************************************************************
-        * L8 Alt Numpad - using actual KP versions of numbers; in case need like Alt+<code> testing.
+        * L8 Alt Numpad "KP" - using actual KP versions of numbers; in case need like Alt+<code> testing.
             *      (no yet KeyboardLayoutEditor)
             */
             kp_layer { bindings = <
