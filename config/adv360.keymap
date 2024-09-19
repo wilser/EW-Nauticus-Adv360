@@ -458,14 +458,15 @@
         // END Numpad
 
         /*****************************************************************************************************
-        * L4 🔴 Utils & Specials & Macros/tests & Easy certain symbols
+        * L4 🔴 UTL - Utils & Specials & Macros/tests & Easy certain symbols
             *       http://www.keyboard-layout-editor.com/#/gists/2d2d37deb742cc77638e81cb0b875106
             *  # keys send to that layer-#
             *  &m_SLEEP & &m_HIBER = Windows-menu-compatible key shortcuts to invoke Sleep, Hibernate from start-menu
             *  &m_CSA_R = Ctrl+Shift+Alt+(R) => SlickRun - but macro to hold/release deliberately because timing issues with RDP
             *
             * [ ] TODO:
-            *      [ ] put back LS(N2)..N4?
+            *       [ ] put back LS(N2)..N4?
+            *       [ ] is BT4 'off'? - seems like (light goes off)
             */
             
             // #DEFs
@@ -478,8 +479,8 @@
             util_layer { bindings = <
                 _x_         &to 1         &to 2         &to 3         &to 4         &to 5         &to L_0                                                      _MONOFF   &to 6    &to 7    &to 8     &to 9      &to 10   &to 0
                 _x_         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  _x_                                                          &m_SLEEP  _x_      &kp N1   &kp N2    &m_CSA_R   &kp N3   &kp RS(N2)
-                ___         _x_           _x_           _x_           _x_           _x_           _x_         _x_   &kp C_VOL_UP      _RGB_TG   &bt BT_CLR     &m_HIBER  _x_      &m_M1    &m_M2     &m_M3      &m_M4    &kp RS(N3)
-                &bt BT_CLR  _x_           _x_           _x_           _x_           _x_                            &kp C_VOL_DN        _BKL_TG                           _x_      &m_M5    &m_M6     &m_M7      &m_M8    &kp RS(N4)
+                ___         _x_           _x_           _x_           _x_           _x_           _x_         _x_   &kp C_VOL_UP      _BKL_TG  _RGB_TG         &m_HIBER  _x_      &m_M1    &m_M2     &m_M3      &m_M4    &kp RS(N3)
+                &bt BT_CLR  _x_           _x_           _x_           _x_           _x_                            &kp C_VOL_DN        &bt BT_CLR                        _x_      &m_M5    &m_M6     &m_M7      &m_M8    &kp RS(N4)
                 _BTLD       _x_           _x_           ___           ___                             ___    ___   &kp C_MUTE           &bt BT_CLR_ALL  ___  ___                  &m_M9    &m_M10    &kp N7     &kp N8   _BTLD
             >; };
 
