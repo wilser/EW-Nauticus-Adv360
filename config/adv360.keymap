@@ -221,15 +221,17 @@
         
         /*****************************************************************************************************
         * L0 ⚪ Engram "NGM"
-            URL layout: http://www.keyboard-layout-editor.com/#/gists/32760c7c88bd4bd39b3eba742b14dcb7
+            URL layout (V3): https://www.keyboard-layout-editor.com/#/gists/e15762adf4fb7dc3e7f4e72a91c9e62b
             NOTES:
                 • ALT LAYOUTS must be LOWER in stack than any higher ones want to layer-hold shift to
                 • SYNTAX for mod-morph holds: "&<macro-named> <hold-key> 0"
-                • AHK mappings (updated 2024-05-05)
+                • AHK mappings (updated 2024-09-20)
                     F14 ~ing
                     F15 ~tion
                     F20 Ø
                     F21 •
+                    ^!F17 --
+                    !F21 →
             
             TODO:
                 ▢ see also Keyboard Layout Editor for TODO items (↑ link above)
@@ -238,38 +240,34 @@
             */
 
             // DEFINES:
+                // Combined mega mods:
+                #define _HYPER          &kp LC(LA(LS(LGUI)))
+                #define _MEH            &kp LC(LA(LSHFT))
+                
                 // HOLD MODS:
-                #define _B_GUI        &hm_slw LGUI B             // GUI/Win on pinkie fingers
-                #define _Y_SFT        &hm_l LSHFT Y              // Shift on ring fingers
-                #define _O_ALT        &hm_l LALT O               // Alt on middle fingers
-                #define _U_CTL        &hm_l LCTRL U              // Ctrl on index fingers
-                #define _L_CTL        &hm_r RCTRL L              // Ctrl
-                #define _D_ALT        &hm_r RALT D               // Alt
-                #define _W_SFT        &hm_r RSFT W               // Shift
-                #define _V_GUI        &hm_slw RGUI V             // GUI/Win
+                #define _B_GUI          &hm_slw LGUI B             // GUI/Win on pinkie fingers
+                #define _Y_SFT          &hm_l LSHFT Y              // Shift on ring fingers
+                #define _O_ALT          &hm_l LALT O               // Alt on middle fingers
+                #define _U_CTL          &hm_l LCTRL U              // Ctrl on index fingers
+                #define _L_CTL          &hm_r RCTRL L              // Ctrl
+                #define _D_ALT          &hm_r RALT D               // Alt
+                #define _W_SFT          &hm_r RSFT W               // Shift
+                #define _V_GUI          &hm_slw RGUI V             // GUI/Win
                 
                 // Mod-taps, Mod-morphs, etc.:
-                #define MT_TB_SHFTB   &mt LS(TAB) TAB
-                
-                // Combined mods:
-                #define _HYPER &kp    LC(LA(LS(LGUI)))
-                #define _MEH &kp      LC(LA(LSHFT))
-                
-                // Mod-taps, Mod-morphs, etc. for THUMBS
+                #define MT_TB_SHFTB     &mt LS(TAB) TAB
                 #define _SHF_BSP_L      &mm_SHIFT_BACKSPACE_L
-                #define _SHF_BSP_R      &mm_SHIFT_BACKSPACE_R
+                #define NUM_LR_NUM      &ht_num_tolr_tonum L_NUM 0
+                #define _SHF_BSLH_BKSP  &mm_Bslh_Bksp
+                //#define _SHF_BSP_R      &mm_SHIFT_BACKSPACE_R
+                //#define _SHF_LTGT_BK    &mm_LthGth_Bksp
                 #define AS_Hm_CtlHm     &as_slw RC(HOME) HOME
                 #define AS_Bk_CtlBk     &as_slw RC(BSPC) BSPC
                 #define AS_En_CtlEn     &as_slw RC(END) END
                 #define TD_ScrnShots    &TD_WinScreenshot_SnagIt   // 1x: Win+Shift+S   2x: Ctrl+Alt+P
-                  
-                #define NUM_LR_NUM      &ht_num_tolr_tonum L_NUM 0
   
-                #define TION_GRAVE      &m_mmsNG2_Tion GRAVE 0
-
-                //#define _SHF_LTGT_BK  &mm_LthGth_Bksp
-                #define _SHF_BSLH_BKSP  &mm_Bslh_Bksp
-                #define M_DASH          LA(F24)
+                // Other:
+                #define M_DASH          LC(LA(F17)) // ▢ 2024-09-20 NOT working reliably - WTF!?
                 #define BUL_AR_tbd      &as LA(F21) F21 // for now / but WIP
             // end defines
 
@@ -282,26 +280,26 @@
             >; };
 
             // #UNDEFs
-                #undef _B_GUI
-                #undef _Y_SFT
-                #undef _O_ALT
-                #undef _U_CTL
-                #undef _L_CTL
-                #undef _D_SFT
-                #undef _W_ALT
-                #undef _V_GUI
-                #undef MT_TB_SHFTB
-                #undef _HYPER
-                #undef _MEH
-                #undef _SHF_BSP_L 
-                #undef TD_ScrnShot
-                #undef _SHF_BSP_R 
-                #undef AS_Hm_CtlHm
-                #undef AS_Bk_CtlBk
-                #undef AS_En_CtlEn
-                #undef NUM_NUM_LR
-                #undef TION_GRAVE
+                #undef _HYPER        
+                #undef _MEH          
+                #undef _B_GUI        
+                #undef _Y_SFT        
+                #undef _O_ALT        
+                #undef _U_CTL        
+                #undef _L_CTL        
+                #undef _D_ALT        
+                #undef _W_SFT        
+                #undef _V_GUI        
+                #undef MT_TB_SHFTB   
+                #undef _SHF_BSP_L    
+                #undef NUM_LR_NUM    
                 #undef _SHF_BSLH_BKSP
+                #undef AS_Hm_CtlHm   
+                #undef AS_Bk_CtlBk   
+                #undef AS_En_CtlEn   
+                #undef TD_ScrnShots  
+                #undef M_DASH        
+                #undef BUL_AR_tbd    
             // end undefs
 
         // END Engram

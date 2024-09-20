@@ -13,7 +13,7 @@
 // F21 >> AHK(•)
 // F14 >> AHK(~ing)
 // F15 >> AHK(~tion)
-// Alt+F24 >> — / m-dash
+// Ctrl+Alt+F17 >> — / m-dash [Alt+F24 Ø working; Ø-idea why]
 // Alt+F21 >> → / rt-arrow
 // Note: (` grave; # hash, - minus, ...)
 
