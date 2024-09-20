@@ -269,8 +269,8 @@
 
                 //#define _SHF_LTGT_BK  &mm_LthGth_Bksp
                 #define _SHF_BSLH_BKSP  &mm_Bslh_Bksp
-                #define M_DASH          LC(F24)
-                #define BUL_AR_tbd      &as LC(LA(F21)) F21 // for now / but WIP
+                #define M_DASH          LA(F24)
+                #define BUL_AR_tbd      &as LA(F21) F21 // for now / but WIP
             // end defines
 
             engram_layer { bindings = <
