@@ -234,6 +234,7 @@
                     !F21 →
             
             TODO:
+                ▢ M-dash is wonky - CA() seems to keep ALT held; tried just Alt() and rarely even worked
                 ▢ see also Keyboard Layout Editor for TODO items (↑ link above)
                 ▢ Qu,qu,Q,q ...
                 ▣ trying 'faster' tap-term for the {K,NUM} layer-hold - ▣ fine tune as get faster
@@ -267,7 +268,7 @@
                 #define TD_ScrnShots    &TD_WinScreenshot_SnagIt   // 1x: Win+Shift+S   2x: Ctrl+Alt+P
   
                 // Other:
-                #define M_DASH          LC(LA(F17)) // ▢ 2024-09-20 NOT working reliably - WTF!?
+                #define M_DASH          F24 // ▢ 2024-09-20 NOT working reliably with Alt or Ctlr variants - WTF!?
                 #define BUL_AR_tbd      &as LA(F21) F21 // for now / but WIP
             // end defines
 

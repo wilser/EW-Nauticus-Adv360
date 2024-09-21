@@ -9,11 +9,11 @@
 /* first label "mm<>" goes to "m_mm<>" for the &mm<> ref in layouts */
 
 // ---------- NEW WIP LAYOUTS 2024-02-19+ ---------- //
-// F20 >> AHK(Ø)
-// F21 >> AHK(•)
 // F14 >> AHK(~ing)
 // F15 >> AHK(~tion)
-// Ctrl+Alt+F17 >> — / m-dash [Alt+F24 Ø working; Ø-idea why]
+// F20 >> AHK(Ø)
+// F21 >> AHK(•)
+// F24 >> — / m-dash [Alt+F24 Ø working; Ø-idea why]
 // Alt+F21 >> → / rt-arrow
 // Note: (` grave; # hash, - minus, ...)
 
