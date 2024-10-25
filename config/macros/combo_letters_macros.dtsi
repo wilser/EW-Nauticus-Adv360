@@ -130,10 +130,12 @@ m_minutes: m_minutes {
 
 // tap: the &kp, hold: the &macro for the letters...
 // uses "&as_XX 0 #" in map; 0 parm for the nil macro parm; note macro is FIRST
+#define TAPPING_TERM_NUMPAD_HOLDS 225
+
 as_1st: auto_shift_1st {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
-    tapping-term-ms = <150>;
+    tapping-term-ms = <TAPPING_TERM_NUMPAD_HOLDS>;
     quick-tap-ms = <0>;
     flavor = "tap-preferred";
     bindings = <&m_1st>, <&kp>; 
@@ -141,7 +143,7 @@ as_1st: auto_shift_1st {
 as_2nd: auto_shift_2nd {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
-    tapping-term-ms = <150>;
+    tapping-term-ms = <TAPPING_TERM_NUMPAD_HOLDS>;
     quick-tap-ms = <0>;
     flavor = "tap-preferred";
     bindings = <&m_2nd>, <&kp>; 
@@ -149,7 +151,7 @@ as_2nd: auto_shift_2nd {
 as_3rd: auto_shift_3rd {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
-    tapping-term-ms = <150>;
+    tapping-term-ms = <TAPPING_TERM_NUMPAD_HOLDS>;
     quick-tap-ms = <0>;
     flavor = "tap-preferred";
     bindings = <&m_3rd>, <&kp>; 
@@ -157,7 +159,7 @@ as_3rd: auto_shift_3rd {
 as_4th: auto_shift_4th {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
-    tapping-term-ms = <150>;
+    tapping-term-ms = <TAPPING_TERM_NUMPAD_HOLDS>;
     quick-tap-ms = <0>;
     flavor = "tap-preferred";
     bindings = <&m_4th>, <&kp>; 
@@ -167,7 +169,7 @@ as_4th: auto_shift_4th {
 as_am_lc: auto_shift_am_lc {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
-    tapping-term-ms = <150>;
+    tapping-term-ms = <TAPPING_TERM_NUMPAD_HOLDS>;
     quick-tap-ms = <0>;
     flavor = "tap-preferred";
     bindings = <&m_am_lc>, <&kp>; 
@@ -176,7 +178,7 @@ as_am_lc: auto_shift_am_lc {
 as_pm_lc: auto_shift_pm_lc {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
-    tapping-term-ms = <150>;
+    tapping-term-ms = <TAPPING_TERM_NUMPAD_HOLDS>;
     quick-tap-ms = <0>;
     flavor = "tap-preferred";
     bindings = <&m_pm_lc>, <&kp>; 
@@ -185,7 +187,7 @@ as_pm_lc: auto_shift_pm_lc {
 as_am_uc: auto_shift_am_uc {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
-    tapping-term-ms = <150>;
+    tapping-term-ms = <TAPPING_TERM_NUMPAD_HOLDS>;
     quick-tap-ms = <0>;
     flavor = "tap-preferred";
     bindings = <&m_am_uc>, <&kp>; 
@@ -194,7 +196,7 @@ as_am_uc: auto_shift_am_uc {
 as_pm_uc: auto_shift_pm_uc {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
-    tapping-term-ms = <150>;
+    tapping-term-ms = <TAPPING_TERM_NUMPAD_HOLDS>;
     quick-tap-ms = <0>;
     flavor = "tap-preferred";
     bindings = <&m_pm_uc>, <&kp>; 
@@ -203,7 +205,7 @@ as_pm_uc: auto_shift_pm_uc {
 as_minutes: auto_shift_minutes {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
-    tapping-term-ms = <150>;
+    tapping-term-ms = <TAPPING_TERM_NUMPAD_HOLDS>;
     quick-tap-ms = <0>;
     flavor = "tap-preferred";
     bindings = <&m_minutes>, <&kp>; 
