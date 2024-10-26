@@ -234,10 +234,9 @@
                     !F21 →
             
             TODO:
-                ▢ M-dash is wonky - CA() seems to keep ALT held; tried just Alt() and rarely even worked
                 ▢ see also Keyboard Layout Editor for TODO items (↑ link above)
                 ▢ Qu,qu,Q,q ...
-                ▣ trying 'faster' tap-term for the {K,NUM} layer-hold - ▣ fine tune as get faster
+                ▣ trying 'faster' tap-term for the {K,NUM} layer-hold - ▣ fine tune as get faster / 2024-10-25 seems decent balance so far
             */
 
             // DEFINES:
@@ -273,11 +272,11 @@
             // end defines
 
             engram_layer { bindings = <
-                &m_mmsNG2_Tild PIPE 0   &m_mmsNG2_Star N1 0  &m_mmsNG2_Qstn N2 0  &m_mmsNG2_Cmma N3 0  &m_mmsNG2_Apos N4 0  &m_mmsNG2_Ing N5 0      &to L_DVK                                                                    &sl L_UTL  &m_mmsNG2_Tion N6 0    &m_mmsNG2_Excl N7 0  &m_mmsNG2_Perd N8 0  &m_mmsNG2_Quot N9 0  &m_mmsNG2_Equl N0 0  &kp Z
-                &kp ESC                 _B_GUI               _Y_SFT               _O_ALT               _U_CTL               &m_mmsNG2_Lpar F20 0    _HYPER                                                                       _HYPER     &m_mmsNG2_Rpar DLLR 0  _L_CTL               _D_ALT               _W_SFT               _V_GUI               &m_mmsNG2_Slsh PERCENT 0
-                MT_TB_SHFTB             &kp C                &kp I                &kp E                &kp A                &m_mmsNG2_Semi LT 0     _MEH          _SHF_BSP_L   NUM_LR_NUM    &lt L_LET M_DASH  _SHF_BSLH_BKSP    _MEH       &m_mmsNG2_Coln GT 0    &kp H                &kp T                &kp S                &kp N                &m_mmsNG2_Mnus UNDERSCORE 0
-                &TD_Emj_WinDsk          &lt_fst L_EDT G      &kp X                &lt L_UTL J          &lt_fst L_NUM K      &m_mmsNG2_Amps AT 0                              AS_Hm_CtlHm      &kp PG_UP                                     &m_mmsNG2_Hash PLUS 0  &kp R                &kp M                &kp F                &kp P                &as_Qu Q 0
-                &m_mmsNG2_Cret GRAVE 0  BUL_AR_tbd           &TD_Rtclick_P        &kp LEFT             &kp RIGHT                                      AS_Bk_CtlBk  &kp DEL  AS_En_CtlEn        &kp PG_DN  &lt L_FNC ENTER  &kp SPACE                               &kp UP               &kp DOWN             &as LS(LBKT) LBKT    &as LS(RBKT) RBKT    TD_ScrnShots
+                &m_mmsNG2_Tild PIPE 0   &m_mmsNG2_Star N1 0  &m_mmsNG2_Qstn N2 0  &m_mmsNG2_Cmma N3 0  &m_mmsNG2_Apos N4 0  &m_mmsNG2_Ing N5 0    &sl L_UTL                                                                  &sl L_UTL  &m_mmsNG2_Tion N6 0    &m_mmsNG2_Excl N7 0  &m_mmsNG2_Perd N8 0  &m_mmsNG2_Quot N9 0  &m_mmsNG2_Equl N0 0  &kp Z
+                &kp ESC                 _B_GUI               _Y_SFT               _O_ALT               _U_CTL               &m_mmsNG2_Lpar F20 0  _HYPER                                                                     _HYPER     &m_mmsNG2_Rpar DLLR 0  _L_CTL               _D_ALT               _W_SFT               _V_GUI               &m_mmsNG2_Slsh PERCENT 0
+                MT_TB_SHFTB             &kp C                &kp I                &kp E                &kp A                &m_mmsNG2_Semi LT 0   _MEH          _SHF_BSP_L   NUM_LR_NUM  &lt L_LET M_DASH  _SHF_BSLH_BKSP    _MEH       &m_mmsNG2_Coln GT 0    &kp H                &kp T                &kp S                &kp N                &m_mmsNG2_Mnus UNDERSCORE 0
+                &TD_Emj_WinDsk          &lt_fst L_EDT G      &kp X                &lt L_UTL J          &lt_fst L_NUM K      &m_mmsNG2_Amps AT 0                            AS_Hm_CtlHm    &kp PG_UP                                     &m_mmsNG2_Hash PLUS 0  &kp R                &kp M                &kp F                &kp P                &as_Qu Q 0
+                &m_mmsNG2_Cret GRAVE 0  BUL_AR_tbd           &TD_Rtclick_P        &kp LEFT             &kp RIGHT                                    AS_Bk_CtlBk  &kp DEL  AS_En_CtlEn      &kp PG_DN  &lt L_FNC ENTER  &kp SPACE                               &kp UP               &kp DOWN             &as LS(LBKT) LBKT    &as LS(RBKT) RBKT    TD_ScrnShots
             >; };
 
             // #UNDEFs
@@ -540,7 +539,7 @@
             
             navnedit_layer { bindings = <
                 _x_   _x_   _x_          &kp LC(S)   &kp LC(O)     &kp LC(W)   &to L_0                                                     ___   _x_        _x_        _x_       _x_             _x_       _x_
-                ___   _x_   _x_          _x_         &kp LC(K)     &kp LC(I)   _x_                                                         _x_   _x_        &kp RCTRL  &kp RALT  &kp RSHFT       &kp RGUI  _x_
+                ___   _x_   _x_          &kp LC(D)   &kp LC(K)     &kp LC(I)   _x_                                                         _x_   _x_        &kp RCTRL  &kp RALT  &kp RSHFT       &kp RGUI  _x_
                 ___   _x_   &kp LC(X)    &kp LC(C)   &kp LC(V)     &kp LC(B)   _x_        &m_SEL_WRD_L  &m_SEL_WRD_R   _x_   &kp BSPC      _x_   &kp PSCRN  &kp INS    &kp CAPS  &kp KP_NUMLOCK  &kp SLCK  &kp PAUSE_BREAK
                 ___   _x_   &kp LG(TAB)  &kp F13     &kp LC(F13)   &m_CSA_V                             &m_SEL_LINE     _x_                      _x_        _x_        _x_       &m_CSA_V        _x_       _x_
                 ___   _x_   &kp LSHIFT   &kp LALT    &kp TAB                   &kp LC(Z)   &kp LC(Y)     &kp RC(A)       &m_MinWin  ___  ___                ___        ___       _x_             _x_       _x_
