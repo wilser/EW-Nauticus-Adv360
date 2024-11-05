@@ -78,7 +78,6 @@ TD_Num_LR_NLock: tapdance_num_lr_numlock {
 };
 
 
-
 // **************************************************
 // goal: hold = NUM; [1x] >NUM; [2x] >LR
 // TRY 4: tap-dance for &to <layer-first-tap>; &to <layer-2nd-tap>
