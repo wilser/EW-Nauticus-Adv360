@@ -301,47 +301,8 @@
                 #undef M_DASH        
                 #undef BUL_AR_tbd    
             // end undefs
-
         // END Engram
 
-        /*****************************************************************************************************
-        * L1 ⚫: Dvorak "DVK"
-            *      http://www.keyboard-layout-editor.com/#/gists/fdcbdec4d9a329533f670a566a99338f
-            */
-
-            // #DEFINEs
-                // HOLD mods DVK specific:
-                #define _SQT_GUI      &hm_slw LGUI SQT          // GUI/Win on pinkie fingers / [] revisit if R.h. / L.h. differences put back
-                #define _CMA_SFT      &hm_l LSHFT COMMA         // Shift on ring fingers
-                #define _DOT_ALT      &hm_l LALT DOT            // Alt on middle fingers
-                #define _P_CTL        &hm_l LCTRL P             // Ctrl on indexs
-                #define _Y_RALT       &hm_slw RALT Y            // *Special extra Right-Alt when don't want l-alt because of AltSnap utility use
-                #define _G_CTL        &hm_r RCTRL G             // Ctrl
-                #define _C_ALT        &hm_r RALT C              // Alt
-                #define _R_SFT        &hm_r RSHFT R             // Shift 
-                #define _L_GUI        &hm_slw RGUI L            // GUI/Win / [] revisit if R.h. / L.h. differences put back
-            // end defs
-
-            dvorak_layer { bindings = <
-                &as RS(EQUAL) EQUAL  &as RS(N1) N1   &as RS(N2) N2  &as RS(N3) N3  &as RS(N4) N4  &as RS(N5) N5  &to L_0                              ___   &as LS(N6) N6  &as LS(N7) N7  &as LS(N8) N8  &as LS(N9) N9      &as LS(N0) N0      &as LS(BSLH) BSLH
-                ___                  _SQT_GUI        _CMA_SFT       _DOT_ALT       _P_CTL         _Y_RALT        ___                                  ___   &kp F          _G_CTL         _C_ALT         _R_SFT             _L_GUI             &as LS(SLASH) SLASH
-                ___                  &kp A           &kp O          &kp E          &kp I          &kp U          ___       ___   ___  ___  ___        ___   &kp D          &kp H          &kp T          &kp N              &kp S              &as LS(MINUS) MINUS
-                &TD_CpWrd_CpLock     &lt L_EDT SEMI  &kp Q          &lt L_UTL J    &lt L_NUM K    &kp X                         ___    ___                  &kp B          &kp M          &kp W          &kp V              &kp Z              &m_mmsDVK_Colon F21 0
-                &TD_Emj_WinDsk       ___             ___            ___            ___                               ___  ___  ___      ___  ___  ___                      &kp UP         &kp DOWN       &as LS(LBKT) LBKT  &as LS(RBKT) RBKT  &to L_NUM
-            >; };
-
-            // #UNDEFs
-                #undef _SQT_GUI
-                #undef _CMA_SFT
-                #undef _DOT_ALT
-                #undef _P_CTL  
-                #undef _Y_RALT
-                #undef _G_CTL  
-                #undef _C_ALT  
-                #undef _R_SFT  
-                #undef _L_GUI  
-        // END Dvorak
-        
         /*****************************************************************************************************
         * L2 🔵 Lightroom "LR"
             *      http://www.keyboard-layout-editor.com/#/gists/ce40ef1f57700f3871b7af5a965ad51b
@@ -365,9 +326,9 @@
             // end defines
 
             lr_layer { bindings = <
-                &as LC(L) BSLH  &TD_LR_1   &TD_LR_2  &TD_LR_3  &TD_LR_4  &TD_LR_5  &to L_0                                        ZOOM_OUT  MOD_LIB  MOD_DEV  MOD_MAP  MOD_PRT  &kp N0  ___
-                ___             ___        ___       ___       ___       &kp P     &kp M                                          ZOOM_IN   &kp K    ___      ___      ___      ___     ___
-                ___             ___        ___       ___       ___       &kp S     &kp LS(W)    R_CA_R  &to L_0  _tbd_  _tbd_     _tbd_     _tbd_    ___      ___      ___      ___     _tbd_
+                &as LC(L) BSLH  &TD_LR_1   &TD_LR_2  &TD_LR_3  &TD_LR_4  &TD_LR_5  &to L_0                                        ZOOM_IN   MOD_LIB  MOD_DEV  MOD_MAP  MOD_PRT  &kp N0  ___
+                ___             ___        ___       ___       ___       &kp P     &kp M                                          ZOOM_OUT  &kp K    ___      ___      ___      ___     ___
+                ___             ___        ___       ___       ___       &kp S     &kp LS(W)    R_CA_R  &to L_0  _tbd_  _tbd_     _tbd_     _tbd_    ___      ___      ___      ___     ___
                 &TD_LR_E        ___        ___       DESEL     DEV_AUTO  SURV_SH                           ___    ___                       _tbd_    ___      ___      ___      ___     SPOT_LUM
                 ___             &kp LS(T)  &kp J     ___       ___                              ___  ___  ___      ___  ___     ___                  ___      ___      ___      ___     VRT_CPY
             >; };
