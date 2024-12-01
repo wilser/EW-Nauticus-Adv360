@@ -32,15 +32,15 @@ timeout-ms = <80>;
 combo_space {
     key-positions = <32 35>; // L-index, L-thumb
     bindings = <&kp SPACE>;
-    layers = <L_DVK L_NGM L_LR>;
+    layers = <L_NGM L_LR>;
 };
 
 // C2a
-combo_caps_word {
-    key-positions = <55 56>; // 
-    bindings = <&caps_word>;
-    layers = <L_DVK>;
-};
+//combo_caps_word {
+//    key-positions = <55 56>; // 
+//    bindings = <&caps_word>;
+//    layers = <L_DVK>;
+//};
 //combo_caps_word_NGM_1 {
 //    key-positions = <41 44>; // {RH: index,pinkie}
 //    bindings = <&caps_word>;
@@ -55,30 +55,30 @@ layers = <L_NGM>;
 };
 
 // C3 - [ ] unused really?
-combo_backspace {
-    key-positions = <55 58>; // RH, Fng 1,4, 1-row down
-    bindings = <&kp BACKSPACE>;
-    layers = <L_DVK>; // (main typing) only / removed from Engram because much more frequent letter combo (PR) vs (MZ) on Dvorakps
-};
+//combo_backspace {
+//    key-positions = <55 58>; // RH, Fng 1,4, 1-row down
+//    bindings = <&kp BACKSPACE>;
+//    layers = <L_DVK>; // (main typing) only / removed from Engram because much more frequent letter combo (PR) vs (MZ) on Dvorakps
+//};
 
 // C4a
 combo_context_menu_lh {
     key-positions = <35 36>; // LH, top-2 thumb keys
     bindings = <&kp K_CONTEXT_MENU>;
-    layers = <L_DVK L_LR>;
+    layers = <L_LR>;
 };
 // C4b
 combo_context_menu_rh {
     key-positions = <37 38>; // RH, top-2 thumb keys
     bindings = <&kp K_CONTEXT_MENU>;
-    layers = <L_DVK L_LR>;
+    layers = <L_LR>;
 };
 
 // C5
 combo_caps_lock {
     key-positions = <35 38>; // Both top/inner smaller thumb keys (currently each assigned to Shift)
     bindings = <&kp CAPSLOCK>;
-    layers = <L_DVK L_NGM L_LR>;
+    layers = <L_NGM L_LR>;
 };
 
 // C6
