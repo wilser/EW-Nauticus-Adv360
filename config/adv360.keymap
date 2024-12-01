@@ -54,18 +54,18 @@
 #define nil 0
 
 // DEFINES for layers:
-    /* LED layer colors:  0 ⚫   1 ⚪   2 🔵   3 🟢   4 🔴   5 🟣   6 🧢   7 ▢  8 ▢   */
-    /*                    NGM     DVK    LR      NUM    UTL     FNC    EDT     LET  kp#   */
+    /* LED layer colors:  0 ⚫   1 ⚪   2 🔵   3 🟢   4 🔴   5 🟣   6 🔷   7 ⬛   */
+    /*                    NGM      LR      NUM    UTL    FNC    EDT     LET    kp#   */
     #define L_0 0
     #define L_NGM 0     // engram
-    #define L_DVK 1     // dvorak
-    #define L_LR 2      // Lightroom
-    #define L_NUM 3     // numpad
-    #define L_UTL 4     // utils
-    #define L_FNC 5     // function keys 1-12 (like numpad)
-    #define L_EDT 6     // edit (mostly LH while RH uses mouse, or general use)
-    #define L_LET 7     // plain letters - mirroring NGM - so can use the "hold-for-accents" utility
-    #define L_KP 8      // keypad (*actual KP key codes) (rare)
+    //#define L_DVK 1     // dvorak
+    #define L_LR 1      // Lightroom
+    #define L_NUM 2     // numpad
+    #define L_UTL 3     // utils
+    #define L_FNC 4     // function keys 1-12 (like numpad)
+    #define L_EDT 5     // edit (mostly LH while RH uses mouse, or general use)
+    #define L_LET 6     // plain letters - mirroring NGM - so can use the "hold-for-accents" utility
+    #define L_KP 7      // keypad (*actual KP key codes) (rare)
     
 // END defines for layers
 
@@ -220,7 +220,7 @@
         compatible = "zmk,keymap";
         
         /*****************************************************************************************************
-        * L0 ⚪ Engram "NGM"
+        * L0 ⚫ Engram "NGM"
             URL layout (V3): https://www.keyboard-layout-editor.com/#/gists/e15762adf4fb7dc3e7f4e72a91c9e62b
             NOTES:
                 • ALT LAYOUTS must be LOWER in stack than any higher ones want to layer-hold shift to
@@ -304,7 +304,7 @@
         // END Engram
 
         /*****************************************************************************************************
-        * L2 🔵 Lightroom "LR"
+        * L2 ⚪ Lightroom "LR"
             *      http://www.keyboard-layout-editor.com/#/gists/ce40ef1f57700f3871b7af5a965ad51b
             *      This is for when the RIGHT HAND is on the mouse primarily; so r.h.s. just left to entirely float through. See notes on KLE.
             *   [.] layer-hold else TD - works? 7/3 "expected number or parenthesized expression"; try adding & bef TD? → compiled, but the TD didn't fire at all, just layer-hold
@@ -355,7 +355,7 @@
         // END Lightroom
 
         /*****************************************************************************************************
-        * L3 🟢 Num-pad "NUM"
+        * L3 🔵 Num-pad "NUM"
             *      http://www.keyboard-layout-editor.com/#/gists/c51e298f5744feba159cde9973f47b92
             *      Uses non-keypad NUMERAL symbols since plan to use as "main" numbers method eventually as practice more.
             *      See companion 'mod_morphs_nums' file
@@ -421,7 +421,7 @@
         // END Numpad
 
         /*****************************************************************************************************
-        * L4 🔴 Utils, Macros, Specials "UTL"
+        * L4 🟢 Utils, Macros, Specials "UTL"
             *       http://www.keyboard-layout-editor.com/#/gists/2d2d37deb742cc77638e81cb0b875106
             *  # keys send to that layer-#
             *  &m_SLEEP & &m_HIBER = Windows-menu-compatible key shortcuts to invoke Sleep, Hibernate from start-menu
@@ -457,7 +457,7 @@
         // END Utils
 
         /*****************************************************************************************************
-        * L5 🟣 Function Keys "FNC" (1-12 RH-side, 13-24 LH-side)
+        * L5 🔴 Function Keys "FNC" (1-12 RH-side, 13-24 LH-side)
             *      http://www.keyboard-layout-editor.com/#/gists/d61490ab54f1d9c63f17ee2d25b40732
             *    NOTES:
             *       [x] 2024-04-14 trying more lateral for easier reach for commons; (and makes room for upper-ones) // nah, too awkward
@@ -491,7 +491,7 @@
         // END Fn Keys
 
         /*****************************************************************************************************
-        * L6 🧢 Edit "EDT"
+        * L6 🟣 Edit "EDT"
             *      http://www.keyboard-layout-editor.com/#/gists/18e13161cf62a37e0ba0d751735110a1
             * [ ] other r.h.s. useful things?
             * [ ] turn Win+<> into timed-hold Macros? (see the slickrun example) -- for RDP because Win+ not reliable in RDP when sent too fast
@@ -513,7 +513,7 @@
         // END Edit
 
         /*****************************************************************************************************/
-        // L7 Plain letters "LET" - for hold to override any main-layer holds
+        // L7 🔷 Plain letters "LET" - for hold to override any main-layer holds
             
             plain_letters_layer { bindings = <
                 ___  ___    ___    ___    ___    ___  ___                               ___    ___    ___    ___    ___    ___    ___
@@ -525,9 +525,8 @@
 
         // END plain letters
 
-
         /*****************************************************************************************************
-        * L8 Alt Numpad "KP" - using actual KP versions of numbers; in case need like Alt+<code> testing.
+        * L8 ⬛ Alt Numpad "KP" - using actual KP versions of numbers; in case need like Alt+<code> testing.
             *      (no yet KeyboardLayoutEditor)
             */
             kp_layer { bindings = <
