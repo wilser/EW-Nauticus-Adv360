@@ -312,10 +312,10 @@
 
             // defines:
                 #define VRT_CPY     &kp LC(APOS)
-                #define MOD_LIB     &kp LC(LA(N1))
-                #define MOD_DEV     &kp LC(LA(N2))
-                #define MOD_MAP     &kp LC(LA(N3))
-                #define MOD_PRT     &kp LC(LA(N6))
+                #define VW_LIB      &kp LC(LA(N1))
+                #define VW_DEV      &kp LC(LA(N2))
+                #define VW_MAP      &kp LC(LA(N3))
+                #define VW_PRT      &kp LC(LA(N6))
                 #define R_CA_R      &as LC(R) R
                 #define DESEL       &as LC(D) LC(LS(D))
                 #define SURV_SH     &as LS(N) N
@@ -323,14 +323,18 @@
                 #define ZOOM_OUT    &kp LC(MINUS)
                 #define SPOT_LUM    &as LS(Q) Q
                 #define DEV_AUTO    &TD_D_AUTO
+                #define _P_CTL      &hm_l LCTRL P              // Ctrl on index fingers
+                #define _X_NUM      &lt_fst L_NUM X
+                #define BS_CTL_L    &as LC(L) BSLH
+
             // end defines
 
             lr_layer { bindings = <
-                &as LC(L) BSLH  &TD_LR_1   &TD_LR_2  &TD_LR_3  &TD_LR_4  &TD_LR_5  &to L_0                                        ZOOM_IN   MOD_LIB  MOD_DEV  MOD_MAP  MOD_PRT  &kp N0  ___
-                ___             ___        ___       ___       ___       &kp P     &kp M                                          ZOOM_OUT  &kp K    ___      ___      ___      ___     ___
-                ___             ___        ___       ___       ___       &kp S     &kp LS(W)    R_CA_R  &to L_0  _tbd_  _tbd_     _tbd_     _tbd_    ___      ___      ___      ___     ___
-                &TD_LR_E        ___        ___       DESEL     DEV_AUTO  SURV_SH                           ___    ___                       _tbd_    ___      ___      ___      ___     SPOT_LUM
-                ___             &kp LS(T)  &kp J     ___       ___                              ___  ___  ___      ___  ___     ___                  ___      ___      ___      ___     VRT_CPY
+                BS_CTL_L  &TD_LR_1   &TD_LR_2  &TD_LR_3  &TD_LR_4  &TD_LR_5  &to L_0                                        ZOOM_IN   VW_LIB  VW_DEV  VW_MAP  VW_PRT  &kp N0  ___
+                ___       ___        ___       ___       _P_CTL    &kp M     &kp LS(W)                                      ZOOM_OUT  &kp K   ___     ___     ___     ___     ___
+                ___       ___        ___       ___       &kp U     &kp S     &kp A        R_CA_R  &to L_0  _tbd_  _tbd_     _tbd_     _tbd_   ___     ___     ___     ___     ___
+                &TD_LR_E  ___        DEV_AUTO  DESEL     _X_NUM    SURV_SH                           ___    ___                       _tbd_   ___     ___     ___     ___     SPOT_LUM
+                R_CA_R    &kp LS(T)  &kp J     ___       ___                              ___  ___  ___      ___  ___  ___                    ___     ___     ___     ___     VRT_CPY
             >; };
 
              // undefs
