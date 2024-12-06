@@ -54,8 +54,8 @@
 #define nil 0
 
 // DEFINES for layers:
-    /* LED layer colors:  0 ⚫   1 ⚪   2 🔵   3 🟢   4 🔴   5 🟣   6 🔷   7 ⬛   */
-    /*                    NGM      LR      NUM    UTL    FNC    EDT     LET    kp#   */
+    /* LED layer colors:  0 ⚫   1 ⚪   2 🔵   3 🟢   4 🔴   5 🟣   6 🔷   7 ⬛   8 ⬛  */
+    /*                    NGM      LR      NUM    UTL    FNC    EDT     LET    kp#    QRT  */
     #define L_0 0
     #define L_NGM 0     // engram
     //#define L_DVK 1     // dvorak
@@ -66,6 +66,7 @@
     #define L_EDT 5     // edit (mostly LH while RH uses mouse, or general use)
     #define L_LET 6     // plain letters - mirroring NGM - so can use the "hold-for-accents" utility
     #define L_KP 7      // keypad (*actual KP key codes) (rare)
+    #define L_QRT 8     // Qwerty-ish; like for games
     
 // END defines for layers
 
@@ -304,7 +305,7 @@
         // END Engram
 
         /*****************************************************************************************************
-        * L2 ⚪ Lightroom "LR"
+        * L1 ⚪ Lightroom "LR"
             *      http://www.keyboard-layout-editor.com/#/gists/ce40ef1f57700f3871b7af5a965ad51b
             *      This is for when the RIGHT HAND is on the mouse primarily; so r.h.s. just left to entirely float through. See notes on KLE.
             *   [.] layer-hold else TD - works? 7/3 "expected number or parenthesized expression"; try adding & bef TD? → compiled, but the TD didn't fire at all, just layer-hold
@@ -355,7 +356,7 @@
         // END Lightroom
 
         /*****************************************************************************************************
-        * L3 🔵 Num-pad "NUM"
+        * L2 🔵 Num-pad "NUM"
             *      http://www.keyboard-layout-editor.com/#/gists/c51e298f5744feba159cde9973f47b92
             *      Uses non-keypad NUMERAL symbols since plan to use as "main" numbers method eventually as practice more.
             *      See companion 'mod_morphs_nums' file
@@ -421,7 +422,7 @@
         // END Numpad
 
         /*****************************************************************************************************
-        * L4 🟢 Utils, Macros, Specials "UTL"
+        * L3 🟢 Utils, Macros, Specials "UTL"
             *       http://www.keyboard-layout-editor.com/#/gists/2d2d37deb742cc77638e81cb0b875106
             *  # keys send to that layer-#
             *  &m_SLEEP & &m_HIBER = Windows-menu-compatible key shortcuts to invoke Sleep, Hibernate from start-menu
@@ -457,7 +458,7 @@
         // END Utils
 
         /*****************************************************************************************************
-        * L5 🔴 Function Keys "FNC" (1-12 RH-side, 13-24 LH-side)
+        * L4 🔴 Function Keys "FNC" (1-12 RH-side, 13-24 LH-side)
             *      http://www.keyboard-layout-editor.com/#/gists/d61490ab54f1d9c63f17ee2d25b40732
             *    NOTES:
             *       [x] 2024-04-14 trying more lateral for easier reach for commons; (and makes room for upper-ones) // nah, too awkward
@@ -491,7 +492,7 @@
         // END Fn Keys
 
         /*****************************************************************************************************
-        * L6 🟣 Edit "EDT"
+        * L5 🟣 Edit "EDT"
             *      http://www.keyboard-layout-editor.com/#/gists/18e13161cf62a37e0ba0d751735110a1
             * [ ] other r.h.s. useful things?
             * [ ] turn Win+<> into timed-hold Macros? (see the slickrun example) -- for RDP because Win+ not reliable in RDP when sent too fast
@@ -513,7 +514,7 @@
         // END Edit
 
         /*****************************************************************************************************/
-        // L7 🔷 Plain letters "LET" - for hold to override any main-layer holds
+        // L6 🔷 Plain letters "LET" - for hold to override any main-layer holds
             
             plain_letters_layer { bindings = <
                 ___  ___    ___    ___    ___    ___  ___                               ___    ___    ___    ___    ___    ___    ___
@@ -526,7 +527,7 @@
         // END plain letters
 
         /*****************************************************************************************************
-        * L8 ⬛ Alt Numpad "KP" - using actual KP versions of numbers; in case need like Alt+<code> testing.
+        * L7 ⬛ Alt Numpad "KP" - using actual KP versions of numbers; in case need like Alt+<code> testing.
             *      (no yet KeyboardLayoutEditor)
             */
             kp_layer { bindings = <
@@ -537,6 +538,20 @@
                 _x_    _x_        _x_         ___        ___                      ___  ___  _x_        _x_  &kp ENTER  &kp KP_N0                   _x_         _x_         _x_         _x_    _x_
             >; };
         // END KP Numpad
+
+        /*****************************************************************************************************
+        * L8 ⬛ Qwerty-ish / such as for games
+            *      https://www.keyboard-layout-editor.com/#/gists/4715e228b7a3f3603aa42f81db718a05
+            */
+            kp_layer { bindings = <
+                &kp GRAVE  &kp N1   &kp N2   &kp N3   &kp N4   &kp N5   &to L_0                                                   ___    &kp N6   &kp N7   &kp N8     &kp N9      &kp N0    &kp EQUAL
+                ___        &kp Q    &kp W    &kp E    &kp R    &kp T    ___                                                       ___    &kp Y    &kp U    &kp I      &kp O       &kp P     &kp SLASH
+                ___        &kp A    &kp S    &kp D    &kp F    &kp G    ___     &kp LEFT_SHIFT  &kp LEFT_CONTROL    ___  ___      ___    &kp H    &kp J    &kp K      &kp L       &kp SEMI  ___
+                ___        &kp Z    &kp X    &kp C    &kp V    &kp B                               &kp LEFT_ALT      ___                 &kp N    &kp M    &kp COMMA  &kp PERIOD  ___       ___
+                ___        ___      ___      ___      ___                        &kp BSPC  &kp DEL  &kp LC(LA)        ___  ___  ___               ___      ___        ___         ___       &kp BSLH
+            >; };
+        // END KP Numpad
+
 
     };
 };
