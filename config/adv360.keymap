@@ -543,7 +543,7 @@
         * L8 ⬛ Qwerty-ish / such as for games
             *      https://www.keyboard-layout-editor.com/#/gists/4715e228b7a3f3603aa42f81db718a05
             */
-            kp_layer { bindings = <
+            qwerty_layer { bindings = <
                 &kp GRAVE  &kp N1   &kp N2   &kp N3   &kp N4   &kp N5   &to L_0                                                   ___    &kp N6   &kp N7   &kp N8     &kp N9      &kp N0    &kp EQUAL
                 ___        &kp Q    &kp W    &kp E    &kp R    &kp T    ___                                                       ___    &kp Y    &kp U    &kp I      &kp O       &kp P     &kp SLASH
                 ___        &kp A    &kp S    &kp D    &kp F    &kp G    ___     &kp LEFT_SHIFT  &kp LEFT_CONTROL    ___  ___      ___    &kp H    &kp J    &kp K      &kp L       &kp SEMI  ___
