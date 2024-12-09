@@ -51,6 +51,9 @@
   MOD_MORPH_SHIFT(mmNG2_Slsh  , SLASH      , PRCNT    , mmsNG2_Slsh)
   MOD_MORPH_SHIFT(mmNG2_Mnus  , MINUS      , UNDER    , mmsNG2_Mnus)
   
+// temp 2024-12-08:
+  MOD_MORPH_SHIFT(mmNG2_Mdsh  , F24        , BSLH     , mmsNG2_Mdsh)
+
 
   // Special for Q:
     // tap|hold {qu,QU}; hold/shift {q,Q}
