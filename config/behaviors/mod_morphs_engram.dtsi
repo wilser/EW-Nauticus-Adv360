@@ -53,7 +53,7 @@
   
 
   // temp 2024-12-08:
-   MOD_MORPH_SHIFT(mmNG2_Mdsh  , F24       ,  BSLH    , mmsNG2_Mdsh) //not working?!
+  // MOD_MORPH_SHIFT(mmNG2_Mdsh  , F24       ,  BSLH    , mmsNG2_Mdsh)
 
 
   // Special for Q:
