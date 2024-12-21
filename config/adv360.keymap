@@ -250,8 +250,8 @@
                 #define _B_GUI          &hm_slw LGUI B             // GUI/Win on pinkie fingers
                 #define _Y_SFT          &hm_l LSHFT Y              // Shift on ring fingers
                 #define _O_ALT          &hm_l LALT O               // Alt on middle fingers
-                #define _U_CTL          &hm_l LCTRL U              // Ctrl on index fingers
-                #define _L_CTL          &hm_r RCTRL L              // Ctrl
+                #define _U_CTL          &hm_slw LCTRL U              // Ctrl on index fingers
+                #define _L_CTL          &hm_slw RCTRL L              // Ctrl
                 #define _D_ALT          &hm_r RALT D               // Alt
                 #define _W_SFT          &hm_r RSFT W               // Shift
                 #define _V_GUI          &hm_slw RGUI V             // GUI/Win
