@@ -120,7 +120,7 @@ m_minutes: m_minutes {
     wait-ms = <0>; // was 10
     tap-ms = <1>; // was 5
     #binding-cells = <0>;
-    bindings = <&kp M>, <&kp I>, <&kp N>, <&kp U>, <&kp T>, <&kp E>, <&kp S>;
+    bindings = <&kp SPACE>, <&kp M>, <&kp I>, <&kp N>, <&kp U>, <&kp T>, <&kp E>, <&kp S>;
 };
 
 
