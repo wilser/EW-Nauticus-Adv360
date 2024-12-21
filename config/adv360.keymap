@@ -162,6 +162,18 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+        
+        /* [.] experimental: "medium" home-row mod for Win key since don't need to be fast and false-taps mess up worse */
+        // [.] TBD: still don't get the tap-term vs guick-tap nuances... 2024-12-21
+        hm_med: homerow_mods_med {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <250>;
+            quick-tap-ms = <150>; 
+            flavor = "balanced"; // ? vs tap-preferred??
+            bindings = <&kp>, <&kp>;
+        };
+
 
         /* TBD auto-shift; adapted from here: https://github.com/serebrov/zmk-config/blob/master/config/microdox.keymap
             binding-1 = when held, binding-2 = when tapped
@@ -249,10 +261,10 @@
                 // HOLD MODS:
                 #define _B_GUI          &hm_slw LGUI B             // GUI/Win on pinkie fingers
                 #define _Y_SFT          &hm_l LSHFT Y              // Shift on ring fingers
-                #define _O_ALT          &hm_l LALT O               // Alt on middle fingers
-                #define _U_CTL          &hm_slw LCTRL U              // Ctrl on index fingers
-                #define _L_CTL          &hm_slw RCTRL L              // Ctrl
-                #define _D_ALT          &hm_r RALT D               // Alt
+                #define _O_ALT          &hm_med LALT O               // Alt on middle fingers
+                #define _U_CTL          &hm_med LCTRL U              // Ctrl on index fingers
+                #define _L_CTL          &hm_med RCTRL L              // Ctrl
+                #define _D_ALT          &hm_med RALT D               // Alt
                 #define _W_SFT          &hm_r RSFT W               // Shift
                 #define _V_GUI          &hm_slw RGUI V             // GUI/Win
                 
