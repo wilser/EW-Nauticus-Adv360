@@ -327,30 +327,32 @@
             */
 
             // defines:
-                #define VRT_CPY     &kp LC(APOS)
-                #define VW_LIB      &kp LC(LA(N1))
-                #define VW_DEV      &kp LC(LA(N2))
-                #define VW_MAP      &kp LC(LA(N3))
-                #define VW_PRT      &kp LC(LA(N6))
-                #define R_CA_R      &as LC(R) R
-                #define DESEL       &as LC(D) LC(LS(D))
-                #define SURV_SH     &as LS(N) N
-                #define ZOOM_IN     &kp LC(EQUAL)
-                #define ZOOM_OUT    &kp LC(MINUS)
-                #define SPOT_LUM    &as LS(Q) Q
-                #define DEV_AUTO    &TD_D_AUTO
-                #define _P_CTL      &hm_l LCTRL P              // Ctrl on index fingers
-                #define _X_NUM      &lt_fst L_NUM X
-                #define BS_CTL_L    &as LC(L) BSLH
+                #define VRT_CPY       &kp LC(APOS)
+                #define VW_LIB        &kp LC(LA(N1))
+                #define VW_DEV        &kp LC(LA(N2))
+                #define VW_MAP        &kp LC(LA(N3))
+                #define VW_PRT        &kp LC(LA(N6))
+                #define R_CA_R        &as LC(R) R
+                #define DESEL         &as LC(D) LC(LS(D))
+                #define SURV_SH       &as LS(N) N
+                #define ZOOM_IN       &kp LC(EQUAL)
+                #define ZOOM_OUT      &kp LC(MINUS)
+                #define SPOT_LUM      &as LS(Q) Q
+                //#define DEV_AUTO      &TD_D_AUTO
+                #define _P_CTL        &hm_l LCTRL P              // Ctrl on index fingers
+                #define _X_NUM        &lt_fst L_NUM X
+                #define BS_CTL_L      &as LC(L) BSLH
+                #define _D_Auto_NUM   &ht_LR_D_Auto_NUM L_NUM 0
+
 
             // end defines
 
             lr_layer { bindings = <
-                BS_CTL_L  &TD_LR_1   &TD_LR_2  &TD_LR_3  &TD_LR_4  &TD_LR_5  &to L_0                                        ZOOM_IN   VW_LIB  VW_DEV  VW_MAP  VW_PRT  &kp N0  ___
-                ___       ___        ___       ___       _P_CTL    &kp M     &kp LS(W)                                      ZOOM_OUT  &kp K   ___     ___     ___     ___     ___
-                ___       ___        ___       ___       &kp U     &kp S     &kp A        R_CA_R  &to L_0  _tbd_  _tbd_     _tbd_     _tbd_   ___     ___     ___     ___     ___
-                &TD_LR_E  ___        DEV_AUTO  DESEL     _X_NUM    SURV_SH                           ___    ___                       _tbd_   ___     ___     ___     ___     SPOT_LUM
-                R_CA_R    &kp LS(T)  &kp J     ___       ___                              ___  ___  ___      ___  ___  ___                    ___     ___     ___     ___     VRT_CPY
+                BS_CTL_L  &TD_LR_1   &TD_LR_2  &TD_LR_3  &TD_LR_4     &TD_LR_5  &to L_0                                        ZOOM_IN   VW_LIB  VW_DEV  VW_MAP  VW_PRT  &kp N0  ___
+                ___       ___        ___       ___       _P_CTL       &kp M     &kp LS(W)                                      ZOOM_OUT  &kp K   ___     ___     ___     ___     ___
+                ___       ___        ___       ___       &kp U        &kp S     &kp A      R_CA_R  &to L_0  _tbd_  _tbd_     _tbd_     _tbd_   ___     ___     ___     ___     ___
+                &TD_LR_E  ___        ___       DESEL     _D_Auto_NUM  SURV_SH                         ___    ___                       _tbd_   ___     ___     ___     ___     SPOT_LUM
+                R_CA_R    &kp LS(T)  &kp J     ___       ___                               ___  ___  ___      ___  ___  ___                    ___     ___     ___     ___     VRT_CPY
             >; };
 
              // undefs
@@ -365,7 +367,8 @@
                 #undef ZOOM_IN
                 #undef ZOOM_OUT
                 #undef SPOT_LUM
-                #undef DEV_AUTO
+                //#undef DEV_AUTO
+                #undef _D_Auto_NUM
              // end undefs
 
         // END Lightroom

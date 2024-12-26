@@ -104,4 +104,20 @@ ht_num_tolr_tonum: holdtap_Num_ToLR_ToNum {
     // 2024-08-26 changed to "hold-preferred" and removed "retro-tap" / then worked / Ø sure if needed both
 };
 
+// similar as above but for D and Lightroom: Hold=NUM, Tap=D, 2-Tap=(Ctrl+U)
+td_D_CtrlU: tapdance_D_CtrlU {
+    compatible = "zmk,behavior-tap-dance";
+    #binding-cells = <0>;
+    tapping-term-ms = <200>;
+    bindings = <&kp D>, <&kp RC(U)>; // 1st tap - D (LR: develop), 2x tap - Ctrl+U (LR: auto-develop settings)
+};
+
+ht_LR_D_Auto_NUM: holdtap_LR_D_Auto_NUM {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred"; // which?
+    tapping-term-ms = <200>;
+    quick-tap-ms = <200>;
+    bindings = <&mo>, <&td_D_CtrlU>;
+};
 
