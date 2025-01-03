@@ -522,11 +522,11 @@
             */
             
             navnedit_layer { bindings = <
-                _x_   _x_   _x_          &kp LC(S)   &kp LC(O)     &kp LC(W)   &to L_0                                                     ___   &kp PSCRN  &kp INS    &kp CAPS  &kp KP_NUMLOCK  &kp SLCK  &kp PAUSE_BREAK
-                ___   _x_   _x_          &kp LC(D)   &kp LC(K)     &kp LC(I)   _x_                                                         _x_   _x_        &kp RCTRL  &kp RALT  &kp RSHFT       &kp RGUI  _x_
-                ___   _x_   &kp LC(X)    &kp LC(C)   &kp LC(V)     &kp LC(B)   _x_        &m_SEL_WRD_L  &m_SEL_WRD_R   _x_   &kp BSPC      _x_   _x_        _x_        _x_       _x_             _x_       _x_
-                ___   _x_   &kp LG(TAB)  &kp F13     &kp LC(F13)   &m_CSA_V                             &m_SEL_LINE     _x_                      _x_        _x_        _x_       &m_CSA_V        _x_       _x_
-                ___   _x_   &kp LSHIFT   &kp LALT    &kp TAB                   &kp LC(Z)   &kp LC(Y)     &kp RC(A)       &m_MinWin  ___  ___                ___        ___       _x_             _x_       _x_
+                _x_   _x_   &kp F2       &kp LC(O)   &kp LC(W)     &kp F5      &to L_0                                                     ___   &kp PSCRN  &kp INS    &kp CAPS  &kp KP_NUMLOCK  &kp SLCK  &kp PAUSE_BREAK
+                ___   _x_   &kp LC(S)    &kp LC(D)   &kp LC(K)     &kp LC(I)   _x_                                                         _x_   _x_        &kp RCTRL  &kp RALT  &kp RSHFT       &kp RGUI  _x_
+                ___   _x_   &kp LC(X)    &kp LC(C)   &kp LC(V)     &kp LC(B)   _x_        &m_SEL_LINE  &kp RC(A)  _x_   &kp BSPC           _x_   _x_        _x_        _x_       _x_             _x_       _x_
+                ___   _x_   &kp LG(TAB)  &kp F13     &kp LC(F13)   &m_CSA_V                             &m_SEL_WRD_L     _x_                     _x_        _x_        _x_       &m_CSA_V        _x_       _x_
+                ___   _x_   &kp LSHIFT   &kp LALT    &kp TAB                     &kp LC(Z)  &kp LC(Y)  &m_SEL_WRD_R       &m_MinWin  ___  ___               ___        ___       _x_             _x_       _x_
             >; };
 
         // END Edit
