@@ -54,19 +54,18 @@
 #define nil 0
 
 // DEFINES for layers:
-    /* LED layer colors:  0 ⚫   1 ⚪   2 🔵   3 🟢   4 🔴   5 🟣   6 🔷   7 ⬛   8 ⬛  */
-    /*                    NGM      LR      NUM    UTL    FNC    EDT     LET    kp#    QRT  */
+    /* LED layer colors:  0 ⚫   1 ⚪   2 🔵   3 🟢   4 🔴   5 🟣   6 🩵   7 🟡   8 ⚫  */
+    /*                    NGM      LR     EDT    NUM     UTL    FNC     LET    QRT    kp#   */
     #define L_0 0
     #define L_NGM 0     // engram
-    //#define L_DVK 1     // dvorak
     #define L_LR 1      // Lightroom
-    #define L_NUM 2     // numpad
-    #define L_UTL 3     // utils
-    #define L_FNC 4     // function keys 1-12 (like numpad)
-    #define L_EDT 5     // edit (mostly LH while RH uses mouse, or general use)
+    #define L_EDT 2     // edit (mostly LH while RH uses mouse, or general use)
+    #define L_NUM 3     // numpad
+    #define L_UTL 4     // utils
+    #define L_FNC 5     // function keys 1-12 (like numpad)
     #define L_LET 6     // plain letters - mirroring NGM - so can use the "hold-for-accents" utility
-    #define L_KP 7      // keypad (*actual KP key codes) (rare)
-    #define L_QRT 8     // Qwerty-ish; like for games
+    #define L_QRT 7     // Qwerty-ish; like for games
+    #define L_KP 8      // keypad (*actual KP key codes) (rare)
     
 // END defines for layers
 
@@ -374,7 +373,29 @@
         // END Lightroom
 
         /*****************************************************************************************************
-        * L2 🔵 Num-pad "NUM"
+        * L2 🔵 Edit "EDT"
+            *      http://www.keyboard-layout-editor.com/#/gists/18e13161cf62a37e0ba0d751735110a1
+            * [ ] other r.h.s. useful things?
+            * [ ] turn Win+<> into timed-hold Macros? (see the slickrun example) -- for RDP because Win+ not reliable in RDP when sent too fast
+            * &m_CSA_V = Ctrl+Shift+Alt+V (for ClipMate), but in slight-key-delayed macro so works through RDP
+            * Copy|Paste Unformatted:
+                - &m_WC_* = same key-delayed macro for Win+Ctrl+C|V (AHK copy|paste unformatted)
+                - [.] temp trying w/o Win key at all using **F13** instead - see AHK
+                - [.] temp +ClipMate on NGM V position
+            */
+            
+            navnedit_layer { bindings = <
+                _x_   _x_   &kp F2       &kp LC(O)  &kp LC(W)    &kp F5     &to L_0                                                    ___   &kp PSCRN  &kp INS    &kp CAPS  &kp KP_NUMLOCK  &kp SLCK  &kp PAUSE_BREAK
+                ___   _x_   &kp LC(S)    &kp LC(D)  &kp LC(K)    &kp LC(I)  _x_                                                        _x_   _x_        &kp RCTRL  &kp RALT  &kp RSHFT       &kp RGUI  _x_
+                ___   _x_   &kp LC(X)    &kp LC(C)  &kp LC(V)    &kp LC(B)  _x_          &m_SEL_LINE  &kp RC(A)  _x_  &kp BSPC         _x_   _x_        _x_        _x_       _x_             _x_       _x_
+                ___   _x_   &kp LG(TAB)  &kp F13    &kp LC(F13)  &m_CSA_V                              &m_SEL_WRD_L    _x_                   _x_        _x_        _x_       &m_CSA_V        _x_       _x_
+                ___   _x_   _x_          &kp LA(N)  &kp LA(Y)                   &kp LC(Z)  &kp LC(Y)  &m_SEL_WRD_R      &m_MinWin  ___  ___             ___        ___       _x_             _x_       _x_
+            >; };
+
+        // END Edit
+
+        /*****************************************************************************************************
+        * L3 🟢 Num-pad "NUM"
             *      http://www.keyboard-layout-editor.com/#/gists/c51e298f5744feba159cde9973f47b92
             *      Uses non-keypad NUMERAL symbols since plan to use as "main" numbers method eventually as practice more.
             *      See companion 'mod_morphs_nums' file
@@ -440,7 +461,7 @@
         // END Numpad
 
         /*****************************************************************************************************
-        * L3 🟢 Utils, Macros, Specials "UTL"
+        * L4 🔴 Utils, Macros, Specials "UTL"
             *       http://www.keyboard-layout-editor.com/#/gists/2d2d37deb742cc77638e81cb0b875106
             *  # keys send to that layer-#
             *  &m_SLEEP & &m_HIBER = Windows-menu-compatible key shortcuts to invoke Sleep, Hibernate from start-menu
@@ -476,7 +497,7 @@
         // END Utils
 
         /*****************************************************************************************************
-        * L4 🔴 Function Keys "FNC" (1-12 RH-side, 13-24 LH-side)
+        * L5 🟣 Function Keys "FNC" (1-12 RH-side, 13-24 LH-side)
             *      http://www.keyboard-layout-editor.com/#/gists/d61490ab54f1d9c63f17ee2d25b40732
             *    NOTES:
             *       [x] 2024-04-14 trying more lateral for easier reach for commons; (and makes room for upper-ones) // nah, too awkward
@@ -510,29 +531,9 @@
         // END Fn Keys
 
         /*****************************************************************************************************
-        * L5 🟣 Edit "EDT"
-            *      http://www.keyboard-layout-editor.com/#/gists/18e13161cf62a37e0ba0d751735110a1
-            * [ ] other r.h.s. useful things?
-            * [ ] turn Win+<> into timed-hold Macros? (see the slickrun example) -- for RDP because Win+ not reliable in RDP when sent too fast
-            * &m_CSA_V = Ctrl+Shift+Alt+V (for ClipMate), but in slight-key-delayed macro so works through RDP
-            * Copy|Paste Unformatted:
-                - &m_WC_* = same key-delayed macro for Win+Ctrl+C|V (AHK copy|paste unformatted)
-                - [.] temp trying w/o Win key at all using **F13** instead - see AHK
-                - [.] temp +ClipMate on NGM V position
+        * L6 🩵 Plain letters "LET" - for hold to override any main-layer holds
+            *
             */
-            
-            navnedit_layer { bindings = <
-                _x_   _x_   &kp F2       &kp LC(O)  &kp LC(W)    &kp F5     &to L_0                                                    ___   &kp PSCRN  &kp INS    &kp CAPS  &kp KP_NUMLOCK  &kp SLCK  &kp PAUSE_BREAK
-                ___   _x_   &kp LC(S)    &kp LC(D)  &kp LC(K)    &kp LC(I)  _x_                                                        _x_   _x_        &kp RCTRL  &kp RALT  &kp RSHFT       &kp RGUI  _x_
-                ___   _x_   &kp LC(X)    &kp LC(C)  &kp LC(V)    &kp LC(B)  _x_          &m_SEL_LINE  &kp RC(A)  _x_  &kp BSPC         _x_   _x_        _x_        _x_       _x_             _x_       _x_
-                ___   _x_   &kp LG(TAB)  &kp F13    &kp LC(F13)  &m_CSA_V                              &m_SEL_WRD_L    _x_                   _x_        _x_        _x_       &m_CSA_V        _x_       _x_
-                ___   _x_   _x_          &kp LA(N)  &kp LA(Y)                   &kp LC(Z)  &kp LC(Y)  &m_SEL_WRD_R      &m_MinWin  ___  ___             ___        ___       _x_             _x_       _x_
-            >; };
-
-        // END Edit
-
-        /*****************************************************************************************************/
-        // L6 🔷 Plain letters "LET" - for hold to override any main-layer holds
             
             plain_letters_layer { bindings = <
                 ___  ___    ___    ___    ___    ___  ___                               ___    ___    ___    ___    ___    ___    ___
@@ -545,20 +546,7 @@
         // END plain letters
 
         /*****************************************************************************************************
-        * L7 ⬛ Alt Numpad "KP" - using actual KP versions of numbers; in case need like Alt+<code> testing.
-            *      (no yet KeyboardLayoutEditor)
-            */
-            kp_layer { bindings = <
-                _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                                   ___    _x_    _x_         _x_         _x_         _x_    _x_
-                ___    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    _x_                                                       _x_    _x_    &kp KP_N7   &kp KP_N8   &kp KP_N9   _x_    _x_
-                ___    _x_        _x_         _x_        _x_        _x_    _x_           _x_  _x_    _x_   _x_                       _x_    _x_    &kp KP_N4   &kp KP_N5   &kp KP_N6   _x_    _x_
-                _x_    _x_        _x_         _x_        _x_        _x_                      _x_      _x_                                   _x_    &kp KP_N1   &kp KP_N2   &kp KP_N3   _x_    _x_
-                _x_    _x_        _x_         ___        ___                      ___  ___  _x_        _x_  &kp ENTER  &kp KP_N0                   _x_         _x_         _x_         _x_    _x_
-            >; };
-        // END KP Numpad
-
-        /*****************************************************************************************************
-        * L8 ⬛ Qwerty-ish / such as for games
+        * L7 🟡 Qwerty-ish / such as for games
             *      https://www.keyboard-layout-editor.com/#/gists/4715e228b7a3f3603aa42f81db718a05
             */
             qwerty_layer { bindings = <
@@ -570,6 +558,18 @@
             >; };
         // END KP Numpad
 
+        /*****************************************************************************************************
+        * L8 ⚫ Alt Numpad "KP" - using actual KP versions of numbers; in case need like Alt+<code> testing.
+            *      (no yet KeyboardLayoutEditor)
+            */
+            kp_layer { bindings = <
+                _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                                   ___    _x_    _x_         _x_         _x_         _x_    _x_
+                ___    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    _x_                                                       _x_    _x_    &kp KP_N7   &kp KP_N8   &kp KP_N9   _x_    _x_
+                ___    _x_        _x_         _x_        _x_        _x_    _x_           _x_  _x_    _x_   _x_                       _x_    _x_    &kp KP_N4   &kp KP_N5   &kp KP_N6   _x_    _x_
+                _x_    _x_        _x_         _x_        _x_        _x_                      _x_      _x_                                   _x_    &kp KP_N1   &kp KP_N2   &kp KP_N3   _x_    _x_
+                _x_    _x_        _x_         ___        ___                      ___  ___  _x_        _x_  &kp ENTER  &kp KP_N0                   _x_         _x_         _x_         _x_    _x_
+            >; };
+        // END KP Numpad
 
     };
 };
