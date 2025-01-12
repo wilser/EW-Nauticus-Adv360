@@ -291,9 +291,10 @@
                 #define TD_ScrnShots    &TD_WinScreenshot_SnagIt   // 1x: Win+Shift+S   2x: Ctrl+Alt+P
                 #define LH_Bslh_LET     &lt L_LET BSLH // hold=alpha(letter) layer hold; else backslash
   
-                // Other:
-                #define M_DASH          F18 // ▢ 2024-09-20 NOT working reliably with Alt or Ctlr variants - not sure why
+                // Other / WIP:
+                //#define M_DASH          F18 // ▢ 2024-09-20 NOT working reliably with Alt or Ctlr variants - not sure why
                 #define BUL_AR_tbd      &as F17 F15 // WIP
+                #define Dt1_Dt0         &m_mmsNG2_D1D0 RC(RA(F18)) 0 // AHK Ctrl+Alt+{F17,F18} >> trigger Date1 and Date0 shortcuts
             // end defines
 
             engram_layer { bindings = <
@@ -323,8 +324,8 @@
                 #undef AS_Bk_CtlBk   
                 #undef AS_En_CtlEn   
                 #undef TD_ScrnShots  
-                #undef M_DASH        
                 #undef BUL_AR_tbd    
+                #undef Dt1_Dt0
             // end undefs
         // END Engram
 
