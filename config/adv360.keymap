@@ -282,7 +282,7 @@
                 #define LH_Bslh_LET     &lt L_LET BSLH // hold=alpha(letter) layer hold; else backslash
   
                 // Other:
-                #define M_DASH          F24 // ▢ 2024-09-20 NOT working reliably with Alt or Ctlr variants - not sure why
+                #define M_DASH          F18 // ▢ 2024-09-20 NOT working reliably with Alt or Ctlr variants - not sure why
                 #define BUL_AR_tbd      &as F17 F15 // WIP
             // end defines
 
