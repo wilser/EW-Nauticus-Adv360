@@ -282,13 +282,13 @@
                 #define LH_Bslh_LET     &lt L_LET BSLH // hold=alpha(letter) layer hold; else backslash
   
                 // Other:
-                #define M_DASH          F24 // ▢ 2024-09-20 NOT working reliably with Alt or Ctlr variants - WTF!?
-                #define BUL_AR_tbd      &as LA(F21) F21 // for now / but WIP
+                #define M_DASH          F24 // ▢ 2024-09-20 NOT working reliably with Alt or Ctlr variants - not sure why
+                #define BUL_AR_tbd      &as F17 F15 // WIP
             // end defines
 
             engram_layer { bindings = <
                 &m_mmsNG2_Tild PIPE 0   &m_mmsNG2_Star N1 0  &m_mmsNG2_Qstn N2 0  &m_mmsNG2_Cmma N3 0  &m_mmsNG2_Apos N4 0  &m_mmsNG2_Ing N5 0    &sl L_UTL                                                                 &sl L_UTL     &m_mmsNG2_Tion N6 0    &m_mmsNG2_Excl N7 0  &m_mmsNG2_Perd N8 0  &m_mmsNG2_Quot N9 0  &m_mmsNG2_Equl N0 0  &kp Z
-                &kp ESC                 _B_GUI               _Y_SFT               _O_ALT               _U_CTL               &m_mmsNG2_Lpar F20 0  _HYPER                                                                    TD_ScrnShots  &m_mmsNG2_Rpar DLLR 0  _L_CTL               _D_ALT               _W_SFT               _V_GUI               &m_mmsNG2_Slsh PERCENT 0
+                &kp ESC                 _B_GUI               _Y_SFT               _O_ALT               _U_CTL               &m_mmsNG2_Lpar F16 0  _HYPER                                                                    TD_ScrnShots  &m_mmsNG2_Rpar DLLR 0  _L_CTL               _D_ALT               _W_SFT               _V_GUI               &m_mmsNG2_Slsh PERCENT 0
                 MT_TB_SHFTB             &kp C                &as_slw RS(I) I      &kp E                &kp A                &m_mmsNG2_Semi LT 0   _MEH          _SHF_BSP_L   NUM_LR_NUM  LH_Bslh_LET  _SHF_BSP_R            &kp M_DASH    &m_mmsNG2_Coln GT 0    &kp H                &kp T                &kp S                &kp N                &m_mmsNG2_Mnus UNDERSCORE 0
                 &TD_Emj_WinDsk          &lht L_EDT G         &kp X                &lt L_UTL J          &lht_fst L_NUM K     &m_mmsNG2_Amps AT 0                            AS_Hm_CtlHm    &kp PG_UP                                       &m_mmsNG2_Hash PLUS 0  &kp R                &kp M                &kp F                &kp P                &as_Qu Q 0
                 &m_mmsNG2_Cret GRAVE 0  BUL_AR_tbd           &TD_Rtclick_P        &kp LEFT             &kp RIGHT                                    AS_Bk_CtlBk  &kp DEL  AS_En_CtlEn      &kp PG_DN  &lt L_FNC ENTER  &kp SPACE                                 &kp UP               &kp DOWN             &as LS(LBKT) LBKT    &as LS(RBKT) RBKT    &to L_NUM
