@@ -25,9 +25,9 @@
   MOD_MORPH_SHIFT(mmNG2_Qstn  , QMARK       , N2          , mmsNG2_Qstn)
   MOD_MORPH_SHIFT(mmNG2_Cmma  , COMMA       , N3          , mmsNG2_Cmma)
   MOD_MORPH_SHIFT(mmNG2_Apos  , APOS        , N4          , mmsNG2_Apos)
-  MOD_MORPH_SHIFT(mmNG2_Ing   , RC(RA(F14)) , N5          , mmsNG2_Ing ) // ^F14 "ing"
+  MOD_MORPH_SHIFT(mmNG2_Ing   , RC(F14) , N5          , mmsNG2_Ing ) // ^F14 "ing"
   
-  MOD_MORPH_SHIFT(mmNG2_Tion  , RC(RA(F15)) , N6          , mmsNG2_Tion) // ^F15 "tion"
+  MOD_MORPH_SHIFT(mmNG2_Tion  , RC(F15) , N6          , mmsNG2_Tion) // ^F15 "tion"
   MOD_MORPH_SHIFT(mmNG2_Excl  , EXCL        , N7          , mmsNG2_Excl)
   MOD_MORPH_SHIFT(mmNG2_Perd  , PERIOD      , N8          , mmsNG2_Perd)
   MOD_MORPH_SHIFT(mmNG2_Quot  , DQT         , N9          , mmsNG2_Quot)  
@@ -52,7 +52,7 @@
   MOD_MORPH_SHIFT(mmNG2_Mnus  , MINUS       , UNDER       , mmsNG2_Mnus)
 
 // WIP/special:
-  MOD_MORPH_SHIFT(mmNG2_D1D0  , RC(RA(F17)) , RC(RA(F18)) , mmsNG2_D1D0)
+  MOD_MORPH_SHIFT(mmNG2_D1D0  , RC(RA(F18)) , RC(RA(F17)) , mmsNG2_D1D0)
 
 
   // Special for Q:
