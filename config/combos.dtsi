@@ -94,3 +94,13 @@ combo_enter {
     bindings = <&kp ENTER>;
     layers = <L_NGM>;
 };
+
+// C8 - reset all MODs when stuck / ▣ 2025-02-09 / WIP
+combo_reset_mods {
+    key-positions = <17 18 23 24>; // RH+LH 2 inner fingers
+    bindings = <&kp LG(LS(LA(LC(F20))))>; // SEE AHK
+    layers = <L_NGM>;
+};
+
+
+
