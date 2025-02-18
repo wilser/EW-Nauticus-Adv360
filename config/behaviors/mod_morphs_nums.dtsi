@@ -4,6 +4,9 @@
 /* CODES ref: https://zmk.dev/docs/codes */
 /* ASSUMES GENERAL ONE INCLUDED BEFORE THIS ONE! */
 
+// 2025-02-18 MULT/times and ZERO/deg Ø great
+
+
 //Defines
     #define _CA_F16 LC(LA(F16))    // AHK: € - euro
     #define _CA_F22 LC(LA(F22))    // AHK: ° - degree
