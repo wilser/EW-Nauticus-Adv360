@@ -58,6 +58,12 @@
 // WIP/special:
   MOD_MORPH_SHIFT(mmNG2_D1D0  , RC(RA(F18)) , RC(RA(F17)) , mmsNG2_D1D0)
 
+// for CAPS:
+  MOD_MORPH_SHIFT(mmNG2_CapQ     , RC(F16)      , LS(Q)   , mmsNG2_CapQ) // ^F16 "QU" / TODO: harmonize with NGM how works?
+  MOD_MORPH_SHIFT(mmNG2_CapIng   , RC(RA(F14))  , N5      , mmsNG2_CapIng ) // ^!F14 "ING"
+  MOD_MORPH_SHIFT(mmNG2_CapTion  , RC(RA(F15))  , N6      , mmsNG2_CapTion) // ^!F15 "TION"
+
+
 
   // Special for Q:
     // tap|hold {qu,QU}; hold/shift {q,Q}
@@ -69,15 +75,6 @@
       quick-tap-ms = <0>;
       flavor = "tap-preferred";
       bindings = <&kp>, <&mm_QU>; // can do to mod-morph?
-    };
-
-    as_QU_cap: auto_shift_QU {
-      compatible = "zmk,behavior-hold-tap";
-      #binding-cells = <2>;
-      tapping-term-ms = <150>;
-      quick-tap-ms = <0>;
-      flavor = "tap-preferred";
-      bindings = <&kp>, <&m_QU_Upcase>; // can do to mod-morph? / [m]acro not [mm]od-morph
     };
 
 

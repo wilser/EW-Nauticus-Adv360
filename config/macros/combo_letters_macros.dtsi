@@ -18,6 +18,7 @@ m_qu: m_qu {
     bindings = <&kp Q>, <&kp U>;
 };
 
+/*
 m_QU_Upcase: m_QU_Upcase {
     compatible = "zmk,behavior-macro";
     wait-ms = <0>; // was 10
@@ -25,6 +26,7 @@ m_QU_Upcase: m_QU_Upcase {
     #binding-cells = <0>;
     bindings = <&kp LS(Q)>, <&kp LS(U)>;
 };
+*/
 
 // Get Ø-shifted U?
 // ▣ maybe <&macro_pause_for_release> between?

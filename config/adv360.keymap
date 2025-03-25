@@ -569,19 +569,24 @@
 
             // #DEFs
                 #define _AHK_AT &kp RC(RA(AT_SIGN))
-                #define _CAP_Q &as_QU_cap LS(Q) 0
+                #define _CAP_Q &m_mmsNG2_CapQ LS(Q) 0
+                #define _CAP_ING &m_mmsNG2_CapIng N5 0
+                #define _CAP_TION &m_mmsNG2_CapTion N6 0
 
             
             ngmcap_layer { bindings = <
-                ___   ___        ___        ___        ___        _tbd_    &to L_0                           ___    _tbd_   ___        ___        ___        ___        &kp LS(Z)
-                ___   &kp RS(B)  &kp RS(Y)  &kp RS(O)  &kp RS(U)  ___      ___                               ___    ___     &kp LS(L)  &kp LS(D)  &kp LS(W)  &kp LS(V)  ___
-                ___   &kp RS(C)  &kp RS(I)  &kp RS(E)  &kp RS(A)  ___      ___      ___  ___   ___  ___      ___    ___     &kp LS(H)  &kp LS(T)  &kp LS(S)  &kp LS(N)  ___
-                ___   &kp RS(G)  &kp RS(X)  &kp RS(J)  &kp RS(K)  _AHK_AT               ___     ___                 ___     &kp LS(R)  &kp LS(M)  &kp LS(F)  &kp LS(P)  _CAP_Q
-                ___   ___        ___        ___        ___                   ___  ___  ___       ___  ___  ___              ___        ___        ___        ___        ___
+                ___   ___        ___        ___        ___        _CAP_ING  &to L_0                           ___    _CAP_TION   ___        ___        ___        ___        &kp LS(Z)
+                ___   &kp RS(B)  &kp RS(Y)  &kp RS(O)  &kp RS(U)  ___       ___                               ___    ___         &kp LS(L)  &kp LS(D)  &kp LS(W)  &kp LS(V)  ___
+                ___   &kp RS(C)  &kp RS(I)  &kp RS(E)  &kp RS(A)  ___       ___      ___  ___   ___  BSPC     ___    ___         &kp LS(H)  &kp LS(T)  &kp LS(S)  &kp LS(N)  ___
+                ___   &kp RS(G)  &kp RS(X)  &kp RS(J)  &kp RS(K)  _AHK_AT                ___     ___                 ___         &kp LS(R)  &kp LS(M)  &kp LS(F)  &kp LS(P)  _CAP_Q
+                ___   ___        ___        ___        ___                    ___  ___  ___       ___  ___  ___                  ___        ___        ___        ___        ___
             >; };
             
             // #UNDESFs
                 #undef _AHK_AT
+                #undef _CAP_Q
+                #undef _CAP_ING
+                #undef _CAP_TION
 
         // END CAPS
 
