@@ -64,8 +64,9 @@
     #define L_UTL 4     // utils
     #define L_FNC 5     // function keys 1-12 (like numpad)
     #define L_LET 6     // plain letters - mirroring NGM - so can use the "hold-for-accents" utility
-    #define L_QRT 7     // Qwerty-ish; like for games
-    #define L_KP 8      // keypad (*actual KP key codes) (rare)
+    #define L_CAP 7     // CAPs layer for constant Shift+ but keeping many things "unshifted" esp some symbols
+    #define L_QRT 8     // Qwerty-ish; like for games
+    #define L_KP 9      // keypad (*actual KP key codes) (rare)
     
 // END defines for layers
 
@@ -302,10 +303,11 @@
             engram_layer { bindings = <
                 &m_mmsNG2_Tild PIPE 0   &m_mmsNG2_Star N1 0  &m_mmsNG2_Qstn N2 0  &m_mmsNG2_Cmma N3 0  &m_mmsNG2_Apos N4 0  &m_mmsNG2_Ing N5 0    &sl L_UTL                                                                 &sl L_UTL     &m_mmsNG2_Tion N6 0    &m_mmsNG2_Lpar N7 0  &m_mmsNG2_Perd N8 0  &m_mmsNG2_Rpar N9 0  &m_mmsNG2_Equl N0 0  &kp Z
                 &kp ESC                 _B_GUI               _Y_SFT               _O_ALT               _U_CTL               &m_mmsNG2_Excl F16 0  _HYPER                                                                    TD_ScrnShots  &m_mmsNG2_Quot DLLR 0  _L_CTL               _D_ALT               _W_SFT               _V_GUI               &m_mmsNG2_Slsh PERCENT 0
-                MT_TB_SHFTB             &kp C                &as_slw RS(I) I      &kp E                &kp A                &m_mmsNG2_Semi LT 0   _MEH          _SHF_BSP_L   NUM_LR_NUM  LH_Bslh_LET  _SHF_BSP_R            Dt1_Dt0       &m_mmsNG2_Coln GT 0    &kp H                &kp T                &kp S                &kp N                &m_mmsNG2_Mnus UNDERSCORE 0
+                MT_TB_SHFTB             &kp C                &as_slw RS(I) I      &kp E                &kp A                &m_mmsNG2_Semi LT 0   _MEH           &mo L_CAP   NUM_LR_NUM  LH_Bslh_LET  _SHF_BSP_R            Dt1_Dt0       &m_mmsNG2_Coln GT 0    &kp H                &kp T                &kp S                &kp N                &m_mmsNG2_Mnus UNDERSCORE 0
                 &TD_Emj_WinDsk          &lt L_EDT G          &kp X                &lt L_UTL J          &lt_fst L_NUM K      &m_mmsNG2_Amps AT 0                            AS_Hm_CtlHm    &kp PG_UP                                       &m_mmsNG2_Hash PLUS 0  &kp R                &kp M                &kp F                &kp P                &as_Qu Q 0
                 &m_mmsNG2_Cret GRAVE 0  BUL_AR_tbd           &TD_Rtclick_P        &kp LEFT             &kp RIGHT                                    AS_Bk_CtlBk  &kp DEL  AS_En_CtlEn      &kp PG_DN  &lt L_FNC ENTER  &kp SPACE                                 &kp UP               &kp DOWN             &as LS(LBKT) LBKT    &as LS(RBKT) RBKT    &to L_NUM
             >; };
+            // TEMP: was _SHF_BSP_L on l-thumb
 
             // #UNDEFs
                 #undef _HYPER        
@@ -559,7 +561,21 @@
         // END plain letters
 
         /*****************************************************************************************************
-        * L7 🟡 Qwerty-ish / such as for games
+        * L7 🟡 CAPS layer - like SHIFT but keep symbols & few other differences
+            *      https://www.keyboard-layout-editor.com/#/gists/4715e228b7a3f3603aa42f81db718a05
+            */
+            capshift_layer { bindings = <
+            //                                                    -ING                                              -TION
+                ___   ___        ___        ___        ___        _tbd_    &to L_0                           ___    _tbd_    ___        ___        ___        ___    &kp LS(Z)
+                ___   &kp RS(B)  &kp RS(Y)  &kp RS(O)  &kp RS(U)  ___      ___                               ___    ___      &kp LS(L)  &kp LS(D)  &kp LS(W)  LS(V)  ___
+                ___   &kp RS(C)  &kp RS(I)  &kp RS(E)  &kp RS(A)  ___      ___      ___  ___   ___  ___      ___    ___      &kp LS(H)  &kp LS(T)  &kp LS(S)  LS(N)  ___
+                ___   &kp RS(G)  &kp RS(X)  &kp RS(J)  &kp RS(K)  ___                    ___   ___                  ___      &kp LS(R)  &kp LS(M)  &kp LS(F)  LS(P)  _tbd_ /* qu */
+                ___   ___        ___        ___        ___                     ___  ___  ___   ___  ___  ___                 ___        ___        ___        ___    ___
+            >; };
+        // END CAPS
+
+        /*****************************************************************************************************
+        * L8 ⚫🟡 Qwerty-ish / such as for games
             *      https://www.keyboard-layout-editor.com/#/gists/4715e228b7a3f3603aa42f81db718a05
             */
             qwerty_layer { bindings = <
@@ -572,7 +588,7 @@
         // END KP Numpad
 
         /*****************************************************************************************************
-        * L8 ⚫ Alt Numpad "KP" - using actual KP versions of numbers; in case need like Alt+<code> testing.
+        * L9 ⚫ Alt Numpad "KP" - using actual KP versions of numbers; in case need like Alt+<code> testing.
             *      (no yet KeyboardLayoutEditor)
             */
             kp_layer { bindings = <
