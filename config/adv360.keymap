@@ -565,7 +565,7 @@
             *      https://www.keyboard-layout-editor.com/#/gists/4715e228b7a3f3603aa42f81db718a05
             */
             capshift_layer { bindings = <
-            //                                                    -ING                                              -TION
+            /*                                                    -ING                                              -TION*/
                 ___   ___        ___        ___        ___        _tbd_    &to L_0                           ___    _tbd_    ___        ___        ___        ___    &kp LS(Z)
                 ___   &kp RS(B)  &kp RS(Y)  &kp RS(O)  &kp RS(U)  ___      ___                               ___    ___      &kp LS(L)  &kp LS(D)  &kp LS(W)  LS(V)  ___
                 ___   &kp RS(C)  &kp RS(I)  &kp RS(E)  &kp RS(A)  ___      ___      ___  ___   ___  ___      ___    ___      &kp LS(H)  &kp LS(T)  &kp LS(S)  LS(N)  ___
