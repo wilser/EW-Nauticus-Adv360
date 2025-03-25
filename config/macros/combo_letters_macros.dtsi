@@ -18,7 +18,7 @@ m_qu: m_qu {
     bindings = <&kp Q>, <&kp U>;
 };
 
-m_QU: m_QU {
+m_QU_Upcase: m_QU_Upcase {
     compatible = "zmk,behavior-macro";
     wait-ms = <0>; // was 10
     tap-ms = <1>; // was 5

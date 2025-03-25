@@ -77,7 +77,7 @@
       tapping-term-ms = <150>;
       quick-tap-ms = <0>;
       flavor = "tap-preferred";
-      bindings = <&kp>, <&m_QU>; // can do to mod-morph? / [m]acro not [mm]od-morph
+      bindings = <&kp>, <&m_QU_Upcase>; // can do to mod-morph? / [m]acro not [mm]od-morph
     };
 
 
