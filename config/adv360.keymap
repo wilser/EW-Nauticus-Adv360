@@ -564,9 +564,9 @@
         * L7 🟡 CAPS layer - like SHIFT but keep symbols & few other differences
             *      https://www.keyboard-layout-editor.com/#/gists/c6a9db3f0d67b643eae25ba3da8379cf
             * TODO
-            *   _tbd_ {-ING, -TION, Qu}
+            *   _tbd_: {-ING, -TION, Qu}
             */
-            capshift_layer { bindings = <
+            ngmcap_layer { bindings = <
                 ___   ___        ___        ___        ___        _tbd_    &to L_0                           ___    _tbd_   ___        ___        ___        ___        &kp LS(Z)
                 ___   &kp RS(B)  &kp RS(Y)  &kp RS(O)  &kp RS(U)  ___      ___                               ___    ___     &kp LS(L)  &kp LS(D)  &kp LS(W)  &kp LS(V)  ___
                 ___   &kp RS(C)  &kp RS(I)  &kp RS(E)  &kp RS(A)  ___      ___      ___  ___   ___  ___      ___    ___     &kp LS(H)  &kp LS(T)  &kp LS(S)  &kp LS(N)  ___
@@ -580,6 +580,8 @@ o
         * L8 ⚫🟡 Qwerty-ish / such as for games
             *      https://www.keyboard-layout-editor.com/#/gists/4715e228b7a3f3603aa42f81db718a05
             */
+
+            /*
             qwerty_layer { bindings = <
                 &kp GRAVE  &kp N1   &kp N2   &kp N3   &kp N4   &kp N5   &to L_0                                       ___    &kp N6   &kp N7   &kp N8     &kp N9      &kp N0    &kp EQUAL
                 ___        &kp Q    &kp W    &kp E    &kp R    &kp T    ___                                           ___    &kp Y    &kp U    &kp I      &kp O       &kp P     &kp SLASH
@@ -587,6 +589,8 @@ o
                 ___        &kp Z    &kp X    &kp C    &kp V    &kp B                         &kp LALT   ___                  &kp N    &kp M    &kp COMMA  &kp PERIOD  ___       ___
                 ___        ___      ___      ___      ___             &kp BSPC  &kp DEL  &kp LC(LALT)   ___  ___  ___                 ___      ___        ___         ___       &kp BSLH
             >; };
+
+            */
         // END KP Numpad
 
         /*****************************************************************************************************
