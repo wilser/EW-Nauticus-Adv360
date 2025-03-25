@@ -564,17 +564,23 @@
         * L7 🟡 CAPS layer - like SHIFT but keep symbols & few other differences
             *      https://www.keyboard-layout-editor.com/#/gists/c6a9db3f0d67b643eae25ba3da8379cf
             * TODO
-            *   _tbd_: {-ING, -TION, Qu}
+            *   _tbd_: {-ING, -TION, Qu, & via AHK}
             */
+
+            // #DEFs
+                #define _AHK_AT &kp RC(RA(AT_SIGN))
+
             
             ngmcap_layer { bindings = <
                 ___   ___        ___        ___        ___        _tbd_    &to L_0                           ___    _tbd_   ___        ___        ___        ___        &kp LS(Z)
                 ___   &kp RS(B)  &kp RS(Y)  &kp RS(O)  &kp RS(U)  ___      ___                               ___    ___     &kp LS(L)  &kp LS(D)  &kp LS(W)  &kp LS(V)  ___
                 ___   &kp RS(C)  &kp RS(I)  &kp RS(E)  &kp RS(A)  ___      ___      ___  ___   ___  ___      ___    ___     &kp LS(H)  &kp LS(T)  &kp LS(S)  &kp LS(N)  ___
-                ___   &kp RS(G)  &kp RS(X)  &kp RS(J)  &kp RS(K)  ___                   ___     ___                 ___     &kp LS(R)  &kp LS(M)  &kp LS(F)  &kp LS(P)  _tbd_
+                ___   &kp RS(G)  &kp RS(X)  &kp RS(J)  &kp RS(K)  _AHK_AT               ___     ___                 ___     &kp LS(R)  &kp LS(M)  &kp LS(F)  &kp LS(P)  _tbd_
                 ___   ___        ___        ___        ___                   ___  ___  ___       ___  ___  ___              ___        ___        ___        ___        ___
             >; };
             
+            // #UNDESFs
+                #undef _AHK_AT
 
         // END CAPS
 
