@@ -21,7 +21,8 @@
 
 // TOP ROW (L to R)
   MOD_MORPH_SHIFT(mmNG2_Tild  , TILDE       , PIPE        , mmsNG2_Tild)
-  MOD_MORPH_SHIFT(mmNG2_Star  , STAR        , N1          , mmsNG2_Star)
+  //MOD_MORPH_SHIFT(mmNG2_Star  , STAR        , N1          , mmsNG2_Star)
+  MOD_MORPH_SHIFT(mmNG2_Excl  , EXCL        , N1          , mmsNG2_Excl)
   MOD_MORPH_SHIFT(mmNG2_Qstn  , QMARK       , N2          , mmsNG2_Qstn)
   MOD_MORPH_SHIFT(mmNG2_Cmma  , COMMA       , N3          , mmsNG2_Cmma)
   MOD_MORPH_SHIFT(mmNG2_Apos  , APOS        , N4          , mmsNG2_Apos)
@@ -41,7 +42,8 @@
 
  // L-MID COLUMN (T to B): 
   //MOD_MORPH_SHIFT(mmNG2_Lpar  , LPAR        , F16         , mmsNG2_Lpar) // F16 "Ø"
-  MOD_MORPH_SHIFT(mmNG2_Excl  , EXCL        , F16         , mmsNG2_Excl) // F16 "Ø"
+  //MOD_MORPH_SHIFT(mmNG2_Excl  , EXCL        , F16         , mmsNG2_Excl) // F16 "Ø"
+  MOD_MORPH_SHIFT(mmNG2_Star  , STAR        , F16         , mmsNG2_Star) // F16 "Ø"
   MOD_MORPH_SHIFT(mmNG2_Semi  , SEMI        , LT          , mmsNG2_Semi)
   MOD_MORPH_SHIFT(mmNG2_Amps  , AMPS        , AT          , mmsNG2_Amps)
 
