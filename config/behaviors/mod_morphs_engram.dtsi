@@ -68,6 +68,7 @@
   // Special for Q:
     // tap|hold {qu,QU}; hold/shift {q,Q}
     // uses "&as_Qu Q 0" in map; 0 parm for the nil macro parm
+    // [ ] WIP maybe plain F16 instead?
     as_Qu: auto_shift_Qu {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
