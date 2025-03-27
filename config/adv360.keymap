@@ -298,7 +298,6 @@
                 //#define M_DASH          F18 // ▢ 2024-09-20 NOT working reliably with Alt or Ctlr variants - not sure why
                 #define BUL_AR_tbd      &as F17 F15 // WIP
                 #define Dt1_Dt0         &m_mmsNG2_D1D0 RC(RA(F17)) 0 // AHK Ctrl+Alt+{F17,F18} >> trigger Date1 and Date0 shortcuts
-                #define AS_QU_Q         &as Q F24 // tap-F24, hold-Q - AHK F24 = qu, Shift+F24 = Qu
             // end defines
 
             engram_layer { bindings = <
@@ -331,7 +330,6 @@
                 #undef TD_ScrnShots  
                 #undef BUL_AR_tbd    
                 #undef Dt1_Dt0
-                #undef AS_QU_Q
             // end undefs
         // END Engram
 
@@ -572,7 +570,8 @@
             // #DEFs
                 #define _AHK_AT &kp RC(RA(AT_SIGN))
                 //#define _CAP_Q &m_mmsNG2_CapQ LS(Q) 0
-                #define _CAP_Q &m_ucase_QU
+                //#define _CAP_Q &m_ucase_QU
+                #define _CAP_Q &ht_QU_Q Q 0
                 #define _CAP_ING &m_mmsNG2_CapIng N5 0
                 #define _CAP_TION &m_mmsNG2_CapTion N6 0
 
