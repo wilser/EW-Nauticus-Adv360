@@ -571,7 +571,7 @@
                 #define _AHK_AT &kp RC(RA(AT_SIGN))
                 //#define _CAP_Q &m_mmsNG2_CapQ LS(Q) 0
                 //#define _CAP_Q &m_ucase_QU
-                #define _CAP_Q &ht_QU_Q Q 0
+                #define _CAP_Q &ht_QU_Q LS(Q) 0
                 #define _CAP_ING &m_mmsNG2_CapIng N5 0
                 #define _CAP_TION &m_mmsNG2_CapTion N6 0
 
