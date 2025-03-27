@@ -118,7 +118,7 @@ combo_win_ctrl_f24 {
 
 // C10
 combo_equal {
-    key-positions = <30 35>; // L-ring, L-thumb
+    key-positions = <33 35>; // L-index+1, L-thumb
     bindings = <&kp EQUAL>;
     layers = <L_NGM>;
 };
