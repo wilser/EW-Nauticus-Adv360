@@ -93,9 +93,9 @@ combo_win_ctrl_f23 {
     layers = <L_NGM>;
 };
 
-// C10 / [] NOT working!? - tried 30 and 33 and neither seemed to pick up
+// C10 =
 combo_equal {
-    key-positions = <33 35>; // L-index+1, L-thumb
+    key-positions = <30 35>; // L-index+1, L-thumb
     bindings = <&kp EQUAL>;
     layers = <L_NGM>;
     slow-release; // optional - seems will only fire combo after ALL are released
