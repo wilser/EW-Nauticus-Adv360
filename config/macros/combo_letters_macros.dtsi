@@ -59,9 +59,7 @@ mm_qu_Qu: mm_qu_Qu {
     [ ] 2025-03-26 maybe make the MM invoke 2 AS's that each are the ...
     [ ] need like AS but that DOES ONLY the hold, not also Shift trigger
         ⇒ HOLD TAP
-
 */
-
 
 ht_qu_QU: ht_qu_QU {
     compatible = "zmk,behavior-hold-tap";
@@ -80,7 +78,6 @@ ht_QU_Q: ht_QU_Q {
     quick-tap-ms = <200>; // ▢ TODO
     bindings = <&kp>, <&m_ucase_QU>; // hold for Q, tap for QU macro
 };
-
 
 
 

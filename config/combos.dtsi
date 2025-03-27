@@ -35,32 +35,14 @@ combo_space {
     layers = <L_NGM L_LR>;
 };
 
-// C2a
-//combo_caps_word {
-//    key-positions = <55 56>; // 
-//    bindings = <&caps_word>;
-//    layers = <L_DVK>;
-//};
-//combo_caps_word_NGM_1 {
-//    key-positions = <41 44>; // {RH: index,pinkie}
-//    bindings = <&caps_word>;
-//    layers = <L_NGM>;
-//};
-
-// C2b
-combo_caps_word_NGM_2 {
+// C2
+combo_caps_word {
 key-positions = <33 40>; // {RH-index-in-1; LH-index-in-1}
 bindings = <&caps_word>;
-layers = <L_NGM>;
+layers = <L_NGM L_LR>;
 };
 
-// C3 - [ ] unused really?
-//combo_backspace {
-//    key-positions = <55 58>; // RH, Fng 1,4, 1-row down
-//    bindings = <&kp BACKSPACE>;
-//    layers = <L_DVK>; // (main typing) only / removed from Engram because much more frequent letter combo (PR) vs (MZ) on Dvorakps
-//};
-
+/* 2025-03-27+ unused
 // C4a
 combo_context_menu_lh {
     key-positions = <35 36>; // LH, top-2 thumb keys
@@ -73,6 +55,7 @@ combo_context_menu_rh {
     bindings = <&kp K_CONTEXT_MENU>;
     layers = <L_LR>;
 };
+*/
 
 // C5
 combo_caps_lock {
@@ -85,21 +68,21 @@ combo_caps_lock {
 combo_dot /*period*/ {
     key-positions = <31 35>; // L-middle, L-thumb
     bindings = <&kp DOT>;
-    layers = <L_NGM>;
+    layers = <L_NGM L_LR>;
 };
 
 // C7
 combo_enter {
     key-positions = <29 35>; // L-pinkie, L-thumb
     bindings = <&kp ENTER>;
-    layers = <L_NGM>;
+    layers = <L_NGM L_LR>;
 };
 
 // reset all MODs when stuck / ▣ 2025-02-09 / WIP
 combo_reset_mods {
     key-positions = <17 18 23 24>; // RH+LH 2 inner fingers
     bindings = <&kp LG(LS(LA(LC(F20))))>; // SEE AHK
-    layers = <L_NGM>;
+    //layers = <L_NGM>; - ALL
 };
 
 // C8 - Win+Ctrl+F23 / AHK: "..."
@@ -109,17 +92,17 @@ combo_win_ctrl_f23 {
     layers = <L_NGM>;
 };
 
+// C10 / [] NOT working!? - tried 30 and 33 and neither seemed to pick up
+combo_equal {
+    key-positions = <33 35>; // L-index+1, L-thumb
+    bindings = <&kp EQUAL>;
+    layers = <L_NGM>;
+};
+
 // C9 - Win+Ctrl+F24 / AHK: "(){Left}"
 combo_win_ctrl_f24 {
     key-positions = <9 11>; // top row ()
     bindings = <&kp LG((LC(F24)))>; // SEE AHK
-    layers = <L_NGM>;
-};
-
-// C10
-combo_equal {
-    key-positions = <33 35>; // L-index+1, L-thumb
-    bindings = <&kp EQUAL>;
     layers = <L_NGM>;
 };
 
