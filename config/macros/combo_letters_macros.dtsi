@@ -84,7 +84,7 @@ mm_qu_Qu: mm_qu_Qu {
     #binding-cells = <0>;
     bindings = <&m_lcase_qu>, <&m_mixcase_Qu>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
-    masked-mods = <(MOD_LSFT|MOD_RSFT)>; // swallow the shift so Ø passed thru? (matter?)
+    keep-mods = <(MOD_LSFT|MOD_RSFT)>; // swallow the shift so Ø passed thru? (matter?)
   };
 
 // HOLD TAP: Q | ModMorph(qu Qu)
@@ -104,7 +104,7 @@ ht_qu_QU: ht_qu_QU {
   *     > HoldTap - Q Qu
   */
 
-// ▣ 2025-03-27 Ø working
+// ▣ 2025-03-27 Ø working - think because can't send &ref things in where simple parm [INT] expected
 
 ht_q_qu: ht_q_qu {
     compatible = "zmk,behavior-hold-tap";
