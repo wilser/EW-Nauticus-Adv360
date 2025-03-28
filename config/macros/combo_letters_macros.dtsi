@@ -30,7 +30,7 @@
     };
     */
 
-// Q macros:
+// Q macros: --------------------
 m_lcase_qu: m_lcase_qu {
     compatible = "zmk,behavior-macro";
     wait-ms = <0>;
@@ -47,7 +47,7 @@ m_ucase_QU: m_ucase_QU {
     bindings = <&kp LS(Q)>, <&kp LS(U)>;
 };
 
-m_uc_Q_lc_u: m_uc_Q_lc_u {
+m_mixcase_Qu: m_mixcase_Qu {
     compatible = "zmk,behavior-macro";
     wait-ms = <10>; // ??
     tap-ms = <5>; // ??
@@ -60,48 +60,7 @@ m_uc_Q_lc_u: m_uc_Q_lc_u {
     ;
 };
 
-/* OPTION 1
- * HoldTap ⇒
- *      > Q
- *      > ModMorph
- *          > qu
- *          > Qu
- */
- // NOT working - Shift+<> ⇒ Q
-
- /* OPTION 2
-  * ModMorph ⇒
-  *     > HoldTap - qu q
-  *     > HoldTap - Qu Q
-  */
-
-
-
-
-
-// MOD MORPH for qu Qu - note not &kp based!
-mm_qu_Qu: mm_qu_Qu {
-    compatible = "zmk,behavior-mod-morph";
-    #binding-cells = <0>;
-    bindings = <&m_lcase_qu>, <&m_uc_Q_lc_u>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-  };
-
-/*
-    [ ] 2025-03-26 maybe make the MM invoke 2 AS's that each are the ...
-    [ ] need like AS but that DOES ONLY the hold, not also Shift trigger
-        ⇒ HOLD TAP
-*/
-
-ht_qu_QU: ht_qu_QU {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    flavor = "hold-preferred"; // which? 
-    tapping-term-ms = <200>; // ▢ TODO
-    quick-tap-ms = <200>; // ▢ TODO
-    bindings = <&kp>, <&mm_qu_Qu>; // hold, then tap / use Q then mod-morph
-};
-
+// CAP layer HT --------------------
 ht_QU_Q: ht_QU_Q {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
@@ -113,10 +72,72 @@ ht_QU_Q: ht_QU_Q {
 
 
 
+/* OPTION 1 --------------------
+ * HoldTap ⇒
+ *      > Q
+ *      > ModMorph
+ *          > qu
+ *          > Qu
+ */
+ // NOT working - Shift+<> ⇒ Q
+
+
+// MOD MORPH for qu Qu - note not &kp based!
+mm_qu_Qu: mm_qu_Qu {
+    compatible = "zmk,behavior-mod-morph";
+    #binding-cells = <0>;
+    bindings = <&m_lcase_qu>, <&m_mixcase_Qu>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+  };
+
+// HOLD TAP: Q | ModMorph(qu Qu)
+ht_qu_QU: ht_qu_QU {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    flavor = "hold-preferred"; // which? 
+    tapping-term-ms = <200>; // ▢ TODO
+    quick-tap-ms = <200>; // ▢ TODO
+    bindings = <&kp>, <&m_lcase_qu>; // hold <&kp>, tap <macro "qu">
+};
+
+
+ /* OPTION 2 --------------------
+  * ModMorph ⇒
+  *     > HoldTap - q qu
+  *     > HoldTap - Q Qu
+  */
+
+ht_q_qu: ht_q_qu {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <0>; // ▢ put back to 2 and put "__ Q 0" in wrapper's binding-cell?
+    flavor = "hold-preferred"; // which? 
+    tapping-term-ms = <200>; // ▢ TODO
+    quick-tap-ms = <200>; // ▢ TODO
+    bindings = <&kp Q>, <&m_lcase_qu>; // hold = q, tap = macro(qu)
+};
+
+ht_Q_Qu: ht_Q_Qu {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <0>; // ▢ put back to 2 and put "__ Q 0" in wrapper's binding-cell?
+    flavor = "hold-preferred"; // which? 
+    tapping-term-ms = <200>; // ▢ TODO
+    quick-tap-ms = <200>; // ▢ TODO
+    bindings = <&kp LS(Q)>, <&m_mixcase_Qu>; // hold = Q, tap = macro(Qu)
+};
+
+mm_ht_qqu_QQu: mm_ht_qqu_QQu {
+    compatible = "zmk,behavior-mod-morph";
+    #binding-cells = <0>;
+    bindings = <&ht_q_qu>, <&ht_Q_Qu>;
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+  };
 
 
 
 
+
+
+// ----------------------------------------------------------------------------------------------------
 
 // for Nth cases: st, nd, rd, th - to put on NUM shift/holds
 m_1st: m_1st {
