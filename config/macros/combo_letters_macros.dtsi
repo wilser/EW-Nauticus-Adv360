@@ -4,15 +4,33 @@
 // --------------------
 // ALL FOR THE QU / Q CASES
 
-// trying to get into key layout:
-// tap: qu, shift-tap: Qu, hold: q, shift-hold: Q
-// 2024-04-24 - NOT working w.r.t. shifting
-//      still Ø - either "qu" or "QU" ...
-// ▢ if work, tidy up files/dependencies
 // timings - see https://zmk.dev/docs/behaviors/macros#wait-time 
     // wait-time = how long between <bindings>
     // tap-time = how long each binding is 'held'
 // when timing too slow, fast typing injects other keystrokes between the Q and the U // even with ~0 it's tricky
+
+// trying to get into key layout:
+// tap: qu, shift-tap: Qu, hold: q, shift-hold: Q
+
+  // Special for Q:
+    // tap|hold {qu,QU}; hold/shift {q,Q}
+    // uses "&as_Qu Q 0" in map; 0 parm for the nil macro parm
+    // [ ] WIP maybe plain F16 instead?
+    // [ ] see Macros & Mod-Morphs instead 2025-03-26
+    
+    // 2025-03-27 NOT USED NOW
+    /*
+    as_Qu: auto_shift_Qu {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      tapping-term-ms = <150>;
+      quick-tap-ms = <0>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&mm_qu_Qu>; // Hold > q, else qu|Qu
+    };
+    */
+
+// Q macros:
 m_lcase_qu: m_lcase_qu {
     compatible = "zmk,behavior-macro";
     wait-ms = <0>;
@@ -29,11 +47,6 @@ m_ucase_QU: m_ucase_QU {
     bindings = <&kp LS(Q)>, <&kp LS(U)>;
 };
 
-// [ ] Get un-shifted U?
-// ▣ maybe <&macro_pause_for_release> between?
-// CLOSE: tap: "qu"; s+tap: "QU"; n+tap-hold, rel either: "Qu"
-    // gap: getting simple Q
-    // hack for now: use bksp?
 m_uc_Q_lc_u: m_uc_Q_lc_u {
     compatible = "zmk,behavior-macro";
     wait-ms = <10>; // ??
@@ -46,6 +59,25 @@ m_uc_Q_lc_u: m_uc_Q_lc_u {
             , <&kp U>
     ;
 };
+
+/* OPTION 1
+ * HoldTap ⇒
+ *      > Q
+ *      > ModMorph
+ *          > qu
+ *          > Qu
+ */
+ // NOT working - Shift+<> ⇒ Q
+
+ /* OPTION 2
+  * ModMorph ⇒
+  *     > HoldTap - qu q
+  *     > HoldTap - Qu Q
+  */
+
+
+
+
 
 // MOD MORPH for qu Qu - note not &kp based!
 mm_qu_Qu: mm_qu_Qu {
@@ -64,7 +96,7 @@ mm_qu_Qu: mm_qu_Qu {
 ht_qu_QU: ht_qu_QU {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
-    flavor = "hold-preferred"; // which?
+    flavor = "hold-preferred"; // which? 
     tapping-term-ms = <200>; // ▢ TODO
     quick-tap-ms = <200>; // ▢ TODO
     bindings = <&kp>, <&mm_qu_Qu>; // hold, then tap / use Q then mod-morph
@@ -78,6 +110,9 @@ ht_QU_Q: ht_QU_Q {
     quick-tap-ms = <200>; // ▢ TODO
     bindings = <&kp>, <&m_ucase_QU>; // hold for Q, tap for QU macro
 };
+
+
+
 
 
 
