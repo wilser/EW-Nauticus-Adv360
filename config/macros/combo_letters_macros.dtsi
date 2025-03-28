@@ -12,12 +12,8 @@
 // trying to get into key layout:
 // tap: qu, shift-tap: Qu, hold: q, shift-hold: Q
 
-  // Special for Q:
-    // tap|hold {qu,QU}; hold/shift {q,Q}
-    // uses "&as_Qu Q 0" in map; 0 parm for the nil macro parm
-    // [ ] WIP maybe plain F16 instead?
-    // [ ] see Macros & Mod-Morphs instead 2025-03-26
-    
+// ▢ maybe the "keep-mods = ..." could help?
+
     // 2025-03-27 NOT USED NOW
     /*
     as_Qu: auto_shift_Qu {
@@ -88,6 +84,7 @@ mm_qu_Qu: mm_qu_Qu {
     #binding-cells = <0>;
     bindings = <&m_lcase_qu>, <&m_mixcase_Qu>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
+    masked-mods = <(MOD_LSFT|MOD_RSFT)>; // swallow the shift so Ø passed thru? (matter?)
   };
 
 // HOLD TAP: Q | ModMorph(qu Qu)
@@ -97,7 +94,7 @@ ht_qu_QU: ht_qu_QU {
     flavor = "hold-preferred"; // which? 
     tapping-term-ms = <200>; // ▢ TODO
     quick-tap-ms = <200>; // ▢ TODO
-    bindings = <&kp>, <&m_lcase_qu>; // hold <&kp>, tap <macro "qu">
+    bindings = <&kp>, <&mm_qu_Qu>; // hold <&kp>, tap <macro "qu">
 };
 
 
@@ -106,6 +103,8 @@ ht_qu_QU: ht_qu_QU {
   *     > HoldTap - q qu
   *     > HoldTap - Q Qu
   */
+
+// ▣ 2025-03-27 Ø working
 
 ht_q_qu: ht_q_qu {
     compatible = "zmk,behavior-hold-tap";
@@ -130,7 +129,7 @@ ht_Q_Qu: ht_Q_Qu {
 mm_ht_qqu_QQu: mm_ht_qqu_QQu {
     compatible = "zmk,behavior-mod-morph";
     #binding-cells = <0>;
-    bindings = <&ht_q_qu Q 0>, <&ht_Q_Qu LS(Q) 0>;
+    bindings = <&ht_q_qu Q 0>, <&ht_Q_Qu LS(Q) 0>; // « seems DOES NOT WORK ∵ ___?
     mods = <(MOD_LSFT|MOD_RSFT)>;
   };
 
