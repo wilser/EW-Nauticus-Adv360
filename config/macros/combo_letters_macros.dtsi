@@ -109,26 +109,28 @@ ht_qu_QU: ht_qu_QU {
 
 ht_q_qu: ht_q_qu {
     compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <0>; // ▢ put back to 2 and put "__ Q 0" in wrapper's binding-cell?
+    #binding-cells = <2>; // ▢ put back to 2 and put "__ Q 0" in wrapper's binding-cell?
     flavor = "hold-preferred"; // which? 
     tapping-term-ms = <200>; // ▢ TODO
     quick-tap-ms = <200>; // ▢ TODO
-    bindings = <&kp Q>, <&m_lcase_qu>; // hold = q, tap = macro(qu)
+    //bindings = <&kp Q>, <&m_lcase_qu>; // hold = q, tap = macro(qu)
+    bindings = <&kp>, <&m_lcase_qu>; // hold = q, tap = macro(qu)
 };
 
 ht_Q_Qu: ht_Q_Qu {
     compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <0>; // ▢ put back to 2 and put "__ Q 0" in wrapper's binding-cell?
+    #binding-cells = <2>; // ▢ put back to 2 and put "__ Q 0" in wrapper's binding-cell?
     flavor = "hold-preferred"; // which? 
     tapping-term-ms = <200>; // ▢ TODO
     quick-tap-ms = <200>; // ▢ TODO
-    bindings = <&kp LS(Q)>, <&m_mixcase_Qu>; // hold = Q, tap = macro(Qu)
+    //bindings = <&kp LS(Q)>, <&m_mixcase_Qu>; // hold = Q, tap = macro(Qu)
+    bindings = <&kp>, <&m_mixcase_Qu>; // hold = Q, tap = macro(Qu)
 };
 
 mm_ht_qqu_QQu: mm_ht_qqu_QQu {
     compatible = "zmk,behavior-mod-morph";
     #binding-cells = <0>;
-    bindings = <&ht_q_qu>, <&ht_Q_Qu>;
+    bindings = <&ht_q_qu Q 0>, <&ht_Q_Qu LS(Q) 0>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
   };
 
