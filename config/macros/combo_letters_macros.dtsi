@@ -105,7 +105,7 @@ ht_qu_QU: ht_qu_QU {
   */
 
 // ▣ 2025-03-27 Ø working - think because can't send &ref things in where simple parm [INT] expected
-
+/*
 ht_q_qu: ht_q_qu {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>; // ▢ put back to 2 and put "__ Q 0" in wrapper's binding-cell?
@@ -132,7 +132,7 @@ mm_ht_qqu_QQu: mm_ht_qqu_QQu {
     bindings = <&ht_q_qu Q 0>, <&ht_Q_Qu LS(Q) 0>; // « seems DOES NOT WORK ∵ ___?
     mods = <(MOD_LSFT|MOD_RSFT)>;
   };
-
+*/
 
 
 
