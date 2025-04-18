@@ -191,33 +191,6 @@ m_pm_lc: m_pm_lc {
     bindings = <&kp SPACE>, <&kp P>, <&kp DOT>, <&kp M>, <&kp DOT>;
 };
 
-// _AM
-m_am_uc: m_am_uc {
-    compatible = "zmk,behavior-macro";
-    wait-ms = <0>; // was 10
-    tap-ms = <1>; // was 5
-    #binding-cells = <0>;
-    bindings = <&kp SPACE>, <&kp LS(A)>, <&kp LS(M)>;
-};
-
-// _PM
-m_pm_uc: m_pm_uc {
-    compatible = "zmk,behavior-macro";
-    wait-ms = <0>; // was 10
-    tap-ms = <1>; // was 5
-    #binding-cells = <0>;
-    bindings = <&kp SPACE>, <&kp LS(P)>, <&kp LS(M)>;
-};
-
-// minutes
-m_minutes: m_minutes {
-    compatible = "zmk,behavior-macro";
-    wait-ms = <0>; // was 10
-    tap-ms = <1>; // was 5
-    #binding-cells = <0>;
-    bindings = <&kp SPACE>, <&kp M>, <&kp I>, <&kp N>, <&kp U>, <&kp T>, <&kp E>, <&kp S>;
-};
-
 
 // mod-morph shifts for these:
 // ▢ TODO: see also the Q case. And make C-macros for...
@@ -279,6 +252,78 @@ as_pm_lc: auto_shift_pm_lc {
     bindings = <&m_pm_lc>, <&kp>; 
 };
 
+// ... hr
+m_hr_abbrev: m_hr_abbrev {
+    compatible = "zmk,behavior-macro";
+    wait-ms = <0>; // was 10
+    tap-ms = <1>; // was 5
+    #binding-cells = <0>;
+    bindings = <&kp H> <&kp R>;
+};
+as_hr_abbrev: auto_shift_hr_abbrev {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    tapping-term-ms = <TAPPING_TERM_NUMPAD_HOLDS>;
+    quick-tap-ms = <0>;
+    flavor = "tap-preferred";
+    bindings = <&m_hr_abbrev>, <&kp>; 
+};
+
+// ... min
+m_min_abbrev: m_min_abbrev {
+    compatible = "zmk,behavior-macro";
+    wait-ms = <0>; // was 10
+    tap-ms = <1>; // was 5
+    #binding-cells = <0>;
+    bindings = <&kp M> <&kp I> <&kp N>;
+};
+as_min_abbrev: auto_shift_min_abbrev {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    tapping-term-ms = <TAPPING_TERM_NUMPAD_HOLDS>;
+    quick-tap-ms = <0>;
+    flavor = "tap-preferred";
+    bindings = <&m_min_abbrev>, <&kp>; 
+};
+
+
+
+
+
+/* TEMPLATE-ish
+
+//macro
+m_TBD: m_TBD {
+    compatible = "zmk,behavior-macro";
+    wait-ms = <0>; // was 10
+    tap-ms = <1>; // was 5
+    #binding-cells = <0>;
+    bindings = <&kp SPACE>, <&kp LS(A)>, <&kp LS(M)>;
+};
+// AS that uses Macro
+as_TBD: auto_shift_TBD {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    tapping-term-ms = <TAPPING_TERM_NUMPAD_HOLDS>;
+    quick-tap-ms = <0>;
+    flavor = "tap-preferred";
+    bindings = <&m_TBD>, <&kp>; 
+};
+
+*/
+
+
+/* UNUSED 2025-04-18
+
+// _AM
+m_am_uc: m_am_uc {
+    compatible = "zmk,behavior-macro";
+    wait-ms = <0>; // was 10
+    tap-ms = <1>; // was 5
+    #binding-cells = <0>;
+    bindings = <&kp SPACE>, <&kp LS(A)>, <&kp LS(M)>;
+};
+
 as_am_uc: auto_shift_am_uc {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
@@ -286,6 +331,15 @@ as_am_uc: auto_shift_am_uc {
     quick-tap-ms = <0>;
     flavor = "tap-preferred";
     bindings = <&m_am_uc>, <&kp>; 
+};
+
+// _PM
+m_pm_uc: m_pm_uc {
+    compatible = "zmk,behavior-macro";
+    wait-ms = <0>; // was 10
+    tap-ms = <1>; // was 5
+    #binding-cells = <0>;
+    bindings = <&kp SPACE>, <&kp LS(P)>, <&kp LS(M)>;
 };
 
 as_pm_uc: auto_shift_pm_uc {
@@ -297,6 +351,15 @@ as_pm_uc: auto_shift_pm_uc {
     bindings = <&m_pm_uc>, <&kp>; 
 };
 
+// minutes
+m_minutes: m_minutes {
+    compatible = "zmk,behavior-macro";
+    wait-ms = <0>; // was 10
+    tap-ms = <1>; // was 5
+    #binding-cells = <0>;
+    bindings = <&kp SPACE>, <&kp M>, <&kp I>, <&kp N>, <&kp U>, <&kp T>, <&kp E>, <&kp S>;
+};
+
 as_minutes: auto_shift_minutes {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
@@ -305,4 +368,4 @@ as_minutes: auto_shift_minutes {
     flavor = "tap-preferred";
     bindings = <&m_minutes>, <&kp>; 
 };
-
+*/
