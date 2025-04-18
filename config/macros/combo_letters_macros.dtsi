@@ -258,8 +258,9 @@ m_hr_abbrev: m_hr_abbrev {
     wait-ms = <0>; // was 10
     tap-ms = <1>; // was 5
     #binding-cells = <0>;
-    bindings = <&kp H> <&kp R>;
+    bindings = <&kp H>, <&kp R>;
 };
+
 as_hr_abbrev: auto_shift_hr_abbrev {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
@@ -275,7 +276,7 @@ m_min_abbrev: m_min_abbrev {
     wait-ms = <0>; // was 10
     tap-ms = <1>; // was 5
     #binding-cells = <0>;
-    bindings = <&kp M> <&kp I> <&kp N>;
+    bindings = <&kp M>, <&kp I>, <&kp N>;
 };
 as_min_abbrev: auto_shift_min_abbrev {
     compatible = "zmk,behavior-hold-tap";
