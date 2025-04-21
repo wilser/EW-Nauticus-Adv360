@@ -108,4 +108,20 @@ combo_win_ctrl_f24 {
     layers = <L_NGM>;
 };
 
+// C11 "(s)"
+m_s_parens: m_s_parens {
+    compatible = "zmk,behavior-macro";
+    wait-ms = <0>;
+    tap-ms = <1>;
+    #binding-cells = <0>;
+    bindings = <&kp LPAR>, <&kp S>, <&kp RPAR>;
+};
+combo_s_parens {
+    key-positions = <10 11>; // top row .)
+    bindings = <&m_s_parens>; // SEE ABOVE
+    layers = <L_NGM>;
+};
+
+
+
 
