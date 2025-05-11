@@ -420,9 +420,9 @@
             // DEFINES:
                 #define _KP_ENT     &kp KP_ENTER
 
-                #define _AD        &m_mmsNUM_AD 0 LS(A)
-                #define _BE        &m_mmsNUM_BE 0 LS(B)
-                #define _CF        &m_mmsNUM_CF 0 LS(C)
+                #define _AD        &m_mmsNUM_AD LS(A) 0
+                #define _BE        &m_mmsNUM_BE LS(B) 0
+                #define _CF        &m_mmsNUM_CF LS(C) 0
 
                 #define _BKSL_PIPE  &m_mmsNG2_Bksl PIPE 0
                 #define _DLLR_EURO  &m_mmsNUM_Dllr LC(LA(F16)) 0    // AHK: €
