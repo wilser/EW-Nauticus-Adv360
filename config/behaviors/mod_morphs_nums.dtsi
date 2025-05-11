@@ -15,9 +15,9 @@
 
   
   // Column 8 (rh-left-most)
-  MOD_MORPH_SHIFT(mmNUM_AD    , LS(D)          , LS(A)         , mmsNUM_AD)
-  MOD_MORPH_SHIFT(mmNUM_BE    , LS(E)          , LS(B)         , mmsNUM_BE)
-  MOD_MORPH_SHIFT(mmNUM_CF    , LS(F)          , LS(C)         , mmsNUM_CF)
+  MOD_MORPH_SHIFT(mmNUM_AD    , LS(A)          , LS(D)         , mmsNUM_AD)
+  MOD_MORPH_SHIFT(mmNUM_BE    , LS(B)          , LS(E)         , mmsNUM_BE)
+  MOD_MORPH_SHIFT(mmNUM_CF    , LS(C)          , LS(F)         , mmsNUM_CF)
 
   // Column 9 (just left of #s)
   MOD_MORPH_SHIFT(mmNUM_Dllr  , DOLLAR         , _CA_F16       , mmsNUM_Dllr) // _CA_F16: €
