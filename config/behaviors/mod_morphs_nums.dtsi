@@ -36,7 +36,8 @@
 
   MOD_MORPH_SHIFT(mmNUM_Divd  , KP_DIVIDE      , PERCENT       , mmsNUM_Divd)
   MOD_MORPH_SHIFT(mmNUM_Mnus  , KP_MINUS       , LS(MINUS)     , mmsNUM_Mnus)
-  MOD_MORPH_SHIFT(mmNUM_Cret  , CARET          , GRAVE         , mmsNUM_Cret)
+  //MOD_MORPH_SHIFT(mmNUM_Cret  , CARET          , GRAVE         , mmsNUM_Cret)
+  MOD_MORPH_SHIFT(mmNUM_Q_H   , LS(Q)          , LS(H)         , mmsNUM_Q_H)
 
 //Undefines
     #undef _CSA_F16

@@ -439,7 +439,8 @@
                 
                 #define _DIV_PCT    &m_mmsNUM_Divd PERCENT 0
                 #define _MNUS_UNDR  &m_mmsNUM_Mnus LS(MINUS) 0
-                #define _CRET_GRAV  &m_mmsNUM_Cret GRAVE 0
+                //#define _CRET_GRAV  &m_mmsNUM_Cret GRAVE 0
+                #define _Q_H        &m_mmsNUM_Q_H LS(H) 0
 
                 #define _ENT_CTLENT &as LC(ENTER) ENTER
 
@@ -451,7 +452,7 @@
                 ___      ___           ___        ___       ___        ___  &to L_NGM                                                 _AD  _BKSL_PIPE  _LPAR_LT      _DOT_CMMA           _RPAR_GT             _EQAL_TILD    &m_CSA_R
                 ___      &kp LEFT_GUI  &kp LSHFT  &kp LALT  &kp LCTRL  ___  ___                                                       _BE  _DLLR_EURO  _7_Q          &as_hr_abbrev 0 N8  &as_min_abbrev 0 N9  _MULT_TIMES   _DIV_PCT
                 ___      ___           ___        ___       ___        ___  ___      &kp LSHFT  &to L_0    _KP_ENT   &kp BSPC         _CF  _COLN_SEMI  &as_4th 0 N4  &as_am_lc 0 N5      &as_pm_lc 0 N6       &kp N0        _MNUS_UNDR
-                &to L_0  &mo L_EDT     ___        ___       &kp X      ___                         ___      &kp RS(TAB)                    ___         &as_1st 0 N1  &as_2nd 0 N2        &as_3rd 0 N3         _PLUS_AMP     _CRET_GRAV
+                &to L_0  &mo L_EDT     ___        ___       &kp X      ___                         ___      &kp RS(TAB)                    ___         &as_1st 0 N1  &as_2nd 0 N2        &as_3rd 0 N3         _PLUS_AMP     _Q_H
                 ___      ___           ___        ___       ___                         ___  ___  ___        &kp TAB  _ENT_CTLENT  &kp SPACE           ___           ___                 ___                  ___           &to L_0
             >; };
             //&kp KP_ENTER - put back?
@@ -473,7 +474,8 @@
                 #undef _PLUS_AMP 
                 #undef _DIV_PCT  
                 #undef _MNUS_UNDR
-                #undef _CRET_GRAV
+                //#undef _CRET_GRAV
+                #undef _Q_H
                 #undef _ENT_CTLENT
             // END UNDEFS
         // END Numpad
