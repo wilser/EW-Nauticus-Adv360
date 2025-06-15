@@ -102,7 +102,7 @@ combo_s_parens {
 
 // [K] COLON (:)
 combo_colon {
-    key-positions = <34 35>; // L-; + L-thumb
+    key-positions = <33 35>; // L-; + L-thumb
     bindings = <&kp COLON>;
     layers = <L_NGM>;
 };
