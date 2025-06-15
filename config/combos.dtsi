@@ -102,8 +102,8 @@ combo_s_parens {
 
 // [K] COLON (:)
 combo_colon {
-    key-positions = <33 35>; // L-; + L-thumb
-    bindings = <&kp LS(SEMI)>; // WIP seems COLON not working?
+    key-positions = <32 33>; // L-; + L-thumb
+    bindings = <&kp COLON>; // WIP seems 33+ # not working, trying other pair?
     layers = <L_NGM>;
 };
 
