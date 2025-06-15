@@ -105,7 +105,7 @@ combo_colon {
     key-positions = <34 35>; // L-; + L-thumb
     bindings = <&kp COLON>;
     layers = <L_NGM>;
-}
+};
 
 
 /* 2025-03-27+ unused
