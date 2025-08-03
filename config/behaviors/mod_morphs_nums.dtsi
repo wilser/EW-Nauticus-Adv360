@@ -11,16 +11,13 @@
     #define _CA_F16 LC(LA(F16))    // AHK: € - euro
     #define _CA_F22 LC(LA(F22))    // AHK: ° - degree
     #define _CA_F23 LC(LA(F23))    // AHK: × - times
-    #define _CA_F24 LC(LA(F24))    // AHK: ÷ - divide       // Ø used 2024-08-25
 
   
-  // Column 8 (rh-left-most) / was for HEX# entry; but never use...
-  //MOD_MORPH_SHIFT(mmNUM_AD    , LS(A)          , LS(D)         , mmsNUM_AD)
-  //MOD_MORPH_SHIFT(mmNUM_BE    , LS(B)          , LS(E)         , mmsNUM_BE)
-  //MOD_MORPH_SHIFT(mmNUM_CF    , LS(C)          , LS(F)         , mmsNUM_CF)
+  // Column 8 (some just Auto-Shift in main layout)
+  MOD_MORPH_SHIFT(mmNUM_Apos  , APOS           , _CA_F16       , mmsNUM_Apos)
 
   // Column 9 (just left of #s)
-  //MOD_MORPH_SHIFT(mmNUM_Dllr  , DOLLAR         , _CA_F16       , mmsNUM_Dllr) // _CA_F16: €
+  MOD_MORPH_SHIFT(mmNUM_Dllr  , DOLLAR         , DQT           , mmsNUM_Dllr)
   MOD_MORPH_SHIFT(mmNUM_Coln  , COLON          , SEMI          , mmsNUM_Coln)
 
   // Top (just above #s) / R1, C10-12
@@ -36,12 +33,22 @@
 
   MOD_MORPH_SHIFT(mmNUM_Divd  , KP_DIVIDE      , PERCENT       , mmsNUM_Divd)
   MOD_MORPH_SHIFT(mmNUM_Mnus  , KP_MINUS       , LS(MINUS)     , mmsNUM_Mnus)
-  //MOD_MORPH_SHIFT(mmNUM_Cret  , CARET          , GRAVE         , mmsNUM_Cret)
   MOD_MORPH_SHIFT(mmNUM_Q_H   , LS(Q)          , LS(H)         , mmsNUM_Q_H)
 
 //Undefines
     #undef _CSA_F16
     #undef _CSA_F22
     #undef _CSA_F23
-    #undef _CSA_F24
 
+
+// OLDER UNUSED
+
+    //#define _CA_F24 LC(LA(F24))    // AHK: ÷ - divide       // Ø used 2024-08-25
+
+  // Column 8 (rh-left-most) / was for HEX# entry; but never use...
+  //MOD_MORPH_SHIFT(mmNUM_AD    , LS(A)          , LS(D)         , mmsNUM_AD)
+  //MOD_MORPH_SHIFT(mmNUM_BE    , LS(B)          , LS(E)         , mmsNUM_BE)
+  //MOD_MORPH_SHIFT(mmNUM_CF    , LS(C)          , LS(F)         , mmsNUM_CF)
+
+  //MOD_MORPH_SHIFT(mmNUM_Dllr  , DOLLAR         , _CA_F16       , mmsNUM_Dllr) // _CA_F16: €
+  //MOD_MORPH_SHIFT(mmNUM_Cret  , CARET          , GRAVE         , mmsNUM_Cret)
