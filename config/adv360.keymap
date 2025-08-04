@@ -45,16 +45,15 @@
     #define MODS_LEFT 15 16 17 18
     #define MODS_RIGHT 23 24 25 26
 
-// END    keymaps and subsets
+// END key-numbers define
 
-// DEFINE helper consts - common key-defaults (block [&none] or passthrough [&trans])
-    #define ___ &trans
-    #define _x_ &none
-    #define _tbd_ &none
-    #define nil 0
-// END    helper contts
+// Helpers for common key-defaults (block [&none] or passthrough [&trans])
+#define ___ &trans
+#define _x_ &none
+#define _tbd_ &none
+#define nil 0
 
-// DEFINES layers consts:
+// DEFINES for layers:
     /* LED layer colors:  0 ⚫   1 ⚪   2 🔵   3 🟢   4 🔴   5 🟣   6 🩵   7 🟡   8 ⚫   9 ⚫*/
     /*                    NGM      LR     EDT    NUM     UTL    FNC     LET    CAP    QRT    kp#   */
     #define L_0 0
@@ -69,9 +68,9 @@
     #define L_QRT 8     // Qwerty-ish; like for games
     #define L_KP 9      // keypad (*actual KP key codes) (rare)
     
-// END     layers consts
+// END defines for layers
 
-/* NOTES TAPPING timeouts, flavors, etc.
+/* TAPPING timeouts, flavors, etc.
     try disable global-quick-tap, & set quick-tap-ms faster like 125
     one suggested like 75 for the "global-quick-tap-ms" [which seems maybe new/ish]
     try remove 'hold trigger' positions to see
@@ -421,9 +420,13 @@
             // DEFINES:
                 #define _KP_ENT     &kp KP_ENTER
 
-                #define _APOS_EURO  &m_mmsNUM_Apos LC(LA(F16)) 0  // AHK: €
+                //#define _AD        &m_mmsNUM_AD LS(D) 0
+                //#define _BE        &m_mmsNUM_BE LS(E) 0
+                //#define _CF        &m_mmsNUM_CF LS(F) 0
+
+                #define _BKSL_PIPE  &m_mmsNG2_Bksl PIPE 0
+                //#define _DLLR_EURO  &m_mmsNUM_Dllr LC(LA(F16)) 0    // AHK: €
                 #define _COLN_SEMI  &m_mmsNUM_Coln SEMI 0
-                #define _DLLR_DQT   &m_mmsNUM_Dllr DQT 0
 
                 #define _LPAR_LT    &m_mmsNUM_Lpar LT 0
                 #define _DOT_CMMA   &m_mmsNUM_Dot COMMA 0
@@ -431,10 +434,12 @@
 
                 #define _EQAL_TILD  &m_mmsNUM_Eqal TILDE 0
                 #define _MULT_TIMES &m_mmsNUM_Mult LC(LA(F23)) 0    // AHK: ×
+                //#define _ZERO_DEGR  &m_mmsNUM_Zero LC(LA(F22)) 0    // AHK: ° // seems often race-cond leaves Ctrl or Alt stuck
                 #define _PLUS_AMP   &m_mmsNUM_Plus LS(N7) 0
                 
                 #define _DIV_PCT    &m_mmsNUM_Divd PERCENT 0
                 #define _MNUS_UNDR  &m_mmsNUM_Mnus LS(MINUS) 0
+                //#define _CRET_GRAV  &m_mmsNUM_Cret GRAVE 0
                 #define _Q_H        &m_mmsNUM_Q_H LS(H) 0
 
                 #define _ENT_CTLENT &as LC(ENTER) ENTER
@@ -442,14 +447,15 @@
                 #define _7_Q        &as_slw LS(Q) N7
                 #define AS_UpLf     &as LEFT UP
                 #define AS_DnRt     &as RIGHT DOWN
+                #define AS_Apos_Eu   &as LC(LA(F16)) APOS    // AHK ^!F16: € - euro
                 #define AS_Hm_CtlHm  &as_slw RC(HOME) HOME
                 #define AS_En_CtlEn  &as_slw RC(END) END
 
             // end defines
         
             numpad_layer { bindings = <
-                ___      ___           ___        ___       ___        ___  &to L_NGM                                                 _APOS_EURO   _BKSL_PIPE  _LPAR_LT      _DOT_CMMA           _RPAR_GT             _EQAL_TILD    &m_CSA_R
-                ___      &kp LEFT_GUI  &kp LSHFT  &kp LALT  &kp LCTRL  ___  ___                                                       AS_Hm_CtlHm  _DLLR_DQT   _7_Q          &as_hr_abbrev 0 N8  &as_min_abbrev 0 N9  _MULT_TIMES   _DIV_PCT
+                ___      ___           ___        ___       ___        ___  &to L_NGM                                                 AS_Apos_Eu   _BKSL_PIPE  _LPAR_LT      _DOT_CMMA           _RPAR_GT             _EQAL_TILD    &m_CSA_R
+                ___      &kp LEFT_GUI  &kp LSHFT  &kp LALT  &kp LCTRL  ___  ___                                                       AS_Hm_CtlHm  ___         _7_Q          &as_hr_abbrev 0 N8  &as_min_abbrev 0 N9  _MULT_TIMES   _DIV_PCT
                 ___      ___           ___        ___       ___        ___  ___      &kp LSHFT  &to L_0    _KP_ENT   &kp BSPC         AS_En_CtlEn  _COLN_SEMI  &as_4th 0 N4  &as_am_lc 0 N5      &as_pm_lc 0 N6       &kp N0        _MNUS_UNDR
                 &to L_0  &mo L_EDT     ___        ___       _x_        ___                         ___      &kp RS(TAB)                            ___         &as_1st 0 N1  &as_2nd 0 N2        &as_3rd 0 N3         _PLUS_AMP     _Q_H
                 ___      ___           ___        ___       ___                         ___  ___  ___        &kp TAB  _ENT_CTLENT  &kp SPACE                   AS_UpLf       AS_DnRt             ___                  ___           &to L_0
@@ -457,23 +463,28 @@
             //&kp KP_ENTER - put back?
 
             // #UNDEFS:
-                #undef _KP_ENT
-                #undef _APOS_EURO
+                #undef _KP_ENT   
+                //#undef _B_A      
+                //#undef _D_C      
+                //#undef _F_E      
                 #undef _BKSL_PIPE
+                //#undef _DLLR_EURO
                 #undef _COLN_SEMI
-                #undef _DLLR_DQT
                 #undef _LPAR_LT  
                 #undef _DOT_CMMA 
                 #undef _RPAR_GT  
                 #undef _EQAL_TILD
                 #undef _MULT_TIME
+                //#undef _ZERO_DEGR
                 #undef _PLUS_AMP 
                 #undef _DIV_PCT  
                 #undef _MNUS_UNDR
+                //#undef _CRET_GRAV
                 #undef _Q_H
                 #undef _ENT_CTLENT
                 #undef AS_UpLf
                 #undef AS_DnRt
+                #undef AS_Apos_Eu 
                 #undef AS_Hm_CtlHm
                 #undef AS_En_CtlEn
             // END UNDEFS
