@@ -12,7 +12,8 @@
     #define _CA_F22 LC(LA(F22))    // AHK: ° - degree
     #define _CA_F23 LC(LA(F23))    // AHK: × - times
   
-  // Column 8 (rh-left-most) / was for HEX# entry; but never use...
+  // Column 8 (some just Auto-Shift in main layout)
+  MOD_MORPH_SHIFT(mmNUM_Apos  , APOS           , _CA_F16       , mmsNUM_Apos) // AHK _CA_F16: € - euro
 
   // Column 9 (just left of #s)
   MOD_MORPH_SHIFT(mmNUM_Dllr  , DOLLAR         , DQT           , mmsNUM_Dllr) // DQT: " - double quote
@@ -25,8 +26,8 @@
 
   // Rest of RH side / C13-14
   MOD_MORPH_SHIFT(mmNUM_Eqal  , EQUAL          , TILDE         , mmsNUM_Eqal)
-  MOD_MORPH_SHIFT(mmNUM_Mult  , KP_ASTERISK    , _CA_F23       , mmsNUM_Mult) // _CA_F23: ×
-  MOD_MORPH_SHIFT(mmNUM_Zero  , N0             , _CA_F22       , mmsNUM_Zero) // _CA_F22: °
+  MOD_MORPH_SHIFT(mmNUM_Mult  , KP_ASTERISK    , _CA_F23       , mmsNUM_Mult) // AHK _CA_F23: ×
+  MOD_MORPH_SHIFT(mmNUM_Zero  , N0             , _CA_F22       , mmsNUM_Zero) // AHK _CA_F22: °
   MOD_MORPH_SHIFT(mmNUM_Plus  , KP_PLUS        , LS(N7)        , mmsNUM_Plus) 
 
   MOD_MORPH_SHIFT(mmNUM_Divd  , KP_DIVIDE      , PERCENT       , mmsNUM_Divd)
