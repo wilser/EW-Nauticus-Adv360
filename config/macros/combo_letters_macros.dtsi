@@ -179,7 +179,7 @@ m_am_lc: m_am_lc {
     wait-ms = <0>; // was 10
     tap-ms = <1>; // was 5
     #binding-cells = <0>;
-    bindings = <&kp SPACE>, <&kp A>, <&kp DOT>, <&kp M>, <&kp DOT>;
+    bindings = <&kp A>, <&kp DOT>, <&kp M>, <&kp DOT>;
 };
 
 // _p.m.
@@ -188,7 +188,7 @@ m_pm_lc: m_pm_lc {
     wait-ms = <0>; // was 10
     tap-ms = <1>; // was 5
     #binding-cells = <0>;
-    bindings = <&kp SPACE>, <&kp P>, <&kp DOT>, <&kp M>, <&kp DOT>;
+    bindings = <&kp P>, <&kp DOT>, <&kp M>, <&kp DOT>;
 };
 
 
