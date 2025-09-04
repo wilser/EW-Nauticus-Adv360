@@ -302,7 +302,7 @@
                 #define AS_Hm_CtlHm     &as_slw RC(HOME) HOME
                 #define AS_Bk_CtlBk     &as_slw RC(BSPC) BSPC
                 #define AS_En_CtlEn     &as_slw RC(END) END
-                #define TD_ScrnShots    &TD_WinScreenshot_SnagIt   // 1x: Win+Shift+S   2x: Ctrl+Alt+P
+                #define TD_ScrnShots    &TD_WinScreenshot_SnagIt   // 1x: Win+Shift+S   2x: Ctrl+Shift+Alt+P
                 #define LH_Bslh_LET     &lt L_LET BSLH // hold=alpha(letter) layer hold; else backslash
   
                 // Other / WIP:
@@ -434,63 +434,57 @@
 
             // DEFINES:
                 #define _KP_ENT      &kp KP_ENTER
- 
                 #define _BKSL_PIPE   &m_mmsNG2_Bksl PIPE 0
                 #define _APOS_EURO   &m_mmsNUM_Apos LC(LA(F16)) 0  // AHK: €
                 #define _COLN_SEMI   &m_mmsNUM_Coln SEMI 0
                 #define _DLLR_DQT    &m_mmsNUM_Dllr DQT 0
- 
                 #define _LPAR_LT     &m_mmsNUM_Lpar LT 0
                 #define _DOT_CMMA    &m_mmsNUM_Dot COMMA 0
                 #define _RPAR_GT     &m_mmsNUM_Rpar GT 0
- 
                 #define _EQAL_TILD   &m_mmsNUM_Eqal TILDE 0
                 #define _MULT_TIMES  &m_mmsNUM_Mult LC(LA(F23)) 0    // AHK: ×
                 #define _PLUS_AMP    &m_mmsNUM_Plus LS(N7) 0
-                 
                 #define _DIV_PCT     &m_mmsNUM_Divd PERCENT 0
                 #define _MNUS_UNDR   &m_mmsNUM_Mnus LS(MINUS) 0
                 #define _Q_H         &m_mmsNUM_Q_H LS(H) 0
- 
                 #define _ENT_CTLENT  &as LC(ENTER) ENTER
- 
                 #define _7_Q         &as_slw LS(Q) N7
                 #define AS_UpLf      &as LEFT UP
                 #define AS_DnRt      &as RIGHT DOWN
                 #define AS_Apos_Eu   &as LC(LA(F16)) APOS    // AHK ^!F16: € - euro
                 #define AS_Hm_CtlHm  &as_slw RC(HOME) HOME
                 #define AS_En_CtlEn  &as_slw RC(END) END
-
             // end defines
         
             numpad_layer { bindings = <
                 ___      ___           ___        ___       ___        ___  &to L_NGM                                               _APOS_EURO   _BKSL_PIPE  _LPAR_LT      _DOT_CMMA           _RPAR_GT             _EQAL_TILD   &m_CSA_R
                 ___      &kp LEFT_GUI  &kp LSHFT  &kp LALT  &kp LCTRL  ___  ___                                                     AS_Hm_CtlHm  _DLLR_DQT   _7_Q          &as_hr_abbrev 0 N8  &as_min_abbrev 0 N9  _MULT_TIMES  _DIV_PCT
-                ___      ___           ___        ___       ___        ___  ___      &kp LSHFT  &to L_0  _KP_ENT  &kp BSPC          AS_En_CtlEn  _COLN_SEMI  &as_4th 0 N4  &as_am_lc 0 N5      &as_pm_lc 0 N6       &kp N0       _MNUS_UNDR
-                &to L_0  &mo L_EDT     ___        ___       _x_        ___                           ___  &kp RS(TAB)                            ___         &as_1st 0 N1  &as_2nd 0 N2        &as_3rd 0 N3         _PLUS_AMP    _Q_H
-                ___      ___           ___        ___       ___                            ___  ___  ___  &kp TAB  _ENT_CTLENT  &kp SPACE                    AS_UpLf       AS_DnRt             ___                  ___          &to L_0
+                ___      &kp LC(D)     ___        ___       ___        ___  ___      &kp LSHFT  &to L_0  _KP_ENT  &kp BSPC          AS_En_CtlEn  _COLN_SEMI  &as_4th 0 N4  &as_am_lc 0 N5      &as_pm_lc 0 N6       &kp N0       _MNUS_UNDR
+                &to L_0  &mo L_EDT     ___        ___       _x_        ___                          ___    &kp RS(TAB)                            ___        &as_1st 0 N1  &as_2nd 0 N2        &as_3rd 0 N3         _PLUS_AMP    _Q_H
+                ___      ___           ___        ___       ___                          ___  ___  ___      &kp TAB  _ENT_CTLENT  &kp SPACE                  AS_UpLf       AS_DnRt             ___                  ___          &to L_0
             >; };
 
             // #UNDEFS:
-                #undef _KP_ENT   
-                #undef _BKSL_PIPE
-                #undef _DLLR_DQT
-                #undef _COLN_SEMI
-                #undef _LPAR_LT  
-                #undef _DOT_CMMA 
-                #undef _RPAR_GT  
-                #undef _EQAL_TILD
-                #undef _MULT_TIME
-                #undef _PLUS_AMP 
-                #undef _DIV_PCT  
-                #undef _MNUS_UNDR
-                #undef _Q_H
-                #undef _ENT_CTLENT
-                #undef AS_UpLf
-                #undef AS_DnRt
-                #undef AS_Apos_Eu 
-                #undef AS_Hm_CtlHm
-                #undef AS_En_CtlEn
+                #undef _BKSL_PIPE   
+                #undef _APOS_EURO   
+                #undef _COLN_SEMI   
+                #undef _DLLR_DQT    
+                #undef _LPAR_LT     
+                #undef _DOT_CMMA    
+                #undef _RPAR_GT     
+                #undef _EQAL_TILD   
+                #undef _MULT_TIMES  
+                #undef _PLUS_AMP    
+                #undef _DIV_PCT     
+                #undef _MNUS_UNDR   
+                #undef _Q_H         
+                #undef _ENT_CTLENT  
+                #undef _7_Q         
+                #undef AS_UpLf      
+                #undef AS_DnRt      
+                #undef AS_Apos_Eu   
+                #undef AS_Hm_CtlHm  
+                #undef AS_En_CtlEn  
             // END UNDEFS
         // END Numpad
 
