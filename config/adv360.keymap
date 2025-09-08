@@ -410,17 +410,30 @@
                 - &m_WC_* = same key-delayed macro for Win+Ctrl+C|V (AHK copy|paste unformatted)
                 - [.] temp trying w/o Win key at all using **F13** instead - see AHK
                 - [.] temp +ClipMate on NGM V position
-                - [.] 2025-08-29: WHERE/IF put back Ctlr, Shift, Alt, Win?
+                - 2025-09-08: move some to mod-row taps, & better match NGM (also get off LH Thumb for using Thumb-hold always and working better with NayaCreate)
             */
+
+            // Defines:
+                #define _CtlB_GUI          &hm_slw LGUI LC(B) // bold + Win
+                #define _AltY_SFT          &hm_slw LSHFT LA(Y) // yes + Alt
+                #define _AltN_ALT          &hm_slw LALT LA(N) // no + Shift
+                #define _CtlU_CTL          &hm_slw LCTRL LC(U) // underline + Ctrl
+            // End Defines
             
             navnedit_layer { bindings = <
                 _x_        _x_        &kp F2     &kp LC(O)    &kp LC(W)    &kp F5     &to L_0                                                            ___   &kp SLCK      _x_       _x_       _x_        _x_          &kp KP_NUMLOCK
-                &kp LC(Y)  &kp LGUI   &kp LSHFT  &kp LALT     &kp LCTRL    &kp LC(I)  &kp LA(Y)                                                          _x_   &kp RC(HOME)  &kp HOME  &kp UP    &kp END    &kp RC(END)  &kp INS
-                &kp LC(D)  &kp LC(X)  &kp LC(C)  &kp LC(V)    &kp LC(A)    &kp LC(B)  &kp LA(N)           &m_SEL_LINE  &kp RC(A)  _x_  &kp BSPC          _x_   &kp PG_UP     &kp LEFT  &kp DOWN  &kp RIGHT  _x_          &kp CAPS
+                &kp LC(Y)  _CtlB_GUI  _AltY_SFT  _AltN_ALT    _CtlU_CTL    &kp LC(I)  _x_                                                                _x_   &kp RC(HOME)  &kp HOME  &kp UP    &kp END    &kp RC(END)  &kp INS
+                &kp LC(D)  &kp LC(X)  &kp LC(C)  &kp LC(V)    &kp LC(A)    _x_        _x_                 &m_SEL_LINE  &kp RC(A)  _x_  &kp BSPC          _x_   &kp PG_UP     &kp LEFT  &kp DOWN  &kp RIGHT  _x_          &kp CAPS
                 &kp LC(Z)  &kp LC(S)  &kp F13    &kp LC(F13)  &kp LC(K)    &m_CSA_V                                &m_SEL_WRD_L    _x_                         &kp PG_DN     _x_       _x_       _x_        _x_          &kp PAUSE_BREAK
                 ___        &kp UP     &kp DOWN   ___          ___                           &kp LC(Z)  &kp LC(Y)  &m_SEL_WRD_R      &m_MinWin  ___  ___                      ___       ___       _x_        _x_          &kp PSCRN 
             >; };
 
+            // Undefs:
+                #undef _CtlB_GUI          
+                #undef _AltY_SFT          
+                #undef _AltN_ALT          
+                #undef _CtlU_CTL
+            // End Undefs
         // END Edit
 
         /*****************************************************************************************************
