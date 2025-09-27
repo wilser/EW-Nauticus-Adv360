@@ -38,7 +38,8 @@
 
 // Left Bottom
   MOD_MORPH_SHIFT(mmNG2_Bksl  , BSLH        , PIPE        , mmsNG2_Bksl)
-  MOD_MORPH_SHIFT(mmNG2_Cret  , CARET       , GRAVE       , mmsNG2_Cret)
+  //MOD_MORPH_SHIFT(mmNG2_Cret  , CARET       , GRAVE       , mmsNG2_Cret)
+  MOD_MORPH_SHIFT(mmNG2_Grav  , GRAVE       , CARET       , mmsNG2_Grav)
 
  // L-MID COLUMN (T to B): 
   //MOD_MORPH_SHIFT(mmNG2_Lpar  , LPAR        , F16         , mmsNG2_Lpar) // F16 "Ø"
