@@ -15,10 +15,19 @@ m_##MM_NAME: m_##MM_NAME { \
 
 // When LEFT SHIFT being held, make the RIGHT SHIFT act as backspace for convenience
 // (because in my layout, I usually hold left-thumb shift, but backspace normally is on a different left-thumb key)
+// 2025-12-29 Ø using:
 mm_SHIFT_BACKSPACE_R: mm_SHIFT_BACKSPACE_R {
     compatible = "zmk,behavior-mod-morph";
     #binding-cells = <0>;
     bindings = <&kp RSHFT>, <&kp BACKSPACE>;
+    mods = <(MOD_LSFT)>;
+};
+
+// 2025-12-29 instead of ^ one?
+mm_BACKSLASH_BACKSPACE_R: mm_BACKSLASH_BACKSPACE_R {
+    compatible = "zmk,behavior-mod-morph";
+    #binding-cells = <0>;
+    bindings = <&kp BSLH>, <&kp BACKSPACE>;
     mods = <(MOD_LSFT)>;
 };
 
