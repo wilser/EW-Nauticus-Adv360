@@ -99,7 +99,7 @@
         #include "macros/shortcuts_macros.dtsi"
         #include "macros/hold_mods_delays.dtsi"
         //#include "macros/tap_hold_macros.dtsi"
-        #include "macros/combo_letters_macros.dtsi"
+        #include "macros/combos_macros_for_holds.dtsi"
     };
 
     combos {
@@ -368,8 +368,6 @@
                 #define _X_NUM        &lht_fst L_NUM X
                 #define BS_CTL_L      &as LC(L) BSLH
                 #define _D_Auto_NUM   &ht_LR_D_Auto_NUM L_NUM 0
-
-
             // end defines
 
             lr_layer { bindings = <

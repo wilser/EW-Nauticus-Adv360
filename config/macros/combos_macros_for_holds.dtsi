@@ -288,6 +288,40 @@ as_min_abbrev: auto_shift_min_abbrev {
 };
 
 
+/* 2026-01-18 Hold [ & ] ⇒ [[ & ]] for Obsidian way more common (still use Shift+[] for {} */
+m_2brackets_left: m_2brackets_left {
+    compatible = "zmk,behavior-macro";
+    wait-ms = <0>; 
+    tap-ms = <1>; 
+    #binding-cells = <0>;
+    bindings = <&kp LBKT>, <&kp LBKT>;
+};
+as_2brackets_left: auto_shift_2brackets_left {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    tapping-term-ms = <TAPPING_TERM_NUMPAD_HOLDS>;
+    quick-tap-ms = <0>;
+    flavor = "tap-preferred";
+    bindings = <&m_2brackets_left>, <&kp>; 
+};
+
+m_2brackets_right: m_2brackets_right {
+    compatible = "zmk,behavior-macro";
+    wait-ms = <0>; 
+    tap-ms = <1>; 
+    #binding-cells = <0>;
+    bindings = <&kp RBKT>, <&kp RBKT>;
+};
+as_2brackets_right: auto_shift_2brackets_right {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    tapping-term-ms = <TAPPING_TERM_NUMPAD_HOLDS>;
+    quick-tap-ms = <0>;
+    flavor = "tap-preferred";
+    bindings = <&m_2brackets_right>, <&kp>; 
+};
+
+
 
 /* TEMPLATE-ish
 
@@ -311,6 +345,10 @@ as_TBD: auto_shift_TBD {
 
 */
 
+
+
+
+/* **************************************************************************************************** */
 
 /* UNUSED 2025-04-18
 
