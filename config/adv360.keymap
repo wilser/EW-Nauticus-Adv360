@@ -266,7 +266,7 @@
                     F21 •
                     ^!F17 --
                     !F21 →
-            
+                • 2026-01-18 add 2-bracket keys (AS_2BKT_L/R) for easier access to [[ and ]] - see below in layer / was: "&as LS(LBKT) LBKT    &as LS(RBKT) RBKT"
             TODO:
                 ▢ see also Keyboard Layout Editor for TODO items (↑ link above)
                 ▢ RH-thumb top-left - TBD (was \)
@@ -308,6 +308,9 @@
                 #define BUL_AR_tbd      &as F17 F15 // WIP
                 #define Dt1_Dt0         &m_mmsNG2_D1D0 RC(RA(F17)) 0 // AHK Ctrl+Alt+{F17,F18} >> trigger Date1 and Date0 shortcuts
                 #define _CpWrd_Caps     &ht_cap_cw L_CAP 0 // hold=CAPS else capWORD
+                #define AS_2BKT_L       &as_2brackets_left 0 LBKT
+                #define AS_2BKT_R       &as_2brackets_right 0 RBKT
+
             // end defines
 
             engram_layer { bindings = <
@@ -315,7 +318,7 @@
                 &kp ESC                 _B_GUI               _Y_SFT               _O_ALT               _U_CTL               &m_mmsNG2_Star F16 0  _HYPER                                                                        TD_ScrnShots  &m_mmsNG2_Quot DLLR 0  _L_CTL               _D_ALT               _W_SFT               _V_GUI               &m_mmsNG2_Slsh PERCENT 0
                 MT_TB_SHFTB             &kp C                &as_slw RS(I) I      &kp E                &kp A                &m_mmsNG2_Semi LT 0   _MEH            _CpWrd_Caps   NUM_LR_NUM   LH_Bslh_LET  _BSLH_BSP_R           Dt1_Dt0       &m_mmsNG2_Coln GT 0    &kp H                &kp T                &kp S                &kp N                &m_mmsNG2_Mnus UNDERSCORE 0
                 &m_mmsNG2_Grav CARET 0  &lt L_EDT G          &kp X                &lt L_UTL J          &lt_fst L_NUM K      &m_mmsNG2_Amps AT 0                               AS_Hm_CtlHm     &kp PG_UP                                       &m_mmsNG2_Hash PLUS 0  &kp R                &kp M                &kp F                &kp P                /*&mm_ht_qqu_QQu*/ &ht_qu_QU Q 0 /*&mm_qu_Qu */   /* &as_Qu Q 0 // auto-shift means Shift gets the Hold (q) behavior */
-                &TD_Emj_WinDsk          BUL_AR_tbd           &TD_Rtclick_P        &kp LEFT             &kp RIGHT                                 AS_Bk_CtlBk  &lt L_EDT DEL  AS_En_CtlEn       &kp PG_DN  &lt L_FNC ENTER  &kp SPACE                                 &kp UP               &kp DOWN             &as LS(LBKT) LBKT    &as LS(RBKT) RBKT    &to L_NUM
+                &TD_Emj_WinDsk          BUL_AR_tbd           &TD_Rtclick_P        &kp LEFT             &kp RIGHT                                 AS_Bk_CtlBk  &lt L_EDT DEL  AS_En_CtlEn       &kp PG_DN  &lt L_FNC ENTER  &kp SPACE                                 &kp UP               &kp DOWN             AS_2BKT_L            AS_2BKT_R            &to L_NUM
             >; };
             // TEMP: was _SHF_BSP_L on l-thumb
 
@@ -341,6 +344,8 @@
                 #undef BUL_AR_tbd    
                 #undef Dt1_Dt0
                 #undef _CpWrd_Caps
+                #undef AS_2BKT_L
+                #undef AS_2BKT_R
             // end undefs
         // END Engram
 
