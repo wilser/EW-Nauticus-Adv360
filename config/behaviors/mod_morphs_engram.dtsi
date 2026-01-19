@@ -9,8 +9,8 @@
 /* first label "mm<>" goes to "m_mm<>" for the &mm<> ref in layouts */
 
 // ---------- NEW WIP LAYOUTS 2024-02-19+ ---------- //
-// [.]^!F14 >> AHK(~ing)
-// [.]^!F15 >> AHK(~tion)
+// [.]^!F14 >> AHK(~ing) >> 2026-01-19 changed to F11 & 12 (13-24 Ø work thru RDP)
+// [.]^!F15 >> AHK(~tion) >> F12
 //  F15 >> AHK(⇒)
 //  F16 >> AHK(Ø)
 //  F17 >> AHK(•)
@@ -26,9 +26,9 @@
   MOD_MORPH_SHIFT(mmNG2_Qstn  , QMARK       , N2          , mmsNG2_Qstn)
   MOD_MORPH_SHIFT(mmNG2_Cmma  , COMMA       , N3          , mmsNG2_Cmma)
   MOD_MORPH_SHIFT(mmNG2_Apos  , APOS        , N4          , mmsNG2_Apos)
-  MOD_MORPH_SHIFT(mmNG2_Ing   , RC(F14)     , N5          , mmsNG2_Ing ) // ^F14 "ing"
+  MOD_MORPH_SHIFT(mmNG2_Ing   , RC(F11)     , N5          , mmsNG2_Ing ) // ^F11 "ing"
   
-  MOD_MORPH_SHIFT(mmNG2_Tion  , RC(F15)     , N6          , mmsNG2_Tion) // ^F15 "tion"
+  MOD_MORPH_SHIFT(mmNG2_Tion  , RC(F12)     , N6          , mmsNG2_Tion) // ^F12 "tion"
   //MOD_MORPH_SHIFT(mmNG2_Excl  , EXCL        , N7          , mmsNG2_Excl)
   MOD_MORPH_SHIFT(mmNG2_Lpar  , LPAR        , N7          , mmsNG2_Lpar)
   MOD_MORPH_SHIFT(mmNG2_Perd  , PERIOD      , N8          , mmsNG2_Perd)
@@ -64,8 +64,8 @@
 // for CAPS:
   //MOD_MORPH_SHIFT(mmNG2_CapQ     , RC(F24)      , LS(Q)   , mmsNG2_CapQ) // ^F16 "QU" / TODO: harmonize with NGM how works?
   //MOD_MORPH_SHIFT(mmNG2_Qu     , F16     , Q   , mmsNG2_Qu) // F16 "" / TODO: harmonize with NGM how works? - DON'T want Shift+<> to also trigger alt key
-  MOD_MORPH_SHIFT(mmNG2_CapIng   , RC(RA(F14))  , N5      , mmsNG2_CapIng ) // ^!F14 "ING"
-  MOD_MORPH_SHIFT(mmNG2_CapTion  , RC(RA(F15))  , N6      , mmsNG2_CapTion) // ^!F15 "TION"
+  MOD_MORPH_SHIFT(mmNG2_CapIng   , RC(RS(F11))  , N5      , mmsNG2_CapIng ) // ^!F11 "ING"
+  MOD_MORPH_SHIFT(mmNG2_CapTion  , RC(RS(F12))  , N6      , mmsNG2_CapTion) // ^!F15 "TION"
 
 
 
