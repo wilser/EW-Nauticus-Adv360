@@ -289,6 +289,8 @@ as_min_abbrev: auto_shift_min_abbrev {
 
 
 /* 2026-01-18 Hold [ & ] ⇒ [[ & ]] for Obsidian way more common (still use Shift+[] for {} */
+/* 2026-01-23 don't really like; prefer hold ⇒ { } better, leaving for posterity */
+/*
 m_2brackets_left: m_2brackets_left {
     compatible = "zmk,behavior-macro";
     wait-ms = <0>; 
@@ -320,7 +322,7 @@ as_2brackets_right: auto_shift_2brackets_right {
     flavor = "tap-preferred";
     bindings = <&m_2brackets_right>, <&kp>; 
 };
-
+*/
 
 
 /* TEMPLATE-ish
