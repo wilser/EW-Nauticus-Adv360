@@ -83,3 +83,20 @@ m_MinWin: m_MinWin {
     #binding-cells = <0>;
     bindings = <&kp LA(SPACE)>, <&kp N>;
 };
+
+
+/* 2026-01-30 for KVM - Ctrl+Ctrl+PgUp and PgDn can switch between PCs */
+m_KVM_PgUp: m_KVM_PgUp {
+    wait-ms = <100>;
+    tap-ms = <100>;
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp LCTRL>, <&kp LCTRL>, <&kp PGUP>;
+};
+m_KVM_PgDn: m_KVM_PgDn {
+    wait-ms = <100>;
+    tap-ms = <100>;
+    compatible = "zmk,behavior-macro";
+    #binding-cells = <0>;
+    bindings = <&kp LCTRL>, <&kp LCTRL>, <&kp PGDN>;
+};
