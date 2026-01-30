@@ -85,18 +85,18 @@ m_MinWin: m_MinWin {
 };
 
 
-/* 2026-01-30 for KVM - Ctrl+Ctrl+PgUp and PgDn can switch between PCs */
+/* 2026-01-30 for KVM - (right) Ctrl+Ctrl+PgUp and PgDn can switch between PCs */
 m_KVM_PgUp: m_KVM_PgUp {
     wait-ms = <100>;
     tap-ms = <300>;
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
-    bindings = <&kp LCTRL>, <&macro_wait_time 500>, <&kp LCTRL>, <&macro_wait_time 500>, <&kp PGUP>;
+    bindings = <&kp RCTRL>, <&macro_wait_time 500>, <&kp RCTRL>, <&macro_wait_time 500>, <&kp PGUP>;
 };
 m_KVM_PgDn: m_KVM_PgDn {
     wait-ms = <100>;
     tap-ms = <300>;
     compatible = "zmk,behavior-macro";
     #binding-cells = <0>;
-    bindings = <&kp LCTRL>, <&macro_wait_time 500>, <&kp LCTRL>, <&macro_wait_time 500>, <&kp PGDN>;
+    bindings = <&kp RCTRL>, <&macro_wait_time 500>, <&kp RCTRL>, <&macro_wait_time 500>, <&kp PGDN>;
 };
