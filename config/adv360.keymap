@@ -71,7 +71,6 @@
         #include "user/tapdance/general_tapdance.dtsi"
         #include "user/tapdance/lightroom_tapdance.dtsi"
         #include "user/behaviors/mod_morphs_general.dtsi"
-        #include "user/behaviors/mod_morphs_dvorak.dtsi"
         #include "user/behaviors/mod_morphs_engram.dtsi"
         #include "user/behaviors/mod_morphs_nums.dtsi"
         #include "user/behaviors/holdtaps_for_layers.dtsi"
