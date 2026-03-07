@@ -1,6 +1,5 @@
 /*****************************************************************************************************
 * L8 ⚫🟡 QRT layer - Qwerty-ish / such as for games
-    *      https://www.keyboard-layout-editor.com/#/gists/4715e228b7a3f3603aa42f81db718a05
     */
 
     qwerty_layer { bindings = <
@@ -11,4 +10,3 @@
         ___        ___      ___      ___      ___             &kp BSPC  &kp DEL  &kp LC(LALT)   ___  ___  ___                 ___      ___        ___         ___       &kp BSLH
     >; };
 
-// END QRT

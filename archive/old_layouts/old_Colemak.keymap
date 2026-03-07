@@ -1,6 +1,5 @@
         /*****************************************************************************************************
         * L- : COLEMAK  -- 2023-12-20 removed from main layout - trying Engram instead - see /notes_and_ref/old_Colemak.keymap
-            *      http://www.keyboard-layout-editor.com/#/gists/d5273d628b4d4cc48be28dc629304b95
             * Specials and some punctuation re-mapped via Windows Keyboard layout driver file (for Moonlander case; trying ModMorphs here...)
             *   ; → (     ` → )     F23 → :     F24 → " 
             *   And many of the Shift+___ cases.

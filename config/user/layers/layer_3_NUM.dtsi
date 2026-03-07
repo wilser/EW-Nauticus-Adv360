@@ -1,11 +1,8 @@
 /*****************************************************************************************************
 * L3 🟢 NUM - Num-pad
-*      http://www.keyboard-layout-editor.com/#/gists/c51e298f5744feba159cde9973f47b92
 *      Uses non-keypad NUMERAL symbols since plan to use as "main" numbers method eventually as practice more.
 *      See companion 'mod_morphs_nums' file
 *      Some same as NGM / but redefined to use KP symbol: - * / - ... see AHK for couple special-case overrides like Excel
-*      TODO: put back (num)Enter?
-*      [] TBD: PgUp / PgDn on thumb keys??
 */
 
 // DEFINES:
@@ -36,8 +33,8 @@ numpad_layer { bindings = <
     ___      ___           ___        ___       ___        ___  &to L_NGM                                               _APOS_EURO   _BKSL_PIPE  _LPAR_LT      _DOT_CMMA           _RPAR_GT             _EQAL_TILD   &m_CSA_R
     ___      &kp LEFT_GUI  &kp LSHFT  &kp LALT  &kp LCTRL  ___  ___                                                     AS_Hm_CtlHm  _DLLR_DQT   _7_Q          &as_hr_abbrev 0 N8  &as_min_abbrev 0 N9  _MULT_TIMES  _DIV_PCT
     ___      &kp LC(D)     ___        ___       ___        ___  ___      &kp LSHFT  &to L_0  _KP_ENT  &kp BSPC          AS_En_CtlEn  _COLN_SEMI  &as_4th 0 N4  &as_am_lc 0 N5      &as_pm_lc 0 N6       &kp N0       _MNUS_UNDR
-    &to L_0  &mo L_EDT     ___        ___       _x_        ___                   &kp PG_UP    &kp RS(TAB)                            ___        &as_1st 0 N1  &as_2nd 0 N2        &as_3rd 0 N3         _PLUS_AMP    _Q_H
-    ___      ___           ___        ___       ___                   ___  ___  &kp PG_DN      &kp TAB  _ENT_CTLENT  &kp SPACE                  AS_UpLf       AS_DnRt             ___                  ___          &to L_0
+    &to L_0  &mo L_EDT     ___        ___       _x_        ___                   &kp PG_UP    &kp RS(TAB)                            ___         &as_1st 0 N1  &as_2nd 0 N2        &as_3rd 0 N3         _PLUS_AMP    _Q_H
+    ___      ___           ___        ___       ___                   ___  ___  &kp PG_DN      &kp TAB  _ENT_CTLENT     &kp SPACE                AS_UpLf       AS_DnRt             ___                  ___          &to L_0
 >; };
 
 // #UNDEFS:

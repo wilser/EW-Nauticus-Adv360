@@ -14,8 +14,6 @@ Mark with `[x]` when done, `[-]` if decided not to do.
 - [ ] **[user/behaviors/custom_behaviors.dtsi ~L107]** `// [.] 2025-01-12 broken?` on `lt_fst`. Test: does `lt_fst` actually work? If yes, remove comment. If no, open specific issue.
 - [ ] **[user/combos.dtsi ~L71]** `slow-release; // TBD - will help prevent stuck mods?` (2025-03-27). Test whether `slow-release` helps. Remove TBD when decided.
 
-- [ ] **[user/layers/layer_0_NGM.dtsi ~L19]** `▢ RH-thumb top-left - TBD (was \)` — is the current binding final? If yes, remove.
-- [ ] **[user/layers/layer_3_NUM.dtsi ~L7]** `TODO: put back (num)Enter?` — `_KP_ENT` IS in the layer (used in row 3). Seems done — verify and remove.
 - [ ] **[user/layers/layer_4_UTL.dtsi ~L10]** `[ ] is BT4 'off'? - seems like (light goes off)` — test or remove.
 - [ ] **[user/layers/layer_4_UTL.dtsi ~L11]** `[.] DISC explicitly disconnects one? 2024-09-19 trying` — 6+ months old. Does it work? Remove or document finding.
 - [ ] **[user/behaviors/custom_behaviors.dtsi ~L55]** `[.] TBD: still don't get the tap-term vs quick-tap nuances... 2024-12-21` — Research or remove. (Also has typo "guick".)

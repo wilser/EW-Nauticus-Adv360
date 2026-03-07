@@ -1,6 +1,5 @@
 /*****************************************************************************************************
 * L2 🔵 EDT - Edit layer
-*      http://www.keyboard-layout-editor.com/#/gists/18e13161cf62a37e0ba0d751735110a1
 * [ ] other r.h.s. useful things?
 * [ ] turn Win+<> into timed-hold Macros? (see the slickrun example) -- for RDP because Win+ not reliable in RDP when sent too fast
 * &m_CSA_V = Ctrl+Shift+Alt+V (for ClipMate), but in slight-key-delayed macro so works through RDP
