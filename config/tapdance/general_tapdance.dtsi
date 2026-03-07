@@ -82,8 +82,9 @@ TD_Num_LR_NLock: tapdance_num_lr_numlock {
 TD_Cmma_3_Ellipses: tapdance_comma_3_ellipses {
     compatible = "zmk,behavior-tap-dance";
     #binding-cells = <0>;
-    tapping-term-ms = <300>;
-    bindings = <&m_mmsNG2_Cmma N3 0>, <&kp DOT>, <&kp LG((LC(F23)))>; // [1x] ,   [2x] .   [3x] "..."
+    tapping-term-ms = <150>; // shorter so hold>3 not super slow vs others
+    bindings = <&m_mmsNG2_Cmma N3 0>, <&kp LG((LC(F23)))>; // [1x] ,   [2x] "..."
+    //bindings = <&m_mmsNG2_Cmma N3 0>, <&kp DOT>, <&kp LG((LC(F23)))>; // [1x] ,   [2x] .   [3x] "..."
 };
 
 
