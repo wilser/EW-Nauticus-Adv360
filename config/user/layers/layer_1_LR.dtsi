@@ -1,0 +1,49 @@
+/*****************************************************************************************************
+* L1 ⚪ LR - Lightroom
+    *      http://www.keyboard-layout-editor.com/#/gists/ce40ef1f57700f3871b7af5a965ad51b
+    *      This is for when the RIGHT HAND is on the mouse primarily; so r.h.s. just left to entirely float through. See notes on KLE.
+    *   [.] layer-hold else TD - works? 7/3 "expected number or parenthesized expression"; try adding & bef TD? → compiled, but the TD didn't fire at all, just layer-hold
+    */
+
+    // defines:
+        #define VRT_CPY       &kp LC(APOS)
+        #define VW_LIB        &kp LC(LA(N1))
+        #define VW_DEV        &kp LC(LA(N2))
+        #define VW_MAP        &kp LC(LA(N3))
+        #define VW_PRT        &kp LC(LA(N6))
+        #define R_CA_R        &as LC(R) R
+        #define DESEL         &as LC(D) LC(LS(D))
+        #define SURV_SH       &as LS(N) N
+        #define ZOOM_IN       &kp LC(EQUAL)
+        #define ZOOM_OUT      &kp LC(MINUS)
+        #define SPOT_LUM      &as LS(Q) Q
+        #define _P_CTL        &hm_l LCTRL P              // Ctrl on index fingers
+        #define _X_NUM        &lht_fst L_NUM X
+        #define BS_CTL_L      &as LC(L) BSLH
+        #define _D_Auto_NUM   &ht_lr_d_auto_num L_NUM 0
+    // end defines
+
+    lr_layer { bindings = <
+        BS_CTL_L  &td_lr_1   &td_lr_2  &td_lr_3  &td_lr_4     &td_lr_5  &to L_0                                      ZOOM_IN   VW_LIB  VW_DEV  VW_MAP  VW_PRT  &kp N0  ___
+        ___       ___        ___       ___       _P_CTL       &kp M     &kp LS(W)                                    ZOOM_OUT  &kp K   ___     ___     ___     ___     ___
+        ___       ___        ___       ___       &kp U        &kp S     &kp A      R_CA_R  &to L_0  _tbd_  _tbd_     _tbd_     _tbd_   ___     ___     ___     ___     ___
+        &td_lr_e  ___        ___       DESEL     _D_Auto_NUM  SURV_SH                         ___    ___                       _tbd_   ___     ___     ___     ___     SPOT_LUM
+        R_CA_R    &kp LS(T)  &kp J     ___       ___                               ___  ___  ___      ___  ___  ___                    ___     ___     ___     ___     VRT_CPY
+    >; };
+
+     // undefs
+        #undef VRT_CPY
+        #undef MOD_LIB
+        #undef MOD_DEV
+        #undef MOD_MAP
+        #undef MOD_PRT
+        #undef R_CTL_R
+        #undef DESEL
+        #undef SURV_SH
+        #undef ZOOM_IN
+        #undef ZOOM_OUT
+        #undef SPOT_LUM
+        #undef _D_Auto_NUM
+     // end undefs
+
+// END LR

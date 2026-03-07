@@ -1,75 +1,36 @@
 
+// === ZMK STANDARD INCLUDES ===
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/backlight.h>
 #include <behaviors.dtsi>   // TODO: much of this overridden (I think) or bypassed by parts inside this *keymap file / UNSURE WHAT NEEDED (2024-04-13)
 
+#include "adv360_key_numbers.dtsi"
 
-// DEFINE keymaps and subsets // NOTE: major re-numbering after V3 rebase. Moves thumb-keys inline to rows 3-5.
+// === LAYER NUMBER DEFINES ===
+/* LED layer colors:  0 ⚫   1 ⚪   2 🔵   3 🟢   4 🔴   5 🟣   6 🩵   7 🟡   8 ⚫   9 ⚫*/
+/*                    NGM      LR     EDT    NUM     UTL    FNC     LET    CAP    QRT    kp#   */
+#define L_0 0
+#define L_NGM 0     // engram
+#define L_LR 1      // Lightroom
+#define L_EDT 2     // edit (mostly LH while RH uses mouse, or general use)
+#define L_NUM 3     // numpad
+#define L_UTL 4     // utils
+#define L_FNC 5     // function keys 1-12 (like numpad)
+#define L_LET 6     // plain letters - mirroring NGM - so can use the "hold-for-accents" utility
+#define L_CAP 7     // CAPs layer for constant Shift+ but keeping many things "unshifted" esp some symbols
+#define L_QRT 8     // Qwerty-ish; like for games
+#define L_KP 9      // keypad (*actual KP key codes) (in case ever need)
 
-    /* Keymap layout vs. Numbers
-
-         0  1  2  3  4  5  6                     7  8  9 10 11 12 13 
-        14 15 16 17 18 19 20                    21 22 23 24 25 26 27 
-        28 29 30 31 32 33 34    35 36  37 38    39 40 41 42 43 44 45  
-        42 43 44 45 46 47          52  53          54 55 56 57 58 59  
-        54 55 56 57 58       65 66 67  68 69 70       71 72 73 74 75  
-
-
-    */
-
-    /* define LEFT, RIGHT, and THUMBS to affect hold-tap timings vs. finger rolls */
-    #define KEYS_LEFT    0  1  2  3  4  5  6 \
-                        14 15 16 17 18 19 20 \
-                        28 29 30 31 32 33 34 \
-                        46 47 48 49 50 51    \
-                        60 61 62 63 64
-
-    #define THUMBS_LEFT     35 36 \
-                             52 \
-                     65 66 67 \
-
-    #define KEYS_RIGHT   7  8  9 10 11 12 13 \
-                        21 22 23 24 25 26 27 \
-                        39 40 41 42 43 44 45 \
-                        54 55 56 57 58 59 \
-                            71 72 73 74 75
-
-    #define THUMBS_RIGHT 37 38    \
-                          53       \
-                           68 69 70 \
-
-    #define THUMBS THUMBS_LEFT THUMBS_RIGHT
-
-    #define MODS_LEFT 15 16 17 18
-    #define MODS_RIGHT 23 24 25 26
-
-// END key-numbers define
-
+// === GLOBAL KEY SHORTHANDS ===
 // Helpers for common key-defaults (block [&none] or passthrough [&trans])
 #define ___ &trans
 #define _x_ &none
 #define _tbd_ &none
 #define nil 0
 
-// DEFINES for layers:
-    /* LED layer colors:  0 ⚫   1 ⚪   2 🔵   3 🟢   4 🔴   5 🟣   6 🩵   7 🟡   8 ⚫   9 ⚫*/
-    /*                    NGM      LR     EDT    NUM     UTL    FNC     LET    CAP    QRT    kp#   */
-    #define L_0 0
-    #define L_NGM 0     // engram
-    #define L_LR 1      // Lightroom
-    #define L_EDT 2     // edit (mostly LH while RH uses mouse, or general use)
-    #define L_NUM 3     // numpad
-    #define L_UTL 4     // utils
-    #define L_FNC 5     // function keys 1-12 (like numpad)
-    #define L_LET 6     // plain letters - mirroring NGM - so can use the "hold-for-accents" utility
-    #define L_CAP 7     // CAPs layer for constant Shift+ but keeping many things "unshifted" esp some symbols
-    #define L_QRT 8     // Qwerty-ish; like for games
-    #define L_KP 9      // keypad (*actual KP key codes) (rare)
-    
-// END defines for layers
-
+// === ZMK BEHAVIOR DEFAULTS ===
 /* TAPPING timeouts, flavors, etc.
     try disable global-quick-tap, & set quick-tap-ms faster like 125
     one suggested like 75 for the "global-quick-tap-ms" [which seems maybe new/ish]
@@ -93,6 +54,7 @@
     continue-list = <UNDERSCORE MINUS SLASH PIPE BKSP>;
 };
 
+
 / {
     macros {
         #include "user/macros/general_macros.dtsi"
@@ -112,536 +74,20 @@
         #include "user/behaviors/mod_morphs_dvorak.dtsi"
         #include "user/behaviors/mod_morphs_engram.dtsi"
         #include "user/behaviors/mod_morphs_nums.dtsi"
-
-        /*  NOTES - hold-tap
-            FLAVORS: https://zmk.dev/docs/behaviors/hold-tap
-                balanced: best for most cases, if hold long enough, thinks a hold, or if fast but w/in time, then hold, else tap (*default best)
-                tap-preferred: assume tap unless more strict timing met; more 'deliberate'
-                hold-preferred: more forgiving (& more false-holds)
-                tap-unless-interrupted: [NMI] seems to assume tap even if slower, unless some other key pressed (so if - was the hold, would yield ----------.... I think, but "-x" faster would be <Hold>+<X>)
-        */
-
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <125>;  /* was typo, and 175 */
-            flavor = "balanced";
-            bindings = <&kp>, <&kp>;
-        };
-
-        hm_l: homerow_mods_left {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <125>; /* was typo, and 175 */
-            flavor = "balanced";
-            bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <KEYS_RIGHT THUMBS MODS_LEFT>;
-            /* TEMP: ↑ adding MODS_LEFT to see if can n-hold mods */
-        };
-
-        hm_r: homerow_mods_right {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <125>;  /* was typo, and 175 */
-            flavor = "balanced";
-            bindings = <&kp>, <&kp>;
-            hold-trigger-key-positions = <KEYS_LEFT THUMBS MODS_RIGHT>;
-            /* TEMP: ↑ adding MODS_RIGHT to see if can n-hold better */
-        };
-
-        /* [.] experimental: "slower" home-row mod for Win key since don't need to be fast and false-taps mess up worse */
-        hm_slw: homerow_mods_slw {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <300>;
-            quick-tap-ms = <200>; 
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-        
-        /* [.] experimental: "medium" home-row mod for Win key since don't need to be fast and false-taps mess up worse */
-        // [.] TBD: still don't get the tap-term vs guick-tap nuances... 2024-12-21
-        hm_med: homerow_mods_med {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <250>;
-            quick-tap-ms = <150>; 
-            flavor = "balanced"; // ? vs tap-preferred??
-            bindings = <&kp>, <&kp>;
-        };
-
-
-        /* TBD auto-shift; adapted from here: https://github.com/serebrov/zmk-config/blob/master/config/microdox.keymap
-            binding-1 = when held, binding-2 = when tapped
-        */
-        as: auto_shift {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-
-        as_slw: auto_shift_slw {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <230>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-
-        as_2tap: auto_shift_2tap_revert {
-            // making quick-tap longer, like tapping-term, lets 2x-tap-then-hold repeat the key
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <230>;
-            quick-tap-ms = <230>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-
-        // TBD layer Hold for 1, Tap for 2; adapted from https://www.reddit.com/r/ErgoMechKeyboards/comments/123sapj/zmk_question_can_i_layertap_with_a_macro/
-        lht: layer_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <170>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&mo>, <&to>;
-        };
-
-        // [.] 2025-01-12 broken?
-        lt_fst: layer_tap_faster {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <140>; // 90 seemed too fast; 150 bit too slow; 120 close, but too fast by tad
-            quick-tap-ms = <0>;  // ▢ this also need ∆?
-            flavor = "tap-preferred";
-            bindings = <&mo>, <&kp>;
-        };
-
-        lt_slw: layer_tap_slower {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <230>;
-            quick-tap-ms = <0>;  // ▢ this also need ∆?
-            flavor = "tap-preferred";
-            bindings = <&mo>, <&kp>;
-        };
-
-        
-        // hold-mod for capWORD else layer hold
-        ht_cap_cw: hold_tap_capword {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&mo>, <&caps_word>;
-        };
-
+        #include "user/behaviors/custom_behaviors.dtsi"
     };
 
     keymap {
         compatible = "zmk,keymap";
-        
-        /*****************************************************************************************************
-        * L0 ⚫ Engram "NGM"
-            URL layout (V3): https://www.keyboard-layout-editor.com/#/gists/e15762adf4fb7dc3e7f4e72a91c9e62b
-            NOTES:
-                • ALT LAYOUTS must be LOWER in stack than any higher ones want to layer-hold shift to
-                • SYNTAX for mod-morph holds: "&<macro-named> <hold-key> 0"
-                • AHK mappings (updated 2024-09-20)
-                    F14 ~ing
-                    F15 ~tion
-                    F20 Ø
-                    F21 •
-                    ^!F17 --
-                    !F21 →
-                • 2026-01-18 add 2-bracket keys (AS_2BKT_L/R) for easier access to [[ and ]] - see below in layer / was: "&as LS(LBKT) LBKT    &as LS(RBKT) RBKT"
-                • 2026-01-23 revert ↑ (manual)
-
-            TODO:
-                ▢ see also Keyboard Layout Editor for TODO items (↑ link above)
-                ▢ RH-thumb top-left - TBD (was \)
-            */
-
-            // DEFINES:
-                // Combined mega mods:
-                #define _HYPER          &kp LC(LA(LS(LGUI)))
-                #define _MEH            &kp LC(LA(LSHFT))
-                
-                // HOLD MODS:
-                // [] revisit R- L- holds for different effects on other side keys?
-                #define _B_GUI          &hm_slw LGUI B             // GUI/Win on pinkie fingers
-                #define _Y_SFT          &hm_l LSHFT Y              // Shift on ring fingers
-                #define _O_ALT          &hm_med LALT O               // Alt on middle fingers
-                #define _U_CTL          &hm_med LCTRL U              // Ctrl on index fingers
-                #define _L_CTL          &hm_med RCTRL L              // Ctrl
-                #define _D_ALT          &hm_med RALT D               // Alt
-                #define _W_SFT          &hm_r RSFT W               // Shift
-                #define _V_GUI          &hm_slw RGUI V             // GUI/Win
-                
-                // Mod-taps, Mod-morphs, etc.:
-                #define MT_TB_SHFTB     &mt LS(TAB) TAB
-                #define _SHF_BSP_L      &mm_SHIFT_BACKSPACE_L
-                #define NUM_LR_NUM      &ht_num_tolr_tonum L_NUM 0
-                #define _BSLH_BSP_R      &mm_BACKSLASH_BACKSPACE_R      // see mod_morphs_general.dtsi
-                #define AS_Hm_CtlHm     &as_slw RC(HOME) HOME
-                #define AS_Bk_CtlBk     &as_slw RC(BSPC) BSPC
-                #define AS_En_CtlEn     &as_slw RC(END) END
-                #define TD_ScrnShots    &td_win_ss_snagit   // 1x: Win+Shift+S   2x: Ctrl+Shift+Alt+P
-                #define LH_Bslh_LET     &lt L_LET BSLH // hold=alpha(letter) layer hold; else backslash
-  
-                // Other / WIP:
-                //#define M_DASH          F18 // ▢ 2024-09-20 NOT working reliably with Alt or Ctlr variants - not sure why
-                #define BUL_AR_tbd      &as F17 F15 // WIP
-                #define Dt1_Dt0         &m_mmsNG2_D1D0 RC(RA(F17)) 0 // AHK Ctrl+Alt+{F17,F18} >> trigger Date1 and Date0 shortcuts
-                #define _CpWrd_Caps     &ht_cap_cw L_CAP 0 // hold=CAPS else capWORD
-                //#define TD_Cmma_3_Dot3  &TD_Cmma_3_Ellipses // 2026-03-07 tried tap-dance comma→3-ellipses; timing not right
-
-            // end defines
-
-            engram_layer { bindings = <
-                &m_mmsNG2_Tild PIPE 0   &m_mmsNG2_Excl N1 0  &m_mmsNG2_Qstn N2 0  &m_mmsNG2_Cmma N3 0  &m_mmsNG2_Apos N4 0  &m_mmsNG2_Ing N5 0    &sl L_UTL                                                                     &sl L_UTL     &m_mmsNG2_Tion N6 0    &m_mmsNG2_Lpar N7 0  &m_mmsNG2_Perd N8 0  &m_mmsNG2_Rpar N9 0  &m_mmsNG2_Equl N0 0  &kp Z
-                &kp ESC                 _B_GUI               _Y_SFT               _O_ALT               _U_CTL               &m_mmsNG2_Star F16 0  _HYPER                                                                        TD_ScrnShots  &m_mmsNG2_Quot DLLR 0  _L_CTL               _D_ALT               _W_SFT               _V_GUI               &m_mmsNG2_Slsh PERCENT 0
-                MT_TB_SHFTB             &kp C                &as_slw RS(I) I      &kp E                &kp A                &m_mmsNG2_Semi LT 0   _MEH            _CpWrd_Caps   NUM_LR_NUM   LH_Bslh_LET  _BSLH_BSP_R           Dt1_Dt0       &m_mmsNG2_Coln GT 0    &kp H                &kp T                &kp S                &kp N                &m_mmsNG2_Mnus UNDERSCORE 0
-                &m_mmsNG2_Grav CARET 0  &lt L_EDT G          &kp X                &lt L_UTL J          &lt_fst L_NUM K      &m_mmsNG2_Amps AT 0                               AS_Hm_CtlHm     &kp PG_UP                                       &m_mmsNG2_Hash PLUS 0  &kp R                &kp M                &kp F                &kp P                /*&mm_ht_qqu_QQu*/ &ht_qu_QU Q 0 /*&mm_qu_Qu */   /* &as_Qu Q 0 // auto-shift means Shift gets the Hold (q) behavior */
-                &td_emj_wdsk          BUL_AR_tbd           &td_rtclick_p        &kp LEFT             &kp RIGHT                                 AS_Bk_CtlBk  &lt L_EDT DEL  AS_En_CtlEn       &kp PG_DN  &lt L_FNC ENTER  &kp SPACE                                 &kp UP               &kp DOWN             &as LS(LBKT) LBKT    &as LS(RBKT) RBKT    &to L_NUM
-            >; };
-            // TEMP: was _SHF_BSP_L on l-thumb
-
-            // #UNDEFs
-                #undef _HYPER        
-                #undef _MEH          
-                #undef _B_GUI        
-                #undef _Y_SFT        
-                #undef _O_ALT        
-                #undef _U_CTL        
-                #undef _L_CTL        
-                #undef _D_ALT        
-                #undef _W_SFT        
-                #undef _V_GUI        
-                #undef MT_TB_SHFTB   
-                #undef _SHF_BSP_L    
-                #undef _BSLH_BSP_R
-                #undef NUM_LR_NUM    
-                #undef AS_Hm_CtlHm   
-                #undef AS_Bk_CtlBk   
-                #undef AS_En_CtlEn   
-                #undef TD_ScrnShots  
-                #undef BUL_AR_tbd    
-                #undef Dt1_Dt0
-                #undef _CpWrd_Caps
-                //#undef TD_Cmma_3_Dot3  // 2026-03-07 ellipses experiment
-            // end undefs
-        // END Engram
-
-        /*****************************************************************************************************
-        * L1 ⚪ Lightroom "LR"
-            *      http://www.keyboard-layout-editor.com/#/gists/ce40ef1f57700f3871b7af5a965ad51b
-            *      This is for when the RIGHT HAND is on the mouse primarily; so r.h.s. just left to entirely float through. See notes on KLE.
-            *   [.] layer-hold else TD - works? 7/3 "expected number or parenthesized expression"; try adding & bef TD? → compiled, but the TD didn't fire at all, just layer-hold
-            */
-
-            // defines:
-                #define VRT_CPY       &kp LC(APOS)
-                #define VW_LIB        &kp LC(LA(N1))
-                #define VW_DEV        &kp LC(LA(N2))
-                #define VW_MAP        &kp LC(LA(N3))
-                #define VW_PRT        &kp LC(LA(N6))
-                #define R_CA_R        &as LC(R) R
-                #define DESEL         &as LC(D) LC(LS(D))
-                #define SURV_SH       &as LS(N) N
-                #define ZOOM_IN       &kp LC(EQUAL)
-                #define ZOOM_OUT      &kp LC(MINUS)
-                #define SPOT_LUM      &as LS(Q) Q
-                #define _P_CTL        &hm_l LCTRL P              // Ctrl on index fingers
-                #define _X_NUM        &lht_fst L_NUM X
-                #define BS_CTL_L      &as LC(L) BSLH
-                #define _D_Auto_NUM   &ht_lr_d_auto_num L_NUM 0
-            // end defines
-
-            lr_layer { bindings = <
-                BS_CTL_L  &td_lr_1   &td_lr_2  &td_lr_3  &td_lr_4     &td_lr_5  &to L_0                                      ZOOM_IN   VW_LIB  VW_DEV  VW_MAP  VW_PRT  &kp N0  ___
-                ___       ___        ___       ___       _P_CTL       &kp M     &kp LS(W)                                    ZOOM_OUT  &kp K   ___     ___     ___     ___     ___
-                ___       ___        ___       ___       &kp U        &kp S     &kp A      R_CA_R  &to L_0  _tbd_  _tbd_     _tbd_     _tbd_   ___     ___     ___     ___     ___
-                &td_lr_e  ___        ___       DESEL     _D_Auto_NUM  SURV_SH                         ___    ___                       _tbd_   ___     ___     ___     ___     SPOT_LUM
-                R_CA_R    &kp LS(T)  &kp J     ___       ___                               ___  ___  ___      ___  ___  ___                    ___     ___     ___     ___     VRT_CPY
-            >; };
-
-             // undefs
-                #undef VRT_CPY
-                #undef MOD_LIB
-                #undef MOD_DEV
-                #undef MOD_MAP
-                #undef MOD_PRT
-                #undef R_CTL_R
-                #undef DESEL
-                #undef SURV_SH
-                #undef ZOOM_IN
-                #undef ZOOM_OUT
-                #undef SPOT_LUM
-                #undef _D_Auto_NUM
-             // end undefs
-
-        // END Lightroom
-
-        /*****************************************************************************************************
-        * L2 🔵 Edit "EDT"
-            *      http://www.keyboard-layout-editor.com/#/gists/18e13161cf62a37e0ba0d751735110a1
-            * [ ] other r.h.s. useful things?
-            * [ ] turn Win+<> into timed-hold Macros? (see the slickrun example) -- for RDP because Win+ not reliable in RDP when sent too fast
-            * &m_CSA_V = Ctrl+Shift+Alt+V (for ClipMate), but in slight-key-delayed macro so works through RDP
-            * Copy|Paste Unformatted:
-                - &m_WC_* = same key-delayed macro for Win+Ctrl+C|V (AHK copy|paste unformatted)
-                - [.] temp trying w/o Win key at all using **F13** instead - see AHK
-                - [.] temp +ClipMate on NGM V position
-                - 2025-09-08: move some to mod-row taps, & better match NGM (also get off LH Thumb for using Thumb-hold always and working better with NayaCreate)
-            */
-
-            // Defines:
-                #define _CtlB_GUI          &hm_slw LGUI LC(B) // bold + Win
-                #define _AltY_SFT          &hm_slw LSHFT LA(Y) // yes + Alt
-                #define _AltN_ALT          &hm_slw LALT LA(N) // no + Shift
-                //#define _CtlU_CTL          &hm_slw LCTRL LC(U) // underline + Ctrl
-                #define _CtlI_CTL          &hm_slw LCTRL LC(I) // underline + Ctrl
-            // End Defines
-            
-            navnedit_layer { bindings = <
-                &kp LA(F4)      &kp LC(W)  &kp F2     &kp LC(O)    &kp LC(T)    &kp F5       &to L_0                                                            ___    &kp SLCK      _x_       _x_       _x_        _x_          &kp KP_NUMLOCK
-                &kp LC(Y)       _CtlB_GUI  _AltY_SFT  _AltN_ALT    _CtlI_CTL    &kp LC(U)    &kp PG_UP                                                      &kp PG_UP  &kp RC(HOME)  &kp HOME  &kp UP    &kp END    &kp RC(END)  &kp INS
-                &kp LC(LS(F9))  &kp LC(A)  &kp LC(X)  &kp LC(C)    &kp LC(V)    &kp LC(D)    &kp PG_DN           &m_SEL_LINE  &kp RC(A)  _x_  &kp BSPC      &kp PG_DN  &kp PG_UP     &kp LEFT  &kp DOWN  &kp RIGHT  _x_          &kp CAPS
-                &kp LC(Z)       &kp LC(S)  &kp LC(K)  &kp F13      &kp LC(F13)  &m_CSA_V                                  &m_SEL_WRD_L    _x_                          &kp PG_DN     _x_       _x_       _x_        _x_          &kp PAUSE_BREAK
-                &kp LC(L)       &kp UP     &kp DOWN   ___          ___                             &kp LC(Z)  &kp LC(Y)  &m_SEL_WRD_R      &m_MinWin  ___  ___                       ___       ___       _x_        _x_          &kp PSCRN 
-            >; };
-
-            // Undefs:
-                #undef _CtlB_GUI          
-                #undef _AltY_SFT          
-                #undef _AltN_ALT          
-                #undef _CtlU_CTL
-            // End Undefs
-        // END Edit
-
-        /*****************************************************************************************************
-        * L3 🟢 Num-pad "NUM"
-            *      http://www.keyboard-layout-editor.com/#/gists/c51e298f5744feba159cde9973f47b92
-            *      Uses non-keypad NUMERAL symbols since plan to use as "main" numbers method eventually as practice more.
-            *      See companion 'mod_morphs_nums' file
-            *      Some same as NGM / but redefined to use KP symbol: - * / - ... see AHK for couple special-case overrides like Excel
-            *      TODO: put back (num)Enter?
-            *      [] TBD: PgUp / PgDn on thumb keys??
-            */ 
-
-            // DEFINES:
-                #define _KP_ENT      &kp KP_ENTER
-                #define _BKSL_PIPE   &m_mmsNG2_Bksl PIPE 0
-                #define _APOS_EURO   &m_mmsNUM_Apos LC(LA(F16)) 0  // AHK: €
-                #define _COLN_SEMI   &m_mmsNUM_Coln SEMI 0
-                #define _DLLR_DQT    &m_mmsNUM_Dllr DQT 0
-                #define _LPAR_LT     &m_mmsNUM_Lpar LT 0
-                #define _DOT_CMMA    &m_mmsNUM_Dot COMMA 0
-                #define _RPAR_GT     &m_mmsNUM_Rpar GT 0
-                #define _EQAL_TILD   &m_mmsNUM_Eqal TILDE 0
-                #define _MULT_TIMES  &m_mmsNUM_Mult LC(LA(F23)) 0    // AHK: ×
-                #define _PLUS_AMP    &m_mmsNUM_Plus LS(N7) 0
-                #define _DIV_PCT     &m_mmsNUM_Divd PERCENT 0
-                #define _MNUS_UNDR   &m_mmsNUM_Mnus LS(MINUS) 0
-                #define _Q_H         &m_mmsNUM_Q_H LS(H) 0
-                #define _ENT_CTLENT  &as LC(ENTER) ENTER
-                #define _7_Q         &as_slw LS(Q) N7
-                #define AS_UpLf      &as LEFT UP
-                #define AS_DnRt      &as RIGHT DOWN
-                #define AS_Apos_Eu   &as LC(LA(F16)) APOS    // AHK ^!F16: € - euro
-                #define AS_Hm_CtlHm  &as_slw RC(HOME) HOME
-                #define AS_En_CtlEn  &as_slw RC(END) END
-            // end defines
-        
-            numpad_layer { bindings = <
-                ___      ___           ___        ___       ___        ___  &to L_NGM                                               _APOS_EURO   _BKSL_PIPE  _LPAR_LT      _DOT_CMMA           _RPAR_GT             _EQAL_TILD   &m_CSA_R
-                ___      &kp LEFT_GUI  &kp LSHFT  &kp LALT  &kp LCTRL  ___  ___                                                     AS_Hm_CtlHm  _DLLR_DQT   _7_Q          &as_hr_abbrev 0 N8  &as_min_abbrev 0 N9  _MULT_TIMES  _DIV_PCT
-                ___      &kp LC(D)     ___        ___       ___        ___  ___      &kp LSHFT  &to L_0  _KP_ENT  &kp BSPC          AS_En_CtlEn  _COLN_SEMI  &as_4th 0 N4  &as_am_lc 0 N5      &as_pm_lc 0 N6       &kp N0       _MNUS_UNDR
-                &to L_0  &mo L_EDT     ___        ___       _x_        ___                   &kp PG_UP    &kp RS(TAB)                            ___        &as_1st 0 N1  &as_2nd 0 N2        &as_3rd 0 N3         _PLUS_AMP    _Q_H
-                ___      ___           ___        ___       ___                   ___  ___  &kp PG_DN      &kp TAB  _ENT_CTLENT  &kp SPACE                  AS_UpLf       AS_DnRt             ___                  ___          &to L_0
-            >; };
-
-            // #UNDEFS:
-                #undef _BKSL_PIPE   
-                #undef _APOS_EURO   
-                #undef _COLN_SEMI   
-                #undef _DLLR_DQT    
-                #undef _LPAR_LT     
-                #undef _DOT_CMMA    
-                #undef _RPAR_GT     
-                #undef _EQAL_TILD   
-                #undef _MULT_TIMES  
-                #undef _PLUS_AMP    
-                #undef _DIV_PCT     
-                #undef _MNUS_UNDR   
-                #undef _Q_H         
-                #undef _ENT_CTLENT  
-                #undef _7_Q         
-                #undef AS_UpLf      
-                #undef AS_DnRt      
-                #undef AS_Apos_Eu   
-                #undef AS_Hm_CtlHm  
-                #undef AS_En_CtlEn  
-            // END UNDEFS
-        // END Numpad
-
-        /*****************************************************************************************************
-        * L4 🔴 Utils, Macros, Specials "UTL"
-            *       http://www.keyboard-layout-editor.com/#/gists/2d2d37deb742cc77638e81cb0b875106
-            *  # keys send to that layer-#
-            *  &m_SLEEP & &m_HIBER = Windows-menu-compatible key shortcuts to invoke Sleep, Hibernate from start-menu
-            *  &m_CSA_R = Ctrl+Shift+Alt+(R) => SlickRun - but macro to hold/release deliberately because timing issues with RDP
-            *
-            * [ ] TODO:
-            *       [ ] put back LS(N2)..N4?
-            *       [ ] is BT4 'off'? - seems like (light goes off)
-            *       [.] DISC explicitly disconnects one? 2024-09-19 trying
-            */
-            
-            // #DEFs
-                #define _BTLD &bootloader
-                #define _RgbMem &rgb_ug RGB_MEFS_CMD
-                #define _RGB_TG &rgb_ug RGB_TOG
-                #define _BKL_TG &bl BL_TOG
-                #define _MONOFF &kp RC(RG(L)) // Win+Ctrl+L invokes my AHK lock+monoff macro
-
-            util_layer { bindings = <
-                &m_KVM_PgUp  &to 1          &to 2          &to 3          &to 4          &to 5          &to L_0                                              _MONOFF   &to 6    &to 7    &to 8     &to 9      &to 10   &m_CSA_R
-                &m_KVM_PgDn  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4   _x_                                                  &m_SLEEP  _x_      &kp N1   &kp N2    &kp N3     &kp N4   &kp RS(N2)
-                ___          _x_            _x_            _x_            _x_            _x_            _x_       _x_   &kp C_VOL_UP  _BKL_TG  _RGB_TG       &m_HIBER  _x_      &m_M1    &m_M2     &m_M3      &m_M4    &kp RS(N3)
-                &bt BT_CLR   &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4                 &kp C_VOL_DN    &bt BT_CLR                      _x_      &m_M5    &m_M6     &m_M7      &m_M8    &kp RS(N4)
-                _BTLD        _x_            _x_            ___            ___                              ___    ___   &kp C_MUTE      &bt BT_CLR_ALL  ___  ___                &m_M9    &m_M10    &kp N7     &kp N8   _BTLD
-            >; };
-
-            // #UNDEFs
-                #undef _BTLD
-                #undef _RgbMem
-                #undef _RGB_TG
-                #undef _BKL_TG
-                #undef _MONOFF
-        // END Utils
-
-        /*****************************************************************************************************
-        * L5 🟣 Function Keys "FNC" (1-12 RH-side, 13-24 LH-side)
-            *      http://www.keyboard-layout-editor.com/#/gists/d61490ab54f1d9c63f17ee2d25b40732
-            *    NOTES:
-            *       [x] 2024-04-14 trying more lateral for easier reach for commons; (and makes room for upper-ones) // nah, too awkward
-            *       [.] 2024-04-20 trying alt with 13-24 on left hand
-            */
-
-            // #DEF
-                #define _F19_SFT &hm_l LSHIFT F19
-                #define _F20_ALT &hm_l LALT F20
-                #define _F21_CTL &hm_l LCTRL F21
-                #define  _F7_CTL &hm_r RCTRL F7
-                #define  _F8_ALT &hm_r RALT F8
-                #define  _F9_SFT &hm_r RSHIFT F9
-
-            fn_1_12_layer { bindings = <
-                _x_    _x_       &kp F22   &kp F23   &kp F24   _x_   &to L_0                                         ___   _x_   &kp F10   &kp F11   &kp F12    _x_       _x_
-                ___    &kp LWIN  _F19_SFT  _F20_ALT  _F21_CTL  _x_   ___                                             ___   _x_   _F7_CTL   _F8_ALT   _F9_SFT    &kp LWIN  _x_
-                ___    _x_       &kp F16   &kp F17   &kp F18   _x_   ___              _x_   _x_     _x_   _x_        ___   _x_   &kp F4    &kp F5    &kp F6     _x_       _x_
-                _x_    _x_       &kp F13   &kp F14   &kp F15   _x_                        _x_         _x_                  _x_   &kp F1    &kp F2    &kp F3     _x_       _x_
-                _x_    _x_       _x_       ___       ___                      ___  ___  _x_            _x_  _x_  _x_             ___       ___       _x_        _x_       _x_
-            >; };
-
-            // #UNDEF
-                #undef _F19_SFT
-                #undef _F20_ALT
-                #undef _F21_CTL
-                #undef _F7_CTL
-                #undef _F8_ALT
-                #undef _F9_SFT
-
-        // END Fn Keys
-
-        /*****************************************************************************************************
-        * L6 🩵 Plain letters "LET" - for hold to override any main-layer holds
-            *
-            */
-            
-            plain_letters_layer { bindings = <
-                ___  ___    ___    ___    ___    ___  ___                               ___    ___    ___    ___    ___    ___    ___
-                ___  &kp B  &kp Y  &kp O  &kp U  ___  ___                               ___    ___    &kp L  &kp D  &kp W  &kp V  ___
-                ___  &kp C  &kp I  &kp E  &kp A  ___  ___      ___  ___   ___  ___      ___    ___    &kp H  &kp T  &kp S  &kp N  ___
-                ___  &kp G  &kp X  &kp J  &kp K  ___               ___     ___                 ___    &kp R  &kp M  &kp F  &kp P  ___ 
-                ___  ___    ___    ___    ___           ___  ___  ___       ___  ___  ___             ___    ___    ___    ___    ___
-            >; };
-
-        // END plain letters
-
-        /*****************************************************************************************************
-        * L7 🟡 CAPS layer - like SHIFT but keep symbols & few other differences
-            *      https://www.keyboard-layout-editor.com/#/gists/c6a9db3f0d67b643eae25ba3da8379cf
-            * TODO
-            *   _tbd_: {-ING, -TION, Qu, }
-            */
-
-            // #DEFs
-                #define _AHK_AT &kp RC(RA(AT_SIGN))
-                #define _CAP_Q &ht_QU_Q LS(Q) 0
-                #define _CAP_ING &m_mmsNG2_CapIng N5 0
-                #define _CAP_TION &m_mmsNG2_CapTion N6 0
-
-            
-            ngmcap_layer { bindings = <
-                ___   ___        ___        ___        ___        _CAP_ING  &to L_0                                  ___    _CAP_TION   ___        ___        ___        ___        &kp LS(Z)
-                ___   &kp RS(B)  &kp RS(Y)  &kp RS(O)  &kp RS(U)  ___       ___                                      ___    ___         &kp LS(L)  &kp LS(D)  &kp LS(W)  &kp LS(V)  ___
-                ___   &kp RS(C)  &kp RS(I)  &kp RS(E)  &kp RS(A)  ___       ___       ___  ___     ___  &kp BSPC     ___    ___         &kp LS(H)  &kp LS(T)  &kp LS(S)  &kp LS(N)  ___
-                ___   &kp RS(G)  &kp RS(X)  &kp RS(J)  &kp RS(K)  _AHK_AT                  ___     ___                      ___         &kp LS(R)  &kp LS(M)  &kp LS(F)  &kp LS(P)  _CAP_Q
-                ___   ___        ___        ___        ___                       ___  ___  ___     ___  ___  ___                        ___        ___        ___        ___        ___
-            >; };
-            
-            // #UNDESFs
-                #undef _AHK_AT
-                #undef _CAP_Q
-                #undef _CAP_ING
-                #undef _CAP_TION
-
-        // END CAPS
-
-        /*****************************************************************************************************
-        * L8 ⚫🟡 Qwerty-ish / such as for games
-            *      https://www.keyboard-layout-editor.com/#/gists/4715e228b7a3f3603aa42f81db718a05
-            */
-
-            qwerty_layer { bindings = <
-                &kp GRAVE  &kp N1   &kp N2   &kp N3   &kp N4   &kp N5   &to L_0                                       ___    &kp N6   &kp N7   &kp N8     &kp N9      &kp N0    &kp EQUAL
-                ___        &kp Q    &kp W    &kp E    &kp R    &kp T    ___                                           ___    &kp Y    &kp U    &kp I      &kp O       &kp P     &kp SLASH
-                ___        &kp A    &kp S    &kp D    &kp F    &kp G    ___      &kp LSHFT  &kp LCTRL   ___  ___      ___    &kp H    &kp J    &kp K      &kp L       &kp SEMI  ___
-                ___        &kp Z    &kp X    &kp C    &kp V    &kp B                         &kp LALT   ___                  &kp N    &kp M    &kp COMMA  &kp PERIOD  ___       ___
-                ___        ___      ___      ___      ___             &kp BSPC  &kp DEL  &kp LC(LALT)   ___  ___  ___                 ___      ___        ___         ___       &kp BSLH
-            >; };
-
-        // END KP Numpad
-
-        /*****************************************************************************************************
-        * L9 ⚫ Alt Numpad "KP" - using actual KP versions of numbers; in case need like Alt+<code> testing.
-            *      (no yet KeyboardLayoutEditor)
-            */
-            kp_layer { bindings = <
-                _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                                   ___    _x_    _x_         _x_         _x_         _x_    _x_
-                ___    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    _x_                                                       _x_    _x_    &kp KP_N7   &kp KP_N8   &kp KP_N9   _x_    _x_
-                ___    _x_        _x_         _x_        _x_        _x_    _x_           _x_  _x_    _x_   _x_                       _x_    _x_    &kp KP_N4   &kp KP_N5   &kp KP_N6   _x_    _x_
-                _x_    _x_        _x_         _x_        _x_        _x_                      _x_      _x_                                   _x_    &kp KP_N1   &kp KP_N2   &kp KP_N3   _x_    _x_
-                _x_    _x_        _x_         ___        ___                      ___  ___  _x_        _x_  &kp ENTER  &kp KP_N0                   _x_         _x_         _x_         _x_    _x_
-            >; };
-        // END KP Numpad
-
+        #include "user/layers/layer_0_NGM.dtsi"
+        #include "user/layers/layer_1_LR.dtsi"
+        #include "user/layers/layer_2_EDT.dtsi"
+        #include "user/layers/layer_3_NUM.dtsi"
+        #include "user/layers/layer_4_UTL.dtsi"
+        #include "user/layers/layer_5_FNC.dtsi"
+        #include "user/layers/layer_6_LET.dtsi"
+        #include "user/layers/layer_7_CAP.dtsi"
+        #include "user/layers/layer_8_QRT.dtsi"
+        #include "user/layers/layer_9_KP.dtsi"
     };
 };
-
-
-
-
-

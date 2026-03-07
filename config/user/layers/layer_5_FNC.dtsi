@@ -1,0 +1,33 @@
+/*****************************************************************************************************
+* L5 🟣 FNC - Function Keys (1-12 RH-side, 13-24 LH-side)
+    *      http://www.keyboard-layout-editor.com/#/gists/d61490ab54f1d9c63f17ee2d25b40732
+    *    NOTES:
+    *       [x] 2024-04-14 trying more lateral for easier reach for commons; (and makes room for upper-ones) // nah, too awkward
+    *       [.] 2024-04-20 trying alt with 13-24 on left hand
+    */
+
+    // #DEF
+        #define _F19_SFT &hm_l LSHIFT F19
+        #define _F20_ALT &hm_l LALT F20
+        #define _F21_CTL &hm_l LCTRL F21
+        #define  _F7_CTL &hm_r RCTRL F7
+        #define  _F8_ALT &hm_r RALT F8
+        #define  _F9_SFT &hm_r RSHIFT F9
+
+    fn_1_12_layer { bindings = <
+        _x_    _x_       &kp F22   &kp F23   &kp F24   _x_   &to L_0                                         ___   _x_   &kp F10   &kp F11   &kp F12    _x_       _x_
+        ___    &kp LWIN  _F19_SFT  _F20_ALT  _F21_CTL  _x_   ___                                             ___   _x_   _F7_CTL   _F8_ALT   _F9_SFT    &kp LWIN  _x_
+        ___    _x_       &kp F16   &kp F17   &kp F18   _x_   ___              _x_   _x_     _x_   _x_        ___   _x_   &kp F4    &kp F5    &kp F6     _x_       _x_
+        _x_    _x_       &kp F13   &kp F14   &kp F15   _x_                        _x_         _x_                  _x_   &kp F1    &kp F2    &kp F3     _x_       _x_
+        _x_    _x_       _x_       ___       ___                      ___  ___  _x_            _x_  _x_  _x_             ___       ___       _x_        _x_       _x_
+    >; };
+
+    // #UNDEF
+        #undef _F19_SFT
+        #undef _F20_ALT
+        #undef _F21_CTL
+        #undef _F7_CTL
+        #undef _F8_ALT
+        #undef _F9_SFT
+
+// END FNC Keys

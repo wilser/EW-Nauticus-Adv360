@@ -1,0 +1,14 @@
+/*****************************************************************************************************
+* L6 🩵 LET - Plain letters - for hold to override any main-layer holds
+    *
+    */
+
+    plain_letters_layer { bindings = <
+        ___  ___    ___    ___    ___    ___  ___                               ___    ___    ___    ___    ___    ___    ___
+        ___  &kp B  &kp Y  &kp O  &kp U  ___  ___                               ___    ___    &kp L  &kp D  &kp W  &kp V  ___
+        ___  &kp C  &kp I  &kp E  &kp A  ___  ___      ___  ___   ___  ___      ___    ___    &kp H  &kp T  &kp S  &kp N  ___
+        ___  &kp G  &kp X  &kp J  &kp K  ___               ___     ___                 ___    &kp R  &kp M  &kp F  &kp P  ___
+        ___  ___    ___    ___    ___           ___  ___  ___       ___  ___  ___             ___    ___    ___    ___    ___
+    >; };
+
+// END plain letters

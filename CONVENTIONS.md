@@ -55,9 +55,10 @@ archive/                   ← historical reference: old layouts, notes, origina
 - Key-position arrays (`KEYS_LEFT`, `THUMBS_LEFT`, ...)
 - Frequently-used shorthand aliases (`___`, `_x_`)
 - Layer-local key combinations — always pair with `#undef` after the layer
+- Cases where the proper syntax would be very long and make the key-map hard to read
 
 **DON'T use `#define` for:**
-- Single-use values that can be written inline
+- Single-use values that can be written inline (unless very long)
 - DTS property values (those belong as DTS node properties)
 
 ---

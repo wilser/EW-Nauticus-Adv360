@@ -1,0 +1,13 @@
+/*****************************************************************************************************
+* L9 ⚫ KP-NUM - Alt Numpad "KP" - using actual KP versions of numbers; in case need like Alt+<code> testing.
+    *      (no yet KeyboardLayoutEditor)
+    */
+
+    kp_layer { bindings = <
+        _x_    _x_        _x_         _x_        _x_        _x_    &to L_0                                                   ___    _x_    _x_         _x_         _x_         _x_    _x_
+        ___    &kp LWIN   &kp LSHFT   &kp LALT   &kp LCTRL  _x_    _x_                                                       _x_    _x_    &kp KP_N7   &kp KP_N8   &kp KP_N9   _x_    _x_
+        ___    _x_        _x_         _x_        _x_        _x_    _x_           _x_  _x_    _x_   _x_                       _x_    _x_    &kp KP_N4   &kp KP_N5   &kp KP_N6   _x_    _x_
+        _x_    _x_        _x_         _x_        _x_        _x_                      _x_      _x_                                   _x_    &kp KP_N1   &kp KP_N2   &kp KP_N3   _x_    _x_
+        _x_    _x_        _x_         ___        ___                      ___  ___  _x_        _x_  &kp ENTER  &kp KP_N0                   _x_         _x_         _x_         _x_    _x_
+    >; };
+// END KP Numpad
