@@ -4,10 +4,8 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/backlight.h>
+#include <behaviors.dtsi>   // ZMK standard behaviors (lt, mt, caps_word, etc.) — must stay
 #include "adv360_key_numbers.dtsi"
-
-// (2026-03-07 think moot) #include <behaviors.dtsi>   // TODO: much of this overridden (I think) or bypassed by parts inside this *keymap file / UNSURE WHAT NEEDED (2024-04-13)
-
 
 // === LAYER NUMBER DEFINES ===
 /* LED layer colors:  0 ⚫   1 ⚪   2 🔵   3 🟢   4 🔴   5 🟣   6 🩵   7 🟡   8 ⚫   9 ⚫*/
