@@ -1,7 +1,6 @@
 /*****************************************************************************************************
  *  TAP DANCE configurations
  *  for general cases
- *  [ ] macro-ify?
 
     // INCLUDE THIS inside Behaviors section of Keymap where other dependencies already pre-included
     
@@ -29,7 +28,7 @@ td_win_ss_snagit: tapdance_winss_snagitss {
 td_rtclick_p: tapdance_rtclick_p {
     compatible = "zmk,behavior-tap-dance";
     #binding-cells = <0>;
-    tapping-term-ms = <225>; // 150 too fast, 300 too slow?
+    tapping-term-ms = <225>;
     bindings = <&as RC(Q) K_CMENU>, <&kp P>; 
 };
 

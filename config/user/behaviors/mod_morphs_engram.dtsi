@@ -1,27 +1,25 @@
-/* TODO & NOTES - see mod_morphs_colemak file */
-/* CODES ref: https://zmk.dev/docs/codes */
+/* NOTES
+    - [.] 2024-12-21: still don't get the tap-term vs guick-tap nuances
+    - [.] 2025-01-12: seems like the "faster" layer-tap (lt_fst) is broken; not sure if something changed in ZMK or if just need to tweak timings more; seems like the "slower" one (lt_slw) is working ok, but maybe could be better with tweaks; also not sure if the "faster" one is actually needed since can just use the "slower" one with good timings? (since for layers, don't really need to be fast and false-taps are a problem)
 
-/*
-    2023-12-21: trying shorter macro-sub names vs. prior Colemak cases
+   CODES ref: https://zmk.dev/docs/codes 
 */
 
-/* ASSUMES GENERAL ONE INCLUDED BEFORE THIS ONE! */
-/* first label "mm<>" goes to "m_mm<>" for the &mm<> ref in layouts */
-
-// ---------- NEW WIP LAYOUTS 2024-02-19+ ---------- //
-// [.]^!F14 >> AHK(~ing) >> 2026-01-19 changed to F11 & 12 (13-24 Ø work thru RDP)
-// [.]^!F15 >> AHK(~tion) >> F12
-//  F15 >> AHK(⇒)
-//  F16 >> AHK(Ø)
-//  F17 >> AHK(•)
+// ---------- THIS >> AHK ref 2025-xx-?? ---------- //
+// Note: Fn-# > 12 don't work through RDP
+// [.]^!F11 >> AHK(~ing)
+// [.]^!F12 >> AHK(~tion)
 //  F18 >> — / m-dash [Alt+F24 Ø working; Ø-idea why]
 // ^!F17 >> D-M/D
 // ^!F18 >> D-yyyy-MM-DD
-// Note: (` grave; # hash, - minus, ...)
+// {MANY} for symbols directly on F13 - F24 see keyboard layout notes/graphics
+// Terms reminders: (` grave; # hash, - minus, ...)
+
+
+/* first label "mm<>" goes to "m_mm<>" for the &mm<> ref in layouts */
 
 // TOP ROW (L to R)
   MOD_MORPH_SHIFT(mmNG2_Tild  , TILDE       , PIPE        , mmsNG2_Tild)
-  //MOD_MORPH_SHIFT(mmNG2_Star  , STAR        , N1          , mmsNG2_Star)
   MOD_MORPH_SHIFT(mmNG2_Excl  , EXCL        , N1          , mmsNG2_Excl)
   MOD_MORPH_SHIFT(mmNG2_Qstn  , QMARK       , N2          , mmsNG2_Qstn)
   MOD_MORPH_SHIFT(mmNG2_Cmma  , COMMA       , N3          , mmsNG2_Cmma)
@@ -29,27 +27,21 @@
   MOD_MORPH_SHIFT(mmNG2_Ing   , RC(F11)     , N5          , mmsNG2_Ing ) // ^F11 "ing"
   
   MOD_MORPH_SHIFT(mmNG2_Tion  , RC(F12)     , N6          , mmsNG2_Tion) // ^F12 "tion"
-  //MOD_MORPH_SHIFT(mmNG2_Excl  , EXCL        , N7          , mmsNG2_Excl)
   MOD_MORPH_SHIFT(mmNG2_Lpar  , LPAR        , N7          , mmsNG2_Lpar)
   MOD_MORPH_SHIFT(mmNG2_Perd  , PERIOD      , N8          , mmsNG2_Perd)
-  //MOD_MORPH_SHIFT(mmNG2_Quot  , DQT         , N9          , mmsNG2_Quot)  
   MOD_MORPH_SHIFT(mmNG2_Rpar  , RPAR        , N9          , mmsNG2_Rpar)
   MOD_MORPH_SHIFT(mmNG2_Equl  , EQUAL       , N0          , mmsNG2_Equl)
 
 // Left Bottom
   MOD_MORPH_SHIFT(mmNG2_Bksl  , BSLH        , PIPE        , mmsNG2_Bksl)
-  //MOD_MORPH_SHIFT(mmNG2_Cret  , CARET       , GRAVE       , mmsNG2_Cret)
   MOD_MORPH_SHIFT(mmNG2_Grav  , GRAVE       , CARET       , mmsNG2_Grav)
 
  // L-MID COLUMN (T to B): 
-  //MOD_MORPH_SHIFT(mmNG2_Lpar  , LPAR        , F16         , mmsNG2_Lpar) // F16 "Ø"
-  //MOD_MORPH_SHIFT(mmNG2_Excl  , EXCL        , F16         , mmsNG2_Excl) // F16 "Ø"
   MOD_MORPH_SHIFT(mmNG2_Star  , STAR        , F16         , mmsNG2_Star) // F16 "Ø"
   MOD_MORPH_SHIFT(mmNG2_Semi  , SEMI        , LT          , mmsNG2_Semi)
   MOD_MORPH_SHIFT(mmNG2_Amps  , AMPS        , AT          , mmsNG2_Amps)
 
 // R-MID COLUMN (T to B): 
-  //MOD_MORPH_SHIFT(mmNG2_Rpar  , RPAR        , DLLR        , mmsNG2_Rpar)
   MOD_MORPH_SHIFT(mmNG2_Quot  , DQT         , DLLR        , mmsNG2_Quot)
   MOD_MORPH_SHIFT(mmNG2_Coln  , COLON       , GT          , mmsNG2_Coln)
   MOD_MORPH_SHIFT(mmNG2_Hash  , HASH        , PLUS        , mmsNG2_Hash)
@@ -58,9 +50,21 @@
   MOD_MORPH_SHIFT(mmNG2_Slsh  , SLASH       , PRCNT       , mmsNG2_Slsh)
   MOD_MORPH_SHIFT(mmNG2_Mnus  , MINUS       , UNDER       , mmsNG2_Mnus)
 
-// WIP/special:
+// special (some prob revisit):
   MOD_MORPH_SHIFT(mmNG2_D1D0  , RC(RA(F18)) , RC(RA(F17)) , mmsNG2_D1D0)
 
 // for CAPS:
   MOD_MORPH_SHIFT(mmNG2_CapIng   , RC(RS(F11))  , N5      , mmsNG2_CapIng ) // ^!F11 "ING"
-  MOD_MORPH_SHIFT(mmNG2_CapTion  , RC(RS(F12))  , N6      , mmsNG2_CapTion) // ^!F15 "TION"
+  MOD_MORPH_SHIFT(mmNG2_CapTion  , RC(RS(F12))  , N6      , mmsNG2_CapTion) // ^!F12 "TION"
+
+
+// UNUSED (keep since PIA to re-do if change mind):
+  //MOD_MORPH_SHIFT(mmNG2_Star  , STAR        , N1          , mmsNG2_Star)
+  //MOD_MORPH_SHIFT(mmNG2_Excl  , EXCL        , N7          , mmsNG2_Excl)
+  //MOD_MORPH_SHIFT(mmNG2_Quot  , DQT         , N9          , mmsNG2_Quot)  
+  //MOD_MORPH_SHIFT(mmNG2_Cret  , CARET       , GRAVE       , mmsNG2_Cret)
+  //MOD_MORPH_SHIFT(mmNG2_Lpar  , LPAR        , F16         , mmsNG2_Lpar) // F16 "Ø"
+  //MOD_MORPH_SHIFT(mmNG2_Excl  , EXCL        , F16         , mmsNG2_Excl) // F16 "Ø"
+  //MOD_MORPH_SHIFT(mmNG2_Rpar  , RPAR        , DLLR        , mmsNG2_Rpar)
+
+

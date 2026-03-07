@@ -1,5 +1,14 @@
 #include <dt-bindings/zmk/keys.h>
 
+/*****************************************************************************************************
+ *  COMBO and MACRO configurations
+ *  General TODOs/ Opens:
+ *  - [ ] macro-ify some of these? (e.g. the Q/QU/Qu cases)
+ *  - [ ] see if can use mod-morph for some of the hold-tap combos (e.g. qu/QU) instead of hold-tap;
+ *      or even macro-morph? (since not really mods)
+ *  - [ ] general timings; many never really dialed in (wait- tap- tapping-term- quick-tap-ms); )
+ */
+
 
 // --------------------
 // Q / QU cases
@@ -24,8 +33,8 @@ m_ucase_QU: m_ucase_QU {
 
 m_mixcase_Qu: m_mixcase_Qu {
     compatible = "zmk,behavior-macro";
-    wait-ms = <10>; // ??
-    tap-ms = <5>; // ??
+    wait-ms = <10>; 
+    tap-ms = <5>;
     #binding-cells = <0>;
     bindings =
               <&kp LS(Q)>
@@ -40,8 +49,8 @@ ht_QU_Q: ht_QU_Q {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
     flavor = "hold-preferred"; // which?
-    tapping-term-ms = <200>; // ▢ TODO
-    quick-tap-ms = <200>; // ▢ TODO
+    tapping-term-ms = <200>; 
+    quick-tap-ms = <200>;
     bindings = <&kp>, <&m_ucase_QU>; // hold for Q, tap for QU macro
 };
 
@@ -53,7 +62,7 @@ mm_qu_Qu: mm_qu_Qu {
     #binding-cells = <0>;
     bindings = <&m_lcase_qu>, <&m_mixcase_Qu>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
-    keep-mods = <(MOD_LSFT|MOD_RSFT)>; // swallow the shift so Ø passed thru? (matter?)
+    keep-mods = <(MOD_LSFT|MOD_RSFT)>; // swallow the shift so Ø passed thru? (not sure matters)
   };
 
 // HOLD TAP: Q | ModMorph(qu Qu)
@@ -61,8 +70,8 @@ ht_qu_QU: ht_qu_QU {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
     flavor = "hold-preferred"; // which? 
-    tapping-term-ms = <200>; // ▢ TODO
-    quick-tap-ms = <200>; // ▢ TODO
+    tapping-term-ms = <200>;
+    quick-tap-ms = <200>;
     bindings = <&kp>, <&mm_qu_Qu>; // hold <&kp>, tap <macro "qu">
 };
 
