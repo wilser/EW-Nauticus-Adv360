@@ -1,8 +1,6 @@
 /* NOTES
-    - [.] 2024-12-21: still don't get the tap-term vs guick-tap nuances
-    - [.] 2025-01-12: seems like the "faster" layer-tap (lt_fst) is broken; not sure if something changed in ZMK or if just need to tweak timings more; seems like the "slower" one (lt_slw) is working ok, but maybe could be better with tweaks; also not sure if the "faster" one is actually needed since can just use the "slower" one with good timings? (since for layers, don't really need to be fast and false-taps are a problem)
-
    CODES ref: https://zmk.dev/docs/codes 
+   - 2024-12-21: still don't get the tap-term vs guick-tap nuances
 */
 
 // ---------- THIS >> AHK ref 2025-xx-?? ---------- //
