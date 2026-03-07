@@ -1,91 +1,87 @@
 /*****************************************************************************************************
 * L0 ⚫ NGM - Engram
-    URL layout (V3): https://www.keyboard-layout-editor.com/#/gists/e15762adf4fb7dc3e7f4e72a91c9e62b
-    NOTES:
-        • ALT LAYOUTS must be LOWER in stack than any higher ones want to layer-hold shift to
-        • SYNTAX for mod-morph holds: "&<macro-named> <hold-key> 0"
-        • AHK mappings (updated 2024-09-20)
-            F14 ~ing
-            F15 ~tion
-            F20 Ø
-            F21 •
-            ^!F17 --
-            !F21 →
-        • 2026-01-18 add 2-bracket keys (AS_2BKT_L/R) for easier access to [[ and ]] - see below in layer / was: "&as LS(LBKT) LBKT    &as LS(RBKT) RBKT"
-        • 2026-01-23 revert ↑ (manual)
+    • ALT LAYOUTS must be LOWER in stack than any higher ones want to layer-hold shift to
+    • SYNTAX for mod-morph holds: "&<macro-named> <hold-key> 0"
+    • AHK mappings (updated 2024-09-20)
+        F14 ~ing
+        F15 ~tion
+        F20 Ø
+        F21 •
+        ^!F17 --
+        !F21 →
+*/
 
-    TODO:
-        ▢ see also Keyboard Layout Editor for TODO items (↑ link above)
-        ▢ RH-thumb top-left - TBD (was \)
-    */
+// DEFINES:
+    // Combined mega mods:
+    #define _HYPER          &kp LC(LA(LS(LGUI)))
+    #define _MEH            &kp LC(LA(LSHFT))
 
-    // DEFINES:
-        // Combined mega mods:
-        #define _HYPER          &kp LC(LA(LS(LGUI)))
-        #define _MEH            &kp LC(LA(LSHFT))
+    // HOLD MODS:
+    // [] revisit R- L- holds for different effects on other side keys?
+    #define _B_GUI          &hm_slw LGUI B             // GUI/Win on pinkie fingers
+    #define _Y_SFT          &hm_l LSHFT Y              // Shift on ring fingers
+    #define _O_ALT          &hm_med LALT O             // Alt on middle fingers
+    #define _U_CTL          &hm_med LCTRL U            // Ctrl on index fingers
+    #define _L_CTL          &hm_med RCTRL L            // Ctrl
+    #define _D_ALT          &hm_med RALT D             // Alt
+    #define _W_SFT          &hm_r RSFT W               // Shift
+    #define _V_GUI          &hm_slw RGUI V             // GUI/Win
 
-        // HOLD MODS:
-        // [] revisit R- L- holds for different effects on other side keys?
-        #define _B_GUI          &hm_slw LGUI B             // GUI/Win on pinkie fingers
-        #define _Y_SFT          &hm_l LSHFT Y              // Shift on ring fingers
-        #define _O_ALT          &hm_med LALT O               // Alt on middle fingers
-        #define _U_CTL          &hm_med LCTRL U              // Ctrl on index fingers
-        #define _L_CTL          &hm_med RCTRL L              // Ctrl
-        #define _D_ALT          &hm_med RALT D               // Alt
-        #define _W_SFT          &hm_r RSFT W               // Shift
-        #define _V_GUI          &hm_slw RGUI V             // GUI/Win
+    // Mod-taps, Mod-morphs, etc.:
+    #define MT_TB_SHFTB     &mt LS(TAB) TAB
+    #define _SHF_BSP_L      &mm_SHIFT_BACKSPACE_L
+    #define NUM_LR_NUM      &ht_num_tolr_tonum L_NUM 0
+    #define _BSLH_BSP_R      &mm_BACKSLASH_BACKSPACE_R      // see mod_morphs_general.dtsi
+    #define AS_Hm_CtlHm     &as_slw RC(HOME) HOME
+    #define AS_Bk_CtlBk     &as_slw RC(BSPC) BSPC
+    #define AS_En_CtlEn     &as_slw RC(END) END
+    #define TD_ScrnShots    &td_win_ss_snagit   // 1x: Win+Shift+S   2x: Ctrl+Shift+Alt+P
+    #define LH_Bslh_LET     &lt L_LET BSLH // hold=alpha(letter) layer hold; else backslash
 
-        // Mod-taps, Mod-morphs, etc.:
-        #define MT_TB_SHFTB     &mt LS(TAB) TAB
-        #define _SHF_BSP_L      &mm_SHIFT_BACKSPACE_L
-        #define NUM_LR_NUM      &ht_num_tolr_tonum L_NUM 0
-        #define _BSLH_BSP_R      &mm_BACKSLASH_BACKSPACE_R      // see mod_morphs_general.dtsi
-        #define AS_Hm_CtlHm     &as_slw RC(HOME) HOME
-        #define AS_Bk_CtlBk     &as_slw RC(BSPC) BSPC
-        #define AS_En_CtlEn     &as_slw RC(END) END
-        #define TD_ScrnShots    &td_win_ss_snagit   // 1x: Win+Shift+S   2x: Ctrl+Shift+Alt+P
-        #define LH_Bslh_LET     &lt L_LET BSLH // hold=alpha(letter) layer hold; else backslash
+    // Other / WIP:
+    #define BUL_AR_tbd      &as F17 F15 // WIP
+    #define Dt1_Dt0         &m_mmsNG2_D1D0 RC(RA(F17)) 0 // AHK Ctrl+Alt+{F17,F18} >> trigger Date1 and Date0 shortcuts
+    #define _CpWrd_Caps     &ht_cap_cw L_CAP 0 // hold=CAPS else capWORD
+// end defines
 
-        // Other / WIP:
-        //#define M_DASH          F18 // ▢ 2024-09-20 NOT working reliably with Alt or Ctlr variants - not sure why
-        #define BUL_AR_tbd      &as F17 F15 // WIP
-        #define Dt1_Dt0         &m_mmsNG2_D1D0 RC(RA(F17)) 0 // AHK Ctrl+Alt+{F17,F18} >> trigger Date1 and Date0 shortcuts
-        #define _CpWrd_Caps     &ht_cap_cw L_CAP 0 // hold=CAPS else capWORD
+engram_layer { bindings = <
+    &m_mmsNG2_Tild PIPE 0   &m_mmsNG2_Excl N1 0  &m_mmsNG2_Qstn N2 0  &m_mmsNG2_Cmma N3 0  &m_mmsNG2_Apos N4 0  &m_mmsNG2_Ing N5 0    &sl L_UTL                                                                     &sl L_UTL     &m_mmsNG2_Tion N6 0    &m_mmsNG2_Lpar N7 0  &m_mmsNG2_Perd N8 0  &m_mmsNG2_Rpar N9 0  &m_mmsNG2_Equl N0 0  &kp Z
+    &kp ESC                 _B_GUI               _Y_SFT               _O_ALT               _U_CTL               &m_mmsNG2_Star F16 0  _HYPER                                                                        TD_ScrnShots  &m_mmsNG2_Quot DLLR 0  _L_CTL               _D_ALT               _W_SFT               _V_GUI               &m_mmsNG2_Slsh PERCENT 0
+    MT_TB_SHFTB             &kp C                &as_slw RS(I) I      &kp E                &kp A                &m_mmsNG2_Semi LT 0   _MEH            _CpWrd_Caps   NUM_LR_NUM   LH_Bslh_LET  _BSLH_BSP_R           Dt1_Dt0       &m_mmsNG2_Coln GT 0    &kp H                &kp T                &kp S                &kp N                &m_mmsNG2_Mnus UNDERSCORE 0
+    &m_mmsNG2_Grav CARET 0  &lt L_EDT G          &kp X                &lt L_UTL J          &lt_fst L_NUM K      &m_mmsNG2_Amps AT 0                               AS_Hm_CtlHm     &kp PG_UP                                       &m_mmsNG2_Hash PLUS 0  &kp R                &kp M                &kp F                &kp P                &ht_qu_QU Q 0 /* auto-shift means Shift gets the Hold (q) behavior */
+    &td_emj_wdsk            BUL_AR_tbd           &td_rtclick_p        &kp LEFT             &kp RIGHT                                 AS_Bk_CtlBk  &lt L_EDT DEL  AS_En_CtlEn       &kp PG_DN  &lt L_FNC ENTER  &kp SPACE                                 &kp UP               &kp DOWN             &as LS(LBKT) LBKT    &as LS(RBKT) RBKT    &to L_NUM
+>; };
+
+// #UNDEFs
+    #undef _HYPER
+    #undef _MEH
+    #undef _B_GUI
+    #undef _Y_SFT
+    #undef _O_ALT
+    #undef _U_CTL
+    #undef _L_CTL
+    #undef _D_ALT
+    #undef _W_SFT
+    #undef _V_GUI
+    #undef MT_TB_SHFTB
+    #undef _SHF_BSP_L
+    #undef _BSLH_BSP_R
+    #undef NUM_LR_NUM
+    #undef AS_Hm_CtlHm
+    #undef AS_Bk_CtlBk
+    #undef AS_En_CtlEn
+    #undef TD_ScrnShots
+    #undef BUL_AR_tbd
+    #undef Dt1_Dt0
+    #undef _CpWrd_Caps
+// end undefs
+
+
+/* *********************************************************************************************
+ * Experiments / other notes:
+    • trying a 3-way (or 2-way) hold-tap-mod that would do {,} tap {3} hold/shift, and {...} with multi-tap or similar
+      wasn't able yet to get timing right // 2026-03-07
         //#define TD_Cmma_3_Dot3  &TD_Cmma_3_Ellipses // 2026-03-07 tried tap-dance comma→3-ellipses; timing not right
+        //#undef TD_Cmma_3_Dot3 
 
-    // end defines
-
-    engram_layer { bindings = <
-        &m_mmsNG2_Tild PIPE 0   &m_mmsNG2_Excl N1 0  &m_mmsNG2_Qstn N2 0  &m_mmsNG2_Cmma N3 0  &m_mmsNG2_Apos N4 0  &m_mmsNG2_Ing N5 0    &sl L_UTL                                                                     &sl L_UTL     &m_mmsNG2_Tion N6 0    &m_mmsNG2_Lpar N7 0  &m_mmsNG2_Perd N8 0  &m_mmsNG2_Rpar N9 0  &m_mmsNG2_Equl N0 0  &kp Z
-        &kp ESC                 _B_GUI               _Y_SFT               _O_ALT               _U_CTL               &m_mmsNG2_Star F16 0  _HYPER                                                                        TD_ScrnShots  &m_mmsNG2_Quot DLLR 0  _L_CTL               _D_ALT               _W_SFT               _V_GUI               &m_mmsNG2_Slsh PERCENT 0
-        MT_TB_SHFTB             &kp C                &as_slw RS(I) I      &kp E                &kp A                &m_mmsNG2_Semi LT 0   _MEH            _CpWrd_Caps   NUM_LR_NUM   LH_Bslh_LET  _BSLH_BSP_R           Dt1_Dt0       &m_mmsNG2_Coln GT 0    &kp H                &kp T                &kp S                &kp N                &m_mmsNG2_Mnus UNDERSCORE 0
-        &m_mmsNG2_Grav CARET 0  &lt L_EDT G          &kp X                &lt L_UTL J          &lt_fst L_NUM K      &m_mmsNG2_Amps AT 0                               AS_Hm_CtlHm     &kp PG_UP                                       &m_mmsNG2_Hash PLUS 0  &kp R                &kp M                &kp F                &kp P                /*&mm_ht_qqu_QQu*/ &ht_qu_QU Q 0 /*&mm_qu_Qu */   /* &as_Qu Q 0 // auto-shift means Shift gets the Hold (q) behavior */
-        &td_emj_wdsk          BUL_AR_tbd           &td_rtclick_p        &kp LEFT             &kp RIGHT                                 AS_Bk_CtlBk  &lt L_EDT DEL  AS_En_CtlEn       &kp PG_DN  &lt L_FNC ENTER  &kp SPACE                                 &kp UP               &kp DOWN             &as LS(LBKT) LBKT    &as LS(RBKT) RBKT    &to L_NUM
-    >; };
-    // TEMP: was _SHF_BSP_L on l-thumb
-
-    // #UNDEFs
-        #undef _HYPER
-        #undef _MEH
-        #undef _B_GUI
-        #undef _Y_SFT
-        #undef _O_ALT
-        #undef _U_CTL
-        #undef _L_CTL
-        #undef _D_ALT
-        #undef _W_SFT
-        #undef _V_GUI
-        #undef MT_TB_SHFTB
-        #undef _SHF_BSP_L
-        #undef _BSLH_BSP_R
-        #undef NUM_LR_NUM
-        #undef AS_Hm_CtlHm
-        #undef AS_Bk_CtlBk
-        #undef AS_En_CtlEn
-        #undef TD_ScrnShots
-        #undef BUL_AR_tbd
-        #undef Dt1_Dt0
-        #undef _CpWrd_Caps
-        //#undef TD_Cmma_3_Dot3  // 2026-03-07 ellipses experiment
-    // end undefs
-// END Engram
+ */

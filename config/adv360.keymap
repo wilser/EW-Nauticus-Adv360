@@ -74,7 +74,8 @@
         #include "user/behaviors/mod_morphs_dvorak.dtsi"
         #include "user/behaviors/mod_morphs_engram.dtsi"
         #include "user/behaviors/mod_morphs_nums.dtsi"
-        #include "user/behaviors/custom_behaviors.dtsi"
+        #include "user/behaviors/holdtaps_for_layers.dtsi"
+        #include "user/behaviors/holdtaps_special_and_combos.dtsi"
     };
 
     keymap {

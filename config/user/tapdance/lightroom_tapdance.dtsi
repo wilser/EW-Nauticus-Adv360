@@ -16,46 +16,9 @@ td_lr_e: tapdance_lightroom_e {
     bindings = <&kp LS(E)>, <&kp LC(E)>, <&kp LC(LA(X))>;
 };
 
-
-
-// ====================
-// Hold: L_NUM, Tap: TO L_LR, 2xTap: TO L_NUM
-// first-tap; &mt (modtap); 1st hold, 2nd tap
-// [ ] &lt expects layer-num and &kp as 2nd ... Macro to workaround?
-//      "bindings = <&lt L_LR &mo L_NUM>, <&to L_NUM>" doesn't work e.g. because 2nd param isn't a &kp or equivalent
-// [ ] maybe macro can be templated and reusable?
-// [.] with 1t = <&lt # &macro> - didn't work for 1/2 of it; not sure why...
-//      ... trying macros for both bindings...
-//      ... think had LR/Num TO vs. MO backwards, trying again
-
-// m_TO_L_LR: m_TO_L_LR{
-//     compatible = "zmk,behavior-macro";
-//     #binding-cells = <0>; wait-ms = <20>; tap-ms = <20>;
-//     bindings = <&to L_LR>;
-// };
-// m_MO_L_NUM: m_MO_L_NUM{
-//     compatible = "zmk,behavior-macro";
-//     #binding-cells = <0>; wait-ms = <20>; tap-ms = <20>;
-//     bindings = <&mo L_NUM>;
-// };
-
-// // wow, super not working; 2x works, but 1x is "i" and hold is "j" - WTF?
-// TD_HNum_1TLR_2TNum: tapdance_HNum_1TLR_2TNum {
-//     compatible = "zmk,behavior-tap-dance";
-//     #binding-cells = <0>;
-//     tapping-term-ms = <300>;
-//     bindings = <&mt &m_MO_L_NUM &m_TO_L_LR>, <&to L_NUM>; // first tap(hold) is a layer-mod-tap (hold → Nums, tap → LR layer)
-// };
-
-// ====================
-
-
-
-
-
 // --------------------------------------------------
-// Lightroom #1 - #5:
-// 1-tap for 1-2-3-4-5 (stars), 2x-tap for 6-7-8-9-F9 (colors)
+// Lightroom N1 - N5 keys:
+// 1-tap for 1-2-3-4-5 (stars), 2x-tap for 6-7-8-9-F9 (colors, F9 does AHK to nav Lightroom menus for purple)
 // [ ] TODO: C-macro-ify to reduce repetition? {namepart, K1, K2}
 
 td_lr_1: tapdance_lightroom_1 {

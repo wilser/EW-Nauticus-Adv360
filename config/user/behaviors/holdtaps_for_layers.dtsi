@@ -1,5 +1,4 @@
 // Custom hold-tap behaviors for adv360 keymap
-// INCLUDE THIS inside the behaviors { } block of the keymap
 // (KEYS_LEFT, KEYS_RIGHT, THUMBS, MODS_* must be #defined before this file is included)
 
 /*  NOTES - hold-tap
@@ -123,13 +122,3 @@ lt_slw: layer_tap_slower {
     bindings = <&mo>, <&kp>;
 };
 
-
-// hold-mod for capWORD else layer hold
-ht_cap_cw: hold_tap_capword {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    tapping-term-ms = <200>;
-    quick-tap-ms = <0>;
-    flavor = "tap-preferred";
-    bindings = <&mo>, <&caps_word>;
-};
