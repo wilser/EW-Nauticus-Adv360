@@ -1,9 +1,7 @@
 #include <dt-bindings/zmk/keys.h>
 
-
 /* TODO
     [ ] can omit the macro_tap and just go straight for keys when don't need press+release?
-
 
 */
 

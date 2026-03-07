@@ -4,56 +4,55 @@
 */
 
 // ---------- THIS >> AHK ref 2025-xx-?? ---------- //
-// Note: Fn-# > 12 don't work through RDP
-// [.]^!F11 >> AHK(~ing)
-// [.]^!F12 >> AHK(~tion)
+// Note: Fn-# above 12 don't work through RDP (at all)
+// ^!F11 >> AHK(~ing)
+// ^!F12 >> AHK(~tion)
 //  F18 >> — / m-dash [Alt+F24 Ø working; Ø-idea why]
 // ^!F17 >> D-M/D
 // ^!F18 >> D-yyyy-MM-DD
-// {MANY} for symbols directly on F13 - F24 see keyboard layout notes/graphics
-// Terms reminders: (` grave; # hash, - minus, ...)
+// {MANY} for symbols directly on F13 - F24 see keyboard layout notes/graphics (2026-03-07:  ⮯: ⇄ ⇒ Ø • — ▢ ▣ 🗹 ∵ ∴ 🗷)
+// Terms reminders: (` grave; # hash, - minus, * star, ...)
 
 
 /* first label "mm<>" goes to "m_mm<>" for the &mm<> ref in layouts */
 
 // TOP ROW (L to R)
-  MOD_MORPH_SHIFT(mmNG2_Tild  , TILDE       , PIPE        , mmsNG2_Tild)
-  MOD_MORPH_SHIFT(mmNG2_Excl  , EXCL        , N1          , mmsNG2_Excl)
-  MOD_MORPH_SHIFT(mmNG2_Qstn  , QMARK       , N2          , mmsNG2_Qstn)
-  MOD_MORPH_SHIFT(mmNG2_Cmma  , COMMA       , N3          , mmsNG2_Cmma)
-  MOD_MORPH_SHIFT(mmNG2_Apos  , APOS        , N4          , mmsNG2_Apos)
-  MOD_MORPH_SHIFT(mmNG2_Ing   , RC(F11)     , N5          , mmsNG2_Ing ) // ^F11 "ing"
+  MOD_MORPH_SHIFT(mmNG2_Tild    , TILDE        , PIPE     , mmsNG2_Tild)
+  MOD_MORPH_SHIFT(mmNG2_Excl    , EXCL         , N1       , mmsNG2_Excl)
+  MOD_MORPH_SHIFT(mmNG2_Qstn    , QMARK        , N2       , mmsNG2_Qstn)
+  MOD_MORPH_SHIFT(mmNG2_Cmma    , COMMA        , N3       , mmsNG2_Cmma)
+  MOD_MORPH_SHIFT(mmNG2_Apos    , APOS         , N4       , mmsNG2_Apos)
+  MOD_MORPH_SHIFT(mmNG2_Ing     , RC(F11)      , N5       , mmsNG2_Ing ) // ^F11 "ing"
+  MOD_MORPH_SHIFT(mmNG2_CapIng  , RC(RS(F11))  , N5       , mmsNG2_CapIng ) // ^!F11 "ING"
   
-  MOD_MORPH_SHIFT(mmNG2_Tion  , RC(F12)     , N6          , mmsNG2_Tion) // ^F12 "tion"
-  MOD_MORPH_SHIFT(mmNG2_Lpar  , LPAR        , N7          , mmsNG2_Lpar)
-  MOD_MORPH_SHIFT(mmNG2_Perd  , PERIOD      , N8          , mmsNG2_Perd)
-  MOD_MORPH_SHIFT(mmNG2_Rpar  , RPAR        , N9          , mmsNG2_Rpar)
-  MOD_MORPH_SHIFT(mmNG2_Equl  , EQUAL       , N0          , mmsNG2_Equl)
+  MOD_MORPH_SHIFT(mmNG2_Tion    , RC(F12)      , N6       , mmsNG2_Tion) // ^F12 "tion"
+  MOD_MORPH_SHIFT(mmNG2_CapTion , RC(RS(F12))  , N6       , mmsNG2_CapTion) // ^!F12 "TION"
+  MOD_MORPH_SHIFT(mmNG2_Lpar    , LPAR         , N7       , mmsNG2_Lpar)
+  MOD_MORPH_SHIFT(mmNG2_Perd    , PERIOD       , N8       , mmsNG2_Perd)
+  MOD_MORPH_SHIFT(mmNG2_Rpar    , RPAR         , N9       , mmsNG2_Rpar)
+  MOD_MORPH_SHIFT(mmNG2_Equl    , EQUAL        , N0       , mmsNG2_Equl)
 
 // Left Bottom
-  MOD_MORPH_SHIFT(mmNG2_Bksl  , BSLH        , PIPE        , mmsNG2_Bksl)
-  MOD_MORPH_SHIFT(mmNG2_Grav  , GRAVE       , CARET       , mmsNG2_Grav)
+  MOD_MORPH_SHIFT(mmNG2_Bksl    , BSLH         , PIPE     , mmsNG2_Bksl)
+  MOD_MORPH_SHIFT(mmNG2_Grav    , GRAVE        , CARET    , mmsNG2_Grav)
+   
+ // L-MID COLUMN (T to B):    
+  MOD_MORPH_SHIFT(mmNG2_Star    , STAR         , F16      , mmsNG2_Star) // F16 "Ø"
+  MOD_MORPH_SHIFT(mmNG2_Semi    , SEMI         , LT       , mmsNG2_Semi)
+  MOD_MORPH_SHIFT(mmNG2_Amps    , AMPS         , AT       , mmsNG2_Amps)
+   
+// R-MID COLUMN (T to B):    
+  MOD_MORPH_SHIFT(mmNG2_Quot    , DQT          , DLLR     , mmsNG2_Quot)
+  MOD_MORPH_SHIFT(mmNG2_Coln    , COLON        , GT       , mmsNG2_Coln)
+  MOD_MORPH_SHIFT(mmNG2_Hash    , HASH         , PLUS     , mmsNG2_Hash)
+    
+// Rh COLUMN (T to B):    
+  MOD_MORPH_SHIFT(mmNG2_Slsh    , SLASH        , PRCNT    , mmsNG2_Slsh)
+  MOD_MORPH_SHIFT(mmNG2_Mnus    , MINUS        , UNDER    , mmsNG2_Mnus)
+  
+// For dates:  
+  MOD_MORPH_SHIFT(mmNG2_D1D0    , RC(RA(F18)) , RC(RA(F17)) , mmsNG2_D1D0)
 
- // L-MID COLUMN (T to B): 
-  MOD_MORPH_SHIFT(mmNG2_Star  , STAR        , F16         , mmsNG2_Star) // F16 "Ø"
-  MOD_MORPH_SHIFT(mmNG2_Semi  , SEMI        , LT          , mmsNG2_Semi)
-  MOD_MORPH_SHIFT(mmNG2_Amps  , AMPS        , AT          , mmsNG2_Amps)
-
-// R-MID COLUMN (T to B): 
-  MOD_MORPH_SHIFT(mmNG2_Quot  , DQT         , DLLR        , mmsNG2_Quot)
-  MOD_MORPH_SHIFT(mmNG2_Coln  , COLON       , GT          , mmsNG2_Coln)
-  MOD_MORPH_SHIFT(mmNG2_Hash  , HASH        , PLUS        , mmsNG2_Hash)
- 
-// Rh COLUMN (T to B): 
-  MOD_MORPH_SHIFT(mmNG2_Slsh  , SLASH       , PRCNT       , mmsNG2_Slsh)
-  MOD_MORPH_SHIFT(mmNG2_Mnus  , MINUS       , UNDER       , mmsNG2_Mnus)
-
-// special (some prob revisit):
-  MOD_MORPH_SHIFT(mmNG2_D1D0  , RC(RA(F18)) , RC(RA(F17)) , mmsNG2_D1D0)
-
-// for CAPS:
-  MOD_MORPH_SHIFT(mmNG2_CapIng   , RC(RS(F11))  , N5      , mmsNG2_CapIng ) // ^!F11 "ING"
-  MOD_MORPH_SHIFT(mmNG2_CapTion  , RC(RS(F12))  , N6      , mmsNG2_CapTion) // ^!F12 "TION"
 
 
 // UNUSED (keep since PIA to re-do if change mind):

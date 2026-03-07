@@ -4,9 +4,9 @@
 *  &m_SLEEP & &m_HIBER = Windows-menu-compatible key shortcuts to invoke Sleep, Hibernate from start-menu
 *  &m_CSA_R = Ctrl+Shift+Alt+(R) => SlickRun - but macro to hold/release deliberately because timing issues with RDP
 *
-* [ ] TODO - need to investigate with Kinesis functions; low prio.
-*       [ ] is BT4 'off'? - seems like it (light goes off)
-*       [.] DISC explicitly disconnects one? 2024-09-19 trying
+* [ ] TODO - need to investigate with Kinesis functions / confirm...
+*       • DISC seems to disconnect, but immediately re-connect (temporary)
+*       • is there a way to just TURN off the BT?
 */
 
 // #DEFs
