@@ -79,6 +79,8 @@ TD_Num_LR_NLock: tapdance_num_lr_numlock {
 // but the &m_mmsNG2_Cmma needs 2 subsequent 2 arguments N3 and 0
 // sending the "..." uses AHK hotkey "&kp LG((LC(F23)))"
 // [ ] TODO: what want if 2x tap?
+// [.] not getting timing to work well...
+/*
 TD_Cmma_3_Ellipses: tapdance_comma_3_ellipses {
     compatible = "zmk,behavior-tap-dance";
     #binding-cells = <0>;
@@ -86,7 +88,7 @@ TD_Cmma_3_Ellipses: tapdance_comma_3_ellipses {
     bindings = <&m_mmsNG2_Cmma N3 0>, <&kp LG((LC(F23)))>; // [1x] ,   [2x] "..."
     //bindings = <&m_mmsNG2_Cmma N3 0>, <&kp DOT>, <&kp LG((LC(F23)))>; // [1x] ,   [2x] .   [3x] "..."
 };
-
+*/
 
 
 
