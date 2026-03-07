@@ -35,7 +35,7 @@
   MOD_MORPH_SHIFT(mmNUM_Q_H   , LS(Q)          , LS(H)         , mmsNUM_Q_H)
 
 //Undefines
-    #undef _CSA_F16
-    #undef _CSA_F22
-    #undef _CSA_F23
+    #undef _CA_F16
+    #undef _CA_F22
+    #undef _CA_F23
 

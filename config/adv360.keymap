@@ -95,24 +95,23 @@
 
 / {
     macros {
-        #include "macros/general_macros.dtsi"
-        #include "macros/shortcuts_macros.dtsi"
-        #include "macros/hold_mods_delays.dtsi"
-        //#include "macros/tap_hold_macros.dtsi"
-        #include "macros/combos_macros_for_holds.dtsi"
+        #include "user/macros/general_macros.dtsi"
+        #include "user/macros/shortcuts_macros.dtsi"
+        #include "user/macros/hold_mods_delays.dtsi"
+        #include "user/macros/combos_macros_for_holds.dtsi"
     };
 
     combos {
-        #include "combos.dtsi"
+        #include "user/combos.dtsi"
     };
 
     behaviors {
-        #include "tapdance/general_tapdance.dtsi"
-        #include "tapdance/lightroom_tapdance.dtsi"
-        #include "behaviors/mod_morphs_general.dtsi"
-        #include "behaviors/mod_morphs_dvorak.dtsi"
-        #include "behaviors/mod_morphs_engram.dtsi"
-        #include "behaviors/mod_morphs_nums.dtsi"
+        #include "user/tapdance/general_tapdance.dtsi"
+        #include "user/tapdance/lightroom_tapdance.dtsi"
+        #include "user/behaviors/mod_morphs_general.dtsi"
+        #include "user/behaviors/mod_morphs_dvorak.dtsi"
+        #include "user/behaviors/mod_morphs_engram.dtsi"
+        #include "user/behaviors/mod_morphs_nums.dtsi"
 
         /*  NOTES - hold-tap
             FLAVORS: https://zmk.dev/docs/behaviors/hold-tap
@@ -292,15 +291,11 @@
                 #define MT_TB_SHFTB     &mt LS(TAB) TAB
                 #define _SHF_BSP_L      &mm_SHIFT_BACKSPACE_L
                 #define NUM_LR_NUM      &ht_num_tolr_tonum L_NUM 0
-                //#define _SHF_BSLH_BKSP  &mm_Bslh_Bksp                 // 2024-12-08 temp trying putting shift back / this was when was BSLh
-                //#define _SHF_BSP_R      &mm_SHIFT_BACKSPACE_R         // see mod_morphs_general.dtsi
                 #define _BSLH_BSP_R      &mm_BACKSLASH_BACKSPACE_R      // see mod_morphs_general.dtsi
-                //#define _MDSH_BSLH      &m_mmsNG2_Mdsh BSLH 0
-                //#define _SHF_LTGT_BK    &mm_LthGth_Bksp
                 #define AS_Hm_CtlHm     &as_slw RC(HOME) HOME
                 #define AS_Bk_CtlBk     &as_slw RC(BSPC) BSPC
                 #define AS_En_CtlEn     &as_slw RC(END) END
-                #define TD_ScrnShots    &TD_WinScreenshot_SnagIt   // 1x: Win+Shift+S   2x: Ctrl+Shift+Alt+P
+                #define TD_ScrnShots    &td_win_ss_snagit   // 1x: Win+Shift+S   2x: Ctrl+Shift+Alt+P
                 #define LH_Bslh_LET     &lt L_LET BSLH // hold=alpha(letter) layer hold; else backslash
   
                 // Other / WIP:
@@ -308,9 +303,7 @@
                 #define BUL_AR_tbd      &as F17 F15 // WIP
                 #define Dt1_Dt0         &m_mmsNG2_D1D0 RC(RA(F17)) 0 // AHK Ctrl+Alt+{F17,F18} >> trigger Date1 and Date0 shortcuts
                 #define _CpWrd_Caps     &ht_cap_cw L_CAP 0 // hold=CAPS else capWORD
-                //#define AS_2BKT_L       &as_2brackets_left 0 LBKT
-                //#define AS_2BKT_R       &as_2brackets_right 0 RBKT
-                //#define TD_Cmma_3_Dot3  &TD_Cmma_3_Ellipses // was "&m_mmsNG2_Cmma N3 0" // 2026-03-07 can't really get timing right to feel "normal" but still work
+                //#define TD_Cmma_3_Dot3  &TD_Cmma_3_Ellipses // 2026-03-07 tried tap-dance comma→3-ellipses; timing not right
 
             // end defines
 
@@ -319,7 +312,7 @@
                 &kp ESC                 _B_GUI               _Y_SFT               _O_ALT               _U_CTL               &m_mmsNG2_Star F16 0  _HYPER                                                                        TD_ScrnShots  &m_mmsNG2_Quot DLLR 0  _L_CTL               _D_ALT               _W_SFT               _V_GUI               &m_mmsNG2_Slsh PERCENT 0
                 MT_TB_SHFTB             &kp C                &as_slw RS(I) I      &kp E                &kp A                &m_mmsNG2_Semi LT 0   _MEH            _CpWrd_Caps   NUM_LR_NUM   LH_Bslh_LET  _BSLH_BSP_R           Dt1_Dt0       &m_mmsNG2_Coln GT 0    &kp H                &kp T                &kp S                &kp N                &m_mmsNG2_Mnus UNDERSCORE 0
                 &m_mmsNG2_Grav CARET 0  &lt L_EDT G          &kp X                &lt L_UTL J          &lt_fst L_NUM K      &m_mmsNG2_Amps AT 0                               AS_Hm_CtlHm     &kp PG_UP                                       &m_mmsNG2_Hash PLUS 0  &kp R                &kp M                &kp F                &kp P                /*&mm_ht_qqu_QQu*/ &ht_qu_QU Q 0 /*&mm_qu_Qu */   /* &as_Qu Q 0 // auto-shift means Shift gets the Hold (q) behavior */
-                &TD_Emj_WinDsk          BUL_AR_tbd           &TD_Rtclick_P        &kp LEFT             &kp RIGHT                                 AS_Bk_CtlBk  &lt L_EDT DEL  AS_En_CtlEn       &kp PG_DN  &lt L_FNC ENTER  &kp SPACE                                 &kp UP               &kp DOWN             &as LS(LBKT) LBKT    &as LS(RBKT) RBKT    &to L_NUM
+                &td_emj_wdsk          BUL_AR_tbd           &td_rtclick_p        &kp LEFT             &kp RIGHT                                 AS_Bk_CtlBk  &lt L_EDT DEL  AS_En_CtlEn       &kp PG_DN  &lt L_FNC ENTER  &kp SPACE                                 &kp UP               &kp DOWN             &as LS(LBKT) LBKT    &as LS(RBKT) RBKT    &to L_NUM
             >; };
             // TEMP: was _SHF_BSP_L on l-thumb
 
@@ -345,9 +338,7 @@
                 #undef BUL_AR_tbd    
                 #undef Dt1_Dt0
                 #undef _CpWrd_Caps
-                //#undef AS_2BKT_L
-                //#undef AS_2BKT_R
-                //#undef TD_Cmma_3_Dot3
+                //#undef TD_Cmma_3_Dot3  // 2026-03-07 ellipses experiment
             // end undefs
         // END Engram
 
@@ -370,18 +361,17 @@
                 #define ZOOM_IN       &kp LC(EQUAL)
                 #define ZOOM_OUT      &kp LC(MINUS)
                 #define SPOT_LUM      &as LS(Q) Q
-                //#define DEV_AUTO      &TD_D_AUTO
                 #define _P_CTL        &hm_l LCTRL P              // Ctrl on index fingers
                 #define _X_NUM        &lht_fst L_NUM X
                 #define BS_CTL_L      &as LC(L) BSLH
-                #define _D_Auto_NUM   &ht_LR_D_Auto_NUM L_NUM 0
+                #define _D_Auto_NUM   &ht_lr_d_auto_num L_NUM 0
             // end defines
 
             lr_layer { bindings = <
-                BS_CTL_L  &TD_LR_1   &TD_LR_2  &TD_LR_3  &TD_LR_4     &TD_LR_5  &to L_0                                      ZOOM_IN   VW_LIB  VW_DEV  VW_MAP  VW_PRT  &kp N0  ___
+                BS_CTL_L  &td_lr_1   &td_lr_2  &td_lr_3  &td_lr_4     &td_lr_5  &to L_0                                      ZOOM_IN   VW_LIB  VW_DEV  VW_MAP  VW_PRT  &kp N0  ___
                 ___       ___        ___       ___       _P_CTL       &kp M     &kp LS(W)                                    ZOOM_OUT  &kp K   ___     ___     ___     ___     ___
                 ___       ___        ___       ___       &kp U        &kp S     &kp A      R_CA_R  &to L_0  _tbd_  _tbd_     _tbd_     _tbd_   ___     ___     ___     ___     ___
-                &TD_LR_E  ___        ___       DESEL     _D_Auto_NUM  SURV_SH                         ___    ___                       _tbd_   ___     ___     ___     ___     SPOT_LUM
+                &td_lr_e  ___        ___       DESEL     _D_Auto_NUM  SURV_SH                         ___    ___                       _tbd_   ___     ___     ___     ___     SPOT_LUM
                 R_CA_R    &kp LS(T)  &kp J     ___       ___                               ___  ___  ___      ___  ___  ___                    ___     ___     ___     ___     VRT_CPY
             >; };
 
@@ -397,7 +387,6 @@
                 #undef ZOOM_IN
                 #undef ZOOM_OUT
                 #undef SPOT_LUM
-                //#undef DEV_AUTO
                 #undef _D_Auto_NUM
              // end undefs
 
@@ -600,8 +589,6 @@
 
             // #DEFs
                 #define _AHK_AT &kp RC(RA(AT_SIGN))
-                //#define _CAP_Q &m_mmsNG2_CapQ LS(Q) 0
-                //#define _CAP_Q &m_ucase_QU
                 #define _CAP_Q &ht_QU_Q LS(Q) 0
                 #define _CAP_ING &m_mmsNG2_CapIng N5 0
                 #define _CAP_TION &m_mmsNG2_CapTion N6 0

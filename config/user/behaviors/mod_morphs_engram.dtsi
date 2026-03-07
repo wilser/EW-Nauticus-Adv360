@@ -62,39 +62,5 @@
   MOD_MORPH_SHIFT(mmNG2_D1D0  , RC(RA(F18)) , RC(RA(F17)) , mmsNG2_D1D0)
 
 // for CAPS:
-  //MOD_MORPH_SHIFT(mmNG2_CapQ     , RC(F24)      , LS(Q)   , mmsNG2_CapQ) // ^F16 "QU" / TODO: harmonize with NGM how works?
-  //MOD_MORPH_SHIFT(mmNG2_Qu     , F16     , Q   , mmsNG2_Qu) // F16 "" / TODO: harmonize with NGM how works? - DON'T want Shift+<> to also trigger alt key
   MOD_MORPH_SHIFT(mmNG2_CapIng   , RC(RS(F11))  , N5      , mmsNG2_CapIng ) // ^!F11 "ING"
   MOD_MORPH_SHIFT(mmNG2_CapTion  , RC(RS(F12))  , N6      , mmsNG2_CapTion) // ^!F15 "TION"
-
-
-
-/*********************
-   * PRIOR ones - in case want back easily...
-
-//MOD_MORPH_SHIFT(mmNG2_Apos  , APOS       , N2       , mmsNG2_Apos)
-//MOD_MORPH_SHIFT(mmNG2_Qstn  , QMARK      , N4       , mmsNG2_Qstn)
-//MOD_MORPH_SHIFT(mmNG2_Excl  , EXCL       , N5       , mmsNG2_Excl)
-//MOD_MORPH_SHIFT(mmNG2_Tion  , F15        , N6       , mmsNG2_Tion) // F15 tion
-//MOD_MORPH_SHIFT(mmNG2_LsTh  , LT         , N6       , mmsNG2_LsTh)
-//MOD_MORPH_SHIFT(mmNG2_Semi  , SEMI       , N6       , mmsNG2_Semi)
-//MOD_MORPH_SHIFT(mmNG2_GrTh  , GT         , N7       , mmsNG2_GrTh)
-//MOD_MORPH_SHIFT(mmNG2_Quot  , DQT        , N7       , mmsNG2_Quot)  
-//MOD_MORPH_SHIFT(mmNG2_Lpar  , LPAR       , N7       , mmsNG2_Lpar)
-//MOD_MORPH_SHIFT(mmNG2_Quot  , DQT        , N9       , mmsNG2_Quot)  
-//MOD_MORPH_SHIFT(mmNG2_GrTh  , GT         , N9       , mmsNG2_GrTh)
-//MOD_MORPH_SHIFT(mmNG2_Rpar  , RPAR       , N9       , mmsNG2_Rpar)
-//MOD_MORPH_SHIFT(mmNG2_Ing   , F14        , F21      , mmsNG2_Ing ) // F14 "ing", F21 •
-//MOD_MORPH_SHIFT(mmNG2_Ing   , F14        , F20      , mmsNG2_Ing ) // F14 "ing", F20 Ø
-//MOD_MORPH_SHIFT(mmNG2_Quot  , DQT        , TILDE    , mmsNG2_Quot)  
-//MOD_MORPH_SHIFT(mmNG2_Cmma  , COMMA      , SEMI     , mmsNG2_Cmma)
-//MOD_MORPH_SHIFT(mmNG2_Semi  , SEMI       , TILDE    , mmsNG2_Semi)
-//MOD_MORPH_SHIFT(mmNG2_Amps  , AMPS       , LT       , mmsNG2_Amps) 
-//MOD_MORPH_SHIFT(mmNG2_Tion  , F15        , DLLR     , mmsNG2_Tion) // F15 tion
-//MOD_MORPH_SHIFT(mmNG2_Perd  , PERIOD     , PLUS     , mmsNG2_Perd)
-//MOD_MORPH_SHIFT(mmNG2_Coln  , COLON      , PLUS     , mmsNG2_Coln)
-//MOD_MORPH_SHIFT(mmNG2_Hash  , HASH       , AT       , mmsNG2_Hash)
-//MOD_MORPH_SHIFT(mmNG2_Tion  , F15        , GRAVE    , mmsNG2_Tion) // F15 tion
-
-   */
-  

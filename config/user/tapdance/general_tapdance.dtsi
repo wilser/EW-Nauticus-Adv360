@@ -9,37 +9,15 @@
 
 // 2024-04-16: label removed from ZMK v3
 
-TD_Emj_WinDsk: tapdance_emoji_windesktopchange {
+td_emj_wdsk: tapdance_emoji_windesktopchange {
     compatible = "zmk,behavior-tap-dance";
     #binding-cells = <0>;
     tapping-term-ms = <300>;
     bindings = <&kp RG(SEMI)>, <&kp RG(TAB)>; // [1x] Win+; (Emoji pop-up)    [2x] Win+Tab (Windows desktops)
 };
 
-TD_CpWrd_CpLock: tapdance_capsword_capslock {
-    compatible = "zmk,behavior-tap-dance";
-    #binding-cells = <0>;
-    tapping-term-ms = <300>;
-    bindings = <&caps_word>, <&kp CAPSLOCK>;
-};
 
-/* Home/End: 2024-04-21 replaced with Hold/Tap instead of 2x-tap
-TD_Hm_CtrlHm: tapdance_home_ctrlhome {
-    compatible = "zmk,behavior-tap-dance";
-    #binding-cells = <0>;
-    tapping-term-ms = <300>;
-    bindings = <&kp HOME>, <&kp RC(HOME)>;
-};
-
-TD_En_CtrlEn: tapdance_end_ctrlend {
-    compatible = "zmk,behavior-tap-dance";
-    #binding-cells = <0>;
-    tapping-term-ms = <300>;
-    bindings = <&kp END>, <&kp RC(END)>;
-};
-*/
-
-TD_WinScreenshot_SnagIt: tapdance_winss_snagitss {
+td_win_ss_snagit: tapdance_winss_snagitss {
     compatible = "zmk,behavior-tap-dance";
     #binding-cells = <0>;
     tapping-term-ms = <300>;
@@ -60,35 +38,13 @@ TD_WinScreenshot_SnagIt: tapdance_winss_snagitss {
 // 2024-07-23 special for 2x-tap 'Menu-key' to add "P" [for OneNote when rt-click on a paragraph; to get link to paragraph]
 // 1st-tap is an AutoShift(hold) case - SO...
 // 1-tap: rt-click menu; 2-tap: "P"; Hold: Ctrl+Q
-TD_Rtclick_P: tapdance_rtclick_p {
+td_rtclick_p: tapdance_rtclick_p {
     compatible = "zmk,behavior-tap-dance";
     #binding-cells = <0>;
     tapping-term-ms = <225>; // 150 too fast, 300 too slow?
     bindings = <&as RC(Q) K_CMENU>, <&kp P>; 
 };
 
-// PRIOR one trying to replace [think Ø need / clean up later]
-TD_Num_LR_NLock: tapdance_num_lr_numlock {
-    compatible = "zmk,behavior-tap-dance";
-    #binding-cells = <0>;
-    tapping-term-ms = <300>;
-    bindings = <&mo L_NUM>, <&to L_NUM>, <&to L_LR>; // [hold] Num   [2x] to NUM  [3x] to LR
-};
-
-// 2026-03-07 experiment: make the 3 key do its current "&m_mmsNG2_Cmma N3 0" with tap or hold, but with 3 taps do a "..." macro
-// but the &m_mmsNG2_Cmma needs 2 subsequent 2 arguments N3 and 0
-// sending the "..." uses AHK hotkey "&kp LG((LC(F23)))"
-// [ ] TODO: what want if 2x tap?
-// [.] not getting timing to work well...
-/*
-TD_Cmma_3_Ellipses: tapdance_comma_3_ellipses {
-    compatible = "zmk,behavior-tap-dance";
-    #binding-cells = <0>;
-    tapping-term-ms = <150>; // shorter so hold>3 not super slow vs others
-    bindings = <&m_mmsNG2_Cmma N3 0>, <&kp LG((LC(F23)))>; // [1x] ,   [2x] "..."
-    //bindings = <&m_mmsNG2_Cmma N3 0>, <&kp DOT>, <&kp LG((LC(F23)))>; // [1x] ,   [2x] .   [3x] "..."
-};
-*/
 
 
 
@@ -120,19 +76,19 @@ ht_num_tolr_tonum: holdtap_Num_ToLR_ToNum {
 };
 
 // similar as above but for D and Lightroom: Hold=NUM, Tap=D, 2-Tap=(Ctrl+U)
-td_D_CtrlU: tapdance_D_CtrlU {
+td_d_ctrl_u: tapdance_D_CtrlU {
     compatible = "zmk,behavior-tap-dance";
     #binding-cells = <0>;
     tapping-term-ms = <200>;
     bindings = <&kp D>, <&kp RC(U)>; // 1st tap - D (LR: develop), 2x tap - Ctrl+U (LR: auto-develop settings)
 };
 
-ht_LR_D_Auto_NUM: holdtap_LR_D_Auto_NUM {
+ht_lr_d_auto_num: holdtap_LR_D_Auto_NUM {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
     flavor = "hold-preferred"; // which?
     tapping-term-ms = <200>;
     quick-tap-ms = <200>;
-    bindings = <&mo>, <&td_D_CtrlU>;
+    bindings = <&mo>, <&td_d_ctrl_u>;
 };
 

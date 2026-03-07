@@ -91,12 +91,4 @@ m_M10: m_M10 {
     bindings = <&kp L &kp U &kp C &kp K>;
 };
 
-m_ion: m_ion {
-    wait-ms = _WAIT;
-    tap-ms = _TAP;
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    bindings = <&kp I &kp O &kp N>;
-};
-
 
