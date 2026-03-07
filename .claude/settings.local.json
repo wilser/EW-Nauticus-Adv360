@@ -1,9 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(wc -l config/**/*.dtsi config/**/*.keymap)",
+      "Bash(wc *)",
       "Bash(python3 -c \":*)",
-      "Bash(find config/ -name \"*.tmp.*\" -delete)"
+      "Bash(find *)",
+      "cd *",
+      "grep *"
     ]
   }
 }

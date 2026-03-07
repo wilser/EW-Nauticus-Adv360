@@ -1,7 +1,14 @@
 {
   "permissions": {
     "allow": [
-      "Bash(tree:*)"
-    ]
+      "Bash(tree:*)",
+      "Bash(wc *)",
+      "Bash(python3 -c \":*)",
+      "Bash(find *)",
+      "cd *",
+      "grep *",
+      "find *",
+      "head *"
+    ]    
   }
 }
