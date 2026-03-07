@@ -67,8 +67,6 @@ TD_Rtclick_P: tapdance_rtclick_p {
     bindings = <&as RC(Q) K_CMENU>, <&kp P>; 
 };
 
-
-
 // PRIOR one trying to replace [think Ø need / clean up later]
 TD_Num_LR_NLock: tapdance_num_lr_numlock {
     compatible = "zmk,behavior-tap-dance";
@@ -76,6 +74,20 @@ TD_Num_LR_NLock: tapdance_num_lr_numlock {
     tapping-term-ms = <300>;
     bindings = <&mo L_NUM>, <&to L_NUM>, <&to L_LR>; // [hold] Num   [2x] to NUM  [3x] to LR
 };
+
+// 2026-03-07 experiment: make the 3 key do its current "&m_mmsNG2_Cmma N3 0" with tap or hold, but with 3 taps do a "..." macro
+// but the &m_mmsNG2_Cmma needs 2 subsequent 2 arguments N3 and 0
+// sending the "..." uses AHK hotkey "&kp LG((LC(F23)))"
+// [ ] TODO: what want if 2x tap?
+TD_Cmma_3_Ellipses: tapdance_comma_3_ellipses {
+    compatible = "zmk,behavior-tap-dance";
+    #binding-cells = <0>;
+    tapping-term-ms = <300>;
+    bindings = <&m_mmsNG2_Cmma N3 0>, <&kp DOT>, <&kp LG((LC(F23)))>; // [1x] ,   [2x] .   [3x] "..."
+};
+
+
+
 
 
 // **************************************************

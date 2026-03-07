@@ -72,8 +72,13 @@ combo_reset_mods {
 };
 
 // [G] "..." - Win+Ctrl+F23 / AHK: "..." (separate, Ø … char)
-combo_win_ctrl_f23 {
+combo_win_ctrl_f23_rh {
     key-positions = <9 10>; // top row (.
+    bindings = <&kp LG((LC(F23)))>; // SEE AHK
+    layers = <L_NGM>;
+};
+combo_win_ctrl_f23_lh {
+    key-positions = <3 4>; // top row ,'
     bindings = <&kp LG((LC(F23)))>; // SEE AHK
     layers = <L_NGM>;
 };
