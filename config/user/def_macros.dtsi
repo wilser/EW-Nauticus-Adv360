@@ -21,4 +21,4 @@ mms_##SUFFIX: mms_##SUFFIX { \
     quick-tap-ms = <0>; \
     flavor = "tap-preferred"; \
     bindings = <&kp>, <&mm_##SUFFIX>; \
-}; \
+};

@@ -18,7 +18,7 @@
     #define _D_AUTO_NUM   &ht_lr_d_auto_num L_NUM 0  // 'D', 2x(^U) (auto tone), Hold(NUM) layer
     #define _TO_SURV      &as LS(N) N
     #define _SPOT_LUM     &as LS(Q) Q
-    #define _VRT-CPY      &kp LC(APOS)
+    #define _VRT_CPY      &kp LC(APOS)
 // end defines
 
 lr_layer { bindings = <
@@ -26,7 +26,7 @@ lr_layer { bindings = <
     ___          ___        ___       ___        _P_CTL       &kp M     &kp LS(W)                                    _ZOOM_OUT  &kp K    ___      ___      ___      ___     ___
     ___          ___        ___       ___        &kp U        &kp S     &kp A      _R_CTLR  &to L_0  _tbd_  _tbd_    _tbd_      _tbd_    ___      ___      ___      ___     ___
     &td_lr_e     ___        ___       _DE_SEL    _D_AUTO_NUM  _TO_SURV                          ___    ___                      _tbd_    ___      ___      ___      ___     _SPOT_LUM
-    _R_CTL_R     &kp LS(T)  &kp J     ___        ___                                ___  ___  ___       ___  ___  ___                    ___      ___      ___      ___     _VRT-CPY
+    _R_CTL_R     &kp LS(T)  &kp J     ___        ___                                ___  ___  ___       ___  ___  ___                    ___      ___      ___      ___     _VRT_CPY
 >; };
 
 // undefs
@@ -43,5 +43,5 @@ lr_layer { bindings = <
     #undef _D_AUTO_NUM
     #undef _TO_SURV
     #undef _SPOT_LUM
-    #undef _VRT-CPY
+    #undef _VRT_CPY
 // end undefs
