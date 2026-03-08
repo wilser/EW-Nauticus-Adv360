@@ -7,7 +7,7 @@
 
 // DEFINES:
     #define _KP_ENT      &kp KP_ENTER
-    #define _BKSL_PIPE   &mms_ng_bksl PIPE 0
+    #define _BKSL_PIPE   &mms_ngm_bksl PIPE 0
     #define _APOS_EURO   &mms_num_apos LC(LA(F16)) 0  // AHK: €
     #define _COLN_SEMI   &mms_num_coln SEMI 0
     #define _DLLR_DQT    &mms_num_dllr DQT 0

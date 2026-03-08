@@ -15,48 +15,48 @@
 
 
 // TOP ROW (L to R)
-  MOD_MORPH_SHIFT(ng_tild    , TILDE        , PIPE     )
-  MOD_MORPH_SHIFT(ng_excl    , EXCL         , N1       )
-  MOD_MORPH_SHIFT(ng_qstn    , QMARK        , N2       )
-  MOD_MORPH_SHIFT(ng_cmma    , COMMA        , N3       )
-  MOD_MORPH_SHIFT(ng_apos    , APOS         , N4       )
-  MOD_MORPH_SHIFT(ng_ing     , RC(F11)      , N5       ) // ^F11 "ing"
-  MOD_MORPH_SHIFT(ng_cap_ing , RC(RS(F11))  , N5       ) // ^!F11 "ING"
+  MOD_MORPH_SHIFT(ngm_tild    , TILDE        , PIPE     )
+  MOD_MORPH_SHIFT(ngm_excl    , EXCL         , N1       )
+  MOD_MORPH_SHIFT(ngm_qstn    , QMARK        , N2       )
+  MOD_MORPH_SHIFT(ngm_cmma    , COMMA        , N3       )
+  MOD_MORPH_SHIFT(ngm_apos    , APOS         , N4       )
+  MOD_MORPH_SHIFT(ngm_ing     , RC(F11)      , N5       ) // ^F11 "ing"
+  MOD_MORPH_SHIFT(ngm_cap_ing , RC(RS(F11))  , N5       ) // ^!F11 "ING"
 
-  MOD_MORPH_SHIFT(ng_tion    , RC(F12)      , N6       ) // ^F12 "tion"
-  MOD_MORPH_SHIFT(ng_cap_tion, RC(RS(F12))  , N6       ) // ^!F12 "TION"
-  MOD_MORPH_SHIFT(ng_lpar    , LPAR         , N7       )
-  MOD_MORPH_SHIFT(ng_perd    , PERIOD       , N8       )
-  MOD_MORPH_SHIFT(ng_rpar    , RPAR         , N9       )
-  MOD_MORPH_SHIFT(ng_equl    , EQUAL        , N0       )
+  MOD_MORPH_SHIFT(ngm_tion    , RC(F12)      , N6       ) // ^F12 "tion"
+  MOD_MORPH_SHIFT(ngm_cap_tion, RC(RS(F12))  , N6       ) // ^!F12 "TION"
+  MOD_MORPH_SHIFT(ngm_lpar    , LPAR         , N7       )
+  MOD_MORPH_SHIFT(ngm_perd    , PERIOD       , N8       )
+  MOD_MORPH_SHIFT(ngm_rpar    , RPAR         , N9       )
+  MOD_MORPH_SHIFT(ngm_equl    , EQUAL        , N0       )
 
 // Left Bottom
-  MOD_MORPH_SHIFT(ng_bksl    , BSLH         , PIPE     )
-  MOD_MORPH_SHIFT(ng_grav    , GRAVE        , CARET    )
+  MOD_MORPH_SHIFT(ngm_bksl    , BSLH         , PIPE     )
+  MOD_MORPH_SHIFT(ngm_grav    , GRAVE        , CARET    )
 
  // L-MID COLUMN (T to B):
-  MOD_MORPH_SHIFT(ng_star    , STAR         , F16      ) // F16 "Ø"
-  MOD_MORPH_SHIFT(ng_semi    , SEMI         , LT       )
-  MOD_MORPH_SHIFT(ng_amps    , AMPS         , AT       )
+  MOD_MORPH_SHIFT(ngm_star    , STAR         , F16      ) // F16 "Ø"
+  MOD_MORPH_SHIFT(ngm_semi    , SEMI         , LT       )
+  MOD_MORPH_SHIFT(ngm_amps    , AMPS         , AT       )
 
 // R-MID COLUMN (T to B):
-  MOD_MORPH_SHIFT(ng_quot    , DQT          , DLLR     )
-  MOD_MORPH_SHIFT(ng_coln    , COLON        , GT       )
-  MOD_MORPH_SHIFT(ng_hash    , HASH         , PLUS     )
+  MOD_MORPH_SHIFT(ngm_quot    , DQT          , DLLR     )
+  MOD_MORPH_SHIFT(ngm_coln    , COLON        , GT       )
+  MOD_MORPH_SHIFT(ngm_hash    , HASH         , PLUS     )
 
 // Rh COLUMN (T to B):
-  MOD_MORPH_SHIFT(ng_slsh    , SLASH        , PRCNT    )
-  MOD_MORPH_SHIFT(ng_mnus    , MINUS        , UNDER    )
+  MOD_MORPH_SHIFT(ngm_slsh    , SLASH        , PRCNT    )
+  MOD_MORPH_SHIFT(ngm_mnus    , MINUS        , UNDER    )
 
 // For dates:
-  MOD_MORPH_SHIFT(ng_d1d0    , RC(RA(F18)) , RC(RA(F17)) )
+  MOD_MORPH_SHIFT(ngm_d1d0    , RC(RA(F18)) , RC(RA(F17)) )
 
 
 // UNUSED (keep since PIA to re-do if change mind):
-  //MOD_MORPH_SHIFT(ng_star  , STAR        , N1          )
-  //MOD_MORPH_SHIFT(ng_excl  , EXCL        , N7          )
-  //MOD_MORPH_SHIFT(ng_quot  , DQT         , N9          )
-  //MOD_MORPH_SHIFT(ng_cret  , CARET       , GRAVE       )
-  //MOD_MORPH_SHIFT(ng_lpar  , LPAR        , F16         ) // F16 "Ø"
-  //MOD_MORPH_SHIFT(ng_excl  , EXCL        , F16         ) // F16 "Ø"
-  //MOD_MORPH_SHIFT(ng_rpar  , RPAR        , DLLR        )
+  //MOD_MORPH_SHIFT(ngm_star  , STAR        , N1          )
+  //MOD_MORPH_SHIFT(ngm_excl  , EXCL        , N7          )
+  //MOD_MORPH_SHIFT(ngm_quot  , DQT         , N9          )
+  //MOD_MORPH_SHIFT(ngm_cret  , CARET       , GRAVE       )
+  //MOD_MORPH_SHIFT(ngm_lpar  , LPAR        , F16         ) // F16 "Ø"
+  //MOD_MORPH_SHIFT(ngm_excl  , EXCL        , F16         ) // F16 "Ø"
+  //MOD_MORPH_SHIFT(ngm_rpar  , RPAR        , DLLR        )
