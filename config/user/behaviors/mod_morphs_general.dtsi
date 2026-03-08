@@ -1,44 +1,13 @@
 #include <dt-bindings/zmk/keys.h>
 
-/* pattern
+// Standalone mod-morphs — uses MOD_MORPH(NAME, B1, B2, MODS) from def_macros.dtsi
 
-m_##MM_NAME: m_##MM_NAME { \
-    compatible = "zmk,behavior-mod-morph"; \
-    #binding-cells = <0>; \
-    bindings = <&kp KEY>, <&kp MOD_KEY>; \
-    mods = <(MOD_LSFT|MOD_RSFT)>; \
-}; \
-
-[] 2024-04-16 think label property deprecated for most(all?) behaviors
-
-*/
-
-// When LEFT SHIFT being held, make the RIGHT SHIFT act as backspace for convenience
-// (because in my layout, I usually hold left-thumb shift, but backspace normally is on a different left-thumb key)
-// 2025-12-29 Ø using:
-mm_SHIFT_BACKSPACE_R: mm_SHIFT_BACKSPACE_R {
-    compatible = "zmk,behavior-mod-morph";
-    #binding-cells = <0>;
-    bindings = <&kp RSHFT>, <&kp BACKSPACE>;
-    mods = <(MOD_LSFT)>;
-};
-
-// 2025-12-29 instead of ^ one?
-mm_BACKSLASH_BACKSPACE_R: mm_BACKSLASH_BACKSPACE_R {
-    compatible = "zmk,behavior-mod-morph";
-    #binding-cells = <0>;
-    bindings = <&kp BSLH>, <&kp BACKSPACE>;
-    mods = <(MOD_LSFT)>;
-};
-
-mm_SHIFT_BACKSPACE_L: mm_SHIFT_BACKSPACE_L {
-    compatible = "zmk,behavior-mod-morph";
-    #binding-cells = <0>;
-    bindings = <&kp LSHFT>, <&kp BACKSPACE>;
-    mods = <(MOD_RSFT)>;
-};
+// 2025-12-29 currently using
+// When LEFT SHIFT held, RIGHT SHIFT acts as backspace
+// (hold left-thumb shift, but backspace is on a different left-thumb key)
+MOD_MORPH(mm_BACKSLASH_BACKSPACE_R, BSLH, BACKSPACE, MOD_LSFT)
 
 
-// MOD_MORPH_SHIFT macro moved to user/def_macros.dtsi
-
-
+// 2025-12-29 Ø using these:
+// MOD_MORPH(mm_SHIFT_BACKSPACE_R,   RSHFT, BACKSPACE, MOD_LSFT)
+// MOD_MORPH(mm_SHIFT_BACKSPACE_L,   LSHFT, BACKSPACE, MOD_RSFT)

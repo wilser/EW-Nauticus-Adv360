@@ -3,6 +3,7 @@
 // Include this file FIRST in behaviors {} before any files that use these macros.
 //
 // Macros defined here:
+//   MOD_MORPH(NAME, B1, B2, MODS)                    — standalone mod-morph (kp/kp)
 //   MOD_MORPH_SHIFT(SUFFIX, KEY, MOD_KEY)            — mod-morph + hold-tap wrapper pair
 //   HT_KP(NAME, TTM, QTM, FLAVOR)                    — hold-tap kp/kp, no positions
 //   HT_KP_POS(NAME, TTM, QTM, FLAVOR, KEYS)          — hold-tap kp/kp + hold-trigger positions
@@ -11,6 +12,20 @@
 // FLAVOR: pass pre-quoted string, e.g. "balanced" or "tap-preferred"
 // KEYS:   pass position arrays unquoted, e.g. KEYS_RIGHT THUMBS MODS_LEFT
 
+// ─────────────────────────────────────────────────────────────────────────────
+// MOD_MORPH(NAME, B1, B2, MODS)
+//   Standalone mod-morph: tap=B1, morph=B2 when MODS held
+//   MODS: single (MOD_LSFT) or combined (MOD_LSFT|MOD_RSFT)
+//   Usage: MOD_MORPH(mm_bslh_bspc, BSLH, BACKSPACE, MOD_LSFT)
+#define MOD_MORPH(NAME, B1, B2, MODS) \
+NAME: NAME { \
+    compatible = "zmk,behavior-mod-morph"; \
+    #binding-cells = <0>; \
+    bindings = <&kp B1>, <&kp B2>; \
+    mods = <(MODS)>; \
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
 // MOD_MORPH_SHIFT(SUFFIX, KEY, MOD_KEY)
 //   Generates a pair of behaviors:
 //     mm_##SUFFIX  — mod-morph: tap=KEY, shifted=MOD_KEY
