@@ -24,7 +24,7 @@
 lr_layer { bindings = <
     _BSLH_CTL_L  &td_lr_1   &td_lr_2  &td_lr_3  &td_lr_4      &td_lr_5  &to L_0                                      _ZOOM_IN   _VW_LIB  _VW_DEV  _VW_MAP  _VW_PRT  &kp N0  ___
     ___          ___        ___       ___        _P_CTL       &kp M     &kp LS(W)                                    _ZOOM_OUT  &kp K    ___      ___      ___      ___     ___
-    ___          ___        ___       ___        &kp U        &kp S     &kp A      _R_CTLR  &to L_0  _tbd_  _tbd_    _tbd_      _tbd_    ___      ___      ___      ___     ___
+    ___          ___        ___       ___        &kp U        &kp S     &kp A      _R_CTL_R  &to L_0  _tbd_  _tbd_    _tbd_      _tbd_    ___      ___      ___      ___     ___
     &td_lr_e     ___        ___       _DE_SEL    _D_AUTO_NUM  _TO_SURV                          ___    ___                      _tbd_    ___      ___      ___      ___     _SPOT_LUM
     _R_CTL_R     &kp LS(T)  &kp J     ___        ___                                ___  ___  ___       ___  ___  ___                    ___      ___      ___      ___     _VRT_CPY
 >; };
