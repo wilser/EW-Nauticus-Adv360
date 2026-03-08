@@ -1,128 +1,40 @@
 // Custom hold-tap behaviors for adv360 keymap
+// Uses HT_KP, HT_KP_POS, HT_BINDS from def_macros.dtsi
 // (KEYS_LEFT, KEYS_RIGHT, THUMBS, MODS_* must be #defined before this file is included)
 
 /*  NOTES - hold-tap
     FLAVORS: https://zmk.dev/docs/behaviors/hold-tap
-        balanced: best for most cases, if hold long enough, thinks a hold, or if fast but w/in time, then hold, else tap (*default best)
-        tap-preferred: assume tap unless more strict timing met; more 'deliberate'
-        hold-preferred: more forgiving (& more false-holds)
-        tap-unless-interrupted: [NMI] seems to assume tap even if slower, unless some other key pressed (so if - was the hold, would yield ----------.... I think, but "-x" faster would be <Hold>+<X>)
-    TIMINGS that seem good: see below for reg/med/slw - e.g. slower for Win/Gui since false-holds wreck havoc :)
+        balanced:              best for most cases; if held long enough → hold, if fast+within time → hold, else tap
+        tap-preferred:         assume tap unless stricter timing met; more 'deliberate'
+        hold-preferred:        more forgiving hold (& more false-holds)
+        tap-unless-interrupted: assumes tap even if slower, unless another key pressed
+    TIMINGS: see below — e.g. slower for Win/GUI since false-holds wreck havoc
 
-    // [.] 2024-12-21: still don't get the tap-term vs guick-tap nuances
+    // [.] 2024-12-21: still don't get the tap-term vs quick-tap nuances
     // [ ] 2026-03-07: some of the timings still unsure or need deeper dive / explanations
-
 */
 
-hm: homerow_mods {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    tapping-term-ms = <200>;
-    quick-tap-ms = <125>; 
-    flavor = "balanced";
-    bindings = <&kp>, <&kp>;
-};
+/* homerow mods — kp/kp */
+HT_KP(hm,     200, 125, "balanced")
 
-hm_l: homerow_mods_left {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    tapping-term-ms = <200>;
-    quick-tap-ms = <125>; 
-    flavor = "balanced";
-    bindings = <&kp>, <&kp>;
-    hold-trigger-key-positions = <KEYS_RIGHT THUMBS MODS_LEFT>;
-    /* TEMP: ↑ adding MODS_LEFT to see if can n-hold mods */
-};
+/* TEMP: adding MODS_LEFT/RIGHT to see if can n-hold mods better */
+HT_KP_POS(hm_l, 200, 125, "balanced", KEYS_RIGHT THUMBS MODS_LEFT)
+HT_KP_POS(hm_r, 200, 125, "balanced", KEYS_LEFT  THUMBS MODS_RIGHT)
 
-hm_r: homerow_mods_right {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    tapping-term-ms = <200>;
-    quick-tap-ms = <125>;  
-    flavor = "balanced";
-    bindings = <&kp>, <&kp>;
-    hold-trigger-key-positions = <KEYS_LEFT THUMBS MODS_RIGHT>;
-    /* TEMP: ↑ adding MODS_RIGHT to see if can n-hold better */
-};
+/* slower for Win/GUI — false-holds are worse than false-taps */
+HT_KP(hm_slw, 300, 200, "tap-preferred")
 
-/* "slower" home-row mod for Win key since don't need to be fast and false-taps mess up worse */
-hm_slw: homerow_mods_slw {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    tapping-term-ms = <300>;
-    quick-tap-ms = <200>;
-    flavor = "tap-preferred";
-    bindings = <&kp>, <&kp>;
-};
+/* medium for other mod keys */
+HT_KP(hm_med, 250, 150, "balanced")
 
-/* "medium" home-row mod for Other Mod keys since don't need to be fast and false-taps are problems */
-hm_med: homerow_mods_med {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    tapping-term-ms = <250>;
-    quick-tap-ms = <150>;
-    flavor = "balanced"; // tap-preferred better?
-    bindings = <&kp>, <&kp>;
-};
+/* auto-shift variants (binding-1=held, binding-2=tapped) */
+HT_KP(as,      150,   0, "tap-preferred")
+HT_KP(as_slw,  230,   0, "tap-preferred")
 
+/* quick-tap = tapping-term: 2x-tap-then-hold repeats the key */
+HT_KP(as_2tap, 230, 230, "tap-preferred")
 
-/* Adapted from here: https://github.com/serebrov/zmk-config/blob/master/config/microdox.keymap
-    binding-1 = when held, binding-2 = when tapped
-*/
-as: auto_shift {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    tapping-term-ms = <150>;
-    quick-tap-ms = <0>;
-    flavor = "tap-preferred";
-    bindings = <&kp>, <&kp>;
-};
-
-as_slw: auto_shift_slw {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    tapping-term-ms = <230>;
-    quick-tap-ms = <0>;
-    flavor = "tap-preferred";
-    bindings = <&kp>, <&kp>;
-};
-
-as_2tap: auto_shift_2tap_revert {
-    // quick-tap longer, like tapping-term, lets 2x-tap-then-hold repeat the key
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    tapping-term-ms = <230>;
-    quick-tap-ms = <230>;
-    flavor = "tap-preferred";
-    bindings = <&kp>, <&kp>;
-};
-
-// faster (thought was "broken" but not sure what I meant; it's still in use as of 2026-03-07)
-lt_fst: layer_tap_faster {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    tapping-term-ms = <140>; // after many attempts to dial in
-    quick-tap-ms = <0>;  // this might also need tweaking?
-    flavor = "tap-preferred";
-    bindings = <&mo>, <&kp>;
-};
-
-
-// TBD layer Hold for 1, Tap for 2; adapted from https://www.reddit.com/r/ErgoMechKeyboards/comments/123sapj/zmk_question_can_i_layertap_with_a_macro/
-lht: layer_hold_tap {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    tapping-term-ms = <170>;
-    quick-tap-ms = <0>;
-    flavor = "tap-preferred";
-    bindings = <&mo>, <&to>;
-};
-
-lt_slw: layer_tap_slower {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    tapping-term-ms = <230>;
-    quick-tap-ms = <0>;  // this might also need tweaking?
-    flavor = "tap-preferred";
-    bindings = <&mo>, <&kp>;
-};
+/* layer-tap variants */
+HT_BINDS(lt_fst, 140, 0, "tap-preferred", mo, kp)  // faster; after many attempts to dial in
+HT_BINDS(lht,    170, 0, "tap-preferred", mo, to)   // hold=layer, tap=to(layer)
+HT_BINDS(lt_slw, 230, 0, "tap-preferred", mo, kp)

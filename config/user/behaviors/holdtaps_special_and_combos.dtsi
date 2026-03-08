@@ -1,10 +1,2 @@
 // hold-mod for capWORD else layer hold
-ht_cap_cw: hold_tap_capword {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    tapping-term-ms = <200>;
-    quick-tap-ms = <0>;
-    flavor = "tap-preferred";
-    bindings = <&mo>, <&caps_word>;
-};
-
+HT_BINDS(ht_cap_cw, 200, 0, "tap-preferred", mo, caps_word)

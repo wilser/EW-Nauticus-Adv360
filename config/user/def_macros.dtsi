@@ -1,6 +1,15 @@
 // === DEF-MACROS (C preprocessor function-like macros) ===
 // These are NOT ZMK macros (behavior type) — these are C preprocessor #define macros.
 // Include this file FIRST in behaviors {} before any files that use these macros.
+//
+// Macros defined here:
+//   MOD_MORPH_SHIFT(SUFFIX, KEY, MOD_KEY)            — mod-morph + hold-tap wrapper pair
+//   HT_KP(NAME, TTM, QTM, FLAVOR)                    — hold-tap kp/kp, no positions
+//   HT_KP_POS(NAME, TTM, QTM, FLAVOR, KEYS)          — hold-tap kp/kp + hold-trigger positions
+//   HT_BINDS(NAME, TTM, QTM, FLAVOR, B1, B2)         — hold-tap custom bindings, no positions
+//
+// FLAVOR: pass pre-quoted string, e.g. "balanced" or "tap-preferred"
+// KEYS:   pass position arrays unquoted, e.g. KEYS_RIGHT THUMBS MODS_LEFT
 
 // MOD_MORPH_SHIFT(SUFFIX, KEY, MOD_KEY)
 //   Generates a pair of behaviors:
@@ -21,4 +30,33 @@ mms_##SUFFIX: mms_##SUFFIX { \
     quick-tap-ms = <0>; \
     flavor = "tap-preferred"; \
     bindings = <&kp>, <&mm_##SUFFIX>; \
+};
+
+// ─────────────────────────────────────────────────────────────────────────────
+// HOLD_TAP macros — three variants for zmk,behavior-hold-tap nodes
+
+// Base: custom bindings, no hold-trigger positions
+#define HT_BINDS(NAME, TTM, QTM, FLAVOR, B1, B2) \
+NAME: NAME { \
+    compatible = "zmk,behavior-hold-tap"; \
+    #binding-cells = <2>; \
+    tapping-term-ms = <TTM>; \
+    quick-tap-ms = <QTM>; \
+    flavor = FLAVOR; \
+    bindings = <&B1>, <&B2>; \
+};
+
+// Shorthand: kp/kp bindings (most common) — delegates to HT_BINDS
+#define HT_KP(NAME, TTM, QTM, FLAVOR) HT_BINDS(NAME, TTM, QTM, FLAVOR, kp, kp)
+
+// kp/kp with hold-trigger positions (for one-handed homerow mods)
+#define HT_KP_POS(NAME, TTM, QTM, FLAVOR, KEYS) \
+NAME: NAME { \
+    compatible = "zmk,behavior-hold-tap"; \
+    #binding-cells = <2>; \
+    tapping-term-ms = <TTM>; \
+    quick-tap-ms = <QTM>; \
+    flavor = FLAVOR; \
+    bindings = <&kp>, <&kp>; \
+    hold-trigger-key-positions = <KEYS>; \
 };
