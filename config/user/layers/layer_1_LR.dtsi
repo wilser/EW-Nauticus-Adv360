@@ -19,15 +19,15 @@
     #define _TO-SURV      &as LS(N) N
     #define _SPOT-LUM     &as LS(Q) Q
     #define _VRT-CPY      &kp LC(APOS)
-    #define _X_NUM        &lht_fst L_NUM X
+    //#define _X_NUM        &lht_fst L_NUM X
 // end defines
 
 lr_layer { bindings = <
-    _BSLH_CTLL  &td_lr_1   &td_lr_2  &td_lr_3  &td_lr_4    &td_lr_5  &to L_0                                      _ZOOM-IN   _VW-LIB  _VW-DEV  _VW-MAP  _VW-PRT  &kp N0  ___
-    ___         ___        ___       ___        _P_CTL      &kp M     &kp LS(W)                                    _ZOOM-OUT  &kp K    ___      ___      ___      ___     ___
-    ___         ___        ___       ___        &kp U       &kp S     &kp A      _R_CTLR  &to L_0  _tbd_  _tbd_     _tbd_     _tbd_    ___      ___      ___      ___     ___
-    &td_lr_e    ___        ___       _DE-SEL    _D_AUTO_NUM _TO-SURV                          ___    ___                       _tbd_    ___      ___      ___      ___     _SPOT-LUM
-    _R_CTLR     &kp LS(T)  &kp J     ___        ___                               ___  ___  ___      ___  ___  ___                      ___      ___      ___      ___     _VRT-CPY
+    _BSLH_CTL-L  &td_lr_1   &td_lr_2  &td_lr_3  &td_lr_4      &td_lr_5  &to L_0                                      _ZOOM-IN   _VW-LIB  _VW-DEV  _VW-MAP  _VW-PRT  &kp N0  ___
+    ___          ___        ___       ___        _P_CTL       &kp M     &kp LS(W)                                    _ZOOM-OUT  &kp K    ___      ___      ___      ___     ___
+    ___          ___        ___       ___        &kp U        &kp S     &kp A      _R_CTLR  &to L_0  _tbd_  _tbd_    _tbd_      _tbd_    ___      ___      ___      ___     ___
+    &td_lr_e     ___        ___       _DE-SEL    _D_AUTO_NUM  _TO-SURV                          ___    ___                      _tbd_    ___      ___      ___      ___     _SPOT-LUM
+    _R_CTL-R     &kp LS(T)  &kp J     ___        ___                                ___  ___  ___       ___  ___  ___                    ___      ___      ___      ___     _VRT-CPY
 >; };
 
 // undefs
@@ -45,5 +45,5 @@ lr_layer { bindings = <
     #undef _TO-SURV
     #undef _SPOT-LUM
     #undef _VRT-CPY
-    #undef _X_NUM
+    //#undef _X_NUM
 // end undefs
