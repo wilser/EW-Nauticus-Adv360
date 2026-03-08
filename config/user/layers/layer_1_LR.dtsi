@@ -5,45 +5,43 @@
 */
 
 // defines:
-    #define _BSLH_CTL-L   &as LC(L) BSLH
-    #define _ZOOM-IN      &kp LC(EQUAL)
-    #define _VW-LIB       &kp LC(LA(N1))
-    #define _VW-DEV       &kp LC(LA(N2))
-    #define _VW-MAP       &kp LC(LA(N3))
-    #define _VW-PRT       &kp LC(LA(N6))
+    #define _BSLH_CTL_L   &as LC(L) BSLH
+    #define _ZOOM_IN      &kp LC(EQUAL)
+    #define _VW_LIB       &kp LC(LA(N1))
+    #define _VW_DEV       &kp LC(LA(N2))
+    #define _VW_MAP       &kp LC(LA(N3))
+    #define _VW_PRT       &kp LC(LA(N6))
     #define _P_CTL        &hm_l LCTRL P              // Ctrl on index fingers
-    #define _ZOOM-OUT     &kp LC(MINUS)
-    #define _R_CTL-R      &as LC(R) R
-    #define _DE-SEL       &as LC(D) LC(LS(D))
+    #define _ZOOM_OUT     &kp LC(MINUS)
+    #define _R_CTL_R      &as LC(R) R
+    #define _DE_SEL       &as LC(D) LC(LS(D))
     #define _D_AUTO_NUM   &ht_lr_d_auto_num L_NUM 0  // 'D', 2x(^U) (auto tone), Hold(NUM) layer
-    #define _TO-SURV      &as LS(N) N
-    #define _SPOT-LUM     &as LS(Q) Q
+    #define _TO_SURV      &as LS(N) N
+    #define _SPOT_LUM     &as LS(Q) Q
     #define _VRT-CPY      &kp LC(APOS)
-    //#define _X_NUM        &lht_fst L_NUM X
 // end defines
 
 lr_layer { bindings = <
-    _BSLH_CTL-L  &td_lr_1   &td_lr_2  &td_lr_3  &td_lr_4      &td_lr_5  &to L_0                                      _ZOOM-IN   _VW-LIB  _VW-DEV  _VW-MAP  _VW-PRT  &kp N0  ___
-    ___          ___        ___       ___        _P_CTL       &kp M     &kp LS(W)                                    _ZOOM-OUT  &kp K    ___      ___      ___      ___     ___
+    _BSLH_CTL_L  &td_lr_1   &td_lr_2  &td_lr_3  &td_lr_4      &td_lr_5  &to L_0                                      _ZOOM_IN   _VW_LIB  _VW_DEV  _VW_MAP  _VW_PRT  &kp N0  ___
+    ___          ___        ___       ___        _P_CTL       &kp M     &kp LS(W)                                    _ZOOM_OUT  &kp K    ___      ___      ___      ___     ___
     ___          ___        ___       ___        &kp U        &kp S     &kp A      _R_CTLR  &to L_0  _tbd_  _tbd_    _tbd_      _tbd_    ___      ___      ___      ___     ___
-    &td_lr_e     ___        ___       _DE-SEL    _D_AUTO_NUM  _TO-SURV                          ___    ___                      _tbd_    ___      ___      ___      ___     _SPOT-LUM
-    _R_CTL-R     &kp LS(T)  &kp J     ___        ___                                ___  ___  ___       ___  ___  ___                    ___      ___      ___      ___     _VRT-CPY
+    &td_lr_e     ___        ___       _DE_SEL    _D_AUTO_NUM  _TO_SURV                          ___    ___                      _tbd_    ___      ___      ___      ___     _SPOT_LUM
+    _R_CTL_R     &kp LS(T)  &kp J     ___        ___                                ___  ___  ___       ___  ___  ___                    ___      ___      ___      ___     _VRT-CPY
 >; };
 
 // undefs
-    #undef _BSLH_CTL-L
-    #undef _ZOOM-IN
-    #undef _VW-LIB
-    #undef _VW-DEV
-    #undef _VW-MAP
-    #undef _VW-PRT
+    #undef _BSLH_CTL_L
+    #undef _ZOOM_IN
+    #undef _VW_LIB
+    #undef _VW_DEV
+    #undef _VW_MAP
+    #undef _VW_PRT
     #undef _P_CTL
-    #undef _ZOOM-OUT
-    #undef _R_CTL-R
-    #undef _DE-SEL
+    #undef _ZOOM_OUT
+    #undef _R_CTL_R
+    #undef _DE_SEL
     #undef _D_AUTO_NUM
-    #undef _TO-SURV
-    #undef _SPOT-LUM
+    #undef _TO_SURV
+    #undef _SPOT_LUM
     #undef _VRT-CPY
-    //#undef _X_NUM
 // end undefs
