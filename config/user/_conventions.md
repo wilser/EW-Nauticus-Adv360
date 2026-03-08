@@ -45,7 +45,8 @@ archive/                   ← historical reference: old layouts, notes, origina
 |---|---|---|
 | Layer numbers | `L_<NAME>` | `L_NGM`, `L_LR`, `L_EDT` |
 | Key position arrays | `<NAME>_<SIDE>` | `KEYS_LEFT`, `THUMBS_RIGHT` |
-| Layer-local aliases | `_<NAME>` (with `#undef`) | `_HYPER`, `_MEH`, `_B_GUI` |
+| Layer-local aliases (dual-function) | `_A_B` (with `#undef`) | `_B_GUI`, `_TILD_PIPE`, `_R_CTLR` |
+| Layer-local aliases (single-concept) | `_MULTI-WORD` UPPER-KEBAB (with `#undef`) | `_VW-LIB`, `_ZOOM-IN`, `_VRT-CPY` |
 | Key shorthands (global) | all underscores; lowercase exceptions | `___`, `_x_`, `_tbd_` |
 
 ### Layer-local `#define` Naming Pattern
@@ -61,6 +62,26 @@ Layer-local aliases follow `_TAP_HOLD` order — **primary (tap) key first, seco
 | layer-tap (if long) | `_BSLH_LET` | `&lt L_LET BSLH` |
 
 Defines are ordered in the file to match layout position: **across rows, then down** (row 1 left→right, row 2 left→right, etc.). `#undef` block follows in the same order.
+
+#### Dual-function vs. single-concept names
+
+`_` between words = key performs **two distinct functions** (tap vs. hold/shift):
+
+| Example | Meaning |
+|---|---|
+| `_B_GUI` | B tap, GUI hold |
+| `_TILD_PIPE` | TILDE tap, PIPE shifted |
+| `_R_CTLR` | R tap, Ctrl+R hold |
+
+`-` within a name = **one function** described with multiple words (UPPER-KEBAB-CASE):
+
+| Example | Meaning |
+|---|---|
+| `_VW-LIB` | view Library (one action) |
+| `_ZOOM-IN` | zoom in (one action) |
+| `_VRT-CPY` | virtual copy (one action) |
+
+Rule: `_` separates functions; `-` joins words within one concept.
 
 ### When to Use `#define`
 
@@ -116,3 +137,47 @@ Rename when touching the file; don't rename proactively unless doing a full pass
 | `// ▣` | In-progress |
 | `// [v]` | DONE |
 | `// 🗹` | DONE |
+
+---
+
+## Runbooks
+
+### Runbook: Pretty-printing a layer file
+
+#### DEFs section — 3-column alignment
+
+Treat the defines as a table with three fixed-width columns:
+
+```
+    #define _NAME           &behavior args            // comment
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    col 1: fixed width      col 2: fixed width        col 3: flush-left
+```
+
+Steps:
+1. Find the longest `_NAME` in the block → that sets col 1 width (name + 2 spaces minimum after)
+2. Find the longest `&behavior args` value → that sets col 2 width (value + 2 spaces minimum after)
+3. All `// comments` start at the same column (col 3)
+4. Defines with no comment just end after the value — no trailing spaces needed
+
+Use one global set of column stops for the whole DEFs section (not per row-group).
+
+#### Layout grid — per-keyboard-column alignment
+
+The keyboard has fixed physical columns. Each one maps to a text column whose width = widest token in that column + 2 spaces. **Do not use any one row as the reference** — the widest token in a column can be in any row.
+
+Key structural zones (from `Keymap ref.txt` STARTER template):
+```
+Row 1:  [7 LH keys]  [big gap]  [7 RH keys]
+Row 2:  [7 LH keys]  [big gap]  [7 RH keys]
+Row 3:  [7 LH keys]  [gap]  [4 inner thumb]  [gap]  [7 RH keys]
+Row 4:  [6 LH keys]  [2 inner thumb]  [6 RH keys]
+Row 5:  [5 LH keys]  [gap]  [3 L-thumb]  [3 R-thumb]  [gap]  [5 RH keys]
+```
+
+Rules:
+- All tokens left-aligned within their column slot
+- Minimum 2 spaces between any two adjacent tokens
+- The LH/RH gap in rows 1–2 is purely visual — use enough space to clearly split the halves
+- The thumb cluster gaps (rows 3–5) follow the same column-width rule; they just happen to be narrower tokens
+- Row 5 thumb keys naturally fan out from center due to the gap structure — this mirrors the physical layout and is intentional
