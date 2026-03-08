@@ -1,0 +1,24 @@
+// === DEF-MACROS (C preprocessor function-like macros) ===
+// These are NOT ZMK macros (behavior type) — these are C preprocessor #define macros.
+// Include this file FIRST in behaviors {} before any files that use these macros.
+
+// MOD_MORPH_SHIFT(SUFFIX, KEY, MOD_KEY)
+//   Generates a pair of behaviors:
+//     mm_##SUFFIX  — mod-morph: tap=KEY, shifted=MOD_KEY
+//     mms_##SUFFIX — hold-tap wrapper around mm_##SUFFIX (auto-shift style)
+//   Usage in layers: &mms_##SUFFIX <hold-key> 0
+#define MOD_MORPH_SHIFT(SUFFIX, KEY, MOD_KEY) \
+mm_##SUFFIX: mm_##SUFFIX { \
+    compatible = "zmk,behavior-mod-morph"; \
+    #binding-cells = <0>; \
+    bindings = <&kp KEY>, <&kp MOD_KEY>; \
+    mods = <(MOD_LSFT|MOD_RSFT)>; \
+}; \
+mms_##SUFFIX: mms_##SUFFIX { \
+    compatible = "zmk,behavior-hold-tap"; \
+    #binding-cells = <2>; \
+    tapping-term-ms = <150>; \
+    quick-tap-ms = <0>; \
+    flavor = "tap-preferred"; \
+    bindings = <&kp>, <&mm_##SUFFIX>; \
+}; \

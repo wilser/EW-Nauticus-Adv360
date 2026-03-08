@@ -33,10 +33,9 @@ archive/                   ← historical reference: old layouts, notes, origina
 | Hold-tap variants | — | `<type>_<variant>` | `hm_l`, `hm_slw`, `as_slw`, `lt_fst` |
 | Named hold-tap | `ht_` | `ht_<description>` | `ht_cap_cw`, `ht_qu_q` |
 
-**Layout abbreviations for `mm_<layout>_` prefix:**
-- `mm_ng_*` — Engram (NGram/NG2) layout morphs
+**Layout abbreviations for `mm_<layout-abbrev>_` prefix:**
+- `mm_ngm_*` — Engram ("NGM" abbrev) layout morphs
 - `mm_num_*` — Numpad layer morphs
-- `mm_dv_*` — Dvorak layout morphs
 - `mm_gen_*` — General / cross-layout morphs (alternative to `mm_<base>_<shifted>`)
 
 ### `#define` Constants — `UPPER_SNAKE_CASE`
@@ -45,8 +44,8 @@ archive/                   ← historical reference: old layouts, notes, origina
 |---|---|---|
 | Layer numbers | `L_<NAME>` | `L_NGM`, `L_LR`, `L_EDT` |
 | Key position arrays | `<NAME>_<SIDE>` | `KEYS_LEFT`, `THUMBS_RIGHT` |
-| Key shorthands (global) | all underscores | `___`, `_x_`, `_tbd_` |
 | Layer-local aliases | `_<NAME>` (with `#undef`) | `_HYPER`, `_MEH`, `_B_GUI` |
+| Key shorthands (global) | all underscores; lowercase exceptions | `___`, `_x_`, `_tbd_` |
 
 ### When to Use `#define`
 

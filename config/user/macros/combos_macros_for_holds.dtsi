@@ -3,9 +3,10 @@
 /*****************************************************************************************************
  *  COMBO and MACRO configurations
  *  General TODOs/ Opens:
- *  - [ ] macro-ify some of these? (e.g. the Q/QU/Qu cases)
+ *  - [ ] (type/key-send) macro-ify some of these? (e.g. the Q/QU/Qu cases)
  *  - [ ] see if can use mod-morph for some of the hold-tap combos (e.g. qu/QU) instead of hold-tap;
  *      or even macro-morph? (since not really mods)
+ *  - [ ] make C-macros to make this tidier
  *  - [ ] general timings; many never really dialed in (wait- tap- tapping-term- quick-tap-ms); )
  */
 
@@ -135,9 +136,8 @@ m_pm_lc: m_pm_lc {
 };
 
 
+// --------------------
 // mod-morph shifts for these:
-// ▢ TODO: see also the Q case. And make C-macros for...
-
 
 // tap: the &kp, hold: the &macro for the letters...
 // uses "&as_XX 0 #" in map; 0 parm for the nil macro parm; note macro is FIRST

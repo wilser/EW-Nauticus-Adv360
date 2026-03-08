@@ -7,19 +7,19 @@
 
 // DEFINES:
     #define _KP_ENT      &kp KP_ENTER
-    #define _BKSL_PIPE   &m_mmsNG2_Bksl PIPE 0
-    #define _APOS_EURO   &m_mmsNUM_Apos LC(LA(F16)) 0  // AHK: €
-    #define _COLN_SEMI   &m_mmsNUM_Coln SEMI 0
-    #define _DLLR_DQT    &m_mmsNUM_Dllr DQT 0
-    #define _LPAR_LT     &m_mmsNUM_Lpar LT 0
-    #define _DOT_CMMA    &m_mmsNUM_Dot COMMA 0
-    #define _RPAR_GT     &m_mmsNUM_Rpar GT 0
-    #define _EQAL_TILD   &m_mmsNUM_Eqal TILDE 0
-    #define _MULT_TIMES  &m_mmsNUM_Mult LC(LA(F23)) 0    // AHK: ×
-    #define _PLUS_AMP    &m_mmsNUM_Plus LS(N7) 0
-    #define _DIV_PCT     &m_mmsNUM_Divd PERCENT 0
-    #define _MNUS_UNDR   &m_mmsNUM_Mnus LS(MINUS) 0
-    #define _Q_H         &m_mmsNUM_Q_H LS(H) 0
+    #define _BKSL_PIPE   &mms_ng_bksl PIPE 0
+    #define _APOS_EURO   &mms_num_apos LC(LA(F16)) 0  // AHK: €
+    #define _COLN_SEMI   &mms_num_coln SEMI 0
+    #define _DLLR_DQT    &mms_num_dllr DQT 0
+    #define _LPAR_LT     &mms_num_lpar LT 0
+    #define _DOT_CMMA    &mms_num_dot COMMA 0
+    #define _RPAR_GT     &mms_num_rpar GT 0
+    #define _EQAL_TILD   &mms_num_eqal TILDE 0
+    #define _MULT_TIMES  &mms_num_mult LC(LA(F23)) 0    // AHK: ×
+    #define _PLUS_AMP    &mms_num_plus LS(N7) 0
+    #define _DIV_PCT     &mms_num_divd PERCENT 0
+    #define _MNUS_UNDR   &mms_num_mnus LS(MINUS) 0
+    #define _Q_H         &mms_num_q_h LS(H) 0
     #define _ENT_CTLENT  &as LC(ENTER) ENTER
     #define _7_Q         &as_slw LS(Q) N7
     #define AS_UpLf      &as LEFT UP

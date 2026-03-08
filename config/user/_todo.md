@@ -13,8 +13,6 @@ Mark with `[x]` when done, `[-]` if decided not to do.
 
 ### Needs investigation, research, or better testing
 
-- [TODO] **[adv360.keymap ~L7]** `TODO: much of this overridden... UNSURE WHAT NEEDED (2024-04-13)` — 2+ years old. Remove note or convert to 1 line. ⇒ need help analysis
-
 - [ ] **[user/behaviors/custom_behaviors.dtsi ~L107]** `// [.] 2025-01-12 broken?` on `lt_fst`. Test: does `lt_fst` actually work? If yes, remove comment. If no, open specific issue.
 - [ ] **[user/combos.dtsi ~L71]** `slow-release; // TBD - will help prevent stuck mods?` (2025-03-27). Test whether `slow-release` helps. Remove TBD when decided.
 - [ ] **[user/layers/layer_4_UTL.dtsi ~L10]** `[ ] is BT4 'off'? - seems like (light goes off)` — test or remove.

@@ -67,6 +67,7 @@
     };
 
     behaviors {
+        #include "user/def_macros.dtsi"
         #include "user/tapdance/general_tapdance.dtsi"
         #include "user/tapdance/lightroom_tapdance.dtsi"
         #include "user/behaviors/mod_morphs_general.dtsi"

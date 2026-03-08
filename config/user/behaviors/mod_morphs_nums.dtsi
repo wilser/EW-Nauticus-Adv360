@@ -2,41 +2,40 @@
 
 /* TODO & NOTES - see mod_morphs_colemak file */
 /* CODES ref: https://zmk.dev/docs/codes */
-/* ASSUMES GENERAL ONE INCLUDED BEFORE THIS ONE! */
+/* ASSUMES def_macros.dtsi INCLUDED BEFORE THIS ONE! - It defines MOD_MORPH_SHIFT */
 
 // 2025-02-18 MULT/times and ZERO/deg Ø great
-// 2026-03-07 not sure really use most—might be better something like "first", "second"... or "one", "two"... 
+// 2026-03-07 not sure really use most—might be better something like "first", "second"... or "one", "two"...
 
 
 //Defines
     #define _CA_F16 LC(LA(F16))    // AHK: € - euro
     #define _CA_F22 LC(LA(F22))    // AHK: ° - degree
     #define _CA_F23 LC(LA(F23))    // AHK: × - times
-  
+
   // Column 8 (some just Auto-Shift in main layout)
-  MOD_MORPH_SHIFT(mmNUM_Apos  , APOS           , _CA_F16       , mmsNUM_Apos) // AHK _CA_F16: € - euro
+  MOD_MORPH_SHIFT(num_apos  , APOS           , _CA_F16      ) // AHK _CA_F16: € - euro
 
   // Column 9 (just left of #s)
-  MOD_MORPH_SHIFT(mmNUM_Dllr  , DOLLAR         , DQT           , mmsNUM_Dllr) // DQT: " - double quote
-  MOD_MORPH_SHIFT(mmNUM_Coln  , COLON          , SEMI          , mmsNUM_Coln)
+  MOD_MORPH_SHIFT(num_dllr  , DOLLAR         , DQT          ) // DQT: " - double quote
+  MOD_MORPH_SHIFT(num_coln  , COLON          , SEMI         )
 
   // Top (just above #s) / R1, C10-12
-  MOD_MORPH_SHIFT(mmNUM_Lpar  , LPAR           , LT            , mmsNUM_Lpar)
-  MOD_MORPH_SHIFT(mmNUM_Dot   , DOT            , COMMA         , mmsNUM_Dot )
-  MOD_MORPH_SHIFT(mmNUM_Rpar  , RPAR           , GT            , mmsNUM_Rpar)
+  MOD_MORPH_SHIFT(num_lpar  , LPAR           , LT           )
+  MOD_MORPH_SHIFT(num_dot   , DOT            , COMMA        )
+  MOD_MORPH_SHIFT(num_rpar  , RPAR           , GT           )
 
   // Rest of RH side / C13-14
-  MOD_MORPH_SHIFT(mmNUM_Eqal  , EQUAL          , TILDE         , mmsNUM_Eqal)
-  MOD_MORPH_SHIFT(mmNUM_Mult  , KP_ASTERISK    , _CA_F23       , mmsNUM_Mult) // AHK _CA_F23: ×
-  MOD_MORPH_SHIFT(mmNUM_Zero  , N0             , _CA_F22       , mmsNUM_Zero) // AHK _CA_F22: °
-  MOD_MORPH_SHIFT(mmNUM_Plus  , KP_PLUS        , LS(N7)        , mmsNUM_Plus) 
+  MOD_MORPH_SHIFT(num_eqal  , EQUAL          , TILDE        )
+  MOD_MORPH_SHIFT(num_mult  , KP_ASTERISK    , _CA_F23      ) // AHK _CA_F23: ×
+  MOD_MORPH_SHIFT(num_zero  , N0             , _CA_F22      ) // AHK _CA_F22: °
+  MOD_MORPH_SHIFT(num_plus  , KP_PLUS        , LS(N7)       )
 
-  MOD_MORPH_SHIFT(mmNUM_Divd  , KP_DIVIDE      , PERCENT       , mmsNUM_Divd)
-  MOD_MORPH_SHIFT(mmNUM_Mnus  , KP_MINUS       , LS(MINUS)     , mmsNUM_Mnus)
-  MOD_MORPH_SHIFT(mmNUM_Q_H   , LS(Q)          , LS(H)         , mmsNUM_Q_H)
+  MOD_MORPH_SHIFT(num_divd  , KP_DIVIDE      , PERCENT      )
+  MOD_MORPH_SHIFT(num_mnus  , KP_MINUS       , LS(MINUS)    )
+  MOD_MORPH_SHIFT(num_q_h   , LS(Q)          , LS(H)        )
 
 //Undefines
     #undef _CA_F16
     #undef _CA_F22
     #undef _CA_F23
-
