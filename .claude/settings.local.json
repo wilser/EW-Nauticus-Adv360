@@ -1,11 +1,27 @@
 {
   "permissions": {
     "allow": [
+      "JUST EW comment - think this now better covered by the (committed) other settings file and will float with the project per se",
       "Bash(wc *)",
       "Bash(python3 -c \":*)",
       "Bash(find *)",
-      "cd *",
-      "grep *"
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:zmk.dev)",
+      "WebFetch(domain:www.reddit.com)",
+      "Bash(curl *)*",
+      "Bash(curl -s \"https://api.github.com/repos/urob/zmk-config/contents/config/west.yml\")",
+      "Bash(python3 -c \"import sys,json,base64; d=json.load\\(sys.stdin\\); print\\(base64.b64decode\\(d[''content'']\\).decode\\(\\)\\)\")",
+      "Bash(curl -v \"https://api.github.com/repos/urob/zmk-config/contents/config/west.yml\")",
+      "Bash(curl -s \"https://api.github.com/repos/urob/zmk/branches\")",
+      "Bash(curl -s \"https://api.github.com/repos/urob/zmk-config/contents/config/base.keymap\")",
+      "Bash(curl -s \"https://api.github.com/repos/urob/zmk/git/refs/heads\")",
+      "Bash(curl -s \"https://api.github.com/repos/urob/zmk/commits/main\")",
+      "Bash(curl -s \"https://api.github.com/repos/zmkfirmware/zmk/commits/main\")",
+      "Bash(curl -s \"https://api.github.com/repos/urob/zmk/compare/zmkfirmware:main...urob:main\")",
+      "Bash(curl -s \"https://api.github.com/repos/zmkfirmware/zmk/git/trees/main?recursive=1\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/KinesisCorporation/Adv360-Pro-ZMK/V3.0/config/adv360.keymap\")",
+      "Bash(curl -s \"https://raw.githubusercontent.com/KinesisCorporation/Adv360-Pro-ZMK/V3.0/config/version.dtsi\")"
     ]
   }
 }
