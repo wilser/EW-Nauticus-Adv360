@@ -5,7 +5,11 @@ Mark with `[x]` when done, `[-]` if decided not to do.
 
 ## 🟡 MEDIUM - things to much better factor the code
 
-- [ ] revisit the whole "urob" home-row timeless mods https://www.reddit.com/r/ErgoMechKeyboards/comments/11gejh3/lpt_try_urobs_zmk_timeless_homerow_mods_combos/ 
+- [ ] revisit the whole "urob" home-row timeless mods https://www.reddit.com/r/ErgoMechKeyboards/comments/11gejh3/lpt_try_urobs_zmk_timeless_homerow_mods_combos/
+- [ ] Switch `west.yml` to urob's fork once current build passes (`adv360-z3.5-2` baseline confirmed)
+- [ ] Add `HT_HRM` macro (urob-style: `require-prior-idle-ms` + `hold-trigger-on-release` + positional) to `def_macros.dtsi`, update `hm_l`/`hm_r` in `holdtaps_for_layers.dtsi`
+- [ ] GitHub: detach fork from Nauticus/refil (Settings → Danger Zone → Detach fork) — cosmetic, makes repo standalone
+- [ ] Continue layer `#define` naming refactor — EDT, FNC, LET, CAP, QRT layers not yet done
 
 
 ## 🟡 MEDIUM — Stale TODO/WIP Markers to Resolve
