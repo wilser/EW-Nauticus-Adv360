@@ -75,3 +75,19 @@ NAME: NAME { \
     bindings = <&kp>, <&kp>; \
     hold-trigger-key-positions = <KEYS>; \
 };
+
+// kp/kp urob-style "timeless" HRM: positional + require-prior-idle + hold-trigger-on-release
+// PIDLE: require-prior-idle-ms (typ. 150) — suppresses hold if typed quickly after another key
+// hold-trigger-on-release delays the hold/tap decision until key release (reduces false holds)
+#define HT_HRM(NAME, TTM, QTM, PIDLE, FLAVOR, KEYS) \
+NAME: NAME { \
+    compatible = "zmk,behavior-hold-tap"; \
+    #binding-cells = <2>; \
+    tapping-term-ms = <TTM>; \
+    quick-tap-ms = <QTM>; \
+    require-prior-idle-ms = <PIDLE>; \
+    flavor = FLAVOR; \
+    hold-trigger-on-release; \
+    bindings = <&kp>, <&kp>; \
+    hold-trigger-key-positions = <KEYS>; \
+};

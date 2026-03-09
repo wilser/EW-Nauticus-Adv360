@@ -17,9 +17,9 @@
 /* homerow mods — kp/kp */
 HT_KP(hm,     200, 125, "balanced")
 
-/* TEMP: adding MODS_LEFT/RIGHT to see if can n-hold mods better */
-HT_KP_POS(hm_l, 200, 125, "balanced", KEYS_RIGHT THUMBS MODS_LEFT)
-HT_KP_POS(hm_r, 200, 125, "balanced", KEYS_LEFT  THUMBS MODS_RIGHT)
+/* urob-style timeless HRM: positional + require-prior-idle + hold-trigger-on-release */
+HT_HRM(hm_l, 200, 125, 150, "balanced", KEYS_RIGHT THUMBS MODS_LEFT)
+HT_HRM(hm_r, 200, 125, 150, "balanced", KEYS_LEFT  THUMBS MODS_RIGHT)
 
 /* slower for Win/GUI — false-holds are worse than false-taps */
 HT_KP(hm_slw, 300, 200, "tap-preferred")
