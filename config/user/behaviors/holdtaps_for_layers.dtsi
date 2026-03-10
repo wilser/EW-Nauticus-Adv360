@@ -12,14 +12,19 @@
 
     // [.] 2024-12-21: still don't get the tap-term vs quick-tap nuances
     // [ ] 2026-03-07: some of the timings still unsure or need deeper dive / explanations
+
+    // HT_HRM (def_macros.dtsi): urob-style — adds require-prior-idle-ms (suppresses hold if key
+    //   pressed quickly after prior keypress) and optionally hold-trigger-on-release. Tested 2026-03:
+    //   both params degraded Shift/Ctrl+Shift chording (idle window suppressed intentional mod holds).
+    //   Revisit only if switching to a pure-roll typing style with no deliberate mod chording.
 */
 
 /* homerow mods — kp/kp */
 HT_KP(hm,     200, 125, "balanced")
 
-/* urob-style timeless HRM: positional + require-prior-idle + hold-trigger-on-release */
-HT_HRM(hm_l, 200, 125, 150, "balanced", KEYS_RIGHT THUMBS MODS_LEFT)
-HT_HRM(hm_r, 200, 125, 150, "balanced", KEYS_LEFT  THUMBS MODS_RIGHT)
+/* positional HRM — hold-trigger-key-positions only (urob idle/release params not compatible with mod chording) */
+HT_KP_POS(hm_l, 200, 125, "balanced", KEYS_RIGHT THUMBS MODS_LEFT)
+HT_KP_POS(hm_r, 200, 125, "balanced", KEYS_LEFT  THUMBS MODS_RIGHT)
 
 /* slower for Win/GUI — false-holds are worse than false-taps */
 HT_KP(hm_slw, 300, 200, "tap-preferred")
