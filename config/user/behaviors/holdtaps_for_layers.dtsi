@@ -41,15 +41,16 @@
 HT_KP(hm,     200, 125, "balanced")
 
 /* positional HRM — hold-trigger-key-positions only (urob idle/release params not compatible with mod chording) */
-/* 2026-03-09 testing timing to dial in the false-non-shift cases better: 200 > 250 (seems worse?) » try 150 to test extreme different*/
+/* 2026-03-09 testing timing to dial in the false-non-shift cases better: 200 > 250 (seems worse?) » try 150 to test extreme different; so far better*/
+/* hm_l|hm_r only used for SHIFT */
 HT_KP_POS(hm_l, 150, 125, "balanced", KEYS_RIGHT THUMBS MODS_LEFT)
 HT_KP_POS(hm_r, 150, 125, "balanced", KEYS_LEFT  THUMBS MODS_RIGHT)
 
 /* slower for Win/GUI — false-holds are worse than false-taps */
-HT_KP(hm_slw, 300, 200, "tap-preferred")
+HT_KP(hm_slw, 320, 200, "tap-preferred")
 
-/* medium for other mod keys */
-HT_KP(hm_med, 250, 150, "balanced")
+/* medium for other mod keys: Ctrl, Alt */
+HT_KP(hm_med, 230, 150, "balanced")
 
 /* auto-shift variants (binding-1=held, binding-2=tapped) */
 HT_KP(as,      150,   0, "tap-preferred")
@@ -59,6 +60,6 @@ HT_KP(as_slw,  230,   0, "tap-preferred")
 HT_KP(as_2tap, 230, 230, "tap-preferred")
 
 /* layer-tap variants */
-HT_BINDS(lt_fst, 140, 0, "tap-preferred", mo, kp)  // faster; after many attempts to dial in
+HT_BINDS(lt_fst, 150, 0, "tap-preferred", mo, kp)  // faster; after many attempts to dial in
 HT_BINDS(lht,    170, 0, "tap-preferred", mo, to)   // hold=layer, tap=to(layer)
 HT_BINDS(lt_slw, 230, 0, "tap-preferred", mo, kp)
