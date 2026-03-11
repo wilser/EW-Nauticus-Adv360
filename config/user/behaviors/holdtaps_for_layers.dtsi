@@ -61,3 +61,10 @@ HT_KP(as_2tap, 230, 230, "tap-preferred")
 HT_BINDS(lt_fst, 150, 0, "tap-preferred", mo, kp)  // faster; after many attempts to dial in
 HT_BINDS(lht,    170, 0, "tap-preferred", mo, to)   // hold=layer, tap=to(layer)
 HT_BINDS(lt_slw, 230, 0, "tap-preferred", mo, kp)
+
+/* hold=macro/tap=kp wrappers: hold fires m_NAME key sequence, tap fires kp */
+/* m_NAME nodes are in macros{} (combos_macros_for_holds.dtsi); ht_NAME goes here in behaviors{} */
+/* X-macro: same data file as macros{} side — add/change entries in macro_ht_data.dtsi only */
+#define HT_MACRO_ENTRY(NAME, ...) HT_FROM_MACRO(NAME)
+#include "../macros/macro_ht_data.dtsi"
+#undef HT_MACRO_ENTRY

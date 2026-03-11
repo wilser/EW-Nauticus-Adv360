@@ -79,18 +79,25 @@ ht_qu_QU: ht_qu_QU {
 
 // ----------------------------------------------------------------------------------------------------
 // NUM layer holds: ordinal suffixes and time abbreviations
-// MACRO_HT (def_macros.dtsi) generates paired: m_NAME (zmk macro) + ht_NAME (hold-tap)
-// In layer: &ht_NAME 0 <key>   (first param unused; second is the tap key)
+// This file lives in macros {} — only zmk,behavior-macro nodes here.
+// Corresponding hold-tap wrappers (ht_NAME) are in holdtaps_for_layers.dtsi via HT_FROM_MACRO.
 
-#define TAPPING_TERM_NUMPAD_HOLDS 225
+// Local C macro: generates only the zmk behavior-macro node (variadic key sequence).
+// NOTE: defined here (not def_macros.dtsi) because this file is included before behaviors {}.
+#define MACRO_KPS(NAME, ...) \
+m_##NAME: m_##NAME { \
+    compatible = "zmk,behavior-macro"; \
+    wait-ms = <0>; \
+    tap-ms = <1>; \
+    #binding-cells = <0>; \
+    bindings = __VA_ARGS__; \
+};
 
-MACRO_HT(1st,        <&kp S>, <&kp T>)
-MACRO_HT(2nd,        <&kp N>, <&kp D>)
-MACRO_HT(3rd,        <&kp R>, <&kp D>)
-MACRO_HT(4th,        <&kp T>, <&kp H>)
-MACRO_HT(am_lc,      <&kp A>, <&kp DOT>, <&kp M>, <&kp DOT>)  // a.m.
-MACRO_HT(pm_lc,      <&kp P>, <&kp DOT>, <&kp M>, <&kp DOT>)  // p.m.
-MACRO_HT(hr_abbrev,  <&kp H>, <&kp R>)                         // hr
-MACRO_HT(min_abbrev, <&kp M>, <&kp I>, <&kp N>)                // min
+#define TAPPING_TERM_HT_MACRO 225
+
+// X-macro: emit macro nodes for all hold=macro/tap=kp pairs (data in macro_ht_data.dtsi)
+#define HT_MACRO_ENTRY MACRO_KPS
+#include "macro_ht_data.dtsi"
+#undef HT_MACRO_ENTRY
 
 
