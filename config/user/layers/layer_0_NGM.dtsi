@@ -34,9 +34,14 @@
     #define _HYPER          &kp LC(LA(LS(LGUI)))
     #define _TD_SCRSHOTS    &td_win_ss_snagit             // 1x: Win+Shift+S   2x: Ctrl+Shift+Alt+P
     #define _QUOT_DLLR      &mms_ngm_quot DLLR 0
-    #define _L_CTL          &hm_med_r RCTRL L
-    #define _D_ALT          &hm_med_r RALT D
-    #define _W_SFT          &hm_r RSFT W
+    
+    //#define _L_CTL          &hm_med_r RCTRL L             // 2026-03-11 : weird RH hold behaviors
+    #define _L_CTL          &as RCTRL L
+    //#define _D_ALT          &hm_med_r RALT D
+    #define _D_ALT          &as RALT D
+    //#define _W_SFT          &hm_r RSFT W
+    #define _W_SFT          &as RSFT W
+
     #define _V_GUI          &hm_slw RGUI V
     #define _SLSH_PRCNT     &mms_ngm_slsh PRCNT 0
 
