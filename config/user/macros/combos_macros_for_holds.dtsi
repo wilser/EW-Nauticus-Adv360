@@ -78,25 +78,31 @@ ht_qu_QU: ht_qu_QU {
 
 
 // ----------------------------------------------------------------------------------------------------
-// NUM layer holds: ordinal suffixes and time abbreviations
-// This file lives in macros {} — only zmk,behavior-macro nodes here.
-// Corresponding hold-tap wrappers (ht_NAME) are in holdtaps_for_layers.dtsi via HT_FROM_MACRO.
+// Hold=macro / tap=kp pairs: ordinal suffixes, time abbreviations, etc.
+// Generates both the zmk,behavior-macro node (m_NAME) and the hold-tap wrapper (ht_NAME).
+// ZMK finds behaviors by compatible string regardless of DTS block — both nodes live here in macros{}.
+// To add/change an entry: edit macro_ht_data.h only.
 
-// Local C macro: generates only the zmk behavior-macro node (variadic key sequence).
-// NOTE: defined here (not def_macros.dtsi) because this file is included before behaviors {}.
-#define MACRO_KPS(NAME, ...) \
+#define TAPPING_TERM_HT_MACRO 225
+
+// Combined C macro: emits m_NAME (macro) + ht_NAME (hold-tap) in one shot.
+#define HT_MACRO_ENTRY(NAME, ...) \
 m_##NAME: m_##NAME { \
     compatible = "zmk,behavior-macro"; \
     wait-ms = <0>; \
     tap-ms = <1>; \
     #binding-cells = <0>; \
     bindings = __VA_ARGS__; \
+}; \
+ht_##NAME: ht_##NAME { \
+    compatible = "zmk,behavior-hold-tap"; \
+    #binding-cells = <2>; \
+    tapping-term-ms = <TAPPING_TERM_HT_MACRO>; \
+    quick-tap-ms = <0>; \
+    flavor = "tap-preferred"; \
+    bindings = <&m_##NAME>, <&kp>; \
 };
 
-#define TAPPING_TERM_HT_MACRO 225
-
-// X-macro: emit macro nodes for all hold=macro/tap=kp pairs (data in macro_ht_data.h)
-#define HT_MACRO_ENTRY MACRO_KPS
 #include "macro_ht_data.h"
 #undef HT_MACRO_ENTRY
 

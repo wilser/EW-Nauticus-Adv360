@@ -8,7 +8,7 @@
 //   HT_KP(NAME, TTM, QTM, FLAVOR)                    — hold-tap kp/kp, no positions
 //   HT_KP_POS(NAME, TTM, QTM, FLAVOR, KEYS)          — hold-tap kp/kp + hold-trigger positions
 //   HT_BINDS(NAME, TTM, QTM, FLAVOR, B1, B2)         — hold-tap custom bindings, no positions
-//   HT_FROM_MACRO(NAME)                             — hold-tap wrapper for an existing m_NAME zmk macro
+//   HT_HRM(NAME, TTM, QTM, PIDLE, FLAVOR, KEYS)      — kp/kp positional + require-prior-idle-ms
 //
 // FLAVOR: pass pre-quoted string, e.g. "balanced" or "tap-preferred"
 // KEYS:   pass position arrays unquoted, e.g. KEYS_RIGHT THUMBS MODS_LEFT
@@ -77,14 +77,6 @@ NAME: NAME { \
     hold-trigger-key-positions = <KEYS>; \
 };
 
-// ─────────────────────────────────────────────────────────────────────────────
-// HT_FROM_MACRO(NAME)
-//   Hold-tap wrapper for an existing m_NAME zmk,behavior-macro node.
-//   Generates ht_NAME: hold=m_NAME (fires key sequence), tap=kp.
-//   Requires TAPPING_TERM_HT_MACRO defined (set in combos_macros_for_holds.dtsi).
-//   Usage: HT_FROM_MACRO(am_lc)  →  &ht_am_lc 0 N5 in layer (0=unused, N5=tap key)
-//   NOTE: m_NAME must be in macros{}; ht_NAME goes here in behaviors{} — different DTS blocks.
-#define HT_FROM_MACRO(NAME) HT_BINDS(ht_##NAME, TAPPING_TERM_HT_MACRO, 0, "tap-preferred", m_##NAME, kp)
 
 // kp/kp urob-style HRM: positional + require-prior-idle-ms
 // PIDLE: require-prior-idle-ms (typ. 150) — suppresses hold if typed quickly after another key
