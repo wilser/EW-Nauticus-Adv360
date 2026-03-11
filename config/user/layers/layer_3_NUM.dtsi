@@ -18,9 +18,9 @@
     // Row 2 — right half
     #define _HM_CTLHM      &as_slw RC(HOME) HOME
     #define _DLLR_DQT      &mms_num_dllr DQT 0
-    #define _N7_Q          &as_slw LS(Q) N7
-    #define _N8_HRABBR     &ht_hr_abbrev 0 N8
-    #define _N9_MINABBR    &ht_min_abbrev 0 N9
+    #define _N7_MINUTE     &ht_minute 0 N7
+    #define _N8_AMUC       &ht_am_uc 0 N8
+    #define _N9_PMUC       &ht_pm_uc 0 N9
     #define _MULT_TIMES    &mms_num_mult LC(LA(F23)) 0  // AHK: ×
     #define _DIV_PCT       &mms_num_divd PRCNT 0
 
@@ -48,7 +48,7 @@
 
 numpad_layer { bindings = <
     ___      ___           ___        ___       ___        ___  &to L_NGM                                               _APOS_EURO   _BKSL_PIPE  _LPAR_LT  _DOT_CMMA   _RPAR_GT     _EQAL_TILD   &m_CSA_R
-    ___      &kp LEFT_GUI  &kp LSHFT  &kp LALT  &kp LCTRL  ___  ___                                                     _HM_CTLHM    _DLLR_DQT   _N7_Q     _N8_HRABBR  _N9_MINABBR  _MULT_TIMES  _DIV_PCT
+    ___      &kp LEFT_GUI  &kp LSHFT  &kp LALT  &kp LCTRL  ___  ___                                                     _HM_CTLHM    _DLLR_DQT   _N7_MINUTE _N8_AMUC    _N9_PMUC     _MULT_TIMES  _DIV_PCT
     ___      &kp LC(D)     ___        ___       ___        ___  ___      &kp LSHFT  &to L_0  _KP_ENT  &kp BSPC          _END_CTLEND  _COLN_SEMI  _N4_4TH   _N5_AMLC    _N6_PMLC     &kp N0       _MNUS_UNDR
     &to L_0  &mo L_EDT     ___        ___       _x_        ___                   &kp PG_UP    &kp RS(TAB)                            ___         _N1_1ST   _N2_2ND     _N3_3RD      _PLUS_AMP    _Q_H
     ___      ___           ___        ___       ___                   ___  ___  &kp PG_DN      &kp TAB  _ENT_CTLENT  &kp SPACE                   _UP_LEFT  _DN_RIGHT   ___          ___          &to L_0
@@ -65,9 +65,9 @@ numpad_layer { bindings = <
     // Row 2
     #undef _HM_CTLHM
     #undef _DLLR_DQT
-    #undef _N7_Q
-    #undef _N8_HRABBR
-    #undef _N9_MINABBR
+    #undef _N7_MINUTE
+    #undef _N8_AMUC
+    #undef _N9_PMUC
     #undef _MULT_TIMES
     #undef _DIV_PCT
     // Row 3
