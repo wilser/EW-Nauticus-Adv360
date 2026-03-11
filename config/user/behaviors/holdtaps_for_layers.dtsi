@@ -37,9 +37,6 @@
     //   Revisit only if switching to a pure-roll typing style with no deliberate mod chording.
 */
 
-/* homerow mods — kp/kp */
-HT_KP(hm,     200, 125, "balanced")
-
 /* positional HRM — hold-trigger-key-positions only (urob idle/release params not compatible with mod chording) */
 /* 2026-03-09 testing timing to dial in the false-non-shift cases better: 200 > 250 (seems worse?) » try 150 to test extreme different; so far better*/
 /* hm_l|hm_r only used for SHIFT */
