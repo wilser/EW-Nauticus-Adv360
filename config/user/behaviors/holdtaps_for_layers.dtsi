@@ -49,8 +49,9 @@ HT_KP_POS(hm_r, 150, 125, "balanced", KEYS_LEFT  THUMBS MODS_RIGHT)
 /* slower for Win/GUI — false-holds are worse than false-taps */
 HT_KP(hm_slw, 320, 200, "tap-preferred")
 
-/* medium for other mod keys: Ctrl, Alt */
-HT_KP(hm_med, 230, 150, "balanced")
+/* medium for other mod keys: Ctrl, Alt — positional to prevent same-hand roll misfires */
+HT_KP_POS(hm_med_l, 230, 150, "balanced", KEYS_RIGHT THUMBS MODS_LEFT)
+HT_KP_POS(hm_med_r, 230, 150, "balanced", KEYS_LEFT  THUMBS MODS_RIGHT)
 
 /* auto-shift variants (binding-1=held, binding-2=tapped) */
 HT_KP(as,      150,   0, "tap-preferred")

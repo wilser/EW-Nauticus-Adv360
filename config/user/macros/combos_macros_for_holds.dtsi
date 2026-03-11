@@ -56,7 +56,6 @@ ht_QU_Q: ht_QU_Q {
 };
 
 
-
 // MOD MORPH for qu Qu - note not &kp based!
 mm_qu_Qu: mm_qu_Qu {
     compatible = "zmk,behavior-mod-morph";

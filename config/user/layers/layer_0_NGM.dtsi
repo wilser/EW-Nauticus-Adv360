@@ -28,14 +28,14 @@
     // Row 2 — alpha + hold mods
     #define _B_GUI          &hm_slw LGUI B
     #define _Y_SFT          &hm_l LSHFT Y
-    #define _O_ALT          &hm_med LALT O
-    #define _U_CTL          &hm_med LCTRL U
+    #define _O_ALT          &hm_med_l LALT O
+    #define _U_CTL          &hm_med_l LCTRL U
     #define _STAR_F16       &mms_ngm_star F16 0           // AHK: F16 >> "Ø"
     #define _HYPER          &kp LC(LA(LS(LGUI)))
     #define _TD_SCRSHOTS    &td_win_ss_snagit             // 1x: Win+Shift+S   2x: Ctrl+Shift+Alt+P
     #define _QUOT_DLLR      &mms_ngm_quot DLLR 0
-    #define _L_CTL          &hm_med RCTRL L
-    #define _D_ALT          &hm_med RALT D
+    #define _L_CTL          &hm_med_r RCTRL L
+    #define _D_ALT          &hm_med_r RALT D
     #define _W_SFT          &hm_r RSFT W
     #define _V_GUI          &hm_slw RGUI V
     #define _SLSH_PRCNT     &mms_ngm_slsh PRCNT 0
