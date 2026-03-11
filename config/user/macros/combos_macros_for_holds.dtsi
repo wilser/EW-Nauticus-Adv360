@@ -77,160 +77,20 @@ ht_qu_QU: ht_qu_QU {
 
 
 
-
-
-
-
 // ----------------------------------------------------------------------------------------------------
+// NUM layer holds: ordinal suffixes and time abbreviations
+// MACRO_HT (def_macros.dtsi) generates paired: m_NAME (zmk macro) + ht_NAME (hold-tap)
+// In layer: &ht_NAME 0 <key>   (first param unused; second is the tap key)
 
-// for Nth cases: st, nd, rd, th - to put on NUM shift/holds
-m_1st: m_1st {
-    compatible = "zmk,behavior-macro";
-    wait-ms = <0>; // was 10
-    tap-ms = <1>; // was 5
-    #binding-cells = <0>;
-    bindings = <&kp S>, <&kp T>;
-};
-
-m_2nd: m_2nd {
-    compatible = "zmk,behavior-macro";
-    wait-ms = <0>; // was 10
-    tap-ms = <1>; // was 5
-    #binding-cells = <0>;
-    bindings = <&kp N>, <&kp D>;
-};
-
-m_3rd: m_3rd {
-    compatible = "zmk,behavior-macro";
-    wait-ms = <0>; // was 10
-    tap-ms = <1>; // was 5
-    #binding-cells = <0>;
-    bindings = <&kp R>, <&kp D>;
-};
-
-m_4th: m_4th {
-    compatible = "zmk,behavior-macro";
-    wait-ms = <0>; // was 10
-    tap-ms = <1>; // was 5
-    #binding-cells = <0>;
-    bindings = <&kp T>, <&kp H>;
-};
-
-// _a.m.
-m_am_lc: m_am_lc {
-    compatible = "zmk,behavior-macro";
-    wait-ms = <0>; // was 10
-    tap-ms = <1>; // was 5
-    #binding-cells = <0>;
-    bindings = <&kp A>, <&kp DOT>, <&kp M>, <&kp DOT>;
-};
-
-// _p.m.
-m_pm_lc: m_pm_lc {
-    compatible = "zmk,behavior-macro";
-    wait-ms = <0>; // was 10
-    tap-ms = <1>; // was 5
-    #binding-cells = <0>;
-    bindings = <&kp P>, <&kp DOT>, <&kp M>, <&kp DOT>;
-};
-
-
-// --------------------
-// mod-morph shifts for these:
-
-// tap: the &kp, hold: the &macro for the letters...
-// uses "&as_XX 0 #" in map; 0 parm for the nil macro parm; note macro is FIRST
 #define TAPPING_TERM_NUMPAD_HOLDS 225
 
-as_1st: auto_shift_1st {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    tapping-term-ms = <TAPPING_TERM_NUMPAD_HOLDS>;
-    quick-tap-ms = <0>;
-    flavor = "tap-preferred";
-    bindings = <&m_1st>, <&kp>; 
-};
-as_2nd: auto_shift_2nd {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    tapping-term-ms = <TAPPING_TERM_NUMPAD_HOLDS>;
-    quick-tap-ms = <0>;
-    flavor = "tap-preferred";
-    bindings = <&m_2nd>, <&kp>; 
-};
-as_3rd: auto_shift_3rd {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    tapping-term-ms = <TAPPING_TERM_NUMPAD_HOLDS>;
-    quick-tap-ms = <0>;
-    flavor = "tap-preferred";
-    bindings = <&m_3rd>, <&kp>; 
-};
-as_4th: auto_shift_4th {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    tapping-term-ms = <TAPPING_TERM_NUMPAD_HOLDS>;
-    quick-tap-ms = <0>;
-    flavor = "tap-preferred";
-    bindings = <&m_4th>, <&kp>; 
-};
-
-// holds on NUM for very common post-NUM {a.m., p.m., AM, PM}
-as_am_lc: auto_shift_am_lc {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    tapping-term-ms = <TAPPING_TERM_NUMPAD_HOLDS>;
-    quick-tap-ms = <0>;
-    flavor = "tap-preferred";
-    bindings = <&m_am_lc>, <&kp>; 
-};
-
-as_pm_lc: auto_shift_pm_lc {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    tapping-term-ms = <TAPPING_TERM_NUMPAD_HOLDS>;
-    quick-tap-ms = <0>;
-    flavor = "tap-preferred";
-    bindings = <&m_pm_lc>, <&kp>; 
-};
-
-// ... hr
-m_hr_abbrev: m_hr_abbrev {
-    compatible = "zmk,behavior-macro";
-    wait-ms = <0>; // was 10
-    tap-ms = <1>; // was 5
-    #binding-cells = <0>;
-    bindings = <&kp H>, <&kp R>;
-};
-
-as_hr_abbrev: auto_shift_hr_abbrev {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    tapping-term-ms = <TAPPING_TERM_NUMPAD_HOLDS>;
-    quick-tap-ms = <0>;
-    flavor = "tap-preferred";
-    bindings = <&m_hr_abbrev>, <&kp>; 
-};
-
-// ... min
-m_min_abbrev: m_min_abbrev {
-    compatible = "zmk,behavior-macro";
-    wait-ms = <0>; // was 10
-    tap-ms = <1>; // was 5
-    #binding-cells = <0>;
-    bindings = <&kp M>, <&kp I>, <&kp N>;
-};
-as_min_abbrev: auto_shift_min_abbrev {
-    compatible = "zmk,behavior-hold-tap";
-    #binding-cells = <2>;
-    tapping-term-ms = <TAPPING_TERM_NUMPAD_HOLDS>;
-    quick-tap-ms = <0>;
-    flavor = "tap-preferred";
-    bindings = <&m_min_abbrev>, <&kp>; 
-};
-
-
-
-
+MACRO_HT(1st,        <&kp S>, <&kp T>)
+MACRO_HT(2nd,        <&kp N>, <&kp D>)
+MACRO_HT(3rd,        <&kp R>, <&kp D>)
+MACRO_HT(4th,        <&kp T>, <&kp H>)
+MACRO_HT(am_lc,      <&kp A>, <&kp DOT>, <&kp M>, <&kp DOT>)  // a.m.
+MACRO_HT(pm_lc,      <&kp P>, <&kp DOT>, <&kp M>, <&kp DOT>)  // p.m.
+MACRO_HT(hr_abbrev,  <&kp H>, <&kp R>)                         // hr
+MACRO_HT(min_abbrev, <&kp M>, <&kp I>, <&kp N>)                // min
 
 
