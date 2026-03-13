@@ -21,7 +21,8 @@
       "Bash(curl -s \"https://api.github.com/repos/urob/zmk/compare/zmkfirmware:main...urob:main\")",
       "Bash(curl -s \"https://api.github.com/repos/zmkfirmware/zmk/git/trees/main?recursive=1\")",
       "Bash(curl -s \"https://raw.githubusercontent.com/KinesisCorporation/Adv360-Pro-ZMK/V3.0/config/adv360.keymap\")",
-      "Bash(curl -s \"https://raw.githubusercontent.com/KinesisCorporation/Adv360-Pro-ZMK/V3.0/config/version.dtsi\")"
+      "Bash(curl -s \"https://raw.githubusercontent.com/KinesisCorporation/Adv360-Pro-ZMK/V3.0/config/version.dtsi\")",
+      "WebSearch"
     ]
   }
 }
