@@ -47,8 +47,13 @@ HT_KP_POS(hm_r, 150, 125, "balanced", KEYS_LEFT  THUMBS MODS_RIGHT)
 HT_KP(hm_slw, 320, 200, "tap-preferred")
 
 /* medium for other mod keys: Ctrl, Alt — positional to prevent same-hand roll misfires */
-HT_KP_POS(hm_med_l, 230, 150, "balanced", KEYS_RIGHT THUMBS MODS_LEFT)
-HT_KP_POS(hm_med_r, 230, 150, "balanced", KEYS_LEFT  THUMBS MODS_RIGHT)
+/* TTM _shorter_ means less window for the hold to take effect. So false holds > shorter TTM. Not enough > longer TTM.
+    Can also do RH , LH separately if needed 
+    2026-03-13: 230, getting _some_ false-holds
+    2026-03-13: 200, 
+    */
+HT_KP_POS(hm_med_l, 200, 150, "balanced", KEYS_RIGHT THUMBS MODS_LEFT)
+HT_KP_POS(hm_med_r, 200, 150, "balanced", KEYS_LEFT  THUMBS MODS_RIGHT)
 
 /* auto-shift variants (binding-1=held, binding-2=tapped) */
 HT_KP(as,      150,   0, "tap-preferred")
