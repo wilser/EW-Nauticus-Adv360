@@ -81,7 +81,7 @@ ht_qu_QU: ht_qu_QU {
 // Hold=macro / tap=kp pairs: ordinal suffixes, time abbreviations, etc.
 // Generates both the zmk,behavior-macro node (m_NAME) and the hold-tap wrapper (ht_NAME).
 // ZMK finds behaviors by compatible string regardless of DTS block — both nodes live here in macros{}.
-// To add/change an entry: edit macro_ht_data.h only.
+// To add/change an entry: edit macro_ht_data.dtsi only.
 
 #define TAPPING_TERM_HT_MACRO 225
 
@@ -103,7 +103,7 @@ ht_##NAME: ht_##NAME { \
     bindings = <&m_##NAME>, <&kp>; \
 };
 
-#include "macro_ht_data.h"
+#include "macro_ht_data.dtsi"
 #undef HT_MACRO_ENTRY
 
 
