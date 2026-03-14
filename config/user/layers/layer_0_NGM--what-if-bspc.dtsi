@@ -1,0 +1,92 @@
+// ============================================================
+// SKETCH / WHAT-IF — not included anywhere, not active code
+// Exploring Option A for _BSP_CTLBSP:
+//   tap        → BSPC
+//   hold       → Ctrl+BSPC
+//   tap→tap+hold → BSPC sustained (OS-level repeat)
+//
+// The key mechanism: quick-tap-ms (QTM)
+//   If the same key is tapped again within QTM ms of the last tap,
+//   the next press is forced to "tap" regardless of hold duration.
+//   So: tap → tap+hold → the hold is forced to fire as BSPC → OS repeats it.
+//
+// Current _BSP_CTLBSP: &as RC(BSPC) BSPC
+//   &as = HT_KP(as, 150, 0, "tap-preferred")  ← QTM=0 disables quick-tap
+// ============================================================
+
+
+// ── PIECE 1: the behavior node ────────────────────────────────
+//
+// WHERE: would live in config/user/behaviors/holdtaps_for_layers.dtsi
+//        inside the  behaviors { }  block
+//
+// EXISTING MACRO that would generate this:
+//   HT_KP(as_thr_fst, 150, 150, "tap-preferred")
+//   (same as existing HT_KP — no new macro needed, just a new call with QTM=TTM)
+//
+// NAME: as_thr_fst — auto-shift with tap / hold / tap-hold-repeat logic
+//   tap        → tap key (BSPC)
+//   hold       → hold key (Ctrl+BSPC)
+//   tap→tap+hold → tap key repeating via OS (BSPC held)
+//
+// NEW MACRO? No. HT_KP already covers this perfectly.
+//   The only difference from existing &as is QTM: 0 → 150.
+//
+// BASE TIMING: 150 used throughout — matches the current &as TTM.
+//   Extract to a named constant if you want one knob to tune all three thresholds:
+//     #define TTM_BSP 150    ← would go at top of holdtaps_for_layers.dtsi
+//   Then the macro call becomes: HT_KP(as_thr_fst, TTM_BSP, TTM_BSP, "tap-preferred")
+
+as_thr_fst: as_thr_fst {  // tap / hold / tap-hold-repeat
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    tapping-term-ms = <150>;   // hold threshold: longer than this → Ctrl+BSPC
+                                // (tune this if hold fires too eagerly or too slowly)
+    quick-tap-ms    = <150>;   // re-tap window: second tap within 150ms forces tap
+                                // (tune this if the repeat-trigger window feels too tight/wide)
+                                // setting QTM = TTM is the conventional "feel" choice;
+                                // you could use a different value, e.g. QTM=125 for a narrower window
+    flavor = "tap-preferred";  // same as existing &as
+    bindings = <&kp>, <&kp>;   // hold-key, tap-key — both kp, values supplied at usage site
+};
+
+
+// ── PIECE 2: the layer #define ────────────────────────────────
+//
+// WHERE: in the #define block of layer_0_NGM.dtsi (or whichever layer uses this key)
+//        replaces the current:  #define _BSP_CTLBSP  &as RC(BSPC) BSPC
+//
+// The binding syntax is identical — only the behavior name changes.
+// RC(BSPC) = hold arg (Ctrl+Backspace); BSPC = tap arg (plain Backspace)
+
+#define _BSP_CTLBSP  &as_thr_fst RC(BSPC) BSPC
+
+
+// ── PIECE 3: usage in the keymap row ─────────────────────────
+//
+// WHERE: the thumb row in engram_layer { bindings = < ... > }
+//        no change here — _BSP_CTLBSP expands exactly as before
+
+// _TD_EMOJ_DSKT  _BUL_ARW  _TD_RTCLK_P  &kp LEFT  &kp RIGHT    _BSP_CTLBSP  ...
+
+
+// ── SUMMARY: what changes vs. what stays the same ────────────
+//
+//  NEW:        as_thr_fst behavior node (1 line via HT_KP macro, or ~8 lines spelled out)
+//  CHANGED:    _BSP_CTLBSP #define: &as → &as_thr_fst  (same args, same usage site)
+//  UNCHANGED:  everything else — tap-dance, macros, combos, other layers
+//
+//  NO new C macro needed.
+//  NO tap-dance node needed.
+//  NO changes to holdtaps_special_and_combos.dtsi or def_macros.dtsi.
+//
+// OPTIONAL REFINEMENT: a named #define constant for the timing
+//   so TTM and QTM stay in sync when tuning:
+//
+//   // at top of holdtaps_for_layers.dtsi:
+//   #define TTM_BSP 150
+//   // macro call:
+//   HT_KP(as_thr_fst, TTM_BSP, TTM_BSP, "tap-preferred")
+//
+//   This keeps both thresholds as one knob. If you later decide QTM should
+//   differ from TTM (e.g. tighter re-tap window), split into two constants.
