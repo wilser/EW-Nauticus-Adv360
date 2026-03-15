@@ -8,7 +8,8 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env: FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true #pseudo-global; not root-root, but should affect the whole build-job
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true #pseudo-global; not root-root, but should affect the whole build-job
     container:
       image: zmkfirmware/zmk-build-arm:stable
     name: Build
