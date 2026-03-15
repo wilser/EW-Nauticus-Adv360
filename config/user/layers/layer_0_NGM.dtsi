@@ -64,7 +64,7 @@
     #define _TD_EMOJ_DSKT   &td_emj_wdsk                  // 1x: open emoji desktop; 2x: open emoji desktop + move mouse (hold to drag)
     #define _BUL_ARW        &as F17 F15
     #define _TD_RTCLK_P     &td_rtclick_p                 // 1x: right-click; 2x: right-click + move mouse (hold to drag)
-    #define _BSP_CTLBSP     &as_thr_fst RC(BSPC) BSPC       // tap=BSPC, hold=Ctrl+BSPC, tap→tap+hold=BSPC repeat
+    #define _BSP_CTLBSP     &as_thr_med RC(BSPC) BSPC       // tap=BSPC, hold=Ctrl+BSPC, tap→tap+hold=BSPC repeat; see macro-def for MED vs FST, etc.
     #define _END_CTLEND     &as_slw RC(END) END
     #define _LBKT_LBRC      &as LS(LBKT) LBKT
     #define _RBKT_RBRC      &as LS(RBKT) RBKT
