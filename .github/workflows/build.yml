@@ -27,6 +27,8 @@ jobs:
         uses: actions/cache@v4
         env:
           cache-name: cache-zephyr-modules
+          FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+          ENV-note-EW: trying ↑ here lower than global to see if works
         with:
           path: |
             modules/
