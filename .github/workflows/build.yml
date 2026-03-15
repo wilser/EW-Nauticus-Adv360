@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true #pseudo-global; not root-root, but should affect the whole build-job
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true #pseudo-global; not root-root, but should affect the whole build-job / 3rd spot tried; still build warning
     container:
       image: zmkfirmware/zmk-build-arm:stable
     name: Build

@@ -61,7 +61,7 @@ HT_KP(as_slw,  230,   0, "tap-preferred")
 
 /* tap/hold/tap-hold-repeat — QTM=TTM so 2nd tap forces tap, enabling OS repeat on hold */
 HT_KP(as_thr_med, 230, 230, "tap-preferred")  // medium speed (230ms)
-HT_KP(as_thr_fst, 175, 175, "tap-preferred")  // fast-ish (150ms > 185 (comfortable, but... > 175) 2026-03-15)
+HT_KP(as_thr_fst, 165, 165, "tap-preferred")  // fast-ish (150ms too fast? > 185 (comfortable, but... > 175 > 165...) 2026-03-15)
 
 /* layer-tap variants */
 HT_BINDS(lt_fst, 150, 0, "tap-preferred", mo, kp)  // faster; after many attempts to dial in
