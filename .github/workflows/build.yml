@@ -3,11 +3,12 @@ on: [push, pull_request, workflow_dispatch]
 name: Build
 
 env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+  # FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true #global-global didn't seem to affect (2026-03-15)
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    env: FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true #pseudo-global; not root-root, but should affect the whole build-job
     container:
       image: zmkfirmware/zmk-build-arm:stable
     name: Build
@@ -27,8 +28,6 @@ jobs:
         uses: actions/cache@v4
         env:
           cache-name: cache-zephyr-modules
-          FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-          ENV-note-EW: trying ↑ here lower than global to see if works
         with:
           path: |
             modules/
