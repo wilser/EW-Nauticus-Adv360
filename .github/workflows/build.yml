@@ -2,9 +2,6 @@ on: [push, pull_request, workflow_dispatch]
 
 name: Build
 
-env:
-  # FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true #global-global didn't seem to affect (2026-03-15)
-
 jobs:
   build:
     runs-on: ubuntu-latest
