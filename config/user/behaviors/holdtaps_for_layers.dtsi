@@ -22,8 +22,8 @@
 
 /*  NOTES - hold-tap
     FLAVORS: https://zmk.dev/docs/behaviors/hold-tap
-        balanced:              best for most cases; if held long enough → hold, if fast+within time → hold, else tap
-        tap-preferred:         assume tap unless stricter timing met; more 'deliberate'
+        balanced:              if another key press+release completes while held → hold
+        tap-preferred:         assume tap unless stricter timing met; more 'deliberate', fewer false holds, but more false taps (missed holds)
         hold-preferred:        more forgiving hold (& more false-holds)
         tap-unless-interrupted: assumes tap even if slower, unless another key pressed
     TIMINGS: see below — e.g. slower for Win/GUI since false-holds wreck havoc
@@ -37,23 +37,28 @@
     //   Revisit only if switching to a pure-roll typing style with no deliberate mod chording.
 */
 
-/* positional HRM — hold-trigger-key-positions only (urob idle/release params not compatible with mod chording) */
-/* 2026-03-09 testing timing to dial in the false-non-shift cases better: 200 > 250 (seems worse?) » try 150 to test extreme different; so far better*/
-/* hm_l|hm_r only used for SHIFT */
+/* FOR SHIFT...
+ * positional HRM — hold-trigger-key-positions only (urob idle/release params not compatible with mod chording) 
+ * 2026-03-09 testing timing to dial in the false-non-shift cases better: 200 > 250 (seems worse?) » try 150 to test extreme different; so far better
+ * hm_l|hm_r only used for SHIFT
+ */
 HT_KP_POS(hm_l, 150, 125, "balanced", KEYS_RIGHT THUMBS MODS_LEFT KEYS_TAB) // make TAB exception so works fast also with same-hand mods
 HT_KP_POS(hm_r, 150, 125, "balanced", KEYS_LEFT  THUMBS MODS_RIGHT)
 
-/* slower for Win/GUI — false-holds are worse than false-taps */
+/* FOR WIN...
+ * slower for Win/GUI — false-holds are worse than false-taps
+ */
 HT_KP(hm_slw, 320, 200, "tap-preferred")
 
-/* medium for other mod keys: Ctrl, Alt — positional to prevent same-hand roll misfires */
-/* TTM _shorter_ means less window for the hold to take effect. So false holds > shorter TTM. Not enough > longer TTM.
-    Can also do RH , LH separately if needed 
-    2026-03-13: 230, getting _some_ false-holds
-    2026-03-13: 200, 
-    */
-HT_KP_POS(hm_med_l, 200, 150, "balanced", KEYS_RIGHT THUMBS MODS_LEFT KEYS_TAB)
-HT_KP_POS(hm_med_r, 200, 150, "balanced", KEYS_LEFT  THUMBS MODS_RIGHT)
+/* FOR CTRL & ALT...
+ * medium for other mod keys: Ctrl, Alt — positional to prevent same-hand roll misfires 
+ * TTM _shorter_ means less window for the hold to take effect. So false holds > shorter TTM. Not enough > longer TTM.
+ *   Can also do RH , LH separately if needed 
+ *   2026-03-13: 230, getting _some_ false-holds
+ *   2026-03-17: "balanced" might be too err-on-hold side. Try tap-preferred instead.
+ */
+HT_KP_POS(hm_med_l, 200, 150, "tap-preferred", KEYS_RIGHT THUMBS MODS_LEFT KEYS_TAB)
+HT_KP_POS(hm_med_r, 200, 150, "tap-preferred", KEYS_LEFT  THUMBS MODS_RIGHT)
 
 /* auto-shift variants (binding-1=held, binding-2=tapped) */
 HT_KP(as,      150,   0, "tap-preferred")
