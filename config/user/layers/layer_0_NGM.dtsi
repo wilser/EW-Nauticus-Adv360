@@ -45,10 +45,6 @@
     #define _I_RSI          &as_slw RS(I) I
     #define _SEMI_LT        &mms_ngm_semi LT 0
     #define _MEH            &kp LC(LA(LSHFT))
-    #define _CPWRD_CAPS     &ht_cap_cw L_CAP 0            // hold=CAPS layer; tap=capWORD
-    #define _NUM_LR         &ht_num_tolr_tonum L_NUM 0
-    #define _BSLH_LET       &lt L_LET BSLH                // hold=letter layer; tap=backslash
-    #define _BSLH_BSP_R     &mm_BACKSLASH_BACKSPACE_R     // see mod_morphs_general.dtsi
     #define _DT1_DT0        &mms_ngm_d1d0 RC(RA(F17)) 0   // AHK Ctrl+Alt+{F17,F18}: Date1/Date0
     #define _COLN_GT        &mms_ngm_coln GT 0
     #define _MNUS_UNDER     &mms_ngm_mnus UNDER 0
@@ -56,18 +52,29 @@
     // Row 4 — lower row
     #define _GRAV_CARET     &mms_ngm_grav CARET 0
     #define _AMPS_AT        &mms_ngm_amps AT 0
-    #define _HM_CTLHM       &as_slw RC(HOME) HOME
     #define _HASH_PLUS      &mms_ngm_hash PLUS 0
     #define _QU_Q           &ht_qu_QU Q 0                 // auto-shift means Shift gets the Hold (Q) behavior
 
-    // Row 5 — thumb row
+    // Row 5 — bottom row
     #define _TD_EMOJ_DSKT   &td_emj_wdsk                  // 1x: open emoji desktop; 2x: open emoji desktop + move mouse (hold to drag)
     #define _BUL_ARW        &as F17 F15
     #define _TD_RTCLK_P     &td_rtclick_p                 // 1x: right-click; 2x: right-click + move mouse (hold to drag)
-    #define _BSP_CTLBSP     &as_thr_med RC(BSPC) BSPC       // tap=BSPC, hold=Ctrl+BSPC, tap→tap+hold=BSPC repeat; see macro-def for MED vs FST, etc.
-    #define _END_CTLEND     &as_slw RC(END) END
     #define _LBKT_LBRC      &as LS(LBKT) LBKT
     #define _RBKT_RBRC      &as LS(RBKT) RBKT
+
+    // Left Thumb cluster
+    #define _CPWRD_CAPS     &ht_cap_cw L_CAP 0            // hold=CAPS layer; tap=capWORD
+    #define _NUM_LR         &ht_num_tolr_tonum L_NUM 0
+    #define _HM_CTLHM       &as_slw RC(HOME) HOME
+    #define _BSP_CTLBSP     &as_thr_med RC(BSPC) BSPC       // tap=BSPC, hold=Ctrl+BSPC, tap→tap+hold=BSPC repeat; see macro-def for MED vs FST, etc.
+    #define _END_CTLEND     &as_slw RC(END) END
+
+    // Right Thumb cluster
+    #define _BSLH_LET       &lt L_LET BSLH                // hold=letter layer; tap=backslash
+    #define _BSLH_BSP_R     &mm_BACKSLASH_BACKSPACE_R     // see mod_morphs_general.dtsi
+
+
+
 
 // end defines
 
@@ -80,58 +87,66 @@ engram_layer { bindings = <
 >; };
 
 // #UNDEFs (same order as defines)
-    // Row 1
-    #undef _TILD_PIPE
-    #undef _EXCL_N1
-    #undef _QSTN_N2
-    #undef _CMMA_N3
-    #undef _APOS_N4
-    #undef _ING_N5
-    #undef _TION_N6
-    #undef _LPAR_N7
-    #undef _PERD_N8
-    #undef _RPAR_N9
-    #undef _EQUL_N0
-    // Row 2
-    #undef _B_GUI
-    #undef _Y_SFT
-    #undef _O_ALT
-    #undef _U_CTL
-    #undef _STAR_F16
-    #undef _HYPER
+    // Row 1 — top row
+    #undef _TILD_PIPE 
+    #undef _EXCL_N1   
+    #undef _QSTN_N2   
+    #undef _CMMA_N3   
+    #undef _APOS_N4   
+    #undef _ING_N5    
+    #undef _TION_N6  
+    #undef _LPAR_N7   
+    #undef _PERD_N8   
+    #undef _RPAR_N9   
+    #undef _EQUL_N0   
+
+    // Row 2 — alpha + hold mods
+    #undef _B_GUI      
+    #undef _Y_SFT      
+    #undef _O_ALT      
+    #undef _U_CTL      
+    #undef _STAR_F16   
+    #undef _HYPER      
     #undef _TD_SCRSHOTS
-    #undef _QUOT_DLLR
-    #undef _L_CTL
-    #undef _D_ALT
-    #undef _W_SFT
-    #undef _V_GUI
-    #undef _SLSH_PRCNT
-    // Row 3
-    #undef _TAB_SHTAB
-    #undef _I_RSI
-    #undef _SEMI_LT
-    #undef _MEH
-    #undef _CPWRD_CAPS
-    #undef _NUM_LR
-    #undef _BSLH_LET
-    #undef _BSLH_BSP_R
-    #undef _DT1_DT0
-    #undef _COLN_GT
-    #undef _MNUS_UNDER
-    // Row 4
-    #undef _GRAV_CARET
-    #undef _AMPS_AT
-    #undef _HM_CTLHM
-    #undef _HASH_PLUS
-    #undef _QU_Q
-    // Row 5
+    #undef _QUOT_DLLR  
+    #undef _L_CTL      
+    #undef _D_ALT      
+    #undef _W_SFT      
+    #undef _V_GUI      
+    #undef _SLSH_PRCNT 
+
+    // Row 3 — home row
+    #undef _TAB_SHTAB  
+    #undef _I_RSI      
+    #undef _SEMI_LT    
+    #undef _MEH        
+    #undef _DT1_DT0    
+    #undef _COLN_GT    
+    #undef _MNUS_UNDER 
+
+    // Row 4 — lower row
+    #undef _GRAV_CARET   
+    #undef _AMPS_AT   
+    #undef _HASH_PLUS   
+    #undef _QU_Q   
+
+    // Row 5 — bottom row
     #undef _TD_EMOJ_DSKT
-    #undef _BUL_ARW
-    #undef _TD_RTCLK_P
+    #undef _BUL_ARW     
+    #undef _TD_RTCLK_P  
+    #undef _LBKT_LBRC   
+    #undef _RBKT_RBRC   
+
+    // Left Thumb cluster
+    #undef _CPWRD_CAPS
+    #undef _NUM_LR    
+    #undef _HM_CTLHM  
     #undef _BSP_CTLBSP
     #undef _END_CTLEND
-    #undef _LBKT_LBRC
-    #undef _RBKT_RBRC
+
+    // Right Thumb cluster
+    #undef _BSLH_LET 
+    #undef _BSLH_BSP_R
 // end undefs
 
 
