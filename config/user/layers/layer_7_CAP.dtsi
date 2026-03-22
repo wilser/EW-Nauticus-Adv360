@@ -7,8 +7,8 @@
 // #DEFs
     #define _AHK_AT &kp RC(RA(AT_SIGN))
     #define _CAP_Q &ht_QU_Q LS(Q) 0
-    #define _CAP_ING  &ht_ING N5 0                        // tap=ING macro, hold=5
-    #define _CAP_TION &ht_TION N6 0                       // tap=TION macro, hold=6
+    #define _CAP_ING  &ht_ucase_ing N5 0                  // tap=ING macro, hold=5
+    #define _CAP_TION &ht_ucase_tion N6 0                 // tap=TION macro, hold=6
 // end #DEFs
 
 ngmcap_layer { bindings = <

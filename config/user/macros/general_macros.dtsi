@@ -17,7 +17,7 @@ m_ing: m_ing {
     #binding-cells = <0>;
     bindings = <&kp I>, <&kp N>, <&kp G>;
 };
-m_ING: m_ING {
+m_ucase_ing: m_ucase_ing {
     compatible = "zmk,behavior-macro";
     wait-ms = <0>;
     tap-ms = <1>;
@@ -31,7 +31,7 @@ m_tion: m_tion {
     #binding-cells = <0>;
     bindings = <&kp T>, <&kp I>, <&kp O>, <&kp N>;
 };
-m_TION: m_TION {
+m_ucase_tion: m_ucase_tion {
     compatible = "zmk,behavior-macro";
     wait-ms = <0>;
     tap-ms = <1>;

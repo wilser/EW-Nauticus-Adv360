@@ -92,21 +92,21 @@ ht_tion: ht_tion {
     flavor = "tap-preferred";
     bindings = <&kp>, <&m_tion>;
 };
-ht_ING: ht_ING {
+ht_ucase_ing: ht_ucase_ing {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
     tapping-term-ms = <200>;
     quick-tap-ms = <0>;
     flavor = "tap-preferred";
-    bindings = <&kp>, <&m_ING>;
+    bindings = <&kp>, <&m_ucase_ing>;
 };
-ht_TION: ht_TION {
+ht_ucase_tion: ht_ucase_tion {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
     tapping-term-ms = <200>;
     quick-tap-ms = <0>;
     flavor = "tap-preferred";
-    bindings = <&kp>, <&m_TION>;
+    bindings = <&kp>, <&m_ucase_tion>;
 };
 
 // ----------------------------------------------------------------------------------------------------
