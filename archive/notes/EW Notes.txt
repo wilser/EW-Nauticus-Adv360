@@ -40,7 +40,7 @@ F13 - F24 don't work by default:
 
 ----------------------------------------------------------------------------------------------------
 ISSUES & NOTES
-    2024-01-05 Win+<> timing and REMOTE DESKTOP
+    2024-01-05 Win+<> timing and REMOTE DESKTOP / update later: NO WAY to pass F13-24 thru to RDP apparently
         Util+{SR-shortcut} Ø work on remote-laptop / but the normal Meh+R does. WTH?
 		seems to send like CS-R or CA-R, not whole combo... Keyboard/ZMK issue?
 		seems known bug 2021? https://github.com/zmkfirmware/zmk/issues/759
