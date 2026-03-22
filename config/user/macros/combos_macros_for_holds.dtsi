@@ -13,7 +13,13 @@
 
 // --------------------
 // Q / QU cases
-// tap: qu, shift-tap: Qu, hold: q (Engram layer) / shift-hold: Q (CAP layer)
+// See Claude_working_notes.md for a full account of failed approaches before arriving here.
+//
+// Summary of what works:
+//   tap          → "qu"   via m_lcase_qu (no shift involved)
+//   hold         → "q"    via kp Q (the hold param)
+//   shift + tap  → "QU"   (ZMK cannot suppress physical shift inside a macro — see notes)
+//   &sk + tap    → "Qu"   use one-shot shift (&sk LSHFT) before tapping for mixed-case
 
 // Q macros: --------------------
 m_lcase_qu: m_lcase_qu {
@@ -32,49 +38,35 @@ m_ucase_QU: m_ucase_QU {
     bindings = <&kp LS(Q)>, <&kp LS(U)>;
 };
 
+// m_mixcase_Qu: used by combo_qu_mixcase (P+QU chord). No physical shift held
+// during a combo, so kp LS(Q)+kp U = "Qu" cleanly — no suppression needed.
 m_mixcase_Qu: m_mixcase_Qu {
     compatible = "zmk,behavior-macro";
     wait-ms = <0>;
     tap-ms = <1>;
     #binding-cells = <0>;
-    // Type Q (shift via LS), then explicitly release both physical shifts before U.
-    // Two separate macro_release steps (not combined) to cover L and R shift.
-    // keep-mods in mm_qu_Qu keeps shift active so LS(Q) works; releases clear it for U.
-    bindings =
-              <&kp LS(Q)>
-            , <&macro_release &kp LSHIFT>
-            , <&kp U>
-    ;
+    bindings = <&kp LS(Q)>, <&kp U>;
 };
 
 // CAP layer HT --------------------
 ht_QU_Q: ht_QU_Q {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
-    flavor = "hold-preferred"; // which?
-    tapping-term-ms = <200>; 
+    flavor = "hold-preferred";
+    tapping-term-ms = <200>;
     quick-tap-ms = <200>;
-    bindings = <&kp>, <&m_ucase_QU>; // hold for Q, tap for QU macro
+    bindings = <&kp>, <&m_ucase_QU>; // hold for Q (LS(Q)), tap for QU macro
 };
 
-
-// MOD MORPH for qu Qu - note not &kp based!
-mm_qu_Qu: mm_qu_Qu {
-    compatible = "zmk,behavior-mod-morph";
-    #binding-cells = <0>;
-    bindings = <&m_lcase_qu>, <&m_mixcase_Qu>;
-    mods = <(MOD_LSFT|MOD_RSFT)>;
-    keep-mods = <(MOD_LSFT|MOD_RSFT)>; // keep shift active so LS(Q) works; macro then releases it for U
-  };
-
-// HOLD TAP: Q | ModMorph(qu Qu)
+// HOLD TAP: q | qu  — tap binding is m_lcase_qu directly (no mod-morph).
+// Shift+tap gives "QU"; use &sk LSHFT before tap for "Qu". See Claude_working_notes.md.
 ht_qu_QU: ht_qu_QU {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
-    flavor = "tap-preferred"; // tap-preferred: hold only fires after tapping-term-ms, shift+tap stays tap
+    flavor = "tap-preferred";
     tapping-term-ms = <200>;
     quick-tap-ms = <200>;
-    bindings = <&kp>, <&mm_qu_Qu>; // hold <&kp>, tap <macro "qu">
+    bindings = <&kp>, <&m_lcase_qu>; // hold=kp (Q→"q"), tap="qu"
 };
 
 

@@ -53,7 +53,7 @@
     #define _GRAV_CARET     &mms_ngm_grav CARET 0
     #define _AMPS_AT        &mms_ngm_amps AT 0
     #define _HASH_PLUS      &mms_ngm_hash PLUS 0
-    #define _QU_Q           &ht_qu_QU Q 0                 // tap=qu, shift-tap=Qu, hold=q, shift-hold=Q
+    #define _QU_Q           &ht_qu_QU Q 0                 // tap=qu, hold=q; shift+tap="QU", &sk+tap="Qu" (see Claude_working_notes.md)
 
     // Row 5 — bottom row
     #define _TD_EMOJ_DSKT   &td_emj_wdsk                  // 1x: open emoji desktop; 2x: open emoji desktop + move mouse (hold to drag)

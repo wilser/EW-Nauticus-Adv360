@@ -95,3 +95,11 @@ combo_colon {
     layers = <L_NGM>;
 };
 
+// [L] "Qu" — P+QU chord (keys 58+59). No shift held, so kp LS(Q)+kp U = "Qu" cleanly.
+// See Claude_working_notes.md for why shift+tap on the QU key can't produce "Qu".
+combo_qu_mixcase {
+    key-positions = <58 59>;
+    bindings = <&m_mixcase_Qu>;
+    layers = <L_NGM>;
+};
+
