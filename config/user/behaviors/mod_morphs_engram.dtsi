@@ -5,8 +5,7 @@
 
 // ---------- THIS >> AHK ref 2025-xx-?? ---------- //
 // Note: Fn-# above 12 don't work through RDP (at all)
-// ^!F11 >> AHK(~ing)
-// ^!F12 >> AHK(~tion)
+// [removed] ^!F11/F12 >> AHK(ing/tion) — replaced with ZMK macros 2026-03-22
 //  F18 >> — / m-dash [Alt+F24 Ø working; Ø-idea why]
 // ^!F17 >> D-M/D
 // ^!F18 >> D-yyyy-MM-DD
@@ -20,11 +19,8 @@
   MOD_MORPH_SHIFT(ngm_qstn    , QMARK        , N2       )
   MOD_MORPH_SHIFT(ngm_cmma    , COMMA        , N3       )
   MOD_MORPH_SHIFT(ngm_apos    , APOS         , N4       )
-  MOD_MORPH_SHIFT(ngm_ing     , RC(F11)      , N5       ) // ^F11 "ing"
-  MOD_MORPH_SHIFT(ngm_cap_ing , RC(RS(F11))  , N5       ) // ^!F11 "ING"
-
-  MOD_MORPH_SHIFT(ngm_tion    , RC(F12)      , N6       ) // ^F12 "tion"
-  MOD_MORPH_SHIFT(ngm_cap_tion, RC(RS(F12))  , N6       ) // ^!F12 "TION"
+  // ngm_ing / ngm_cap_ing / ngm_tion / ngm_cap_tion removed 2026-03-22:
+  // replaced with m_ing/m_tion macros + ht_ing/ht_tion hold-taps (no AHK dependency)
   MOD_MORPH_SHIFT(ngm_lpar    , LPAR         , N7       )
   MOD_MORPH_SHIFT(ngm_perd    , PERIOD       , N8       )
   MOD_MORPH_SHIFT(ngm_rpar    , RPAR         , N9       )

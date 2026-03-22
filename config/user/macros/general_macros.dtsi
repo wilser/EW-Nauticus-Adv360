@@ -6,6 +6,39 @@
 */
 
 
+/* ING / TION text macros
+   Lowercase versions are shift-aware: held shift flows through → "ING"/"TION" naturally.
+   Uppercase versions always send capitals (used on CAP layer where no physical shift is held).
+*/
+m_ing: m_ing {
+    compatible = "zmk,behavior-macro";
+    wait-ms = <0>;
+    tap-ms = <1>;
+    #binding-cells = <0>;
+    bindings = <&kp I>, <&kp N>, <&kp G>;
+};
+m_ING: m_ING {
+    compatible = "zmk,behavior-macro";
+    wait-ms = <0>;
+    tap-ms = <1>;
+    #binding-cells = <0>;
+    bindings = <&kp LS(I)>, <&kp LS(N)>, <&kp LS(G)>;
+};
+m_tion: m_tion {
+    compatible = "zmk,behavior-macro";
+    wait-ms = <0>;
+    tap-ms = <1>;
+    #binding-cells = <0>;
+    bindings = <&kp T>, <&kp I>, <&kp O>, <&kp N>;
+};
+m_TION: m_TION {
+    compatible = "zmk,behavior-macro";
+    wait-ms = <0>;
+    tap-ms = <1>;
+    #binding-cells = <0>;
+    bindings = <&kp LS(T)>, <&kp LS(I)>, <&kp LS(O)>, <&kp LS(N)>;
+};
+
 /* SELECT WORD: Ctrl+LEFT, Ctrl+Shift+RIGHT - for mid or at end of a word (see other) */
 m_SEL_WRD_L: m_SEL_WRD_L{
     compatible = "zmk,behavior-macro";

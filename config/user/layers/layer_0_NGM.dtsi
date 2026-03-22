@@ -18,8 +18,8 @@
     #define _QSTN_N2        &mms_ngm_qstn N2 0
     #define _CMMA_N3        &mms_ngm_cmma N3 0
     #define _APOS_N4        &mms_ngm_apos N4 0
-    #define _ING_N5         &mms_ngm_ing N5 0             // AHK: F14 >> ing
-    #define _TION_N6        &mms_ngm_tion N6 0            // AHK: F15 >> tion
+    #define _ING_N5         &ht_ing N5 0                  // tap=ing (shift→ING), hold=5
+    #define _TION_N6        &ht_tion N6 0                 // tap=tion (shift→TION), hold=6
     #define _LPAR_N7        &mms_ngm_lpar N7 0
     #define _PERD_N8        &mms_ngm_perd N8 0
     #define _RPAR_N9        &mms_ngm_rpar N9 0

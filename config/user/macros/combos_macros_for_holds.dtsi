@@ -72,6 +72,44 @@ ht_qu_QU: ht_qu_QU {
 
 
 // ----------------------------------------------------------------------------------------------------
+// ING / TION hold-taps: hold=kp (N5/N6), tap=macro
+// NGM layer: m_ing/m_tion are shift-aware — physical shift held while tapping → "ING"/"TION"
+// CAP layer: m_ING/m_TION always send uppercase (no physical shift on that layer)
+
+ht_ing: ht_ing {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    tapping-term-ms = <200>;
+    quick-tap-ms = <0>;
+    flavor = "tap-preferred";
+    bindings = <&kp>, <&m_ing>;
+};
+ht_tion: ht_tion {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    tapping-term-ms = <200>;
+    quick-tap-ms = <0>;
+    flavor = "tap-preferred";
+    bindings = <&kp>, <&m_tion>;
+};
+ht_ING: ht_ING {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    tapping-term-ms = <200>;
+    quick-tap-ms = <0>;
+    flavor = "tap-preferred";
+    bindings = <&kp>, <&m_ING>;
+};
+ht_TION: ht_TION {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    tapping-term-ms = <200>;
+    quick-tap-ms = <0>;
+    flavor = "tap-preferred";
+    bindings = <&kp>, <&m_TION>;
+};
+
+// ----------------------------------------------------------------------------------------------------
 // Hold=macro / tap=kp pairs: ordinal suffixes, time abbreviations, etc.
 // Generates both the zmk,behavior-macro node (m_NAME) and the hold-tap wrapper (ht_NAME).
 // ZMK finds behaviors by compatible string regardless of DTS block — both nodes live here in macros{}.
