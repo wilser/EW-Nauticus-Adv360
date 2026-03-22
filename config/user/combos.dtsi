@@ -103,3 +103,9 @@ combo_qu_mixcase {
     layers = <L_NGM>;
 };
 
+// TEMP: trying also Qu via {n qu} chord since it's more comfortable; maybe
+combo_qu_mixcase2 {
+    key-positions = <44 59>;
+    bindings = <&m_mixcase_Qu>;
+    layers = <L_NGM>;
+};
