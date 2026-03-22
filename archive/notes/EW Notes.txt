@@ -60,5 +60,6 @@ ISSUES & NOTES
 			[?..] wonder if this would also have fixed the Clipmate issues... Seems so	
     
 
+2026-03-22 - MACROS inside the Zephr build all => to lowercase... SO must be UNIQUE names
 
 
