@@ -38,9 +38,8 @@ m_mixcase_Qu: m_mixcase_Qu {
     tap-ms = <5>;
     #binding-cells = <0>;
     bindings =
-              <&kp LS(Q)>
-            , <&macro_release &kp LSHIFT>
-            , <&macro_pause_for_release>
+              <&macro_release &kp LSHIFT &kp RSHIFT>
+            , <&kp LS(Q)>
             , <&kp U>
     ;
 };
@@ -69,7 +68,7 @@ mm_qu_Qu: mm_qu_Qu {
 ht_qu_QU: ht_qu_QU {
     compatible = "zmk,behavior-hold-tap";
     #binding-cells = <2>;
-    flavor = "hold-preferred"; // which? 
+    flavor = "tap-preferred"; // tap-preferred: hold only fires after tapping-term-ms, shift+tap stays tap
     tapping-term-ms = <200>;
     quick-tap-ms = <200>;
     bindings = <&kp>, <&mm_qu_Qu>; // hold <&kp>, tap <macro "qu">
