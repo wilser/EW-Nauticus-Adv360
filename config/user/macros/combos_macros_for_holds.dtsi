@@ -34,14 +34,12 @@ m_ucase_QU: m_ucase_QU {
 
 m_mixcase_Qu: m_mixcase_Qu {
     compatible = "zmk,behavior-macro";
-    wait-ms = <10>; 
-    tap-ms = <5>;
+    wait-ms = <0>;
+    tap-ms = <1>;
     #binding-cells = <0>;
-    bindings =
-              <&macro_release &kp LSHIFT &kp RSHIFT>
-            , <&kp LS(Q)>
-            , <&kp U>
-    ;
+    // mm_qu_Qu has no keep-mods, so shift is suppressed by the mod-morph during this macro.
+    // LS(Q) adds shift explicitly for Q; U is sent without shift.
+    bindings = <&kp LS(Q)>, <&kp U>;
 };
 
 // CAP layer HT --------------------
@@ -61,7 +59,7 @@ mm_qu_Qu: mm_qu_Qu {
     #binding-cells = <0>;
     bindings = <&m_lcase_qu>, <&m_mixcase_Qu>;
     mods = <(MOD_LSFT|MOD_RSFT)>;
-    keep-mods = <(MOD_LSFT|MOD_RSFT)>; // swallow the shift so Ø passed thru? (not sure matters)
+    // no keep-mods: mod-morph suppresses shift while m_mixcase_Qu runs, so U is unshifted
   };
 
 // HOLD TAP: Q | ModMorph(qu Qu)
