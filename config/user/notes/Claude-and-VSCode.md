@@ -4,7 +4,7 @@
 
 Claude Code stores per-project memory locally by default (not synced). The `autoMemoryDirectory` setting redirects **only the memory folder** to a custom path — it does not move other Claude session data or project files.
 
-Add to **user settings** (`~/.claude/settings.json`) on each computer:
+Add to **user settings** (`~/.claude/settings.json`) on each computer. This is fixed and cannot change for security.
 
 ```json
 {
@@ -15,6 +15,8 @@ Add to **user settings** (`~/.claude/settings.json`) on each computer:
 - Use an absolute path with forward slashes (works on Windows). Tilde (`~`) expansion also works but an explicit path is safer across machines if the home dir differs.
 - Must be in **user settings**, not project settings (security restriction).
 - Set the same Dropbox path on each computer; Dropbox handles the sync.
+- The _actual_ path will differ between computers.
+
 
 ### Memory folder structure
 
@@ -29,6 +31,10 @@ _claude_memory/
     memory/
       MEMORY.md
 ```
+
+> [!warning]+ NOTE
+> We only moved the `memory` files/folder. The other UUID folders and files are more transient session stuff and are local to each device.
+
 
 ### Project resolution (no slug derivation)
 
