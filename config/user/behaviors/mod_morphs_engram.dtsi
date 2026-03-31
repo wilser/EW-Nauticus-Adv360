@@ -17,12 +17,14 @@
   MOD_MORPH_SHIFT(ngm_tild    , TILDE        , PIPE     )
   MOD_MORPH_SHIFT(ngm_excl    , EXCL         , N1       )
   MOD_MORPH_SHIFT(ngm_qstn    , QMARK        , N2       )
-  MOD_MORPH_SHIFT(ngm_cmma    , COMMA        , N3       )
+  //MOD_MORPH_SHIFT(ngm_cmma    , COMMA        , N3       )  // 2026-03-30: swapped — see ngm_semi3 (top row) + ngm_cmma_lt (home row)
+  MOD_MORPH_SHIFT(ngm_semi3   , SEMI         , N3       )  // 2026-03-30: ; tap, 3 shift, replaces ngm_cmma at top-row pos
   MOD_MORPH_SHIFT(ngm_apos    , APOS         , N4       )
   // ngm_ing / ngm_cap_ing / ngm_tion / ngm_cap_tion removed 2026-03-22:
   // replaced with m_ing/m_tion macros + ht_ing/ht_tion hold-taps (no AHK dependency)
   MOD_MORPH_SHIFT(ngm_lpar    , LPAR         , N7       )
-  MOD_MORPH_SHIFT(ngm_perd    , PERIOD       , N8       )
+  //MOD_MORPH_SHIFT(ngm_perd    , PERIOD       , N8       )  // 2026-03-30: swapped — see ngm_coln8 (top row) + ngm_perd_gt (home row)
+  MOD_MORPH_SHIFT(ngm_coln8   , COLON        , N8       )  // 2026-03-30: : tap, 8 shift, replaces ngm_perd at top-row pos
   MOD_MORPH_SHIFT(ngm_rpar    , RPAR         , N9       )
   MOD_MORPH_SHIFT(ngm_equl    , EQUAL        , N0       )
 
@@ -32,12 +34,14 @@
 
  // L-MID COLUMN (T to B):
   MOD_MORPH_SHIFT(ngm_star    , STAR         , F16      ) // F16 "Ø"
-  MOD_MORPH_SHIFT(ngm_semi    , SEMI         , LT       )
+  //MOD_MORPH_SHIFT(ngm_semi    , SEMI         , LT       )  // 2026-03-30: swapped — see ngm_semi3 (top row) + ngm_cmma_lt (home row)
+  MOD_MORPH_SHIFT(ngm_cmma_lt , COMMA        , LT       )  // 2026-03-30: , tap, < shift, replaces ngm_semi at home-row pos
   MOD_MORPH_SHIFT(ngm_amps    , AMPS         , AT       )
 
 // R-MID COLUMN (T to B):
   MOD_MORPH_SHIFT(ngm_quot    , DQT          , DLLR     )
-  MOD_MORPH_SHIFT(ngm_coln    , COLON        , GT       )
+  //MOD_MORPH_SHIFT(ngm_coln    , COLON        , GT       )  // 2026-03-30: swapped — see ngm_coln8 (top row) + ngm_perd_gt (home row)
+  MOD_MORPH_SHIFT(ngm_perd_gt , PERIOD       , GT       )  // 2026-03-30: . tap, > shift, replaces ngm_coln at home-row pos
   MOD_MORPH_SHIFT(ngm_hash    , HASH         , PLUS     )
 
 // Rh COLUMN (T to B):

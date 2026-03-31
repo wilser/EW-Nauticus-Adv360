@@ -16,12 +16,14 @@
     #define _TILD_PIPE      &mms_ngm_tild PIPE 0
     #define _EXCL_N1        &mms_ngm_excl N1 0
     #define _QSTN_N2        &mms_ngm_qstn N2 0
-    #define _CMMA_N3        &mms_ngm_cmma N3 0
+    //#define _CMMA_N3        &mms_ngm_cmma N3 0    // 2026-03-30: swapped
+    #define _SEMI_N3        &mms_ngm_semi3 N3 0
     #define _APOS_N4        &mms_ngm_apos N4 0
     #define _ING_N5         &ht_ing N5 0                  // tap=ing (shift→ING), hold=5
     #define _TION_N6        &ht_tion N6 0                 // tap=tion (shift→TION), hold=6
     #define _LPAR_N7        &mms_ngm_lpar N7 0
-    #define _PERD_N8        &mms_ngm_perd N8 0
+    //#define _PERD_N8        &mms_ngm_perd N8 0    // 2026-03-30: swapped
+    #define _COLN_N8        &mms_ngm_coln8 N8 0
     #define _RPAR_N9        &mms_ngm_rpar N9 0
     #define _EQUL_N0        &mms_ngm_equl N0 0
 
@@ -43,10 +45,12 @@
     // Row 3 — home row
     #define _TAB_SHTAB      &mt LS(TAB) TAB
     #define _I_RSI          &as_slw RS(I) I
-    #define _SEMI_LT        &mms_ngm_semi LT 0
+    //#define _SEMI_LT        &mms_ngm_semi LT 0    // 2026-03-30: swapped
+    #define _CMMA_LT        &mms_ngm_cmma_lt LT 0
     #define _MEH            &kp LC(LA(LSHFT))
     #define _DT1_DT0        &mms_ngm_d1d0 RC(RA(F17)) 0   // AHK Ctrl+Alt+{F17,F18}: Date1/Date0
-    #define _COLN_GT        &mms_ngm_coln GT 0
+    //#define _COLN_GT        &mms_ngm_coln GT 0    // 2026-03-30: swapped
+    #define _PERD_GT        &mms_ngm_perd_gt GT 0
     #define _MNUS_UNDER     &mms_ngm_mnus UNDER 0
 
     // Row 4 — lower row
@@ -79,9 +83,9 @@
 // end defines
 
 engram_layer { bindings = <
-    _TILD_PIPE     _EXCL_N1     _QSTN_N2     _CMMA_N3     _APOS_N4         _ING_N5    &sl L_UTL                                                                      &sl L_UTL     _TION_N6    _LPAR_N7  _PERD_N8  _RPAR_N9    _EQUL_N0    &kp Z
+    _TILD_PIPE     _EXCL_N1     _QSTN_N2     _SEMI_N3     _APOS_N4         _ING_N5    &sl L_UTL                                                                      &sl L_UTL     _TION_N6    _LPAR_N7  _COLN_N8  _RPAR_N9    _EQUL_N0    &kp Z
     &kp ESC        _B_GUI       _Y_SFT       _O_ALT       _U_CTL           _STAR_F16  _HYPER                                                                         _TD_SCRSHOTS  _QUOT_DLLR  _L_CTL    _D_ALT    _W_SFT      _V_GUI      _SLSH_PRCNT
-    _TAB_SHTAB     &kp C        _I_RSI       &kp E        &kp A            _SEMI_LT   _MEH              _CPWRD_CAPS  _NUM_LR  _BSLH_LET  _BSLH_BSP_R                 _DT1_DT0      _COLN_GT    &kp H     &kp T     &kp S       &kp N       _MNUS_UNDER
+    _TAB_SHTAB     &kp C        _I_RSI       &kp E        &kp A            _CMMA_LT   _MEH              _CPWRD_CAPS  _NUM_LR  _BSLH_LET  _BSLH_BSP_R                 _DT1_DT0      _PERD_GT    &kp H     &kp T     &kp S       &kp N       _MNUS_UNDER
     _GRAV_CARET    &lt L_EDT G  &kp X        &lt L_UTL J  &lt_fst L_NUM K  _AMPS_AT                               _HM_CTLHM    &kp PG_UP                                           _HASH_PLUS  &kp R     &kp M     &kp F       &kp P       _QU_Q
     _TD_EMOJ_DSKT  _BUL_ARW     _TD_RTCLK_P  &kp LEFT     &kp RIGHT                _BSP_CTLBSP  &lt L_EDT DEL  _END_CTLEND      &kp PG_DN  &lt L_FNC ENTER  &kp SPACE                          &kp UP    &kp DOWN  _LBKT_LBRC  _RBKT_RBRC  &to L_NUM
 >; };
@@ -91,12 +95,12 @@ engram_layer { bindings = <
     #undef _TILD_PIPE 
     #undef _EXCL_N1   
     #undef _QSTN_N2   
-    #undef _CMMA_N3   
+    #undef _SEMI_N3
     #undef _APOS_N4   
     #undef _ING_N5    
     #undef _TION_N6  
     #undef _LPAR_N7   
-    #undef _PERD_N8   
+    #undef _COLN_N8
     #undef _RPAR_N9   
     #undef _EQUL_N0   
 
@@ -118,10 +122,10 @@ engram_layer { bindings = <
     // Row 3 — home row
     #undef _TAB_SHTAB  
     #undef _I_RSI      
-    #undef _SEMI_LT    
+    #undef _CMMA_LT
     #undef _MEH        
     #undef _DT1_DT0    
-    #undef _COLN_GT    
+    #undef _PERD_GT
     #undef _MNUS_UNDER 
 
     // Row 4 — lower row
