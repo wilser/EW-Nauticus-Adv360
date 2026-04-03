@@ -34,14 +34,14 @@
 
  // L-MID COLUMN (T to B):
   MOD_MORPH_SHIFT(ngm_star    , STAR         , F16      ) // F16 "Ø"
-  MOD_MORPH_SHIFT(ngm_semi    , SEMI         , LT       )
-  //MOD_MORPH_SHIFT(ngm_cmma_lt , COMMA        , LT       )  // 2026-03-30: , tap, < shift — swapped back 2026-04-03
+  //MOD_MORPH_SHIFT(ngm_semi    , SEMI         , LT       )  // 2026-03-30: swapped — see ngm_semi3 (top row) + ngm_cmma_lt (home row)
+  MOD_MORPH_SHIFT(ngm_cmma_lt , COMMA        , LT       )  // 2026-03-30: , tap, < shift, replaces ngm_semi at home-row pos
   MOD_MORPH_SHIFT(ngm_amps    , AMPS         , AT       )
 
 // R-MID COLUMN (T to B):
   MOD_MORPH_SHIFT(ngm_quot    , DQT          , DLLR     )
-  MOD_MORPH_SHIFT(ngm_coln    , COLON        , GT       )
-  //MOD_MORPH_SHIFT(ngm_perd_gt , PERIOD       , GT       )  // 2026-03-30: . tap, > shift — swapped back 2026-04-03
+  //MOD_MORPH_SHIFT(ngm_coln    , COLON        , GT       )  // 2026-03-30: swapped — see ngm_coln8 (top row) + ngm_perd_gt (home row)
+  MOD_MORPH_SHIFT(ngm_perd_gt , PERIOD       , GT       )  // 2026-03-30: . tap, > shift, replaces ngm_coln at home-row pos
   MOD_MORPH_SHIFT(ngm_hash    , HASH         , PLUS     )
 
 // Rh COLUMN (T to B):
