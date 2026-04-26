@@ -81,7 +81,6 @@
 // 2026-04-03 trying mute & Win+K (hold for voice); taking out _HYPER and _MEH that haven't been using
 // C_MUTE is system audio (speaker) mute; *Windows* has Win+Alt+K for mute microphone
 
-
 engram_layer { bindings = <
     _TILD_PIPE     _EXCL_N1     _QSTN_N2     _CMMA_N3     _APOS_N4         _ING_N5    &sl L_UTL                                                                      &sl L_UTL     _TION_N6    _LPAR_N7  _PERD_N8  _RPAR_N9    _EQUL_N0    &kp Z
     &kp ESC        _B_GUI       _Y_SFT       _O_ALT       _U_CTL           _STAR_F16  &kp RG(RA(K))                                                                  _TD_SCRSHOTS  _QUOT_DLLR  _L_CTL    _D_ALT    _W_SFT      _V_GUI      _SLSH_PRCNT
