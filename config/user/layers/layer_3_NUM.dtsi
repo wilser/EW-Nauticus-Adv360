@@ -47,11 +47,11 @@
 // end defines
 
 numpad_layer { bindings = <
-    ___      ___           ___        ___       ___        ___  &to L_NGM                                               _APOS_EURO   _BKSL_PIPE  _LPAR_LT  _DOT_CMMA   _RPAR_GT     _EQAL_TILD   &m_CSA_R
-    ___      ___           ___        ___       ___        ___  ___                                                     _HM_CTLHM    _DLLR_DQT   _N7_MINUTE _N8_AMUC    _N9_PMUC     _MULT_TIMES  _DIV_PCT
-    ___      &kp LC(D)     ___        ___       &kp LC(D)  ___  ___      &kp LSHFT  &to L_0  _KP_ENT  &kp BSPC          _END_CTLEND  _COLN_SEMI  _N4_4TH   _N5_AMLC    _N6_PMLC     &kp N0       _MNUS_UNDR
-    &to L_0  &mo L_EDT     ___        ___       _x_        ___                   &kp PG_UP    &kp RS(TAB)                            ___         _N1_1ST   _N2_2ND     _N3_3RD      _PLUS_AMP    _Q_H
-    ___      ___           ___        ___       ___                   ___  ___  &kp PG_DN      &kp TAB  _ENT_CTLENT  &kp SPACE                   _UP_LEFT  _DN_RIGHT   ___          ___          &to L_0
+    ___      ___        ___  ___  ___  ___        &to L_NGM                                               _APOS_EURO   _BKSL_PIPE  _LPAR_LT    _DOT_CMMA   _RPAR_GT     _EQAL_TILD   &m_CSA_R
+    ___      ___        ___  ___  ___  ___        ___                                                     _HM_CTLHM    _DLLR_DQT   _N7_MINUTE  _N8_AMUC    _N9_PMUC     _MULT_TIMES  _DIV_PCT
+    ___      &kp LC(D)  ___  ___  ___  &kp LC(D)  ___         &kp LSHFT  &to L_0  _KP_ENT  &kp BSPC       _END_CTLEND  _COLN_SEMI  _N4_4TH     _N5_AMLC    _N6_PMLC     &kp N0       _MNUS_UNDR
+    &to L_0  &mo L_EDT  ___  ___  _x_  ___                   &kp PG_UP    &kp RS(TAB)                                  ___         _N1_1ST     _N2_2ND     _N3_3RD      _PLUS_AMP    _Q_H
+    ___      ___        ___  ___  ___             ___  ___  &kp PG_DN      &kp TAB  _ENT_CTLENT  &kp SPACE                         _UP_LEFT    _DN_RIGHT   ___          ___          &to L_0
 >; };
 
 // #UNDEFS:

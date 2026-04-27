@@ -1,12 +1,12 @@
-DOCKER := $(shell { command -v podman || command -v docker; })
-TIMESTAMP := $(shell date -u +"%Y%m%d%H%M")
+DOCKER := $(if $(shell command -v podman 2>/dev/null),podman,docker)
+TIMESTAMP := $(shell date -u +"%Y%m%d-%H%M%S")
 COMMIT := $(shell git rev-parse --short HEAD 2>/dev/null)
-ifeq ($(shell uname),Darwin)
-SELINUX1 :=
-SELINUX2 :=
-else
+ifeq ($(shell uname),Linux)
 SELINUX1 := :z
 SELINUX2 := ,z
+else
+SELINUX1 :=
+SELINUX2 :=
 endif
 
 .PHONY: all left clean_firmware clean_image clean

@@ -12,5 +12,6 @@ RUN west update
 RUN west zephyr-export
 
 COPY bin/build.sh ./
+RUN sed -i 's/\r$//' build.sh
 
 CMD ["./build.sh"]
