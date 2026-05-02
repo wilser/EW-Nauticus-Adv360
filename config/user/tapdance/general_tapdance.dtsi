@@ -59,6 +59,13 @@ ht_num_tolr_tonum: holdtap_Num_ToLR_ToNum {
     // 2024-08-26 changed to "hold-preferred" and removed "retro-tap" / then worked / Ø sure if needed both
 };
 
+td_q_tonum: tapdance_Q_ToNUM {
+    compatible = "zmk,behavior-tap-dance";
+    #binding-cells = <0>;
+    tapping-term-ms = <150>;
+    bindings = <&kp Q>, <&to L_NUM>; // 1x: q, 2x: to NUM layer
+};
+
 // similar as above but for D and Lightroom: Hold=NUM, Tap=D, 2-Tap=(Ctrl+U)
 td_d_ctrl_u: tapdance_D_CtrlU {
     compatible = "zmk,behavior-tap-dance";
