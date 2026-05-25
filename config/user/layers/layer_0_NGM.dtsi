@@ -69,7 +69,7 @@
 
     // Left Thumb cluster
     #define _CPWRD_CAPS     &ht_cap_cw L_CAP 0            // hold=CAPS layer; tap=capWORD
-    #define _NUM_LR         &ht_num_tolr_tonum L_NUM 0
+    #define _NUM_LR         &ht_num_tonum_tolr L_NUM 0
     #define _HM_CTLHM       &as_slw RC(HOME) HOME
     #define _BSP_CTLBSP     &as_thr_med RC(BSPC) BSPC       // tap=BSPC, hold=Ctrl+BSPC, tap→tap+hold=BSPC repeat; see macro-def for MED vs FST, etc.
     #define _END_CTLEND     &as_slw RC(END) END
