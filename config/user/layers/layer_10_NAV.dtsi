@@ -5,8 +5,8 @@
     nav_layer { bindings = <
         _x_        _x_       _x_        _x_       _x_        _x_  &to L_NGM                          _x_  _x_  _x_           _x_       _x_          _x_        _x_
         _x_        &kp LGUI  &kp LSHFT  &kp LALT  &kp LCTRL  _x_  _x_                                _x_  _x_  &kp HOME      &kp UP    &kp END      &kp PG_UP  _x_
-        _x_        _x_       _x_        _x_       _x_        _x_  _x_       _x_  _x_  _x_  _x_       _x_  _x_  &kp LEFT      &kp DOWN  &kp RIGHT    _x_        _x_
-        _x_        _x_       _x_        _x_       _x_        _x_               _x_     _x_                _x_  &kp RC(HOME)  _x_       &kp RC(END)  &kp PG_DN  _x_
+        _x_        _x_       _x_        _x_       _x_        _x_  _x_       _x_  _x_  _x_  _x_       _x_  _x_  &kp LEFT      &kp DOWN  &kp RIGHT    &kp PG_DN  _x_
+        _x_        _x_       _x_        _x_       _x_        _x_               _x_     _x_                _x_  &kp RC(HOME)  _x_       &kp RC(END)  _x_        _x_
         &to L_NGM  _x_       _x_        _x_       _x_               _x_  _x_  _x_       _x_  _x_  _x_          _x_           _x_       _x_          _x_      &to L_NGM
     >; };
 // END NAV
