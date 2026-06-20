@@ -76,7 +76,7 @@
 
     // Right Thumb cluster
     #define _BSLH_LET       &lt L_LET BSLH                // hold=letter layer; tap=backslash
-    #define _BSLH_BSP_R     &mm_BACKSLASH_BACKSPACE_R     // see mod_morphs_general.dtsi
+    #define _BSLH_BSP_R     &lt_bslhbsp L_NAV 0            // hold=NAV layer; tap=bslh; lshift+tap=bspc
 // end defines
 
 // 2026-04-03 trying mute & Win+K (hold for voice); taking out _HYPER and _MEH that haven't been using

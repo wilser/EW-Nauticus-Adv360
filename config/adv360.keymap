@@ -23,6 +23,7 @@
 #define L_CAP 7     // CAPs layer for constant Shift+ but keeping many things "unshifted" esp some symbols
 #define L_QRT 8     // Qwerty-ish; like for games
 #define L_KP 9      // keypad (*actual KP key codes) (in case ever need)
+#define L_NAV 10    // navigation (arrows, home/end, pg-up/dn)
 
 // === GLOBAL KEY SHORTHANDS ===
 // Helpers for common key-defaults (block [&none] or passthrough [&trans])
@@ -92,5 +93,6 @@
         #include "user/layers/layer_7_CAP.dtsi"
         #include "user/layers/layer_8_QRT.dtsi"
         #include "user/layers/layer_9_KP.dtsi"
+        #include "user/layers/layer_10_NAV.dtsi"
     };
 };
