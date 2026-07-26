@@ -4,6 +4,7 @@
 /* TEST macros to futz with settings in batches and string helpers
     tries with Shift and with Punctuation and spaces...
     [ ] does separating keys inside bindings= expression matter?
+    [ ] 2026-07-26 seems REDUNDANT with the "macro_ht_data" idea??
     
 */
 
