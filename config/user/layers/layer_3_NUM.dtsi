@@ -16,7 +16,6 @@
     #define _EQAL_TILD     &mms_num_eqal TILDE 0
 
     // Row 2 — right half
-    #define _HM_CTLHM      &as_slw RC(HOME) HOME
     #define _DLLR_DQT      &mms_num_dllr DQT 0
     #define _N7_MINUTE     &ht_minute 0 N7
     #define _N8_AMUC       &ht_am_uc 0 N8
@@ -27,7 +26,6 @@
     // Row 3 — inner thumb + right half
     #define _CTLENT_ENT    &as KP_ENTER LC(ENTER)  // tap=Ctrl+Enter, hold=(kp)Enter
     #define _BSP_NAV       &lt L_NAV BSPC        // tap=BSPC, hold=NAV layer
-    #define _END_CTLEND    &as_slw RC(END) END
     #define _COLN_SEMI     &mms_num_coln SEMI 0
     #define _N4_4TH        &ht_4th 0 N4
     #define _N5_AMLC       &ht_am_lc 0 N5
@@ -64,7 +62,6 @@ numpad_layer { bindings = <
     #undef _RPAR_GT
     #undef _EQAL_TILD
     // Row 2
-    #undef _HM_CTLHM
     #undef _DLLR_DQT
     #undef _N7_MINUTE
     #undef _N8_AMUC
@@ -74,7 +71,6 @@ numpad_layer { bindings = <
     // Row 3
     #undef _CTLENT_ENT
     #undef _BSP_NAV
-    #undef _END_CTLEND
     #undef _COLN_SEMI
     #undef _N4_4TH
     #undef _N5_AMLC
