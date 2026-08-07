@@ -72,7 +72,7 @@
     #define _NUM_LR         &ht_num_tonum_tolr L_NUM 0
     #define _HM_CTLHM       &as_slw RC(HOME) HOME
     #define _BSP_CTLBSP     &as_thr_med RC(BSPC) BSPC       // tap=BSPC, hold=Ctrl+BSPC, tap→tap+hold=BSPC repeat; see macro-def for MED vs FST, etc.
-    #define _END_CTLEND     &as_slw RC(END) END
+    #define _EN_CTLEN       &as_slw RC(END) END
 
     // Right Thumb cluster
     #define _BSLH_LET       &lt L_LET BSLH                // hold=letter layer; tap=backslash
@@ -87,7 +87,7 @@ engram_layer { bindings = <
     &kp ESC        _B_GUI       _Y_SFT       _O_ALT       _U_CTL           _STAR_F16  &kp RG(RA(K))                                                                  _TD_SCRSHOTS  _QUOT_DLLR  _L_CTL    _D_ALT    _W_SFT      _V_GUI      _SLSH_PRCNT
     _TAB_SHTAB     &lt L_NAV C  _I_RSI       &kp E        &kp A            _SEMI_LT   &kp LG(H)         _CPWRD_CAPS  _NUM_LR  _BSLH_LET  _BSLH_BSP_R                 _DT1_DT0      _COLN_GT    &kp H     &kp T     &kp S       &lt L_NAV N  _MNUS_UNDER
     _GRAV_CARET    &lt L_EDT G  &kp X        &lt L_UTL J  &lt_fst L_NUM K  _AMPS_AT                               _HM_CTLHM    &kp PG_UP                                           _HASH_PLUS  &kp R     &kp M     &kp F       &kp P       _QU_Q
-    _TD_EMOJ_DSKT  _BUL_ARW     _TD_RTCLK_P  &kp LEFT     &kp RIGHT                _BSP_CTLBSP  &lt L_EDT DEL  _END_CTLEND      &kp PG_DN  &lt L_FNC ENTER  &kp SPACE                          &kp UP    &kp DOWN  _LBKT_LBRC  _RBKT_RBRC  _TD_Q_TONUM
+    _TD_EMOJ_DSKT  _BUL_ARW     _TD_RTCLK_P  &kp LEFT     &kp RIGHT                  _BSP_CTLBSP  &lt L_EDT DEL  _EN_CTLEN      &kp PG_DN  &lt L_FNC ENTER  &kp SPACE                          &kp UP    &kp DOWN  _LBKT_LBRC  _RBKT_RBRC  _TD_Q_TONUM
 >; };
 
 // #UNDEFs (same order as defines)
@@ -147,7 +147,7 @@ engram_layer { bindings = <
     #undef _NUM_LR    
     #undef _HM_CTLHM  
     #undef _BSP_CTLBSP
-    #undef _END_CTLEND
+    #undef _EN_CTLEN
 
     // Right Thumb cluster
     #undef _BSLH_LET 
