@@ -3,23 +3,23 @@
     */
 
     // #DEFINES (same order as #UNDEFs)
+        #define _A_S_HYPH          &kp LA(LS(MINUS))
         #define _HM_CTLHM          &as_slw RC(HOME) HOME
         #define _EN_CTLEN          &as_slw RC(END) END
-        #define _A_S_HYPH          &kp RA(RS(MINUS))
     // end defines
 
     nav_layer { bindings = <
-        _x_        _x_        _x_        _x_       _x_        _x_        &to L_NGM                                                     _x_  _x_        _x_        _x_        _x_        _x_        _x_
-        ___        _x_        &kp LSHFT  &kp LALT  &kp LCTRL  _A_S_HYPH  _x_                                                           _x_  _A_S_HYPH  &kp LCTRL  &kp LALT   &kp LSHFT  _x_        _x_
-        ___        &kp PG_UP  &kp LEFT   &kp UP    &kp RIGHT  &kp PG_UP  _x_    &kp LCTRL  &kp LC(LSHFT)   &kp LC(LSHFT)  &kp LCTRL    _x_  &kp PG_UP  &kp LEFT   &kp UP     &kp RIGHT  &kp PG_UP  _x_
-        _x_        &kp PG_DN  _HM_CTLHM  &kp DOWN  _EN_CTLEN  &kp PG_DN                       &kp LSHFT     &kp LSHFT                       &kp PG_DN  _HM_CTLHM  &kp DOWN   _EN_CTLEN  &kp PG_DN  _x_
-        &to L_NGM  _x_        _x_        ___       ___                                   ___  ___  _x_       _x_  ___  ___                             ___        ___        ___        ___        &to L_NGM
+        _x_        _x_        _x_        _x_       _x_        _x_        &to L_NGM                                                 _x_  _x_        _x_        _x_        _x_        _x_        _x_
+        ___        _x_        &kp LSHFT  &kp LALT  &kp LCTRL  _A_S_HYPH  _x_                                                       _x_  _A_S_HYPH  &kp LCTRL  &kp LALT   &kp LSHFT  _x_        _x_
+        ___        &kp PG_UP  &kp LEFT   &kp UP    &kp RIGHT  &kp PG_UP  _x_      &kp LCTRL  &kp LSHFT   &kp LSHFT  &kp LCTRL      _x_  &kp PG_UP  &kp LEFT   &kp UP     &kp RIGHT  &kp PG_UP  _x_
+        _x_        &kp PG_DN  _HM_CTLHM  &kp DOWN  _EN_CTLEN  &kp PG_DN                 &kp LC(LSHFT)     &kp LC(LSHFT)                 &kp PG_DN  _HM_CTLHM  &kp DOWN   _EN_CTLEN  &kp PG_DN  _x_
+        &to L_NGM  _x_        _x_        ___       ___                                ___  ___  _x_        _x_  ___  ___                           ___        ___        ___        ___        &to L_NGM
     >; };
 
     // #UNDEFs (same order as #DEFINES)
+        #undef _A_S_HYPH
         #undef _HM_CTLHM
         #undef _EN_CTLEN
-        #undef _A_S_HYPH
     // end #UNDEFs
 
 // END NAV
