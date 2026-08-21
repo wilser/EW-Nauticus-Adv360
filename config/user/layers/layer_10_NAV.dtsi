@@ -4,30 +4,41 @@
 
     */
 
-
-
     // #DEFINES (same order as #UNDEFs)
         #define _A_S_HYPH          &kp LA(LS(MINUS))
         #define _HM_CTLHM          &as_slw RC(HOME) HOME
         #define _EN_CTLEN          &as_slw RC(END) END
-        #define _xUP             &kp UP
-        #define _xDOWN           &kp DOWN
+        #define _UP                &kp UP
+        #define _DOWN              &kp DOWN
+        #define _M_C               &kp LCTRL
+        #define _M_S               &kp LSHIFT
+        #define _M_A               &kp LALT
+        #define _M_CS              &kp LC(LSHIFT)
+        #define _M_CA              &kp LC(LALT)
+        #define _M_AS              &kp LA(LSHIFT)
+        #define _TO0               &to L_NGM
     // end defines
 
     nav_layer { bindings = <
-        _x_        _x_        _x_        _xUP      _xUP       _x_        &to L_NGM                                                 _x_  _x_        _xUP       _xUP       _x_        _x_        _x_
-        ___        _x_        &kp LSHFT  &kp LALT  &kp LCTRL  _A_S_HYPH  _x_                                                       _x_  _A_S_HYPH  &kp LCTRL  &kp LALT   &kp LSHFT  _x_        _x_
-        ___        &kp PG_UP  &kp LEFT   &kp UP    &kp RIGHT  &kp PG_UP  _x_      &kp LCTRL  &kp LSHFT   &kp LSHFT  &kp LCTRL      _x_  &kp PG_UP  &kp LEFT   &kp UP     &kp RIGHT  &kp PG_UP  _x_
-        _x_        &kp PG_DN  _HM_CTLHM  &kp DOWN  _EN_CTLEN  &kp PG_DN                 &kp LC(LSHFT)     &kp LC(LSHFT)                 &kp PG_DN  _HM_CTLHM  &kp DOWN   _EN_CTLEN  &kp PG_DN  _x_
-        &to L_NGM  _x_        _x_        _xDOWN    _xDOWN                              ___  ___  _x_       _x_  ___  ___                           _xDOWN     _xDOWN     ___        ___        &to L_NGM
+        _x_   _x_        _x_        _UP       _UP        _x_        _TO0                                         _x_  _x_        _UP        _UP       _x_        _x_        _x_
+        ___   _x_        &kp LSHFT  &kp LALT  &kp LCTRL  _A_S_HYPH  _x_                                          _x_  _A_S_HYPH  &kp LCTRL  &kp LALT  &kp LSHFT  _x_        _x_
+        ___   &kp PG_UP  &kp LEFT   &kp UP    &kp RIGHT  &kp PG_UP  _x_        _M_C  _M_A     _M_A  _M_C         _x_  &kp PG_UP  &kp LEFT   &kp UP    &kp RIGHT  &kp PG_UP  _x_
+        _x_   &kp PG_DN  _HM_CTLHM  &kp DOWN  _EN_CTLEN  &kp PG_DN                  _M_AS     _M_AS                   &kp PG_DN  _HM_CTLHM  &kp DOWN  _EN_CTLEN  &kp PG_DN  _x_
+        _TO0  _x_        _x_        _DOWN     _DOWN                    _M_S  _M_CS  _M_CA     _M_CA  _M_CS  _M_S                 _DOWN      _DOWN     ___        ___        _TO0
     >; };
 
     // #UNDEFs (same order as #DEFINES)
         #undef _A_S_HYPH
         #undef _HM_CTLHM
         #undef _EN_CTLEN
-        #undef _xUP
-        #undef _xDOWN
+        #undef _UP
+        #undef _DOWN
+        #undef _M_C
+        #undef _M_S 
+        #undef _M_A
+        #undef _M_CS   
+        #undef _M_CA   
+        #undef _M_AS   
     // end #UNDEFs
 
 // END NAV
