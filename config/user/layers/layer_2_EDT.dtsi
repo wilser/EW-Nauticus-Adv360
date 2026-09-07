@@ -11,28 +11,35 @@
 */
 
 // Defines:
-    #define _CtlB_GUI          &hm_slw LGUI LC(B) // bold + Win
-    #define _AltY_SFT          &hm_slw LSHFT LA(Y) // yes + Alt
-    #define _AltN_ALT          &hm_slw LALT LA(N) // no + Shift
-    #define _CtlI_CTL          &hm_slw LCTRL LC(I) // underline + Ctrl
-    #define _A_S_HYPH          &kp LA(LS(MINUS))
-    #define _MEH_U             &kp RC(RS(RA(U))) // meh + U - Obsidian copy file rel-path
-    #define _MEH_W             &kp RC(RS(RA(W))) // meh + W - Obsidian split to new window
-    #define _HM_CTLHM          &as_slw RC(HOME) HOME
-    #define _EN_CTLEN          &as_slw RC(END) END
-    #define _LBKT_LBRC         &as LS(LBKT) LBKT
-    #define _RBKT_RBRC         &as LS(RBKT) RBKT
+    #define _LPAR_LT       &mms_num_lpar LT 0
+    #define _DOT_CMMA      &mms_num_dot COMMA 0
+    #define _RPAR_GT       &mms_num_rpar GT 0
+    #define _CtlB_GUI      &hm_slw LGUI LC(B) // bold + Win
+    #define _AltY_SFT      &hm_slw LSHFT LA(Y) // yes + Alt
+    #define _AltN_ALT      &hm_slw LALT LA(N) // no + Shift
+    #define _CtlI_CTL      &hm_slw LCTRL LC(I) // underline + Ctrl
+    #define _A_S_HYPH      &kp LA(LS(MINUS))
+    #define _MEH_U         &kp RC(RS(RA(U))) // meh + U - Obsidian copy file rel-path
+    #define _MEH_W         &kp RC(RS(RA(W))) // meh + W - Obsidian split to new window
+    #define _NUMLK         &kp KP_NUMLOCK
+    #define _HM_CTLHM      &as_slw RC(HOME) HOME
+    #define _EN_CTLEN      &as_slw RC(END) END
+    #define _LBKT_LBRC     &as LS(LBKT) LBKT
+    #define _RBKT_RBRC     &as LS(RBKT) RBKT
 // End Defines
 
 navnedit_layer { bindings = <
-    &kp LA(F4)      &kp LC(W)  &kp F2     &kp LC(O)    &kp LC(T)    &kp F5      &to L_0                                                 ___  &kp INS    &kp CAPS    &kp KP_NUMLOCK  &kp SLCK    &kp PSCRN   &kp PAUSE_BREAK
-    &kp LC(Y)       _CtlB_GUI  _AltY_SFT  _AltN_ALT    _CtlI_CTL    _A_S_HYPH   _MEH_U                                                  ___  _x_        _LBKT_LBRC  _x_             _RBKT_RBRC  _x_         _x_ 
-    &kp LC(LS(F9))  &kp LC(A)  &kp LC(X)  &kp LC(C)    &kp LC(V)    &kp LC(D)   _MEH_W     &m_SEL_LINE  &kp RC(A)  _x_  &kp BSPC        ___  &kp PG_UP  &kp LEFT    &kp UP          &kp RIGHT   &kp PG_UP   _x_
-    &kp LC(Z)       &kp LC(S)  &kp LC(K)  &kp F13      &kp LC(F13)  &m_CSA_V                        &m_SEL_WRD_L    _x_                      &kp PG_DN  _HM_CTLHM   &kp DOWN        _EN_CTLEN   &kp PG_DN   _x_
-    &kp LC(L)       &kp UP     &kp DOWN   ___          ___                   &kp LC(Z)  &kp LC(Y)  &m_SEL_WRD_R      &m_MinWin  ___  ___                ___         ___             _x_         _x_         &to L_0
+    &kp LA(F4)      &kp LC(W)  &kp F2     &kp LC(O)  &kp LC(T)    &kp F5     &to L_0                                               ___       _x_        _LPAR_LT    _DOT_CMMA  _RPAR_GT    _x_        &kp INS
+    &kp LC(Y)       _CtlB_GUI  _AltY_SFT  _AltN_ALT  _CtlI_CTL    _A_S_HYPH  _MEH_U                                                _NUMLK    _x_        _LBKT_LBRC  _x_        _RBKT_RBRC  _x_        &kp PSCRN 
+    &kp LC(LS(F9))  &kp LC(A)  &kp LC(X)  &kp LC(C)  &kp LC(V)    &kp LC(D)  _MEH_W     &m_SEL_LINE  &kp RC(A)  _x_  &kp BSPC      &kp CAPS  &kp PG_UP  &kp LEFT    &kp UP     &kp RIGHT   &kp PG_UP  &kp SLCK
+    &kp LC(Z)       &kp LC(S)  &kp LC(K)  &kp F13    &kp LC(F13)  &m_CSA_V                       &m_SEL_WRD_L    _x_                         &kp PG_DN  _HM_CTLHM   &kp DOWN   _EN_CTLEN   &kp PG_DN  &kp PAUSE_BREAK
+    &kp LC(L)       &kp UP     &kp DOWN   ___        ___                  &kp LC(Z)  &kp LC(Y)  &m_SEL_WRD_R      &m_MinWin  ___  ___                   ___         ___        ___         ___        &to L_0
 >; };
 
 // Undefs:
+    #undef _LPAR_LT
+    #undef _DOT_CMMA
+    #undef _RPAR_GT
     #undef _CtlB_GUI
     #undef _AltY_SFT
     #undef _AltN_ALT
@@ -40,6 +47,7 @@ navnedit_layer { bindings = <
     #undef _A_S_HYPH
     #undef _MEH_U
     #undef _MEH_W
+    #undef _NUMLK
     #undef _HM_CTLHM
     #undef _EN_CTLEN
     #undef _LBKT_LBRC
